@@ -18,7 +18,7 @@ default = []
 rt = ["ch32v3/rt"]
 
 [dependencies]
-ch32v3 = "0.1.0"
+ch32v3 = "0.1"
 
 [package.metadata.docs.rs]
 default-target = "riscv32imac-unknown-none-elf"
