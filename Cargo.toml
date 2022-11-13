@@ -1,2 +1,2 @@
 [workspace]
-members = ["ch32v1", "ch32v2", "ch32v3"]
+members = ["ch32v1", "ch32v2", "ch32v3", "ch58x"]
