@@ -19,7 +19,7 @@ version = "0.1.4"
 features = ["ch58x"]
 ```
 
-The `rt` feature is enabled by default and brings in support for `cortex-m-rt`.
+The `rt` feature is enabled by default and brings in support for `riscv-rt`.
 To disable, specify `default-features = false` in `Cargo.toml`.
 
 In your code:
