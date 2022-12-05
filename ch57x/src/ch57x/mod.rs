@@ -309,13 +309,13 @@ pub mod sys {
         pub adc_auto_cycle: ADC_AUTO_CYCLE,
         ///0x64 - RO, ADC DMA current address
         pub adc_dma_now: ADC_DMA_NOW,
-        _reserved48: [u8; 0x03],
+        _reserved48: [u8; 0x02],
         ///0x68 - RW, ADC DMA begin address
         pub adc_dma_beg: ADC_DMA_BEG,
-        _reserved49: [u8; 0x03],
+        _reserved49: [u8; 0x02],
         ///0x6c - RW, ADC DMA end address
         pub adc_dma_end: ADC_DMA_END,
-        _reserved50: [u8; 0x23],
+        _reserved50: [u8; 0x22],
         ///0x90 - RW, GPIO PA interrupt enable
         pub pa_int_en: PA_INT_EN,
         ///0x92 - RW, GPIO PB interrupt enable
@@ -5396,7 +5396,7 @@ pub mod sys {
             ///Bits 0:15 - ADC DMA current address
             #[inline(always)]
             pub fn adc_dma_now(&self) -> ADC_DMA_NOW_R {
-                ADC_DMA_NOW_R::new((self.bits & 0xffff) as u16)
+                ADC_DMA_NOW_R::new(self.bits)
             }
         }
         ///RO, ADC DMA current address
@@ -5406,7 +5406,7 @@ pub mod sys {
         ///For information about available fields see [adc_dma_now](index.html) module
         pub struct ADC_DMA_NOW_SPEC;
         impl crate::RegisterSpec for ADC_DMA_NOW_SPEC {
-            type Ux = u8;
+            type Ux = u16;
         }
         ///`read()` method returns [adc_dma_now::R](R) reader structure
         impl crate::Readable for ADC_DMA_NOW_SPEC {
@@ -5461,12 +5461,12 @@ pub mod sys {
         pub type ADC_DMA_BEG_R = crate::FieldReader<u16, u16>;
         ///Field `ADC_DMA_BEG` writer - ADC DMA begin address
         pub type ADC_DMA_BEG_W<'a, const O: u8> =
-            crate::FieldWriter<'a, u8, ADC_DMA_BEG_SPEC, u16, u16, 16, O>;
+            crate::FieldWriter<'a, u16, ADC_DMA_BEG_SPEC, u16, u16, 16, O>;
         impl R {
             ///Bits 0:15 - ADC DMA begin address
             #[inline(always)]
             pub fn adc_dma_beg(&self) -> ADC_DMA_BEG_R {
-                ADC_DMA_BEG_R::new((self.bits & 0xffff) as u16)
+                ADC_DMA_BEG_R::new(self.bits)
             }
         }
         impl W {
@@ -5478,7 +5478,7 @@ pub mod sys {
             }
             ///Writes raw bits to the register.
             #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+            pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
                 self.0.bits(bits);
                 self
             }
@@ -5490,7 +5490,7 @@ pub mod sys {
         ///For information about available fields see [adc_dma_beg](index.html) module
         pub struct ADC_DMA_BEG_SPEC;
         impl crate::RegisterSpec for ADC_DMA_BEG_SPEC {
-            type Ux = u8;
+            type Ux = u16;
         }
         ///`read()` method returns [adc_dma_beg::R](R) reader structure
         impl crate::Readable for ADC_DMA_BEG_SPEC {
@@ -5551,12 +5551,12 @@ pub mod sys {
         pub type ADC_DMA_END_R = crate::FieldReader<u16, u16>;
         ///Field `ADC_DMA_END` writer - ADC DMA end address
         pub type ADC_DMA_END_W<'a, const O: u8> =
-            crate::FieldWriter<'a, u8, ADC_DMA_END_SPEC, u16, u16, 16, O>;
+            crate::FieldWriter<'a, u16, ADC_DMA_END_SPEC, u16, u16, 16, O>;
         impl R {
             ///Bits 0:15 - ADC DMA end address
             #[inline(always)]
             pub fn adc_dma_end(&self) -> ADC_DMA_END_R {
-                ADC_DMA_END_R::new((self.bits & 0xffff) as u16)
+                ADC_DMA_END_R::new(self.bits)
             }
         }
         impl W {
@@ -5568,7 +5568,7 @@ pub mod sys {
             }
             ///Writes raw bits to the register.
             #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+            pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
                 self.0.bits(bits);
                 self
             }
@@ -5580,7 +5580,7 @@ pub mod sys {
         ///For information about available fields see [adc_dma_end](index.html) module
         pub struct ADC_DMA_END_SPEC;
         impl crate::RegisterSpec for ADC_DMA_END_SPEC {
-            type Ux = u8;
+            type Ux = u16;
         }
         ///`read()` method returns [adc_dma_end::R](R) reader structure
         impl crate::Readable for ADC_DMA_END_SPEC {
@@ -10238,19 +10238,19 @@ pub mod tmr2 {
             }
         }
         ///Field `DMA_BEG` reader - RW, TMR2 DMA begin address
-        pub type DMA_BEG_R = crate::FieldReader<u32, u32>;
+        pub type DMA_BEG_R = crate::FieldReader<u16, u16>;
         ///Field `DMA_BEG` writer - RW, TMR2 DMA begin address
         pub type DMA_BEG_W<'a, const O: u8> =
-            crate::FieldWriter<'a, u16, DMA_BEG_SPEC, u32, u32, 32, O>;
+            crate::FieldWriter<'a, u16, DMA_BEG_SPEC, u16, u16, 16, O>;
         impl R {
-            ///Bits 0:31 - RW, TMR2 DMA begin address
+            ///Bits 0:15 - RW, TMR2 DMA begin address
             #[inline(always)]
             pub fn dma_beg(&self) -> DMA_BEG_R {
-                DMA_BEG_R::new((self.bits & 0xffff_ffff) as u32)
+                DMA_BEG_R::new(self.bits)
             }
         }
         impl W {
-            ///Bits 0:31 - RW, TMR2 DMA begin address
+            ///Bits 0:15 - RW, TMR2 DMA begin address
             #[inline(always)]
             #[must_use]
             pub fn dma_beg(&mut self) -> DMA_BEG_W<0> {
@@ -10328,19 +10328,19 @@ pub mod tmr2 {
             }
         }
         ///Field `DMA_END` reader - RW, TMR2 DMA end address
-        pub type DMA_END_R = crate::FieldReader<u32, u32>;
+        pub type DMA_END_R = crate::FieldReader<u16, u16>;
         ///Field `DMA_END` writer - RW, TMR2 DMA end address
         pub type DMA_END_W<'a, const O: u8> =
-            crate::FieldWriter<'a, u16, DMA_END_SPEC, u32, u32, 32, O>;
+            crate::FieldWriter<'a, u16, DMA_END_SPEC, u16, u16, 16, O>;
         impl R {
-            ///Bits 0:31 - RW, TMR2 DMA end address
+            ///Bits 0:15 - RW, TMR2 DMA end address
             #[inline(always)]
             pub fn dma_end(&self) -> DMA_END_R {
-                DMA_END_R::new((self.bits & 0xffff_ffff) as u32)
+                DMA_END_R::new(self.bits)
             }
         }
         impl W {
-            ///Bits 0:31 - RW, TMR2 DMA end address
+            ///Bits 0:15 - RW, TMR2 DMA end address
             #[inline(always)]
             #[must_use]
             pub fn dma_end(&mut self) -> DMA_END_W<0> {
