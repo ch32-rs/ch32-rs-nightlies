@@ -8804,12 +8804,12 @@ pub mod tmr1 {
             }
         }
         ///Field `FIFO_COUNT` reader - RW1, TMR1 FIFO count status
-        pub type FIFO_COUNT_R = crate::FieldReader<u32, u32>;
+        pub type FIFO_COUNT_R = crate::FieldReader<u8, u8>;
         impl R {
-            ///Bits 0:31 - RW1, TMR1 FIFO count status
+            ///Bits 0:7 - RW1, TMR1 FIFO count status
             #[inline(always)]
             pub fn fifo_count(&self) -> FIFO_COUNT_R {
-                FIFO_COUNT_R::new((self.bits & 0xffff_ffff) as u32)
+                FIFO_COUNT_R::new(self.bits)
             }
         }
         ///RO, TMR1 FIFO count status
@@ -10170,13 +10170,13 @@ pub mod tmr2 {
                 R(reader)
             }
         }
-        ///Field `FIFO` reader - RW, TMR2 current count
-        pub type FIFO_R = crate::FieldReader<u32, u32>;
+        ///Field `DMA_NOW` reader - RW, TMR2 current count
+        pub type DMA_NOW_R = crate::FieldReader<u16, u16>;
         impl R {
-            ///Bits 0:31 - RW, TMR2 current count
+            ///Bits 0:15 - RW, TMR2 current count
             #[inline(always)]
-            pub fn fifo(&self) -> FIFO_R {
-                FIFO_R::new((self.bits & 0xffff_ffff) as u32)
+            pub fn dma_now(&self) -> DMA_NOW_R {
+                DMA_NOW_R::new(self.bits)
             }
         }
         ///RO, TMR2 DMA current address
