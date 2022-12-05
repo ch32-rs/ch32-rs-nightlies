@@ -15494,14 +15494,8 @@ pub mod pwmx {
         ///0x02 - PWM clock divisor
         pub pwm_clock_div: PWM_CLOCK_DIV,
         _reserved3: [u8; 0x01],
-        ///0x04 - PWM data holding
-        pub pwm0_data: PWM0_DATA,
-        ///0x05 - PWM1 data holding
-        pub pwm1_data: PWM1_DATA,
-        ///0x06 - PWM2 data holding
-        pub pwm2_data: PWM2_DATA,
-        ///0x07 - PWM3 data holding
-        pub pwm3_data: PWM3_DATA,
+        ///0x04 - PWM data register
+        pub pwm_data: PWM_DATA,
     }
     ///PWM_CTRL_MOD (rw) register accessor: an alias for `Reg<PWM_CTRL_MOD_SPEC>`
     pub type PWM_CTRL_MOD = crate::Reg<pwm_ctrl_mod::PWM_CTRL_MOD_SPEC>;
@@ -15885,29 +15879,29 @@ pub mod pwmx {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PWM0_DATA (rw) register accessor: an alias for `Reg<PWM0_DATA_SPEC>`
-    pub type PWM0_DATA = crate::Reg<pwm0_data::PWM0_DATA_SPEC>;
-    ///PWM data holding
-    pub mod pwm0_data {
-        ///Register `PWM0_DATA` reader
-        pub struct R(crate::R<PWM0_DATA_SPEC>);
+    ///PWM_DATA (rw) register accessor: an alias for `Reg<PWM_DATA_SPEC>`
+    pub type PWM_DATA = crate::Reg<pwm_data::PWM_DATA_SPEC>;
+    ///PWM data register
+    pub mod pwm_data {
+        ///Register `PWM_DATA` reader
+        pub struct R(crate::R<PWM_DATA_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PWM0_DATA_SPEC>;
+            type Target = crate::R<PWM_DATA_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PWM0_DATA_SPEC>> for R {
+        impl From<crate::R<PWM_DATA_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PWM0_DATA_SPEC>) -> Self {
+            fn from(reader: crate::R<PWM_DATA_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PWM0_DATA` writer
-        pub struct W(crate::W<PWM0_DATA_SPEC>);
+        ///Register `PWM_DATA` writer
+        pub struct W(crate::W<PWM_DATA_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PWM0_DATA_SPEC>;
+            type Target = crate::W<PWM_DATA_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -15919,329 +15913,107 @@ pub mod pwmx {
                 &mut self.0
             }
         }
-        impl From<crate::W<PWM0_DATA_SPEC>> for W {
+        impl From<crate::W<PWM_DATA_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PWM0_DATA_SPEC>) -> Self {
+            fn from(writer: crate::W<PWM_DATA_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `PWM0_DATA` reader - PWM0 data holding
-        pub type PWM0_DATA_R = crate::FieldReader<u8, u8>;
-        ///Field `PWM0_DATA` writer - PWM0 data holding
-        pub type PWM0_DATA_W<'a, const O: u8> =
-            crate::FieldWriter<'a, u8, PWM0_DATA_SPEC, u8, u8, 8, O>;
+        ///Field `DATA0` reader - PWM0 data
+        pub type DATA0_R = crate::FieldReader<u8, u8>;
+        ///Field `DATA0` writer - PWM0 data
+        pub type DATA0_W<'a, const O: u8> =
+            crate::FieldWriter<'a, u32, PWM_DATA_SPEC, u8, u8, 8, O>;
+        ///Field `DATA1` reader - PWM1 data
+        pub type DATA1_R = crate::FieldReader<u8, u8>;
+        ///Field `DATA1` writer - PWM1 data
+        pub type DATA1_W<'a, const O: u8> =
+            crate::FieldWriter<'a, u32, PWM_DATA_SPEC, u8, u8, 8, O>;
+        ///Field `DATA2` reader - PWM2 data
+        pub type DATA2_R = crate::FieldReader<u8, u8>;
+        ///Field `DATA2` writer - PWM2 data
+        pub type DATA2_W<'a, const O: u8> =
+            crate::FieldWriter<'a, u32, PWM_DATA_SPEC, u8, u8, 8, O>;
+        ///Field `DATA3` reader - PWM3 data
+        pub type DATA3_R = crate::FieldReader<u8, u8>;
+        ///Field `DATA3` writer - PWM3 data
+        pub type DATA3_W<'a, const O: u8> =
+            crate::FieldWriter<'a, u32, PWM_DATA_SPEC, u8, u8, 8, O>;
         impl R {
-            ///Bits 0:7 - PWM0 data holding
+            ///Bits 0:7 - PWM0 data
             #[inline(always)]
-            pub fn pwm0_data(&self) -> PWM0_DATA_R {
-                PWM0_DATA_R::new(self.bits)
+            pub fn data0(&self) -> DATA0_R {
+                DATA0_R::new((self.bits & 0xff) as u8)
+            }
+            ///Bits 8:15 - PWM1 data
+            #[inline(always)]
+            pub fn data1(&self) -> DATA1_R {
+                DATA1_R::new(((self.bits >> 8) & 0xff) as u8)
+            }
+            ///Bits 16:23 - PWM2 data
+            #[inline(always)]
+            pub fn data2(&self) -> DATA2_R {
+                DATA2_R::new(((self.bits >> 16) & 0xff) as u8)
+            }
+            ///Bits 24:31 - PWM3 data
+            #[inline(always)]
+            pub fn data3(&self) -> DATA3_R {
+                DATA3_R::new(((self.bits >> 24) & 0xff) as u8)
             }
         }
         impl W {
-            ///Bits 0:7 - PWM0 data holding
+            ///Bits 0:7 - PWM0 data
             #[inline(always)]
             #[must_use]
-            pub fn pwm0_data(&mut self) -> PWM0_DATA_W<0> {
-                PWM0_DATA_W::new(self)
+            pub fn data0(&mut self) -> DATA0_W<0> {
+                DATA0_W::new(self)
+            }
+            ///Bits 8:15 - PWM1 data
+            #[inline(always)]
+            #[must_use]
+            pub fn data1(&mut self) -> DATA1_W<8> {
+                DATA1_W::new(self)
+            }
+            ///Bits 16:23 - PWM2 data
+            #[inline(always)]
+            #[must_use]
+            pub fn data2(&mut self) -> DATA2_W<16> {
+                DATA2_W::new(self)
+            }
+            ///Bits 24:31 - PWM3 data
+            #[inline(always)]
+            #[must_use]
+            pub fn data3(&mut self) -> DATA3_W<24> {
+                DATA3_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+            pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
                 self.0.bits(bits);
                 self
             }
         }
-        ///PWM data holding
+        ///PWM data register
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pwm0_data](index.html) module
-        pub struct PWM0_DATA_SPEC;
-        impl crate::RegisterSpec for PWM0_DATA_SPEC {
-            type Ux = u8;
+        ///For information about available fields see [pwm_data](index.html) module
+        pub struct PWM_DATA_SPEC;
+        impl crate::RegisterSpec for PWM_DATA_SPEC {
+            type Ux = u32;
         }
-        ///`read()` method returns [pwm0_data::R](R) reader structure
-        impl crate::Readable for PWM0_DATA_SPEC {
+        ///`read()` method returns [pwm_data::R](R) reader structure
+        impl crate::Readable for PWM_DATA_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pwm0_data::W](W) writer structure
-        impl crate::Writable for PWM0_DATA_SPEC {
+        ///`write(|w| ..)` method takes [pwm_data::W](W) writer structure
+        impl crate::Writable for PWM_DATA_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PWM0_DATA to value 0
-        impl crate::Resettable for PWM0_DATA_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///PWM1_DATA (rw) register accessor: an alias for `Reg<PWM1_DATA_SPEC>`
-    pub type PWM1_DATA = crate::Reg<pwm1_data::PWM1_DATA_SPEC>;
-    ///PWM1 data holding
-    pub mod pwm1_data {
-        ///Register `PWM1_DATA` reader
-        pub struct R(crate::R<PWM1_DATA_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<PWM1_DATA_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<PWM1_DATA_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<PWM1_DATA_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `PWM1_DATA` writer
-        pub struct W(crate::W<PWM1_DATA_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<PWM1_DATA_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<PWM1_DATA_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<PWM1_DATA_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `PWM1_DATA` reader - PWM1 data holding
-        pub type PWM1_DATA_R = crate::FieldReader<u8, u8>;
-        ///Field `PWM1_DATA` writer - PWM1 data holding
-        pub type PWM1_DATA_W<'a, const O: u8> =
-            crate::FieldWriter<'a, u8, PWM1_DATA_SPEC, u8, u8, 8, O>;
-        impl R {
-            ///Bits 8:15 - PWM1 data holding
-            #[inline(always)]
-            pub fn pwm1_data(&self) -> PWM1_DATA_R {
-                PWM1_DATA_R::new((self.bits >> 8))
-            }
-        }
-        impl W {
-            ///Bits 8:15 - PWM1 data holding
-            #[inline(always)]
-            #[must_use]
-            pub fn pwm1_data(&mut self) -> PWM1_DATA_W<8> {
-                PWM1_DATA_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///PWM1 data holding
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [pwm1_data](index.html) module
-        pub struct PWM1_DATA_SPEC;
-        impl crate::RegisterSpec for PWM1_DATA_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [pwm1_data::R](R) reader structure
-        impl crate::Readable for PWM1_DATA_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [pwm1_data::W](W) writer structure
-        impl crate::Writable for PWM1_DATA_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets PWM1_DATA to value 0
-        impl crate::Resettable for PWM1_DATA_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///PWM2_DATA (rw) register accessor: an alias for `Reg<PWM2_DATA_SPEC>`
-    pub type PWM2_DATA = crate::Reg<pwm2_data::PWM2_DATA_SPEC>;
-    ///PWM2 data holding
-    pub mod pwm2_data {
-        ///Register `PWM2_DATA` reader
-        pub struct R(crate::R<PWM2_DATA_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<PWM2_DATA_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<PWM2_DATA_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<PWM2_DATA_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `PWM2_DATA` writer
-        pub struct W(crate::W<PWM2_DATA_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<PWM2_DATA_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<PWM2_DATA_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<PWM2_DATA_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `PWM2_DATA` reader - PWM2 data holding
-        pub type PWM2_DATA_R = crate::FieldReader<u8, u8>;
-        ///Field `PWM2_DATA` writer - PWM2 data holding
-        pub type PWM2_DATA_W<'a, const O: u8> =
-            crate::FieldWriter<'a, u8, PWM2_DATA_SPEC, u8, u8, 8, O>;
-        impl R {
-            ///Bits 16:23 - PWM2 data holding
-            #[inline(always)]
-            pub fn pwm2_data(&self) -> PWM2_DATA_R {
-                PWM2_DATA_R::new((self.bits >> 16))
-            }
-        }
-        impl W {
-            ///Bits 16:23 - PWM2 data holding
-            #[inline(always)]
-            #[must_use]
-            pub fn pwm2_data(&mut self) -> PWM2_DATA_W<16> {
-                PWM2_DATA_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///PWM2 data holding
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [pwm2_data](index.html) module
-        pub struct PWM2_DATA_SPEC;
-        impl crate::RegisterSpec for PWM2_DATA_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [pwm2_data::R](R) reader structure
-        impl crate::Readable for PWM2_DATA_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [pwm2_data::W](W) writer structure
-        impl crate::Writable for PWM2_DATA_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets PWM2_DATA to value 0
-        impl crate::Resettable for PWM2_DATA_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///PWM3_DATA (rw) register accessor: an alias for `Reg<PWM3_DATA_SPEC>`
-    pub type PWM3_DATA = crate::Reg<pwm3_data::PWM3_DATA_SPEC>;
-    ///PWM3 data holding
-    pub mod pwm3_data {
-        ///Register `PWM3_DATA` reader
-        pub struct R(crate::R<PWM3_DATA_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<PWM3_DATA_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<PWM3_DATA_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<PWM3_DATA_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `PWM3_DATA` writer
-        pub struct W(crate::W<PWM3_DATA_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<PWM3_DATA_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<PWM3_DATA_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<PWM3_DATA_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `PWM3_DATA` reader - PWM3 data holding
-        pub type PWM3_DATA_R = crate::FieldReader<u8, u8>;
-        ///Field `PWM3_DATA` writer - PWM3 data holding
-        pub type PWM3_DATA_W<'a, const O: u8> =
-            crate::FieldWriter<'a, u8, PWM3_DATA_SPEC, u8, u8, 8, O>;
-        impl R {
-            ///Bits 24:31 - PWM3 data holding
-            #[inline(always)]
-            pub fn pwm3_data(&self) -> PWM3_DATA_R {
-                PWM3_DATA_R::new((self.bits >> 24))
-            }
-        }
-        impl W {
-            ///Bits 24:31 - PWM3 data holding
-            #[inline(always)]
-            #[must_use]
-            pub fn pwm3_data(&mut self) -> PWM3_DATA_W<24> {
-                PWM3_DATA_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///PWM3 data holding
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [pwm3_data](index.html) module
-        pub struct PWM3_DATA_SPEC;
-        impl crate::RegisterSpec for PWM3_DATA_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [pwm3_data::R](R) reader structure
-        impl crate::Readable for PWM3_DATA_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [pwm3_data::W](W) writer structure
-        impl crate::Writable for PWM3_DATA_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets PWM3_DATA to value 0
-        impl crate::Resettable for PWM3_DATA_SPEC {
+        ///`reset()` method sets PWM_DATA to value 0
+        impl crate::Resettable for PWM_DATA_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
