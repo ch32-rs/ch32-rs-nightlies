@@ -16,11 +16,12 @@ compile the device(s) you want. To use, in your Cargo.toml:
 ```toml
 [dependencies.ch56x]
 version = "0.1.6"
-features = ["ch56x"]
-```
+features = ["ch56x", "critical-section"]
 
-The `rt` feature is enabled by default and brings in support for `riscv-rt`.
-To disable, specify `default-features = false` in `Cargo.toml`.
+[dependencies.riscv]
+version = "0.10.1"
+features = ["critical-section-single-hart"]
+```
 
 In your code:
 

@@ -1,4 +1,4 @@
-//!Peripheral access API for CH32V103XX microcontrollers (generated using svd2rust v0.28.0 ( ))
+//!Peripheral access API for CH32V103 microcontrollers (generated using svd2rust v0.28.0 ( ))
 //!
 //!You can find an overview of the generated API [here].
 //!
