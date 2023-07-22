@@ -1,0 +1,26 @@
+[package]
+edition = "2021"
+name = "ch32x0"
+version = "0.1.6"
+authors = ["Andelf <andelf@gmail.com>", "ch32-rs Contributors"]
+description = "Device support crates for CH32X0 devices"
+repository = "https://github.com/ch32-rs/ch32-rs"
+readme = "README.md"
+keywords = ["wch", "ch32", "svd2rust", "no_std", "embedded"]
+categories = ["embedded", "no-std", "hardware-support"]
+license = "MIT/Apache-2.0"
+
+[dependencies]
+critical-section = { version = "1.0", optional = true }
+riscv = "0.10.1"
+vcell = "0.1.0"
+
+[package.metadata.docs.rs]
+features = ['rt', 'ch32x035', 'critical-section']
+default-target = "riscv32imac-unknown-none-elf"
+targets = []
+
+[features]
+default = []
+rt = []
+ch32x035 = []
