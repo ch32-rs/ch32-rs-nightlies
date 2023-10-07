@@ -1116,38 +1116,40 @@ pub mod sys {
                 W(writer)
             }
         }
-        ///Field `TKEY_WAKE_EN` reader - RWA, Touch button wake-up enable: 1: On; 0: Close. Each digit corresponds to a button.
-        pub type TKEY_WAKE_EN_R = crate::FieldReader;
-        ///Field `TKEY_WAKE_EN` writer - RWA, Touch button wake-up enable: 1: On; 0: Close. Each digit corresponds to a button.
-        pub type TKEY_WAKE_EN_W<'a, const O: u8> = crate::FieldWriter<'a, SLEEP_CTRL2_SPEC, 6, O>;
-        ///Field `TKEY_WAKE_EN` reader - RWA, Touch button wake-up enable: 1: On; 0: Close. Each digit corresponds to a button
-        pub type TKEY_WAKE_EN_R = crate::FieldReader;
-        ///Field `TKEY_WAKE_EN` writer - RWA, Touch button wake-up enable: 1: On; 0: Close. Each digit corresponds to a button
-        pub type TKEY_WAKE_EN_W<'a, const O: u8> = crate::FieldWriter<'a, SLEEP_CTRL2_SPEC, 6, O>;
+        ///Field `TKEY_WAKE_EN_5_0` reader - RWA, Touch button wake-up enable: 1: On; 0: Close. Each digit corresponds to a button.
+        pub type TKEY_WAKE_EN_5_0_R = crate::FieldReader;
+        ///Field `TKEY_WAKE_EN_5_0` writer - RWA, Touch button wake-up enable: 1: On; 0: Close. Each digit corresponds to a button.
+        pub type TKEY_WAKE_EN_5_0_W<'a, const O: u8> =
+            crate::FieldWriter<'a, SLEEP_CTRL2_SPEC, 6, O>;
+        ///Field `TKEY_WAKE_EN_13_8` reader - RWA, Touch button wake-up enable: 1: On; 0: Close. Each digit corresponds to a button
+        pub type TKEY_WAKE_EN_13_8_R = crate::FieldReader;
+        ///Field `TKEY_WAKE_EN_13_8` writer - RWA, Touch button wake-up enable: 1: On; 0: Close. Each digit corresponds to a button
+        pub type TKEY_WAKE_EN_13_8_W<'a, const O: u8> =
+            crate::FieldWriter<'a, SLEEP_CTRL2_SPEC, 6, O>;
         impl R {
             ///Bits 0:5 - RWA, Touch button wake-up enable: 1: On; 0: Close. Each digit corresponds to a button.
             #[inline(always)]
-            pub fn tkey_wake_en(&self) -> TKEY_WAKE_EN_R {
-                TKEY_WAKE_EN_R::new((self.bits & 0x3f) as u8)
+            pub fn tkey_wake_en_5_0(&self) -> TKEY_WAKE_EN_5_0_R {
+                TKEY_WAKE_EN_5_0_R::new((self.bits & 0x3f) as u8)
             }
             ///Bits 8:13 - RWA, Touch button wake-up enable: 1: On; 0: Close. Each digit corresponds to a button
             #[inline(always)]
-            pub fn tkey_wake_en(&self) -> TKEY_WAKE_EN_R {
-                TKEY_WAKE_EN_R::new(((self.bits >> 8) & 0x3f) as u8)
+            pub fn tkey_wake_en_13_8(&self) -> TKEY_WAKE_EN_13_8_R {
+                TKEY_WAKE_EN_13_8_R::new(((self.bits >> 8) & 0x3f) as u8)
             }
         }
         impl W {
             ///Bits 0:5 - RWA, Touch button wake-up enable: 1: On; 0: Close. Each digit corresponds to a button.
             #[inline(always)]
             #[must_use]
-            pub fn tkey_wake_en(&mut self) -> TKEY_WAKE_EN_W<0> {
-                TKEY_WAKE_EN_W::new(self)
+            pub fn tkey_wake_en_5_0(&mut self) -> TKEY_WAKE_EN_5_0_W<0> {
+                TKEY_WAKE_EN_5_0_W::new(self)
             }
             ///Bits 8:13 - RWA, Touch button wake-up enable: 1: On; 0: Close. Each digit corresponds to a button
             #[inline(always)]
             #[must_use]
-            pub fn tkey_wake_en(&mut self) -> TKEY_WAKE_EN_W<8> {
-                TKEY_WAKE_EN_W::new(self)
+            pub fn tkey_wake_en_13_8(&mut self) -> TKEY_WAKE_EN_13_8_W<8> {
+                TKEY_WAKE_EN_13_8_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -21154,18 +21156,18 @@ pub mod lcd {
         pub type VLCD_SEL_R = crate::BitReader;
         ///Field `VLCD_SEL` writer - RW, LCD driver voltage selection
         pub type VLCD_SEL_W<'a, const O: u8> = crate::BitWriter<'a, LCD_CMD_SPEC, O>;
-        ///Field `LCD_SEG_EN` reader - RW, Enabling SEG0-SEG7 segments
-        pub type LCD_SEG_EN_R = crate::FieldReader;
-        ///Field `LCD_SEG_EN` writer - RW, Enabling SEG0-SEG7 segments
-        pub type LCD_SEG_EN_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_CMD_SPEC, 8, O>;
-        ///Field `LCD_SEG_EN` reader - RW, Enabling SEG8-SEG15 segments
-        pub type LCD_SEG_EN_R = crate::FieldReader;
-        ///Field `LCD_SEG_EN` writer - RW, Enabling SEG8-SEG15 segments
-        pub type LCD_SEG_EN_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_CMD_SPEC, 8, O>;
-        ///Field `LCD_SEG_EN` reader - RW, Enabling SEG16-SEG19 segments
-        pub type LCD_SEG_EN_R = crate::FieldReader;
-        ///Field `LCD_SEG_EN` writer - RW, Enabling SEG16-SEG19 segments
-        pub type LCD_SEG_EN_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_CMD_SPEC, 4, O>;
+        ///Field `LCD_SEG_0_7_EN` reader - RW, Enabling SEG0-SEG7 segments
+        pub type LCD_SEG_0_7_EN_R = crate::FieldReader;
+        ///Field `LCD_SEG_0_7_EN` writer - RW, Enabling SEG0-SEG7 segments
+        pub type LCD_SEG_0_7_EN_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_CMD_SPEC, 8, O>;
+        ///Field `LCD_SEG_8_15_EN` reader - RW, Enabling SEG8-SEG15 segments
+        pub type LCD_SEG_8_15_EN_R = crate::FieldReader;
+        ///Field `LCD_SEG_8_15_EN` writer - RW, Enabling SEG8-SEG15 segments
+        pub type LCD_SEG_8_15_EN_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_CMD_SPEC, 8, O>;
+        ///Field `LCD_SEG_16_19_EN` reader - RW, Enabling SEG16-SEG19 segments
+        pub type LCD_SEG_16_19_EN_R = crate::FieldReader;
+        ///Field `LCD_SEG_16_19_EN` writer - RW, Enabling SEG16-SEG19 segments
+        pub type LCD_SEG_16_19_EN_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_CMD_SPEC, 4, O>;
         impl R {
             ///Bit 0 - RW, System Enable
             #[inline(always)]
@@ -21199,18 +21201,18 @@ pub mod lcd {
             }
             ///Bits 8:15 - RW, Enabling SEG0-SEG7 segments
             #[inline(always)]
-            pub fn lcd_seg_en(&self) -> LCD_SEG_EN_R {
-                LCD_SEG_EN_R::new(((self.bits >> 8) & 0xff) as u8)
+            pub fn lcd_seg_0_7_en(&self) -> LCD_SEG_0_7_EN_R {
+                LCD_SEG_0_7_EN_R::new(((self.bits >> 8) & 0xff) as u8)
             }
             ///Bits 16:23 - RW, Enabling SEG8-SEG15 segments
             #[inline(always)]
-            pub fn lcd_seg_en(&self) -> LCD_SEG_EN_R {
-                LCD_SEG_EN_R::new(((self.bits >> 16) & 0xff) as u8)
+            pub fn lcd_seg_8_15_en(&self) -> LCD_SEG_8_15_EN_R {
+                LCD_SEG_8_15_EN_R::new(((self.bits >> 16) & 0xff) as u8)
             }
             ///Bits 24:27 - RW, Enabling SEG16-SEG19 segments
             #[inline(always)]
-            pub fn lcd_seg_en(&self) -> LCD_SEG_EN_R {
-                LCD_SEG_EN_R::new(((self.bits >> 24) & 0x0f) as u8)
+            pub fn lcd_seg_16_19_en(&self) -> LCD_SEG_16_19_EN_R {
+                LCD_SEG_16_19_EN_R::new(((self.bits >> 24) & 0x0f) as u8)
             }
         }
         impl W {
@@ -21253,20 +21255,20 @@ pub mod lcd {
             ///Bits 8:15 - RW, Enabling SEG0-SEG7 segments
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg_en(&mut self) -> LCD_SEG_EN_W<8> {
-                LCD_SEG_EN_W::new(self)
+            pub fn lcd_seg_0_7_en(&mut self) -> LCD_SEG_0_7_EN_W<8> {
+                LCD_SEG_0_7_EN_W::new(self)
             }
             ///Bits 16:23 - RW, Enabling SEG8-SEG15 segments
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg_en(&mut self) -> LCD_SEG_EN_W<16> {
-                LCD_SEG_EN_W::new(self)
+            pub fn lcd_seg_8_15_en(&mut self) -> LCD_SEG_8_15_EN_W<16> {
+                LCD_SEG_8_15_EN_W::new(self)
             }
             ///Bits 24:27 - RW, Enabling SEG16-SEG19 segments
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg_en(&mut self) -> LCD_SEG_EN_W<24> {
-                LCD_SEG_EN_W::new(self)
+            pub fn lcd_seg_16_19_en(&mut self) -> LCD_SEG_16_19_EN_W<24> {
+                LCD_SEG_16_19_EN_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
