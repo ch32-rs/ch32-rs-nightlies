@@ -75170,40 +75170,10 @@ pub mod systick {
         pub ctlr: CTLR,
         ///0x04 - System count status register
         pub sr: SR,
-        _reserved_2_cnt: [u8; 0x08],
-        _reserved_3_cmpr: [u8; 0x08],
-    }
-    impl RegisterBlock {
-        ///0x08 - System counter low register
-        #[inline(always)]
-        pub const fn cntl(&self) -> &CNTL {
-            unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
-        }
         ///0x08..0x10 - System counter register
-        #[inline(always)]
-        pub const fn cnt(&self) -> &CNT {
-            unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
-        }
-        ///0x0c - System counter high register
-        #[inline(always)]
-        pub const fn cnth(&self) -> &CNTH {
-            unsafe { &*(self as *const Self).cast::<u8>().add(12usize).cast() }
-        }
-        ///0x10 - System count compare low register
-        #[inline(always)]
-        pub const fn cmplr(&self) -> &CMPLR {
-            unsafe { &*(self as *const Self).cast::<u8>().add(16usize).cast() }
-        }
+        pub cnt: CNT,
         ///0x10..0x18 - System count compare register
-        #[inline(always)]
-        pub const fn cmpr(&self) -> &CMPR {
-            unsafe { &*(self as *const Self).cast::<u8>().add(16usize).cast() }
-        }
-        ///0x14 - System count compare high register
-        #[inline(always)]
-        pub const fn cmphr(&self) -> &CMPHR {
-            unsafe { &*(self as *const Self).cast::<u8>().add(20usize).cast() }
-        }
+        pub cmp: CMP,
     }
     ///CTLR (rw) register accessor: an alias for `Reg<CTLR_SPEC>`
     pub type CTLR = crate::Reg<ctlr::CTLR_SPEC>;
@@ -75254,17 +75224,113 @@ pub mod systick {
         ///Field `STIE` writer - Counter interrupt enable control bit
         pub type STIE_W<'a, const O: u8> = crate::BitWriter<'a, CTLR_SPEC, O>;
         ///Field `STCLK` reader - Counter system clock sourse selection bit
-        pub type STCLK_R = crate::BitReader;
+        pub type STCLK_R = crate::BitReader<STCLK_A>;
+        ///Counter system clock sourse selection bit
+        ///
+        ///Value on reset: 0
+        #[derive(Clone, Copy, Debug, PartialEq, Eq)]
+        pub enum STCLK_A {
+            ///0: HCLK/8
+            HclkDiv8 = 0,
+            ///1: HCLK
+            Hclk = 1,
+        }
+        impl From<STCLK_A> for bool {
+            #[inline(always)]
+            fn from(variant: STCLK_A) -> Self {
+                variant as u8 != 0
+            }
+        }
+        impl STCLK_R {
+            ///Get enumerated values variant
+            #[inline(always)]
+            pub fn variant(&self) -> STCLK_A {
+                match self.bits {
+                    false => STCLK_A::HclkDiv8,
+                    true => STCLK_A::Hclk,
+                }
+            }
+            ///Checks if the value of the field is `HclkDiv8`
+            #[inline(always)]
+            pub fn is_hclk_div8(&self) -> bool {
+                *self == STCLK_A::HclkDiv8
+            }
+            ///Checks if the value of the field is `Hclk`
+            #[inline(always)]
+            pub fn is_hclk(&self) -> bool {
+                *self == STCLK_A::Hclk
+            }
+        }
         ///Field `STCLK` writer - Counter system clock sourse selection bit
-        pub type STCLK_W<'a, const O: u8> = crate::BitWriter<'a, CTLR_SPEC, O>;
+        pub type STCLK_W<'a, const O: u8> = crate::BitWriter<'a, CTLR_SPEC, O, STCLK_A>;
+        impl<'a, const O: u8> STCLK_W<'a, O> {
+            ///HCLK/8
+            #[inline(always)]
+            pub fn hclk_div8(self) -> &'a mut W {
+                self.variant(STCLK_A::HclkDiv8)
+            }
+            ///HCLK
+            #[inline(always)]
+            pub fn hclk(self) -> &'a mut W {
+                self.variant(STCLK_A::Hclk)
+            }
+        }
         ///Field `STRE` reader - Auto reload count enable bit
         pub type STRE_R = crate::BitReader;
         ///Field `STRE` writer - Auto reload count enable bit
         pub type STRE_W<'a, const O: u8> = crate::BitWriter<'a, CTLR_SPEC, O>;
         ///Field `MODE` reader - Counter mode
-        pub type MODE_R = crate::BitReader;
+        pub type MODE_R = crate::BitReader<MODE_A>;
+        ///Counter mode
+        ///
+        ///Value on reset: 0
+        #[derive(Clone, Copy, Debug, PartialEq, Eq)]
+        pub enum MODE_A {
+            ///0: Upcount
+            Upcount = 0,
+            ///1: Downcount
+            Downcount = 1,
+        }
+        impl From<MODE_A> for bool {
+            #[inline(always)]
+            fn from(variant: MODE_A) -> Self {
+                variant as u8 != 0
+            }
+        }
+        impl MODE_R {
+            ///Get enumerated values variant
+            #[inline(always)]
+            pub fn variant(&self) -> MODE_A {
+                match self.bits {
+                    false => MODE_A::Upcount,
+                    true => MODE_A::Downcount,
+                }
+            }
+            ///Checks if the value of the field is `Upcount`
+            #[inline(always)]
+            pub fn is_upcount(&self) -> bool {
+                *self == MODE_A::Upcount
+            }
+            ///Checks if the value of the field is `Downcount`
+            #[inline(always)]
+            pub fn is_downcount(&self) -> bool {
+                *self == MODE_A::Downcount
+            }
+        }
         ///Field `MODE` writer - Counter mode
-        pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, CTLR_SPEC, O>;
+        pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, CTLR_SPEC, O, MODE_A>;
+        impl<'a, const O: u8> MODE_W<'a, O> {
+            ///Upcount
+            #[inline(always)]
+            pub fn upcount(self) -> &'a mut W {
+                self.variant(MODE_A::Upcount)
+            }
+            ///Downcount
+            #[inline(always)]
+            pub fn downcount(self) -> &'a mut W {
+                self.variant(MODE_A::Downcount)
+            }
+        }
         ///Field `INIT` reader - Counter initial value update
         pub type INIT_R = crate::BitReader;
         ///Field `INIT` writer - Counter initial value update
@@ -75513,24 +75579,17 @@ pub mod systick {
                 W(writer)
             }
         }
-        ///Field `CNT` reader - System counter register
-        pub type CNT_R = crate::FieldReader<u64>;
-        ///Field `CNT` writer - System counter register
-        pub type CNT_W<'a, const O: u8> = crate::FieldWriter<'a, CNT_SPEC, 64, O, u64>;
-        impl R {
-            ///Bits 0:63 - System counter register
-            #[inline(always)]
-            pub fn cnt(&self) -> CNT_R {
-                CNT_R::new(self.bits)
+        impl core::fmt::Debug for R {
+            fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+                write!(f, "{}", self.bits())
+            }
+        }
+        impl core::fmt::Debug for crate::generic::Reg<CNT_SPEC> {
+            fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+                self.read().fmt(f)
             }
         }
         impl W {
-            ///Bits 0:63 - System counter register
-            #[inline(always)]
-            #[must_use]
-            pub fn cnt(&mut self) -> CNT_W<0> {
-                CNT_W::new(self)
-            }
             ///Writes raw bits to the register.
             #[inline(always)]
             pub unsafe fn bits(&mut self, bits: u64) -> &mut Self {
@@ -75562,207 +75621,29 @@ pub mod systick {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///CNTL (rw) register accessor: an alias for `Reg<CNTL_SPEC>`
-    pub type CNTL = crate::Reg<cntl::CNTL_SPEC>;
-    ///System counter low register
-    pub mod cntl {
-        ///Register `CNTL` reader
-        pub struct R(crate::R<CNTL_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<CNTL_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<CNTL_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<CNTL_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `CNTL` writer
-        pub struct W(crate::W<CNTL_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<CNTL_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<CNTL_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<CNTL_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `CNTL` reader - System counter low register
-        pub type CNTL_R = crate::FieldReader<u32>;
-        ///Field `CNTL` writer - System counter low register
-        pub type CNTL_W<'a, const O: u8> = crate::FieldWriter<'a, CNTL_SPEC, 32, O, u32>;
-        impl R {
-            ///Bits 0:31 - System counter low register
-            #[inline(always)]
-            pub fn cntl(&self) -> CNTL_R {
-                CNTL_R::new(self.bits)
-            }
-        }
-        impl W {
-            ///Bits 0:31 - System counter low register
-            #[inline(always)]
-            #[must_use]
-            pub fn cntl(&mut self) -> CNTL_W<0> {
-                CNTL_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///System counter low register
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [cntl](index.html) module
-        pub struct CNTL_SPEC;
-        impl crate::RegisterSpec for CNTL_SPEC {
-            type Ux = u32;
-        }
-        ///`read()` method returns [cntl::R](R) reader structure
-        impl crate::Readable for CNTL_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [cntl::W](W) writer structure
-        impl crate::Writable for CNTL_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets CNTL to value 0
-        impl crate::Resettable for CNTL_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///CNTH (rw) register accessor: an alias for `Reg<CNTH_SPEC>`
-    pub type CNTH = crate::Reg<cnth::CNTH_SPEC>;
-    ///System counter high register
-    pub mod cnth {
-        ///Register `CNTH` reader
-        pub struct R(crate::R<CNTH_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<CNTH_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<CNTH_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<CNTH_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `CNTH` writer
-        pub struct W(crate::W<CNTH_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<CNTH_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<CNTH_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<CNTH_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `CNTH` reader - System counter high register
-        pub type CNTH_R = crate::FieldReader<u32>;
-        ///Field `CNTH` writer - System counter high register
-        pub type CNTH_W<'a, const O: u8> = crate::FieldWriter<'a, CNTH_SPEC, 32, O, u32>;
-        impl R {
-            ///Bits 0:31 - System counter high register
-            #[inline(always)]
-            pub fn cnth(&self) -> CNTH_R {
-                CNTH_R::new(self.bits)
-            }
-        }
-        impl W {
-            ///Bits 0:31 - System counter high register
-            #[inline(always)]
-            #[must_use]
-            pub fn cnth(&mut self) -> CNTH_W<0> {
-                CNTH_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///System counter high register
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [cnth](index.html) module
-        pub struct CNTH_SPEC;
-        impl crate::RegisterSpec for CNTH_SPEC {
-            type Ux = u32;
-        }
-        ///`read()` method returns [cnth::R](R) reader structure
-        impl crate::Readable for CNTH_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [cnth::W](W) writer structure
-        impl crate::Writable for CNTH_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets CNTH to value 0
-        impl crate::Resettable for CNTH_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///CMPR (rw) register accessor: an alias for `Reg<CMPR_SPEC>`
-    pub type CMPR = crate::Reg<cmpr::CMPR_SPEC>;
+    ///CMP (rw) register accessor: an alias for `Reg<CMP_SPEC>`
+    pub type CMP = crate::Reg<cmp::CMP_SPEC>;
     ///System count compare register
-    pub mod cmpr {
-        ///Register `CMPR` reader
-        pub struct R(crate::R<CMPR_SPEC>);
+    pub mod cmp {
+        ///Register `CMP` reader
+        pub struct R(crate::R<CMP_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<CMPR_SPEC>;
+            type Target = crate::R<CMP_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<CMPR_SPEC>> for R {
+        impl From<crate::R<CMP_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<CMPR_SPEC>) -> Self {
+            fn from(reader: crate::R<CMP_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `CMPR` writer
-        pub struct W(crate::W<CMPR_SPEC>);
+        ///Register `CMP` writer
+        pub struct W(crate::W<CMP_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<CMPR_SPEC>;
+            type Target = crate::W<CMP_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -75774,30 +75655,23 @@ pub mod systick {
                 &mut self.0
             }
         }
-        impl From<crate::W<CMPR_SPEC>> for W {
+        impl From<crate::W<CMP_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<CMPR_SPEC>) -> Self {
+            fn from(writer: crate::W<CMP_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `CMP` reader - System count compare register
-        pub type CMP_R = crate::FieldReader<u64>;
-        ///Field `CMP` writer - System count compare register
-        pub type CMP_W<'a, const O: u8> = crate::FieldWriter<'a, CMPR_SPEC, 64, O, u64>;
-        impl R {
-            ///Bits 0:63 - System count compare register
-            #[inline(always)]
-            pub fn cmp(&self) -> CMP_R {
-                CMP_R::new(self.bits)
+        impl core::fmt::Debug for R {
+            fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+                write!(f, "{}", self.bits())
+            }
+        }
+        impl core::fmt::Debug for crate::generic::Reg<CMP_SPEC> {
+            fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+                self.read().fmt(f)
             }
         }
         impl W {
-            ///Bits 0:63 - System count compare register
-            #[inline(always)]
-            #[must_use]
-            pub fn cmp(&mut self) -> CMP_W<0> {
-                CMP_W::new(self)
-            }
             ///Writes raw bits to the register.
             #[inline(always)]
             pub unsafe fn bits(&mut self, bits: u64) -> &mut Self {
@@ -75809,201 +75683,23 @@ pub mod systick {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [cmpr](index.html) module
-        pub struct CMPR_SPEC;
-        impl crate::RegisterSpec for CMPR_SPEC {
+        ///For information about available fields see [cmp](index.html) module
+        pub struct CMP_SPEC;
+        impl crate::RegisterSpec for CMP_SPEC {
             type Ux = u64;
         }
-        ///`read()` method returns [cmpr::R](R) reader structure
-        impl crate::Readable for CMPR_SPEC {
+        ///`read()` method returns [cmp::R](R) reader structure
+        impl crate::Readable for CMP_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [cmpr::W](W) writer structure
-        impl crate::Writable for CMPR_SPEC {
+        ///`write(|w| ..)` method takes [cmp::W](W) writer structure
+        impl crate::Writable for CMP_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets CMPR to value 0
-        impl crate::Resettable for CMPR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///CMPLR (rw) register accessor: an alias for `Reg<CMPLR_SPEC>`
-    pub type CMPLR = crate::Reg<cmplr::CMPLR_SPEC>;
-    ///System count compare low register
-    pub mod cmplr {
-        ///Register `CMPLR` reader
-        pub struct R(crate::R<CMPLR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<CMPLR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<CMPLR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<CMPLR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `CMPLR` writer
-        pub struct W(crate::W<CMPLR_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<CMPLR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<CMPLR_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<CMPLR_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `CMPL` reader - System count compare low register
-        pub type CMPL_R = crate::FieldReader<u32>;
-        ///Field `CMPL` writer - System count compare low register
-        pub type CMPL_W<'a, const O: u8> = crate::FieldWriter<'a, CMPLR_SPEC, 32, O, u32>;
-        impl R {
-            ///Bits 0:31 - System count compare low register
-            #[inline(always)]
-            pub fn cmpl(&self) -> CMPL_R {
-                CMPL_R::new(self.bits)
-            }
-        }
-        impl W {
-            ///Bits 0:31 - System count compare low register
-            #[inline(always)]
-            #[must_use]
-            pub fn cmpl(&mut self) -> CMPL_W<0> {
-                CMPL_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///System count compare low register
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [cmplr](index.html) module
-        pub struct CMPLR_SPEC;
-        impl crate::RegisterSpec for CMPLR_SPEC {
-            type Ux = u32;
-        }
-        ///`read()` method returns [cmplr::R](R) reader structure
-        impl crate::Readable for CMPLR_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [cmplr::W](W) writer structure
-        impl crate::Writable for CMPLR_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets CMPLR to value 0
-        impl crate::Resettable for CMPLR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///CMPHR (rw) register accessor: an alias for `Reg<CMPHR_SPEC>`
-    pub type CMPHR = crate::Reg<cmphr::CMPHR_SPEC>;
-    ///System count compare high register
-    pub mod cmphr {
-        ///Register `CMPHR` reader
-        pub struct R(crate::R<CMPHR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<CMPHR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<CMPHR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<CMPHR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `CMPHR` writer
-        pub struct W(crate::W<CMPHR_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<CMPHR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<CMPHR_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<CMPHR_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `CMPH` reader - System count compare high register
-        pub type CMPH_R = crate::FieldReader<u32>;
-        ///Field `CMPH` writer - System count compare high register
-        pub type CMPH_W<'a, const O: u8> = crate::FieldWriter<'a, CMPHR_SPEC, 32, O, u32>;
-        impl R {
-            ///Bits 0:31 - System count compare high register
-            #[inline(always)]
-            pub fn cmph(&self) -> CMPH_R {
-                CMPH_R::new(self.bits)
-            }
-        }
-        impl W {
-            ///Bits 0:31 - System count compare high register
-            #[inline(always)]
-            #[must_use]
-            pub fn cmph(&mut self) -> CMPH_W<0> {
-                CMPH_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///System count compare high register
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [cmphr](index.html) module
-        pub struct CMPHR_SPEC;
-        impl crate::RegisterSpec for CMPHR_SPEC {
-            type Ux = u32;
-        }
-        ///`read()` method returns [cmphr::R](R) reader structure
-        impl crate::Readable for CMPHR_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [cmphr::W](W) writer structure
-        impl crate::Writable for CMPHR_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets CMPHR to value 0
-        impl crate::Resettable for CMPHR_SPEC {
+        ///`reset()` method sets CMP to value 0
+        impl crate::Resettable for CMP_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }

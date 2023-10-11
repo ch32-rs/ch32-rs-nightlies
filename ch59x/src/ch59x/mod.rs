@@ -2747,42 +2747,42 @@ pub mod rtc {
     pub struct RegisterBlock {
         _reserved0: [u8; 0x30],
         ///0x30 - RWA, Real time clock
-        pub rtc_flag_ctrl: RTC_FLAG_CTRL,
+        pub flag_ctrl: FLAG_CTRL,
         ///0x31 - RWA, RTC mode control, SAM
-        pub rtc_mode_ctrl: RTC_MODE_CTRL,
+        pub mode_ctrl: MODE_CTRL,
         _reserved2: [u8; 0x02],
         ///0x34 - RWA, RTC trigger value, SAM
-        pub rtc_trig: RTC_TRIG,
+        pub trig: TRIG,
         ///0x38 - RO, RTC count based 32KHz
-        pub rtc_cnt_32k: RTC_CNT_32K,
+        pub cnt_32k: CNT_32K,
         ///0x3a - RO, RTC count based 2 second
-        pub rtc_cnt_2s: RTC_CNT_2S,
+        pub cnt_2s: CNT_2S,
         ///0x3c - RO, RTC count based one day, only low 14 bit
-        pub rtc_cnt_day: RTC_CNT_DAY,
+        pub cnt_day: CNT_DAY,
     }
-    ///RTC_FLAG_CTRL (rw) register accessor: an alias for `Reg<RTC_FLAG_CTRL_SPEC>`
-    pub type RTC_FLAG_CTRL = crate::Reg<rtc_flag_ctrl::RTC_FLAG_CTRL_SPEC>;
+    ///FLAG_CTRL (rw) register accessor: an alias for `Reg<FLAG_CTRL_SPEC>`
+    pub type FLAG_CTRL = crate::Reg<flag_ctrl::FLAG_CTRL_SPEC>;
     ///RWA, Real time clock
-    pub mod rtc_flag_ctrl {
-        ///Register `RTC_FLAG_CTRL` reader
-        pub struct R(crate::R<RTC_FLAG_CTRL_SPEC>);
+    pub mod flag_ctrl {
+        ///Register `FLAG_CTRL` reader
+        pub struct R(crate::R<FLAG_CTRL_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<RTC_FLAG_CTRL_SPEC>;
+            type Target = crate::R<FLAG_CTRL_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<RTC_FLAG_CTRL_SPEC>> for R {
+        impl From<crate::R<FLAG_CTRL_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<RTC_FLAG_CTRL_SPEC>) -> Self {
+            fn from(reader: crate::R<FLAG_CTRL_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `RTC_FLAG_CTRL` writer
-        pub struct W(crate::W<RTC_FLAG_CTRL_SPEC>);
+        ///Register `FLAG_CTRL` writer
+        pub struct W(crate::W<FLAG_CTRL_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<RTC_FLAG_CTRL_SPEC>;
+            type Target = crate::W<FLAG_CTRL_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -2794,58 +2794,58 @@ pub mod rtc {
                 &mut self.0
             }
         }
-        impl From<crate::W<RTC_FLAG_CTRL_SPEC>> for W {
+        impl From<crate::W<FLAG_CTRL_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<RTC_FLAG_CTRL_SPEC>) -> Self {
+            fn from(writer: crate::W<FLAG_CTRL_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `RTC_TMR_CLR` reader - RW, set 1 to clear RTC timer action flag, auto clear
-        pub type RTC_TMR_CLR_R = crate::BitReader;
-        ///Field `RTC_TMR_CLR` writer - RW, set 1 to clear RTC timer action flag, auto clear
-        pub type RTC_TMR_CLR_W<'a, const O: u8> = crate::BitWriter<'a, RTC_FLAG_CTRL_SPEC, O>;
-        ///Field `RTC_TRIG_CLR` reader - RW, set 1 to clear RTC trigger action flag, auto clear
-        pub type RTC_TRIG_CLR_R = crate::BitReader;
-        ///Field `RTC_TRIG_CLR` writer - RW, set 1 to clear RTC trigger action flag, auto clear
-        pub type RTC_TRIG_CLR_W<'a, const O: u8> = crate::BitWriter<'a, RTC_FLAG_CTRL_SPEC, O>;
-        ///Field `RTC_TMR_FLAG` reader - RO, RTC timer action flag
-        pub type RTC_TMR_FLAG_R = crate::BitReader;
-        ///Field `RTC_TRIG_FLAG` reader - RO, RTC trigger action flag
-        pub type RTC_TRIG_FLAG_R = crate::BitReader;
+        ///Field `TMR_CLR` reader - RW, set 1 to clear RTC timer action flag, auto clear
+        pub type TMR_CLR_R = crate::BitReader;
+        ///Field `TMR_CLR` writer - RW, set 1 to clear RTC timer action flag, auto clear
+        pub type TMR_CLR_W<'a, const O: u8> = crate::BitWriter<'a, FLAG_CTRL_SPEC, O>;
+        ///Field `TRIG_CLR` reader - RW, set 1 to clear RTC trigger action flag, auto clear
+        pub type TRIG_CLR_R = crate::BitReader;
+        ///Field `TRIG_CLR` writer - RW, set 1 to clear RTC trigger action flag, auto clear
+        pub type TRIG_CLR_W<'a, const O: u8> = crate::BitWriter<'a, FLAG_CTRL_SPEC, O>;
+        ///Field `TMR_FLAG` reader - RO, RTC timer action flag
+        pub type TMR_FLAG_R = crate::BitReader;
+        ///Field `TRIG_FLAG` reader - RO, RTC trigger action flag
+        pub type TRIG_FLAG_R = crate::BitReader;
         impl R {
             ///Bit 4 - RW, set 1 to clear RTC timer action flag, auto clear
             #[inline(always)]
-            pub fn rtc_tmr_clr(&self) -> RTC_TMR_CLR_R {
-                RTC_TMR_CLR_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn tmr_clr(&self) -> TMR_CLR_R {
+                TMR_CLR_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 5 - RW, set 1 to clear RTC trigger action flag, auto clear
             #[inline(always)]
-            pub fn rtc_trig_clr(&self) -> RTC_TRIG_CLR_R {
-                RTC_TRIG_CLR_R::new(((self.bits >> 5) & 1) != 0)
+            pub fn trig_clr(&self) -> TRIG_CLR_R {
+                TRIG_CLR_R::new(((self.bits >> 5) & 1) != 0)
             }
             ///Bit 6 - RO, RTC timer action flag
             #[inline(always)]
-            pub fn rtc_tmr_flag(&self) -> RTC_TMR_FLAG_R {
-                RTC_TMR_FLAG_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn tmr_flag(&self) -> TMR_FLAG_R {
+                TMR_FLAG_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - RO, RTC trigger action flag
             #[inline(always)]
-            pub fn rtc_trig_flag(&self) -> RTC_TRIG_FLAG_R {
-                RTC_TRIG_FLAG_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn trig_flag(&self) -> TRIG_FLAG_R {
+                TRIG_FLAG_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         impl W {
             ///Bit 4 - RW, set 1 to clear RTC timer action flag, auto clear
             #[inline(always)]
             #[must_use]
-            pub fn rtc_tmr_clr(&mut self) -> RTC_TMR_CLR_W<4> {
-                RTC_TMR_CLR_W::new(self)
+            pub fn tmr_clr(&mut self) -> TMR_CLR_W<4> {
+                TMR_CLR_W::new(self)
             }
             ///Bit 5 - RW, set 1 to clear RTC trigger action flag, auto clear
             #[inline(always)]
             #[must_use]
-            pub fn rtc_trig_clr(&mut self) -> RTC_TRIG_CLR_W<5> {
-                RTC_TRIG_CLR_W::new(self)
+            pub fn trig_clr(&mut self) -> TRIG_CLR_W<5> {
+                TRIG_CLR_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -2858,49 +2858,49 @@ pub mod rtc {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [rtc_flag_ctrl](index.html) module
-        pub struct RTC_FLAG_CTRL_SPEC;
-        impl crate::RegisterSpec for RTC_FLAG_CTRL_SPEC {
+        ///For information about available fields see [flag_ctrl](index.html) module
+        pub struct FLAG_CTRL_SPEC;
+        impl crate::RegisterSpec for FLAG_CTRL_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [rtc_flag_ctrl::R](R) reader structure
-        impl crate::Readable for RTC_FLAG_CTRL_SPEC {
+        ///`read()` method returns [flag_ctrl::R](R) reader structure
+        impl crate::Readable for FLAG_CTRL_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [rtc_flag_ctrl::W](W) writer structure
-        impl crate::Writable for RTC_FLAG_CTRL_SPEC {
+        ///`write(|w| ..)` method takes [flag_ctrl::W](W) writer structure
+        impl crate::Writable for FLAG_CTRL_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets RTC_FLAG_CTRL to value 0x30
-        impl crate::Resettable for RTC_FLAG_CTRL_SPEC {
+        ///`reset()` method sets FLAG_CTRL to value 0x30
+        impl crate::Resettable for FLAG_CTRL_SPEC {
             const RESET_VALUE: Self::Ux = 0x30;
         }
     }
-    ///RTC_MODE_CTRL (rw) register accessor: an alias for `Reg<RTC_MODE_CTRL_SPEC>`
-    pub type RTC_MODE_CTRL = crate::Reg<rtc_mode_ctrl::RTC_MODE_CTRL_SPEC>;
+    ///MODE_CTRL (rw) register accessor: an alias for `Reg<MODE_CTRL_SPEC>`
+    pub type MODE_CTRL = crate::Reg<mode_ctrl::MODE_CTRL_SPEC>;
     ///RWA, RTC mode control, SAM
-    pub mod rtc_mode_ctrl {
-        ///Register `RTC_MODE_CTRL` reader
-        pub struct R(crate::R<RTC_MODE_CTRL_SPEC>);
+    pub mod mode_ctrl {
+        ///Register `MODE_CTRL` reader
+        pub struct R(crate::R<MODE_CTRL_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<RTC_MODE_CTRL_SPEC>;
+            type Target = crate::R<MODE_CTRL_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<RTC_MODE_CTRL_SPEC>> for R {
+        impl From<crate::R<MODE_CTRL_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<RTC_MODE_CTRL_SPEC>) -> Self {
+            fn from(reader: crate::R<MODE_CTRL_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `RTC_MODE_CTRL` writer
-        pub struct W(crate::W<RTC_MODE_CTRL_SPEC>);
+        ///Register `MODE_CTRL` writer
+        pub struct W(crate::W<MODE_CTRL_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<RTC_MODE_CTRL_SPEC>;
+            type Target = crate::W<MODE_CTRL_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -2912,104 +2912,104 @@ pub mod rtc {
                 &mut self.0
             }
         }
-        impl From<crate::W<RTC_MODE_CTRL_SPEC>> for W {
+        impl From<crate::W<MODE_CTRL_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<RTC_MODE_CTRL_SPEC>) -> Self {
+            fn from(writer: crate::W<MODE_CTRL_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `RTC_TMR_MODE` reader - RWA, RTC timer mode: 000=0.125S, 001=0.25S, 010=0.5S, 011=1S, 100=2S, 101=4S, 110=8S, 111=16S
-        pub type RTC_TMR_MODE_R = crate::FieldReader;
-        ///Field `RTC_TMR_MODE` writer - RWA, RTC timer mode: 000=0.125S, 001=0.25S, 010=0.5S, 011=1S, 100=2S, 101=4S, 110=8S, 111=16S
-        pub type RTC_TMR_MODE_W<'a, const O: u8> = crate::FieldWriter<'a, RTC_MODE_CTRL_SPEC, 3, O>;
-        ///Field `RTC_IGNORE_B0` reader - RWA, force ignore bit0 for trigger mode: 0=compare bit0, 1=ignore bit0
-        pub type RTC_IGNORE_B0_R = crate::BitReader;
-        ///Field `RTC_IGNORE_B0` writer - RWA, force ignore bit0 for trigger mode: 0=compare bit0, 1=ignore bit0
-        pub type RTC_IGNORE_B0_W<'a, const O: u8> = crate::BitWriter<'a, RTC_MODE_CTRL_SPEC, O>;
-        ///Field `RTC_TMR_EN` reader - RWA, RTC timer mode enable
-        pub type RTC_TMR_EN_R = crate::BitReader;
-        ///Field `RTC_TMR_EN` writer - RWA, RTC timer mode enable
-        pub type RTC_TMR_EN_W<'a, const O: u8> = crate::BitWriter<'a, RTC_MODE_CTRL_SPEC, O>;
-        ///Field `RTC_TRIG_EN` reader - RWA, RTC trigger mode enable
-        pub type RTC_TRIG_EN_R = crate::BitReader;
-        ///Field `RTC_TRIG_EN` writer - RWA, RTC trigger mode enable
-        pub type RTC_TRIG_EN_W<'a, const O: u8> = crate::BitWriter<'a, RTC_MODE_CTRL_SPEC, O>;
-        ///Field `RTC_LOAD_LO` reader - RWA, set 1 to load RTC count low word R32_RTC_CNT_32K, auto clear after loaded
-        pub type RTC_LOAD_LO_R = crate::BitReader;
-        ///Field `RTC_LOAD_LO` writer - RWA, set 1 to load RTC count low word R32_RTC_CNT_32K, auto clear after loaded
-        pub type RTC_LOAD_LO_W<'a, const O: u8> = crate::BitWriter<'a, RTC_MODE_CTRL_SPEC, O>;
-        ///Field `RTC_LOAD_HI` reader - RWA, set 1 to load RTC count high word R32_RTC_CNT_DAY, auto clear after loaded
-        pub type RTC_LOAD_HI_R = crate::BitReader;
-        ///Field `RTC_LOAD_HI` writer - RWA, set 1 to load RTC count high word R32_RTC_CNT_DAY, auto clear after loaded
-        pub type RTC_LOAD_HI_W<'a, const O: u8> = crate::BitWriter<'a, RTC_MODE_CTRL_SPEC, O>;
+        ///Field `TMR_MODE` reader - RWA, RTC timer mode: 000=0.125S, 001=0.25S, 010=0.5S, 011=1S, 100=2S, 101=4S, 110=8S, 111=16S
+        pub type TMR_MODE_R = crate::FieldReader;
+        ///Field `TMR_MODE` writer - RWA, RTC timer mode: 000=0.125S, 001=0.25S, 010=0.5S, 011=1S, 100=2S, 101=4S, 110=8S, 111=16S
+        pub type TMR_MODE_W<'a, const O: u8> = crate::FieldWriter<'a, MODE_CTRL_SPEC, 3, O>;
+        ///Field `IGNORE_B0` reader - RWA, force ignore bit0 for trigger mode: 0=compare bit0, 1=ignore bit0
+        pub type IGNORE_B0_R = crate::BitReader;
+        ///Field `IGNORE_B0` writer - RWA, force ignore bit0 for trigger mode: 0=compare bit0, 1=ignore bit0
+        pub type IGNORE_B0_W<'a, const O: u8> = crate::BitWriter<'a, MODE_CTRL_SPEC, O>;
+        ///Field `TMR_EN` reader - RWA, RTC timer mode enable
+        pub type TMR_EN_R = crate::BitReader;
+        ///Field `TMR_EN` writer - RWA, RTC timer mode enable
+        pub type TMR_EN_W<'a, const O: u8> = crate::BitWriter<'a, MODE_CTRL_SPEC, O>;
+        ///Field `TRIG_EN` reader - RWA, RTC trigger mode enable
+        pub type TRIG_EN_R = crate::BitReader;
+        ///Field `TRIG_EN` writer - RWA, RTC trigger mode enable
+        pub type TRIG_EN_W<'a, const O: u8> = crate::BitWriter<'a, MODE_CTRL_SPEC, O>;
+        ///Field `LOAD_LO` reader - RWA, set 1 to load RTC count low word R32_RTC_CNT_32K, auto clear after loaded
+        pub type LOAD_LO_R = crate::BitReader;
+        ///Field `LOAD_LO` writer - RWA, set 1 to load RTC count low word R32_RTC_CNT_32K, auto clear after loaded
+        pub type LOAD_LO_W<'a, const O: u8> = crate::BitWriter<'a, MODE_CTRL_SPEC, O>;
+        ///Field `LOAD_HI` reader - RWA, set 1 to load RTC count high word R32_RTC_CNT_DAY, auto clear after loaded
+        pub type LOAD_HI_R = crate::BitReader;
+        ///Field `LOAD_HI` writer - RWA, set 1 to load RTC count high word R32_RTC_CNT_DAY, auto clear after loaded
+        pub type LOAD_HI_W<'a, const O: u8> = crate::BitWriter<'a, MODE_CTRL_SPEC, O>;
         impl R {
             ///Bits 0:2 - RWA, RTC timer mode: 000=0.125S, 001=0.25S, 010=0.5S, 011=1S, 100=2S, 101=4S, 110=8S, 111=16S
             #[inline(always)]
-            pub fn rtc_tmr_mode(&self) -> RTC_TMR_MODE_R {
-                RTC_TMR_MODE_R::new(self.bits & 7)
+            pub fn tmr_mode(&self) -> TMR_MODE_R {
+                TMR_MODE_R::new(self.bits & 7)
             }
             ///Bit 3 - RWA, force ignore bit0 for trigger mode: 0=compare bit0, 1=ignore bit0
             #[inline(always)]
-            pub fn rtc_ignore_b0(&self) -> RTC_IGNORE_B0_R {
-                RTC_IGNORE_B0_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn ignore_b0(&self) -> IGNORE_B0_R {
+                IGNORE_B0_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RWA, RTC timer mode enable
             #[inline(always)]
-            pub fn rtc_tmr_en(&self) -> RTC_TMR_EN_R {
-                RTC_TMR_EN_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn tmr_en(&self) -> TMR_EN_R {
+                TMR_EN_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 5 - RWA, RTC trigger mode enable
             #[inline(always)]
-            pub fn rtc_trig_en(&self) -> RTC_TRIG_EN_R {
-                RTC_TRIG_EN_R::new(((self.bits >> 5) & 1) != 0)
+            pub fn trig_en(&self) -> TRIG_EN_R {
+                TRIG_EN_R::new(((self.bits >> 5) & 1) != 0)
             }
             ///Bit 6 - RWA, set 1 to load RTC count low word R32_RTC_CNT_32K, auto clear after loaded
             #[inline(always)]
-            pub fn rtc_load_lo(&self) -> RTC_LOAD_LO_R {
-                RTC_LOAD_LO_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn load_lo(&self) -> LOAD_LO_R {
+                LOAD_LO_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - RWA, set 1 to load RTC count high word R32_RTC_CNT_DAY, auto clear after loaded
             #[inline(always)]
-            pub fn rtc_load_hi(&self) -> RTC_LOAD_HI_R {
-                RTC_LOAD_HI_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn load_hi(&self) -> LOAD_HI_R {
+                LOAD_HI_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         impl W {
             ///Bits 0:2 - RWA, RTC timer mode: 000=0.125S, 001=0.25S, 010=0.5S, 011=1S, 100=2S, 101=4S, 110=8S, 111=16S
             #[inline(always)]
             #[must_use]
-            pub fn rtc_tmr_mode(&mut self) -> RTC_TMR_MODE_W<0> {
-                RTC_TMR_MODE_W::new(self)
+            pub fn tmr_mode(&mut self) -> TMR_MODE_W<0> {
+                TMR_MODE_W::new(self)
             }
             ///Bit 3 - RWA, force ignore bit0 for trigger mode: 0=compare bit0, 1=ignore bit0
             #[inline(always)]
             #[must_use]
-            pub fn rtc_ignore_b0(&mut self) -> RTC_IGNORE_B0_W<3> {
-                RTC_IGNORE_B0_W::new(self)
+            pub fn ignore_b0(&mut self) -> IGNORE_B0_W<3> {
+                IGNORE_B0_W::new(self)
             }
             ///Bit 4 - RWA, RTC timer mode enable
             #[inline(always)]
             #[must_use]
-            pub fn rtc_tmr_en(&mut self) -> RTC_TMR_EN_W<4> {
-                RTC_TMR_EN_W::new(self)
+            pub fn tmr_en(&mut self) -> TMR_EN_W<4> {
+                TMR_EN_W::new(self)
             }
             ///Bit 5 - RWA, RTC trigger mode enable
             #[inline(always)]
             #[must_use]
-            pub fn rtc_trig_en(&mut self) -> RTC_TRIG_EN_W<5> {
-                RTC_TRIG_EN_W::new(self)
+            pub fn trig_en(&mut self) -> TRIG_EN_W<5> {
+                TRIG_EN_W::new(self)
             }
             ///Bit 6 - RWA, set 1 to load RTC count low word R32_RTC_CNT_32K, auto clear after loaded
             #[inline(always)]
             #[must_use]
-            pub fn rtc_load_lo(&mut self) -> RTC_LOAD_LO_W<6> {
-                RTC_LOAD_LO_W::new(self)
+            pub fn load_lo(&mut self) -> LOAD_LO_W<6> {
+                LOAD_LO_W::new(self)
             }
             ///Bit 7 - RWA, set 1 to load RTC count high word R32_RTC_CNT_DAY, auto clear after loaded
             #[inline(always)]
             #[must_use]
-            pub fn rtc_load_hi(&mut self) -> RTC_LOAD_HI_W<7> {
-                RTC_LOAD_HI_W::new(self)
+            pub fn load_hi(&mut self) -> LOAD_HI_W<7> {
+                LOAD_HI_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -3022,49 +3022,49 @@ pub mod rtc {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [rtc_mode_ctrl](index.html) module
-        pub struct RTC_MODE_CTRL_SPEC;
-        impl crate::RegisterSpec for RTC_MODE_CTRL_SPEC {
+        ///For information about available fields see [mode_ctrl](index.html) module
+        pub struct MODE_CTRL_SPEC;
+        impl crate::RegisterSpec for MODE_CTRL_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [rtc_mode_ctrl::R](R) reader structure
-        impl crate::Readable for RTC_MODE_CTRL_SPEC {
+        ///`read()` method returns [mode_ctrl::R](R) reader structure
+        impl crate::Readable for MODE_CTRL_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [rtc_mode_ctrl::W](W) writer structure
-        impl crate::Writable for RTC_MODE_CTRL_SPEC {
+        ///`write(|w| ..)` method takes [mode_ctrl::W](W) writer structure
+        impl crate::Writable for MODE_CTRL_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets RTC_MODE_CTRL to value 0xc2
-        impl crate::Resettable for RTC_MODE_CTRL_SPEC {
+        ///`reset()` method sets MODE_CTRL to value 0xc2
+        impl crate::Resettable for MODE_CTRL_SPEC {
             const RESET_VALUE: Self::Ux = 0xc2;
         }
     }
-    ///RTC_TRIG (rw) register accessor: an alias for `Reg<RTC_TRIG_SPEC>`
-    pub type RTC_TRIG = crate::Reg<rtc_trig::RTC_TRIG_SPEC>;
+    ///TRIG (rw) register accessor: an alias for `Reg<TRIG_SPEC>`
+    pub type TRIG = crate::Reg<trig::TRIG_SPEC>;
     ///RWA, RTC trigger value, SAM
-    pub mod rtc_trig {
-        ///Register `RTC_TRIG` reader
-        pub struct R(crate::R<RTC_TRIG_SPEC>);
+    pub mod trig {
+        ///Register `TRIG` reader
+        pub struct R(crate::R<TRIG_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<RTC_TRIG_SPEC>;
+            type Target = crate::R<TRIG_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<RTC_TRIG_SPEC>> for R {
+        impl From<crate::R<TRIG_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<RTC_TRIG_SPEC>) -> Self {
+            fn from(reader: crate::R<TRIG_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `RTC_TRIG` writer
-        pub struct W(crate::W<RTC_TRIG_SPEC>);
+        ///Register `TRIG` writer
+        pub struct W(crate::W<TRIG_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<RTC_TRIG_SPEC>;
+            type Target = crate::W<TRIG_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -3076,29 +3076,29 @@ pub mod rtc {
                 &mut self.0
             }
         }
-        impl From<crate::W<RTC_TRIG_SPEC>> for W {
+        impl From<crate::W<TRIG_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<RTC_TRIG_SPEC>) -> Self {
+            fn from(writer: crate::W<TRIG_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `RTC_TRIG` reader - RWA, RTC trigger value
-        pub type RTC_TRIG_R = crate::FieldReader<u32>;
-        ///Field `RTC_TRIG` writer - RWA, RTC trigger value
-        pub type RTC_TRIG_W<'a, const O: u8> = crate::FieldWriter<'a, RTC_TRIG_SPEC, 32, O, u32>;
+        ///Field `TRIG` reader - RWA, RTC trigger value
+        pub type TRIG_R = crate::FieldReader<u32>;
+        ///Field `TRIG` writer - RWA, RTC trigger value
+        pub type TRIG_W<'a, const O: u8> = crate::FieldWriter<'a, TRIG_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RWA, RTC trigger value
             #[inline(always)]
-            pub fn rtc_trig(&self) -> RTC_TRIG_R {
-                RTC_TRIG_R::new(self.bits)
+            pub fn trig(&self) -> TRIG_R {
+                TRIG_R::new(self.bits)
             }
         }
         impl W {
             ///Bits 0:31 - RWA, RTC trigger value
             #[inline(always)]
             #[must_use]
-            pub fn rtc_trig(&mut self) -> RTC_TRIG_W<0> {
-                RTC_TRIG_W::new(self)
+            pub fn trig(&mut self) -> TRIG_W<0> {
+                TRIG_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -3111,193 +3111,193 @@ pub mod rtc {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [rtc_trig](index.html) module
-        pub struct RTC_TRIG_SPEC;
-        impl crate::RegisterSpec for RTC_TRIG_SPEC {
+        ///For information about available fields see [trig](index.html) module
+        pub struct TRIG_SPEC;
+        impl crate::RegisterSpec for TRIG_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [rtc_trig::R](R) reader structure
-        impl crate::Readable for RTC_TRIG_SPEC {
+        ///`read()` method returns [trig::R](R) reader structure
+        impl crate::Readable for TRIG_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [rtc_trig::W](W) writer structure
-        impl crate::Writable for RTC_TRIG_SPEC {
+        ///`write(|w| ..)` method takes [trig::W](W) writer structure
+        impl crate::Writable for TRIG_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets RTC_TRIG to value 0
-        impl crate::Resettable for RTC_TRIG_SPEC {
+        ///`reset()` method sets TRIG to value 0
+        impl crate::Resettable for TRIG_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///RTC_CNT_32K (r) register accessor: an alias for `Reg<RTC_CNT_32K_SPEC>`
-    pub type RTC_CNT_32K = crate::Reg<rtc_cnt_32k::RTC_CNT_32K_SPEC>;
+    ///CNT_32K (r) register accessor: an alias for `Reg<CNT_32K_SPEC>`
+    pub type CNT_32K = crate::Reg<cnt_32k::CNT_32K_SPEC>;
     ///RO, RTC count based 32KHz
-    pub mod rtc_cnt_32k {
-        ///Register `RTC_CNT_32K` reader
-        pub struct R(crate::R<RTC_CNT_32K_SPEC>);
+    pub mod cnt_32k {
+        ///Register `CNT_32K` reader
+        pub struct R(crate::R<CNT_32K_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<RTC_CNT_32K_SPEC>;
+            type Target = crate::R<CNT_32K_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<RTC_CNT_32K_SPEC>> for R {
+        impl From<crate::R<CNT_32K_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<RTC_CNT_32K_SPEC>) -> Self {
+            fn from(reader: crate::R<CNT_32K_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `RTC_CNT_32K` reader - R0,RTC count based 32KHz
-        pub type RTC_CNT_32K_R = crate::FieldReader<u16>;
+        ///Field `CNT_32K` reader - R0,RTC count based 32KHz
+        pub type CNT_32K_R = crate::FieldReader<u16>;
         impl R {
             ///Bits 0:15 - R0,RTC count based 32KHz
             #[inline(always)]
-            pub fn rtc_cnt_32k(&self) -> RTC_CNT_32K_R {
-                RTC_CNT_32K_R::new(self.bits)
+            pub fn cnt_32k(&self) -> CNT_32K_R {
+                CNT_32K_R::new(self.bits)
             }
         }
         ///RO, RTC count based 32KHz
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [rtc_cnt_32k](index.html) module
-        pub struct RTC_CNT_32K_SPEC;
-        impl crate::RegisterSpec for RTC_CNT_32K_SPEC {
+        ///For information about available fields see [cnt_32k](index.html) module
+        pub struct CNT_32K_SPEC;
+        impl crate::RegisterSpec for CNT_32K_SPEC {
             type Ux = u16;
         }
-        ///`read()` method returns [rtc_cnt_32k::R](R) reader structure
-        impl crate::Readable for RTC_CNT_32K_SPEC {
+        ///`read()` method returns [cnt_32k::R](R) reader structure
+        impl crate::Readable for CNT_32K_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets RTC_CNT_32K to value 0
-        impl crate::Resettable for RTC_CNT_32K_SPEC {
+        ///`reset()` method sets CNT_32K to value 0
+        impl crate::Resettable for CNT_32K_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///RTC_CNT_2S (r) register accessor: an alias for `Reg<RTC_CNT_2S_SPEC>`
-    pub type RTC_CNT_2S = crate::Reg<rtc_cnt_2s::RTC_CNT_2S_SPEC>;
+    ///CNT_2S (r) register accessor: an alias for `Reg<CNT_2S_SPEC>`
+    pub type CNT_2S = crate::Reg<cnt_2s::CNT_2S_SPEC>;
     ///RO, RTC count based 2 second
-    pub mod rtc_cnt_2s {
-        ///Register `RTC_CNT_2S` reader
-        pub struct R(crate::R<RTC_CNT_2S_SPEC>);
+    pub mod cnt_2s {
+        ///Register `CNT_2S` reader
+        pub struct R(crate::R<CNT_2S_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<RTC_CNT_2S_SPEC>;
+            type Target = crate::R<CNT_2S_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<RTC_CNT_2S_SPEC>> for R {
+        impl From<crate::R<CNT_2S_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<RTC_CNT_2S_SPEC>) -> Self {
+            fn from(reader: crate::R<CNT_2S_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `RTC_CNT_2S` reader - RO, RTC count based 2 second
-        pub type RTC_CNT_2S_R = crate::FieldReader<u16>;
+        ///Field `CNT_2S` reader - RO, RTC count based 2 second
+        pub type CNT_2S_R = crate::FieldReader<u16>;
         impl R {
             ///Bits 0:15 - RO, RTC count based 2 second
             #[inline(always)]
-            pub fn rtc_cnt_2s(&self) -> RTC_CNT_2S_R {
-                RTC_CNT_2S_R::new(self.bits)
+            pub fn cnt_2s(&self) -> CNT_2S_R {
+                CNT_2S_R::new(self.bits)
             }
         }
         ///RO, RTC count based 2 second
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [rtc_cnt_2s](index.html) module
-        pub struct RTC_CNT_2S_SPEC;
-        impl crate::RegisterSpec for RTC_CNT_2S_SPEC {
+        ///For information about available fields see [cnt_2s](index.html) module
+        pub struct CNT_2S_SPEC;
+        impl crate::RegisterSpec for CNT_2S_SPEC {
             type Ux = u16;
         }
-        ///`read()` method returns [rtc_cnt_2s::R](R) reader structure
-        impl crate::Readable for RTC_CNT_2S_SPEC {
+        ///`read()` method returns [cnt_2s::R](R) reader structure
+        impl crate::Readable for CNT_2S_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets RTC_CNT_2S to value 0
-        impl crate::Resettable for RTC_CNT_2S_SPEC {
+        ///`reset()` method sets CNT_2S to value 0
+        impl crate::Resettable for CNT_2S_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///RTC_CNT_DAY (r) register accessor: an alias for `Reg<RTC_CNT_DAY_SPEC>`
-    pub type RTC_CNT_DAY = crate::Reg<rtc_cnt_day::RTC_CNT_DAY_SPEC>;
+    ///CNT_DAY (r) register accessor: an alias for `Reg<CNT_DAY_SPEC>`
+    pub type CNT_DAY = crate::Reg<cnt_day::CNT_DAY_SPEC>;
     ///RO, RTC count based one day, only low 14 bit
-    pub mod rtc_cnt_day {
-        ///Register `RTC_CNT_DAY` reader
-        pub struct R(crate::R<RTC_CNT_DAY_SPEC>);
+    pub mod cnt_day {
+        ///Register `CNT_DAY` reader
+        pub struct R(crate::R<CNT_DAY_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<RTC_CNT_DAY_SPEC>;
+            type Target = crate::R<CNT_DAY_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<RTC_CNT_DAY_SPEC>> for R {
+        impl From<crate::R<CNT_DAY_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<RTC_CNT_DAY_SPEC>) -> Self {
+            fn from(reader: crate::R<CNT_DAY_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `RTC_CNT_DAY` reader - RWA,RTC count based one day
-        pub type RTC_CNT_DAY_R = crate::FieldReader<u16>;
+        ///Field `CNT_DAY` reader - RWA,RTC count based one day
+        pub type CNT_DAY_R = crate::FieldReader<u16>;
         impl R {
             ///Bits 0:13 - RWA,RTC count based one day
             #[inline(always)]
-            pub fn rtc_cnt_day(&self) -> RTC_CNT_DAY_R {
-                RTC_CNT_DAY_R::new((self.bits & 0x3fff) as u16)
+            pub fn cnt_day(&self) -> CNT_DAY_R {
+                CNT_DAY_R::new((self.bits & 0x3fff) as u16)
             }
         }
         ///RO, RTC count based one day, only low 14 bit
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [rtc_cnt_day](index.html) module
-        pub struct RTC_CNT_DAY_SPEC;
-        impl crate::RegisterSpec for RTC_CNT_DAY_SPEC {
+        ///For information about available fields see [cnt_day](index.html) module
+        pub struct CNT_DAY_SPEC;
+        impl crate::RegisterSpec for CNT_DAY_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [rtc_cnt_day::R](R) reader structure
-        impl crate::Readable for RTC_CNT_DAY_SPEC {
+        ///`read()` method returns [cnt_day::R](R) reader structure
+        impl crate::Readable for CNT_DAY_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets RTC_CNT_DAY to value 0
-        impl crate::Resettable for RTC_CNT_DAY_SPEC {
+        ///`reset()` method sets CNT_DAY to value 0
+        impl crate::Resettable for CNT_DAY_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
 }
 ///System control related registers
-pub struct SYSTEM_CONTROL {
+pub struct SYSCTL {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SYSTEM_CONTROL {}
-impl SYSTEM_CONTROL {
+unsafe impl Send for SYSCTL {}
+impl SYSCTL {
     ///Pointer to the register block
-    pub const PTR: *const system_control::RegisterBlock = 0x4000_1000 as *const _;
+    pub const PTR: *const sysctl::RegisterBlock = 0x4000_1000 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const system_control::RegisterBlock {
+    pub const fn ptr() -> *const sysctl::RegisterBlock {
         Self::PTR
     }
 }
-impl Deref for SYSTEM_CONTROL {
-    type Target = system_control::RegisterBlock;
+impl Deref for SYSCTL {
+    type Target = sysctl::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for SYSTEM_CONTROL {
+impl core::fmt::Debug for SYSCTL {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SYSTEM_CONTROL").finish()
+        f.debug_struct("SYSCTL").finish()
     }
 }
 ///System control related registers
-pub mod system_control {
+pub mod sysctl {
     ///Register block
     #[repr(C)]
     pub struct RegisterBlock {
@@ -3331,6 +3331,11 @@ pub mod system_control {
         pub osc_cal_ov_cnt: OSC_CAL_OV_CNT,
         ///0x53 - RWA, oscillator frequency calibration control, SAM
         pub osc_cal_ctrl: OSC_CAL_CTRL,
+        _reserved13: [u8; 0x07b2],
+        ///0x806 -
+        pub flash_ctrl: FLASH_CTRL,
+        ///0x807 -
+        pub flash_cfg: FLASH_CFG,
     }
     ///SAFE_ACCESS_SIG (rw) register accessor: an alias for `Reg<SAFE_ACCESS_SIG_SPEC>`
     pub type SAFE_ACCESS_SIG = crate::Reg<safe_access_sig::SAFE_ACCESS_SIG_SPEC>;
@@ -4430,6 +4435,170 @@ pub mod system_control {
             const RESET_VALUE: Self::Ux = 0x09;
         }
     }
+    ///FLASH_CFG (rw) register accessor: an alias for `Reg<FLASH_CFG_SPEC>`
+    pub type FLASH_CFG = crate::Reg<flash_cfg::FLASH_CFG_SPEC>;
+    ///
+    pub mod flash_cfg {
+        ///Register `FLASH_CFG` reader
+        pub struct R(crate::R<FLASH_CFG_SPEC>);
+        impl core::ops::Deref for R {
+            type Target = crate::R<FLASH_CFG_SPEC>;
+            #[inline(always)]
+            fn deref(&self) -> &Self::Target {
+                &self.0
+            }
+        }
+        impl From<crate::R<FLASH_CFG_SPEC>> for R {
+            #[inline(always)]
+            fn from(reader: crate::R<FLASH_CFG_SPEC>) -> Self {
+                R(reader)
+            }
+        }
+        ///Register `FLASH_CFG` writer
+        pub struct W(crate::W<FLASH_CFG_SPEC>);
+        impl core::ops::Deref for W {
+            type Target = crate::W<FLASH_CFG_SPEC>;
+            #[inline(always)]
+            fn deref(&self) -> &Self::Target {
+                &self.0
+            }
+        }
+        impl core::ops::DerefMut for W {
+            #[inline(always)]
+            fn deref_mut(&mut self) -> &mut Self::Target {
+                &mut self.0
+            }
+        }
+        impl From<crate::W<FLASH_CFG_SPEC>> for W {
+            #[inline(always)]
+            fn from(writer: crate::W<FLASH_CFG_SPEC>) -> Self {
+                W(writer)
+            }
+        }
+        impl core::fmt::Debug for R {
+            fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+                write!(f, "{}", self.bits())
+            }
+        }
+        impl core::fmt::Debug for crate::generic::Reg<FLASH_CFG_SPEC> {
+            fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+                self.read().fmt(f)
+            }
+        }
+        impl W {
+            ///Writes raw bits to the register.
+            #[inline(always)]
+            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+                self.0.bits(bits);
+                self
+            }
+        }
+        ///
+        ///
+        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
+        ///
+        ///For information about available fields see [flash_cfg](index.html) module
+        pub struct FLASH_CFG_SPEC;
+        impl crate::RegisterSpec for FLASH_CFG_SPEC {
+            type Ux = u8;
+        }
+        ///`read()` method returns [flash_cfg::R](R) reader structure
+        impl crate::Readable for FLASH_CFG_SPEC {
+            type Reader = R;
+        }
+        ///`write(|w| ..)` method takes [flash_cfg::W](W) writer structure
+        impl crate::Writable for FLASH_CFG_SPEC {
+            type Writer = W;
+            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+        }
+        ///`reset()` method sets FLASH_CFG to value 0x07
+        impl crate::Resettable for FLASH_CFG_SPEC {
+            const RESET_VALUE: Self::Ux = 0x07;
+        }
+    }
+    ///FLASH_CTRL (rw) register accessor: an alias for `Reg<FLASH_CTRL_SPEC>`
+    pub type FLASH_CTRL = crate::Reg<flash_ctrl::FLASH_CTRL_SPEC>;
+    ///
+    pub mod flash_ctrl {
+        ///Register `FLASH_CTRL` reader
+        pub struct R(crate::R<FLASH_CTRL_SPEC>);
+        impl core::ops::Deref for R {
+            type Target = crate::R<FLASH_CTRL_SPEC>;
+            #[inline(always)]
+            fn deref(&self) -> &Self::Target {
+                &self.0
+            }
+        }
+        impl From<crate::R<FLASH_CTRL_SPEC>> for R {
+            #[inline(always)]
+            fn from(reader: crate::R<FLASH_CTRL_SPEC>) -> Self {
+                R(reader)
+            }
+        }
+        ///Register `FLASH_CTRL` writer
+        pub struct W(crate::W<FLASH_CTRL_SPEC>);
+        impl core::ops::Deref for W {
+            type Target = crate::W<FLASH_CTRL_SPEC>;
+            #[inline(always)]
+            fn deref(&self) -> &Self::Target {
+                &self.0
+            }
+        }
+        impl core::ops::DerefMut for W {
+            #[inline(always)]
+            fn deref_mut(&mut self) -> &mut Self::Target {
+                &mut self.0
+            }
+        }
+        impl From<crate::W<FLASH_CTRL_SPEC>> for W {
+            #[inline(always)]
+            fn from(writer: crate::W<FLASH_CTRL_SPEC>) -> Self {
+                W(writer)
+            }
+        }
+        impl core::fmt::Debug for R {
+            fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+                write!(f, "{}", self.bits())
+            }
+        }
+        impl core::fmt::Debug for crate::generic::Reg<FLASH_CTRL_SPEC> {
+            fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+                self.read().fmt(f)
+            }
+        }
+        impl W {
+            ///Writes raw bits to the register.
+            #[inline(always)]
+            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+                self.0.bits(bits);
+                self
+            }
+        }
+        ///
+        ///
+        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
+        ///
+        ///For information about available fields see [flash_ctrl](index.html) module
+        pub struct FLASH_CTRL_SPEC;
+        impl crate::RegisterSpec for FLASH_CTRL_SPEC {
+            type Ux = u8;
+        }
+        ///`read()` method returns [flash_ctrl::R](R) reader structure
+        impl crate::Readable for FLASH_CTRL_SPEC {
+            type Reader = R;
+        }
+        ///`write(|w| ..)` method takes [flash_ctrl::W](W) writer structure
+        impl crate::Writable for FLASH_CTRL_SPEC {
+            type Writer = W;
+            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+        }
+        ///`reset()` method sets FLASH_CTRL to value 0x40
+        impl crate::Resettable for FLASH_CTRL_SPEC {
+            const RESET_VALUE: Self::Ux = 0x40;
+        }
+    }
 }
 ///Touch buttons
 pub struct TOUCH_KEY {
@@ -4889,10 +5058,10 @@ pub mod adc {
         pub adc_auto_cycle: ADC_AUTO_CYCLE,
         ///0x64 - RO, ADC DMA current address
         pub adc_dma_now: ADC_DMA_NOW,
-        _reserved10: [u8; 0x03],
+        _reserved10: [u8; 0x02],
         ///0x68 - RW, ADC DMA begin address
         pub adc_dma_beg: ADC_DMA_BEG,
-        _reserved11: [u8; 0x03],
+        _reserved11: [u8; 0x02],
         ///0x6c - RW, ADC DMA end address
         pub adc_dma_end: ADC_DMA_END,
     }
@@ -5828,7 +5997,7 @@ pub mod adc {
             ///Bits 1:14 - ADC DMA current address
             #[inline(always)]
             pub fn adc_dma_now(&self) -> ADC_DMA_NOW_R {
-                ADC_DMA_NOW_R::new(((self.bits >> 1) & 0x3fff) as u16)
+                ADC_DMA_NOW_R::new((self.bits >> 1) & 0x3fff)
             }
         }
         ///RO, ADC DMA current address
@@ -5838,7 +6007,7 @@ pub mod adc {
         ///For information about available fields see [adc_dma_now](index.html) module
         pub struct ADC_DMA_NOW_SPEC;
         impl crate::RegisterSpec for ADC_DMA_NOW_SPEC {
-            type Ux = u8;
+            type Ux = u16;
         }
         ///`read()` method returns [adc_dma_now::R](R) reader structure
         impl crate::Readable for ADC_DMA_NOW_SPEC {
@@ -5898,7 +6067,7 @@ pub mod adc {
             ///Bits 1:14 - ADC DMA begin address
             #[inline(always)]
             pub fn adc_dma_beg(&self) -> ADC_DMA_BEG_R {
-                ADC_DMA_BEG_R::new(((self.bits >> 1) & 0x3fff) as u16)
+                ADC_DMA_BEG_R::new((self.bits >> 1) & 0x3fff)
             }
         }
         impl W {
@@ -5910,7 +6079,7 @@ pub mod adc {
             }
             ///Writes raw bits to the register.
             #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+            pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
                 self.0.bits(bits);
                 self
             }
@@ -5922,7 +6091,7 @@ pub mod adc {
         ///For information about available fields see [adc_dma_beg](index.html) module
         pub struct ADC_DMA_BEG_SPEC;
         impl crate::RegisterSpec for ADC_DMA_BEG_SPEC {
-            type Ux = u8;
+            type Ux = u16;
         }
         ///`read()` method returns [adc_dma_beg::R](R) reader structure
         impl crate::Readable for ADC_DMA_BEG_SPEC {
@@ -5988,7 +6157,7 @@ pub mod adc {
             ///Bits 1:14 - ADC DMA end address
             #[inline(always)]
             pub fn adc_dma_end(&self) -> ADC_DMA_END_R {
-                ADC_DMA_END_R::new(((self.bits >> 1) & 0x3fff) as u16)
+                ADC_DMA_END_R::new((self.bits >> 1) & 0x3fff)
             }
         }
         impl W {
@@ -6000,7 +6169,7 @@ pub mod adc {
             }
             ///Writes raw bits to the register.
             #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+            pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
                 self.0.bits(bits);
                 self
             }
@@ -6012,7 +6181,7 @@ pub mod adc {
         ///For information about available fields see [adc_dma_end](index.html) module
         pub struct ADC_DMA_END_SPEC;
         impl crate::RegisterSpec for ADC_DMA_END_SPEC {
-            type Ux = u8;
+            type Ux = u16;
         }
         ///`read()` method returns [adc_dma_end::R](R) reader structure
         impl crate::Readable for ADC_DMA_END_SPEC {
@@ -6677,38 +6846,23 @@ pub mod gpio {
                 W(writer)
             }
         }
-        ///Field `PA_DIR_0` reader - GPIO PA I/O direction byte 0
-        pub type PA_DIR_0_R = crate::FieldReader;
-        ///Field `PA_DIR_0` writer - GPIO PA I/O direction byte 0
-        pub type PA_DIR_0_W<'a, const O: u8> = crate::FieldWriter<'a, PA_DIR_SPEC, 8, O>;
-        ///Field `PA_DIR_1` reader - GPIO PA I/O direction byte 1
-        pub type PA_DIR_1_R = crate::FieldReader;
-        ///Field `PA_DIR_1` writer - GPIO PA I/O direction byte 1
-        pub type PA_DIR_1_W<'a, const O: u8> = crate::FieldWriter<'a, PA_DIR_SPEC, 8, O>;
+        ///Field `PA_DIR` reader - GPIO PA I/O direction
+        pub type PA_DIR_R = crate::FieldReader<u16>;
+        ///Field `PA_DIR` writer - GPIO PA I/O direction
+        pub type PA_DIR_W<'a, const O: u8> = crate::FieldWriter<'a, PA_DIR_SPEC, 16, O, u16>;
         impl R {
-            ///Bits 0:7 - GPIO PA I/O direction byte 0
+            ///Bits 0:15 - GPIO PA I/O direction
             #[inline(always)]
-            pub fn pa_dir_0(&self) -> PA_DIR_0_R {
-                PA_DIR_0_R::new((self.bits & 0xff) as u8)
-            }
-            ///Bits 8:15 - GPIO PA I/O direction byte 1
-            #[inline(always)]
-            pub fn pa_dir_1(&self) -> PA_DIR_1_R {
-                PA_DIR_1_R::new(((self.bits >> 8) & 0xff) as u8)
+            pub fn pa_dir(&self) -> PA_DIR_R {
+                PA_DIR_R::new((self.bits & 0xffff) as u16)
             }
         }
         impl W {
-            ///Bits 0:7 - GPIO PA I/O direction byte 0
+            ///Bits 0:15 - GPIO PA I/O direction
             #[inline(always)]
             #[must_use]
-            pub fn pa_dir_0(&mut self) -> PA_DIR_0_W<0> {
-                PA_DIR_0_W::new(self)
-            }
-            ///Bits 8:15 - GPIO PA I/O direction byte 1
-            #[inline(always)]
-            #[must_use]
-            pub fn pa_dir_1(&mut self) -> PA_DIR_1_W<8> {
-                PA_DIR_1_W::new(self)
+            pub fn pa_dir(&mut self) -> PA_DIR_W<0> {
+                PA_DIR_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -6760,20 +6914,13 @@ pub mod gpio {
                 R(reader)
             }
         }
-        ///Field `PA_PIN_0` reader - GPIO PA input byte 0
-        pub type PA_PIN_0_R = crate::FieldReader;
-        ///Field `PA_PIN_1` reader - GPIO PA input byte 1
-        pub type PA_PIN_1_R = crate::FieldReader;
+        ///Field `PA_PIN` reader - GPIO PA input data
+        pub type PA_PIN_R = crate::FieldReader<u16>;
         impl R {
-            ///Bits 0:7 - GPIO PA input byte 0
+            ///Bits 0:15 - GPIO PA input data
             #[inline(always)]
-            pub fn pa_pin_0(&self) -> PA_PIN_0_R {
-                PA_PIN_0_R::new((self.bits & 0xff) as u8)
-            }
-            ///Bits 8:15 - GPIO PA input byte 1
-            #[inline(always)]
-            pub fn pa_pin_1(&self) -> PA_PIN_1_R {
-                PA_PIN_1_R::new(((self.bits >> 8) & 0xff) as u8)
+            pub fn pa_pin(&self) -> PA_PIN_R {
+                PA_PIN_R::new((self.bits & 0xffff) as u16)
             }
         }
         ///RO, GPIO PA input
@@ -6834,38 +6981,23 @@ pub mod gpio {
                 W(writer)
             }
         }
-        ///Field `PA_OUT_0` reader - GPIO PA output byte 0
-        pub type PA_OUT_0_R = crate::FieldReader;
-        ///Field `PA_OUT_0` writer - GPIO PA output byte 0
-        pub type PA_OUT_0_W<'a, const O: u8> = crate::FieldWriter<'a, PA_OUT_SPEC, 8, O>;
-        ///Field `PA_OUT_1` reader - GPIO PA output byte 1
-        pub type PA_OUT_1_R = crate::FieldReader;
-        ///Field `PA_OUT_1` writer - GPIO PA output byte 1
-        pub type PA_OUT_1_W<'a, const O: u8> = crate::FieldWriter<'a, PA_OUT_SPEC, 8, O>;
+        ///Field `PA_OUT` reader - GPIO PA output data
+        pub type PA_OUT_R = crate::FieldReader<u16>;
+        ///Field `PA_OUT` writer - GPIO PA output data
+        pub type PA_OUT_W<'a, const O: u8> = crate::FieldWriter<'a, PA_OUT_SPEC, 16, O, u16>;
         impl R {
-            ///Bits 0:7 - GPIO PA output byte 0
+            ///Bits 0:15 - GPIO PA output data
             #[inline(always)]
-            pub fn pa_out_0(&self) -> PA_OUT_0_R {
-                PA_OUT_0_R::new((self.bits & 0xff) as u8)
-            }
-            ///Bits 8:15 - GPIO PA output byte 1
-            #[inline(always)]
-            pub fn pa_out_1(&self) -> PA_OUT_1_R {
-                PA_OUT_1_R::new(((self.bits >> 8) & 0xff) as u8)
+            pub fn pa_out(&self) -> PA_OUT_R {
+                PA_OUT_R::new((self.bits & 0xffff) as u16)
             }
         }
         impl W {
-            ///Bits 0:7 - GPIO PA output byte 0
+            ///Bits 0:15 - GPIO PA output data
             #[inline(always)]
             #[must_use]
-            pub fn pa_out_0(&mut self) -> PA_OUT_0_W<0> {
-                PA_OUT_0_W::new(self)
-            }
-            ///Bits 8:15 - GPIO PA output byte 1
-            #[inline(always)]
-            #[must_use]
-            pub fn pa_out_1(&mut self) -> PA_OUT_1_W<8> {
-                PA_OUT_1_W::new(self)
+            pub fn pa_out(&mut self) -> PA_OUT_W<0> {
+                PA_OUT_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -6923,22 +7055,14 @@ pub mod gpio {
                 W(writer)
             }
         }
-        ///Field `PA_CLR_0` writer - GPIO PA clear output byte 0
-        pub type PA_CLR_0_W<'a, const O: u8> = crate::FieldWriter<'a, PA_CLR_SPEC, 8, O>;
-        ///Field `PA_CLR_1` writer - GPIO PA clear output byte 1
-        pub type PA_CLR_1_W<'a, const O: u8> = crate::FieldWriter<'a, PA_CLR_SPEC, 8, O>;
+        ///Field `PA_CLR` writer - GPIO PA output clear
+        pub type PA_CLR_W<'a, const O: u8> = crate::FieldWriter<'a, PA_CLR_SPEC, 16, O, u16>;
         impl W {
-            ///Bits 0:7 - GPIO PA clear output byte 0
+            ///Bits 0:15 - GPIO PA output clear
             #[inline(always)]
             #[must_use]
-            pub fn pa_clr_0(&mut self) -> PA_CLR_0_W<0> {
-                PA_CLR_0_W::new(self)
-            }
-            ///Bits 8:15 - GPIO PA clear output byte 1
-            #[inline(always)]
-            #[must_use]
-            pub fn pa_clr_1(&mut self) -> PA_CLR_1_W<8> {
-                PA_CLR_1_W::new(self)
+            pub fn pa_clr(&mut self) -> PA_CLR_W<0> {
+                PA_CLR_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -7007,38 +7131,23 @@ pub mod gpio {
                 W(writer)
             }
         }
-        ///Field `PA_PU_0` reader - GPIO PA pullup resistance enable byte 0
-        pub type PA_PU_0_R = crate::FieldReader;
-        ///Field `PA_PU_0` writer - GPIO PA pullup resistance enable byte 0
-        pub type PA_PU_0_W<'a, const O: u8> = crate::FieldWriter<'a, PA_PU_SPEC, 8, O>;
-        ///Field `PA_PU_1` reader - GPIO PA pullup resistance enable byte 0
-        pub type PA_PU_1_R = crate::FieldReader;
-        ///Field `PA_PU_1` writer - GPIO PA pullup resistance enable byte 0
-        pub type PA_PU_1_W<'a, const O: u8> = crate::FieldWriter<'a, PA_PU_SPEC, 8, O>;
+        ///Field `PA_PU` reader - GPIO PA pull-up enable
+        pub type PA_PU_R = crate::FieldReader<u16>;
+        ///Field `PA_PU` writer - GPIO PA pull-up enable
+        pub type PA_PU_W<'a, const O: u8> = crate::FieldWriter<'a, PA_PU_SPEC, 16, O, u16>;
         impl R {
-            ///Bits 0:7 - GPIO PA pullup resistance enable byte 0
+            ///Bits 0:15 - GPIO PA pull-up enable
             #[inline(always)]
-            pub fn pa_pu_0(&self) -> PA_PU_0_R {
-                PA_PU_0_R::new((self.bits & 0xff) as u8)
-            }
-            ///Bits 8:15 - GPIO PA pullup resistance enable byte 0
-            #[inline(always)]
-            pub fn pa_pu_1(&self) -> PA_PU_1_R {
-                PA_PU_1_R::new(((self.bits >> 8) & 0xff) as u8)
+            pub fn pa_pu(&self) -> PA_PU_R {
+                PA_PU_R::new((self.bits & 0xffff) as u16)
             }
         }
         impl W {
-            ///Bits 0:7 - GPIO PA pullup resistance enable byte 0
+            ///Bits 0:15 - GPIO PA pull-up enable
             #[inline(always)]
             #[must_use]
-            pub fn pa_pu_0(&mut self) -> PA_PU_0_W<0> {
-                PA_PU_0_W::new(self)
-            }
-            ///Bits 8:15 - GPIO PA pullup resistance enable byte 0
-            #[inline(always)]
-            #[must_use]
-            pub fn pa_pu_1(&mut self) -> PA_PU_1_W<8> {
-                PA_PU_1_W::new(self)
+            pub fn pa_pu(&mut self) -> PA_PU_W<0> {
+                PA_PU_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -7111,38 +7220,23 @@ pub mod gpio {
                 W(writer)
             }
         }
-        ///Field `PA_PD_DRV_0` reader - PA pulldown for input or PA driving capability for output byte 0
-        pub type PA_PD_DRV_0_R = crate::FieldReader;
-        ///Field `PA_PD_DRV_0` writer - PA pulldown for input or PA driving capability for output byte 0
-        pub type PA_PD_DRV_0_W<'a, const O: u8> = crate::FieldWriter<'a, PA_PD_DRV_SPEC, 8, O>;
-        ///Field `PA_PD_DRV_1` reader - PA pulldown for input or PA driving capability for output byte 1
-        pub type PA_PD_DRV_1_R = crate::FieldReader;
-        ///Field `PA_PD_DRV_1` writer - PA pulldown for input or PA driving capability for output byte 1
-        pub type PA_PD_DRV_1_W<'a, const O: u8> = crate::FieldWriter<'a, PA_PD_DRV_SPEC, 8, O>;
+        ///Field `PA_PD_DRV` reader - GPIO PA pull-down drive strength
+        pub type PA_PD_DRV_R = crate::FieldReader<u16>;
+        ///Field `PA_PD_DRV` writer - GPIO PA pull-down drive strength
+        pub type PA_PD_DRV_W<'a, const O: u8> = crate::FieldWriter<'a, PA_PD_DRV_SPEC, 16, O, u16>;
         impl R {
-            ///Bits 0:7 - PA pulldown for input or PA driving capability for output byte 0
+            ///Bits 0:15 - GPIO PA pull-down drive strength
             #[inline(always)]
-            pub fn pa_pd_drv_0(&self) -> PA_PD_DRV_0_R {
-                PA_PD_DRV_0_R::new((self.bits & 0xff) as u8)
-            }
-            ///Bits 8:15 - PA pulldown for input or PA driving capability for output byte 1
-            #[inline(always)]
-            pub fn pa_pd_drv_1(&self) -> PA_PD_DRV_1_R {
-                PA_PD_DRV_1_R::new(((self.bits >> 8) & 0xff) as u8)
+            pub fn pa_pd_drv(&self) -> PA_PD_DRV_R {
+                PA_PD_DRV_R::new((self.bits & 0xffff) as u16)
             }
         }
         impl W {
-            ///Bits 0:7 - PA pulldown for input or PA driving capability for output byte 0
+            ///Bits 0:15 - GPIO PA pull-down drive strength
             #[inline(always)]
             #[must_use]
-            pub fn pa_pd_drv_0(&mut self) -> PA_PD_DRV_0_W<0> {
-                PA_PD_DRV_0_W::new(self)
-            }
-            ///Bits 8:15 - PA pulldown for input or PA driving capability for output byte 1
-            #[inline(always)]
-            #[must_use]
-            pub fn pa_pd_drv_1(&mut self) -> PA_PD_DRV_1_W<8> {
-                PA_PD_DRV_1_W::new(self)
+            pub fn pa_pd_drv(&mut self) -> PA_PD_DRV_W<0> {
+                PA_PD_DRV_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -7215,53 +7309,23 @@ pub mod gpio {
                 W(writer)
             }
         }
-        ///Field `PB_DIR_0` reader - GPIO PB I/O direction byte 0
-        pub type PB_DIR_0_R = crate::FieldReader;
-        ///Field `PB_DIR_0` writer - GPIO PB I/O direction byte 0
-        pub type PB_DIR_0_W<'a, const O: u8> = crate::FieldWriter<'a, PB_DIR_SPEC, 8, O>;
-        ///Field `PB_DIR_1` reader - GPIO PB I/O direction byte 1
-        pub type PB_DIR_1_R = crate::FieldReader;
-        ///Field `PB_DIR_1` writer - GPIO PB I/O direction byte 1
-        pub type PB_DIR_1_W<'a, const O: u8> = crate::FieldWriter<'a, PB_DIR_SPEC, 8, O>;
-        ///Field `PB_DIR_2` reader - GPIO PB I/O direction byte 2
-        pub type PB_DIR_2_R = crate::FieldReader;
-        ///Field `PB_DIR_2` writer - GPIO PB I/O direction byte 2
-        pub type PB_DIR_2_W<'a, const O: u8> = crate::FieldWriter<'a, PB_DIR_SPEC, 8, O>;
+        ///Field `PB_DIR` reader - GPIO PB I/O direction
+        pub type PB_DIR_R = crate::FieldReader<u32>;
+        ///Field `PB_DIR` writer - GPIO PB I/O direction
+        pub type PB_DIR_W<'a, const O: u8> = crate::FieldWriter<'a, PB_DIR_SPEC, 24, O, u32>;
         impl R {
-            ///Bits 0:7 - GPIO PB I/O direction byte 0
+            ///Bits 0:23 - GPIO PB I/O direction
             #[inline(always)]
-            pub fn pb_dir_0(&self) -> PB_DIR_0_R {
-                PB_DIR_0_R::new((self.bits & 0xff) as u8)
-            }
-            ///Bits 8:15 - GPIO PB I/O direction byte 1
-            #[inline(always)]
-            pub fn pb_dir_1(&self) -> PB_DIR_1_R {
-                PB_DIR_1_R::new(((self.bits >> 8) & 0xff) as u8)
-            }
-            ///Bits 16:23 - GPIO PB I/O direction byte 2
-            #[inline(always)]
-            pub fn pb_dir_2(&self) -> PB_DIR_2_R {
-                PB_DIR_2_R::new(((self.bits >> 16) & 0xff) as u8)
+            pub fn pb_dir(&self) -> PB_DIR_R {
+                PB_DIR_R::new(self.bits & 0x00ff_ffff)
             }
         }
         impl W {
-            ///Bits 0:7 - GPIO PB I/O direction byte 0
+            ///Bits 0:23 - GPIO PB I/O direction
             #[inline(always)]
             #[must_use]
-            pub fn pb_dir_0(&mut self) -> PB_DIR_0_W<0> {
-                PB_DIR_0_W::new(self)
-            }
-            ///Bits 8:15 - GPIO PB I/O direction byte 1
-            #[inline(always)]
-            #[must_use]
-            pub fn pb_dir_1(&mut self) -> PB_DIR_1_W<8> {
-                PB_DIR_1_W::new(self)
-            }
-            ///Bits 16:23 - GPIO PB I/O direction byte 2
-            #[inline(always)]
-            #[must_use]
-            pub fn pb_dir_2(&mut self) -> PB_DIR_2_W<16> {
-                PB_DIR_2_W::new(self)
+            pub fn pb_dir(&mut self) -> PB_DIR_W<0> {
+                PB_DIR_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -7394,53 +7458,23 @@ pub mod gpio {
                 W(writer)
             }
         }
-        ///Field `PB_OUT_0` reader - GPIO PB output byte 0
-        pub type PB_OUT_0_R = crate::FieldReader;
-        ///Field `PB_OUT_0` writer - GPIO PB output byte 0
-        pub type PB_OUT_0_W<'a, const O: u8> = crate::FieldWriter<'a, PB_OUT_SPEC, 8, O>;
-        ///Field `PB_OUT_1` reader - GPIO PB output byte 1
-        pub type PB_OUT_1_R = crate::FieldReader;
-        ///Field `PB_OUT_1` writer - GPIO PB output byte 1
-        pub type PB_OUT_1_W<'a, const O: u8> = crate::FieldWriter<'a, PB_OUT_SPEC, 8, O>;
-        ///Field `PB_OUT_2` reader - GPIO PB output byte 2
-        pub type PB_OUT_2_R = crate::FieldReader;
-        ///Field `PB_OUT_2` writer - GPIO PB output byte 2
-        pub type PB_OUT_2_W<'a, const O: u8> = crate::FieldWriter<'a, PB_OUT_SPEC, 8, O>;
+        ///Field `PB_OUT` reader - GPIO PB output data
+        pub type PB_OUT_R = crate::FieldReader<u32>;
+        ///Field `PB_OUT` writer - GPIO PB output data
+        pub type PB_OUT_W<'a, const O: u8> = crate::FieldWriter<'a, PB_OUT_SPEC, 24, O, u32>;
         impl R {
-            ///Bits 0:7 - GPIO PB output byte 0
+            ///Bits 0:23 - GPIO PB output data
             #[inline(always)]
-            pub fn pb_out_0(&self) -> PB_OUT_0_R {
-                PB_OUT_0_R::new((self.bits & 0xff) as u8)
-            }
-            ///Bits 8:15 - GPIO PB output byte 1
-            #[inline(always)]
-            pub fn pb_out_1(&self) -> PB_OUT_1_R {
-                PB_OUT_1_R::new(((self.bits >> 8) & 0xff) as u8)
-            }
-            ///Bits 16:23 - GPIO PB output byte 2
-            #[inline(always)]
-            pub fn pb_out_2(&self) -> PB_OUT_2_R {
-                PB_OUT_2_R::new(((self.bits >> 16) & 0xff) as u8)
+            pub fn pb_out(&self) -> PB_OUT_R {
+                PB_OUT_R::new(self.bits & 0x00ff_ffff)
             }
         }
         impl W {
-            ///Bits 0:7 - GPIO PB output byte 0
+            ///Bits 0:23 - GPIO PB output data
             #[inline(always)]
             #[must_use]
-            pub fn pb_out_0(&mut self) -> PB_OUT_0_W<0> {
-                PB_OUT_0_W::new(self)
-            }
-            ///Bits 8:15 - GPIO PB output byte 1
-            #[inline(always)]
-            #[must_use]
-            pub fn pb_out_1(&mut self) -> PB_OUT_1_W<8> {
-                PB_OUT_1_W::new(self)
-            }
-            ///Bits 16:23 - GPIO PB output byte 2
-            #[inline(always)]
-            #[must_use]
-            pub fn pb_out_2(&mut self) -> PB_OUT_2_W<16> {
-                PB_OUT_2_W::new(self)
+            pub fn pb_out(&mut self) -> PB_OUT_W<0> {
+                PB_OUT_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -7513,53 +7547,23 @@ pub mod gpio {
                 W(writer)
             }
         }
-        ///Field `PB_CLR_0` reader - GPIO PB clear output byte 0
-        pub type PB_CLR_0_R = crate::FieldReader;
-        ///Field `PB_CLR_0` writer - GPIO PB clear output byte 0
-        pub type PB_CLR_0_W<'a, const O: u8> = crate::FieldWriter<'a, PB_CLR_SPEC, 8, O>;
-        ///Field `PB_CLR_1` reader - GPIO PB clear output byte 1
-        pub type PB_CLR_1_R = crate::FieldReader;
-        ///Field `PB_CLR_1` writer - GPIO PB clear output byte 1
-        pub type PB_CLR_1_W<'a, const O: u8> = crate::FieldWriter<'a, PB_CLR_SPEC, 8, O>;
-        ///Field `PB_CLR_2` reader - GPIO PB clear output byte 2
-        pub type PB_CLR_2_R = crate::FieldReader;
-        ///Field `PB_CLR_2` writer - GPIO PB clear output byte 2
-        pub type PB_CLR_2_W<'a, const O: u8> = crate::FieldWriter<'a, PB_CLR_SPEC, 8, O>;
+        ///Field `PB_CLR` reader - GPIO PB output clear
+        pub type PB_CLR_R = crate::FieldReader<u32>;
+        ///Field `PB_CLR` writer - GPIO PB output clear
+        pub type PB_CLR_W<'a, const O: u8> = crate::FieldWriter<'a, PB_CLR_SPEC, 24, O, u32>;
         impl R {
-            ///Bits 0:7 - GPIO PB clear output byte 0
+            ///Bits 0:23 - GPIO PB output clear
             #[inline(always)]
-            pub fn pb_clr_0(&self) -> PB_CLR_0_R {
-                PB_CLR_0_R::new((self.bits & 0xff) as u8)
-            }
-            ///Bits 8:15 - GPIO PB clear output byte 1
-            #[inline(always)]
-            pub fn pb_clr_1(&self) -> PB_CLR_1_R {
-                PB_CLR_1_R::new(((self.bits >> 8) & 0xff) as u8)
-            }
-            ///Bits 16:23 - GPIO PB clear output byte 2
-            #[inline(always)]
-            pub fn pb_clr_2(&self) -> PB_CLR_2_R {
-                PB_CLR_2_R::new(((self.bits >> 16) & 0xff) as u8)
+            pub fn pb_clr(&self) -> PB_CLR_R {
+                PB_CLR_R::new(self.bits & 0x00ff_ffff)
             }
         }
         impl W {
-            ///Bits 0:7 - GPIO PB clear output byte 0
+            ///Bits 0:23 - GPIO PB output clear
             #[inline(always)]
             #[must_use]
-            pub fn pb_clr_0(&mut self) -> PB_CLR_0_W<0> {
-                PB_CLR_0_W::new(self)
-            }
-            ///Bits 8:15 - GPIO PB clear output byte 1
-            #[inline(always)]
-            #[must_use]
-            pub fn pb_clr_1(&mut self) -> PB_CLR_1_W<8> {
-                PB_CLR_1_W::new(self)
-            }
-            ///Bits 16:23 - GPIO PB clear output byte 2
-            #[inline(always)]
-            #[must_use]
-            pub fn pb_clr_2(&mut self) -> PB_CLR_2_W<16> {
-                PB_CLR_2_W::new(self)
+            pub fn pb_clr(&mut self) -> PB_CLR_W<0> {
+                PB_CLR_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -7632,53 +7636,23 @@ pub mod gpio {
                 W(writer)
             }
         }
-        ///Field `PB_PU_0` reader - GPIO PB pullup resistance enable byte 0
-        pub type PB_PU_0_R = crate::FieldReader;
-        ///Field `PB_PU_0` writer - GPIO PB pullup resistance enable byte 0
-        pub type PB_PU_0_W<'a, const O: u8> = crate::FieldWriter<'a, PB_PU_SPEC, 8, O>;
-        ///Field `PB_PU_1` reader - GPIO PB pullup resistance enable byte 1
-        pub type PB_PU_1_R = crate::FieldReader;
-        ///Field `PB_PU_1` writer - GPIO PB pullup resistance enable byte 1
-        pub type PB_PU_1_W<'a, const O: u8> = crate::FieldWriter<'a, PB_PU_SPEC, 8, O>;
-        ///Field `PB_PU_2` reader - GPIO PB pullup resistance enable byte 2
-        pub type PB_PU_2_R = crate::FieldReader;
-        ///Field `PB_PU_2` writer - GPIO PB pullup resistance enable byte 2
-        pub type PB_PU_2_W<'a, const O: u8> = crate::FieldWriter<'a, PB_PU_SPEC, 8, O>;
+        ///Field `PB_PU` reader - GPIO PB pull-up enable
+        pub type PB_PU_R = crate::FieldReader<u32>;
+        ///Field `PB_PU` writer - GPIO PB pull-up enable
+        pub type PB_PU_W<'a, const O: u8> = crate::FieldWriter<'a, PB_PU_SPEC, 24, O, u32>;
         impl R {
-            ///Bits 0:7 - GPIO PB pullup resistance enable byte 0
+            ///Bits 0:23 - GPIO PB pull-up enable
             #[inline(always)]
-            pub fn pb_pu_0(&self) -> PB_PU_0_R {
-                PB_PU_0_R::new((self.bits & 0xff) as u8)
-            }
-            ///Bits 8:15 - GPIO PB pullup resistance enable byte 1
-            #[inline(always)]
-            pub fn pb_pu_1(&self) -> PB_PU_1_R {
-                PB_PU_1_R::new(((self.bits >> 8) & 0xff) as u8)
-            }
-            ///Bits 16:23 - GPIO PB pullup resistance enable byte 2
-            #[inline(always)]
-            pub fn pb_pu_2(&self) -> PB_PU_2_R {
-                PB_PU_2_R::new(((self.bits >> 16) & 0xff) as u8)
+            pub fn pb_pu(&self) -> PB_PU_R {
+                PB_PU_R::new(self.bits & 0x00ff_ffff)
             }
         }
         impl W {
-            ///Bits 0:7 - GPIO PB pullup resistance enable byte 0
+            ///Bits 0:23 - GPIO PB pull-up enable
             #[inline(always)]
             #[must_use]
-            pub fn pb_pu_0(&mut self) -> PB_PU_0_W<0> {
-                PB_PU_0_W::new(self)
-            }
-            ///Bits 8:15 - GPIO PB pullup resistance enable byte 1
-            #[inline(always)]
-            #[must_use]
-            pub fn pb_pu_1(&mut self) -> PB_PU_1_W<8> {
-                PB_PU_1_W::new(self)
-            }
-            ///Bits 16:23 - GPIO PB pullup resistance enable byte 2
-            #[inline(always)]
-            #[must_use]
-            pub fn pb_pu_2(&mut self) -> PB_PU_2_W<16> {
-                PB_PU_2_W::new(self)
+            pub fn pb_pu(&mut self) -> PB_PU_W<0> {
+                PB_PU_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -7751,53 +7725,23 @@ pub mod gpio {
                 W(writer)
             }
         }
-        ///Field `PB_PD_DRV_0` reader - PB pulldown for input or PB driving capability for output byte 0
-        pub type PB_PD_DRV_0_R = crate::FieldReader;
-        ///Field `PB_PD_DRV_0` writer - PB pulldown for input or PB driving capability for output byte 0
-        pub type PB_PD_DRV_0_W<'a, const O: u8> = crate::FieldWriter<'a, PB_PD_DRV_SPEC, 8, O>;
-        ///Field `PB_PD_DRV_1` reader - PB pulldown for input or PB driving capability for output byte 0
-        pub type PB_PD_DRV_1_R = crate::FieldReader;
-        ///Field `PB_PD_DRV_1` writer - PB pulldown for input or PB driving capability for output byte 0
-        pub type PB_PD_DRV_1_W<'a, const O: u8> = crate::FieldWriter<'a, PB_PD_DRV_SPEC, 8, O>;
-        ///Field `PB_PD_DRV_2` reader - PB pulldown for input or PB driving capability for output byte 0
-        pub type PB_PD_DRV_2_R = crate::FieldReader;
-        ///Field `PB_PD_DRV_2` writer - PB pulldown for input or PB driving capability for output byte 0
-        pub type PB_PD_DRV_2_W<'a, const O: u8> = crate::FieldWriter<'a, PB_PD_DRV_SPEC, 8, O>;
+        ///Field `PB_PD_DRV` reader - GPIO PB pull-down drive strength
+        pub type PB_PD_DRV_R = crate::FieldReader<u32>;
+        ///Field `PB_PD_DRV` writer - GPIO PB pull-down drive strength
+        pub type PB_PD_DRV_W<'a, const O: u8> = crate::FieldWriter<'a, PB_PD_DRV_SPEC, 24, O, u32>;
         impl R {
-            ///Bits 0:7 - PB pulldown for input or PB driving capability for output byte 0
+            ///Bits 0:23 - GPIO PB pull-down drive strength
             #[inline(always)]
-            pub fn pb_pd_drv_0(&self) -> PB_PD_DRV_0_R {
-                PB_PD_DRV_0_R::new((self.bits & 0xff) as u8)
-            }
-            ///Bits 8:15 - PB pulldown for input or PB driving capability for output byte 0
-            #[inline(always)]
-            pub fn pb_pd_drv_1(&self) -> PB_PD_DRV_1_R {
-                PB_PD_DRV_1_R::new(((self.bits >> 8) & 0xff) as u8)
-            }
-            ///Bits 16:23 - PB pulldown for input or PB driving capability for output byte 0
-            #[inline(always)]
-            pub fn pb_pd_drv_2(&self) -> PB_PD_DRV_2_R {
-                PB_PD_DRV_2_R::new(((self.bits >> 16) & 0xff) as u8)
+            pub fn pb_pd_drv(&self) -> PB_PD_DRV_R {
+                PB_PD_DRV_R::new(self.bits & 0x00ff_ffff)
             }
         }
         impl W {
-            ///Bits 0:7 - PB pulldown for input or PB driving capability for output byte 0
+            ///Bits 0:23 - GPIO PB pull-down drive strength
             #[inline(always)]
             #[must_use]
-            pub fn pb_pd_drv_0(&mut self) -> PB_PD_DRV_0_W<0> {
-                PB_PD_DRV_0_W::new(self)
-            }
-            ///Bits 8:15 - PB pulldown for input or PB driving capability for output byte 0
-            #[inline(always)]
-            #[must_use]
-            pub fn pb_pd_drv_1(&mut self) -> PB_PD_DRV_1_W<8> {
-                PB_PD_DRV_1_W::new(self)
-            }
-            ///Bits 16:23 - PB pulldown for input or PB driving capability for output byte 0
-            #[inline(always)]
-            #[must_use]
-            pub fn pb_pd_drv_2(&mut self) -> PB_PD_DRV_2_W<16> {
-                PB_PD_DRV_2_W::new(self)
+            pub fn pb_pd_drv(&mut self) -> PB_PD_DRV_W<0> {
+                PB_PD_DRV_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -11607,68 +11551,68 @@ pub mod uart0 {
     #[repr(C)]
     pub struct RegisterBlock {
         ///0x00 - RW, UART0 modem control
-        pub uart0_mcr: UART0_MCR,
+        pub mcr: MCR,
         ///0x01 - RW, UART0 interrupt enable
-        pub uart0_ier: UART0_IER,
+        pub ier: IER,
         ///0x02 - RW, UART0 FIFO control
-        pub uart0_fcr: UART0_FCR,
+        pub fcr: FCR,
         ///0x03 - RW, UART0 line control
-        pub uart0_lcr: UART0_LCR,
+        pub lcr: LCR,
         ///0x04 - RO, UART0 interrupt identification
-        pub uart0_iir: UART0_IIR,
+        pub iir: IIR,
         ///0x05 - RO, UART0 line status
-        pub uart0_lsr: UART0_LSR,
+        pub lsr: LSR,
         ///0x06 - RO, UART0 modem status
-        pub uart0_msr: UART0_MSR,
+        pub msr: MSR,
         _reserved7: [u8; 0x01],
-        _reserved_7_uart0: [u8; 0x01],
+        _reserved_7_rbr: [u8; 0x01],
         _reserved8: [u8; 0x01],
         ///0x0a - RO, UART0 receiver FIFO count
-        pub uart0_rfc: UART0_RFC,
+        pub rfc: RFC,
         ///0x0b - RO, UART0 transmitter FIFO count
-        pub uart0_tfc: UART0_TFC,
+        pub tfc: TFC,
         ///0x0c - RW, UART0 divisor latch
-        pub uart0_dl: UART0_DL,
+        pub dl: DL,
         ///0x0e - RW, UART0 pre-divisor latch byte, only low 7 bit, from 1 to 0/128
-        pub uart0_div: UART0_DIV,
+        pub div: DIV,
         ///0x0f - RW, UART0 slave address: 0xFF=disable, other=enable
-        pub uart0_adr: UART0_ADR,
+        pub adr: ADR,
     }
     impl RegisterBlock {
         ///0x08 - WO, UART0 transmitter holding, transmittal byte
         #[inline(always)]
-        pub const fn uart0_thr(&self) -> &UART0_THR {
+        pub const fn thr(&self) -> &THR {
             unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
         }
         ///0x08 - RO, UART0 receiver buffer, receiving byte
         #[inline(always)]
-        pub const fn uart0_rbr(&self) -> &UART0_RBR {
+        pub const fn rbr(&self) -> &RBR {
             unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
         }
     }
-    ///UART0_MCR (rw) register accessor: an alias for `Reg<UART0_MCR_SPEC>`
-    pub type UART0_MCR = crate::Reg<uart0_mcr::UART0_MCR_SPEC>;
+    ///MCR (rw) register accessor: an alias for `Reg<MCR_SPEC>`
+    pub type MCR = crate::Reg<mcr::MCR_SPEC>;
     ///RW, UART0 modem control
-    pub mod uart0_mcr {
-        ///Register `UART0_MCR` reader
-        pub struct R(crate::R<UART0_MCR_SPEC>);
+    pub mod mcr {
+        ///Register `MCR` reader
+        pub struct R(crate::R<MCR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART0_MCR_SPEC>;
+            type Target = crate::R<MCR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART0_MCR_SPEC>> for R {
+        impl From<crate::R<MCR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART0_MCR_SPEC>) -> Self {
+            fn from(reader: crate::R<MCR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `UART0_MCR` writer
-        pub struct W(crate::W<UART0_MCR_SPEC>);
+        ///Register `MCR` writer
+        pub struct W(crate::W<MCR_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<UART0_MCR_SPEC>;
+            type Target = crate::W<MCR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -11680,135 +11624,134 @@ pub mod uart0 {
                 &mut self.0
             }
         }
-        impl From<crate::W<UART0_MCR_SPEC>> for W {
+        impl From<crate::W<MCR_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<UART0_MCR_SPEC>) -> Self {
+            fn from(writer: crate::W<MCR_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `MCR_DTR` reader - RW, UART0 control DTR
-        pub type MCR_DTR_R = crate::BitReader;
-        ///Field `MCR_DTR` writer - RW, UART0 control DTR
-        pub type MCR_DTR_W<'a, const O: u8> = crate::BitWriter<'a, UART0_MCR_SPEC, O>;
-        ///Field `MCR_RTS` reader - RW, UART0 control RTS
-        pub type MCR_RTS_R = crate::BitReader;
-        ///Field `MCR_RTS` writer - RW, UART0 control RTS
-        pub type MCR_RTS_W<'a, const O: u8> = crate::BitWriter<'a, UART0_MCR_SPEC, O>;
-        ///Field `MCR_OUT1` reader - RW, UART0 control OUT1
-        pub type MCR_OUT1_R = crate::BitReader;
-        ///Field `MCR_OUT1` writer - RW, UART0 control OUT1
-        pub type MCR_OUT1_W<'a, const O: u8> = crate::BitWriter<'a, UART0_MCR_SPEC, O>;
-        ///Field `MCR_OUT2_RB_MCR_INT_OE` reader - RW, UART control OUT2/ UART interrupt output enable
-        pub type MCR_OUT2_RB_MCR_INT_OE_R = crate::BitReader;
-        ///Field `MCR_OUT2_RB_MCR_INT_OE` writer - RW, UART control OUT2/ UART interrupt output enable
-        pub type MCR_OUT2_RB_MCR_INT_OE_W<'a, const O: u8> =
-            crate::BitWriter<'a, UART0_MCR_SPEC, O>;
-        ///Field `MCR_LOOP` reader - RW, UART0 enable local loop back
-        pub type MCR_LOOP_R = crate::BitReader;
-        ///Field `MCR_LOOP` writer - RW, UART0 enable local loop back
-        pub type MCR_LOOP_W<'a, const O: u8> = crate::BitWriter<'a, UART0_MCR_SPEC, O>;
-        ///Field `MCR_AU_FLOW_EN` reader - RW, UART0 enable autoflow control
-        pub type MCR_AU_FLOW_EN_R = crate::BitReader;
-        ///Field `MCR_AU_FLOW_EN` writer - RW, UART0 enable autoflow control
-        pub type MCR_AU_FLOW_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART0_MCR_SPEC, O>;
-        ///Field `MCR_TNOW` reader - RW, UART0 enable TNOW output on DTR pin
-        pub type MCR_TNOW_R = crate::BitReader;
-        ///Field `MCR_TNOW` writer - RW, UART0 enable TNOW output on DTR pin
-        pub type MCR_TNOW_W<'a, const O: u8> = crate::BitWriter<'a, UART0_MCR_SPEC, O>;
-        ///Field `MCR_HALF` reader - RW, UART0 enable half-duplex
-        pub type MCR_HALF_R = crate::BitReader;
-        ///Field `MCR_HALF` writer - RW, UART0 enable half-duplex
-        pub type MCR_HALF_W<'a, const O: u8> = crate::BitWriter<'a, UART0_MCR_SPEC, O>;
+        ///Field `DTR` reader - RW, UART0 control DTR
+        pub type DTR_R = crate::BitReader;
+        ///Field `DTR` writer - RW, UART0 control DTR
+        pub type DTR_W<'a, const O: u8> = crate::BitWriter<'a, MCR_SPEC, O>;
+        ///Field `RTS` reader - RW, UART0 control RTS
+        pub type RTS_R = crate::BitReader;
+        ///Field `RTS` writer - RW, UART0 control RTS
+        pub type RTS_W<'a, const O: u8> = crate::BitWriter<'a, MCR_SPEC, O>;
+        ///Field `OUT1` reader - RW, UART0 control OUT1
+        pub type OUT1_R = crate::BitReader;
+        ///Field `OUT1` writer - RW, UART0 control OUT1
+        pub type OUT1_W<'a, const O: u8> = crate::BitWriter<'a, MCR_SPEC, O>;
+        ///Field `OUT2_RB_MCR_INT_OE` reader - RW, UART control OUT2/ UART interrupt output enable
+        pub type OUT2_RB_MCR_INT_OE_R = crate::BitReader;
+        ///Field `OUT2_RB_MCR_INT_OE` writer - RW, UART control OUT2/ UART interrupt output enable
+        pub type OUT2_RB_MCR_INT_OE_W<'a, const O: u8> = crate::BitWriter<'a, MCR_SPEC, O>;
+        ///Field `LOOP` reader - RW, UART0 enable local loop back
+        pub type LOOP_R = crate::BitReader;
+        ///Field `LOOP` writer - RW, UART0 enable local loop back
+        pub type LOOP_W<'a, const O: u8> = crate::BitWriter<'a, MCR_SPEC, O>;
+        ///Field `AU_FLOW_EN` reader - RW, UART0 enable autoflow control
+        pub type AU_FLOW_EN_R = crate::BitReader;
+        ///Field `AU_FLOW_EN` writer - RW, UART0 enable autoflow control
+        pub type AU_FLOW_EN_W<'a, const O: u8> = crate::BitWriter<'a, MCR_SPEC, O>;
+        ///Field `TNOW` reader - RW, UART0 enable TNOW output on DTR pin
+        pub type TNOW_R = crate::BitReader;
+        ///Field `TNOW` writer - RW, UART0 enable TNOW output on DTR pin
+        pub type TNOW_W<'a, const O: u8> = crate::BitWriter<'a, MCR_SPEC, O>;
+        ///Field `HALF` reader - RW, UART0 enable half-duplex
+        pub type HALF_R = crate::BitReader;
+        ///Field `HALF` writer - RW, UART0 enable half-duplex
+        pub type HALF_W<'a, const O: u8> = crate::BitWriter<'a, MCR_SPEC, O>;
         impl R {
             ///Bit 0 - RW, UART0 control DTR
             #[inline(always)]
-            pub fn mcr_dtr(&self) -> MCR_DTR_R {
-                MCR_DTR_R::new((self.bits & 1) != 0)
+            pub fn dtr(&self) -> DTR_R {
+                DTR_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW, UART0 control RTS
             #[inline(always)]
-            pub fn mcr_rts(&self) -> MCR_RTS_R {
-                MCR_RTS_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn rts(&self) -> RTS_R {
+                RTS_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW, UART0 control OUT1
             #[inline(always)]
-            pub fn mcr_out1(&self) -> MCR_OUT1_R {
-                MCR_OUT1_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn out1(&self) -> OUT1_R {
+                OUT1_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW, UART control OUT2/ UART interrupt output enable
             #[inline(always)]
-            pub fn mcr_out2_rb_mcr_int_oe(&self) -> MCR_OUT2_RB_MCR_INT_OE_R {
-                MCR_OUT2_RB_MCR_INT_OE_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn out2_rb_mcr_int_oe(&self) -> OUT2_RB_MCR_INT_OE_R {
+                OUT2_RB_MCR_INT_OE_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RW, UART0 enable local loop back
             #[inline(always)]
-            pub fn mcr_loop(&self) -> MCR_LOOP_R {
-                MCR_LOOP_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn loop_(&self) -> LOOP_R {
+                LOOP_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 5 - RW, UART0 enable autoflow control
             #[inline(always)]
-            pub fn mcr_au_flow_en(&self) -> MCR_AU_FLOW_EN_R {
-                MCR_AU_FLOW_EN_R::new(((self.bits >> 5) & 1) != 0)
+            pub fn au_flow_en(&self) -> AU_FLOW_EN_R {
+                AU_FLOW_EN_R::new(((self.bits >> 5) & 1) != 0)
             }
             ///Bit 6 - RW, UART0 enable TNOW output on DTR pin
             #[inline(always)]
-            pub fn mcr_tnow(&self) -> MCR_TNOW_R {
-                MCR_TNOW_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn tnow(&self) -> TNOW_R {
+                TNOW_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - RW, UART0 enable half-duplex
             #[inline(always)]
-            pub fn mcr_half(&self) -> MCR_HALF_R {
-                MCR_HALF_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn half(&self) -> HALF_R {
+                HALF_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW, UART0 control DTR
             #[inline(always)]
             #[must_use]
-            pub fn mcr_dtr(&mut self) -> MCR_DTR_W<0> {
-                MCR_DTR_W::new(self)
+            pub fn dtr(&mut self) -> DTR_W<0> {
+                DTR_W::new(self)
             }
             ///Bit 1 - RW, UART0 control RTS
             #[inline(always)]
             #[must_use]
-            pub fn mcr_rts(&mut self) -> MCR_RTS_W<1> {
-                MCR_RTS_W::new(self)
+            pub fn rts(&mut self) -> RTS_W<1> {
+                RTS_W::new(self)
             }
             ///Bit 2 - RW, UART0 control OUT1
             #[inline(always)]
             #[must_use]
-            pub fn mcr_out1(&mut self) -> MCR_OUT1_W<2> {
-                MCR_OUT1_W::new(self)
+            pub fn out1(&mut self) -> OUT1_W<2> {
+                OUT1_W::new(self)
             }
             ///Bit 3 - RW, UART control OUT2/ UART interrupt output enable
             #[inline(always)]
             #[must_use]
-            pub fn mcr_out2_rb_mcr_int_oe(&mut self) -> MCR_OUT2_RB_MCR_INT_OE_W<3> {
-                MCR_OUT2_RB_MCR_INT_OE_W::new(self)
+            pub fn out2_rb_mcr_int_oe(&mut self) -> OUT2_RB_MCR_INT_OE_W<3> {
+                OUT2_RB_MCR_INT_OE_W::new(self)
             }
             ///Bit 4 - RW, UART0 enable local loop back
             #[inline(always)]
             #[must_use]
-            pub fn mcr_loop(&mut self) -> MCR_LOOP_W<4> {
-                MCR_LOOP_W::new(self)
+            pub fn loop_(&mut self) -> LOOP_W<4> {
+                LOOP_W::new(self)
             }
             ///Bit 5 - RW, UART0 enable autoflow control
             #[inline(always)]
             #[must_use]
-            pub fn mcr_au_flow_en(&mut self) -> MCR_AU_FLOW_EN_W<5> {
-                MCR_AU_FLOW_EN_W::new(self)
+            pub fn au_flow_en(&mut self) -> AU_FLOW_EN_W<5> {
+                AU_FLOW_EN_W::new(self)
             }
             ///Bit 6 - RW, UART0 enable TNOW output on DTR pin
             #[inline(always)]
             #[must_use]
-            pub fn mcr_tnow(&mut self) -> MCR_TNOW_W<6> {
-                MCR_TNOW_W::new(self)
+            pub fn tnow(&mut self) -> TNOW_W<6> {
+                TNOW_W::new(self)
             }
             ///Bit 7 - RW, UART0 enable half-duplex
             #[inline(always)]
             #[must_use]
-            pub fn mcr_half(&mut self) -> MCR_HALF_W<7> {
-                MCR_HALF_W::new(self)
+            pub fn half(&mut self) -> HALF_W<7> {
+                HALF_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -11821,49 +11764,49 @@ pub mod uart0 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart0_mcr](index.html) module
-        pub struct UART0_MCR_SPEC;
-        impl crate::RegisterSpec for UART0_MCR_SPEC {
+        ///For information about available fields see [mcr](index.html) module
+        pub struct MCR_SPEC;
+        impl crate::RegisterSpec for MCR_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart0_mcr::R](R) reader structure
-        impl crate::Readable for UART0_MCR_SPEC {
+        ///`read()` method returns [mcr::R](R) reader structure
+        impl crate::Readable for MCR_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [uart0_mcr::W](W) writer structure
-        impl crate::Writable for UART0_MCR_SPEC {
+        ///`write(|w| ..)` method takes [mcr::W](W) writer structure
+        impl crate::Writable for MCR_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets UART0_MCR to value 0
-        impl crate::Resettable for UART0_MCR_SPEC {
+        ///`reset()` method sets MCR to value 0
+        impl crate::Resettable for MCR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART0_IER (rw) register accessor: an alias for `Reg<UART0_IER_SPEC>`
-    pub type UART0_IER = crate::Reg<uart0_ier::UART0_IER_SPEC>;
+    ///IER (rw) register accessor: an alias for `Reg<IER_SPEC>`
+    pub type IER = crate::Reg<ier::IER_SPEC>;
     ///RW, UART0 interrupt enable
-    pub mod uart0_ier {
-        ///Register `UART0_IER` reader
-        pub struct R(crate::R<UART0_IER_SPEC>);
+    pub mod ier {
+        ///Register `IER` reader
+        pub struct R(crate::R<IER_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART0_IER_SPEC>;
+            type Target = crate::R<IER_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART0_IER_SPEC>> for R {
+        impl From<crate::R<IER_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART0_IER_SPEC>) -> Self {
+            fn from(reader: crate::R<IER_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `UART0_IER` writer
-        pub struct W(crate::W<UART0_IER_SPEC>);
+        ///Register `IER` writer
+        pub struct W(crate::W<IER_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<UART0_IER_SPEC>;
+            type Target = crate::W<IER_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -11875,134 +11818,134 @@ pub mod uart0 {
                 &mut self.0
             }
         }
-        impl From<crate::W<UART0_IER_SPEC>> for W {
+        impl From<crate::W<IER_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<UART0_IER_SPEC>) -> Self {
+            fn from(writer: crate::W<IER_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `IER_RECV_RDY` reader - RW, UART interrupt enable for receiver data ready
-        pub type IER_RECV_RDY_R = crate::BitReader;
-        ///Field `IER_RECV_RDY` writer - RW, UART interrupt enable for receiver data ready
-        pub type IER_RECV_RDY_W<'a, const O: u8> = crate::BitWriter<'a, UART0_IER_SPEC, O>;
-        ///Field `IER_THR_EMPTY` reader - RW, UART interrupt enable for THR empty
-        pub type IER_THR_EMPTY_R = crate::BitReader;
-        ///Field `IER_THR_EMPTY` writer - RW, UART interrupt enable for THR empty
-        pub type IER_THR_EMPTY_W<'a, const O: u8> = crate::BitWriter<'a, UART0_IER_SPEC, O>;
-        ///Field `IER_LINE_STAT` reader - RW, UART interrupt enable for receiver line status
-        pub type IER_LINE_STAT_R = crate::BitReader;
-        ///Field `IER_LINE_STAT` writer - RW, UART interrupt enable for receiver line status
-        pub type IER_LINE_STAT_W<'a, const O: u8> = crate::BitWriter<'a, UART0_IER_SPEC, O>;
-        ///Field `IER_MODEM_CHG` reader - RW, UART0 interrupt enable for modem status change
-        pub type IER_MODEM_CHG_R = crate::BitReader;
-        ///Field `IER_MODEM_CHG` writer - RW, UART0 interrupt enable for modem status change
-        pub type IER_MODEM_CHG_W<'a, const O: u8> = crate::BitWriter<'a, UART0_IER_SPEC, O>;
-        ///Field `IER_DTR_EN` reader - RW, UART0 DTR/TNOW output pin enable
-        pub type IER_DTR_EN_R = crate::BitReader;
-        ///Field `IER_DTR_EN` writer - RW, UART0 DTR/TNOW output pin enable
-        pub type IER_DTR_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART0_IER_SPEC, O>;
-        ///Field `IER_RTS_EN` reader - RW, UART0 RTS output pin enable
-        pub type IER_RTS_EN_R = crate::BitReader;
-        ///Field `IER_RTS_EN` writer - RW, UART0 RTS output pin enable
-        pub type IER_RTS_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART0_IER_SPEC, O>;
-        ///Field `IER_TXD_EN` reader - RW, UART TXD pin enable
-        pub type IER_TXD_EN_R = crate::BitReader;
-        ///Field `IER_TXD_EN` writer - RW, UART TXD pin enable
-        pub type IER_TXD_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART0_IER_SPEC, O>;
-        ///Field `IER_RESET` reader - WZ, UART software reset control, high action, auto clear
-        pub type IER_RESET_R = crate::BitReader;
-        ///Field `IER_RESET` writer - WZ, UART software reset control, high action, auto clear
-        pub type IER_RESET_W<'a, const O: u8> = crate::BitWriter<'a, UART0_IER_SPEC, O>;
+        ///Field `RECV_RDY` reader - RW, UART interrupt enable for receiver data ready
+        pub type RECV_RDY_R = crate::BitReader;
+        ///Field `RECV_RDY` writer - RW, UART interrupt enable for receiver data ready
+        pub type RECV_RDY_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
+        ///Field `THR_EMPTY` reader - RW, UART interrupt enable for THR empty
+        pub type THR_EMPTY_R = crate::BitReader;
+        ///Field `THR_EMPTY` writer - RW, UART interrupt enable for THR empty
+        pub type THR_EMPTY_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
+        ///Field `LINE_STAT` reader - RW, UART interrupt enable for receiver line status
+        pub type LINE_STAT_R = crate::BitReader;
+        ///Field `LINE_STAT` writer - RW, UART interrupt enable for receiver line status
+        pub type LINE_STAT_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
+        ///Field `MODEM_CHG` reader - RW, UART0 interrupt enable for modem status change
+        pub type MODEM_CHG_R = crate::BitReader;
+        ///Field `MODEM_CHG` writer - RW, UART0 interrupt enable for modem status change
+        pub type MODEM_CHG_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
+        ///Field `DTR_EN` reader - RW, UART0 DTR/TNOW output pin enable
+        pub type DTR_EN_R = crate::BitReader;
+        ///Field `DTR_EN` writer - RW, UART0 DTR/TNOW output pin enable
+        pub type DTR_EN_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
+        ///Field `RTS_EN` reader - RW, UART0 RTS output pin enable
+        pub type RTS_EN_R = crate::BitReader;
+        ///Field `RTS_EN` writer - RW, UART0 RTS output pin enable
+        pub type RTS_EN_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
+        ///Field `TXD_EN` reader - RW, UART TXD pin enable
+        pub type TXD_EN_R = crate::BitReader;
+        ///Field `TXD_EN` writer - RW, UART TXD pin enable
+        pub type TXD_EN_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
+        ///Field `RESET` reader - WZ, UART software reset control, high action, auto clear
+        pub type RESET_R = crate::BitReader;
+        ///Field `RESET` writer - WZ, UART software reset control, high action, auto clear
+        pub type RESET_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
         impl R {
             ///Bit 0 - RW, UART interrupt enable for receiver data ready
             #[inline(always)]
-            pub fn ier_recv_rdy(&self) -> IER_RECV_RDY_R {
-                IER_RECV_RDY_R::new((self.bits & 1) != 0)
+            pub fn recv_rdy(&self) -> RECV_RDY_R {
+                RECV_RDY_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW, UART interrupt enable for THR empty
             #[inline(always)]
-            pub fn ier_thr_empty(&self) -> IER_THR_EMPTY_R {
-                IER_THR_EMPTY_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn thr_empty(&self) -> THR_EMPTY_R {
+                THR_EMPTY_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW, UART interrupt enable for receiver line status
             #[inline(always)]
-            pub fn ier_line_stat(&self) -> IER_LINE_STAT_R {
-                IER_LINE_STAT_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn line_stat(&self) -> LINE_STAT_R {
+                LINE_STAT_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW, UART0 interrupt enable for modem status change
             #[inline(always)]
-            pub fn ier_modem_chg(&self) -> IER_MODEM_CHG_R {
-                IER_MODEM_CHG_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn modem_chg(&self) -> MODEM_CHG_R {
+                MODEM_CHG_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RW, UART0 DTR/TNOW output pin enable
             #[inline(always)]
-            pub fn ier_dtr_en(&self) -> IER_DTR_EN_R {
-                IER_DTR_EN_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn dtr_en(&self) -> DTR_EN_R {
+                DTR_EN_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 5 - RW, UART0 RTS output pin enable
             #[inline(always)]
-            pub fn ier_rts_en(&self) -> IER_RTS_EN_R {
-                IER_RTS_EN_R::new(((self.bits >> 5) & 1) != 0)
+            pub fn rts_en(&self) -> RTS_EN_R {
+                RTS_EN_R::new(((self.bits >> 5) & 1) != 0)
             }
             ///Bit 6 - RW, UART TXD pin enable
             #[inline(always)]
-            pub fn ier_txd_en(&self) -> IER_TXD_EN_R {
-                IER_TXD_EN_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn txd_en(&self) -> TXD_EN_R {
+                TXD_EN_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - WZ, UART software reset control, high action, auto clear
             #[inline(always)]
-            pub fn ier_reset(&self) -> IER_RESET_R {
-                IER_RESET_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn reset(&self) -> RESET_R {
+                RESET_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW, UART interrupt enable for receiver data ready
             #[inline(always)]
             #[must_use]
-            pub fn ier_recv_rdy(&mut self) -> IER_RECV_RDY_W<0> {
-                IER_RECV_RDY_W::new(self)
+            pub fn recv_rdy(&mut self) -> RECV_RDY_W<0> {
+                RECV_RDY_W::new(self)
             }
             ///Bit 1 - RW, UART interrupt enable for THR empty
             #[inline(always)]
             #[must_use]
-            pub fn ier_thr_empty(&mut self) -> IER_THR_EMPTY_W<1> {
-                IER_THR_EMPTY_W::new(self)
+            pub fn thr_empty(&mut self) -> THR_EMPTY_W<1> {
+                THR_EMPTY_W::new(self)
             }
             ///Bit 2 - RW, UART interrupt enable for receiver line status
             #[inline(always)]
             #[must_use]
-            pub fn ier_line_stat(&mut self) -> IER_LINE_STAT_W<2> {
-                IER_LINE_STAT_W::new(self)
+            pub fn line_stat(&mut self) -> LINE_STAT_W<2> {
+                LINE_STAT_W::new(self)
             }
             ///Bit 3 - RW, UART0 interrupt enable for modem status change
             #[inline(always)]
             #[must_use]
-            pub fn ier_modem_chg(&mut self) -> IER_MODEM_CHG_W<3> {
-                IER_MODEM_CHG_W::new(self)
+            pub fn modem_chg(&mut self) -> MODEM_CHG_W<3> {
+                MODEM_CHG_W::new(self)
             }
             ///Bit 4 - RW, UART0 DTR/TNOW output pin enable
             #[inline(always)]
             #[must_use]
-            pub fn ier_dtr_en(&mut self) -> IER_DTR_EN_W<4> {
-                IER_DTR_EN_W::new(self)
+            pub fn dtr_en(&mut self) -> DTR_EN_W<4> {
+                DTR_EN_W::new(self)
             }
             ///Bit 5 - RW, UART0 RTS output pin enable
             #[inline(always)]
             #[must_use]
-            pub fn ier_rts_en(&mut self) -> IER_RTS_EN_W<5> {
-                IER_RTS_EN_W::new(self)
+            pub fn rts_en(&mut self) -> RTS_EN_W<5> {
+                RTS_EN_W::new(self)
             }
             ///Bit 6 - RW, UART TXD pin enable
             #[inline(always)]
             #[must_use]
-            pub fn ier_txd_en(&mut self) -> IER_TXD_EN_W<6> {
-                IER_TXD_EN_W::new(self)
+            pub fn txd_en(&mut self) -> TXD_EN_W<6> {
+                TXD_EN_W::new(self)
             }
             ///Bit 7 - WZ, UART software reset control, high action, auto clear
             #[inline(always)]
             #[must_use]
-            pub fn ier_reset(&mut self) -> IER_RESET_W<7> {
-                IER_RESET_W::new(self)
+            pub fn reset(&mut self) -> RESET_W<7> {
+                RESET_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -12015,49 +11958,49 @@ pub mod uart0 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart0_ier](index.html) module
-        pub struct UART0_IER_SPEC;
-        impl crate::RegisterSpec for UART0_IER_SPEC {
+        ///For information about available fields see [ier](index.html) module
+        pub struct IER_SPEC;
+        impl crate::RegisterSpec for IER_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart0_ier::R](R) reader structure
-        impl crate::Readable for UART0_IER_SPEC {
+        ///`read()` method returns [ier::R](R) reader structure
+        impl crate::Readable for IER_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [uart0_ier::W](W) writer structure
-        impl crate::Writable for UART0_IER_SPEC {
+        ///`write(|w| ..)` method takes [ier::W](W) writer structure
+        impl crate::Writable for IER_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets UART0_IER to value 0
-        impl crate::Resettable for UART0_IER_SPEC {
+        ///`reset()` method sets IER to value 0
+        impl crate::Resettable for IER_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART0_FCR (rw) register accessor: an alias for `Reg<UART0_FCR_SPEC>`
-    pub type UART0_FCR = crate::Reg<uart0_fcr::UART0_FCR_SPEC>;
+    ///FCR (rw) register accessor: an alias for `Reg<FCR_SPEC>`
+    pub type FCR = crate::Reg<fcr::FCR_SPEC>;
     ///RW, UART0 FIFO control
-    pub mod uart0_fcr {
-        ///Register `UART0_FCR` reader
-        pub struct R(crate::R<UART0_FCR_SPEC>);
+    pub mod fcr {
+        ///Register `FCR` reader
+        pub struct R(crate::R<FCR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART0_FCR_SPEC>;
+            type Target = crate::R<FCR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART0_FCR_SPEC>> for R {
+        impl From<crate::R<FCR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART0_FCR_SPEC>) -> Self {
+            fn from(reader: crate::R<FCR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `UART0_FCR` writer
-        pub struct W(crate::W<UART0_FCR_SPEC>);
+        ///Register `FCR` writer
+        pub struct W(crate::W<FCR_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<UART0_FCR_SPEC>;
+            type Target = crate::W<FCR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -12069,74 +12012,74 @@ pub mod uart0 {
                 &mut self.0
             }
         }
-        impl From<crate::W<UART0_FCR_SPEC>> for W {
+        impl From<crate::W<FCR_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<UART0_FCR_SPEC>) -> Self {
+            fn from(writer: crate::W<FCR_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `FCR_FIFO_EN` reader - RW, UART FIFO enable
-        pub type FCR_FIFO_EN_R = crate::BitReader;
-        ///Field `FCR_FIFO_EN` writer - RW, UART FIFO enable
-        pub type FCR_FIFO_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART0_FCR_SPEC, O>;
-        ///Field `FCR_RX_FIFO_CLR` reader - WZ, clear UART receiver FIFO, high action, auto clear
-        pub type FCR_RX_FIFO_CLR_R = crate::BitReader;
-        ///Field `FCR_RX_FIFO_CLR` writer - WZ, clear UART receiver FIFO, high action, auto clear
-        pub type FCR_RX_FIFO_CLR_W<'a, const O: u8> = crate::BitWriter<'a, UART0_FCR_SPEC, O>;
-        ///Field `FCR_TX_FIFO_CLR` reader - WZ, clear UART transmitter FIFO, high action, auto clear
-        pub type FCR_TX_FIFO_CLR_R = crate::BitReader;
-        ///Field `FCR_TX_FIFO_CLR` writer - WZ, clear UART transmitter FIFO, high action, auto clear
-        pub type FCR_TX_FIFO_CLR_W<'a, const O: u8> = crate::BitWriter<'a, UART0_FCR_SPEC, O>;
-        ///Field `FCR_FIFO_TRIG` reader - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
-        pub type FCR_FIFO_TRIG_R = crate::FieldReader;
-        ///Field `FCR_FIFO_TRIG` writer - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
-        pub type FCR_FIFO_TRIG_W<'a, const O: u8> = crate::FieldWriter<'a, UART0_FCR_SPEC, 2, O>;
+        ///Field `FIFO_EN` reader - RW, UART FIFO enable
+        pub type FIFO_EN_R = crate::BitReader;
+        ///Field `FIFO_EN` writer - RW, UART FIFO enable
+        pub type FIFO_EN_W<'a, const O: u8> = crate::BitWriter<'a, FCR_SPEC, O>;
+        ///Field `RX_FIFO_CLR` reader - WZ, clear UART receiver FIFO, high action, auto clear
+        pub type RX_FIFO_CLR_R = crate::BitReader;
+        ///Field `RX_FIFO_CLR` writer - WZ, clear UART receiver FIFO, high action, auto clear
+        pub type RX_FIFO_CLR_W<'a, const O: u8> = crate::BitWriter<'a, FCR_SPEC, O>;
+        ///Field `TX_FIFO_CLR` reader - WZ, clear UART transmitter FIFO, high action, auto clear
+        pub type TX_FIFO_CLR_R = crate::BitReader;
+        ///Field `TX_FIFO_CLR` writer - WZ, clear UART transmitter FIFO, high action, auto clear
+        pub type TX_FIFO_CLR_W<'a, const O: u8> = crate::BitWriter<'a, FCR_SPEC, O>;
+        ///Field `FIFO_TRIG` reader - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
+        pub type FIFO_TRIG_R = crate::FieldReader;
+        ///Field `FIFO_TRIG` writer - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
+        pub type FIFO_TRIG_W<'a, const O: u8> = crate::FieldWriter<'a, FCR_SPEC, 2, O>;
         impl R {
             ///Bit 0 - RW, UART FIFO enable
             #[inline(always)]
-            pub fn fcr_fifo_en(&self) -> FCR_FIFO_EN_R {
-                FCR_FIFO_EN_R::new((self.bits & 1) != 0)
+            pub fn fifo_en(&self) -> FIFO_EN_R {
+                FIFO_EN_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - WZ, clear UART receiver FIFO, high action, auto clear
             #[inline(always)]
-            pub fn fcr_rx_fifo_clr(&self) -> FCR_RX_FIFO_CLR_R {
-                FCR_RX_FIFO_CLR_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn rx_fifo_clr(&self) -> RX_FIFO_CLR_R {
+                RX_FIFO_CLR_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - WZ, clear UART transmitter FIFO, high action, auto clear
             #[inline(always)]
-            pub fn fcr_tx_fifo_clr(&self) -> FCR_TX_FIFO_CLR_R {
-                FCR_TX_FIFO_CLR_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn tx_fifo_clr(&self) -> TX_FIFO_CLR_R {
+                TX_FIFO_CLR_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bits 6:7 - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
             #[inline(always)]
-            pub fn fcr_fifo_trig(&self) -> FCR_FIFO_TRIG_R {
-                FCR_FIFO_TRIG_R::new((self.bits >> 6) & 3)
+            pub fn fifo_trig(&self) -> FIFO_TRIG_R {
+                FIFO_TRIG_R::new((self.bits >> 6) & 3)
             }
         }
         impl W {
             ///Bit 0 - RW, UART FIFO enable
             #[inline(always)]
             #[must_use]
-            pub fn fcr_fifo_en(&mut self) -> FCR_FIFO_EN_W<0> {
-                FCR_FIFO_EN_W::new(self)
+            pub fn fifo_en(&mut self) -> FIFO_EN_W<0> {
+                FIFO_EN_W::new(self)
             }
             ///Bit 1 - WZ, clear UART receiver FIFO, high action, auto clear
             #[inline(always)]
             #[must_use]
-            pub fn fcr_rx_fifo_clr(&mut self) -> FCR_RX_FIFO_CLR_W<1> {
-                FCR_RX_FIFO_CLR_W::new(self)
+            pub fn rx_fifo_clr(&mut self) -> RX_FIFO_CLR_W<1> {
+                RX_FIFO_CLR_W::new(self)
             }
             ///Bit 2 - WZ, clear UART transmitter FIFO, high action, auto clear
             #[inline(always)]
             #[must_use]
-            pub fn fcr_tx_fifo_clr(&mut self) -> FCR_TX_FIFO_CLR_W<2> {
-                FCR_TX_FIFO_CLR_W::new(self)
+            pub fn tx_fifo_clr(&mut self) -> TX_FIFO_CLR_W<2> {
+                TX_FIFO_CLR_W::new(self)
             }
             ///Bits 6:7 - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
             #[inline(always)]
             #[must_use]
-            pub fn fcr_fifo_trig(&mut self) -> FCR_FIFO_TRIG_W<6> {
-                FCR_FIFO_TRIG_W::new(self)
+            pub fn fifo_trig(&mut self) -> FIFO_TRIG_W<6> {
+                FIFO_TRIG_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -12149,49 +12092,49 @@ pub mod uart0 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart0_fcr](index.html) module
-        pub struct UART0_FCR_SPEC;
-        impl crate::RegisterSpec for UART0_FCR_SPEC {
+        ///For information about available fields see [fcr](index.html) module
+        pub struct FCR_SPEC;
+        impl crate::RegisterSpec for FCR_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart0_fcr::R](R) reader structure
-        impl crate::Readable for UART0_FCR_SPEC {
+        ///`read()` method returns [fcr::R](R) reader structure
+        impl crate::Readable for FCR_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [uart0_fcr::W](W) writer structure
-        impl crate::Writable for UART0_FCR_SPEC {
+        ///`write(|w| ..)` method takes [fcr::W](W) writer structure
+        impl crate::Writable for FCR_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets UART0_FCR to value 0
-        impl crate::Resettable for UART0_FCR_SPEC {
+        ///`reset()` method sets FCR to value 0
+        impl crate::Resettable for FCR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART0_LCR (rw) register accessor: an alias for `Reg<UART0_LCR_SPEC>`
-    pub type UART0_LCR = crate::Reg<uart0_lcr::UART0_LCR_SPEC>;
+    ///LCR (rw) register accessor: an alias for `Reg<LCR_SPEC>`
+    pub type LCR = crate::Reg<lcr::LCR_SPEC>;
     ///RW, UART0 line control
-    pub mod uart0_lcr {
-        ///Register `UART0_LCR` reader
-        pub struct R(crate::R<UART0_LCR_SPEC>);
+    pub mod lcr {
+        ///Register `LCR` reader
+        pub struct R(crate::R<LCR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART0_LCR_SPEC>;
+            type Target = crate::R<LCR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART0_LCR_SPEC>> for R {
+        impl From<crate::R<LCR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART0_LCR_SPEC>) -> Self {
+            fn from(reader: crate::R<LCR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `UART0_LCR` writer
-        pub struct W(crate::W<UART0_LCR_SPEC>);
+        ///Register `LCR` writer
+        pub struct W(crate::W<LCR_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<UART0_LCR_SPEC>;
+            type Target = crate::W<LCR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -12203,105 +12146,104 @@ pub mod uart0 {
                 &mut self.0
             }
         }
-        impl From<crate::W<UART0_LCR_SPEC>> for W {
+        impl From<crate::W<LCR_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<UART0_LCR_SPEC>) -> Self {
+            fn from(writer: crate::W<LCR_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `LCR_WORD_SZ` reader - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
-        pub type LCR_WORD_SZ_R = crate::FieldReader;
-        ///Field `LCR_WORD_SZ` writer - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
-        pub type LCR_WORD_SZ_W<'a, const O: u8> = crate::FieldWriter<'a, UART0_LCR_SPEC, 2, O>;
-        ///Field `LCR_STOP_BIT` reader - RW, UART stop bit length: 0-1bit, 1-2bit
-        pub type LCR_STOP_BIT_R = crate::BitReader;
-        ///Field `LCR_STOP_BIT` writer - RW, UART stop bit length: 0-1bit, 1-2bit
-        pub type LCR_STOP_BIT_W<'a, const O: u8> = crate::BitWriter<'a, UART0_LCR_SPEC, O>;
-        ///Field `LCR_PAR_EN` reader - RW, UART parity enable
-        pub type LCR_PAR_EN_R = crate::BitReader;
-        ///Field `LCR_PAR_EN` writer - RW, UART parity enable
-        pub type LCR_PAR_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART0_LCR_SPEC, O>;
-        ///Field `LCR_PAR_MOD` reader - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
-        pub type LCR_PAR_MOD_R = crate::FieldReader;
-        ///Field `LCR_PAR_MOD` writer - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
-        pub type LCR_PAR_MOD_W<'a, const O: u8> = crate::FieldWriter<'a, UART0_LCR_SPEC, 2, O>;
-        ///Field `LCR_BREAK_EN` reader - RW, UART break control enable
-        pub type LCR_BREAK_EN_R = crate::BitReader;
-        ///Field `LCR_BREAK_EN` writer - RW, UART break control enable
-        pub type LCR_BREAK_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART0_LCR_SPEC, O>;
-        ///Field `LCR_GP_BIT_RB_LCR_DLAB` reader - RW, UART general purpose bit;RW, UART reserved bit
-        pub type LCR_GP_BIT_RB_LCR_DLAB_R = crate::BitReader;
-        ///Field `LCR_GP_BIT_RB_LCR_DLAB` writer - RW, UART general purpose bit;RW, UART reserved bit
-        pub type LCR_GP_BIT_RB_LCR_DLAB_W<'a, const O: u8> =
-            crate::BitWriter<'a, UART0_LCR_SPEC, O>;
+        ///Field `WORD_SZ` reader - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
+        pub type WORD_SZ_R = crate::FieldReader;
+        ///Field `WORD_SZ` writer - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
+        pub type WORD_SZ_W<'a, const O: u8> = crate::FieldWriter<'a, LCR_SPEC, 2, O>;
+        ///Field `STOP_BIT` reader - RW, UART stop bit length: 0-1bit, 1-2bit
+        pub type STOP_BIT_R = crate::BitReader;
+        ///Field `STOP_BIT` writer - RW, UART stop bit length: 0-1bit, 1-2bit
+        pub type STOP_BIT_W<'a, const O: u8> = crate::BitWriter<'a, LCR_SPEC, O>;
+        ///Field `PAR_EN` reader - RW, UART parity enable
+        pub type PAR_EN_R = crate::BitReader;
+        ///Field `PAR_EN` writer - RW, UART parity enable
+        pub type PAR_EN_W<'a, const O: u8> = crate::BitWriter<'a, LCR_SPEC, O>;
+        ///Field `PAR_MOD` reader - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
+        pub type PAR_MOD_R = crate::FieldReader;
+        ///Field `PAR_MOD` writer - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
+        pub type PAR_MOD_W<'a, const O: u8> = crate::FieldWriter<'a, LCR_SPEC, 2, O>;
+        ///Field `BREAK_EN` reader - RW, UART break control enable
+        pub type BREAK_EN_R = crate::BitReader;
+        ///Field `BREAK_EN` writer - RW, UART break control enable
+        pub type BREAK_EN_W<'a, const O: u8> = crate::BitWriter<'a, LCR_SPEC, O>;
+        ///Field `GP_BIT_RB_LCR_DLAB` reader - RW, UART general purpose bit;RW, UART reserved bit
+        pub type GP_BIT_RB_LCR_DLAB_R = crate::BitReader;
+        ///Field `GP_BIT_RB_LCR_DLAB` writer - RW, UART general purpose bit;RW, UART reserved bit
+        pub type GP_BIT_RB_LCR_DLAB_W<'a, const O: u8> = crate::BitWriter<'a, LCR_SPEC, O>;
         impl R {
             ///Bits 0:1 - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
             #[inline(always)]
-            pub fn lcr_word_sz(&self) -> LCR_WORD_SZ_R {
-                LCR_WORD_SZ_R::new(self.bits & 3)
+            pub fn word_sz(&self) -> WORD_SZ_R {
+                WORD_SZ_R::new(self.bits & 3)
             }
             ///Bit 2 - RW, UART stop bit length: 0-1bit, 1-2bit
             #[inline(always)]
-            pub fn lcr_stop_bit(&self) -> LCR_STOP_BIT_R {
-                LCR_STOP_BIT_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn stop_bit(&self) -> STOP_BIT_R {
+                STOP_BIT_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW, UART parity enable
             #[inline(always)]
-            pub fn lcr_par_en(&self) -> LCR_PAR_EN_R {
-                LCR_PAR_EN_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn par_en(&self) -> PAR_EN_R {
+                PAR_EN_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bits 4:5 - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
             #[inline(always)]
-            pub fn lcr_par_mod(&self) -> LCR_PAR_MOD_R {
-                LCR_PAR_MOD_R::new((self.bits >> 4) & 3)
+            pub fn par_mod(&self) -> PAR_MOD_R {
+                PAR_MOD_R::new((self.bits >> 4) & 3)
             }
             ///Bit 6 - RW, UART break control enable
             #[inline(always)]
-            pub fn lcr_break_en(&self) -> LCR_BREAK_EN_R {
-                LCR_BREAK_EN_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn break_en(&self) -> BREAK_EN_R {
+                BREAK_EN_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - RW, UART general purpose bit;RW, UART reserved bit
             #[inline(always)]
-            pub fn lcr_gp_bit_rb_lcr_dlab(&self) -> LCR_GP_BIT_RB_LCR_DLAB_R {
-                LCR_GP_BIT_RB_LCR_DLAB_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn gp_bit_rb_lcr_dlab(&self) -> GP_BIT_RB_LCR_DLAB_R {
+                GP_BIT_RB_LCR_DLAB_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         impl W {
             ///Bits 0:1 - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
             #[inline(always)]
             #[must_use]
-            pub fn lcr_word_sz(&mut self) -> LCR_WORD_SZ_W<0> {
-                LCR_WORD_SZ_W::new(self)
+            pub fn word_sz(&mut self) -> WORD_SZ_W<0> {
+                WORD_SZ_W::new(self)
             }
             ///Bit 2 - RW, UART stop bit length: 0-1bit, 1-2bit
             #[inline(always)]
             #[must_use]
-            pub fn lcr_stop_bit(&mut self) -> LCR_STOP_BIT_W<2> {
-                LCR_STOP_BIT_W::new(self)
+            pub fn stop_bit(&mut self) -> STOP_BIT_W<2> {
+                STOP_BIT_W::new(self)
             }
             ///Bit 3 - RW, UART parity enable
             #[inline(always)]
             #[must_use]
-            pub fn lcr_par_en(&mut self) -> LCR_PAR_EN_W<3> {
-                LCR_PAR_EN_W::new(self)
+            pub fn par_en(&mut self) -> PAR_EN_W<3> {
+                PAR_EN_W::new(self)
             }
             ///Bits 4:5 - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
             #[inline(always)]
             #[must_use]
-            pub fn lcr_par_mod(&mut self) -> LCR_PAR_MOD_W<4> {
-                LCR_PAR_MOD_W::new(self)
+            pub fn par_mod(&mut self) -> PAR_MOD_W<4> {
+                PAR_MOD_W::new(self)
             }
             ///Bit 6 - RW, UART break control enable
             #[inline(always)]
             #[must_use]
-            pub fn lcr_break_en(&mut self) -> LCR_BREAK_EN_W<6> {
-                LCR_BREAK_EN_W::new(self)
+            pub fn break_en(&mut self) -> BREAK_EN_W<6> {
+                BREAK_EN_W::new(self)
             }
             ///Bit 7 - RW, UART general purpose bit;RW, UART reserved bit
             #[inline(always)]
             #[must_use]
-            pub fn lcr_gp_bit_rb_lcr_dlab(&mut self) -> LCR_GP_BIT_RB_LCR_DLAB_W<7> {
-                LCR_GP_BIT_RB_LCR_DLAB_W::new(self)
+            pub fn gp_bit_rb_lcr_dlab(&mut self) -> GP_BIT_RB_LCR_DLAB_W<7> {
+                GP_BIT_RB_LCR_DLAB_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -12314,330 +12256,330 @@ pub mod uart0 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart0_lcr](index.html) module
-        pub struct UART0_LCR_SPEC;
-        impl crate::RegisterSpec for UART0_LCR_SPEC {
+        ///For information about available fields see [lcr](index.html) module
+        pub struct LCR_SPEC;
+        impl crate::RegisterSpec for LCR_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart0_lcr::R](R) reader structure
-        impl crate::Readable for UART0_LCR_SPEC {
+        ///`read()` method returns [lcr::R](R) reader structure
+        impl crate::Readable for LCR_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [uart0_lcr::W](W) writer structure
-        impl crate::Writable for UART0_LCR_SPEC {
+        ///`write(|w| ..)` method takes [lcr::W](W) writer structure
+        impl crate::Writable for LCR_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets UART0_LCR to value 0
-        impl crate::Resettable for UART0_LCR_SPEC {
+        ///`reset()` method sets LCR to value 0
+        impl crate::Resettable for LCR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART0_IIR (r) register accessor: an alias for `Reg<UART0_IIR_SPEC>`
-    pub type UART0_IIR = crate::Reg<uart0_iir::UART0_IIR_SPEC>;
+    ///IIR (r) register accessor: an alias for `Reg<IIR_SPEC>`
+    pub type IIR = crate::Reg<iir::IIR_SPEC>;
     ///RO, UART0 interrupt identification
-    pub mod uart0_iir {
-        ///Register `UART0_IIR` reader
-        pub struct R(crate::R<UART0_IIR_SPEC>);
+    pub mod iir {
+        ///Register `IIR` reader
+        pub struct R(crate::R<IIR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART0_IIR_SPEC>;
+            type Target = crate::R<IIR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART0_IIR_SPEC>> for R {
+        impl From<crate::R<IIR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART0_IIR_SPEC>) -> Self {
+            fn from(reader: crate::R<IIR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `IIR_NO_INT` reader - RO, UART no interrupt flag: 0=interrupt action, 1=no interrupt
-        pub type IIR_NO_INT_R = crate::BitReader;
-        ///Field `IIR_INT_MASK` reader - RO, UART interrupt flag bit mask
-        pub type IIR_INT_MASK_R = crate::FieldReader;
-        ///Field `IIR_FIFO_ID` reader - RO, UART FIFO enabled flag
-        pub type IIR_FIFO_ID_R = crate::FieldReader;
+        ///Field `NO_INT` reader - RO, UART no interrupt flag: 0=interrupt action, 1=no interrupt
+        pub type NO_INT_R = crate::BitReader;
+        ///Field `INT_MASK` reader - RO, UART interrupt flag bit mask
+        pub type INT_MASK_R = crate::FieldReader;
+        ///Field `FIFO_ID` reader - RO, UART FIFO enabled flag
+        pub type FIFO_ID_R = crate::FieldReader;
         impl R {
             ///Bit 0 - RO, UART no interrupt flag: 0=interrupt action, 1=no interrupt
             #[inline(always)]
-            pub fn iir_no_int(&self) -> IIR_NO_INT_R {
-                IIR_NO_INT_R::new((self.bits & 1) != 0)
+            pub fn no_int(&self) -> NO_INT_R {
+                NO_INT_R::new((self.bits & 1) != 0)
             }
             ///Bits 1:3 - RO, UART interrupt flag bit mask
             #[inline(always)]
-            pub fn iir_int_mask(&self) -> IIR_INT_MASK_R {
-                IIR_INT_MASK_R::new((self.bits >> 1) & 7)
+            pub fn int_mask(&self) -> INT_MASK_R {
+                INT_MASK_R::new((self.bits >> 1) & 7)
             }
             ///Bits 6:7 - RO, UART FIFO enabled flag
             #[inline(always)]
-            pub fn iir_fifo_id(&self) -> IIR_FIFO_ID_R {
-                IIR_FIFO_ID_R::new((self.bits >> 6) & 3)
+            pub fn fifo_id(&self) -> FIFO_ID_R {
+                FIFO_ID_R::new((self.bits >> 6) & 3)
             }
         }
         ///RO, UART0 interrupt identification
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart0_iir](index.html) module
-        pub struct UART0_IIR_SPEC;
-        impl crate::RegisterSpec for UART0_IIR_SPEC {
+        ///For information about available fields see [iir](index.html) module
+        pub struct IIR_SPEC;
+        impl crate::RegisterSpec for IIR_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart0_iir::R](R) reader structure
-        impl crate::Readable for UART0_IIR_SPEC {
+        ///`read()` method returns [iir::R](R) reader structure
+        impl crate::Readable for IIR_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets UART0_IIR to value 0x01
-        impl crate::Resettable for UART0_IIR_SPEC {
+        ///`reset()` method sets IIR to value 0x01
+        impl crate::Resettable for IIR_SPEC {
             const RESET_VALUE: Self::Ux = 0x01;
         }
     }
-    ///UART0_LSR (r) register accessor: an alias for `Reg<UART0_LSR_SPEC>`
-    pub type UART0_LSR = crate::Reg<uart0_lsr::UART0_LSR_SPEC>;
+    ///LSR (r) register accessor: an alias for `Reg<LSR_SPEC>`
+    pub type LSR = crate::Reg<lsr::LSR_SPEC>;
     ///RO, UART0 line status
-    pub mod uart0_lsr {
-        ///Register `UART0_LSR` reader
-        pub struct R(crate::R<UART0_LSR_SPEC>);
+    pub mod lsr {
+        ///Register `LSR` reader
+        pub struct R(crate::R<LSR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART0_LSR_SPEC>;
+            type Target = crate::R<LSR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART0_LSR_SPEC>> for R {
+        impl From<crate::R<LSR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART0_LSR_SPEC>) -> Self {
+            fn from(reader: crate::R<LSR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `LSR_DATA_RDY` reader - RO, UART receiver fifo data ready status
-        pub type LSR_DATA_RDY_R = crate::BitReader;
-        ///Field `LSR_OVER_ERR` reader - RZ, UART receiver overrun error
-        pub type LSR_OVER_ERR_R = crate::BitReader;
-        ///Field `LSR_PAR_ERR` reader - RZ, UART receiver parity error
-        pub type LSR_PAR_ERR_R = crate::BitReader;
-        ///Field `LSR_FRAME_ERR` reader - RZ, UART receiver frame error
-        pub type LSR_FRAME_ERR_R = crate::BitReader;
-        ///Field `LSR_BREAK_ERR` reader - RZ, UART receiver break error
-        pub type LSR_BREAK_ERR_R = crate::BitReader;
-        ///Field `LSR_TX_FIFO_EMP` reader - RO, UART transmitter fifo empty status
-        pub type LSR_TX_FIFO_EMP_R = crate::BitReader;
-        ///Field `LSR_TX_ALL_EMP` reader - RO, UART transmitter all empty status
-        pub type LSR_TX_ALL_EMP_R = crate::BitReader;
-        ///Field `LSR_ERR_RX_FIFO` reader - RO, indicate error in UART receiver fifo
-        pub type LSR_ERR_RX_FIFO_R = crate::BitReader;
+        ///Field `DATA_RDY` reader - RO, UART receiver fifo data ready status
+        pub type DATA_RDY_R = crate::BitReader;
+        ///Field `OVER_ERR` reader - RZ, UART receiver overrun error
+        pub type OVER_ERR_R = crate::BitReader;
+        ///Field `PAR_ERR` reader - RZ, UART receiver parity error
+        pub type PAR_ERR_R = crate::BitReader;
+        ///Field `FRAME_ERR` reader - RZ, UART receiver frame error
+        pub type FRAME_ERR_R = crate::BitReader;
+        ///Field `BREAK_ERR` reader - RZ, UART receiver break error
+        pub type BREAK_ERR_R = crate::BitReader;
+        ///Field `TX_FIFO_EMP` reader - RO, UART transmitter fifo empty status
+        pub type TX_FIFO_EMP_R = crate::BitReader;
+        ///Field `TX_ALL_EMP` reader - RO, UART transmitter all empty status
+        pub type TX_ALL_EMP_R = crate::BitReader;
+        ///Field `ERR_RX_FIFO` reader - RO, indicate error in UART receiver fifo
+        pub type ERR_RX_FIFO_R = crate::BitReader;
         impl R {
             ///Bit 0 - RO, UART receiver fifo data ready status
             #[inline(always)]
-            pub fn lsr_data_rdy(&self) -> LSR_DATA_RDY_R {
-                LSR_DATA_RDY_R::new((self.bits & 1) != 0)
+            pub fn data_rdy(&self) -> DATA_RDY_R {
+                DATA_RDY_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RZ, UART receiver overrun error
             #[inline(always)]
-            pub fn lsr_over_err(&self) -> LSR_OVER_ERR_R {
-                LSR_OVER_ERR_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn over_err(&self) -> OVER_ERR_R {
+                OVER_ERR_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RZ, UART receiver parity error
             #[inline(always)]
-            pub fn lsr_par_err(&self) -> LSR_PAR_ERR_R {
-                LSR_PAR_ERR_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn par_err(&self) -> PAR_ERR_R {
+                PAR_ERR_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RZ, UART receiver frame error
             #[inline(always)]
-            pub fn lsr_frame_err(&self) -> LSR_FRAME_ERR_R {
-                LSR_FRAME_ERR_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn frame_err(&self) -> FRAME_ERR_R {
+                FRAME_ERR_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RZ, UART receiver break error
             #[inline(always)]
-            pub fn lsr_break_err(&self) -> LSR_BREAK_ERR_R {
-                LSR_BREAK_ERR_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn break_err(&self) -> BREAK_ERR_R {
+                BREAK_ERR_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 5 - RO, UART transmitter fifo empty status
             #[inline(always)]
-            pub fn lsr_tx_fifo_emp(&self) -> LSR_TX_FIFO_EMP_R {
-                LSR_TX_FIFO_EMP_R::new(((self.bits >> 5) & 1) != 0)
+            pub fn tx_fifo_emp(&self) -> TX_FIFO_EMP_R {
+                TX_FIFO_EMP_R::new(((self.bits >> 5) & 1) != 0)
             }
             ///Bit 6 - RO, UART transmitter all empty status
             #[inline(always)]
-            pub fn lsr_tx_all_emp(&self) -> LSR_TX_ALL_EMP_R {
-                LSR_TX_ALL_EMP_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn tx_all_emp(&self) -> TX_ALL_EMP_R {
+                TX_ALL_EMP_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - RO, indicate error in UART receiver fifo
             #[inline(always)]
-            pub fn lsr_err_rx_fifo(&self) -> LSR_ERR_RX_FIFO_R {
-                LSR_ERR_RX_FIFO_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn err_rx_fifo(&self) -> ERR_RX_FIFO_R {
+                ERR_RX_FIFO_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         ///RO, UART0 line status
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart0_lsr](index.html) module
-        pub struct UART0_LSR_SPEC;
-        impl crate::RegisterSpec for UART0_LSR_SPEC {
+        ///For information about available fields see [lsr](index.html) module
+        pub struct LSR_SPEC;
+        impl crate::RegisterSpec for LSR_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart0_lsr::R](R) reader structure
-        impl crate::Readable for UART0_LSR_SPEC {
+        ///`read()` method returns [lsr::R](R) reader structure
+        impl crate::Readable for LSR_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets UART0_LSR to value 0x60
-        impl crate::Resettable for UART0_LSR_SPEC {
+        ///`reset()` method sets LSR to value 0x60
+        impl crate::Resettable for LSR_SPEC {
             const RESET_VALUE: Self::Ux = 0x60;
         }
     }
-    ///UART0_MSR (r) register accessor: an alias for `Reg<UART0_MSR_SPEC>`
-    pub type UART0_MSR = crate::Reg<uart0_msr::UART0_MSR_SPEC>;
+    ///MSR (r) register accessor: an alias for `Reg<MSR_SPEC>`
+    pub type MSR = crate::Reg<msr::MSR_SPEC>;
     ///RO, UART0 modem status
-    pub mod uart0_msr {
-        ///Register `UART0_MSR` reader
-        pub struct R(crate::R<UART0_MSR_SPEC>);
+    pub mod msr {
+        ///Register `MSR` reader
+        pub struct R(crate::R<MSR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART0_MSR_SPEC>;
+            type Target = crate::R<MSR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART0_MSR_SPEC>> for R {
+        impl From<crate::R<MSR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART0_MSR_SPEC>) -> Self {
+            fn from(reader: crate::R<MSR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `MSR_CTS_CHG` reader - RZ, UART0 CTS changed status, high action
-        pub type MSR_CTS_CHG_R = crate::BitReader;
-        ///Field `MSR_DSR_CHG` reader - RZ, UART0 DSR changed status, high action
-        pub type MSR_DSR_CHG_R = crate::BitReader;
-        ///Field `MSR_RI_CHG` reader - RZ, UART0 RI changed status, high action
-        pub type MSR_RI_CHG_R = crate::BitReader;
-        ///Field `MSR_DCD_CHG` reader - RZ, UART0 DCD changed status, high action
-        pub type MSR_DCD_CHG_R = crate::BitReader;
-        ///Field `MSR_CTS` reader - RO, UART0 CTS action status
-        pub type MSR_CTS_R = crate::BitReader;
-        ///Field `MSR_DSR` reader - RO, UART0 DSR action statusv
-        pub type MSR_DSR_R = crate::BitReader;
-        ///Field `MSR_RI` reader - RO, UART0 RI action status
-        pub type MSR_RI_R = crate::BitReader;
-        ///Field `MSR_DCD` reader - RO, UART0 DCD action status
-        pub type MSR_DCD_R = crate::BitReader;
+        ///Field `CTS_CHG` reader - RZ, UART0 CTS changed status, high action
+        pub type CTS_CHG_R = crate::BitReader;
+        ///Field `DSR_CHG` reader - RZ, UART0 DSR changed status, high action
+        pub type DSR_CHG_R = crate::BitReader;
+        ///Field `RI_CHG` reader - RZ, UART0 RI changed status, high action
+        pub type RI_CHG_R = crate::BitReader;
+        ///Field `DCD_CHG` reader - RZ, UART0 DCD changed status, high action
+        pub type DCD_CHG_R = crate::BitReader;
+        ///Field `CTS` reader - RO, UART0 CTS action status
+        pub type CTS_R = crate::BitReader;
+        ///Field `DSR` reader - RO, UART0 DSR action statusv
+        pub type DSR_R = crate::BitReader;
+        ///Field `RI` reader - RO, UART0 RI action status
+        pub type RI_R = crate::BitReader;
+        ///Field `DCD` reader - RO, UART0 DCD action status
+        pub type DCD_R = crate::BitReader;
         impl R {
             ///Bit 0 - RZ, UART0 CTS changed status, high action
             #[inline(always)]
-            pub fn msr_cts_chg(&self) -> MSR_CTS_CHG_R {
-                MSR_CTS_CHG_R::new((self.bits & 1) != 0)
+            pub fn cts_chg(&self) -> CTS_CHG_R {
+                CTS_CHG_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RZ, UART0 DSR changed status, high action
             #[inline(always)]
-            pub fn msr_dsr_chg(&self) -> MSR_DSR_CHG_R {
-                MSR_DSR_CHG_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn dsr_chg(&self) -> DSR_CHG_R {
+                DSR_CHG_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RZ, UART0 RI changed status, high action
             #[inline(always)]
-            pub fn msr_ri_chg(&self) -> MSR_RI_CHG_R {
-                MSR_RI_CHG_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn ri_chg(&self) -> RI_CHG_R {
+                RI_CHG_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RZ, UART0 DCD changed status, high action
             #[inline(always)]
-            pub fn msr_dcd_chg(&self) -> MSR_DCD_CHG_R {
-                MSR_DCD_CHG_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn dcd_chg(&self) -> DCD_CHG_R {
+                DCD_CHG_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RO, UART0 CTS action status
             #[inline(always)]
-            pub fn msr_cts(&self) -> MSR_CTS_R {
-                MSR_CTS_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn cts(&self) -> CTS_R {
+                CTS_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 5 - RO, UART0 DSR action statusv
             #[inline(always)]
-            pub fn msr_dsr(&self) -> MSR_DSR_R {
-                MSR_DSR_R::new(((self.bits >> 5) & 1) != 0)
+            pub fn dsr(&self) -> DSR_R {
+                DSR_R::new(((self.bits >> 5) & 1) != 0)
             }
             ///Bit 6 - RO, UART0 RI action status
             #[inline(always)]
-            pub fn msr_ri(&self) -> MSR_RI_R {
-                MSR_RI_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn ri(&self) -> RI_R {
+                RI_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - RO, UART0 DCD action status
             #[inline(always)]
-            pub fn msr_dcd(&self) -> MSR_DCD_R {
-                MSR_DCD_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn dcd(&self) -> DCD_R {
+                DCD_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         ///RO, UART0 modem status
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart0_msr](index.html) module
-        pub struct UART0_MSR_SPEC;
-        impl crate::RegisterSpec for UART0_MSR_SPEC {
+        ///For information about available fields see [msr](index.html) module
+        pub struct MSR_SPEC;
+        impl crate::RegisterSpec for MSR_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart0_msr::R](R) reader structure
-        impl crate::Readable for UART0_MSR_SPEC {
+        ///`read()` method returns [msr::R](R) reader structure
+        impl crate::Readable for MSR_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets UART0_MSR to value 0
-        impl crate::Resettable for UART0_MSR_SPEC {
+        ///`reset()` method sets MSR to value 0
+        impl crate::Resettable for MSR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART0_RBR (r) register accessor: an alias for `Reg<UART0_RBR_SPEC>`
-    pub type UART0_RBR = crate::Reg<uart0_rbr::UART0_RBR_SPEC>;
+    ///RBR (r) register accessor: an alias for `Reg<RBR_SPEC>`
+    pub type RBR = crate::Reg<rbr::RBR_SPEC>;
     ///RO, UART0 receiver buffer, receiving byte
-    pub mod uart0_rbr {
-        ///Register `UART0_RBR` reader
-        pub struct R(crate::R<UART0_RBR_SPEC>);
+    pub mod rbr {
+        ///Register `RBR` reader
+        pub struct R(crate::R<RBR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART0_RBR_SPEC>;
+            type Target = crate::R<RBR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART0_RBR_SPEC>> for R {
+        impl From<crate::R<RBR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART0_RBR_SPEC>) -> Self {
+            fn from(reader: crate::R<RBR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `UART0_RBR` reader - RO, UART0 receiver buffer, receiving byte
-        pub type UART0_RBR_R = crate::FieldReader;
+        ///Field `RBR` reader - RO, UART0 receiver buffer, receiving byte
+        pub type RBR_R = crate::FieldReader;
         impl R {
             ///Bits 0:7 - RO, UART0 receiver buffer, receiving byte
             #[inline(always)]
-            pub fn uart0_rbr(&self) -> UART0_RBR_R {
-                UART0_RBR_R::new(self.bits)
+            pub fn rbr(&self) -> RBR_R {
+                RBR_R::new(self.bits)
             }
         }
         ///RO, UART0 receiver buffer, receiving byte
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart0_rbr](index.html) module
-        pub struct UART0_RBR_SPEC;
-        impl crate::RegisterSpec for UART0_RBR_SPEC {
+        ///For information about available fields see [rbr](index.html) module
+        pub struct RBR_SPEC;
+        impl crate::RegisterSpec for RBR_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart0_rbr::R](R) reader structure
-        impl crate::Readable for UART0_RBR_SPEC {
+        ///`read()` method returns [rbr::R](R) reader structure
+        impl crate::Readable for RBR_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets UART0_RBR to value 0
-        impl crate::Resettable for UART0_RBR_SPEC {
+        ///`reset()` method sets RBR to value 0
+        impl crate::Resettable for RBR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART0_THR (w) register accessor: an alias for `Reg<UART0_THR_SPEC>`
-    pub type UART0_THR = crate::Reg<uart0_thr::UART0_THR_SPEC>;
+    ///THR (w) register accessor: an alias for `Reg<THR_SPEC>`
+    pub type THR = crate::Reg<thr::THR_SPEC>;
     ///WO, UART0 transmitter holding, transmittal byte
-    pub mod uart0_thr {
-        ///Register `UART0_THR` writer
-        pub struct W(crate::W<UART0_THR_SPEC>);
+    pub mod thr {
+        ///Register `THR` writer
+        pub struct W(crate::W<THR_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<UART0_THR_SPEC>;
+            type Target = crate::W<THR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -12649,20 +12591,20 @@ pub mod uart0 {
                 &mut self.0
             }
         }
-        impl From<crate::W<UART0_THR_SPEC>> for W {
+        impl From<crate::W<THR_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<UART0_THR_SPEC>) -> Self {
+            fn from(writer: crate::W<THR_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `UART0_THR` writer - RO, UART0 transmitter holding, transmittal byte
-        pub type UART0_THR_W<'a, const O: u8> = crate::FieldWriter<'a, UART0_THR_SPEC, 8, O>;
+        ///Field `THR` writer - RO, UART0 transmitter holding, transmittal byte
+        pub type THR_W<'a, const O: u8> = crate::FieldWriter<'a, THR_SPEC, 8, O>;
         impl W {
             ///Bits 0:7 - RO, UART0 transmitter holding, transmittal byte
             #[inline(always)]
             #[must_use]
-            pub fn uart0_thr(&mut self) -> UART0_THR_W<0> {
-                UART0_THR_W::new(self)
+            pub fn thr(&mut self) -> THR_W<0> {
+                THR_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -12675,137 +12617,137 @@ pub mod uart0 {
         ///
         ///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart0_thr](index.html) module
-        pub struct UART0_THR_SPEC;
-        impl crate::RegisterSpec for UART0_THR_SPEC {
+        ///For information about available fields see [thr](index.html) module
+        pub struct THR_SPEC;
+        impl crate::RegisterSpec for THR_SPEC {
             type Ux = u8;
         }
-        ///`write(|w| ..)` method takes [uart0_thr::W](W) writer structure
-        impl crate::Writable for UART0_THR_SPEC {
+        ///`write(|w| ..)` method takes [thr::W](W) writer structure
+        impl crate::Writable for THR_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets UART0_THR to value 0
-        impl crate::Resettable for UART0_THR_SPEC {
+        ///`reset()` method sets THR to value 0
+        impl crate::Resettable for THR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART0_RFC (r) register accessor: an alias for `Reg<UART0_RFC_SPEC>`
-    pub type UART0_RFC = crate::Reg<uart0_rfc::UART0_RFC_SPEC>;
+    ///RFC (r) register accessor: an alias for `Reg<RFC_SPEC>`
+    pub type RFC = crate::Reg<rfc::RFC_SPEC>;
     ///RO, UART0 receiver FIFO count
-    pub mod uart0_rfc {
-        ///Register `UART0_RFC` reader
-        pub struct R(crate::R<UART0_RFC_SPEC>);
+    pub mod rfc {
+        ///Register `RFC` reader
+        pub struct R(crate::R<RFC_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART0_RFC_SPEC>;
+            type Target = crate::R<RFC_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART0_RFC_SPEC>> for R {
+        impl From<crate::R<RFC_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART0_RFC_SPEC>) -> Self {
+            fn from(reader: crate::R<RFC_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `UART0_RFC` reader - RO, UART0 receiver FIFO count
-        pub type UART0_RFC_R = crate::FieldReader;
+        ///Field `RFC` reader - RO, UART0 receiver FIFO count
+        pub type RFC_R = crate::FieldReader;
         impl R {
             ///Bits 0:7 - RO, UART0 receiver FIFO count
             #[inline(always)]
-            pub fn uart0_rfc(&self) -> UART0_RFC_R {
-                UART0_RFC_R::new(self.bits)
+            pub fn rfc(&self) -> RFC_R {
+                RFC_R::new(self.bits)
             }
         }
         ///RO, UART0 receiver FIFO count
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart0_rfc](index.html) module
-        pub struct UART0_RFC_SPEC;
-        impl crate::RegisterSpec for UART0_RFC_SPEC {
+        ///For information about available fields see [rfc](index.html) module
+        pub struct RFC_SPEC;
+        impl crate::RegisterSpec for RFC_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart0_rfc::R](R) reader structure
-        impl crate::Readable for UART0_RFC_SPEC {
+        ///`read()` method returns [rfc::R](R) reader structure
+        impl crate::Readable for RFC_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets UART0_RFC to value 0
-        impl crate::Resettable for UART0_RFC_SPEC {
+        ///`reset()` method sets RFC to value 0
+        impl crate::Resettable for RFC_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART0_TFC (r) register accessor: an alias for `Reg<UART0_TFC_SPEC>`
-    pub type UART0_TFC = crate::Reg<uart0_tfc::UART0_TFC_SPEC>;
+    ///TFC (r) register accessor: an alias for `Reg<TFC_SPEC>`
+    pub type TFC = crate::Reg<tfc::TFC_SPEC>;
     ///RO, UART0 transmitter FIFO count
-    pub mod uart0_tfc {
-        ///Register `UART0_TFC` reader
-        pub struct R(crate::R<UART0_TFC_SPEC>);
+    pub mod tfc {
+        ///Register `TFC` reader
+        pub struct R(crate::R<TFC_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART0_TFC_SPEC>;
+            type Target = crate::R<TFC_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART0_TFC_SPEC>> for R {
+        impl From<crate::R<TFC_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART0_TFC_SPEC>) -> Self {
+            fn from(reader: crate::R<TFC_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `UART0_TFC` reader - RO, UART0 transmitter FIFO count
-        pub type UART0_TFC_R = crate::FieldReader;
+        ///Field `TFC` reader - RO, UART0 transmitter FIFO count
+        pub type TFC_R = crate::FieldReader;
         impl R {
             ///Bits 0:7 - RO, UART0 transmitter FIFO count
             #[inline(always)]
-            pub fn uart0_tfc(&self) -> UART0_TFC_R {
-                UART0_TFC_R::new(self.bits)
+            pub fn tfc(&self) -> TFC_R {
+                TFC_R::new(self.bits)
             }
         }
         ///RO, UART0 transmitter FIFO count
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart0_tfc](index.html) module
-        pub struct UART0_TFC_SPEC;
-        impl crate::RegisterSpec for UART0_TFC_SPEC {
+        ///For information about available fields see [tfc](index.html) module
+        pub struct TFC_SPEC;
+        impl crate::RegisterSpec for TFC_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart0_tfc::R](R) reader structure
-        impl crate::Readable for UART0_TFC_SPEC {
+        ///`read()` method returns [tfc::R](R) reader structure
+        impl crate::Readable for TFC_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets UART0_TFC to value 0
-        impl crate::Resettable for UART0_TFC_SPEC {
+        ///`reset()` method sets TFC to value 0
+        impl crate::Resettable for TFC_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART0_DL (rw) register accessor: an alias for `Reg<UART0_DL_SPEC>`
-    pub type UART0_DL = crate::Reg<uart0_dl::UART0_DL_SPEC>;
+    ///DL (rw) register accessor: an alias for `Reg<DL_SPEC>`
+    pub type DL = crate::Reg<dl::DL_SPEC>;
     ///RW, UART0 divisor latch
-    pub mod uart0_dl {
-        ///Register `UART0_DL` reader
-        pub struct R(crate::R<UART0_DL_SPEC>);
+    pub mod dl {
+        ///Register `DL` reader
+        pub struct R(crate::R<DL_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART0_DL_SPEC>;
+            type Target = crate::R<DL_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART0_DL_SPEC>> for R {
+        impl From<crate::R<DL_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART0_DL_SPEC>) -> Self {
+            fn from(reader: crate::R<DL_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `UART0_DL` writer
-        pub struct W(crate::W<UART0_DL_SPEC>);
+        ///Register `DL` writer
+        pub struct W(crate::W<DL_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<UART0_DL_SPEC>;
+            type Target = crate::W<DL_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -12817,29 +12759,29 @@ pub mod uart0 {
                 &mut self.0
             }
         }
-        impl From<crate::W<UART0_DL_SPEC>> for W {
+        impl From<crate::W<DL_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<UART0_DL_SPEC>) -> Self {
+            fn from(writer: crate::W<DL_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `UART0_DL` reader - RW, UART0 divisor latch
-        pub type UART0_DL_R = crate::FieldReader<u16>;
-        ///Field `UART0_DL` writer - RW, UART0 divisor latch
-        pub type UART0_DL_W<'a, const O: u8> = crate::FieldWriter<'a, UART0_DL_SPEC, 16, O, u16>;
+        ///Field `DL` reader - RW, UART0 divisor latch
+        pub type DL_R = crate::FieldReader<u16>;
+        ///Field `DL` writer - RW, UART0 divisor latch
+        pub type DL_W<'a, const O: u8> = crate::FieldWriter<'a, DL_SPEC, 16, O, u16>;
         impl R {
             ///Bits 0:15 - RW, UART0 divisor latch
             #[inline(always)]
-            pub fn uart0_dl(&self) -> UART0_DL_R {
-                UART0_DL_R::new(self.bits)
+            pub fn dl(&self) -> DL_R {
+                DL_R::new(self.bits)
             }
         }
         impl W {
             ///Bits 0:15 - RW, UART0 divisor latch
             #[inline(always)]
             #[must_use]
-            pub fn uart0_dl(&mut self) -> UART0_DL_W<0> {
-                UART0_DL_W::new(self)
+            pub fn dl(&mut self) -> DL_W<0> {
+                DL_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -12852,49 +12794,49 @@ pub mod uart0 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart0_dl](index.html) module
-        pub struct UART0_DL_SPEC;
-        impl crate::RegisterSpec for UART0_DL_SPEC {
+        ///For information about available fields see [dl](index.html) module
+        pub struct DL_SPEC;
+        impl crate::RegisterSpec for DL_SPEC {
             type Ux = u16;
         }
-        ///`read()` method returns [uart0_dl::R](R) reader structure
-        impl crate::Readable for UART0_DL_SPEC {
+        ///`read()` method returns [dl::R](R) reader structure
+        impl crate::Readable for DL_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [uart0_dl::W](W) writer structure
-        impl crate::Writable for UART0_DL_SPEC {
+        ///`write(|w| ..)` method takes [dl::W](W) writer structure
+        impl crate::Writable for DL_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets UART0_DL to value 0
-        impl crate::Resettable for UART0_DL_SPEC {
+        ///`reset()` method sets DL to value 0
+        impl crate::Resettable for DL_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART0_DIV (rw) register accessor: an alias for `Reg<UART0_DIV_SPEC>`
-    pub type UART0_DIV = crate::Reg<uart0_div::UART0_DIV_SPEC>;
+    ///DIV (rw) register accessor: an alias for `Reg<DIV_SPEC>`
+    pub type DIV = crate::Reg<div::DIV_SPEC>;
     ///RW, UART0 pre-divisor latch byte, only low 7 bit, from 1 to 0/128
-    pub mod uart0_div {
-        ///Register `UART0_DIV` reader
-        pub struct R(crate::R<UART0_DIV_SPEC>);
+    pub mod div {
+        ///Register `DIV` reader
+        pub struct R(crate::R<DIV_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART0_DIV_SPEC>;
+            type Target = crate::R<DIV_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART0_DIV_SPEC>> for R {
+        impl From<crate::R<DIV_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART0_DIV_SPEC>) -> Self {
+            fn from(reader: crate::R<DIV_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `UART0_DIV` writer
-        pub struct W(crate::W<UART0_DIV_SPEC>);
+        ///Register `DIV` writer
+        pub struct W(crate::W<DIV_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<UART0_DIV_SPEC>;
+            type Target = crate::W<DIV_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -12906,29 +12848,29 @@ pub mod uart0 {
                 &mut self.0
             }
         }
-        impl From<crate::W<UART0_DIV_SPEC>> for W {
+        impl From<crate::W<DIV_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<UART0_DIV_SPEC>) -> Self {
+            fn from(writer: crate::W<DIV_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `UART0_DIV` reader - RW,UART0 pre-divisor latch byte, only low 7 bit, from 1 to 0/128
-        pub type UART0_DIV_R = crate::FieldReader;
-        ///Field `UART0_DIV` writer - RW,UART0 pre-divisor latch byte, only low 7 bit, from 1 to 0/128
-        pub type UART0_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, UART0_DIV_SPEC, 8, O>;
+        ///Field `DIV` reader - RW,UART0 pre-divisor latch byte, only low 7 bit, from 1 to 0/128
+        pub type DIV_R = crate::FieldReader;
+        ///Field `DIV` writer - RW,UART0 pre-divisor latch byte, only low 7 bit, from 1 to 0/128
+        pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, DIV_SPEC, 8, O>;
         impl R {
             ///Bits 0:7 - RW,UART0 pre-divisor latch byte, only low 7 bit, from 1 to 0/128
             #[inline(always)]
-            pub fn uart0_div(&self) -> UART0_DIV_R {
-                UART0_DIV_R::new(self.bits)
+            pub fn div(&self) -> DIV_R {
+                DIV_R::new(self.bits)
             }
         }
         impl W {
             ///Bits 0:7 - RW,UART0 pre-divisor latch byte, only low 7 bit, from 1 to 0/128
             #[inline(always)]
             #[must_use]
-            pub fn uart0_div(&mut self) -> UART0_DIV_W<0> {
-                UART0_DIV_W::new(self)
+            pub fn div(&mut self) -> DIV_W<0> {
+                DIV_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -12941,49 +12883,49 @@ pub mod uart0 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart0_div](index.html) module
-        pub struct UART0_DIV_SPEC;
-        impl crate::RegisterSpec for UART0_DIV_SPEC {
+        ///For information about available fields see [div](index.html) module
+        pub struct DIV_SPEC;
+        impl crate::RegisterSpec for DIV_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart0_div::R](R) reader structure
-        impl crate::Readable for UART0_DIV_SPEC {
+        ///`read()` method returns [div::R](R) reader structure
+        impl crate::Readable for DIV_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [uart0_div::W](W) writer structure
-        impl crate::Writable for UART0_DIV_SPEC {
+        ///`write(|w| ..)` method takes [div::W](W) writer structure
+        impl crate::Writable for DIV_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets UART0_DIV to value 0
-        impl crate::Resettable for UART0_DIV_SPEC {
+        ///`reset()` method sets DIV to value 0
+        impl crate::Resettable for DIV_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART0_ADR (rw) register accessor: an alias for `Reg<UART0_ADR_SPEC>`
-    pub type UART0_ADR = crate::Reg<uart0_adr::UART0_ADR_SPEC>;
+    ///ADR (rw) register accessor: an alias for `Reg<ADR_SPEC>`
+    pub type ADR = crate::Reg<adr::ADR_SPEC>;
     ///RW, UART0 slave address: 0xFF=disable, other=enable
-    pub mod uart0_adr {
-        ///Register `UART0_ADR` reader
-        pub struct R(crate::R<UART0_ADR_SPEC>);
+    pub mod adr {
+        ///Register `ADR` reader
+        pub struct R(crate::R<ADR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART0_ADR_SPEC>;
+            type Target = crate::R<ADR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART0_ADR_SPEC>> for R {
+        impl From<crate::R<ADR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART0_ADR_SPEC>) -> Self {
+            fn from(reader: crate::R<ADR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `UART0_ADR` writer
-        pub struct W(crate::W<UART0_ADR_SPEC>);
+        ///Register `ADR` writer
+        pub struct W(crate::W<ADR_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<UART0_ADR_SPEC>;
+            type Target = crate::W<ADR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -12995,29 +12937,29 @@ pub mod uart0 {
                 &mut self.0
             }
         }
-        impl From<crate::W<UART0_ADR_SPEC>> for W {
+        impl From<crate::W<ADR_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<UART0_ADR_SPEC>) -> Self {
+            fn from(writer: crate::W<ADR_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `UART0_ADR` reader - RW,UART0 slave address: 0xFF=disable, other=enable
-        pub type UART0_ADR_R = crate::FieldReader;
-        ///Field `UART0_ADR` writer - RW,UART0 slave address: 0xFF=disable, other=enable
-        pub type UART0_ADR_W<'a, const O: u8> = crate::FieldWriter<'a, UART0_ADR_SPEC, 8, O>;
+        ///Field `ADR` reader - RW,UART0 slave address: 0xFF=disable, other=enable
+        pub type ADR_R = crate::FieldReader;
+        ///Field `ADR` writer - RW,UART0 slave address: 0xFF=disable, other=enable
+        pub type ADR_W<'a, const O: u8> = crate::FieldWriter<'a, ADR_SPEC, 8, O>;
         impl R {
             ///Bits 0:7 - RW,UART0 slave address: 0xFF=disable, other=enable
             #[inline(always)]
-            pub fn uart0_adr(&self) -> UART0_ADR_R {
-                UART0_ADR_R::new(self.bits)
+            pub fn adr(&self) -> ADR_R {
+                ADR_R::new(self.bits)
             }
         }
         impl W {
             ///Bits 0:7 - RW,UART0 slave address: 0xFF=disable, other=enable
             #[inline(always)]
             #[must_use]
-            pub fn uart0_adr(&mut self) -> UART0_ADR_W<0> {
-                UART0_ADR_W::new(self)
+            pub fn adr(&mut self) -> ADR_W<0> {
+                ADR_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -13030,23 +12972,23 @@ pub mod uart0 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart0_adr](index.html) module
-        pub struct UART0_ADR_SPEC;
-        impl crate::RegisterSpec for UART0_ADR_SPEC {
+        ///For information about available fields see [adr](index.html) module
+        pub struct ADR_SPEC;
+        impl crate::RegisterSpec for ADR_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart0_adr::R](R) reader structure
-        impl crate::Readable for UART0_ADR_SPEC {
+        ///`read()` method returns [adr::R](R) reader structure
+        impl crate::Readable for ADR_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [uart0_adr::W](W) writer structure
-        impl crate::Writable for UART0_ADR_SPEC {
+        ///`write(|w| ..)` method takes [adr::W](W) writer structure
+        impl crate::Writable for ADR_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets UART0_ADR to value 0xff
-        impl crate::Resettable for UART0_ADR_SPEC {
+        ///`reset()` method sets ADR to value 0xff
+        impl crate::Resettable for ADR_SPEC {
             const RESET_VALUE: Self::Ux = 0xff;
         }
     }
@@ -13083,64 +13025,64 @@ pub mod uart1 {
     #[repr(C)]
     pub struct RegisterBlock {
         ///0x00 - RW, UART1 modem control
-        pub uart1_mcr: UART1_MCR,
+        pub mcr: MCR,
         ///0x01 - RW, UART1 interrupt enable
-        pub uart1_ier: UART1_IER,
+        pub ier: IER,
         ///0x02 - RW, UART1 FIFO control
-        pub uart1_fcr: UART1_FCR,
+        pub fcr: FCR,
         ///0x03 - RW, UART1 line control
-        pub uart1_lcr: UART1_LCR,
+        pub lcr: LCR,
         ///0x04 - RO, UART1 interrupt identification
-        pub uart1_iir: UART1_IIR,
+        pub iir: IIR,
         ///0x05 - RO, UART1 line status
-        pub uart1_lsr: UART1_LSR,
+        pub lsr: LSR,
         _reserved6: [u8; 0x02],
-        _reserved_6_uart1: [u8; 0x01],
+        _reserved_6_rbr: [u8; 0x01],
         _reserved7: [u8; 0x01],
         ///0x0a - RO, UART1 receiver FIFO count
-        pub uart1_rfc: UART1_RFC,
+        pub rfc: RFC,
         ///0x0b - RO, UART1 transmitter FIFO count
-        pub uart1_tfc: UART1_TFC,
+        pub tfc: TFC,
         ///0x0c - RW, UART1 divisor latch
-        pub uart1_dl: UART1_DL,
+        pub dl: DL,
         ///0x0e - RW, UART1 pre-divisor latch byte, only low 7 bit, from 1 to 128
-        pub uart1_div: UART1_DIV,
+        pub div: DIV,
     }
     impl RegisterBlock {
         ///0x08 - WO, UART1 transmitter holding, transmittal byte
         #[inline(always)]
-        pub const fn uart1_thr(&self) -> &UART1_THR {
+        pub const fn thr(&self) -> &THR {
             unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
         }
         ///0x08 - RO, UART1 receiver buffer, receiving byte
         #[inline(always)]
-        pub const fn uart1_rbr(&self) -> &UART1_RBR {
+        pub const fn rbr(&self) -> &RBR {
             unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
         }
     }
-    ///UART1_MCR (rw) register accessor: an alias for `Reg<UART1_MCR_SPEC>`
-    pub type UART1_MCR = crate::Reg<uart1_mcr::UART1_MCR_SPEC>;
+    ///MCR (rw) register accessor: an alias for `Reg<MCR_SPEC>`
+    pub type MCR = crate::Reg<mcr::MCR_SPEC>;
     ///RW, UART1 modem control
-    pub mod uart1_mcr {
-        ///Register `UART1_MCR` reader
-        pub struct R(crate::R<UART1_MCR_SPEC>);
+    pub mod mcr {
+        ///Register `MCR` reader
+        pub struct R(crate::R<MCR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART1_MCR_SPEC>;
+            type Target = crate::R<MCR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART1_MCR_SPEC>> for R {
+        impl From<crate::R<MCR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART1_MCR_SPEC>) -> Self {
+            fn from(reader: crate::R<MCR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `UART1_MCR` writer
-        pub struct W(crate::W<UART1_MCR_SPEC>);
+        ///Register `MCR` writer
+        pub struct W(crate::W<MCR_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<UART1_MCR_SPEC>;
+            type Target = crate::W<MCR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -13152,30 +13094,29 @@ pub mod uart1 {
                 &mut self.0
             }
         }
-        impl From<crate::W<UART1_MCR_SPEC>> for W {
+        impl From<crate::W<MCR_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<UART1_MCR_SPEC>) -> Self {
+            fn from(writer: crate::W<MCR_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `MCR_OUT2_RB_MCR_INT_OE` reader - RW, UART control OUT2/UART interrupt output enable
-        pub type MCR_OUT2_RB_MCR_INT_OE_R = crate::BitReader;
-        ///Field `MCR_OUT2_RB_MCR_INT_OE` writer - RW, UART control OUT2/UART interrupt output enable
-        pub type MCR_OUT2_RB_MCR_INT_OE_W<'a, const O: u8> =
-            crate::BitWriter<'a, UART1_MCR_SPEC, O>;
+        ///Field `OUT2_RB_MCR_INT_OE` reader - RW, UART control OUT2/UART interrupt output enable
+        pub type OUT2_RB_MCR_INT_OE_R = crate::BitReader;
+        ///Field `OUT2_RB_MCR_INT_OE` writer - RW, UART control OUT2/UART interrupt output enable
+        pub type OUT2_RB_MCR_INT_OE_W<'a, const O: u8> = crate::BitWriter<'a, MCR_SPEC, O>;
         impl R {
             ///Bit 3 - RW, UART control OUT2/UART interrupt output enable
             #[inline(always)]
-            pub fn mcr_out2_rb_mcr_int_oe(&self) -> MCR_OUT2_RB_MCR_INT_OE_R {
-                MCR_OUT2_RB_MCR_INT_OE_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn out2_rb_mcr_int_oe(&self) -> OUT2_RB_MCR_INT_OE_R {
+                OUT2_RB_MCR_INT_OE_R::new(((self.bits >> 3) & 1) != 0)
             }
         }
         impl W {
             ///Bit 3 - RW, UART control OUT2/UART interrupt output enable
             #[inline(always)]
             #[must_use]
-            pub fn mcr_out2_rb_mcr_int_oe(&mut self) -> MCR_OUT2_RB_MCR_INT_OE_W<3> {
-                MCR_OUT2_RB_MCR_INT_OE_W::new(self)
+            pub fn out2_rb_mcr_int_oe(&mut self) -> OUT2_RB_MCR_INT_OE_W<3> {
+                OUT2_RB_MCR_INT_OE_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -13188,49 +13129,49 @@ pub mod uart1 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart1_mcr](index.html) module
-        pub struct UART1_MCR_SPEC;
-        impl crate::RegisterSpec for UART1_MCR_SPEC {
+        ///For information about available fields see [mcr](index.html) module
+        pub struct MCR_SPEC;
+        impl crate::RegisterSpec for MCR_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart1_mcr::R](R) reader structure
-        impl crate::Readable for UART1_MCR_SPEC {
+        ///`read()` method returns [mcr::R](R) reader structure
+        impl crate::Readable for MCR_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [uart1_mcr::W](W) writer structure
-        impl crate::Writable for UART1_MCR_SPEC {
+        ///`write(|w| ..)` method takes [mcr::W](W) writer structure
+        impl crate::Writable for MCR_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets UART1_MCR to value 0
-        impl crate::Resettable for UART1_MCR_SPEC {
+        ///`reset()` method sets MCR to value 0
+        impl crate::Resettable for MCR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART1_IER (rw) register accessor: an alias for `Reg<UART1_IER_SPEC>`
-    pub type UART1_IER = crate::Reg<uart1_ier::UART1_IER_SPEC>;
+    ///IER (rw) register accessor: an alias for `Reg<IER_SPEC>`
+    pub type IER = crate::Reg<ier::IER_SPEC>;
     ///RW, UART1 interrupt enable
-    pub mod uart1_ier {
-        ///Register `UART1_IER` reader
-        pub struct R(crate::R<UART1_IER_SPEC>);
+    pub mod ier {
+        ///Register `IER` reader
+        pub struct R(crate::R<IER_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART1_IER_SPEC>;
+            type Target = crate::R<IER_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART1_IER_SPEC>> for R {
+        impl From<crate::R<IER_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART1_IER_SPEC>) -> Self {
+            fn from(reader: crate::R<IER_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `UART1_IER` writer
-        pub struct W(crate::W<UART1_IER_SPEC>);
+        ///Register `IER` writer
+        pub struct W(crate::W<IER_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<UART1_IER_SPEC>;
+            type Target = crate::W<IER_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -13242,89 +13183,89 @@ pub mod uart1 {
                 &mut self.0
             }
         }
-        impl From<crate::W<UART1_IER_SPEC>> for W {
+        impl From<crate::W<IER_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<UART1_IER_SPEC>) -> Self {
+            fn from(writer: crate::W<IER_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `IER_RECV_RDY` reader - RW, UART interrupt enable for receiver data ready
-        pub type IER_RECV_RDY_R = crate::BitReader;
-        ///Field `IER_RECV_RDY` writer - RW, UART interrupt enable for receiver data ready
-        pub type IER_RECV_RDY_W<'a, const O: u8> = crate::BitWriter<'a, UART1_IER_SPEC, O>;
-        ///Field `IER_THR_EMPTY` reader - RW, UART interrupt enable for THR empty
-        pub type IER_THR_EMPTY_R = crate::BitReader;
-        ///Field `IER_THR_EMPTY` writer - RW, UART interrupt enable for THR empty
-        pub type IER_THR_EMPTY_W<'a, const O: u8> = crate::BitWriter<'a, UART1_IER_SPEC, O>;
-        ///Field `IER_LINE_STAT` reader - RW, UART interrupt enable for receiver line status
-        pub type IER_LINE_STAT_R = crate::BitReader;
-        ///Field `IER_LINE_STAT` writer - RW, UART interrupt enable for receiver line status
-        pub type IER_LINE_STAT_W<'a, const O: u8> = crate::BitWriter<'a, UART1_IER_SPEC, O>;
-        ///Field `IER_TXD_EN` reader - RW, UART TXD pin enable
-        pub type IER_TXD_EN_R = crate::BitReader;
-        ///Field `IER_TXD_EN` writer - RW, UART TXD pin enable
-        pub type IER_TXD_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART1_IER_SPEC, O>;
-        ///Field `IER_RESET` reader - WZ, UART software reset control, high action, auto clear
-        pub type IER_RESET_R = crate::BitReader;
-        ///Field `IER_RESET` writer - WZ, UART software reset control, high action, auto clear
-        pub type IER_RESET_W<'a, const O: u8> = crate::BitWriter<'a, UART1_IER_SPEC, O>;
+        ///Field `RECV_RDY` reader - RW, UART interrupt enable for receiver data ready
+        pub type RECV_RDY_R = crate::BitReader;
+        ///Field `RECV_RDY` writer - RW, UART interrupt enable for receiver data ready
+        pub type RECV_RDY_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
+        ///Field `THR_EMPTY` reader - RW, UART interrupt enable for THR empty
+        pub type THR_EMPTY_R = crate::BitReader;
+        ///Field `THR_EMPTY` writer - RW, UART interrupt enable for THR empty
+        pub type THR_EMPTY_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
+        ///Field `LINE_STAT` reader - RW, UART interrupt enable for receiver line status
+        pub type LINE_STAT_R = crate::BitReader;
+        ///Field `LINE_STAT` writer - RW, UART interrupt enable for receiver line status
+        pub type LINE_STAT_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
+        ///Field `TXD_EN` reader - RW, UART TXD pin enable
+        pub type TXD_EN_R = crate::BitReader;
+        ///Field `TXD_EN` writer - RW, UART TXD pin enable
+        pub type TXD_EN_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
+        ///Field `RESET` reader - WZ, UART software reset control, high action, auto clear
+        pub type RESET_R = crate::BitReader;
+        ///Field `RESET` writer - WZ, UART software reset control, high action, auto clear
+        pub type RESET_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
         impl R {
             ///Bit 0 - RW, UART interrupt enable for receiver data ready
             #[inline(always)]
-            pub fn ier_recv_rdy(&self) -> IER_RECV_RDY_R {
-                IER_RECV_RDY_R::new((self.bits & 1) != 0)
+            pub fn recv_rdy(&self) -> RECV_RDY_R {
+                RECV_RDY_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW, UART interrupt enable for THR empty
             #[inline(always)]
-            pub fn ier_thr_empty(&self) -> IER_THR_EMPTY_R {
-                IER_THR_EMPTY_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn thr_empty(&self) -> THR_EMPTY_R {
+                THR_EMPTY_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW, UART interrupt enable for receiver line status
             #[inline(always)]
-            pub fn ier_line_stat(&self) -> IER_LINE_STAT_R {
-                IER_LINE_STAT_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn line_stat(&self) -> LINE_STAT_R {
+                LINE_STAT_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 6 - RW, UART TXD pin enable
             #[inline(always)]
-            pub fn ier_txd_en(&self) -> IER_TXD_EN_R {
-                IER_TXD_EN_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn txd_en(&self) -> TXD_EN_R {
+                TXD_EN_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - WZ, UART software reset control, high action, auto clear
             #[inline(always)]
-            pub fn ier_reset(&self) -> IER_RESET_R {
-                IER_RESET_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn reset(&self) -> RESET_R {
+                RESET_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW, UART interrupt enable for receiver data ready
             #[inline(always)]
             #[must_use]
-            pub fn ier_recv_rdy(&mut self) -> IER_RECV_RDY_W<0> {
-                IER_RECV_RDY_W::new(self)
+            pub fn recv_rdy(&mut self) -> RECV_RDY_W<0> {
+                RECV_RDY_W::new(self)
             }
             ///Bit 1 - RW, UART interrupt enable for THR empty
             #[inline(always)]
             #[must_use]
-            pub fn ier_thr_empty(&mut self) -> IER_THR_EMPTY_W<1> {
-                IER_THR_EMPTY_W::new(self)
+            pub fn thr_empty(&mut self) -> THR_EMPTY_W<1> {
+                THR_EMPTY_W::new(self)
             }
             ///Bit 2 - RW, UART interrupt enable for receiver line status
             #[inline(always)]
             #[must_use]
-            pub fn ier_line_stat(&mut self) -> IER_LINE_STAT_W<2> {
-                IER_LINE_STAT_W::new(self)
+            pub fn line_stat(&mut self) -> LINE_STAT_W<2> {
+                LINE_STAT_W::new(self)
             }
             ///Bit 6 - RW, UART TXD pin enable
             #[inline(always)]
             #[must_use]
-            pub fn ier_txd_en(&mut self) -> IER_TXD_EN_W<6> {
-                IER_TXD_EN_W::new(self)
+            pub fn txd_en(&mut self) -> TXD_EN_W<6> {
+                TXD_EN_W::new(self)
             }
             ///Bit 7 - WZ, UART software reset control, high action, auto clear
             #[inline(always)]
             #[must_use]
-            pub fn ier_reset(&mut self) -> IER_RESET_W<7> {
-                IER_RESET_W::new(self)
+            pub fn reset(&mut self) -> RESET_W<7> {
+                RESET_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -13337,49 +13278,49 @@ pub mod uart1 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart1_ier](index.html) module
-        pub struct UART1_IER_SPEC;
-        impl crate::RegisterSpec for UART1_IER_SPEC {
+        ///For information about available fields see [ier](index.html) module
+        pub struct IER_SPEC;
+        impl crate::RegisterSpec for IER_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart1_ier::R](R) reader structure
-        impl crate::Readable for UART1_IER_SPEC {
+        ///`read()` method returns [ier::R](R) reader structure
+        impl crate::Readable for IER_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [uart1_ier::W](W) writer structure
-        impl crate::Writable for UART1_IER_SPEC {
+        ///`write(|w| ..)` method takes [ier::W](W) writer structure
+        impl crate::Writable for IER_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets UART1_IER to value 0
-        impl crate::Resettable for UART1_IER_SPEC {
+        ///`reset()` method sets IER to value 0
+        impl crate::Resettable for IER_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART1_FCR (rw) register accessor: an alias for `Reg<UART1_FCR_SPEC>`
-    pub type UART1_FCR = crate::Reg<uart1_fcr::UART1_FCR_SPEC>;
+    ///FCR (rw) register accessor: an alias for `Reg<FCR_SPEC>`
+    pub type FCR = crate::Reg<fcr::FCR_SPEC>;
     ///RW, UART1 FIFO control
-    pub mod uart1_fcr {
-        ///Register `UART1_FCR` reader
-        pub struct R(crate::R<UART1_FCR_SPEC>);
+    pub mod fcr {
+        ///Register `FCR` reader
+        pub struct R(crate::R<FCR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART1_FCR_SPEC>;
+            type Target = crate::R<FCR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART1_FCR_SPEC>> for R {
+        impl From<crate::R<FCR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART1_FCR_SPEC>) -> Self {
+            fn from(reader: crate::R<FCR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `UART1_FCR` writer
-        pub struct W(crate::W<UART1_FCR_SPEC>);
+        ///Register `FCR` writer
+        pub struct W(crate::W<FCR_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<UART1_FCR_SPEC>;
+            type Target = crate::W<FCR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -13391,74 +13332,74 @@ pub mod uart1 {
                 &mut self.0
             }
         }
-        impl From<crate::W<UART1_FCR_SPEC>> for W {
+        impl From<crate::W<FCR_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<UART1_FCR_SPEC>) -> Self {
+            fn from(writer: crate::W<FCR_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `FCR_FIFO_EN` reader - RW, UART FIFO enable
-        pub type FCR_FIFO_EN_R = crate::BitReader;
-        ///Field `FCR_FIFO_EN` writer - RW, UART FIFO enable
-        pub type FCR_FIFO_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART1_FCR_SPEC, O>;
-        ///Field `FCR_RX_FIFO_CLR` reader - WZ, clear UART receiver FIFO, high action, auto clear
-        pub type FCR_RX_FIFO_CLR_R = crate::BitReader;
-        ///Field `FCR_RX_FIFO_CLR` writer - WZ, clear UART receiver FIFO, high action, auto clear
-        pub type FCR_RX_FIFO_CLR_W<'a, const O: u8> = crate::BitWriter<'a, UART1_FCR_SPEC, O>;
-        ///Field `FCR_TX_FIFO_CLR` reader - WZ, clear UART transmitter FIFO, high action, auto clear
-        pub type FCR_TX_FIFO_CLR_R = crate::BitReader;
-        ///Field `FCR_TX_FIFO_CLR` writer - WZ, clear UART transmitter FIFO, high action, auto clear
-        pub type FCR_TX_FIFO_CLR_W<'a, const O: u8> = crate::BitWriter<'a, UART1_FCR_SPEC, O>;
-        ///Field `FCR_FIFO_TRIG` reader - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
-        pub type FCR_FIFO_TRIG_R = crate::FieldReader;
-        ///Field `FCR_FIFO_TRIG` writer - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
-        pub type FCR_FIFO_TRIG_W<'a, const O: u8> = crate::FieldWriter<'a, UART1_FCR_SPEC, 2, O>;
+        ///Field `FIFO_EN` reader - RW, UART FIFO enable
+        pub type FIFO_EN_R = crate::BitReader;
+        ///Field `FIFO_EN` writer - RW, UART FIFO enable
+        pub type FIFO_EN_W<'a, const O: u8> = crate::BitWriter<'a, FCR_SPEC, O>;
+        ///Field `RX_FIFO_CLR` reader - WZ, clear UART receiver FIFO, high action, auto clear
+        pub type RX_FIFO_CLR_R = crate::BitReader;
+        ///Field `RX_FIFO_CLR` writer - WZ, clear UART receiver FIFO, high action, auto clear
+        pub type RX_FIFO_CLR_W<'a, const O: u8> = crate::BitWriter<'a, FCR_SPEC, O>;
+        ///Field `TX_FIFO_CLR` reader - WZ, clear UART transmitter FIFO, high action, auto clear
+        pub type TX_FIFO_CLR_R = crate::BitReader;
+        ///Field `TX_FIFO_CLR` writer - WZ, clear UART transmitter FIFO, high action, auto clear
+        pub type TX_FIFO_CLR_W<'a, const O: u8> = crate::BitWriter<'a, FCR_SPEC, O>;
+        ///Field `FIFO_TRIG` reader - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
+        pub type FIFO_TRIG_R = crate::FieldReader;
+        ///Field `FIFO_TRIG` writer - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
+        pub type FIFO_TRIG_W<'a, const O: u8> = crate::FieldWriter<'a, FCR_SPEC, 2, O>;
         impl R {
             ///Bit 0 - RW, UART FIFO enable
             #[inline(always)]
-            pub fn fcr_fifo_en(&self) -> FCR_FIFO_EN_R {
-                FCR_FIFO_EN_R::new((self.bits & 1) != 0)
+            pub fn fifo_en(&self) -> FIFO_EN_R {
+                FIFO_EN_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - WZ, clear UART receiver FIFO, high action, auto clear
             #[inline(always)]
-            pub fn fcr_rx_fifo_clr(&self) -> FCR_RX_FIFO_CLR_R {
-                FCR_RX_FIFO_CLR_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn rx_fifo_clr(&self) -> RX_FIFO_CLR_R {
+                RX_FIFO_CLR_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - WZ, clear UART transmitter FIFO, high action, auto clear
             #[inline(always)]
-            pub fn fcr_tx_fifo_clr(&self) -> FCR_TX_FIFO_CLR_R {
-                FCR_TX_FIFO_CLR_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn tx_fifo_clr(&self) -> TX_FIFO_CLR_R {
+                TX_FIFO_CLR_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bits 6:7 - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
             #[inline(always)]
-            pub fn fcr_fifo_trig(&self) -> FCR_FIFO_TRIG_R {
-                FCR_FIFO_TRIG_R::new((self.bits >> 6) & 3)
+            pub fn fifo_trig(&self) -> FIFO_TRIG_R {
+                FIFO_TRIG_R::new((self.bits >> 6) & 3)
             }
         }
         impl W {
             ///Bit 0 - RW, UART FIFO enable
             #[inline(always)]
             #[must_use]
-            pub fn fcr_fifo_en(&mut self) -> FCR_FIFO_EN_W<0> {
-                FCR_FIFO_EN_W::new(self)
+            pub fn fifo_en(&mut self) -> FIFO_EN_W<0> {
+                FIFO_EN_W::new(self)
             }
             ///Bit 1 - WZ, clear UART receiver FIFO, high action, auto clear
             #[inline(always)]
             #[must_use]
-            pub fn fcr_rx_fifo_clr(&mut self) -> FCR_RX_FIFO_CLR_W<1> {
-                FCR_RX_FIFO_CLR_W::new(self)
+            pub fn rx_fifo_clr(&mut self) -> RX_FIFO_CLR_W<1> {
+                RX_FIFO_CLR_W::new(self)
             }
             ///Bit 2 - WZ, clear UART transmitter FIFO, high action, auto clear
             #[inline(always)]
             #[must_use]
-            pub fn fcr_tx_fifo_clr(&mut self) -> FCR_TX_FIFO_CLR_W<2> {
-                FCR_TX_FIFO_CLR_W::new(self)
+            pub fn tx_fifo_clr(&mut self) -> TX_FIFO_CLR_W<2> {
+                TX_FIFO_CLR_W::new(self)
             }
             ///Bits 6:7 - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
             #[inline(always)]
             #[must_use]
-            pub fn fcr_fifo_trig(&mut self) -> FCR_FIFO_TRIG_W<6> {
-                FCR_FIFO_TRIG_W::new(self)
+            pub fn fifo_trig(&mut self) -> FIFO_TRIG_W<6> {
+                FIFO_TRIG_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -13471,49 +13412,49 @@ pub mod uart1 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart1_fcr](index.html) module
-        pub struct UART1_FCR_SPEC;
-        impl crate::RegisterSpec for UART1_FCR_SPEC {
+        ///For information about available fields see [fcr](index.html) module
+        pub struct FCR_SPEC;
+        impl crate::RegisterSpec for FCR_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart1_fcr::R](R) reader structure
-        impl crate::Readable for UART1_FCR_SPEC {
+        ///`read()` method returns [fcr::R](R) reader structure
+        impl crate::Readable for FCR_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [uart1_fcr::W](W) writer structure
-        impl crate::Writable for UART1_FCR_SPEC {
+        ///`write(|w| ..)` method takes [fcr::W](W) writer structure
+        impl crate::Writable for FCR_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets UART1_FCR to value 0
-        impl crate::Resettable for UART1_FCR_SPEC {
+        ///`reset()` method sets FCR to value 0
+        impl crate::Resettable for FCR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART1_LCR (rw) register accessor: an alias for `Reg<UART1_LCR_SPEC>`
-    pub type UART1_LCR = crate::Reg<uart1_lcr::UART1_LCR_SPEC>;
+    ///LCR (rw) register accessor: an alias for `Reg<LCR_SPEC>`
+    pub type LCR = crate::Reg<lcr::LCR_SPEC>;
     ///RW, UART1 line control
-    pub mod uart1_lcr {
-        ///Register `UART1_LCR` reader
-        pub struct R(crate::R<UART1_LCR_SPEC>);
+    pub mod lcr {
+        ///Register `LCR` reader
+        pub struct R(crate::R<LCR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART1_LCR_SPEC>;
+            type Target = crate::R<LCR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART1_LCR_SPEC>> for R {
+        impl From<crate::R<LCR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART1_LCR_SPEC>) -> Self {
+            fn from(reader: crate::R<LCR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `UART1_LCR` writer
-        pub struct W(crate::W<UART1_LCR_SPEC>);
+        ///Register `LCR` writer
+        pub struct W(crate::W<LCR_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<UART1_LCR_SPEC>;
+            type Target = crate::W<LCR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -13525,105 +13466,104 @@ pub mod uart1 {
                 &mut self.0
             }
         }
-        impl From<crate::W<UART1_LCR_SPEC>> for W {
+        impl From<crate::W<LCR_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<UART1_LCR_SPEC>) -> Self {
+            fn from(writer: crate::W<LCR_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `LCR_WORD_SZ` reader - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
-        pub type LCR_WORD_SZ_R = crate::FieldReader;
-        ///Field `LCR_WORD_SZ` writer - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
-        pub type LCR_WORD_SZ_W<'a, const O: u8> = crate::FieldWriter<'a, UART1_LCR_SPEC, 2, O>;
-        ///Field `LCR_STOP_BIT` reader - RW, UART stop bit length: 0-1bit, 1-2bit
-        pub type LCR_STOP_BIT_R = crate::BitReader;
-        ///Field `LCR_STOP_BIT` writer - RW, UART stop bit length: 0-1bit, 1-2bit
-        pub type LCR_STOP_BIT_W<'a, const O: u8> = crate::BitWriter<'a, UART1_LCR_SPEC, O>;
-        ///Field `LCR_PAR_EN` reader - RW, UART parity enable
-        pub type LCR_PAR_EN_R = crate::BitReader;
-        ///Field `LCR_PAR_EN` writer - RW, UART parity enable
-        pub type LCR_PAR_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART1_LCR_SPEC, O>;
-        ///Field `LCR_PAR_MOD` reader - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
-        pub type LCR_PAR_MOD_R = crate::FieldReader;
-        ///Field `LCR_PAR_MOD` writer - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
-        pub type LCR_PAR_MOD_W<'a, const O: u8> = crate::FieldWriter<'a, UART1_LCR_SPEC, 2, O>;
-        ///Field `LCR_BREAK_EN` reader - RW, UART break control enable
-        pub type LCR_BREAK_EN_R = crate::BitReader;
-        ///Field `LCR_BREAK_EN` writer - RW, UART break control enable
-        pub type LCR_BREAK_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART1_LCR_SPEC, O>;
-        ///Field `LCR_GP_BIT_RB_LCR_DLAB` reader - RW, UART general purpose bit;RW, UART reserved bit
-        pub type LCR_GP_BIT_RB_LCR_DLAB_R = crate::BitReader;
-        ///Field `LCR_GP_BIT_RB_LCR_DLAB` writer - RW, UART general purpose bit;RW, UART reserved bit
-        pub type LCR_GP_BIT_RB_LCR_DLAB_W<'a, const O: u8> =
-            crate::BitWriter<'a, UART1_LCR_SPEC, O>;
+        ///Field `WORD_SZ` reader - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
+        pub type WORD_SZ_R = crate::FieldReader;
+        ///Field `WORD_SZ` writer - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
+        pub type WORD_SZ_W<'a, const O: u8> = crate::FieldWriter<'a, LCR_SPEC, 2, O>;
+        ///Field `STOP_BIT` reader - RW, UART stop bit length: 0-1bit, 1-2bit
+        pub type STOP_BIT_R = crate::BitReader;
+        ///Field `STOP_BIT` writer - RW, UART stop bit length: 0-1bit, 1-2bit
+        pub type STOP_BIT_W<'a, const O: u8> = crate::BitWriter<'a, LCR_SPEC, O>;
+        ///Field `PAR_EN` reader - RW, UART parity enable
+        pub type PAR_EN_R = crate::BitReader;
+        ///Field `PAR_EN` writer - RW, UART parity enable
+        pub type PAR_EN_W<'a, const O: u8> = crate::BitWriter<'a, LCR_SPEC, O>;
+        ///Field `PAR_MOD` reader - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
+        pub type PAR_MOD_R = crate::FieldReader;
+        ///Field `PAR_MOD` writer - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
+        pub type PAR_MOD_W<'a, const O: u8> = crate::FieldWriter<'a, LCR_SPEC, 2, O>;
+        ///Field `BREAK_EN` reader - RW, UART break control enable
+        pub type BREAK_EN_R = crate::BitReader;
+        ///Field `BREAK_EN` writer - RW, UART break control enable
+        pub type BREAK_EN_W<'a, const O: u8> = crate::BitWriter<'a, LCR_SPEC, O>;
+        ///Field `GP_BIT_RB_LCR_DLAB` reader - RW, UART general purpose bit;RW, UART reserved bit
+        pub type GP_BIT_RB_LCR_DLAB_R = crate::BitReader;
+        ///Field `GP_BIT_RB_LCR_DLAB` writer - RW, UART general purpose bit;RW, UART reserved bit
+        pub type GP_BIT_RB_LCR_DLAB_W<'a, const O: u8> = crate::BitWriter<'a, LCR_SPEC, O>;
         impl R {
             ///Bits 0:1 - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
             #[inline(always)]
-            pub fn lcr_word_sz(&self) -> LCR_WORD_SZ_R {
-                LCR_WORD_SZ_R::new(self.bits & 3)
+            pub fn word_sz(&self) -> WORD_SZ_R {
+                WORD_SZ_R::new(self.bits & 3)
             }
             ///Bit 2 - RW, UART stop bit length: 0-1bit, 1-2bit
             #[inline(always)]
-            pub fn lcr_stop_bit(&self) -> LCR_STOP_BIT_R {
-                LCR_STOP_BIT_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn stop_bit(&self) -> STOP_BIT_R {
+                STOP_BIT_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW, UART parity enable
             #[inline(always)]
-            pub fn lcr_par_en(&self) -> LCR_PAR_EN_R {
-                LCR_PAR_EN_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn par_en(&self) -> PAR_EN_R {
+                PAR_EN_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bits 4:5 - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
             #[inline(always)]
-            pub fn lcr_par_mod(&self) -> LCR_PAR_MOD_R {
-                LCR_PAR_MOD_R::new((self.bits >> 4) & 3)
+            pub fn par_mod(&self) -> PAR_MOD_R {
+                PAR_MOD_R::new((self.bits >> 4) & 3)
             }
             ///Bit 6 - RW, UART break control enable
             #[inline(always)]
-            pub fn lcr_break_en(&self) -> LCR_BREAK_EN_R {
-                LCR_BREAK_EN_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn break_en(&self) -> BREAK_EN_R {
+                BREAK_EN_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - RW, UART general purpose bit;RW, UART reserved bit
             #[inline(always)]
-            pub fn lcr_gp_bit_rb_lcr_dlab(&self) -> LCR_GP_BIT_RB_LCR_DLAB_R {
-                LCR_GP_BIT_RB_LCR_DLAB_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn gp_bit_rb_lcr_dlab(&self) -> GP_BIT_RB_LCR_DLAB_R {
+                GP_BIT_RB_LCR_DLAB_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         impl W {
             ///Bits 0:1 - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
             #[inline(always)]
             #[must_use]
-            pub fn lcr_word_sz(&mut self) -> LCR_WORD_SZ_W<0> {
-                LCR_WORD_SZ_W::new(self)
+            pub fn word_sz(&mut self) -> WORD_SZ_W<0> {
+                WORD_SZ_W::new(self)
             }
             ///Bit 2 - RW, UART stop bit length: 0-1bit, 1-2bit
             #[inline(always)]
             #[must_use]
-            pub fn lcr_stop_bit(&mut self) -> LCR_STOP_BIT_W<2> {
-                LCR_STOP_BIT_W::new(self)
+            pub fn stop_bit(&mut self) -> STOP_BIT_W<2> {
+                STOP_BIT_W::new(self)
             }
             ///Bit 3 - RW, UART parity enable
             #[inline(always)]
             #[must_use]
-            pub fn lcr_par_en(&mut self) -> LCR_PAR_EN_W<3> {
-                LCR_PAR_EN_W::new(self)
+            pub fn par_en(&mut self) -> PAR_EN_W<3> {
+                PAR_EN_W::new(self)
             }
             ///Bits 4:5 - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
             #[inline(always)]
             #[must_use]
-            pub fn lcr_par_mod(&mut self) -> LCR_PAR_MOD_W<4> {
-                LCR_PAR_MOD_W::new(self)
+            pub fn par_mod(&mut self) -> PAR_MOD_W<4> {
+                PAR_MOD_W::new(self)
             }
             ///Bit 6 - RW, UART break control enable
             #[inline(always)]
             #[must_use]
-            pub fn lcr_break_en(&mut self) -> LCR_BREAK_EN_W<6> {
-                LCR_BREAK_EN_W::new(self)
+            pub fn break_en(&mut self) -> BREAK_EN_W<6> {
+                BREAK_EN_W::new(self)
             }
             ///Bit 7 - RW, UART general purpose bit;RW, UART reserved bit
             #[inline(always)]
             #[must_use]
-            pub fn lcr_gp_bit_rb_lcr_dlab(&mut self) -> LCR_GP_BIT_RB_LCR_DLAB_W<7> {
-                LCR_GP_BIT_RB_LCR_DLAB_W::new(self)
+            pub fn gp_bit_rb_lcr_dlab(&mut self) -> GP_BIT_RB_LCR_DLAB_W<7> {
+                GP_BIT_RB_LCR_DLAB_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -13636,235 +13576,235 @@ pub mod uart1 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart1_lcr](index.html) module
-        pub struct UART1_LCR_SPEC;
-        impl crate::RegisterSpec for UART1_LCR_SPEC {
+        ///For information about available fields see [lcr](index.html) module
+        pub struct LCR_SPEC;
+        impl crate::RegisterSpec for LCR_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart1_lcr::R](R) reader structure
-        impl crate::Readable for UART1_LCR_SPEC {
+        ///`read()` method returns [lcr::R](R) reader structure
+        impl crate::Readable for LCR_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [uart1_lcr::W](W) writer structure
-        impl crate::Writable for UART1_LCR_SPEC {
+        ///`write(|w| ..)` method takes [lcr::W](W) writer structure
+        impl crate::Writable for LCR_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets UART1_LCR to value 0
-        impl crate::Resettable for UART1_LCR_SPEC {
+        ///`reset()` method sets LCR to value 0
+        impl crate::Resettable for LCR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART1_IIR (r) register accessor: an alias for `Reg<UART1_IIR_SPEC>`
-    pub type UART1_IIR = crate::Reg<uart1_iir::UART1_IIR_SPEC>;
+    ///IIR (r) register accessor: an alias for `Reg<IIR_SPEC>`
+    pub type IIR = crate::Reg<iir::IIR_SPEC>;
     ///RO, UART1 interrupt identification
-    pub mod uart1_iir {
-        ///Register `UART1_IIR` reader
-        pub struct R(crate::R<UART1_IIR_SPEC>);
+    pub mod iir {
+        ///Register `IIR` reader
+        pub struct R(crate::R<IIR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART1_IIR_SPEC>;
+            type Target = crate::R<IIR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART1_IIR_SPEC>> for R {
+        impl From<crate::R<IIR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART1_IIR_SPEC>) -> Self {
+            fn from(reader: crate::R<IIR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `IIR_NO_INT` reader - RO, UART no interrupt flag: 0=interrupt action, 1=no interrupt
-        pub type IIR_NO_INT_R = crate::BitReader;
-        ///Field `IIR_INT_MASK` reader - RO, UART interrupt flag bit mask
-        pub type IIR_INT_MASK_R = crate::FieldReader;
-        ///Field `IIR_FIFO_ID` reader - RO, UART FIFO enabled flag
-        pub type IIR_FIFO_ID_R = crate::FieldReader;
+        ///Field `NO_INT` reader - RO, UART no interrupt flag: 0=interrupt action, 1=no interrupt
+        pub type NO_INT_R = crate::BitReader;
+        ///Field `INT_MASK` reader - RO, UART interrupt flag bit mask
+        pub type INT_MASK_R = crate::FieldReader;
+        ///Field `FIFO_ID` reader - RO, UART FIFO enabled flag
+        pub type FIFO_ID_R = crate::FieldReader;
         impl R {
             ///Bit 0 - RO, UART no interrupt flag: 0=interrupt action, 1=no interrupt
             #[inline(always)]
-            pub fn iir_no_int(&self) -> IIR_NO_INT_R {
-                IIR_NO_INT_R::new((self.bits & 1) != 0)
+            pub fn no_int(&self) -> NO_INT_R {
+                NO_INT_R::new((self.bits & 1) != 0)
             }
             ///Bits 1:3 - RO, UART interrupt flag bit mask
             #[inline(always)]
-            pub fn iir_int_mask(&self) -> IIR_INT_MASK_R {
-                IIR_INT_MASK_R::new((self.bits >> 1) & 7)
+            pub fn int_mask(&self) -> INT_MASK_R {
+                INT_MASK_R::new((self.bits >> 1) & 7)
             }
             ///Bits 6:7 - RO, UART FIFO enabled flag
             #[inline(always)]
-            pub fn iir_fifo_id(&self) -> IIR_FIFO_ID_R {
-                IIR_FIFO_ID_R::new((self.bits >> 6) & 3)
+            pub fn fifo_id(&self) -> FIFO_ID_R {
+                FIFO_ID_R::new((self.bits >> 6) & 3)
             }
         }
         ///RO, UART1 interrupt identification
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart1_iir](index.html) module
-        pub struct UART1_IIR_SPEC;
-        impl crate::RegisterSpec for UART1_IIR_SPEC {
+        ///For information about available fields see [iir](index.html) module
+        pub struct IIR_SPEC;
+        impl crate::RegisterSpec for IIR_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart1_iir::R](R) reader structure
-        impl crate::Readable for UART1_IIR_SPEC {
+        ///`read()` method returns [iir::R](R) reader structure
+        impl crate::Readable for IIR_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets UART1_IIR to value 0x01
-        impl crate::Resettable for UART1_IIR_SPEC {
+        ///`reset()` method sets IIR to value 0x01
+        impl crate::Resettable for IIR_SPEC {
             const RESET_VALUE: Self::Ux = 0x01;
         }
     }
-    ///UART1_LSR (r) register accessor: an alias for `Reg<UART1_LSR_SPEC>`
-    pub type UART1_LSR = crate::Reg<uart1_lsr::UART1_LSR_SPEC>;
+    ///LSR (r) register accessor: an alias for `Reg<LSR_SPEC>`
+    pub type LSR = crate::Reg<lsr::LSR_SPEC>;
     ///RO, UART1 line status
-    pub mod uart1_lsr {
-        ///Register `UART1_LSR` reader
-        pub struct R(crate::R<UART1_LSR_SPEC>);
+    pub mod lsr {
+        ///Register `LSR` reader
+        pub struct R(crate::R<LSR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART1_LSR_SPEC>;
+            type Target = crate::R<LSR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART1_LSR_SPEC>> for R {
+        impl From<crate::R<LSR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART1_LSR_SPEC>) -> Self {
+            fn from(reader: crate::R<LSR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `LSR_DATA_RDY` reader - RO, UART receiver fifo data ready status
-        pub type LSR_DATA_RDY_R = crate::BitReader;
-        ///Field `LSR_OVER_ERR` reader - RZ, UART receiver overrun error
-        pub type LSR_OVER_ERR_R = crate::BitReader;
-        ///Field `LSR_PAR_ERR` reader - RZ, UART receiver parity error
-        pub type LSR_PAR_ERR_R = crate::BitReader;
-        ///Field `LSR_FRAME_ERR` reader - RZ, UART receiver frame error
-        pub type LSR_FRAME_ERR_R = crate::BitReader;
-        ///Field `LSR_BREAK_ERR` reader - RZ, UART receiver break error
-        pub type LSR_BREAK_ERR_R = crate::BitReader;
-        ///Field `LSR_TX_FIFO_EMP` reader - RO, UART transmitter fifo empty status
-        pub type LSR_TX_FIFO_EMP_R = crate::BitReader;
-        ///Field `LSR_TX_ALL_EMP` reader - RO, UART transmitter all empty status
-        pub type LSR_TX_ALL_EMP_R = crate::BitReader;
-        ///Field `LSR_ERR_RX_FIFO` reader - RO, indicate error in UART receiver fifo
-        pub type LSR_ERR_RX_FIFO_R = crate::BitReader;
+        ///Field `DATA_RDY` reader - RO, UART receiver fifo data ready status
+        pub type DATA_RDY_R = crate::BitReader;
+        ///Field `OVER_ERR` reader - RZ, UART receiver overrun error
+        pub type OVER_ERR_R = crate::BitReader;
+        ///Field `PAR_ERR` reader - RZ, UART receiver parity error
+        pub type PAR_ERR_R = crate::BitReader;
+        ///Field `FRAME_ERR` reader - RZ, UART receiver frame error
+        pub type FRAME_ERR_R = crate::BitReader;
+        ///Field `BREAK_ERR` reader - RZ, UART receiver break error
+        pub type BREAK_ERR_R = crate::BitReader;
+        ///Field `TX_FIFO_EMP` reader - RO, UART transmitter fifo empty status
+        pub type TX_FIFO_EMP_R = crate::BitReader;
+        ///Field `TX_ALL_EMP` reader - RO, UART transmitter all empty status
+        pub type TX_ALL_EMP_R = crate::BitReader;
+        ///Field `ERR_RX_FIFO` reader - RO, indicate error in UART receiver fifo
+        pub type ERR_RX_FIFO_R = crate::BitReader;
         impl R {
             ///Bit 0 - RO, UART receiver fifo data ready status
             #[inline(always)]
-            pub fn lsr_data_rdy(&self) -> LSR_DATA_RDY_R {
-                LSR_DATA_RDY_R::new((self.bits & 1) != 0)
+            pub fn data_rdy(&self) -> DATA_RDY_R {
+                DATA_RDY_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RZ, UART receiver overrun error
             #[inline(always)]
-            pub fn lsr_over_err(&self) -> LSR_OVER_ERR_R {
-                LSR_OVER_ERR_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn over_err(&self) -> OVER_ERR_R {
+                OVER_ERR_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RZ, UART receiver parity error
             #[inline(always)]
-            pub fn lsr_par_err(&self) -> LSR_PAR_ERR_R {
-                LSR_PAR_ERR_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn par_err(&self) -> PAR_ERR_R {
+                PAR_ERR_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RZ, UART receiver frame error
             #[inline(always)]
-            pub fn lsr_frame_err(&self) -> LSR_FRAME_ERR_R {
-                LSR_FRAME_ERR_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn frame_err(&self) -> FRAME_ERR_R {
+                FRAME_ERR_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RZ, UART receiver break error
             #[inline(always)]
-            pub fn lsr_break_err(&self) -> LSR_BREAK_ERR_R {
-                LSR_BREAK_ERR_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn break_err(&self) -> BREAK_ERR_R {
+                BREAK_ERR_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 5 - RO, UART transmitter fifo empty status
             #[inline(always)]
-            pub fn lsr_tx_fifo_emp(&self) -> LSR_TX_FIFO_EMP_R {
-                LSR_TX_FIFO_EMP_R::new(((self.bits >> 5) & 1) != 0)
+            pub fn tx_fifo_emp(&self) -> TX_FIFO_EMP_R {
+                TX_FIFO_EMP_R::new(((self.bits >> 5) & 1) != 0)
             }
             ///Bit 6 - RO, UART transmitter all empty status
             #[inline(always)]
-            pub fn lsr_tx_all_emp(&self) -> LSR_TX_ALL_EMP_R {
-                LSR_TX_ALL_EMP_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn tx_all_emp(&self) -> TX_ALL_EMP_R {
+                TX_ALL_EMP_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - RO, indicate error in UART receiver fifo
             #[inline(always)]
-            pub fn lsr_err_rx_fifo(&self) -> LSR_ERR_RX_FIFO_R {
-                LSR_ERR_RX_FIFO_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn err_rx_fifo(&self) -> ERR_RX_FIFO_R {
+                ERR_RX_FIFO_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         ///RO, UART1 line status
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart1_lsr](index.html) module
-        pub struct UART1_LSR_SPEC;
-        impl crate::RegisterSpec for UART1_LSR_SPEC {
+        ///For information about available fields see [lsr](index.html) module
+        pub struct LSR_SPEC;
+        impl crate::RegisterSpec for LSR_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart1_lsr::R](R) reader structure
-        impl crate::Readable for UART1_LSR_SPEC {
+        ///`read()` method returns [lsr::R](R) reader structure
+        impl crate::Readable for LSR_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets UART1_LSR to value 0x60
-        impl crate::Resettable for UART1_LSR_SPEC {
+        ///`reset()` method sets LSR to value 0x60
+        impl crate::Resettable for LSR_SPEC {
             const RESET_VALUE: Self::Ux = 0x60;
         }
     }
-    ///UART1_RBR (r) register accessor: an alias for `Reg<UART1_RBR_SPEC>`
-    pub type UART1_RBR = crate::Reg<uart1_rbr::UART1_RBR_SPEC>;
+    ///RBR (r) register accessor: an alias for `Reg<RBR_SPEC>`
+    pub type RBR = crate::Reg<rbr::RBR_SPEC>;
     ///RO, UART1 receiver buffer, receiving byte
-    pub mod uart1_rbr {
-        ///Register `UART1_RBR` reader
-        pub struct R(crate::R<UART1_RBR_SPEC>);
+    pub mod rbr {
+        ///Register `RBR` reader
+        pub struct R(crate::R<RBR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART1_RBR_SPEC>;
+            type Target = crate::R<RBR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART1_RBR_SPEC>> for R {
+        impl From<crate::R<RBR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART1_RBR_SPEC>) -> Self {
+            fn from(reader: crate::R<RBR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `UART1_RBR` reader - RO, UART1 receiver buffer, receiving byte
-        pub type UART1_RBR_R = crate::FieldReader;
+        ///Field `RBR` reader - RO, UART1 receiver buffer, receiving byte
+        pub type RBR_R = crate::FieldReader;
         impl R {
             ///Bits 0:7 - RO, UART1 receiver buffer, receiving byte
             #[inline(always)]
-            pub fn uart1_rbr(&self) -> UART1_RBR_R {
-                UART1_RBR_R::new(self.bits)
+            pub fn rbr(&self) -> RBR_R {
+                RBR_R::new(self.bits)
             }
         }
         ///RO, UART1 receiver buffer, receiving byte
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart1_rbr](index.html) module
-        pub struct UART1_RBR_SPEC;
-        impl crate::RegisterSpec for UART1_RBR_SPEC {
+        ///For information about available fields see [rbr](index.html) module
+        pub struct RBR_SPEC;
+        impl crate::RegisterSpec for RBR_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart1_rbr::R](R) reader structure
-        impl crate::Readable for UART1_RBR_SPEC {
+        ///`read()` method returns [rbr::R](R) reader structure
+        impl crate::Readable for RBR_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets UART1_RBR to value 0
-        impl crate::Resettable for UART1_RBR_SPEC {
+        ///`reset()` method sets RBR to value 0
+        impl crate::Resettable for RBR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART1_THR (w) register accessor: an alias for `Reg<UART1_THR_SPEC>`
-    pub type UART1_THR = crate::Reg<uart1_thr::UART1_THR_SPEC>;
+    ///THR (w) register accessor: an alias for `Reg<THR_SPEC>`
+    pub type THR = crate::Reg<thr::THR_SPEC>;
     ///WO, UART1 transmitter holding, transmittal byte
-    pub mod uart1_thr {
-        ///Register `UART1_THR` writer
-        pub struct W(crate::W<UART1_THR_SPEC>);
+    pub mod thr {
+        ///Register `THR` writer
+        pub struct W(crate::W<THR_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<UART1_THR_SPEC>;
+            type Target = crate::W<THR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -13876,20 +13816,20 @@ pub mod uart1 {
                 &mut self.0
             }
         }
-        impl From<crate::W<UART1_THR_SPEC>> for W {
+        impl From<crate::W<THR_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<UART1_THR_SPEC>) -> Self {
+            fn from(writer: crate::W<THR_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `UART1_RBR` writer - WO, UART1 transmitter holding, transmittal byte
-        pub type UART1_RBR_W<'a, const O: u8> = crate::FieldWriter<'a, UART1_THR_SPEC, 8, O>;
+        ///Field `RBR` writer - WO, UART1 transmitter holding, transmittal byte
+        pub type RBR_W<'a, const O: u8> = crate::FieldWriter<'a, THR_SPEC, 8, O>;
         impl W {
             ///Bits 0:7 - WO, UART1 transmitter holding, transmittal byte
             #[inline(always)]
             #[must_use]
-            pub fn uart1_rbr(&mut self) -> UART1_RBR_W<0> {
-                UART1_RBR_W::new(self)
+            pub fn rbr(&mut self) -> RBR_W<0> {
+                RBR_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -13902,137 +13842,137 @@ pub mod uart1 {
         ///
         ///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart1_thr](index.html) module
-        pub struct UART1_THR_SPEC;
-        impl crate::RegisterSpec for UART1_THR_SPEC {
+        ///For information about available fields see [thr](index.html) module
+        pub struct THR_SPEC;
+        impl crate::RegisterSpec for THR_SPEC {
             type Ux = u8;
         }
-        ///`write(|w| ..)` method takes [uart1_thr::W](W) writer structure
-        impl crate::Writable for UART1_THR_SPEC {
+        ///`write(|w| ..)` method takes [thr::W](W) writer structure
+        impl crate::Writable for THR_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets UART1_THR to value 0
-        impl crate::Resettable for UART1_THR_SPEC {
+        ///`reset()` method sets THR to value 0
+        impl crate::Resettable for THR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART1_RFC (r) register accessor: an alias for `Reg<UART1_RFC_SPEC>`
-    pub type UART1_RFC = crate::Reg<uart1_rfc::UART1_RFC_SPEC>;
+    ///RFC (r) register accessor: an alias for `Reg<RFC_SPEC>`
+    pub type RFC = crate::Reg<rfc::RFC_SPEC>;
     ///RO, UART1 receiver FIFO count
-    pub mod uart1_rfc {
-        ///Register `UART1_RFC` reader
-        pub struct R(crate::R<UART1_RFC_SPEC>);
+    pub mod rfc {
+        ///Register `RFC` reader
+        pub struct R(crate::R<RFC_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART1_RFC_SPEC>;
+            type Target = crate::R<RFC_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART1_RFC_SPEC>> for R {
+        impl From<crate::R<RFC_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART1_RFC_SPEC>) -> Self {
+            fn from(reader: crate::R<RFC_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `UART1_RFC` reader - RO, UART1 receiver FIFO count
-        pub type UART1_RFC_R = crate::FieldReader;
+        ///Field `RFC` reader - RO, UART1 receiver FIFO count
+        pub type RFC_R = crate::FieldReader;
         impl R {
             ///Bits 0:7 - RO, UART1 receiver FIFO count
             #[inline(always)]
-            pub fn uart1_rfc(&self) -> UART1_RFC_R {
-                UART1_RFC_R::new(self.bits)
+            pub fn rfc(&self) -> RFC_R {
+                RFC_R::new(self.bits)
             }
         }
         ///RO, UART1 receiver FIFO count
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart1_rfc](index.html) module
-        pub struct UART1_RFC_SPEC;
-        impl crate::RegisterSpec for UART1_RFC_SPEC {
+        ///For information about available fields see [rfc](index.html) module
+        pub struct RFC_SPEC;
+        impl crate::RegisterSpec for RFC_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart1_rfc::R](R) reader structure
-        impl crate::Readable for UART1_RFC_SPEC {
+        ///`read()` method returns [rfc::R](R) reader structure
+        impl crate::Readable for RFC_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets UART1_RFC to value 0
-        impl crate::Resettable for UART1_RFC_SPEC {
+        ///`reset()` method sets RFC to value 0
+        impl crate::Resettable for RFC_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART1_TFC (r) register accessor: an alias for `Reg<UART1_TFC_SPEC>`
-    pub type UART1_TFC = crate::Reg<uart1_tfc::UART1_TFC_SPEC>;
+    ///TFC (r) register accessor: an alias for `Reg<TFC_SPEC>`
+    pub type TFC = crate::Reg<tfc::TFC_SPEC>;
     ///RO, UART1 transmitter FIFO count
-    pub mod uart1_tfc {
-        ///Register `UART1_TFC` reader
-        pub struct R(crate::R<UART1_TFC_SPEC>);
+    pub mod tfc {
+        ///Register `TFC` reader
+        pub struct R(crate::R<TFC_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART1_TFC_SPEC>;
+            type Target = crate::R<TFC_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART1_TFC_SPEC>> for R {
+        impl From<crate::R<TFC_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART1_TFC_SPEC>) -> Self {
+            fn from(reader: crate::R<TFC_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `UART1_TFC` reader - RO, UART1 receiver FIFO count
-        pub type UART1_TFC_R = crate::FieldReader;
+        ///Field `TFC` reader - RO, UART1 receiver FIFO count
+        pub type TFC_R = crate::FieldReader;
         impl R {
             ///Bits 0:7 - RO, UART1 receiver FIFO count
             #[inline(always)]
-            pub fn uart1_tfc(&self) -> UART1_TFC_R {
-                UART1_TFC_R::new(self.bits)
+            pub fn tfc(&self) -> TFC_R {
+                TFC_R::new(self.bits)
             }
         }
         ///RO, UART1 transmitter FIFO count
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart1_tfc](index.html) module
-        pub struct UART1_TFC_SPEC;
-        impl crate::RegisterSpec for UART1_TFC_SPEC {
+        ///For information about available fields see [tfc](index.html) module
+        pub struct TFC_SPEC;
+        impl crate::RegisterSpec for TFC_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart1_tfc::R](R) reader structure
-        impl crate::Readable for UART1_TFC_SPEC {
+        ///`read()` method returns [tfc::R](R) reader structure
+        impl crate::Readable for TFC_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets UART1_TFC to value 0
-        impl crate::Resettable for UART1_TFC_SPEC {
+        ///`reset()` method sets TFC to value 0
+        impl crate::Resettable for TFC_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART1_DL (rw) register accessor: an alias for `Reg<UART1_DL_SPEC>`
-    pub type UART1_DL = crate::Reg<uart1_dl::UART1_DL_SPEC>;
+    ///DL (rw) register accessor: an alias for `Reg<DL_SPEC>`
+    pub type DL = crate::Reg<dl::DL_SPEC>;
     ///RW, UART1 divisor latch
-    pub mod uart1_dl {
-        ///Register `UART1_DL` reader
-        pub struct R(crate::R<UART1_DL_SPEC>);
+    pub mod dl {
+        ///Register `DL` reader
+        pub struct R(crate::R<DL_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART1_DL_SPEC>;
+            type Target = crate::R<DL_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART1_DL_SPEC>> for R {
+        impl From<crate::R<DL_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART1_DL_SPEC>) -> Self {
+            fn from(reader: crate::R<DL_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `UART1_DL` writer
-        pub struct W(crate::W<UART1_DL_SPEC>);
+        ///Register `DL` writer
+        pub struct W(crate::W<DL_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<UART1_DL_SPEC>;
+            type Target = crate::W<DL_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -14044,29 +13984,29 @@ pub mod uart1 {
                 &mut self.0
             }
         }
-        impl From<crate::W<UART1_DL_SPEC>> for W {
+        impl From<crate::W<DL_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<UART1_DL_SPEC>) -> Self {
+            fn from(writer: crate::W<DL_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `UART1_DL` reader - RW, UART1 divisor latch
-        pub type UART1_DL_R = crate::FieldReader<u16>;
-        ///Field `UART1_DL` writer - RW, UART1 divisor latch
-        pub type UART1_DL_W<'a, const O: u8> = crate::FieldWriter<'a, UART1_DL_SPEC, 16, O, u16>;
+        ///Field `DL` reader - RW, UART1 divisor latch
+        pub type DL_R = crate::FieldReader<u16>;
+        ///Field `DL` writer - RW, UART1 divisor latch
+        pub type DL_W<'a, const O: u8> = crate::FieldWriter<'a, DL_SPEC, 16, O, u16>;
         impl R {
             ///Bits 0:15 - RW, UART1 divisor latch
             #[inline(always)]
-            pub fn uart1_dl(&self) -> UART1_DL_R {
-                UART1_DL_R::new(self.bits)
+            pub fn dl(&self) -> DL_R {
+                DL_R::new(self.bits)
             }
         }
         impl W {
             ///Bits 0:15 - RW, UART1 divisor latch
             #[inline(always)]
             #[must_use]
-            pub fn uart1_dl(&mut self) -> UART1_DL_W<0> {
-                UART1_DL_W::new(self)
+            pub fn dl(&mut self) -> DL_W<0> {
+                DL_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -14079,49 +14019,49 @@ pub mod uart1 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart1_dl](index.html) module
-        pub struct UART1_DL_SPEC;
-        impl crate::RegisterSpec for UART1_DL_SPEC {
+        ///For information about available fields see [dl](index.html) module
+        pub struct DL_SPEC;
+        impl crate::RegisterSpec for DL_SPEC {
             type Ux = u16;
         }
-        ///`read()` method returns [uart1_dl::R](R) reader structure
-        impl crate::Readable for UART1_DL_SPEC {
+        ///`read()` method returns [dl::R](R) reader structure
+        impl crate::Readable for DL_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [uart1_dl::W](W) writer structure
-        impl crate::Writable for UART1_DL_SPEC {
+        ///`write(|w| ..)` method takes [dl::W](W) writer structure
+        impl crate::Writable for DL_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets UART1_DL to value 0
-        impl crate::Resettable for UART1_DL_SPEC {
+        ///`reset()` method sets DL to value 0
+        impl crate::Resettable for DL_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///UART1_DIV (rw) register accessor: an alias for `Reg<UART1_DIV_SPEC>`
-    pub type UART1_DIV = crate::Reg<uart1_div::UART1_DIV_SPEC>;
+    ///DIV (rw) register accessor: an alias for `Reg<DIV_SPEC>`
+    pub type DIV = crate::Reg<div::DIV_SPEC>;
     ///RW, UART1 pre-divisor latch byte, only low 7 bit, from 1 to 128
-    pub mod uart1_div {
-        ///Register `UART1_DIV` reader
-        pub struct R(crate::R<UART1_DIV_SPEC>);
+    pub mod div {
+        ///Register `DIV` reader
+        pub struct R(crate::R<DIV_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<UART1_DIV_SPEC>;
+            type Target = crate::R<DIV_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<UART1_DIV_SPEC>> for R {
+        impl From<crate::R<DIV_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<UART1_DIV_SPEC>) -> Self {
+            fn from(reader: crate::R<DIV_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `UART1_DIV` writer
-        pub struct W(crate::W<UART1_DIV_SPEC>);
+        ///Register `DIV` writer
+        pub struct W(crate::W<DIV_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<UART1_DIV_SPEC>;
+            type Target = crate::W<DIV_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -14133,29 +14073,29 @@ pub mod uart1 {
                 &mut self.0
             }
         }
-        impl From<crate::W<UART1_DIV_SPEC>> for W {
+        impl From<crate::W<DIV_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<UART1_DIV_SPEC>) -> Self {
+            fn from(writer: crate::W<DIV_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `UART1_DIV` reader - RW, UART1 pre-divisor latch byte, only low 7 bit, from 1 to 128
-        pub type UART1_DIV_R = crate::FieldReader;
-        ///Field `UART1_DIV` writer - RW, UART1 pre-divisor latch byte, only low 7 bit, from 1 to 128
-        pub type UART1_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, UART1_DIV_SPEC, 8, O>;
+        ///Field `DIV` reader - RW, UART1 pre-divisor latch byte, only low 7 bit, from 1 to 128
+        pub type DIV_R = crate::FieldReader;
+        ///Field `DIV` writer - RW, UART1 pre-divisor latch byte, only low 7 bit, from 1 to 128
+        pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, DIV_SPEC, 8, O>;
         impl R {
             ///Bits 0:7 - RW, UART1 pre-divisor latch byte, only low 7 bit, from 1 to 128
             #[inline(always)]
-            pub fn uart1_div(&self) -> UART1_DIV_R {
-                UART1_DIV_R::new(self.bits)
+            pub fn div(&self) -> DIV_R {
+                DIV_R::new(self.bits)
             }
         }
         impl W {
             ///Bits 0:7 - RW, UART1 pre-divisor latch byte, only low 7 bit, from 1 to 128
             #[inline(always)]
             #[must_use]
-            pub fn uart1_div(&mut self) -> UART1_DIV_W<0> {
-                UART1_DIV_W::new(self)
+            pub fn div(&mut self) -> DIV_W<0> {
+                DIV_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -14168,23 +14108,23 @@ pub mod uart1 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [uart1_div](index.html) module
-        pub struct UART1_DIV_SPEC;
-        impl crate::RegisterSpec for UART1_DIV_SPEC {
+        ///For information about available fields see [div](index.html) module
+        pub struct DIV_SPEC;
+        impl crate::RegisterSpec for DIV_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [uart1_div::R](R) reader structure
-        impl crate::Readable for UART1_DIV_SPEC {
+        ///`read()` method returns [div::R](R) reader structure
+        impl crate::Readable for DIV_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [uart1_div::W](W) writer structure
-        impl crate::Writable for UART1_DIV_SPEC {
+        ///`write(|w| ..)` method takes [div::W](W) writer structure
+        impl crate::Writable for DIV_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets UART1_DIV to value 0
-        impl crate::Resettable for UART1_DIV_SPEC {
+        ///`reset()` method sets DIV to value 0
+        impl crate::Resettable for DIV_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
@@ -14196,15 +14136,15 @@ pub struct UART2 {
 unsafe impl Send for UART2 {}
 impl UART2 {
     ///Pointer to the register block
-    pub const PTR: *const uart2::RegisterBlock = 0x4000_3800 as *const _;
+    pub const PTR: *const uart1::RegisterBlock = 0x4000_3800 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const uart2::RegisterBlock {
+    pub const fn ptr() -> *const uart1::RegisterBlock {
         Self::PTR
     }
 }
 impl Deref for UART2 {
-    type Target = uart2::RegisterBlock;
+    type Target = uart1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -14216,1117 +14156,7 @@ impl core::fmt::Debug for UART2 {
     }
 }
 ///UART2 register
-pub mod uart2 {
-    ///Register block
-    #[repr(C)]
-    pub struct RegisterBlock {
-        ///0x00 - RW, UART2 modem control
-        pub uart2_mcr: UART2_MCR,
-        ///0x01 - RW, UART2 interrupt enable
-        pub uart2_ier: UART2_IER,
-        ///0x02 - RW, UART2 FIFO control
-        pub uart2_fcr: UART2_FCR,
-        ///0x03 - RW, UART2 line control
-        pub uart2_lcr: UART2_LCR,
-        ///0x04 - RO, UART2 interrupt identification
-        pub uart2_iir: UART2_IIR,
-        ///0x05 - RO, UART2 line status
-        pub uart2_lsr: UART2_LSR,
-        _reserved6: [u8; 0x02],
-        _reserved_6_uart2: [u8; 0x01],
-        _reserved7: [u8; 0x01],
-        ///0x0a - RO, UART2 receiver FIFO count
-        pub uart2_rfc: UART2_RFC,
-        ///0x0b - RO, UART2 transmitter FIFO count
-        pub uart2_tfc: UART2_TFC,
-        ///0x0c - RW, UART2 divisor latch
-        pub uart2_dl: UART2_DL,
-        ///0x0e - RW, UART2 pre-divisor latch byte, only low 7 bit, from 1 to 128
-        pub uart2_div: UART2_DIV,
-    }
-    impl RegisterBlock {
-        ///0x08 - WO, UART2 transmitter holding, transmittal byte
-        #[inline(always)]
-        pub const fn uart2_thr(&self) -> &UART2_THR {
-            unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
-        }
-        ///0x08 - RO, UART2 receiver buffer, receiving byte
-        #[inline(always)]
-        pub const fn uart2_rbr(&self) -> &UART2_RBR {
-            unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
-        }
-    }
-    ///UART2_MCR (rw) register accessor: an alias for `Reg<UART2_MCR_SPEC>`
-    pub type UART2_MCR = crate::Reg<uart2_mcr::UART2_MCR_SPEC>;
-    ///RW, UART2 modem control
-    pub mod uart2_mcr {
-        ///Register `UART2_MCR` reader
-        pub struct R(crate::R<UART2_MCR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART2_MCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART2_MCR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART2_MCR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `UART2_MCR` writer
-        pub struct W(crate::W<UART2_MCR_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<UART2_MCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<UART2_MCR_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<UART2_MCR_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `MCR_OUT2_RB_MCR_INT_OE` reader - RW, UART control OUT2;UART interrupt output enable
-        pub type MCR_OUT2_RB_MCR_INT_OE_R = crate::BitReader;
-        ///Field `MCR_OUT2_RB_MCR_INT_OE` writer - RW, UART control OUT2;UART interrupt output enable
-        pub type MCR_OUT2_RB_MCR_INT_OE_W<'a, const O: u8> =
-            crate::BitWriter<'a, UART2_MCR_SPEC, O>;
-        impl R {
-            ///Bit 3 - RW, UART control OUT2;UART interrupt output enable
-            #[inline(always)]
-            pub fn mcr_out2_rb_mcr_int_oe(&self) -> MCR_OUT2_RB_MCR_INT_OE_R {
-                MCR_OUT2_RB_MCR_INT_OE_R::new(((self.bits >> 3) & 1) != 0)
-            }
-        }
-        impl W {
-            ///Bit 3 - RW, UART control OUT2;UART interrupt output enable
-            #[inline(always)]
-            #[must_use]
-            pub fn mcr_out2_rb_mcr_int_oe(&mut self) -> MCR_OUT2_RB_MCR_INT_OE_W<3> {
-                MCR_OUT2_RB_MCR_INT_OE_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART2 modem control
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart2_mcr](index.html) module
-        pub struct UART2_MCR_SPEC;
-        impl crate::RegisterSpec for UART2_MCR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart2_mcr::R](R) reader structure
-        impl crate::Readable for UART2_MCR_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [uart2_mcr::W](W) writer structure
-        impl crate::Writable for UART2_MCR_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets UART2_MCR to value 0
-        impl crate::Resettable for UART2_MCR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART2_IER (rw) register accessor: an alias for `Reg<UART2_IER_SPEC>`
-    pub type UART2_IER = crate::Reg<uart2_ier::UART2_IER_SPEC>;
-    ///RW, UART2 interrupt enable
-    pub mod uart2_ier {
-        ///Register `UART2_IER` reader
-        pub struct R(crate::R<UART2_IER_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART2_IER_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART2_IER_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART2_IER_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `UART2_IER` writer
-        pub struct W(crate::W<UART2_IER_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<UART2_IER_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<UART2_IER_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<UART2_IER_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `IER_RECV_RDY` reader - RW, UART interrupt enable for receiver data ready
-        pub type IER_RECV_RDY_R = crate::BitReader;
-        ///Field `IER_RECV_RDY` writer - RW, UART interrupt enable for receiver data ready
-        pub type IER_RECV_RDY_W<'a, const O: u8> = crate::BitWriter<'a, UART2_IER_SPEC, O>;
-        ///Field `IER_THR_EMPTY` reader - RW, UART interrupt enable for THR empty
-        pub type IER_THR_EMPTY_R = crate::BitReader;
-        ///Field `IER_THR_EMPTY` writer - RW, UART interrupt enable for THR empty
-        pub type IER_THR_EMPTY_W<'a, const O: u8> = crate::BitWriter<'a, UART2_IER_SPEC, O>;
-        ///Field `IER_LINE_STAT` reader - RW, UART interrupt enable for receiver line status
-        pub type IER_LINE_STAT_R = crate::BitReader;
-        ///Field `IER_LINE_STAT` writer - RW, UART interrupt enable for receiver line status
-        pub type IER_LINE_STAT_W<'a, const O: u8> = crate::BitWriter<'a, UART2_IER_SPEC, O>;
-        ///Field `IER_TXD_EN` reader - RW, UART TXD pin enable
-        pub type IER_TXD_EN_R = crate::BitReader;
-        ///Field `IER_TXD_EN` writer - RW, UART TXD pin enable
-        pub type IER_TXD_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART2_IER_SPEC, O>;
-        ///Field `IER_RESET` reader - WZ, UART software reset control, high action, auto clear
-        pub type IER_RESET_R = crate::BitReader;
-        ///Field `IER_RESET` writer - WZ, UART software reset control, high action, auto clear
-        pub type IER_RESET_W<'a, const O: u8> = crate::BitWriter<'a, UART2_IER_SPEC, O>;
-        impl R {
-            ///Bit 0 - RW, UART interrupt enable for receiver data ready
-            #[inline(always)]
-            pub fn ier_recv_rdy(&self) -> IER_RECV_RDY_R {
-                IER_RECV_RDY_R::new((self.bits & 1) != 0)
-            }
-            ///Bit 1 - RW, UART interrupt enable for THR empty
-            #[inline(always)]
-            pub fn ier_thr_empty(&self) -> IER_THR_EMPTY_R {
-                IER_THR_EMPTY_R::new(((self.bits >> 1) & 1) != 0)
-            }
-            ///Bit 2 - RW, UART interrupt enable for receiver line status
-            #[inline(always)]
-            pub fn ier_line_stat(&self) -> IER_LINE_STAT_R {
-                IER_LINE_STAT_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bit 6 - RW, UART TXD pin enable
-            #[inline(always)]
-            pub fn ier_txd_en(&self) -> IER_TXD_EN_R {
-                IER_TXD_EN_R::new(((self.bits >> 6) & 1) != 0)
-            }
-            ///Bit 7 - WZ, UART software reset control, high action, auto clear
-            #[inline(always)]
-            pub fn ier_reset(&self) -> IER_RESET_R {
-                IER_RESET_R::new(((self.bits >> 7) & 1) != 0)
-            }
-        }
-        impl W {
-            ///Bit 0 - RW, UART interrupt enable for receiver data ready
-            #[inline(always)]
-            #[must_use]
-            pub fn ier_recv_rdy(&mut self) -> IER_RECV_RDY_W<0> {
-                IER_RECV_RDY_W::new(self)
-            }
-            ///Bit 1 - RW, UART interrupt enable for THR empty
-            #[inline(always)]
-            #[must_use]
-            pub fn ier_thr_empty(&mut self) -> IER_THR_EMPTY_W<1> {
-                IER_THR_EMPTY_W::new(self)
-            }
-            ///Bit 2 - RW, UART interrupt enable for receiver line status
-            #[inline(always)]
-            #[must_use]
-            pub fn ier_line_stat(&mut self) -> IER_LINE_STAT_W<2> {
-                IER_LINE_STAT_W::new(self)
-            }
-            ///Bit 6 - RW, UART TXD pin enable
-            #[inline(always)]
-            #[must_use]
-            pub fn ier_txd_en(&mut self) -> IER_TXD_EN_W<6> {
-                IER_TXD_EN_W::new(self)
-            }
-            ///Bit 7 - WZ, UART software reset control, high action, auto clear
-            #[inline(always)]
-            #[must_use]
-            pub fn ier_reset(&mut self) -> IER_RESET_W<7> {
-                IER_RESET_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART2 interrupt enable
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart2_ier](index.html) module
-        pub struct UART2_IER_SPEC;
-        impl crate::RegisterSpec for UART2_IER_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart2_ier::R](R) reader structure
-        impl crate::Readable for UART2_IER_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [uart2_ier::W](W) writer structure
-        impl crate::Writable for UART2_IER_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets UART2_IER to value 0
-        impl crate::Resettable for UART2_IER_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART2_FCR (rw) register accessor: an alias for `Reg<UART2_FCR_SPEC>`
-    pub type UART2_FCR = crate::Reg<uart2_fcr::UART2_FCR_SPEC>;
-    ///RW, UART2 FIFO control
-    pub mod uart2_fcr {
-        ///Register `UART2_FCR` reader
-        pub struct R(crate::R<UART2_FCR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART2_FCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART2_FCR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART2_FCR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `UART2_FCR` writer
-        pub struct W(crate::W<UART2_FCR_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<UART2_FCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<UART2_FCR_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<UART2_FCR_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `FCR_FIFO_EN` reader - RW, UART FIFO enable
-        pub type FCR_FIFO_EN_R = crate::BitReader;
-        ///Field `FCR_FIFO_EN` writer - RW, UART FIFO enable
-        pub type FCR_FIFO_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART2_FCR_SPEC, O>;
-        ///Field `FCR_RX_FIFO_CLR` reader - WZ, clear UART receiver FIFO, high action, auto clear
-        pub type FCR_RX_FIFO_CLR_R = crate::BitReader;
-        ///Field `FCR_RX_FIFO_CLR` writer - WZ, clear UART receiver FIFO, high action, auto clear
-        pub type FCR_RX_FIFO_CLR_W<'a, const O: u8> = crate::BitWriter<'a, UART2_FCR_SPEC, O>;
-        ///Field `FCR_TX_FIFO_CLR` reader - WZ, clear UART transmitter FIFO, high action, auto clear
-        pub type FCR_TX_FIFO_CLR_R = crate::BitReader;
-        ///Field `FCR_TX_FIFO_CLR` writer - WZ, clear UART transmitter FIFO, high action, auto clear
-        pub type FCR_TX_FIFO_CLR_W<'a, const O: u8> = crate::BitWriter<'a, UART2_FCR_SPEC, O>;
-        ///Field `FCR_FIFO_TRIG` reader - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
-        pub type FCR_FIFO_TRIG_R = crate::FieldReader;
-        ///Field `FCR_FIFO_TRIG` writer - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
-        pub type FCR_FIFO_TRIG_W<'a, const O: u8> = crate::FieldWriter<'a, UART2_FCR_SPEC, 2, O>;
-        impl R {
-            ///Bit 0 - RW, UART FIFO enable
-            #[inline(always)]
-            pub fn fcr_fifo_en(&self) -> FCR_FIFO_EN_R {
-                FCR_FIFO_EN_R::new((self.bits & 1) != 0)
-            }
-            ///Bit 1 - WZ, clear UART receiver FIFO, high action, auto clear
-            #[inline(always)]
-            pub fn fcr_rx_fifo_clr(&self) -> FCR_RX_FIFO_CLR_R {
-                FCR_RX_FIFO_CLR_R::new(((self.bits >> 1) & 1) != 0)
-            }
-            ///Bit 2 - WZ, clear UART transmitter FIFO, high action, auto clear
-            #[inline(always)]
-            pub fn fcr_tx_fifo_clr(&self) -> FCR_TX_FIFO_CLR_R {
-                FCR_TX_FIFO_CLR_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bits 6:7 - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
-            #[inline(always)]
-            pub fn fcr_fifo_trig(&self) -> FCR_FIFO_TRIG_R {
-                FCR_FIFO_TRIG_R::new((self.bits >> 6) & 3)
-            }
-        }
-        impl W {
-            ///Bit 0 - RW, UART FIFO enable
-            #[inline(always)]
-            #[must_use]
-            pub fn fcr_fifo_en(&mut self) -> FCR_FIFO_EN_W<0> {
-                FCR_FIFO_EN_W::new(self)
-            }
-            ///Bit 1 - WZ, clear UART receiver FIFO, high action, auto clear
-            #[inline(always)]
-            #[must_use]
-            pub fn fcr_rx_fifo_clr(&mut self) -> FCR_RX_FIFO_CLR_W<1> {
-                FCR_RX_FIFO_CLR_W::new(self)
-            }
-            ///Bit 2 - WZ, clear UART transmitter FIFO, high action, auto clear
-            #[inline(always)]
-            #[must_use]
-            pub fn fcr_tx_fifo_clr(&mut self) -> FCR_TX_FIFO_CLR_W<2> {
-                FCR_TX_FIFO_CLR_W::new(self)
-            }
-            ///Bits 6:7 - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
-            #[inline(always)]
-            #[must_use]
-            pub fn fcr_fifo_trig(&mut self) -> FCR_FIFO_TRIG_W<6> {
-                FCR_FIFO_TRIG_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART2 FIFO control
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart2_fcr](index.html) module
-        pub struct UART2_FCR_SPEC;
-        impl crate::RegisterSpec for UART2_FCR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart2_fcr::R](R) reader structure
-        impl crate::Readable for UART2_FCR_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [uart2_fcr::W](W) writer structure
-        impl crate::Writable for UART2_FCR_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets UART2_FCR to value 0
-        impl crate::Resettable for UART2_FCR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART2_LCR (rw) register accessor: an alias for `Reg<UART2_LCR_SPEC>`
-    pub type UART2_LCR = crate::Reg<uart2_lcr::UART2_LCR_SPEC>;
-    ///RW, UART2 line control
-    pub mod uart2_lcr {
-        ///Register `UART2_LCR` reader
-        pub struct R(crate::R<UART2_LCR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART2_LCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART2_LCR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART2_LCR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `UART2_LCR` writer
-        pub struct W(crate::W<UART2_LCR_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<UART2_LCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<UART2_LCR_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<UART2_LCR_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `LCR_WORD_SZ` reader - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
-        pub type LCR_WORD_SZ_R = crate::FieldReader;
-        ///Field `LCR_WORD_SZ` writer - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
-        pub type LCR_WORD_SZ_W<'a, const O: u8> = crate::FieldWriter<'a, UART2_LCR_SPEC, 2, O>;
-        ///Field `LCR_STOP_BIT` reader - RW, UART stop bit length: 0-1bit, 1-2bit
-        pub type LCR_STOP_BIT_R = crate::BitReader;
-        ///Field `LCR_STOP_BIT` writer - RW, UART stop bit length: 0-1bit, 1-2bit
-        pub type LCR_STOP_BIT_W<'a, const O: u8> = crate::BitWriter<'a, UART2_LCR_SPEC, O>;
-        ///Field `LCR_PAR_EN` reader - RW, UART parity enable
-        pub type LCR_PAR_EN_R = crate::BitReader;
-        ///Field `LCR_PAR_EN` writer - RW, UART parity enable
-        pub type LCR_PAR_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART2_LCR_SPEC, O>;
-        ///Field `LCR_PAR_MOD` reader - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
-        pub type LCR_PAR_MOD_R = crate::FieldReader;
-        ///Field `LCR_PAR_MOD` writer - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
-        pub type LCR_PAR_MOD_W<'a, const O: u8> = crate::FieldWriter<'a, UART2_LCR_SPEC, 2, O>;
-        ///Field `LCR_BREAK_EN` reader - RW, UART break control enable
-        pub type LCR_BREAK_EN_R = crate::BitReader;
-        ///Field `LCR_BREAK_EN` writer - RW, UART break control enable
-        pub type LCR_BREAK_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART2_LCR_SPEC, O>;
-        ///Field `LCR_GP_BIT_RB_LCR_DLAB` reader - RW, UART general purpose bit;RW, UART reserved bit
-        pub type LCR_GP_BIT_RB_LCR_DLAB_R = crate::BitReader;
-        ///Field `LCR_GP_BIT_RB_LCR_DLAB` writer - RW, UART general purpose bit;RW, UART reserved bit
-        pub type LCR_GP_BIT_RB_LCR_DLAB_W<'a, const O: u8> =
-            crate::BitWriter<'a, UART2_LCR_SPEC, O>;
-        impl R {
-            ///Bits 0:1 - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
-            #[inline(always)]
-            pub fn lcr_word_sz(&self) -> LCR_WORD_SZ_R {
-                LCR_WORD_SZ_R::new(self.bits & 3)
-            }
-            ///Bit 2 - RW, UART stop bit length: 0-1bit, 1-2bit
-            #[inline(always)]
-            pub fn lcr_stop_bit(&self) -> LCR_STOP_BIT_R {
-                LCR_STOP_BIT_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bit 3 - RW, UART parity enable
-            #[inline(always)]
-            pub fn lcr_par_en(&self) -> LCR_PAR_EN_R {
-                LCR_PAR_EN_R::new(((self.bits >> 3) & 1) != 0)
-            }
-            ///Bits 4:5 - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
-            #[inline(always)]
-            pub fn lcr_par_mod(&self) -> LCR_PAR_MOD_R {
-                LCR_PAR_MOD_R::new((self.bits >> 4) & 3)
-            }
-            ///Bit 6 - RW, UART break control enable
-            #[inline(always)]
-            pub fn lcr_break_en(&self) -> LCR_BREAK_EN_R {
-                LCR_BREAK_EN_R::new(((self.bits >> 6) & 1) != 0)
-            }
-            ///Bit 7 - RW, UART general purpose bit;RW, UART reserved bit
-            #[inline(always)]
-            pub fn lcr_gp_bit_rb_lcr_dlab(&self) -> LCR_GP_BIT_RB_LCR_DLAB_R {
-                LCR_GP_BIT_RB_LCR_DLAB_R::new(((self.bits >> 7) & 1) != 0)
-            }
-        }
-        impl W {
-            ///Bits 0:1 - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
-            #[inline(always)]
-            #[must_use]
-            pub fn lcr_word_sz(&mut self) -> LCR_WORD_SZ_W<0> {
-                LCR_WORD_SZ_W::new(self)
-            }
-            ///Bit 2 - RW, UART stop bit length: 0-1bit, 1-2bit
-            #[inline(always)]
-            #[must_use]
-            pub fn lcr_stop_bit(&mut self) -> LCR_STOP_BIT_W<2> {
-                LCR_STOP_BIT_W::new(self)
-            }
-            ///Bit 3 - RW, UART parity enable
-            #[inline(always)]
-            #[must_use]
-            pub fn lcr_par_en(&mut self) -> LCR_PAR_EN_W<3> {
-                LCR_PAR_EN_W::new(self)
-            }
-            ///Bits 4:5 - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
-            #[inline(always)]
-            #[must_use]
-            pub fn lcr_par_mod(&mut self) -> LCR_PAR_MOD_W<4> {
-                LCR_PAR_MOD_W::new(self)
-            }
-            ///Bit 6 - RW, UART break control enable
-            #[inline(always)]
-            #[must_use]
-            pub fn lcr_break_en(&mut self) -> LCR_BREAK_EN_W<6> {
-                LCR_BREAK_EN_W::new(self)
-            }
-            ///Bit 7 - RW, UART general purpose bit;RW, UART reserved bit
-            #[inline(always)]
-            #[must_use]
-            pub fn lcr_gp_bit_rb_lcr_dlab(&mut self) -> LCR_GP_BIT_RB_LCR_DLAB_W<7> {
-                LCR_GP_BIT_RB_LCR_DLAB_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART2 line control
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart2_lcr](index.html) module
-        pub struct UART2_LCR_SPEC;
-        impl crate::RegisterSpec for UART2_LCR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart2_lcr::R](R) reader structure
-        impl crate::Readable for UART2_LCR_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [uart2_lcr::W](W) writer structure
-        impl crate::Writable for UART2_LCR_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets UART2_LCR to value 0
-        impl crate::Resettable for UART2_LCR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART2_IIR (r) register accessor: an alias for `Reg<UART2_IIR_SPEC>`
-    pub type UART2_IIR = crate::Reg<uart2_iir::UART2_IIR_SPEC>;
-    ///RO, UART2 interrupt identification
-    pub mod uart2_iir {
-        ///Register `UART2_IIR` reader
-        pub struct R(crate::R<UART2_IIR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART2_IIR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART2_IIR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART2_IIR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `IIR_NO_INT` reader - RO, UART no interrupt flag: 0=interrupt action, 1=no interrupt
-        pub type IIR_NO_INT_R = crate::BitReader;
-        ///Field `IIR_INT_MASK` reader - RO, UART interrupt flag bit mask
-        pub type IIR_INT_MASK_R = crate::FieldReader;
-        ///Field `IIR_FIFO_ID` reader - RO, UART FIFO enabled flag
-        pub type IIR_FIFO_ID_R = crate::FieldReader;
-        impl R {
-            ///Bit 0 - RO, UART no interrupt flag: 0=interrupt action, 1=no interrupt
-            #[inline(always)]
-            pub fn iir_no_int(&self) -> IIR_NO_INT_R {
-                IIR_NO_INT_R::new((self.bits & 1) != 0)
-            }
-            ///Bits 1:3 - RO, UART interrupt flag bit mask
-            #[inline(always)]
-            pub fn iir_int_mask(&self) -> IIR_INT_MASK_R {
-                IIR_INT_MASK_R::new((self.bits >> 1) & 7)
-            }
-            ///Bits 6:7 - RO, UART FIFO enabled flag
-            #[inline(always)]
-            pub fn iir_fifo_id(&self) -> IIR_FIFO_ID_R {
-                IIR_FIFO_ID_R::new((self.bits >> 6) & 3)
-            }
-        }
-        ///RO, UART2 interrupt identification
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart2_iir](index.html) module
-        pub struct UART2_IIR_SPEC;
-        impl crate::RegisterSpec for UART2_IIR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart2_iir::R](R) reader structure
-        impl crate::Readable for UART2_IIR_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets UART2_IIR to value 0x01
-        impl crate::Resettable for UART2_IIR_SPEC {
-            const RESET_VALUE: Self::Ux = 0x01;
-        }
-    }
-    ///UART2_LSR (r) register accessor: an alias for `Reg<UART2_LSR_SPEC>`
-    pub type UART2_LSR = crate::Reg<uart2_lsr::UART2_LSR_SPEC>;
-    ///RO, UART2 line status
-    pub mod uart2_lsr {
-        ///Register `UART2_LSR` reader
-        pub struct R(crate::R<UART2_LSR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART2_LSR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART2_LSR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART2_LSR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `LSR_DATA_RDY` reader - RO, UART receiver fifo data ready status
-        pub type LSR_DATA_RDY_R = crate::BitReader;
-        ///Field `LSR_OVER_ERR` reader - RZ, UART receiver overrun error
-        pub type LSR_OVER_ERR_R = crate::BitReader;
-        ///Field `LSR_PAR_ERR` reader - RZ, UART receiver parity error
-        pub type LSR_PAR_ERR_R = crate::BitReader;
-        ///Field `LSR_FRAME_ERR` reader - RZ, UART receiver frame error
-        pub type LSR_FRAME_ERR_R = crate::BitReader;
-        ///Field `LSR_BREAK_ERR` reader - RZ, UART receiver break error
-        pub type LSR_BREAK_ERR_R = crate::BitReader;
-        ///Field `LSR_TX_FIFO_EMP` reader - RO, UART transmitter fifo empty status
-        pub type LSR_TX_FIFO_EMP_R = crate::BitReader;
-        ///Field `LSR_TX_ALL_EMP` reader - RO, UART transmitter all empty status
-        pub type LSR_TX_ALL_EMP_R = crate::BitReader;
-        ///Field `LSR_ERR_RX_FIFO` reader - RO, indicate error in UART receiver fifo
-        pub type LSR_ERR_RX_FIFO_R = crate::BitReader;
-        impl R {
-            ///Bit 0 - RO, UART receiver fifo data ready status
-            #[inline(always)]
-            pub fn lsr_data_rdy(&self) -> LSR_DATA_RDY_R {
-                LSR_DATA_RDY_R::new((self.bits & 1) != 0)
-            }
-            ///Bit 1 - RZ, UART receiver overrun error
-            #[inline(always)]
-            pub fn lsr_over_err(&self) -> LSR_OVER_ERR_R {
-                LSR_OVER_ERR_R::new(((self.bits >> 1) & 1) != 0)
-            }
-            ///Bit 2 - RZ, UART receiver parity error
-            #[inline(always)]
-            pub fn lsr_par_err(&self) -> LSR_PAR_ERR_R {
-                LSR_PAR_ERR_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bit 3 - RZ, UART receiver frame error
-            #[inline(always)]
-            pub fn lsr_frame_err(&self) -> LSR_FRAME_ERR_R {
-                LSR_FRAME_ERR_R::new(((self.bits >> 3) & 1) != 0)
-            }
-            ///Bit 4 - RZ, UART receiver break error
-            #[inline(always)]
-            pub fn lsr_break_err(&self) -> LSR_BREAK_ERR_R {
-                LSR_BREAK_ERR_R::new(((self.bits >> 4) & 1) != 0)
-            }
-            ///Bit 5 - RO, UART transmitter fifo empty status
-            #[inline(always)]
-            pub fn lsr_tx_fifo_emp(&self) -> LSR_TX_FIFO_EMP_R {
-                LSR_TX_FIFO_EMP_R::new(((self.bits >> 5) & 1) != 0)
-            }
-            ///Bit 6 - RO, UART transmitter all empty status
-            #[inline(always)]
-            pub fn lsr_tx_all_emp(&self) -> LSR_TX_ALL_EMP_R {
-                LSR_TX_ALL_EMP_R::new(((self.bits >> 6) & 1) != 0)
-            }
-            ///Bit 7 - RO, indicate error in UART receiver fifo
-            #[inline(always)]
-            pub fn lsr_err_rx_fifo(&self) -> LSR_ERR_RX_FIFO_R {
-                LSR_ERR_RX_FIFO_R::new(((self.bits >> 7) & 1) != 0)
-            }
-        }
-        ///RO, UART2 line status
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart2_lsr](index.html) module
-        pub struct UART2_LSR_SPEC;
-        impl crate::RegisterSpec for UART2_LSR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart2_lsr::R](R) reader structure
-        impl crate::Readable for UART2_LSR_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets UART2_LSR to value 0x60
-        impl crate::Resettable for UART2_LSR_SPEC {
-            const RESET_VALUE: Self::Ux = 0x60;
-        }
-    }
-    ///UART2_RBR (r) register accessor: an alias for `Reg<UART2_RBR_SPEC>`
-    pub type UART2_RBR = crate::Reg<uart2_rbr::UART2_RBR_SPEC>;
-    ///RO, UART2 receiver buffer, receiving byte
-    pub mod uart2_rbr {
-        ///Register `UART2_RBR` reader
-        pub struct R(crate::R<UART2_RBR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART2_RBR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART2_RBR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART2_RBR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `UART2_RBR` reader - RO, UART2 receiver buffer, receiving byte
-        pub type UART2_RBR_R = crate::FieldReader;
-        impl R {
-            ///Bits 0:7 - RO, UART2 receiver buffer, receiving byte
-            #[inline(always)]
-            pub fn uart2_rbr(&self) -> UART2_RBR_R {
-                UART2_RBR_R::new(self.bits)
-            }
-        }
-        ///RO, UART2 receiver buffer, receiving byte
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart2_rbr](index.html) module
-        pub struct UART2_RBR_SPEC;
-        impl crate::RegisterSpec for UART2_RBR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart2_rbr::R](R) reader structure
-        impl crate::Readable for UART2_RBR_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets UART2_RBR to value 0
-        impl crate::Resettable for UART2_RBR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART2_THR (w) register accessor: an alias for `Reg<UART2_THR_SPEC>`
-    pub type UART2_THR = crate::Reg<uart2_thr::UART2_THR_SPEC>;
-    ///WO, UART2 transmitter holding, transmittal byte
-    pub mod uart2_thr {
-        ///Register `UART2_THR` writer
-        pub struct W(crate::W<UART2_THR_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<UART2_THR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<UART2_THR_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<UART2_THR_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `UART2_THR` writer - WO, UART2 transmitter holding, transmittal byte
-        pub type UART2_THR_W<'a, const O: u8> = crate::FieldWriter<'a, UART2_THR_SPEC, 8, O>;
-        impl W {
-            ///Bits 0:7 - WO, UART2 transmitter holding, transmittal byte
-            #[inline(always)]
-            #[must_use]
-            pub fn uart2_thr(&mut self) -> UART2_THR_W<0> {
-                UART2_THR_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///WO, UART2 transmitter holding, transmittal byte
-        ///
-        ///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart2_thr](index.html) module
-        pub struct UART2_THR_SPEC;
-        impl crate::RegisterSpec for UART2_THR_SPEC {
-            type Ux = u8;
-        }
-        ///`write(|w| ..)` method takes [uart2_thr::W](W) writer structure
-        impl crate::Writable for UART2_THR_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets UART2_THR to value 0
-        impl crate::Resettable for UART2_THR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART2_RFC (r) register accessor: an alias for `Reg<UART2_RFC_SPEC>`
-    pub type UART2_RFC = crate::Reg<uart2_rfc::UART2_RFC_SPEC>;
-    ///RO, UART2 receiver FIFO count
-    pub mod uart2_rfc {
-        ///Register `UART2_RFC` reader
-        pub struct R(crate::R<UART2_RFC_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART2_RFC_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART2_RFC_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART2_RFC_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `UART2_RFC` reader - RO, UART2 receiver FIFO count
-        pub type UART2_RFC_R = crate::FieldReader;
-        impl R {
-            ///Bits 0:7 - RO, UART2 receiver FIFO count
-            #[inline(always)]
-            pub fn uart2_rfc(&self) -> UART2_RFC_R {
-                UART2_RFC_R::new(self.bits)
-            }
-        }
-        ///RO, UART2 receiver FIFO count
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart2_rfc](index.html) module
-        pub struct UART2_RFC_SPEC;
-        impl crate::RegisterSpec for UART2_RFC_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart2_rfc::R](R) reader structure
-        impl crate::Readable for UART2_RFC_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets UART2_RFC to value 0
-        impl crate::Resettable for UART2_RFC_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART2_TFC (r) register accessor: an alias for `Reg<UART2_TFC_SPEC>`
-    pub type UART2_TFC = crate::Reg<uart2_tfc::UART2_TFC_SPEC>;
-    ///RO, UART2 transmitter FIFO count
-    pub mod uart2_tfc {
-        ///Register `UART2_TFC` reader
-        pub struct R(crate::R<UART2_TFC_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART2_TFC_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART2_TFC_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART2_TFC_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `UART2_TFC` reader - RO, UART2 transmitter FIFO count
-        pub type UART2_TFC_R = crate::FieldReader;
-        impl R {
-            ///Bits 0:7 - RO, UART2 transmitter FIFO count
-            #[inline(always)]
-            pub fn uart2_tfc(&self) -> UART2_TFC_R {
-                UART2_TFC_R::new(self.bits)
-            }
-        }
-        ///RO, UART2 transmitter FIFO count
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart2_tfc](index.html) module
-        pub struct UART2_TFC_SPEC;
-        impl crate::RegisterSpec for UART2_TFC_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart2_tfc::R](R) reader structure
-        impl crate::Readable for UART2_TFC_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets UART2_TFC to value 0
-        impl crate::Resettable for UART2_TFC_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART2_DL (rw) register accessor: an alias for `Reg<UART2_DL_SPEC>`
-    pub type UART2_DL = crate::Reg<uart2_dl::UART2_DL_SPEC>;
-    ///RW, UART2 divisor latch
-    pub mod uart2_dl {
-        ///Register `UART2_DL` reader
-        pub struct R(crate::R<UART2_DL_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART2_DL_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART2_DL_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART2_DL_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `UART2_DL` writer
-        pub struct W(crate::W<UART2_DL_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<UART2_DL_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<UART2_DL_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<UART2_DL_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `UART2_DL` reader - RW, UART2 divisor latch
-        pub type UART2_DL_R = crate::FieldReader<u16>;
-        ///Field `UART2_DL` writer - RW, UART2 divisor latch
-        pub type UART2_DL_W<'a, const O: u8> = crate::FieldWriter<'a, UART2_DL_SPEC, 16, O, u16>;
-        impl R {
-            ///Bits 0:15 - RW, UART2 divisor latch
-            #[inline(always)]
-            pub fn uart2_dl(&self) -> UART2_DL_R {
-                UART2_DL_R::new(self.bits)
-            }
-        }
-        impl W {
-            ///Bits 0:15 - RW, UART2 divisor latch
-            #[inline(always)]
-            #[must_use]
-            pub fn uart2_dl(&mut self) -> UART2_DL_W<0> {
-                UART2_DL_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART2 divisor latch
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart2_dl](index.html) module
-        pub struct UART2_DL_SPEC;
-        impl crate::RegisterSpec for UART2_DL_SPEC {
-            type Ux = u16;
-        }
-        ///`read()` method returns [uart2_dl::R](R) reader structure
-        impl crate::Readable for UART2_DL_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [uart2_dl::W](W) writer structure
-        impl crate::Writable for UART2_DL_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets UART2_DL to value 0
-        impl crate::Resettable for UART2_DL_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART2_DIV (rw) register accessor: an alias for `Reg<UART2_DIV_SPEC>`
-    pub type UART2_DIV = crate::Reg<uart2_div::UART2_DIV_SPEC>;
-    ///RW, UART2 pre-divisor latch byte, only low 7 bit, from 1 to 128
-    pub mod uart2_div {
-        ///Register `UART2_DIV` reader
-        pub struct R(crate::R<UART2_DIV_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART2_DIV_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART2_DIV_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART2_DIV_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `UART2_DIV` writer
-        pub struct W(crate::W<UART2_DIV_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<UART2_DIV_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<UART2_DIV_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<UART2_DIV_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `UART2_DIV` reader - RW, UART2 pre-divisor latch byte, only low 7 bit, from 1 to 128
-        pub type UART2_DIV_R = crate::FieldReader;
-        ///Field `UART2_DIV` writer - RW, UART2 pre-divisor latch byte, only low 7 bit, from 1 to 128
-        pub type UART2_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, UART2_DIV_SPEC, 8, O>;
-        impl R {
-            ///Bits 0:7 - RW, UART2 pre-divisor latch byte, only low 7 bit, from 1 to 128
-            #[inline(always)]
-            pub fn uart2_div(&self) -> UART2_DIV_R {
-                UART2_DIV_R::new(self.bits)
-            }
-        }
-        impl W {
-            ///Bits 0:7 - RW, UART2 pre-divisor latch byte, only low 7 bit, from 1 to 128
-            #[inline(always)]
-            #[must_use]
-            pub fn uart2_div(&mut self) -> UART2_DIV_W<0> {
-                UART2_DIV_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART2 pre-divisor latch byte, only low 7 bit, from 1 to 128
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart2_div](index.html) module
-        pub struct UART2_DIV_SPEC;
-        impl crate::RegisterSpec for UART2_DIV_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart2_div::R](R) reader structure
-        impl crate::Readable for UART2_DIV_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [uart2_div::W](W) writer structure
-        impl crate::Writable for UART2_DIV_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets UART2_DIV to value 0
-        impl crate::Resettable for UART2_DIV_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-}
+pub use self::uart1 as uart2;
 ///UART3 register
 pub struct UART3 {
     _marker: PhantomData<*const ()>,
@@ -15334,15 +14164,15 @@ pub struct UART3 {
 unsafe impl Send for UART3 {}
 impl UART3 {
     ///Pointer to the register block
-    pub const PTR: *const uart3::RegisterBlock = 0x4000_3c00 as *const _;
+    pub const PTR: *const uart1::RegisterBlock = 0x4000_3c00 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const uart3::RegisterBlock {
+    pub const fn ptr() -> *const uart1::RegisterBlock {
         Self::PTR
     }
 }
 impl Deref for UART3 {
-    type Target = uart3::RegisterBlock;
+    type Target = uart1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -15354,1117 +14184,7 @@ impl core::fmt::Debug for UART3 {
     }
 }
 ///UART3 register
-pub mod uart3 {
-    ///Register block
-    #[repr(C)]
-    pub struct RegisterBlock {
-        ///0x00 - RW, UART3 modem control
-        pub uart3_mcr: UART3_MCR,
-        ///0x01 - RW, UART3 interrupt enable
-        pub uart3_ier: UART3_IER,
-        ///0x02 - RW, UART3 FIFO control
-        pub uart3_fcr: UART3_FCR,
-        ///0x03 - RW, UART3 line control
-        pub uart3_lcr: UART3_LCR,
-        ///0x04 - RO, UART3 interrupt identification
-        pub uart3_iir: UART3_IIR,
-        ///0x05 - RO, UART3 line status
-        pub uart3_lsr: UART3_LSR,
-        _reserved6: [u8; 0x02],
-        _reserved_6_uart3: [u8; 0x01],
-        _reserved7: [u8; 0x01],
-        ///0x0a - RO, UART3 receiver FIFO count
-        pub uart3_rfc: UART3_RFC,
-        ///0x0b - RO, UART3 transmitter FIFO count
-        pub uart3_tfc: UART3_TFC,
-        ///0x0c - RW, UART3 divisor latch
-        pub uart3_dl: UART3_DL,
-        ///0x0e - RW, UART3 pre-divisor latch byte, only low 7 bit, from 1 to 128
-        pub uart3_div: UART3_DIV,
-    }
-    impl RegisterBlock {
-        ///0x08 - WO, UART3 transmitter holding, transmittal byte
-        #[inline(always)]
-        pub const fn uart3_thr(&self) -> &UART3_THR {
-            unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
-        }
-        ///0x08 - RO, UART3 receiver buffer, receiving byte
-        #[inline(always)]
-        pub const fn uart3_rbr(&self) -> &UART3_RBR {
-            unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
-        }
-    }
-    ///UART3_MCR (rw) register accessor: an alias for `Reg<UART3_MCR_SPEC>`
-    pub type UART3_MCR = crate::Reg<uart3_mcr::UART3_MCR_SPEC>;
-    ///RW, UART3 modem control
-    pub mod uart3_mcr {
-        ///Register `UART3_MCR` reader
-        pub struct R(crate::R<UART3_MCR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART3_MCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART3_MCR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART3_MCR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `UART3_MCR` writer
-        pub struct W(crate::W<UART3_MCR_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<UART3_MCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<UART3_MCR_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<UART3_MCR_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `MCR_OUT2_RB_MCR_INT_OE` reader - RW, UART control OUT2;UART interrupt output enable
-        pub type MCR_OUT2_RB_MCR_INT_OE_R = crate::BitReader;
-        ///Field `MCR_OUT2_RB_MCR_INT_OE` writer - RW, UART control OUT2;UART interrupt output enable
-        pub type MCR_OUT2_RB_MCR_INT_OE_W<'a, const O: u8> =
-            crate::BitWriter<'a, UART3_MCR_SPEC, O>;
-        impl R {
-            ///Bit 3 - RW, UART control OUT2;UART interrupt output enable
-            #[inline(always)]
-            pub fn mcr_out2_rb_mcr_int_oe(&self) -> MCR_OUT2_RB_MCR_INT_OE_R {
-                MCR_OUT2_RB_MCR_INT_OE_R::new(((self.bits >> 3) & 1) != 0)
-            }
-        }
-        impl W {
-            ///Bit 3 - RW, UART control OUT2;UART interrupt output enable
-            #[inline(always)]
-            #[must_use]
-            pub fn mcr_out2_rb_mcr_int_oe(&mut self) -> MCR_OUT2_RB_MCR_INT_OE_W<3> {
-                MCR_OUT2_RB_MCR_INT_OE_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART3 modem control
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart3_mcr](index.html) module
-        pub struct UART3_MCR_SPEC;
-        impl crate::RegisterSpec for UART3_MCR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart3_mcr::R](R) reader structure
-        impl crate::Readable for UART3_MCR_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [uart3_mcr::W](W) writer structure
-        impl crate::Writable for UART3_MCR_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets UART3_MCR to value 0
-        impl crate::Resettable for UART3_MCR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART3_IER (rw) register accessor: an alias for `Reg<UART3_IER_SPEC>`
-    pub type UART3_IER = crate::Reg<uart3_ier::UART3_IER_SPEC>;
-    ///RW, UART3 interrupt enable
-    pub mod uart3_ier {
-        ///Register `UART3_IER` reader
-        pub struct R(crate::R<UART3_IER_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART3_IER_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART3_IER_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART3_IER_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `UART3_IER` writer
-        pub struct W(crate::W<UART3_IER_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<UART3_IER_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<UART3_IER_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<UART3_IER_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `IER_RECV_RDY` reader - RW, UART interrupt enable for receiver data ready
-        pub type IER_RECV_RDY_R = crate::BitReader;
-        ///Field `IER_RECV_RDY` writer - RW, UART interrupt enable for receiver data ready
-        pub type IER_RECV_RDY_W<'a, const O: u8> = crate::BitWriter<'a, UART3_IER_SPEC, O>;
-        ///Field `IER_THR_EMPTY` reader - RW, UART interrupt enable for THR empty
-        pub type IER_THR_EMPTY_R = crate::BitReader;
-        ///Field `IER_THR_EMPTY` writer - RW, UART interrupt enable for THR empty
-        pub type IER_THR_EMPTY_W<'a, const O: u8> = crate::BitWriter<'a, UART3_IER_SPEC, O>;
-        ///Field `IER_LINE_STAT` reader - RW, UART interrupt enable for receiver line status
-        pub type IER_LINE_STAT_R = crate::BitReader;
-        ///Field `IER_LINE_STAT` writer - RW, UART interrupt enable for receiver line status
-        pub type IER_LINE_STAT_W<'a, const O: u8> = crate::BitWriter<'a, UART3_IER_SPEC, O>;
-        ///Field `IER_TXD_EN` reader - RW, UART TXD pin enable
-        pub type IER_TXD_EN_R = crate::BitReader;
-        ///Field `IER_TXD_EN` writer - RW, UART TXD pin enable
-        pub type IER_TXD_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART3_IER_SPEC, O>;
-        ///Field `IER_RESET` reader - WZ, UART software reset control, high action, auto clear
-        pub type IER_RESET_R = crate::BitReader;
-        ///Field `IER_RESET` writer - WZ, UART software reset control, high action, auto clear
-        pub type IER_RESET_W<'a, const O: u8> = crate::BitWriter<'a, UART3_IER_SPEC, O>;
-        impl R {
-            ///Bit 0 - RW, UART interrupt enable for receiver data ready
-            #[inline(always)]
-            pub fn ier_recv_rdy(&self) -> IER_RECV_RDY_R {
-                IER_RECV_RDY_R::new((self.bits & 1) != 0)
-            }
-            ///Bit 1 - RW, UART interrupt enable for THR empty
-            #[inline(always)]
-            pub fn ier_thr_empty(&self) -> IER_THR_EMPTY_R {
-                IER_THR_EMPTY_R::new(((self.bits >> 1) & 1) != 0)
-            }
-            ///Bit 2 - RW, UART interrupt enable for receiver line status
-            #[inline(always)]
-            pub fn ier_line_stat(&self) -> IER_LINE_STAT_R {
-                IER_LINE_STAT_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bit 6 - RW, UART TXD pin enable
-            #[inline(always)]
-            pub fn ier_txd_en(&self) -> IER_TXD_EN_R {
-                IER_TXD_EN_R::new(((self.bits >> 6) & 1) != 0)
-            }
-            ///Bit 7 - WZ, UART software reset control, high action, auto clear
-            #[inline(always)]
-            pub fn ier_reset(&self) -> IER_RESET_R {
-                IER_RESET_R::new(((self.bits >> 7) & 1) != 0)
-            }
-        }
-        impl W {
-            ///Bit 0 - RW, UART interrupt enable for receiver data ready
-            #[inline(always)]
-            #[must_use]
-            pub fn ier_recv_rdy(&mut self) -> IER_RECV_RDY_W<0> {
-                IER_RECV_RDY_W::new(self)
-            }
-            ///Bit 1 - RW, UART interrupt enable for THR empty
-            #[inline(always)]
-            #[must_use]
-            pub fn ier_thr_empty(&mut self) -> IER_THR_EMPTY_W<1> {
-                IER_THR_EMPTY_W::new(self)
-            }
-            ///Bit 2 - RW, UART interrupt enable for receiver line status
-            #[inline(always)]
-            #[must_use]
-            pub fn ier_line_stat(&mut self) -> IER_LINE_STAT_W<2> {
-                IER_LINE_STAT_W::new(self)
-            }
-            ///Bit 6 - RW, UART TXD pin enable
-            #[inline(always)]
-            #[must_use]
-            pub fn ier_txd_en(&mut self) -> IER_TXD_EN_W<6> {
-                IER_TXD_EN_W::new(self)
-            }
-            ///Bit 7 - WZ, UART software reset control, high action, auto clear
-            #[inline(always)]
-            #[must_use]
-            pub fn ier_reset(&mut self) -> IER_RESET_W<7> {
-                IER_RESET_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART3 interrupt enable
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart3_ier](index.html) module
-        pub struct UART3_IER_SPEC;
-        impl crate::RegisterSpec for UART3_IER_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart3_ier::R](R) reader structure
-        impl crate::Readable for UART3_IER_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [uart3_ier::W](W) writer structure
-        impl crate::Writable for UART3_IER_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets UART3_IER to value 0
-        impl crate::Resettable for UART3_IER_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART3_FCR (rw) register accessor: an alias for `Reg<UART3_FCR_SPEC>`
-    pub type UART3_FCR = crate::Reg<uart3_fcr::UART3_FCR_SPEC>;
-    ///RW, UART3 FIFO control
-    pub mod uart3_fcr {
-        ///Register `UART3_FCR` reader
-        pub struct R(crate::R<UART3_FCR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART3_FCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART3_FCR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART3_FCR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `UART3_FCR` writer
-        pub struct W(crate::W<UART3_FCR_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<UART3_FCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<UART3_FCR_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<UART3_FCR_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `FCR_FIFO_EN` reader - RW, UART FIFO enable
-        pub type FCR_FIFO_EN_R = crate::BitReader;
-        ///Field `FCR_FIFO_EN` writer - RW, UART FIFO enable
-        pub type FCR_FIFO_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART3_FCR_SPEC, O>;
-        ///Field `FCR_RX_FIFO_CLR` reader - WZ, clear UART receiver FIFO, high action, auto clear
-        pub type FCR_RX_FIFO_CLR_R = crate::BitReader;
-        ///Field `FCR_RX_FIFO_CLR` writer - WZ, clear UART receiver FIFO, high action, auto clear
-        pub type FCR_RX_FIFO_CLR_W<'a, const O: u8> = crate::BitWriter<'a, UART3_FCR_SPEC, O>;
-        ///Field `FCR_TX_FIFO_CLR` reader - WZ, clear UART transmitter FIFO, high action, auto clear
-        pub type FCR_TX_FIFO_CLR_R = crate::BitReader;
-        ///Field `FCR_TX_FIFO_CLR` writer - WZ, clear UART transmitter FIFO, high action, auto clear
-        pub type FCR_TX_FIFO_CLR_W<'a, const O: u8> = crate::BitWriter<'a, UART3_FCR_SPEC, O>;
-        ///Field `FCR_FIFO_TRIG` reader - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
-        pub type FCR_FIFO_TRIG_R = crate::FieldReader;
-        ///Field `FCR_FIFO_TRIG` writer - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
-        pub type FCR_FIFO_TRIG_W<'a, const O: u8> = crate::FieldWriter<'a, UART3_FCR_SPEC, 2, O>;
-        impl R {
-            ///Bit 0 - RW, UART FIFO enable
-            #[inline(always)]
-            pub fn fcr_fifo_en(&self) -> FCR_FIFO_EN_R {
-                FCR_FIFO_EN_R::new((self.bits & 1) != 0)
-            }
-            ///Bit 1 - WZ, clear UART receiver FIFO, high action, auto clear
-            #[inline(always)]
-            pub fn fcr_rx_fifo_clr(&self) -> FCR_RX_FIFO_CLR_R {
-                FCR_RX_FIFO_CLR_R::new(((self.bits >> 1) & 1) != 0)
-            }
-            ///Bit 2 - WZ, clear UART transmitter FIFO, high action, auto clear
-            #[inline(always)]
-            pub fn fcr_tx_fifo_clr(&self) -> FCR_TX_FIFO_CLR_R {
-                FCR_TX_FIFO_CLR_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bits 6:7 - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
-            #[inline(always)]
-            pub fn fcr_fifo_trig(&self) -> FCR_FIFO_TRIG_R {
-                FCR_FIFO_TRIG_R::new((self.bits >> 6) & 3)
-            }
-        }
-        impl W {
-            ///Bit 0 - RW, UART FIFO enable
-            #[inline(always)]
-            #[must_use]
-            pub fn fcr_fifo_en(&mut self) -> FCR_FIFO_EN_W<0> {
-                FCR_FIFO_EN_W::new(self)
-            }
-            ///Bit 1 - WZ, clear UART receiver FIFO, high action, auto clear
-            #[inline(always)]
-            #[must_use]
-            pub fn fcr_rx_fifo_clr(&mut self) -> FCR_RX_FIFO_CLR_W<1> {
-                FCR_RX_FIFO_CLR_W::new(self)
-            }
-            ///Bit 2 - WZ, clear UART transmitter FIFO, high action, auto clear
-            #[inline(always)]
-            #[must_use]
-            pub fn fcr_tx_fifo_clr(&mut self) -> FCR_TX_FIFO_CLR_W<2> {
-                FCR_TX_FIFO_CLR_W::new(self)
-            }
-            ///Bits 6:7 - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
-            #[inline(always)]
-            #[must_use]
-            pub fn fcr_fifo_trig(&mut self) -> FCR_FIFO_TRIG_W<6> {
-                FCR_FIFO_TRIG_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART3 FIFO control
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart3_fcr](index.html) module
-        pub struct UART3_FCR_SPEC;
-        impl crate::RegisterSpec for UART3_FCR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart3_fcr::R](R) reader structure
-        impl crate::Readable for UART3_FCR_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [uart3_fcr::W](W) writer structure
-        impl crate::Writable for UART3_FCR_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets UART3_FCR to value 0
-        impl crate::Resettable for UART3_FCR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART3_LCR (rw) register accessor: an alias for `Reg<UART3_LCR_SPEC>`
-    pub type UART3_LCR = crate::Reg<uart3_lcr::UART3_LCR_SPEC>;
-    ///RW, UART3 line control
-    pub mod uart3_lcr {
-        ///Register `UART3_LCR` reader
-        pub struct R(crate::R<UART3_LCR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART3_LCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART3_LCR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART3_LCR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `UART3_LCR` writer
-        pub struct W(crate::W<UART3_LCR_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<UART3_LCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<UART3_LCR_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<UART3_LCR_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `LCR_WORD_SZ` reader - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
-        pub type LCR_WORD_SZ_R = crate::FieldReader;
-        ///Field `LCR_WORD_SZ` writer - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
-        pub type LCR_WORD_SZ_W<'a, const O: u8> = crate::FieldWriter<'a, UART3_LCR_SPEC, 2, O>;
-        ///Field `LCR_STOP_BIT` reader - RW, UART stop bit length: 0-1bit, 1-2bit
-        pub type LCR_STOP_BIT_R = crate::BitReader;
-        ///Field `LCR_STOP_BIT` writer - RW, UART stop bit length: 0-1bit, 1-2bit
-        pub type LCR_STOP_BIT_W<'a, const O: u8> = crate::BitWriter<'a, UART3_LCR_SPEC, O>;
-        ///Field `LCR_PAR_EN` reader - RW, UART parity enable
-        pub type LCR_PAR_EN_R = crate::BitReader;
-        ///Field `LCR_PAR_EN` writer - RW, UART parity enable
-        pub type LCR_PAR_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART3_LCR_SPEC, O>;
-        ///Field `LCR_PAR_MOD` reader - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
-        pub type LCR_PAR_MOD_R = crate::FieldReader;
-        ///Field `LCR_PAR_MOD` writer - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
-        pub type LCR_PAR_MOD_W<'a, const O: u8> = crate::FieldWriter<'a, UART3_LCR_SPEC, 2, O>;
-        ///Field `LCR_BREAK_EN` reader - RW, UART break control enable
-        pub type LCR_BREAK_EN_R = crate::BitReader;
-        ///Field `LCR_BREAK_EN` writer - RW, UART break control enable
-        pub type LCR_BREAK_EN_W<'a, const O: u8> = crate::BitWriter<'a, UART3_LCR_SPEC, O>;
-        ///Field `LCR_GP_BIT_RB_LCR_DLAB` reader - RW, UART general purpose bit;RW, UART reserved bit
-        pub type LCR_GP_BIT_RB_LCR_DLAB_R = crate::BitReader;
-        ///Field `LCR_GP_BIT_RB_LCR_DLAB` writer - RW, UART general purpose bit;RW, UART reserved bit
-        pub type LCR_GP_BIT_RB_LCR_DLAB_W<'a, const O: u8> =
-            crate::BitWriter<'a, UART3_LCR_SPEC, O>;
-        impl R {
-            ///Bits 0:1 - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
-            #[inline(always)]
-            pub fn lcr_word_sz(&self) -> LCR_WORD_SZ_R {
-                LCR_WORD_SZ_R::new(self.bits & 3)
-            }
-            ///Bit 2 - RW, UART stop bit length: 0-1bit, 1-2bit
-            #[inline(always)]
-            pub fn lcr_stop_bit(&self) -> LCR_STOP_BIT_R {
-                LCR_STOP_BIT_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bit 3 - RW, UART parity enable
-            #[inline(always)]
-            pub fn lcr_par_en(&self) -> LCR_PAR_EN_R {
-                LCR_PAR_EN_R::new(((self.bits >> 3) & 1) != 0)
-            }
-            ///Bits 4:5 - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
-            #[inline(always)]
-            pub fn lcr_par_mod(&self) -> LCR_PAR_MOD_R {
-                LCR_PAR_MOD_R::new((self.bits >> 4) & 3)
-            }
-            ///Bit 6 - RW, UART break control enable
-            #[inline(always)]
-            pub fn lcr_break_en(&self) -> LCR_BREAK_EN_R {
-                LCR_BREAK_EN_R::new(((self.bits >> 6) & 1) != 0)
-            }
-            ///Bit 7 - RW, UART general purpose bit;RW, UART reserved bit
-            #[inline(always)]
-            pub fn lcr_gp_bit_rb_lcr_dlab(&self) -> LCR_GP_BIT_RB_LCR_DLAB_R {
-                LCR_GP_BIT_RB_LCR_DLAB_R::new(((self.bits >> 7) & 1) != 0)
-            }
-        }
-        impl W {
-            ///Bits 0:1 - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
-            #[inline(always)]
-            #[must_use]
-            pub fn lcr_word_sz(&mut self) -> LCR_WORD_SZ_W<0> {
-                LCR_WORD_SZ_W::new(self)
-            }
-            ///Bit 2 - RW, UART stop bit length: 0-1bit, 1-2bit
-            #[inline(always)]
-            #[must_use]
-            pub fn lcr_stop_bit(&mut self) -> LCR_STOP_BIT_W<2> {
-                LCR_STOP_BIT_W::new(self)
-            }
-            ///Bit 3 - RW, UART parity enable
-            #[inline(always)]
-            #[must_use]
-            pub fn lcr_par_en(&mut self) -> LCR_PAR_EN_W<3> {
-                LCR_PAR_EN_W::new(self)
-            }
-            ///Bits 4:5 - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
-            #[inline(always)]
-            #[must_use]
-            pub fn lcr_par_mod(&mut self) -> LCR_PAR_MOD_W<4> {
-                LCR_PAR_MOD_W::new(self)
-            }
-            ///Bit 6 - RW, UART break control enable
-            #[inline(always)]
-            #[must_use]
-            pub fn lcr_break_en(&mut self) -> LCR_BREAK_EN_W<6> {
-                LCR_BREAK_EN_W::new(self)
-            }
-            ///Bit 7 - RW, UART general purpose bit;RW, UART reserved bit
-            #[inline(always)]
-            #[must_use]
-            pub fn lcr_gp_bit_rb_lcr_dlab(&mut self) -> LCR_GP_BIT_RB_LCR_DLAB_W<7> {
-                LCR_GP_BIT_RB_LCR_DLAB_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART3 line control
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart3_lcr](index.html) module
-        pub struct UART3_LCR_SPEC;
-        impl crate::RegisterSpec for UART3_LCR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart3_lcr::R](R) reader structure
-        impl crate::Readable for UART3_LCR_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [uart3_lcr::W](W) writer structure
-        impl crate::Writable for UART3_LCR_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets UART3_LCR to value 0
-        impl crate::Resettable for UART3_LCR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART3_IIR (r) register accessor: an alias for `Reg<UART3_IIR_SPEC>`
-    pub type UART3_IIR = crate::Reg<uart3_iir::UART3_IIR_SPEC>;
-    ///RO, UART3 interrupt identification
-    pub mod uart3_iir {
-        ///Register `UART3_IIR` reader
-        pub struct R(crate::R<UART3_IIR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART3_IIR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART3_IIR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART3_IIR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `IIR_NO_INT` reader - RO, UART no interrupt flag: 0=interrupt action, 1=no interrupt
-        pub type IIR_NO_INT_R = crate::BitReader;
-        ///Field `IIR_INT_MASK` reader - RO, UART interrupt flag bit mask
-        pub type IIR_INT_MASK_R = crate::FieldReader;
-        ///Field `IIR_FIFO_ID` reader - RO, UART FIFO enabled flag
-        pub type IIR_FIFO_ID_R = crate::FieldReader;
-        impl R {
-            ///Bit 0 - RO, UART no interrupt flag: 0=interrupt action, 1=no interrupt
-            #[inline(always)]
-            pub fn iir_no_int(&self) -> IIR_NO_INT_R {
-                IIR_NO_INT_R::new((self.bits & 1) != 0)
-            }
-            ///Bits 1:3 - RO, UART interrupt flag bit mask
-            #[inline(always)]
-            pub fn iir_int_mask(&self) -> IIR_INT_MASK_R {
-                IIR_INT_MASK_R::new((self.bits >> 1) & 7)
-            }
-            ///Bits 6:7 - RO, UART FIFO enabled flag
-            #[inline(always)]
-            pub fn iir_fifo_id(&self) -> IIR_FIFO_ID_R {
-                IIR_FIFO_ID_R::new((self.bits >> 6) & 3)
-            }
-        }
-        ///RO, UART3 interrupt identification
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart3_iir](index.html) module
-        pub struct UART3_IIR_SPEC;
-        impl crate::RegisterSpec for UART3_IIR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart3_iir::R](R) reader structure
-        impl crate::Readable for UART3_IIR_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets UART3_IIR to value 0x01
-        impl crate::Resettable for UART3_IIR_SPEC {
-            const RESET_VALUE: Self::Ux = 0x01;
-        }
-    }
-    ///UART3_LSR (r) register accessor: an alias for `Reg<UART3_LSR_SPEC>`
-    pub type UART3_LSR = crate::Reg<uart3_lsr::UART3_LSR_SPEC>;
-    ///RO, UART3 line status
-    pub mod uart3_lsr {
-        ///Register `UART3_LSR` reader
-        pub struct R(crate::R<UART3_LSR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART3_LSR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART3_LSR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART3_LSR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `LSR_DATA_RDY` reader - RO, UART receiver fifo data ready status
-        pub type LSR_DATA_RDY_R = crate::BitReader;
-        ///Field `LSR_OVER_ERR` reader - RZ, UART receiver overrun error
-        pub type LSR_OVER_ERR_R = crate::BitReader;
-        ///Field `LSR_PAR_ERR` reader - RZ, UART receiver parity error
-        pub type LSR_PAR_ERR_R = crate::BitReader;
-        ///Field `LSR_FRAME_ERR` reader - RZ, UART receiver frame error
-        pub type LSR_FRAME_ERR_R = crate::BitReader;
-        ///Field `LSR_BREAK_ERR` reader - RZ, UART receiver break error
-        pub type LSR_BREAK_ERR_R = crate::BitReader;
-        ///Field `LSR_TX_FIFO_EMP` reader - RO, UART transmitter fifo empty status
-        pub type LSR_TX_FIFO_EMP_R = crate::BitReader;
-        ///Field `LSR_TX_ALL_EMP` reader - RO, UART transmitter all empty status
-        pub type LSR_TX_ALL_EMP_R = crate::BitReader;
-        ///Field `LSR_ERR_RX_FIFO` reader - RO, indicate error in UART receiver fifo
-        pub type LSR_ERR_RX_FIFO_R = crate::BitReader;
-        impl R {
-            ///Bit 0 - RO, UART receiver fifo data ready status
-            #[inline(always)]
-            pub fn lsr_data_rdy(&self) -> LSR_DATA_RDY_R {
-                LSR_DATA_RDY_R::new((self.bits & 1) != 0)
-            }
-            ///Bit 1 - RZ, UART receiver overrun error
-            #[inline(always)]
-            pub fn lsr_over_err(&self) -> LSR_OVER_ERR_R {
-                LSR_OVER_ERR_R::new(((self.bits >> 1) & 1) != 0)
-            }
-            ///Bit 2 - RZ, UART receiver parity error
-            #[inline(always)]
-            pub fn lsr_par_err(&self) -> LSR_PAR_ERR_R {
-                LSR_PAR_ERR_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bit 3 - RZ, UART receiver frame error
-            #[inline(always)]
-            pub fn lsr_frame_err(&self) -> LSR_FRAME_ERR_R {
-                LSR_FRAME_ERR_R::new(((self.bits >> 3) & 1) != 0)
-            }
-            ///Bit 4 - RZ, UART receiver break error
-            #[inline(always)]
-            pub fn lsr_break_err(&self) -> LSR_BREAK_ERR_R {
-                LSR_BREAK_ERR_R::new(((self.bits >> 4) & 1) != 0)
-            }
-            ///Bit 5 - RO, UART transmitter fifo empty status
-            #[inline(always)]
-            pub fn lsr_tx_fifo_emp(&self) -> LSR_TX_FIFO_EMP_R {
-                LSR_TX_FIFO_EMP_R::new(((self.bits >> 5) & 1) != 0)
-            }
-            ///Bit 6 - RO, UART transmitter all empty status
-            #[inline(always)]
-            pub fn lsr_tx_all_emp(&self) -> LSR_TX_ALL_EMP_R {
-                LSR_TX_ALL_EMP_R::new(((self.bits >> 6) & 1) != 0)
-            }
-            ///Bit 7 - RO, indicate error in UART receiver fifo
-            #[inline(always)]
-            pub fn lsr_err_rx_fifo(&self) -> LSR_ERR_RX_FIFO_R {
-                LSR_ERR_RX_FIFO_R::new(((self.bits >> 7) & 1) != 0)
-            }
-        }
-        ///RO, UART3 line status
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart3_lsr](index.html) module
-        pub struct UART3_LSR_SPEC;
-        impl crate::RegisterSpec for UART3_LSR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart3_lsr::R](R) reader structure
-        impl crate::Readable for UART3_LSR_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets UART3_LSR to value 0x60
-        impl crate::Resettable for UART3_LSR_SPEC {
-            const RESET_VALUE: Self::Ux = 0x60;
-        }
-    }
-    ///UART3_RBR (r) register accessor: an alias for `Reg<UART3_RBR_SPEC>`
-    pub type UART3_RBR = crate::Reg<uart3_rbr::UART3_RBR_SPEC>;
-    ///RO, UART3 receiver buffer, receiving byte
-    pub mod uart3_rbr {
-        ///Register `UART3_RBR` reader
-        pub struct R(crate::R<UART3_RBR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART3_RBR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART3_RBR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART3_RBR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `UART3_RBR` reader - RO, UART3 receiver buffer, receiving byte
-        pub type UART3_RBR_R = crate::FieldReader;
-        impl R {
-            ///Bits 0:7 - RO, UART3 receiver buffer, receiving byte
-            #[inline(always)]
-            pub fn uart3_rbr(&self) -> UART3_RBR_R {
-                UART3_RBR_R::new(self.bits)
-            }
-        }
-        ///RO, UART3 receiver buffer, receiving byte
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart3_rbr](index.html) module
-        pub struct UART3_RBR_SPEC;
-        impl crate::RegisterSpec for UART3_RBR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart3_rbr::R](R) reader structure
-        impl crate::Readable for UART3_RBR_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets UART3_RBR to value 0
-        impl crate::Resettable for UART3_RBR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART3_THR (w) register accessor: an alias for `Reg<UART3_THR_SPEC>`
-    pub type UART3_THR = crate::Reg<uart3_thr::UART3_THR_SPEC>;
-    ///WO, UART3 transmitter holding, transmittal byte
-    pub mod uart3_thr {
-        ///Register `UART3_THR` writer
-        pub struct W(crate::W<UART3_THR_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<UART3_THR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<UART3_THR_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<UART3_THR_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `UART3_THR` writer - WO, UART3 transmitter holding, transmittal byte
-        pub type UART3_THR_W<'a, const O: u8> = crate::FieldWriter<'a, UART3_THR_SPEC, 8, O>;
-        impl W {
-            ///Bits 0:7 - WO, UART3 transmitter holding, transmittal byte
-            #[inline(always)]
-            #[must_use]
-            pub fn uart3_thr(&mut self) -> UART3_THR_W<0> {
-                UART3_THR_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///WO, UART3 transmitter holding, transmittal byte
-        ///
-        ///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart3_thr](index.html) module
-        pub struct UART3_THR_SPEC;
-        impl crate::RegisterSpec for UART3_THR_SPEC {
-            type Ux = u8;
-        }
-        ///`write(|w| ..)` method takes [uart3_thr::W](W) writer structure
-        impl crate::Writable for UART3_THR_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets UART3_THR to value 0
-        impl crate::Resettable for UART3_THR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART3_RFC (r) register accessor: an alias for `Reg<UART3_RFC_SPEC>`
-    pub type UART3_RFC = crate::Reg<uart3_rfc::UART3_RFC_SPEC>;
-    ///RO, UART3 receiver FIFO count
-    pub mod uart3_rfc {
-        ///Register `UART3_RFC` reader
-        pub struct R(crate::R<UART3_RFC_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART3_RFC_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART3_RFC_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART3_RFC_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `UART3_RFC` reader - RO, UART3 receiver FIFO count
-        pub type UART3_RFC_R = crate::FieldReader;
-        impl R {
-            ///Bits 0:7 - RO, UART3 receiver FIFO count
-            #[inline(always)]
-            pub fn uart3_rfc(&self) -> UART3_RFC_R {
-                UART3_RFC_R::new(self.bits)
-            }
-        }
-        ///RO, UART3 receiver FIFO count
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart3_rfc](index.html) module
-        pub struct UART3_RFC_SPEC;
-        impl crate::RegisterSpec for UART3_RFC_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart3_rfc::R](R) reader structure
-        impl crate::Readable for UART3_RFC_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets UART3_RFC to value 0
-        impl crate::Resettable for UART3_RFC_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART3_TFC (r) register accessor: an alias for `Reg<UART3_TFC_SPEC>`
-    pub type UART3_TFC = crate::Reg<uart3_tfc::UART3_TFC_SPEC>;
-    ///RO, UART3 transmitter FIFO count
-    pub mod uart3_tfc {
-        ///Register `UART3_TFC` reader
-        pub struct R(crate::R<UART3_TFC_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART3_TFC_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART3_TFC_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART3_TFC_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `UART3_TFC` reader - RO, UART3 transmitter FIFO count
-        pub type UART3_TFC_R = crate::FieldReader;
-        impl R {
-            ///Bits 0:7 - RO, UART3 transmitter FIFO count
-            #[inline(always)]
-            pub fn uart3_tfc(&self) -> UART3_TFC_R {
-                UART3_TFC_R::new(self.bits)
-            }
-        }
-        ///RO, UART3 transmitter FIFO count
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart3_tfc](index.html) module
-        pub struct UART3_TFC_SPEC;
-        impl crate::RegisterSpec for UART3_TFC_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart3_tfc::R](R) reader structure
-        impl crate::Readable for UART3_TFC_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets UART3_TFC to value 0
-        impl crate::Resettable for UART3_TFC_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART3_DL (rw) register accessor: an alias for `Reg<UART3_DL_SPEC>`
-    pub type UART3_DL = crate::Reg<uart3_dl::UART3_DL_SPEC>;
-    ///RW, UART3 divisor latch
-    pub mod uart3_dl {
-        ///Register `UART3_DL` reader
-        pub struct R(crate::R<UART3_DL_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART3_DL_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART3_DL_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART3_DL_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `UART3_DL` writer
-        pub struct W(crate::W<UART3_DL_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<UART3_DL_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<UART3_DL_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<UART3_DL_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `UART3_DL` reader - RW, UART3 divisor latch
-        pub type UART3_DL_R = crate::FieldReader<u16>;
-        ///Field `UART3_DL` writer - RW, UART3 divisor latch
-        pub type UART3_DL_W<'a, const O: u8> = crate::FieldWriter<'a, UART3_DL_SPEC, 16, O, u16>;
-        impl R {
-            ///Bits 0:15 - RW, UART3 divisor latch
-            #[inline(always)]
-            pub fn uart3_dl(&self) -> UART3_DL_R {
-                UART3_DL_R::new(self.bits)
-            }
-        }
-        impl W {
-            ///Bits 0:15 - RW, UART3 divisor latch
-            #[inline(always)]
-            #[must_use]
-            pub fn uart3_dl(&mut self) -> UART3_DL_W<0> {
-                UART3_DL_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART3 divisor latch
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart3_dl](index.html) module
-        pub struct UART3_DL_SPEC;
-        impl crate::RegisterSpec for UART3_DL_SPEC {
-            type Ux = u16;
-        }
-        ///`read()` method returns [uart3_dl::R](R) reader structure
-        impl crate::Readable for UART3_DL_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [uart3_dl::W](W) writer structure
-        impl crate::Writable for UART3_DL_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets UART3_DL to value 0
-        impl crate::Resettable for UART3_DL_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///UART3_DIV (rw) register accessor: an alias for `Reg<UART3_DIV_SPEC>`
-    pub type UART3_DIV = crate::Reg<uart3_div::UART3_DIV_SPEC>;
-    ///RW, UART3 pre-divisor latch byte, only low 7 bit, from 1 to 128
-    pub mod uart3_div {
-        ///Register `UART3_DIV` reader
-        pub struct R(crate::R<UART3_DIV_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<UART3_DIV_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<UART3_DIV_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<UART3_DIV_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `UART3_DIV` writer
-        pub struct W(crate::W<UART3_DIV_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<UART3_DIV_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<UART3_DIV_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<UART3_DIV_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `UART3_DIV` reader - RW, UART3 pre-divisor latch byte, only low 7 bit, from 1 to 128
-        pub type UART3_DIV_R = crate::FieldReader;
-        ///Field `UART3_DIV` writer - RW, UART3 pre-divisor latch byte, only low 7 bit, from 1 to 128
-        pub type UART3_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, UART3_DIV_SPEC, 8, O>;
-        impl R {
-            ///Bits 0:7 - RW, UART3 pre-divisor latch byte, only low 7 bit, from 1 to 128
-            #[inline(always)]
-            pub fn uart3_div(&self) -> UART3_DIV_R {
-                UART3_DIV_R::new(self.bits)
-            }
-        }
-        impl W {
-            ///Bits 0:7 - RW, UART3 pre-divisor latch byte, only low 7 bit, from 1 to 128
-            #[inline(always)]
-            #[must_use]
-            pub fn uart3_div(&mut self) -> UART3_DIV_W<0> {
-                UART3_DIV_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART3 pre-divisor latch byte, only low 7 bit, from 1 to 128
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [uart3_div](index.html) module
-        pub struct UART3_DIV_SPEC;
-        impl crate::RegisterSpec for UART3_DIV_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [uart3_div::R](R) reader structure
-        impl crate::Readable for UART3_DIV_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [uart3_div::W](W) writer structure
-        impl crate::Writable for UART3_DIV_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets UART3_DIV to value 0
-        impl crate::Resettable for UART3_DIV_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-}
+pub use self::uart1 as uart3;
 ///SPI0 register
 pub struct SPI0 {
     _marker: PhantomData<*const ()>,
@@ -21084,37 +18804,37 @@ pub mod lcd {
     #[repr(C)]
     pub struct RegisterBlock {
         ///0x00 - RW, LCD Command Register
-        pub lcd_cmd: LCD_CMD,
+        pub cmd: CMD,
         ///0x04 - RW, LCD RAM0 register
-        pub lcd_ram0: LCD_RAM0,
+        pub ram0: RAM0,
         ///0x08 - RW, LCD RAM1 register
-        pub lcd_ram1: LCD_RAM1,
+        pub ram1: RAM1,
         ///0x0c - RW, LCD RAM2 register
-        pub lcd_ram2: LCD_RAM2,
+        pub ram2: RAM2,
     }
-    ///LCD_CMD (rw) register accessor: an alias for `Reg<LCD_CMD_SPEC>`
-    pub type LCD_CMD = crate::Reg<lcd_cmd::LCD_CMD_SPEC>;
+    ///CMD (rw) register accessor: an alias for `Reg<CMD_SPEC>`
+    pub type CMD = crate::Reg<cmd::CMD_SPEC>;
     ///RW, LCD Command Register
-    pub mod lcd_cmd {
-        ///Register `LCD_CMD` reader
-        pub struct R(crate::R<LCD_CMD_SPEC>);
+    pub mod cmd {
+        ///Register `CMD` reader
+        pub struct R(crate::R<CMD_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<LCD_CMD_SPEC>;
+            type Target = crate::R<CMD_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<LCD_CMD_SPEC>> for R {
+        impl From<crate::R<CMD_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<LCD_CMD_SPEC>) -> Self {
+            fn from(reader: crate::R<CMD_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `LCD_CMD` writer
-        pub struct W(crate::W<LCD_CMD_SPEC>);
+        ///Register `CMD` writer
+        pub struct W(crate::W<CMD_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<LCD_CMD_SPEC>;
+            type Target = crate::W<CMD_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -21126,48 +18846,52 @@ pub mod lcd {
                 &mut self.0
             }
         }
-        impl From<crate::W<LCD_CMD_SPEC>> for W {
+        impl From<crate::W<CMD_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<LCD_CMD_SPEC>) -> Self {
+            fn from(writer: crate::W<CMD_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `SYS_EN` reader - RW, System Enable
         pub type SYS_EN_R = crate::BitReader;
         ///Field `SYS_EN` writer - RW, System Enable
-        pub type SYS_EN_W<'a, const O: u8> = crate::BitWriter<'a, LCD_CMD_SPEC, O>;
-        ///Field `LCD_ON` reader - RW, LCD switch
-        pub type LCD_ON_R = crate::BitReader;
-        ///Field `LCD_ON` writer - RW, LCD switch
-        pub type LCD_ON_W<'a, const O: u8> = crate::BitWriter<'a, LCD_CMD_SPEC, O>;
-        ///Field `LCD_BIAS` reader - RW, PWM6 Bias ratio selection enable
-        pub type LCD_BIAS_R = crate::BitReader;
-        ///Field `LCD_BIAS` writer - RW, PWM6 Bias ratio selection enable
-        pub type LCD_BIAS_W<'a, const O: u8> = crate::BitWriter<'a, LCD_CMD_SPEC, O>;
-        ///Field `LCD_DUTY` reader - RW, LCD duty cycle selection
-        pub type LCD_DUTY_R = crate::FieldReader;
-        ///Field `LCD_DUTY` writer - RW, LCD duty cycle selection
-        pub type LCD_DUTY_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_CMD_SPEC, 2, O>;
+        pub type SYS_EN_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
+        ///Field `ON` reader - RW, LCD switch
+        pub type ON_R = crate::BitReader;
+        ///Field `ON` writer - RW, LCD switch
+        pub type ON_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
+        ///Field `BIAS` reader - RW, PWM6 Bias ratio selection enable
+        pub type BIAS_R = crate::BitReader;
+        ///Field `BIAS` writer - RW, PWM6 Bias ratio selection enable
+        pub type BIAS_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
+        ///Field `DUTY` reader - RW, LCD duty cycle selection
+        pub type DUTY_R = crate::FieldReader;
+        ///Field `DUTY` writer - RW, LCD duty cycle selection
+        pub type DUTY_W<'a, const O: u8> = crate::FieldWriter<'a, CMD_SPEC, 2, O>;
         ///Field `SCAN_CLK_SEL` reader - RW, Scan clock selection
         pub type SCAN_CLK_SEL_R = crate::FieldReader;
         ///Field `SCAN_CLK_SEL` writer - RW, Scan clock selection
-        pub type SCAN_CLK_SEL_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_CMD_SPEC, 2, O>;
+        pub type SCAN_CLK_SEL_W<'a, const O: u8> = crate::FieldWriter<'a, CMD_SPEC, 2, O>;
         ///Field `VLCD_SEL` reader - RW, LCD driver voltage selection
         pub type VLCD_SEL_R = crate::BitReader;
         ///Field `VLCD_SEL` writer - RW, LCD driver voltage selection
-        pub type VLCD_SEL_W<'a, const O: u8> = crate::BitWriter<'a, LCD_CMD_SPEC, O>;
-        ///Field `LCD_SEG_0_7_EN` reader - RW, Enabling SEG0-SEG7 segments
-        pub type LCD_SEG_0_7_EN_R = crate::FieldReader;
-        ///Field `LCD_SEG_0_7_EN` writer - RW, Enabling SEG0-SEG7 segments
-        pub type LCD_SEG_0_7_EN_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_CMD_SPEC, 8, O>;
-        ///Field `LCD_SEG_8_15_EN` reader - RW, Enabling SEG8-SEG15 segments
-        pub type LCD_SEG_8_15_EN_R = crate::FieldReader;
-        ///Field `LCD_SEG_8_15_EN` writer - RW, Enabling SEG8-SEG15 segments
-        pub type LCD_SEG_8_15_EN_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_CMD_SPEC, 8, O>;
-        ///Field `LCD_SEG_16_19_EN` reader - RW, Enabling SEG16-SEG19 segments
-        pub type LCD_SEG_16_19_EN_R = crate::FieldReader;
-        ///Field `LCD_SEG_16_19_EN` writer - RW, Enabling SEG16-SEG19 segments
-        pub type LCD_SEG_16_19_EN_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_CMD_SPEC, 4, O>;
+        pub type VLCD_SEL_W<'a, const O: u8> = crate::BitWriter<'a, CMD_SPEC, O>;
+        ///Field `SEG_0_7_EN` reader - RW, Enabling SEG0-SEG7 segments
+        pub type SEG_0_7_EN_R = crate::FieldReader;
+        ///Field `SEG_0_7_EN` writer - RW, Enabling SEG0-SEG7 segments
+        pub type SEG_0_7_EN_W<'a, const O: u8> = crate::FieldWriter<'a, CMD_SPEC, 8, O>;
+        ///Field `SEG_EN` reader - LCD segment enable, SEG0~SEG23
+        pub type SEG_EN_R = crate::FieldReader<u32>;
+        ///Field `SEG_EN` writer - LCD segment enable, SEG0~SEG23
+        pub type SEG_EN_W<'a, const O: u8> = crate::FieldWriter<'a, CMD_SPEC, 20, O, u32>;
+        ///Field `SEG_8_15_EN` reader - RW, Enabling SEG8-SEG15 segments
+        pub type SEG_8_15_EN_R = crate::FieldReader;
+        ///Field `SEG_8_15_EN` writer - RW, Enabling SEG8-SEG15 segments
+        pub type SEG_8_15_EN_W<'a, const O: u8> = crate::FieldWriter<'a, CMD_SPEC, 8, O>;
+        ///Field `SEG_16_19_EN` reader - RW, Enabling SEG16-SEG19 segments
+        pub type SEG_16_19_EN_R = crate::FieldReader;
+        ///Field `SEG_16_19_EN` writer - RW, Enabling SEG16-SEG19 segments
+        pub type SEG_16_19_EN_W<'a, const O: u8> = crate::FieldWriter<'a, CMD_SPEC, 4, O>;
         impl R {
             ///Bit 0 - RW, System Enable
             #[inline(always)]
@@ -21176,18 +18900,18 @@ pub mod lcd {
             }
             ///Bit 1 - RW, LCD switch
             #[inline(always)]
-            pub fn lcd_on(&self) -> LCD_ON_R {
-                LCD_ON_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn on(&self) -> ON_R {
+                ON_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW, PWM6 Bias ratio selection enable
             #[inline(always)]
-            pub fn lcd_bias(&self) -> LCD_BIAS_R {
-                LCD_BIAS_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn bias(&self) -> BIAS_R {
+                BIAS_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bits 3:4 - RW, LCD duty cycle selection
             #[inline(always)]
-            pub fn lcd_duty(&self) -> LCD_DUTY_R {
-                LCD_DUTY_R::new(((self.bits >> 3) & 3) as u8)
+            pub fn duty(&self) -> DUTY_R {
+                DUTY_R::new(((self.bits >> 3) & 3) as u8)
             }
             ///Bits 5:6 - RW, Scan clock selection
             #[inline(always)]
@@ -21201,18 +18925,23 @@ pub mod lcd {
             }
             ///Bits 8:15 - RW, Enabling SEG0-SEG7 segments
             #[inline(always)]
-            pub fn lcd_seg_0_7_en(&self) -> LCD_SEG_0_7_EN_R {
-                LCD_SEG_0_7_EN_R::new(((self.bits >> 8) & 0xff) as u8)
+            pub fn seg_0_7_en(&self) -> SEG_0_7_EN_R {
+                SEG_0_7_EN_R::new(((self.bits >> 8) & 0xff) as u8)
+            }
+            ///Bits 8:27 - LCD segment enable, SEG0~SEG23
+            #[inline(always)]
+            pub fn seg_en(&self) -> SEG_EN_R {
+                SEG_EN_R::new((self.bits >> 8) & 0x000f_ffff)
             }
             ///Bits 16:23 - RW, Enabling SEG8-SEG15 segments
             #[inline(always)]
-            pub fn lcd_seg_8_15_en(&self) -> LCD_SEG_8_15_EN_R {
-                LCD_SEG_8_15_EN_R::new(((self.bits >> 16) & 0xff) as u8)
+            pub fn seg_8_15_en(&self) -> SEG_8_15_EN_R {
+                SEG_8_15_EN_R::new(((self.bits >> 16) & 0xff) as u8)
             }
             ///Bits 24:27 - RW, Enabling SEG16-SEG19 segments
             #[inline(always)]
-            pub fn lcd_seg_16_19_en(&self) -> LCD_SEG_16_19_EN_R {
-                LCD_SEG_16_19_EN_R::new(((self.bits >> 24) & 0x0f) as u8)
+            pub fn seg_16_19_en(&self) -> SEG_16_19_EN_R {
+                SEG_16_19_EN_R::new(((self.bits >> 24) & 0x0f) as u8)
             }
         }
         impl W {
@@ -21225,20 +18954,20 @@ pub mod lcd {
             ///Bit 1 - RW, LCD switch
             #[inline(always)]
             #[must_use]
-            pub fn lcd_on(&mut self) -> LCD_ON_W<1> {
-                LCD_ON_W::new(self)
+            pub fn on(&mut self) -> ON_W<1> {
+                ON_W::new(self)
             }
             ///Bit 2 - RW, PWM6 Bias ratio selection enable
             #[inline(always)]
             #[must_use]
-            pub fn lcd_bias(&mut self) -> LCD_BIAS_W<2> {
-                LCD_BIAS_W::new(self)
+            pub fn bias(&mut self) -> BIAS_W<2> {
+                BIAS_W::new(self)
             }
             ///Bits 3:4 - RW, LCD duty cycle selection
             #[inline(always)]
             #[must_use]
-            pub fn lcd_duty(&mut self) -> LCD_DUTY_W<3> {
-                LCD_DUTY_W::new(self)
+            pub fn duty(&mut self) -> DUTY_W<3> {
+                DUTY_W::new(self)
             }
             ///Bits 5:6 - RW, Scan clock selection
             #[inline(always)]
@@ -21255,20 +18984,26 @@ pub mod lcd {
             ///Bits 8:15 - RW, Enabling SEG0-SEG7 segments
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg_0_7_en(&mut self) -> LCD_SEG_0_7_EN_W<8> {
-                LCD_SEG_0_7_EN_W::new(self)
+            pub fn seg_0_7_en(&mut self) -> SEG_0_7_EN_W<8> {
+                SEG_0_7_EN_W::new(self)
+            }
+            ///Bits 8:27 - LCD segment enable, SEG0~SEG23
+            #[inline(always)]
+            #[must_use]
+            pub fn seg_en(&mut self) -> SEG_EN_W<8> {
+                SEG_EN_W::new(self)
             }
             ///Bits 16:23 - RW, Enabling SEG8-SEG15 segments
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg_8_15_en(&mut self) -> LCD_SEG_8_15_EN_W<16> {
-                LCD_SEG_8_15_EN_W::new(self)
+            pub fn seg_8_15_en(&mut self) -> SEG_8_15_EN_W<16> {
+                SEG_8_15_EN_W::new(self)
             }
             ///Bits 24:27 - RW, Enabling SEG16-SEG19 segments
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg_16_19_en(&mut self) -> LCD_SEG_16_19_EN_W<24> {
-                LCD_SEG_16_19_EN_W::new(self)
+            pub fn seg_16_19_en(&mut self) -> SEG_16_19_EN_W<24> {
+                SEG_16_19_EN_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -21281,49 +19016,49 @@ pub mod lcd {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [lcd_cmd](index.html) module
-        pub struct LCD_CMD_SPEC;
-        impl crate::RegisterSpec for LCD_CMD_SPEC {
+        ///For information about available fields see [cmd](index.html) module
+        pub struct CMD_SPEC;
+        impl crate::RegisterSpec for CMD_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [lcd_cmd::R](R) reader structure
-        impl crate::Readable for LCD_CMD_SPEC {
+        ///`read()` method returns [cmd::R](R) reader structure
+        impl crate::Readable for CMD_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [lcd_cmd::W](W) writer structure
-        impl crate::Writable for LCD_CMD_SPEC {
+        ///`write(|w| ..)` method takes [cmd::W](W) writer structure
+        impl crate::Writable for CMD_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets LCD_CMD to value 0
-        impl crate::Resettable for LCD_CMD_SPEC {
+        ///`reset()` method sets CMD to value 0
+        impl crate::Resettable for CMD_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///LCD_RAM0 (rw) register accessor: an alias for `Reg<LCD_RAM0_SPEC>`
-    pub type LCD_RAM0 = crate::Reg<lcd_ram0::LCD_RAM0_SPEC>;
+    ///RAM0 (rw) register accessor: an alias for `Reg<RAM0_SPEC>`
+    pub type RAM0 = crate::Reg<ram0::RAM0_SPEC>;
     ///RW, LCD RAM0 register
-    pub mod lcd_ram0 {
-        ///Register `LCD_RAM0` reader
-        pub struct R(crate::R<LCD_RAM0_SPEC>);
+    pub mod ram0 {
+        ///Register `RAM0` reader
+        pub struct R(crate::R<RAM0_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<LCD_RAM0_SPEC>;
+            type Target = crate::R<RAM0_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<LCD_RAM0_SPEC>> for R {
+        impl From<crate::R<RAM0_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<LCD_RAM0_SPEC>) -> Self {
+            fn from(reader: crate::R<RAM0_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `LCD_RAM0` writer
-        pub struct W(crate::W<LCD_RAM0_SPEC>);
+        ///Register `RAM0` writer
+        pub struct W(crate::W<RAM0_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<LCD_RAM0_SPEC>;
+            type Target = crate::W<RAM0_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -21335,134 +19070,119 @@ pub mod lcd {
                 &mut self.0
             }
         }
-        impl From<crate::W<LCD_RAM0_SPEC>> for W {
+        impl From<crate::W<RAM0_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<LCD_RAM0_SPEC>) -> Self {
+            fn from(writer: crate::W<RAM0_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `LCD_SEG0` reader - RW, SEG0 segment data
-        pub type LCD_SEG0_R = crate::FieldReader;
-        ///Field `LCD_SEG0` writer - RW, SEG0 segment data
-        pub type LCD_SEG0_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM0_SPEC, 4, O>;
-        ///Field `LCD_SEG1` reader - RW, SEG1 segment data
-        pub type LCD_SEG1_R = crate::FieldReader;
-        ///Field `LCD_SEG1` writer - RW, SEG1 segment data
-        pub type LCD_SEG1_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM0_SPEC, 4, O>;
-        ///Field `LCD_SEG2` reader - RW, SEG2 segment data
-        pub type LCD_SEG2_R = crate::FieldReader;
-        ///Field `LCD_SEG2` writer - RW, SEG2 segment data
-        pub type LCD_SEG2_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM0_SPEC, 4, O>;
-        ///Field `LCD_SEG3` reader - RW, SEG3 segment data
-        pub type LCD_SEG3_R = crate::FieldReader;
-        ///Field `LCD_SEG3` writer - RW, SEG3 segment data
-        pub type LCD_SEG3_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM0_SPEC, 4, O>;
-        ///Field `LCD_SEG4` reader - RW, SEG4 segment data
-        pub type LCD_SEG4_R = crate::FieldReader;
-        ///Field `LCD_SEG4` writer - RW, SEG4 segment data
-        pub type LCD_SEG4_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM0_SPEC, 4, O>;
-        ///Field `LCD_SEG5` reader - RW, SEG5 segment data
-        pub type LCD_SEG5_R = crate::FieldReader;
-        ///Field `LCD_SEG5` writer - RW, SEG5 segment data
-        pub type LCD_SEG5_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM0_SPEC, 4, O>;
-        ///Field `LCD_SEG6` reader - RW, SEG6 segment data
-        pub type LCD_SEG6_R = crate::FieldReader;
-        ///Field `LCD_SEG6` writer - RW, SEG6 segment data
-        pub type LCD_SEG6_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM0_SPEC, 4, O>;
-        ///Field `LCD_SEG7` reader - RW, SEG7 segment data
-        pub type LCD_SEG7_R = crate::FieldReader;
-        ///Field `LCD_SEG7` writer - RW, SEG7 segment data
-        pub type LCD_SEG7_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM0_SPEC, 4, O>;
+        ///Field `SEG[0-7]` reader - RW, SEG%s segment data
+        pub type SEG_R = crate::FieldReader;
+        ///Field `SEG[0-7]` writer - RW, SEG%s segment data
+        pub type SEG_W<'a, const O: u8> = crate::FieldWriter<'a, RAM0_SPEC, 4, O>;
         impl R {
+            ///RW, SEG[0-7]
+            ///segment data
+            #[inline(always)]
+            pub unsafe fn seg(&self, n: u8) -> SEG_R {
+                SEG_R::new(((self.bits >> (n * 4)) & 0x0f) as u8)
+            }
             ///Bits 0:3 - RW, SEG0 segment data
             #[inline(always)]
-            pub fn lcd_seg0(&self) -> LCD_SEG0_R {
-                LCD_SEG0_R::new((self.bits & 0x0f) as u8)
+            pub fn seg0(&self) -> SEG_R {
+                SEG_R::new((self.bits & 0x0f) as u8)
             }
             ///Bits 4:7 - RW, SEG1 segment data
             #[inline(always)]
-            pub fn lcd_seg1(&self) -> LCD_SEG1_R {
-                LCD_SEG1_R::new(((self.bits >> 4) & 0x0f) as u8)
+            pub fn seg1(&self) -> SEG_R {
+                SEG_R::new(((self.bits >> 4) & 0x0f) as u8)
             }
             ///Bits 8:11 - RW, SEG2 segment data
             #[inline(always)]
-            pub fn lcd_seg2(&self) -> LCD_SEG2_R {
-                LCD_SEG2_R::new(((self.bits >> 8) & 0x0f) as u8)
+            pub fn seg2(&self) -> SEG_R {
+                SEG_R::new(((self.bits >> 8) & 0x0f) as u8)
             }
             ///Bits 12:15 - RW, SEG3 segment data
             #[inline(always)]
-            pub fn lcd_seg3(&self) -> LCD_SEG3_R {
-                LCD_SEG3_R::new(((self.bits >> 12) & 0x0f) as u8)
+            pub fn seg3(&self) -> SEG_R {
+                SEG_R::new(((self.bits >> 12) & 0x0f) as u8)
             }
             ///Bits 16:19 - RW, SEG4 segment data
             #[inline(always)]
-            pub fn lcd_seg4(&self) -> LCD_SEG4_R {
-                LCD_SEG4_R::new(((self.bits >> 16) & 0x0f) as u8)
+            pub fn seg4(&self) -> SEG_R {
+                SEG_R::new(((self.bits >> 16) & 0x0f) as u8)
             }
             ///Bits 20:23 - RW, SEG5 segment data
             #[inline(always)]
-            pub fn lcd_seg5(&self) -> LCD_SEG5_R {
-                LCD_SEG5_R::new(((self.bits >> 20) & 0x0f) as u8)
+            pub fn seg5(&self) -> SEG_R {
+                SEG_R::new(((self.bits >> 20) & 0x0f) as u8)
             }
             ///Bits 24:27 - RW, SEG6 segment data
             #[inline(always)]
-            pub fn lcd_seg6(&self) -> LCD_SEG6_R {
-                LCD_SEG6_R::new(((self.bits >> 24) & 0x0f) as u8)
+            pub fn seg6(&self) -> SEG_R {
+                SEG_R::new(((self.bits >> 24) & 0x0f) as u8)
             }
             ///Bits 28:31 - RW, SEG7 segment data
             #[inline(always)]
-            pub fn lcd_seg7(&self) -> LCD_SEG7_R {
-                LCD_SEG7_R::new(((self.bits >> 28) & 0x0f) as u8)
+            pub fn seg7(&self) -> SEG_R {
+                SEG_R::new(((self.bits >> 28) & 0x0f) as u8)
             }
         }
         impl W {
+            ///RW, SEG[0-7]
+            ///segment data
+            #[inline(always)]
+            #[must_use]
+            pub unsafe fn seg<const O: u8>(&mut self) -> SEG_W<O> {
+                SEG_W::new(self)
+            }
             ///Bits 0:3 - RW, SEG0 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg0(&mut self) -> LCD_SEG0_W<0> {
-                LCD_SEG0_W::new(self)
+            pub fn seg0(&mut self) -> SEG_W<0> {
+                SEG_W::new(self)
             }
             ///Bits 4:7 - RW, SEG1 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg1(&mut self) -> LCD_SEG1_W<4> {
-                LCD_SEG1_W::new(self)
+            pub fn seg1(&mut self) -> SEG_W<4> {
+                SEG_W::new(self)
             }
             ///Bits 8:11 - RW, SEG2 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg2(&mut self) -> LCD_SEG2_W<8> {
-                LCD_SEG2_W::new(self)
+            pub fn seg2(&mut self) -> SEG_W<8> {
+                SEG_W::new(self)
             }
             ///Bits 12:15 - RW, SEG3 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg3(&mut self) -> LCD_SEG3_W<12> {
-                LCD_SEG3_W::new(self)
+            pub fn seg3(&mut self) -> SEG_W<12> {
+                SEG_W::new(self)
             }
             ///Bits 16:19 - RW, SEG4 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg4(&mut self) -> LCD_SEG4_W<16> {
-                LCD_SEG4_W::new(self)
+            pub fn seg4(&mut self) -> SEG_W<16> {
+                SEG_W::new(self)
             }
             ///Bits 20:23 - RW, SEG5 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg5(&mut self) -> LCD_SEG5_W<20> {
-                LCD_SEG5_W::new(self)
+            pub fn seg5(&mut self) -> SEG_W<20> {
+                SEG_W::new(self)
             }
             ///Bits 24:27 - RW, SEG6 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg6(&mut self) -> LCD_SEG6_W<24> {
-                LCD_SEG6_W::new(self)
+            pub fn seg6(&mut self) -> SEG_W<24> {
+                SEG_W::new(self)
             }
             ///Bits 28:31 - RW, SEG7 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg7(&mut self) -> LCD_SEG7_W<28> {
-                LCD_SEG7_W::new(self)
+            pub fn seg7(&mut self) -> SEG_W<28> {
+                SEG_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -21475,49 +19195,49 @@ pub mod lcd {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [lcd_ram0](index.html) module
-        pub struct LCD_RAM0_SPEC;
-        impl crate::RegisterSpec for LCD_RAM0_SPEC {
+        ///For information about available fields see [ram0](index.html) module
+        pub struct RAM0_SPEC;
+        impl crate::RegisterSpec for RAM0_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [lcd_ram0::R](R) reader structure
-        impl crate::Readable for LCD_RAM0_SPEC {
+        ///`read()` method returns [ram0::R](R) reader structure
+        impl crate::Readable for RAM0_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [lcd_ram0::W](W) writer structure
-        impl crate::Writable for LCD_RAM0_SPEC {
+        ///`write(|w| ..)` method takes [ram0::W](W) writer structure
+        impl crate::Writable for RAM0_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets LCD_RAM0 to value 0
-        impl crate::Resettable for LCD_RAM0_SPEC {
+        ///`reset()` method sets RAM0 to value 0
+        impl crate::Resettable for RAM0_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///LCD_RAM1 (rw) register accessor: an alias for `Reg<LCD_RAM1_SPEC>`
-    pub type LCD_RAM1 = crate::Reg<lcd_ram1::LCD_RAM1_SPEC>;
+    ///RAM1 (rw) register accessor: an alias for `Reg<RAM1_SPEC>`
+    pub type RAM1 = crate::Reg<ram1::RAM1_SPEC>;
     ///RW, LCD RAM1 register
-    pub mod lcd_ram1 {
-        ///Register `LCD_RAM1` reader
-        pub struct R(crate::R<LCD_RAM1_SPEC>);
+    pub mod ram1 {
+        ///Register `RAM1` reader
+        pub struct R(crate::R<RAM1_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<LCD_RAM1_SPEC>;
+            type Target = crate::R<RAM1_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<LCD_RAM1_SPEC>> for R {
+        impl From<crate::R<RAM1_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<LCD_RAM1_SPEC>) -> Self {
+            fn from(reader: crate::R<RAM1_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `LCD_RAM1` writer
-        pub struct W(crate::W<LCD_RAM1_SPEC>);
+        ///Register `RAM1` writer
+        pub struct W(crate::W<RAM1_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<LCD_RAM1_SPEC>;
+            type Target = crate::W<RAM1_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -21529,134 +19249,117 @@ pub mod lcd {
                 &mut self.0
             }
         }
-        impl From<crate::W<LCD_RAM1_SPEC>> for W {
+        impl From<crate::W<RAM1_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<LCD_RAM1_SPEC>) -> Self {
+            fn from(writer: crate::W<RAM1_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `LCD_SEG8` reader - RW, SEG8 segment data
-        pub type LCD_SEG8_R = crate::FieldReader;
-        ///Field `LCD_SEG8` writer - RW, SEG8 segment data
-        pub type LCD_SEG8_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM1_SPEC, 4, O>;
-        ///Field `LCD_SEG9` reader - RW, SEG9 segment data
-        pub type LCD_SEG9_R = crate::FieldReader;
-        ///Field `LCD_SEG9` writer - RW, SEG9 segment data
-        pub type LCD_SEG9_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM1_SPEC, 4, O>;
-        ///Field `LCD_SEG10` reader - RW, SEG10 segment data
-        pub type LCD_SEG10_R = crate::FieldReader;
-        ///Field `LCD_SEG10` writer - RW, SEG10 segment data
-        pub type LCD_SEG10_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM1_SPEC, 4, O>;
-        ///Field `LCD_SEG11` reader - RW, SEG11 segment data
-        pub type LCD_SEG11_R = crate::FieldReader;
-        ///Field `LCD_SEG11` writer - RW, SEG11 segment data
-        pub type LCD_SEG11_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM1_SPEC, 4, O>;
-        ///Field `LCD_SEG12` reader - RW, SEG12 segment data
-        pub type LCD_SEG12_R = crate::FieldReader;
-        ///Field `LCD_SEG12` writer - RW, SEG12 segment data
-        pub type LCD_SEG12_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM1_SPEC, 4, O>;
-        ///Field `LCD_SEG13` reader - RW, SEG13 segment data
-        pub type LCD_SEG13_R = crate::FieldReader;
-        ///Field `LCD_SEG13` writer - RW, SEG13 segment data
-        pub type LCD_SEG13_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM1_SPEC, 4, O>;
-        ///Field `LCD_SEG14` reader - RW, SEG14 segment data
-        pub type LCD_SEG14_R = crate::FieldReader;
-        ///Field `LCD_SEG14` writer - RW, SEG14 segment data
-        pub type LCD_SEG14_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM1_SPEC, 4, O>;
-        ///Field `LCD_SEG15` reader - RW, SEG15 segment data
-        pub type LCD_SEG15_R = crate::FieldReader;
-        ///Field `LCD_SEG15` writer - RW, SEG15 segment data
-        pub type LCD_SEG15_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM1_SPEC, 4, O>;
+        ///Field `SEG[8-15]` reader - RW, SEG8 segment data
+        pub type SEG_R = crate::FieldReader;
+        ///Field `SEG[8-15]` writer - RW, SEG8 segment data
+        pub type SEG_W<'a, const O: u8> = crate::FieldWriter<'a, RAM1_SPEC, 4, O>;
         impl R {
+            ///RW, SEG8 segment data
+            #[inline(always)]
+            pub unsafe fn seg(&self, n: u8) -> SEG_R {
+                SEG_R::new(((self.bits >> ((n - 8) * 4)) & 0x0f) as u8)
+            }
             ///Bits 0:3 - RW, SEG8 segment data
             #[inline(always)]
-            pub fn lcd_seg8(&self) -> LCD_SEG8_R {
-                LCD_SEG8_R::new((self.bits & 0x0f) as u8)
+            pub fn seg8(&self) -> SEG_R {
+                SEG_R::new((self.bits & 0x0f) as u8)
             }
-            ///Bits 4:7 - RW, SEG9 segment data
+            ///Bits 4:7 - RW, SEG8 segment data
             #[inline(always)]
-            pub fn lcd_seg9(&self) -> LCD_SEG9_R {
-                LCD_SEG9_R::new(((self.bits >> 4) & 0x0f) as u8)
+            pub fn seg9(&self) -> SEG_R {
+                SEG_R::new(((self.bits >> 4) & 0x0f) as u8)
             }
-            ///Bits 8:11 - RW, SEG10 segment data
+            ///Bits 8:11 - RW, SEG8 segment data
             #[inline(always)]
-            pub fn lcd_seg10(&self) -> LCD_SEG10_R {
-                LCD_SEG10_R::new(((self.bits >> 8) & 0x0f) as u8)
+            pub fn seg10(&self) -> SEG_R {
+                SEG_R::new(((self.bits >> 8) & 0x0f) as u8)
             }
-            ///Bits 12:15 - RW, SEG11 segment data
+            ///Bits 12:15 - RW, SEG8 segment data
             #[inline(always)]
-            pub fn lcd_seg11(&self) -> LCD_SEG11_R {
-                LCD_SEG11_R::new(((self.bits >> 12) & 0x0f) as u8)
+            pub fn seg11(&self) -> SEG_R {
+                SEG_R::new(((self.bits >> 12) & 0x0f) as u8)
             }
-            ///Bits 16:19 - RW, SEG12 segment data
+            ///Bits 16:19 - RW, SEG8 segment data
             #[inline(always)]
-            pub fn lcd_seg12(&self) -> LCD_SEG12_R {
-                LCD_SEG12_R::new(((self.bits >> 16) & 0x0f) as u8)
+            pub fn seg12(&self) -> SEG_R {
+                SEG_R::new(((self.bits >> 16) & 0x0f) as u8)
             }
-            ///Bits 20:23 - RW, SEG13 segment data
+            ///Bits 20:23 - RW, SEG8 segment data
             #[inline(always)]
-            pub fn lcd_seg13(&self) -> LCD_SEG13_R {
-                LCD_SEG13_R::new(((self.bits >> 20) & 0x0f) as u8)
+            pub fn seg13(&self) -> SEG_R {
+                SEG_R::new(((self.bits >> 20) & 0x0f) as u8)
             }
-            ///Bits 24:27 - RW, SEG14 segment data
+            ///Bits 24:27 - RW, SEG8 segment data
             #[inline(always)]
-            pub fn lcd_seg14(&self) -> LCD_SEG14_R {
-                LCD_SEG14_R::new(((self.bits >> 24) & 0x0f) as u8)
+            pub fn seg14(&self) -> SEG_R {
+                SEG_R::new(((self.bits >> 24) & 0x0f) as u8)
             }
-            ///Bits 28:31 - RW, SEG15 segment data
+            ///Bits 28:31 - RW, SEG8 segment data
             #[inline(always)]
-            pub fn lcd_seg15(&self) -> LCD_SEG15_R {
-                LCD_SEG15_R::new(((self.bits >> 28) & 0x0f) as u8)
+            pub fn seg15(&self) -> SEG_R {
+                SEG_R::new(((self.bits >> 28) & 0x0f) as u8)
             }
         }
         impl W {
+            ///RW, SEG8 segment data
+            #[inline(always)]
+            #[must_use]
+            pub unsafe fn seg<const O: u8>(&mut self) -> SEG_W<O> {
+                SEG_W::new(self)
+            }
             ///Bits 0:3 - RW, SEG8 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg8(&mut self) -> LCD_SEG8_W<0> {
-                LCD_SEG8_W::new(self)
+            pub fn seg8(&mut self) -> SEG_W<0> {
+                SEG_W::new(self)
             }
-            ///Bits 4:7 - RW, SEG9 segment data
+            ///Bits 4:7 - RW, SEG8 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg9(&mut self) -> LCD_SEG9_W<4> {
-                LCD_SEG9_W::new(self)
+            pub fn seg9(&mut self) -> SEG_W<4> {
+                SEG_W::new(self)
             }
-            ///Bits 8:11 - RW, SEG10 segment data
+            ///Bits 8:11 - RW, SEG8 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg10(&mut self) -> LCD_SEG10_W<8> {
-                LCD_SEG10_W::new(self)
+            pub fn seg10(&mut self) -> SEG_W<8> {
+                SEG_W::new(self)
             }
-            ///Bits 12:15 - RW, SEG11 segment data
+            ///Bits 12:15 - RW, SEG8 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg11(&mut self) -> LCD_SEG11_W<12> {
-                LCD_SEG11_W::new(self)
+            pub fn seg11(&mut self) -> SEG_W<12> {
+                SEG_W::new(self)
             }
-            ///Bits 16:19 - RW, SEG12 segment data
+            ///Bits 16:19 - RW, SEG8 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg12(&mut self) -> LCD_SEG12_W<16> {
-                LCD_SEG12_W::new(self)
+            pub fn seg12(&mut self) -> SEG_W<16> {
+                SEG_W::new(self)
             }
-            ///Bits 20:23 - RW, SEG13 segment data
+            ///Bits 20:23 - RW, SEG8 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg13(&mut self) -> LCD_SEG13_W<20> {
-                LCD_SEG13_W::new(self)
+            pub fn seg13(&mut self) -> SEG_W<20> {
+                SEG_W::new(self)
             }
-            ///Bits 24:27 - RW, SEG14 segment data
+            ///Bits 24:27 - RW, SEG8 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg14(&mut self) -> LCD_SEG14_W<24> {
-                LCD_SEG14_W::new(self)
+            pub fn seg14(&mut self) -> SEG_W<24> {
+                SEG_W::new(self)
             }
-            ///Bits 28:31 - RW, SEG15 segment data
+            ///Bits 28:31 - RW, SEG8 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg15(&mut self) -> LCD_SEG15_W<28> {
-                LCD_SEG15_W::new(self)
+            pub fn seg15(&mut self) -> SEG_W<28> {
+                SEG_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -21669,49 +19372,49 @@ pub mod lcd {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [lcd_ram1](index.html) module
-        pub struct LCD_RAM1_SPEC;
-        impl crate::RegisterSpec for LCD_RAM1_SPEC {
+        ///For information about available fields see [ram1](index.html) module
+        pub struct RAM1_SPEC;
+        impl crate::RegisterSpec for RAM1_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [lcd_ram1::R](R) reader structure
-        impl crate::Readable for LCD_RAM1_SPEC {
+        ///`read()` method returns [ram1::R](R) reader structure
+        impl crate::Readable for RAM1_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [lcd_ram1::W](W) writer structure
-        impl crate::Writable for LCD_RAM1_SPEC {
+        ///`write(|w| ..)` method takes [ram1::W](W) writer structure
+        impl crate::Writable for RAM1_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets LCD_RAM1 to value 0
-        impl crate::Resettable for LCD_RAM1_SPEC {
+        ///`reset()` method sets RAM1 to value 0
+        impl crate::Resettable for RAM1_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///LCD_RAM2 (rw) register accessor: an alias for `Reg<LCD_RAM2_SPEC>`
-    pub type LCD_RAM2 = crate::Reg<lcd_ram2::LCD_RAM2_SPEC>;
+    ///RAM2 (rw) register accessor: an alias for `Reg<RAM2_SPEC>`
+    pub type RAM2 = crate::Reg<ram2::RAM2_SPEC>;
     ///RW, LCD RAM2 register
-    pub mod lcd_ram2 {
-        ///Register `LCD_RAM2` reader
-        pub struct R(crate::R<LCD_RAM2_SPEC>);
+    pub mod ram2 {
+        ///Register `RAM2` reader
+        pub struct R(crate::R<RAM2_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<LCD_RAM2_SPEC>;
+            type Target = crate::R<RAM2_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<LCD_RAM2_SPEC>> for R {
+        impl From<crate::R<RAM2_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<LCD_RAM2_SPEC>) -> Self {
+            fn from(reader: crate::R<RAM2_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `LCD_RAM2` writer
-        pub struct W(crate::W<LCD_RAM2_SPEC>);
+        ///Register `RAM2` writer
+        pub struct W(crate::W<RAM2_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<LCD_RAM2_SPEC>;
+            type Target = crate::W<RAM2_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -21723,74 +19426,73 @@ pub mod lcd {
                 &mut self.0
             }
         }
-        impl From<crate::W<LCD_RAM2_SPEC>> for W {
+        impl From<crate::W<RAM2_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<LCD_RAM2_SPEC>) -> Self {
+            fn from(writer: crate::W<RAM2_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `LCD_SEG16` reader - RW, SEG16 segment data
-        pub type LCD_SEG16_R = crate::FieldReader;
-        ///Field `LCD_SEG16` writer - RW, SEG16 segment data
-        pub type LCD_SEG16_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM2_SPEC, 4, O>;
-        ///Field `LCD_SEG17` reader - RW, SEG17 segment data
-        pub type LCD_SEG17_R = crate::FieldReader;
-        ///Field `LCD_SEG17` writer - RW, SEG17 segment data
-        pub type LCD_SEG17_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM2_SPEC, 4, O>;
-        ///Field `LCD_SEG18` reader - RW, SEG18 segment data
-        pub type LCD_SEG18_R = crate::FieldReader;
-        ///Field `LCD_SEG18` writer - RW, SEG18 segment data
-        pub type LCD_SEG18_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM2_SPEC, 4, O>;
-        ///Field `LCD_SEG19` reader - RW, SEG19 segment data
-        pub type LCD_SEG19_R = crate::FieldReader;
-        ///Field `LCD_SEG19` writer - RW, SEG19 segment data
-        pub type LCD_SEG19_W<'a, const O: u8> = crate::FieldWriter<'a, LCD_RAM2_SPEC, 4, O>;
+        ///Field `SEG[16-19]` reader - RW, SEG16 segment data
+        pub type SEG_R = crate::FieldReader;
+        ///Field `SEG[16-19]` writer - RW, SEG16 segment data
+        pub type SEG_W<'a, const O: u8> = crate::FieldWriter<'a, RAM2_SPEC, 4, O>;
         impl R {
+            ///RW, SEG16 segment data
+            #[inline(always)]
+            pub unsafe fn seg(&self, n: u8) -> SEG_R {
+                SEG_R::new(((self.bits >> ((n - 16) * 4)) & 0x0f) as u8)
+            }
             ///Bits 0:3 - RW, SEG16 segment data
             #[inline(always)]
-            pub fn lcd_seg16(&self) -> LCD_SEG16_R {
-                LCD_SEG16_R::new((self.bits & 0x0f) as u8)
+            pub fn seg16(&self) -> SEG_R {
+                SEG_R::new((self.bits & 0x0f) as u8)
             }
-            ///Bits 4:7 - RW, SEG17 segment data
+            ///Bits 4:7 - RW, SEG16 segment data
             #[inline(always)]
-            pub fn lcd_seg17(&self) -> LCD_SEG17_R {
-                LCD_SEG17_R::new(((self.bits >> 4) & 0x0f) as u8)
+            pub fn seg17(&self) -> SEG_R {
+                SEG_R::new(((self.bits >> 4) & 0x0f) as u8)
             }
-            ///Bits 8:11 - RW, SEG18 segment data
+            ///Bits 8:11 - RW, SEG16 segment data
             #[inline(always)]
-            pub fn lcd_seg18(&self) -> LCD_SEG18_R {
-                LCD_SEG18_R::new(((self.bits >> 8) & 0x0f) as u8)
+            pub fn seg18(&self) -> SEG_R {
+                SEG_R::new(((self.bits >> 8) & 0x0f) as u8)
             }
-            ///Bits 12:15 - RW, SEG19 segment data
+            ///Bits 12:15 - RW, SEG16 segment data
             #[inline(always)]
-            pub fn lcd_seg19(&self) -> LCD_SEG19_R {
-                LCD_SEG19_R::new(((self.bits >> 12) & 0x0f) as u8)
+            pub fn seg19(&self) -> SEG_R {
+                SEG_R::new(((self.bits >> 12) & 0x0f) as u8)
             }
         }
         impl W {
+            ///RW, SEG16 segment data
+            #[inline(always)]
+            #[must_use]
+            pub unsafe fn seg<const O: u8>(&mut self) -> SEG_W<O> {
+                SEG_W::new(self)
+            }
             ///Bits 0:3 - RW, SEG16 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg16(&mut self) -> LCD_SEG16_W<0> {
-                LCD_SEG16_W::new(self)
+            pub fn seg16(&mut self) -> SEG_W<0> {
+                SEG_W::new(self)
             }
-            ///Bits 4:7 - RW, SEG17 segment data
+            ///Bits 4:7 - RW, SEG16 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg17(&mut self) -> LCD_SEG17_W<4> {
-                LCD_SEG17_W::new(self)
+            pub fn seg17(&mut self) -> SEG_W<4> {
+                SEG_W::new(self)
             }
-            ///Bits 8:11 - RW, SEG18 segment data
+            ///Bits 8:11 - RW, SEG16 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg18(&mut self) -> LCD_SEG18_W<8> {
-                LCD_SEG18_W::new(self)
+            pub fn seg18(&mut self) -> SEG_W<8> {
+                SEG_W::new(self)
             }
-            ///Bits 12:15 - RW, SEG19 segment data
+            ///Bits 12:15 - RW, SEG16 segment data
             #[inline(always)]
             #[must_use]
-            pub fn lcd_seg19(&mut self) -> LCD_SEG19_W<12> {
-                LCD_SEG19_W::new(self)
+            pub fn seg19(&mut self) -> SEG_W<12> {
+                SEG_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -21803,23 +19505,23 @@ pub mod lcd {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [lcd_ram2](index.html) module
-        pub struct LCD_RAM2_SPEC;
-        impl crate::RegisterSpec for LCD_RAM2_SPEC {
+        ///For information about available fields see [ram2](index.html) module
+        pub struct RAM2_SPEC;
+        impl crate::RegisterSpec for RAM2_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [lcd_ram2::R](R) reader structure
-        impl crate::Readable for LCD_RAM2_SPEC {
+        ///`read()` method returns [ram2::R](R) reader structure
+        impl crate::Readable for RAM2_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [lcd_ram2::W](W) writer structure
-        impl crate::Writable for LCD_RAM2_SPEC {
+        ///`write(|w| ..)` method takes [ram2::W](W) writer structure
+        impl crate::Writable for RAM2_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets LCD_RAM2 to value 0
-        impl crate::Resettable for LCD_RAM2_SPEC {
+        ///`reset()` method sets RAM2 to value 0
+        impl crate::Resettable for RAM2_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
@@ -26028,270 +23730,270 @@ pub mod pfic {
     #[repr(C)]
     pub struct RegisterBlock {
         ///0x00 - RO,Interrupt Status Register 1
-        pub pfic_isr1: PFIC_ISR1,
+        pub isr1: ISR1,
         ///0x04 - RO,Interrupt Status Register 2
-        pub pfic_isr2: PFIC_ISR2,
+        pub isr2: ISR2,
         _reserved2: [u8; 0x18],
         ///0x20 - RO,Interrupt Pending Register 1
-        pub pfic_ipr1: PFIC_IPR1,
+        pub ipr1: IPR1,
         ///0x24 - RO,Interrupt Pending Register 2
-        pub pfic_ipr2: PFIC_IPR2,
+        pub ipr2: IPR2,
         _reserved4: [u8; 0x18],
         ///0x40 - RW,Interrupt Priority Register
-        pub pfic_ithresdr: PFIC_ITHRESDR,
+        pub ithresdr: ITHRESDR,
         _reserved5: [u8; 0x04],
         ///0x48 - Interrupt Config Register
-        pub pfic_cfgr: PFIC_CFGR,
+        pub cfgr: CFGR,
         ///0x4c - Interrupt Global Register
-        pub pfic_gisr: PFIC_GISR,
+        pub gisr: GISR,
         ///0x50 - RW,Interrupt Fast ID Config Register
-        pub pfic_idcfgr: PFIC_IDCFGR,
+        pub idcfgr: IDCFGR,
         _reserved8: [u8; 0x0c],
         ///0x60 - Interrupt 0 address Register
-        pub pfic_fiaddrr0: PFIC_FIADDRR0,
+        pub fiaddrr0: FIADDRR0,
         ///0x64 - Interrupt 1 address Register
-        pub pfic_fiaddrr1: PFIC_FIADDRR1,
+        pub fiaddrr1: FIADDRR1,
         ///0x68 - Interrupt 2 address Register
-        pub pfic_fiaddrr2: PFIC_FIADDRR2,
+        pub fiaddrr2: FIADDRR2,
         ///0x6c - Interrupt 3 address Register
-        pub pfic_fiaddrr3: PFIC_FIADDRR3,
+        pub fiaddrr3: FIADDRR3,
         _reserved12: [u8; 0x90],
         ///0x100 - Interrupt Setting Register
-        pub pfic_ienr1: PFIC_IENR1,
+        pub ienr1: IENR1,
         ///0x104 - Interrupt Setting Register
-        pub pfic_ienr2: PFIC_IENR2,
+        pub ienr2: IENR2,
         _reserved14: [u8; 0x78],
         ///0x180 - Interrupt Clear Register
-        pub pfic_irer1: PFIC_IRER1,
+        pub irer1: IRER1,
         ///0x184 - Interrupt Clear Register
-        pub pfic_irer2: PFIC_IRER2,
+        pub irer2: IRER2,
         _reserved16: [u8; 0x78],
         ///0x200 - Interrupt Pending Register
-        pub pfic_ipsr1: PFIC_IPSR1,
+        pub ipsr1: IPSR1,
         ///0x204 - Interrupt Pending Register
-        pub pfic_ipsr2: PFIC_IPSR2,
+        pub ipsr2: IPSR2,
         _reserved18: [u8; 0x78],
         ///0x280 - Interrupt Pending Clear Register
-        pub pfic_iprr1: PFIC_IPRR1,
+        pub iprr1: IPRR1,
         ///0x284 - Interrupt Pending Clear Register
-        pub pfic_iprr2: PFIC_IPRR2,
+        pub iprr2: IPRR2,
         _reserved20: [u8; 0x78],
         ///0x300 - Interrupt ACTIVE Register
-        pub pfic_iactr1: PFIC_IACTR1,
+        pub iactr1: IACTR1,
         ///0x304 - Interrupt ACTIVE Register
-        pub pfic_iactr2: PFIC_IACTR2,
+        pub iactr2: IACTR2,
         _reserved22: [u8; 0xf8],
         ///0x400 - Interrupt Priority configuration Register 0
-        pub pfic_iprior0: PFIC_IPRIOR0,
+        pub iprior0: IPRIOR0,
         _reserved23: [u8; 0x1c],
         ///0x420 - Interrupt Priority configuration Register 1
-        pub pfic_iprior1: PFIC_IPRIOR1,
+        pub iprior1: IPRIOR1,
         _reserved24: [u8; 0x1c],
         ///0x440 - Interrupt Priority configuration Register 2
-        pub pfic_iprior2: PFIC_IPRIOR2,
+        pub iprior2: IPRIOR2,
         _reserved25: [u8; 0x1c],
         ///0x460 - Interrupt Priority configuration Register 3
-        pub pfic_iprior3: PFIC_IPRIOR3,
+        pub iprior3: IPRIOR3,
         _reserved26: [u8; 0x1c],
         ///0x480 - Interrupt Priority configuration Register 4
-        pub pfic_iprior4: PFIC_IPRIOR4,
+        pub iprior4: IPRIOR4,
         _reserved27: [u8; 0x1c],
         ///0x4a0 - Interrupt Priority configuration Register 5
-        pub pfic_iprior5: PFIC_IPRIOR5,
+        pub iprior5: IPRIOR5,
         _reserved28: [u8; 0x1c],
         ///0x4c0 - Interrupt Priority configuration Register 6
-        pub pfic_iprior6: PFIC_IPRIOR6,
+        pub iprior6: IPRIOR6,
         _reserved29: [u8; 0x1c],
         ///0x4e0 - Interrupt Priority configuration Register 7
-        pub pfic_iprior7: PFIC_IPRIOR7,
+        pub iprior7: IPRIOR7,
         _reserved30: [u8; 0x1c],
         ///0x500 - Interrupt Priority configuration Register 8
-        pub pfic_iprior8: PFIC_IPRIOR8,
+        pub iprior8: IPRIOR8,
         _reserved31: [u8; 0x1c],
         ///0x520 - Interrupt Priority configuration Register 9
-        pub pfic_iprior9: PFIC_IPRIOR9,
+        pub iprior9: IPRIOR9,
         _reserved32: [u8; 0x1c],
         ///0x540 - Interrupt Priority configuration Register 10
-        pub pfic_iprior10: PFIC_IPRIOR10,
+        pub iprior10: IPRIOR10,
         _reserved33: [u8; 0x1c],
         ///0x560 - Interrupt Priority configuration Register 11
-        pub pfic_iprior11: PFIC_IPRIOR11,
+        pub iprior11: IPRIOR11,
         _reserved34: [u8; 0x1c],
         ///0x580 - Interrupt Priority configuration Register 12
-        pub pfic_iprior12: PFIC_IPRIOR12,
+        pub iprior12: IPRIOR12,
         _reserved35: [u8; 0x1c],
         ///0x5a0 - Interrupt Priority configuration Register 13
-        pub pfic_iprior13: PFIC_IPRIOR13,
+        pub iprior13: IPRIOR13,
         _reserved36: [u8; 0x1c],
         ///0x5c0 - Interrupt Priority configuration Register 14
-        pub pfic_iprior14: PFIC_IPRIOR14,
+        pub iprior14: IPRIOR14,
         _reserved37: [u8; 0x1c],
         ///0x5e0 - Interrupt Priority configuration Register 15
-        pub pfic_iprior15: PFIC_IPRIOR15,
+        pub iprior15: IPRIOR15,
         _reserved38: [u8; 0x1c],
         ///0x600 - Interrupt Priority configuration Register 16
-        pub pfic_iprior16: PFIC_IPRIOR16,
+        pub iprior16: IPRIOR16,
         _reserved39: [u8; 0x1c],
         ///0x620 - Interrupt Priority configuration Register 17
-        pub pfic_iprior17: PFIC_IPRIOR17,
+        pub iprior17: IPRIOR17,
         _reserved40: [u8; 0x1c],
         ///0x640 - Interrupt Priority configuration Register 18
-        pub pfic_iprior18: PFIC_IPRIOR18,
+        pub iprior18: IPRIOR18,
         _reserved41: [u8; 0x1c],
         ///0x660 - Interrupt Priority configuration Register 19
-        pub pfic_iprior19: PFIC_IPRIOR19,
+        pub iprior19: IPRIOR19,
         _reserved42: [u8; 0x1c],
         ///0x680 - Interrupt Priority configuration Register 20
-        pub pfic_iprior20: PFIC_IPRIOR20,
+        pub iprior20: IPRIOR20,
         _reserved43: [u8; 0x1c],
         ///0x6a0 - Interrupt Priority configuration Register 21
-        pub pfic_iprior21: PFIC_IPRIOR21,
+        pub iprior21: IPRIOR21,
         _reserved44: [u8; 0x1c],
         ///0x6c0 - Interrupt Priority configuration Register 22
-        pub pfic_iprior22: PFIC_IPRIOR22,
+        pub iprior22: IPRIOR22,
         _reserved45: [u8; 0x1c],
         ///0x6e0 - Interrupt Priority configuration Register 23
-        pub pfic_iprior23: PFIC_IPRIOR23,
+        pub iprior23: IPRIOR23,
         _reserved46: [u8; 0x1c],
         ///0x700 - Interrupt Priority configuration Register 24
-        pub pfic_iprior24: PFIC_IPRIOR24,
+        pub iprior24: IPRIOR24,
         _reserved47: [u8; 0x1c],
         ///0x720 - Interrupt Priority configuration Register 25
-        pub pfic_iprior25: PFIC_IPRIOR25,
+        pub iprior25: IPRIOR25,
         _reserved48: [u8; 0x1c],
         ///0x740 - Interrupt Priority configuration Register 26
-        pub pfic_iprior26: PFIC_IPRIOR26,
+        pub iprior26: IPRIOR26,
         _reserved49: [u8; 0x1c],
         ///0x760 - Interrupt Priority configuration Register 27
-        pub pfic_iprior27: PFIC_IPRIOR27,
+        pub iprior27: IPRIOR27,
         _reserved50: [u8; 0x1c],
         ///0x780 - Interrupt Priority configuration Register 28
-        pub pfic_iprior28: PFIC_IPRIOR28,
+        pub iprior28: IPRIOR28,
         _reserved51: [u8; 0x1c],
         ///0x7a0 - Interrupt Priority configuration Register 29
-        pub pfic_iprior29: PFIC_IPRIOR29,
+        pub iprior29: IPRIOR29,
         _reserved52: [u8; 0x1c],
         ///0x7c0 - Interrupt Priority configuration Register 30
-        pub pfic_iprior30: PFIC_IPRIOR30,
+        pub iprior30: IPRIOR30,
         _reserved53: [u8; 0x1c],
         ///0x7e0 - Interrupt Priority configuration Register 31
-        pub pfic_iprior31: PFIC_IPRIOR31,
+        pub iprior31: IPRIOR31,
         _reserved54: [u8; 0x1c],
         ///0x800 - Interrupt Priority configuration Register 32
-        pub pfic_iprior32: PFIC_IPRIOR32,
+        pub iprior32: IPRIOR32,
         _reserved55: [u8; 0x1c],
         ///0x820 - Interrupt Priority configuration Register 33
-        pub pfic_iprior33: PFIC_IPRIOR33,
+        pub iprior33: IPRIOR33,
         _reserved56: [u8; 0x1c],
         ///0x840 - Interrupt Priority configuration Register 34
-        pub pfic_iprior34: PFIC_IPRIOR34,
+        pub iprior34: IPRIOR34,
         _reserved57: [u8; 0x1c],
         ///0x860 - Interrupt Priority configuration Register 35
-        pub pfic_iprior35: PFIC_IPRIOR35,
+        pub iprior35: IPRIOR35,
         _reserved58: [u8; 0x1c],
         ///0x880 - Interrupt Priority configuration Register 36
-        pub pfic_iprior36: PFIC_IPRIOR36,
+        pub iprior36: IPRIOR36,
         _reserved59: [u8; 0x1c],
         ///0x8a0 - Interrupt Priority configuration Register 37
-        pub pfic_iprior37: PFIC_IPRIOR37,
+        pub iprior37: IPRIOR37,
         _reserved60: [u8; 0x1c],
         ///0x8c0 - Interrupt Priority configuration Register 38
-        pub pfic_iprior38: PFIC_IPRIOR38,
+        pub iprior38: IPRIOR38,
         _reserved61: [u8; 0x1c],
         ///0x8e0 - Interrupt Priority configuration Register 39
-        pub pfic_iprior39: PFIC_IPRIOR39,
+        pub iprior39: IPRIOR39,
         _reserved62: [u8; 0x1c],
         ///0x900 - Interrupt Priority configuration Register 40
-        pub pfic_iprior40: PFIC_IPRIOR40,
+        pub iprior40: IPRIOR40,
         _reserved63: [u8; 0x1c],
         ///0x920 - Interrupt Priority configuration Register 41
-        pub pfic_iprior41: PFIC_IPRIOR41,
+        pub iprior41: IPRIOR41,
         _reserved64: [u8; 0x1c],
         ///0x940 - Interrupt Priority configuration Register 42
-        pub pfic_iprior42: PFIC_IPRIOR42,
+        pub iprior42: IPRIOR42,
         _reserved65: [u8; 0x1c],
         ///0x960 - Interrupt Priority configuration Register 43
-        pub pfic_iprior43: PFIC_IPRIOR43,
+        pub iprior43: IPRIOR43,
         _reserved66: [u8; 0x1c],
         ///0x980 - Interrupt Priority configuration Register 44
-        pub pfic_iprior44: PFIC_IPRIOR44,
+        pub iprior44: IPRIOR44,
         _reserved67: [u8; 0x1c],
         ///0x9a0 - Interrupt Priority configuration Register 45
-        pub pfic_iprior45: PFIC_IPRIOR45,
+        pub iprior45: IPRIOR45,
         _reserved68: [u8; 0x1c],
         ///0x9c0 - Interrupt Priority configuration Register 46
-        pub pfic_iprior46: PFIC_IPRIOR46,
+        pub iprior46: IPRIOR46,
         _reserved69: [u8; 0x1c],
         ///0x9e0 - Interrupt Priority configuration Register 47
-        pub pfic_iprior47: PFIC_IPRIOR47,
+        pub iprior47: IPRIOR47,
         _reserved70: [u8; 0x1c],
         ///0xa00 - Interrupt Priority configuration Register 48
-        pub pfic_iprior48: PFIC_IPRIOR48,
+        pub iprior48: IPRIOR48,
         _reserved71: [u8; 0x1c],
         ///0xa20 - Interrupt Priority configuration Register 49
-        pub pfic_iprior49: PFIC_IPRIOR49,
+        pub iprior49: IPRIOR49,
         _reserved72: [u8; 0x1c],
         ///0xa40 - Interrupt Priority configuration Register 50
-        pub pfic_iprior50: PFIC_IPRIOR50,
+        pub iprior50: IPRIOR50,
         _reserved73: [u8; 0x1c],
         ///0xa60 - Interrupt Priority configuration Register 51
-        pub pfic_iprior51: PFIC_IPRIOR51,
+        pub iprior51: IPRIOR51,
         _reserved74: [u8; 0x1c],
         ///0xa80 - Interrupt Priority configuration Register 52
-        pub pfic_iprior52: PFIC_IPRIOR52,
+        pub iprior52: IPRIOR52,
         _reserved75: [u8; 0x1c],
         ///0xaa0 - Interrupt Priority configuration Register 53
-        pub pfic_iprior53: PFIC_IPRIOR53,
+        pub iprior53: IPRIOR53,
         _reserved76: [u8; 0x2c],
         ///0xad0 - Interrupt Priority configuration Register 54
-        pub pfic_iprior54: PFIC_IPRIOR54,
+        pub iprior54: IPRIOR54,
         _reserved77: [u8; 0x0c],
         ///0xae0 - Interrupt Priority configuration Register 55
-        pub pfic_iprior55: PFIC_IPRIOR55,
+        pub iprior55: IPRIOR55,
         _reserved78: [u8; 0x1c],
         ///0xb00 - Interrupt Priority configuration Register 56
-        pub pfic_iprior56: PFIC_IPRIOR56,
+        pub iprior56: IPRIOR56,
         _reserved79: [u8; 0x1c],
         ///0xb20 - Interrupt Priority configuration Register 57
-        pub pfic_iprior57: PFIC_IPRIOR57,
+        pub iprior57: IPRIOR57,
         _reserved80: [u8; 0x1c],
         ///0xb40 - Interrupt Priority configuration Register 58
-        pub pfic_iprior58: PFIC_IPRIOR58,
+        pub iprior58: IPRIOR58,
         _reserved81: [u8; 0x1c],
         ///0xb60 - Interrupt Priority configuration Register 59
-        pub pfic_iprior59: PFIC_IPRIOR59,
+        pub iprior59: IPRIOR59,
         _reserved82: [u8; 0x1c],
         ///0xb80 - Interrupt Priority configuration Register 60
-        pub pfic_iprior60: PFIC_IPRIOR60,
+        pub iprior60: IPRIOR60,
         _reserved83: [u8; 0x1c],
         ///0xba0 - Interrupt Priority configuration Register 61
-        pub pfic_iprior61: PFIC_IPRIOR61,
+        pub iprior61: IPRIOR61,
         _reserved84: [u8; 0x3c],
         ///0xbe0 - Interrupt Priority configuration Register 62
-        pub pfic_iprior62: PFIC_IPRIOR62,
+        pub iprior62: IPRIOR62,
         _reserved85: [u8; 0x1c],
         ///0xc00 - Interrupt Priority configuration Register 63
-        pub pfic_iprior63: PFIC_IPRIOR63,
+        pub iprior63: IPRIOR63,
         _reserved86: [u8; 0x010c],
         ///0xd10 - System Control Register
-        pub pfic_sctlr: PFIC_SCTLR,
+        pub sctlr: SCTLR,
     }
-    ///PFIC_ISR1 (r) register accessor: an alias for `Reg<PFIC_ISR1_SPEC>`
-    pub type PFIC_ISR1 = crate::Reg<pfic_isr1::PFIC_ISR1_SPEC>;
+    ///ISR1 (r) register accessor: an alias for `Reg<ISR1_SPEC>`
+    pub type ISR1 = crate::Reg<isr1::ISR1_SPEC>;
     ///RO,Interrupt Status Register 1
-    pub mod pfic_isr1 {
-        ///Register `PFIC_ISR1` reader
-        pub struct R(crate::R<PFIC_ISR1_SPEC>);
+    pub mod isr1 {
+        ///Register `ISR1` reader
+        pub struct R(crate::R<ISR1_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_ISR1_SPEC>;
+            type Target = crate::R<ISR1_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_ISR1_SPEC>> for R {
+        impl From<crate::R<ISR1_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_ISR1_SPEC>) -> Self {
+            fn from(reader: crate::R<ISR1_SPEC>) -> Self {
                 R(reader)
             }
         }
@@ -26308,36 +24010,36 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_isr1](index.html) module
-        pub struct PFIC_ISR1_SPEC;
-        impl crate::RegisterSpec for PFIC_ISR1_SPEC {
+        ///For information about available fields see [isr1](index.html) module
+        pub struct ISR1_SPEC;
+        impl crate::RegisterSpec for ISR1_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_isr1::R](R) reader structure
-        impl crate::Readable for PFIC_ISR1_SPEC {
+        ///`read()` method returns [isr1::R](R) reader structure
+        impl crate::Readable for ISR1_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets PFIC_ISR1 to value 0x0c
-        impl crate::Resettable for PFIC_ISR1_SPEC {
+        ///`reset()` method sets ISR1 to value 0x0c
+        impl crate::Resettable for ISR1_SPEC {
             const RESET_VALUE: Self::Ux = 0x0c;
         }
     }
-    ///PFIC_ISR2 (r) register accessor: an alias for `Reg<PFIC_ISR2_SPEC>`
-    pub type PFIC_ISR2 = crate::Reg<pfic_isr2::PFIC_ISR2_SPEC>;
+    ///ISR2 (r) register accessor: an alias for `Reg<ISR2_SPEC>`
+    pub type ISR2 = crate::Reg<isr2::ISR2_SPEC>;
     ///RO,Interrupt Status Register 2
-    pub mod pfic_isr2 {
-        ///Register `PFIC_ISR2` reader
-        pub struct R(crate::R<PFIC_ISR2_SPEC>);
+    pub mod isr2 {
+        ///Register `ISR2` reader
+        pub struct R(crate::R<ISR2_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_ISR2_SPEC>;
+            type Target = crate::R<ISR2_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_ISR2_SPEC>> for R {
+        impl From<crate::R<ISR2_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_ISR2_SPEC>) -> Self {
+            fn from(reader: crate::R<ISR2_SPEC>) -> Self {
                 R(reader)
             }
         }
@@ -26354,36 +24056,36 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_isr2](index.html) module
-        pub struct PFIC_ISR2_SPEC;
-        impl crate::RegisterSpec for PFIC_ISR2_SPEC {
+        ///For information about available fields see [isr2](index.html) module
+        pub struct ISR2_SPEC;
+        impl crate::RegisterSpec for ISR2_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_isr2::R](R) reader structure
-        impl crate::Readable for PFIC_ISR2_SPEC {
+        ///`read()` method returns [isr2::R](R) reader structure
+        impl crate::Readable for ISR2_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets PFIC_ISR2 to value 0
-        impl crate::Resettable for PFIC_ISR2_SPEC {
+        ///`reset()` method sets ISR2 to value 0
+        impl crate::Resettable for ISR2_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPR1 (r) register accessor: an alias for `Reg<PFIC_IPR1_SPEC>`
-    pub type PFIC_IPR1 = crate::Reg<pfic_ipr1::PFIC_IPR1_SPEC>;
+    ///IPR1 (r) register accessor: an alias for `Reg<IPR1_SPEC>`
+    pub type IPR1 = crate::Reg<ipr1::IPR1_SPEC>;
     ///RO,Interrupt Pending Register 1
-    pub mod pfic_ipr1 {
-        ///Register `PFIC_IPR1` reader
-        pub struct R(crate::R<PFIC_IPR1_SPEC>);
+    pub mod ipr1 {
+        ///Register `IPR1` reader
+        pub struct R(crate::R<IPR1_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPR1_SPEC>;
+            type Target = crate::R<IPR1_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPR1_SPEC>> for R {
+        impl From<crate::R<IPR1_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPR1_SPEC>) -> Self {
+            fn from(reader: crate::R<IPR1_SPEC>) -> Self {
                 R(reader)
             }
         }
@@ -26400,36 +24102,36 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_ipr1](index.html) module
-        pub struct PFIC_IPR1_SPEC;
-        impl crate::RegisterSpec for PFIC_IPR1_SPEC {
+        ///For information about available fields see [ipr1](index.html) module
+        pub struct IPR1_SPEC;
+        impl crate::RegisterSpec for IPR1_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_ipr1::R](R) reader structure
-        impl crate::Readable for PFIC_IPR1_SPEC {
+        ///`read()` method returns [ipr1::R](R) reader structure
+        impl crate::Readable for IPR1_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets PFIC_IPR1 to value 0
-        impl crate::Resettable for PFIC_IPR1_SPEC {
+        ///`reset()` method sets IPR1 to value 0
+        impl crate::Resettable for IPR1_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPR2 (r) register accessor: an alias for `Reg<PFIC_IPR2_SPEC>`
-    pub type PFIC_IPR2 = crate::Reg<pfic_ipr2::PFIC_IPR2_SPEC>;
+    ///IPR2 (r) register accessor: an alias for `Reg<IPR2_SPEC>`
+    pub type IPR2 = crate::Reg<ipr2::IPR2_SPEC>;
     ///RO,Interrupt Pending Register 2
-    pub mod pfic_ipr2 {
-        ///Register `PFIC_IPR2` reader
-        pub struct R(crate::R<PFIC_IPR2_SPEC>);
+    pub mod ipr2 {
+        ///Register `IPR2` reader
+        pub struct R(crate::R<IPR2_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPR2_SPEC>;
+            type Target = crate::R<IPR2_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPR2_SPEC>> for R {
+        impl From<crate::R<IPR2_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPR2_SPEC>) -> Self {
+            fn from(reader: crate::R<IPR2_SPEC>) -> Self {
                 R(reader)
             }
         }
@@ -26446,43 +24148,43 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_ipr2](index.html) module
-        pub struct PFIC_IPR2_SPEC;
-        impl crate::RegisterSpec for PFIC_IPR2_SPEC {
+        ///For information about available fields see [ipr2](index.html) module
+        pub struct IPR2_SPEC;
+        impl crate::RegisterSpec for IPR2_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_ipr2::R](R) reader structure
-        impl crate::Readable for PFIC_IPR2_SPEC {
+        ///`read()` method returns [ipr2::R](R) reader structure
+        impl crate::Readable for IPR2_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets PFIC_IPR2 to value 0
-        impl crate::Resettable for PFIC_IPR2_SPEC {
+        ///`reset()` method sets IPR2 to value 0
+        impl crate::Resettable for IPR2_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_ITHRESDR (rw) register accessor: an alias for `Reg<PFIC_ITHRESDR_SPEC>`
-    pub type PFIC_ITHRESDR = crate::Reg<pfic_ithresdr::PFIC_ITHRESDR_SPEC>;
+    ///ITHRESDR (rw) register accessor: an alias for `Reg<ITHRESDR_SPEC>`
+    pub type ITHRESDR = crate::Reg<ithresdr::ITHRESDR_SPEC>;
     ///RW,Interrupt Priority Register
-    pub mod pfic_ithresdr {
-        ///Register `PFIC_ITHRESDR` reader
-        pub struct R(crate::R<PFIC_ITHRESDR_SPEC>);
+    pub mod ithresdr {
+        ///Register `ITHRESDR` reader
+        pub struct R(crate::R<ITHRESDR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_ITHRESDR_SPEC>;
+            type Target = crate::R<ITHRESDR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_ITHRESDR_SPEC>> for R {
+        impl From<crate::R<ITHRESDR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_ITHRESDR_SPEC>) -> Self {
+            fn from(reader: crate::R<ITHRESDR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_ITHRESDR` writer
-        pub struct W(crate::W<PFIC_ITHRESDR_SPEC>);
+        ///Register `ITHRESDR` writer
+        pub struct W(crate::W<ITHRESDR_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_ITHRESDR_SPEC>;
+            type Target = crate::W<ITHRESDR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -26494,16 +24196,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_ITHRESDR_SPEC>> for W {
+        impl From<crate::W<ITHRESDR_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_ITHRESDR_SPEC>) -> Self {
+            fn from(writer: crate::W<ITHRESDR_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `THRESHOLD` reader - RW,THRESHOLD
         pub type THRESHOLD_R = crate::FieldReader;
         ///Field `THRESHOLD` writer - RW,THRESHOLD
-        pub type THRESHOLD_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_ITHRESDR_SPEC, 8, O>;
+        pub type THRESHOLD_W<'a, const O: u8> = crate::FieldWriter<'a, ITHRESDR_SPEC, 8, O>;
         impl R {
             ///Bits 0:7 - RW,THRESHOLD
             #[inline(always)]
@@ -26529,34 +24231,34 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_ithresdr](index.html) module
-        pub struct PFIC_ITHRESDR_SPEC;
-        impl crate::RegisterSpec for PFIC_ITHRESDR_SPEC {
+        ///For information about available fields see [ithresdr](index.html) module
+        pub struct ITHRESDR_SPEC;
+        impl crate::RegisterSpec for ITHRESDR_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_ithresdr::R](R) reader structure
-        impl crate::Readable for PFIC_ITHRESDR_SPEC {
+        ///`read()` method returns [ithresdr::R](R) reader structure
+        impl crate::Readable for ITHRESDR_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_ithresdr::W](W) writer structure
-        impl crate::Writable for PFIC_ITHRESDR_SPEC {
+        ///`write(|w| ..)` method takes [ithresdr::W](W) writer structure
+        impl crate::Writable for ITHRESDR_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_ITHRESDR to value 0
-        impl crate::Resettable for PFIC_ITHRESDR_SPEC {
+        ///`reset()` method sets ITHRESDR to value 0
+        impl crate::Resettable for ITHRESDR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_CFGR (w) register accessor: an alias for `Reg<PFIC_CFGR_SPEC>`
-    pub type PFIC_CFGR = crate::Reg<pfic_cfgr::PFIC_CFGR_SPEC>;
+    ///CFGR (w) register accessor: an alias for `Reg<CFGR_SPEC>`
+    pub type CFGR = crate::Reg<cfgr::CFGR_SPEC>;
     ///Interrupt Config Register
-    pub mod pfic_cfgr {
-        ///Register `PFIC_CFGR` writer
-        pub struct W(crate::W<PFIC_CFGR_SPEC>);
+    pub mod cfgr {
+        ///Register `CFGR` writer
+        pub struct W(crate::W<CFGR_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_CFGR_SPEC>;
+            type Target = crate::W<CFGR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -26568,16 +24270,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_CFGR_SPEC>> for W {
+        impl From<crate::W<CFGR_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_CFGR_SPEC>) -> Self {
+            fn from(writer: crate::W<CFGR_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `RESETSYS` writer - WO,RESETSYS
-        pub type RESETSYS_W<'a, const O: u8> = crate::BitWriter<'a, PFIC_CFGR_SPEC, O>;
+        pub type RESETSYS_W<'a, const O: u8> = crate::BitWriter<'a, CFGR_SPEC, O>;
         ///Field `KEYCODE` writer - WO,KEYCODE
-        pub type KEYCODE_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_CFGR_SPEC, 16, O, u16>;
+        pub type KEYCODE_W<'a, const O: u8> = crate::FieldWriter<'a, CFGR_SPEC, 16, O, u16>;
         impl W {
             ///Bit 7 - WO,RESETSYS
             #[inline(always)]
@@ -26602,38 +24304,38 @@ pub mod pfic {
         ///
         ///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_cfgr](index.html) module
-        pub struct PFIC_CFGR_SPEC;
-        impl crate::RegisterSpec for PFIC_CFGR_SPEC {
+        ///For information about available fields see [cfgr](index.html) module
+        pub struct CFGR_SPEC;
+        impl crate::RegisterSpec for CFGR_SPEC {
             type Ux = u32;
         }
-        ///`write(|w| ..)` method takes [pfic_cfgr::W](W) writer structure
-        impl crate::Writable for PFIC_CFGR_SPEC {
+        ///`write(|w| ..)` method takes [cfgr::W](W) writer structure
+        impl crate::Writable for CFGR_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_CFGR to value 0
-        impl crate::Resettable for PFIC_CFGR_SPEC {
+        ///`reset()` method sets CFGR to value 0
+        impl crate::Resettable for CFGR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_GISR (r) register accessor: an alias for `Reg<PFIC_GISR_SPEC>`
-    pub type PFIC_GISR = crate::Reg<pfic_gisr::PFIC_GISR_SPEC>;
+    ///GISR (r) register accessor: an alias for `Reg<GISR_SPEC>`
+    pub type GISR = crate::Reg<gisr::GISR_SPEC>;
     ///Interrupt Global Register
-    pub mod pfic_gisr {
-        ///Register `PFIC_GISR` reader
-        pub struct R(crate::R<PFIC_GISR_SPEC>);
+    pub mod gisr {
+        ///Register `GISR` reader
+        pub struct R(crate::R<GISR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_GISR_SPEC>;
+            type Target = crate::R<GISR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_GISR_SPEC>> for R {
+        impl From<crate::R<GISR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_GISR_SPEC>) -> Self {
+            fn from(reader: crate::R<GISR_SPEC>) -> Self {
                 R(reader)
             }
         }
@@ -26664,43 +24366,43 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_gisr](index.html) module
-        pub struct PFIC_GISR_SPEC;
-        impl crate::RegisterSpec for PFIC_GISR_SPEC {
+        ///For information about available fields see [gisr](index.html) module
+        pub struct GISR_SPEC;
+        impl crate::RegisterSpec for GISR_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_gisr::R](R) reader structure
-        impl crate::Readable for PFIC_GISR_SPEC {
+        ///`read()` method returns [gisr::R](R) reader structure
+        impl crate::Readable for GISR_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets PFIC_GISR to value 0
-        impl crate::Resettable for PFIC_GISR_SPEC {
+        ///`reset()` method sets GISR to value 0
+        impl crate::Resettable for GISR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IDCFGR (rw) register accessor: an alias for `Reg<PFIC_IDCFGR_SPEC>`
-    pub type PFIC_IDCFGR = crate::Reg<pfic_idcfgr::PFIC_IDCFGR_SPEC>;
+    ///IDCFGR (rw) register accessor: an alias for `Reg<IDCFGR_SPEC>`
+    pub type IDCFGR = crate::Reg<idcfgr::IDCFGR_SPEC>;
     ///RW,Interrupt Fast ID Config Register
-    pub mod pfic_idcfgr {
-        ///Register `PFIC_IDCFGR` reader
-        pub struct R(crate::R<PFIC_IDCFGR_SPEC>);
+    pub mod idcfgr {
+        ///Register `IDCFGR` reader
+        pub struct R(crate::R<IDCFGR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IDCFGR_SPEC>;
+            type Target = crate::R<IDCFGR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IDCFGR_SPEC>> for R {
+        impl From<crate::R<IDCFGR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IDCFGR_SPEC>) -> Self {
+            fn from(reader: crate::R<IDCFGR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IDCFGR` writer
-        pub struct W(crate::W<PFIC_IDCFGR_SPEC>);
+        ///Register `IDCFGR` writer
+        pub struct W(crate::W<IDCFGR_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IDCFGR_SPEC>;
+            type Target = crate::W<IDCFGR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -26712,28 +24414,28 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IDCFGR_SPEC>> for W {
+        impl From<crate::W<IDCFGR_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IDCFGR_SPEC>) -> Self {
+            fn from(writer: crate::W<IDCFGR_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `FIID0` reader - RW,FIID0
         pub type FIID0_R = crate::FieldReader;
         ///Field `FIID0` writer - RW,FIID0
-        pub type FIID0_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IDCFGR_SPEC, 8, O>;
+        pub type FIID0_W<'a, const O: u8> = crate::FieldWriter<'a, IDCFGR_SPEC, 8, O>;
         ///Field `FIID1` reader - RW,FIID1
         pub type FIID1_R = crate::FieldReader;
         ///Field `FIID1` writer - RW,FIID1
-        pub type FIID1_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IDCFGR_SPEC, 8, O>;
+        pub type FIID1_W<'a, const O: u8> = crate::FieldWriter<'a, IDCFGR_SPEC, 8, O>;
         ///Field `FIID2` reader - RW,FIID2
         pub type FIID2_R = crate::FieldReader;
         ///Field `FIID2` writer - RW,FIID2
-        pub type FIID2_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IDCFGR_SPEC, 8, O>;
+        pub type FIID2_W<'a, const O: u8> = crate::FieldWriter<'a, IDCFGR_SPEC, 8, O>;
         ///Field `FIID3` reader - RW,FIID3
         pub type FIID3_R = crate::FieldReader;
         ///Field `FIID3` writer - RW,FIID3
-        pub type FIID3_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IDCFGR_SPEC, 8, O>;
+        pub type FIID3_W<'a, const O: u8> = crate::FieldWriter<'a, IDCFGR_SPEC, 8, O>;
         impl R {
             ///Bits 0:7 - RW,FIID0
             #[inline(always)]
@@ -26792,49 +24494,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_idcfgr](index.html) module
-        pub struct PFIC_IDCFGR_SPEC;
-        impl crate::RegisterSpec for PFIC_IDCFGR_SPEC {
+        ///For information about available fields see [idcfgr](index.html) module
+        pub struct IDCFGR_SPEC;
+        impl crate::RegisterSpec for IDCFGR_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_idcfgr::R](R) reader structure
-        impl crate::Readable for PFIC_IDCFGR_SPEC {
+        ///`read()` method returns [idcfgr::R](R) reader structure
+        impl crate::Readable for IDCFGR_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_idcfgr::W](W) writer structure
-        impl crate::Writable for PFIC_IDCFGR_SPEC {
+        ///`write(|w| ..)` method takes [idcfgr::W](W) writer structure
+        impl crate::Writable for IDCFGR_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IDCFGR to value 0
-        impl crate::Resettable for PFIC_IDCFGR_SPEC {
+        ///`reset()` method sets IDCFGR to value 0
+        impl crate::Resettable for IDCFGR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_FIADDRR0 (rw) register accessor: an alias for `Reg<PFIC_FIADDRR0_SPEC>`
-    pub type PFIC_FIADDRR0 = crate::Reg<pfic_fiaddrr0::PFIC_FIADDRR0_SPEC>;
+    ///FIADDRR0 (rw) register accessor: an alias for `Reg<FIADDRR0_SPEC>`
+    pub type FIADDRR0 = crate::Reg<fiaddrr0::FIADDRR0_SPEC>;
     ///Interrupt 0 address Register
-    pub mod pfic_fiaddrr0 {
-        ///Register `PFIC_FIADDRR0` reader
-        pub struct R(crate::R<PFIC_FIADDRR0_SPEC>);
+    pub mod fiaddrr0 {
+        ///Register `FIADDRR0` reader
+        pub struct R(crate::R<FIADDRR0_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_FIADDRR0_SPEC>;
+            type Target = crate::R<FIADDRR0_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_FIADDRR0_SPEC>> for R {
+        impl From<crate::R<FIADDRR0_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_FIADDRR0_SPEC>) -> Self {
+            fn from(reader: crate::R<FIADDRR0_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_FIADDRR0` writer
-        pub struct W(crate::W<PFIC_FIADDRR0_SPEC>);
+        ///Register `FIADDRR0` writer
+        pub struct W(crate::W<FIADDRR0_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_FIADDRR0_SPEC>;
+            type Target = crate::W<FIADDRR0_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -26846,20 +24548,20 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_FIADDRR0_SPEC>> for W {
+        impl From<crate::W<FIADDRR0_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_FIADDRR0_SPEC>) -> Self {
+            fn from(writer: crate::W<FIADDRR0_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `FI0EN` reader - RW,Fast interrupt channel 0 enable bit
         pub type FI0EN_R = crate::BitReader;
         ///Field `FI0EN` writer - RW,Fast interrupt channel 0 enable bit
-        pub type FI0EN_W<'a, const O: u8> = crate::BitWriter<'a, PFIC_FIADDRR0_SPEC, O>;
+        pub type FI0EN_W<'a, const O: u8> = crate::BitWriter<'a, FIADDRR0_SPEC, O>;
         ///Field `ADDR0` reader - RW,ADDR0
         pub type ADDR0_R = crate::FieldReader<u32>;
         ///Field `ADDR0` writer - RW,ADDR0
-        pub type ADDR0_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_FIADDRR0_SPEC, 31, O, u32>;
+        pub type ADDR0_W<'a, const O: u8> = crate::FieldWriter<'a, FIADDRR0_SPEC, 31, O, u32>;
         impl R {
             ///Bit 0 - RW,Fast interrupt channel 0 enable bit
             #[inline(always)]
@@ -26896,49 +24598,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_fiaddrr0](index.html) module
-        pub struct PFIC_FIADDRR0_SPEC;
-        impl crate::RegisterSpec for PFIC_FIADDRR0_SPEC {
+        ///For information about available fields see [fiaddrr0](index.html) module
+        pub struct FIADDRR0_SPEC;
+        impl crate::RegisterSpec for FIADDRR0_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_fiaddrr0::R](R) reader structure
-        impl crate::Readable for PFIC_FIADDRR0_SPEC {
+        ///`read()` method returns [fiaddrr0::R](R) reader structure
+        impl crate::Readable for FIADDRR0_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_fiaddrr0::W](W) writer structure
-        impl crate::Writable for PFIC_FIADDRR0_SPEC {
+        ///`write(|w| ..)` method takes [fiaddrr0::W](W) writer structure
+        impl crate::Writable for FIADDRR0_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_FIADDRR0 to value 0
-        impl crate::Resettable for PFIC_FIADDRR0_SPEC {
+        ///`reset()` method sets FIADDRR0 to value 0
+        impl crate::Resettable for FIADDRR0_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_FIADDRR1 (rw) register accessor: an alias for `Reg<PFIC_FIADDRR1_SPEC>`
-    pub type PFIC_FIADDRR1 = crate::Reg<pfic_fiaddrr1::PFIC_FIADDRR1_SPEC>;
+    ///FIADDRR1 (rw) register accessor: an alias for `Reg<FIADDRR1_SPEC>`
+    pub type FIADDRR1 = crate::Reg<fiaddrr1::FIADDRR1_SPEC>;
     ///Interrupt 1 address Register
-    pub mod pfic_fiaddrr1 {
-        ///Register `PFIC_FIADDRR1` reader
-        pub struct R(crate::R<PFIC_FIADDRR1_SPEC>);
+    pub mod fiaddrr1 {
+        ///Register `FIADDRR1` reader
+        pub struct R(crate::R<FIADDRR1_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_FIADDRR1_SPEC>;
+            type Target = crate::R<FIADDRR1_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_FIADDRR1_SPEC>> for R {
+        impl From<crate::R<FIADDRR1_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_FIADDRR1_SPEC>) -> Self {
+            fn from(reader: crate::R<FIADDRR1_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_FIADDRR1` writer
-        pub struct W(crate::W<PFIC_FIADDRR1_SPEC>);
+        ///Register `FIADDRR1` writer
+        pub struct W(crate::W<FIADDRR1_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_FIADDRR1_SPEC>;
+            type Target = crate::W<FIADDRR1_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -26950,20 +24652,20 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_FIADDRR1_SPEC>> for W {
+        impl From<crate::W<FIADDRR1_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_FIADDRR1_SPEC>) -> Self {
+            fn from(writer: crate::W<FIADDRR1_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `FI1EN` reader - RW,Fast interrupt channel 1 enable bit
         pub type FI1EN_R = crate::BitReader;
         ///Field `FI1EN` writer - RW,Fast interrupt channel 1 enable bit
-        pub type FI1EN_W<'a, const O: u8> = crate::BitWriter<'a, PFIC_FIADDRR1_SPEC, O>;
+        pub type FI1EN_W<'a, const O: u8> = crate::BitWriter<'a, FIADDRR1_SPEC, O>;
         ///Field `ADDR1` reader - RW,ADDR1
         pub type ADDR1_R = crate::FieldReader<u32>;
         ///Field `ADDR1` writer - RW,ADDR1
-        pub type ADDR1_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_FIADDRR1_SPEC, 31, O, u32>;
+        pub type ADDR1_W<'a, const O: u8> = crate::FieldWriter<'a, FIADDRR1_SPEC, 31, O, u32>;
         impl R {
             ///Bit 0 - RW,Fast interrupt channel 1 enable bit
             #[inline(always)]
@@ -27000,49 +24702,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_fiaddrr1](index.html) module
-        pub struct PFIC_FIADDRR1_SPEC;
-        impl crate::RegisterSpec for PFIC_FIADDRR1_SPEC {
+        ///For information about available fields see [fiaddrr1](index.html) module
+        pub struct FIADDRR1_SPEC;
+        impl crate::RegisterSpec for FIADDRR1_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_fiaddrr1::R](R) reader structure
-        impl crate::Readable for PFIC_FIADDRR1_SPEC {
+        ///`read()` method returns [fiaddrr1::R](R) reader structure
+        impl crate::Readable for FIADDRR1_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_fiaddrr1::W](W) writer structure
-        impl crate::Writable for PFIC_FIADDRR1_SPEC {
+        ///`write(|w| ..)` method takes [fiaddrr1::W](W) writer structure
+        impl crate::Writable for FIADDRR1_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_FIADDRR1 to value 0
-        impl crate::Resettable for PFIC_FIADDRR1_SPEC {
+        ///`reset()` method sets FIADDRR1 to value 0
+        impl crate::Resettable for FIADDRR1_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_FIADDRR2 (rw) register accessor: an alias for `Reg<PFIC_FIADDRR2_SPEC>`
-    pub type PFIC_FIADDRR2 = crate::Reg<pfic_fiaddrr2::PFIC_FIADDRR2_SPEC>;
+    ///FIADDRR2 (rw) register accessor: an alias for `Reg<FIADDRR2_SPEC>`
+    pub type FIADDRR2 = crate::Reg<fiaddrr2::FIADDRR2_SPEC>;
     ///Interrupt 2 address Register
-    pub mod pfic_fiaddrr2 {
-        ///Register `PFIC_FIADDRR2` reader
-        pub struct R(crate::R<PFIC_FIADDRR2_SPEC>);
+    pub mod fiaddrr2 {
+        ///Register `FIADDRR2` reader
+        pub struct R(crate::R<FIADDRR2_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_FIADDRR2_SPEC>;
+            type Target = crate::R<FIADDRR2_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_FIADDRR2_SPEC>> for R {
+        impl From<crate::R<FIADDRR2_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_FIADDRR2_SPEC>) -> Self {
+            fn from(reader: crate::R<FIADDRR2_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_FIADDRR2` writer
-        pub struct W(crate::W<PFIC_FIADDRR2_SPEC>);
+        ///Register `FIADDRR2` writer
+        pub struct W(crate::W<FIADDRR2_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_FIADDRR2_SPEC>;
+            type Target = crate::W<FIADDRR2_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -27054,20 +24756,20 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_FIADDRR2_SPEC>> for W {
+        impl From<crate::W<FIADDRR2_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_FIADDRR2_SPEC>) -> Self {
+            fn from(writer: crate::W<FIADDRR2_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `FI2EN` reader - RW,Fast interrupt channel 2 enable bit
         pub type FI2EN_R = crate::BitReader;
         ///Field `FI2EN` writer - RW,Fast interrupt channel 2 enable bit
-        pub type FI2EN_W<'a, const O: u8> = crate::BitWriter<'a, PFIC_FIADDRR2_SPEC, O>;
+        pub type FI2EN_W<'a, const O: u8> = crate::BitWriter<'a, FIADDRR2_SPEC, O>;
         ///Field `ADDR2` reader - RW,ADDR2
         pub type ADDR2_R = crate::FieldReader<u32>;
         ///Field `ADDR2` writer - RW,ADDR2
-        pub type ADDR2_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_FIADDRR2_SPEC, 31, O, u32>;
+        pub type ADDR2_W<'a, const O: u8> = crate::FieldWriter<'a, FIADDRR2_SPEC, 31, O, u32>;
         impl R {
             ///Bit 0 - RW,Fast interrupt channel 2 enable bit
             #[inline(always)]
@@ -27104,49 +24806,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_fiaddrr2](index.html) module
-        pub struct PFIC_FIADDRR2_SPEC;
-        impl crate::RegisterSpec for PFIC_FIADDRR2_SPEC {
+        ///For information about available fields see [fiaddrr2](index.html) module
+        pub struct FIADDRR2_SPEC;
+        impl crate::RegisterSpec for FIADDRR2_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_fiaddrr2::R](R) reader structure
-        impl crate::Readable for PFIC_FIADDRR2_SPEC {
+        ///`read()` method returns [fiaddrr2::R](R) reader structure
+        impl crate::Readable for FIADDRR2_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_fiaddrr2::W](W) writer structure
-        impl crate::Writable for PFIC_FIADDRR2_SPEC {
+        ///`write(|w| ..)` method takes [fiaddrr2::W](W) writer structure
+        impl crate::Writable for FIADDRR2_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_FIADDRR2 to value 0
-        impl crate::Resettable for PFIC_FIADDRR2_SPEC {
+        ///`reset()` method sets FIADDRR2 to value 0
+        impl crate::Resettable for FIADDRR2_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_FIADDRR3 (rw) register accessor: an alias for `Reg<PFIC_FIADDRR3_SPEC>`
-    pub type PFIC_FIADDRR3 = crate::Reg<pfic_fiaddrr3::PFIC_FIADDRR3_SPEC>;
+    ///FIADDRR3 (rw) register accessor: an alias for `Reg<FIADDRR3_SPEC>`
+    pub type FIADDRR3 = crate::Reg<fiaddrr3::FIADDRR3_SPEC>;
     ///Interrupt 3 address Register
-    pub mod pfic_fiaddrr3 {
-        ///Register `PFIC_FIADDRR3` reader
-        pub struct R(crate::R<PFIC_FIADDRR3_SPEC>);
+    pub mod fiaddrr3 {
+        ///Register `FIADDRR3` reader
+        pub struct R(crate::R<FIADDRR3_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_FIADDRR3_SPEC>;
+            type Target = crate::R<FIADDRR3_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_FIADDRR3_SPEC>> for R {
+        impl From<crate::R<FIADDRR3_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_FIADDRR3_SPEC>) -> Self {
+            fn from(reader: crate::R<FIADDRR3_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_FIADDRR3` writer
-        pub struct W(crate::W<PFIC_FIADDRR3_SPEC>);
+        ///Register `FIADDRR3` writer
+        pub struct W(crate::W<FIADDRR3_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_FIADDRR3_SPEC>;
+            type Target = crate::W<FIADDRR3_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -27158,20 +24860,20 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_FIADDRR3_SPEC>> for W {
+        impl From<crate::W<FIADDRR3_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_FIADDRR3_SPEC>) -> Self {
+            fn from(writer: crate::W<FIADDRR3_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `FI3EN` reader - RW,Fast interrupt channel 3 enable bit
         pub type FI3EN_R = crate::BitReader;
         ///Field `FI3EN` writer - RW,Fast interrupt channel 3 enable bit
-        pub type FI3EN_W<'a, const O: u8> = crate::BitWriter<'a, PFIC_FIADDRR3_SPEC, O>;
+        pub type FI3EN_W<'a, const O: u8> = crate::BitWriter<'a, FIADDRR3_SPEC, O>;
         ///Field `ADDR3` reader - RW,ADDR3
         pub type ADDR3_R = crate::FieldReader<u32>;
         ///Field `ADDR3` writer - RW,ADDR3
-        pub type ADDR3_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_FIADDRR3_SPEC, 31, O, u32>;
+        pub type ADDR3_W<'a, const O: u8> = crate::FieldWriter<'a, FIADDRR3_SPEC, 31, O, u32>;
         impl R {
             ///Bit 0 - RW,Fast interrupt channel 3 enable bit
             #[inline(always)]
@@ -27208,34 +24910,34 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_fiaddrr3](index.html) module
-        pub struct PFIC_FIADDRR3_SPEC;
-        impl crate::RegisterSpec for PFIC_FIADDRR3_SPEC {
+        ///For information about available fields see [fiaddrr3](index.html) module
+        pub struct FIADDRR3_SPEC;
+        impl crate::RegisterSpec for FIADDRR3_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_fiaddrr3::R](R) reader structure
-        impl crate::Readable for PFIC_FIADDRR3_SPEC {
+        ///`read()` method returns [fiaddrr3::R](R) reader structure
+        impl crate::Readable for FIADDRR3_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_fiaddrr3::W](W) writer structure
-        impl crate::Writable for PFIC_FIADDRR3_SPEC {
+        ///`write(|w| ..)` method takes [fiaddrr3::W](W) writer structure
+        impl crate::Writable for FIADDRR3_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_FIADDRR3 to value 0
-        impl crate::Resettable for PFIC_FIADDRR3_SPEC {
+        ///`reset()` method sets FIADDRR3 to value 0
+        impl crate::Resettable for FIADDRR3_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IENR1 (w) register accessor: an alias for `Reg<PFIC_IENR1_SPEC>`
-    pub type PFIC_IENR1 = crate::Reg<pfic_ienr1::PFIC_IENR1_SPEC>;
+    ///IENR1 (w) register accessor: an alias for `Reg<IENR1_SPEC>`
+    pub type IENR1 = crate::Reg<ienr1::IENR1_SPEC>;
     ///Interrupt Setting Register
-    pub mod pfic_ienr1 {
-        ///Register `PFIC_IENR1` writer
-        pub struct W(crate::W<PFIC_IENR1_SPEC>);
+    pub mod ienr1 {
+        ///Register `IENR1` writer
+        pub struct W(crate::W<IENR1_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IENR1_SPEC>;
+            type Target = crate::W<IENR1_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -27247,14 +24949,14 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IENR1_SPEC>> for W {
+        impl From<crate::W<IENR1_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IENR1_SPEC>) -> Self {
+            fn from(writer: crate::W<IENR1_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `INTEN` writer - RW1,INTEN
-        pub type INTEN_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IENR1_SPEC, 20, O, u32>;
+        pub type INTEN_W<'a, const O: u8> = crate::FieldWriter<'a, IENR1_SPEC, 20, O, u32>;
         impl W {
             ///Bits 12:31 - RW1,INTEN
             #[inline(always)]
@@ -27273,30 +24975,30 @@ pub mod pfic {
         ///
         ///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_ienr1](index.html) module
-        pub struct PFIC_IENR1_SPEC;
-        impl crate::RegisterSpec for PFIC_IENR1_SPEC {
+        ///For information about available fields see [ienr1](index.html) module
+        pub struct IENR1_SPEC;
+        impl crate::RegisterSpec for IENR1_SPEC {
             type Ux = u32;
         }
-        ///`write(|w| ..)` method takes [pfic_ienr1::W](W) writer structure
-        impl crate::Writable for PFIC_IENR1_SPEC {
+        ///`write(|w| ..)` method takes [ienr1::W](W) writer structure
+        impl crate::Writable for IENR1_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IENR1 to value 0
-        impl crate::Resettable for PFIC_IENR1_SPEC {
+        ///`reset()` method sets IENR1 to value 0
+        impl crate::Resettable for IENR1_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IENR2 (w) register accessor: an alias for `Reg<PFIC_IENR2_SPEC>`
-    pub type PFIC_IENR2 = crate::Reg<pfic_ienr2::PFIC_IENR2_SPEC>;
+    ///IENR2 (w) register accessor: an alias for `Reg<IENR2_SPEC>`
+    pub type IENR2 = crate::Reg<ienr2::IENR2_SPEC>;
     ///Interrupt Setting Register
-    pub mod pfic_ienr2 {
-        ///Register `PFIC_IENR2` writer
-        pub struct W(crate::W<PFIC_IENR2_SPEC>);
+    pub mod ienr2 {
+        ///Register `IENR2` writer
+        pub struct W(crate::W<IENR2_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IENR2_SPEC>;
+            type Target = crate::W<IENR2_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -27308,14 +25010,14 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IENR2_SPEC>> for W {
+        impl From<crate::W<IENR2_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IENR2_SPEC>) -> Self {
+            fn from(writer: crate::W<IENR2_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `INTEN` writer - RW1,INTEN
-        pub type INTEN_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IENR2_SPEC, 4, O>;
+        pub type INTEN_W<'a, const O: u8> = crate::FieldWriter<'a, IENR2_SPEC, 4, O>;
         impl W {
             ///Bits 0:3 - RW1,INTEN
             #[inline(always)]
@@ -27334,30 +25036,30 @@ pub mod pfic {
         ///
         ///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_ienr2](index.html) module
-        pub struct PFIC_IENR2_SPEC;
-        impl crate::RegisterSpec for PFIC_IENR2_SPEC {
+        ///For information about available fields see [ienr2](index.html) module
+        pub struct IENR2_SPEC;
+        impl crate::RegisterSpec for IENR2_SPEC {
             type Ux = u32;
         }
-        ///`write(|w| ..)` method takes [pfic_ienr2::W](W) writer structure
-        impl crate::Writable for PFIC_IENR2_SPEC {
+        ///`write(|w| ..)` method takes [ienr2::W](W) writer structure
+        impl crate::Writable for IENR2_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IENR2 to value 0
-        impl crate::Resettable for PFIC_IENR2_SPEC {
+        ///`reset()` method sets IENR2 to value 0
+        impl crate::Resettable for IENR2_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IRER1 (w) register accessor: an alias for `Reg<PFIC_IRER1_SPEC>`
-    pub type PFIC_IRER1 = crate::Reg<pfic_irer1::PFIC_IRER1_SPEC>;
+    ///IRER1 (w) register accessor: an alias for `Reg<IRER1_SPEC>`
+    pub type IRER1 = crate::Reg<irer1::IRER1_SPEC>;
     ///Interrupt Clear Register
-    pub mod pfic_irer1 {
-        ///Register `PFIC_IRER1` writer
-        pub struct W(crate::W<PFIC_IRER1_SPEC>);
+    pub mod irer1 {
+        ///Register `IRER1` writer
+        pub struct W(crate::W<IRER1_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IRER1_SPEC>;
+            type Target = crate::W<IRER1_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -27369,14 +25071,14 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IRER1_SPEC>> for W {
+        impl From<crate::W<IRER1_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IRER1_SPEC>) -> Self {
+            fn from(writer: crate::W<IRER1_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `INTRESET` writer - RW1,INTRESET
-        pub type INTRESET_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IRER1_SPEC, 20, O, u32>;
+        pub type INTRESET_W<'a, const O: u8> = crate::FieldWriter<'a, IRER1_SPEC, 20, O, u32>;
         impl W {
             ///Bits 12:31 - RW1,INTRESET
             #[inline(always)]
@@ -27395,30 +25097,30 @@ pub mod pfic {
         ///
         ///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_irer1](index.html) module
-        pub struct PFIC_IRER1_SPEC;
-        impl crate::RegisterSpec for PFIC_IRER1_SPEC {
+        ///For information about available fields see [irer1](index.html) module
+        pub struct IRER1_SPEC;
+        impl crate::RegisterSpec for IRER1_SPEC {
             type Ux = u32;
         }
-        ///`write(|w| ..)` method takes [pfic_irer1::W](W) writer structure
-        impl crate::Writable for PFIC_IRER1_SPEC {
+        ///`write(|w| ..)` method takes [irer1::W](W) writer structure
+        impl crate::Writable for IRER1_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IRER1 to value 0
-        impl crate::Resettable for PFIC_IRER1_SPEC {
+        ///`reset()` method sets IRER1 to value 0
+        impl crate::Resettable for IRER1_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IRER2 (w) register accessor: an alias for `Reg<PFIC_IRER2_SPEC>`
-    pub type PFIC_IRER2 = crate::Reg<pfic_irer2::PFIC_IRER2_SPEC>;
+    ///IRER2 (w) register accessor: an alias for `Reg<IRER2_SPEC>`
+    pub type IRER2 = crate::Reg<irer2::IRER2_SPEC>;
     ///Interrupt Clear Register
-    pub mod pfic_irer2 {
-        ///Register `PFIC_IRER2` writer
-        pub struct W(crate::W<PFIC_IRER2_SPEC>);
+    pub mod irer2 {
+        ///Register `IRER2` writer
+        pub struct W(crate::W<IRER2_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IRER2_SPEC>;
+            type Target = crate::W<IRER2_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -27430,14 +25132,14 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IRER2_SPEC>> for W {
+        impl From<crate::W<IRER2_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IRER2_SPEC>) -> Self {
+            fn from(writer: crate::W<IRER2_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `INTRESET` writer - RW1,INTRESET
-        pub type INTRESET_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IRER2_SPEC, 4, O>;
+        pub type INTRESET_W<'a, const O: u8> = crate::FieldWriter<'a, IRER2_SPEC, 4, O>;
         impl W {
             ///Bits 0:3 - RW1,INTRESET
             #[inline(always)]
@@ -27456,30 +25158,30 @@ pub mod pfic {
         ///
         ///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_irer2](index.html) module
-        pub struct PFIC_IRER2_SPEC;
-        impl crate::RegisterSpec for PFIC_IRER2_SPEC {
+        ///For information about available fields see [irer2](index.html) module
+        pub struct IRER2_SPEC;
+        impl crate::RegisterSpec for IRER2_SPEC {
             type Ux = u32;
         }
-        ///`write(|w| ..)` method takes [pfic_irer2::W](W) writer structure
-        impl crate::Writable for PFIC_IRER2_SPEC {
+        ///`write(|w| ..)` method takes [irer2::W](W) writer structure
+        impl crate::Writable for IRER2_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IRER2 to value 0
-        impl crate::Resettable for PFIC_IRER2_SPEC {
+        ///`reset()` method sets IRER2 to value 0
+        impl crate::Resettable for IRER2_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPSR1 (w) register accessor: an alias for `Reg<PFIC_IPSR1_SPEC>`
-    pub type PFIC_IPSR1 = crate::Reg<pfic_ipsr1::PFIC_IPSR1_SPEC>;
+    ///IPSR1 (w) register accessor: an alias for `Reg<IPSR1_SPEC>`
+    pub type IPSR1 = crate::Reg<ipsr1::IPSR1_SPEC>;
     ///Interrupt Pending Register
-    pub mod pfic_ipsr1 {
-        ///Register `PFIC_IPSR1` writer
-        pub struct W(crate::W<PFIC_IPSR1_SPEC>);
+    pub mod ipsr1 {
+        ///Register `IPSR1` writer
+        pub struct W(crate::W<IPSR1_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPSR1_SPEC>;
+            type Target = crate::W<IPSR1_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -27491,14 +25193,14 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPSR1_SPEC>> for W {
+        impl From<crate::W<IPSR1_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPSR1_SPEC>) -> Self {
+            fn from(writer: crate::W<IPSR1_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `PENDSET` writer - RW1,PENDSET
-        pub type PENDSET_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IPSR1_SPEC, 20, O, u32>;
+        pub type PENDSET_W<'a, const O: u8> = crate::FieldWriter<'a, IPSR1_SPEC, 20, O, u32>;
         impl W {
             ///Bits 12:31 - RW1,PENDSET
             #[inline(always)]
@@ -27517,30 +25219,30 @@ pub mod pfic {
         ///
         ///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_ipsr1](index.html) module
-        pub struct PFIC_IPSR1_SPEC;
-        impl crate::RegisterSpec for PFIC_IPSR1_SPEC {
+        ///For information about available fields see [ipsr1](index.html) module
+        pub struct IPSR1_SPEC;
+        impl crate::RegisterSpec for IPSR1_SPEC {
             type Ux = u32;
         }
-        ///`write(|w| ..)` method takes [pfic_ipsr1::W](W) writer structure
-        impl crate::Writable for PFIC_IPSR1_SPEC {
+        ///`write(|w| ..)` method takes [ipsr1::W](W) writer structure
+        impl crate::Writable for IPSR1_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPSR1 to value 0
-        impl crate::Resettable for PFIC_IPSR1_SPEC {
+        ///`reset()` method sets IPSR1 to value 0
+        impl crate::Resettable for IPSR1_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPSR2 (w) register accessor: an alias for `Reg<PFIC_IPSR2_SPEC>`
-    pub type PFIC_IPSR2 = crate::Reg<pfic_ipsr2::PFIC_IPSR2_SPEC>;
+    ///IPSR2 (w) register accessor: an alias for `Reg<IPSR2_SPEC>`
+    pub type IPSR2 = crate::Reg<ipsr2::IPSR2_SPEC>;
     ///Interrupt Pending Register
-    pub mod pfic_ipsr2 {
-        ///Register `PFIC_IPSR2` writer
-        pub struct W(crate::W<PFIC_IPSR2_SPEC>);
+    pub mod ipsr2 {
+        ///Register `IPSR2` writer
+        pub struct W(crate::W<IPSR2_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPSR2_SPEC>;
+            type Target = crate::W<IPSR2_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -27552,14 +25254,14 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPSR2_SPEC>> for W {
+        impl From<crate::W<IPSR2_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPSR2_SPEC>) -> Self {
+            fn from(writer: crate::W<IPSR2_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `PENDSET` writer - RW1,PENDSET
-        pub type PENDSET_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IPSR2_SPEC, 4, O>;
+        pub type PENDSET_W<'a, const O: u8> = crate::FieldWriter<'a, IPSR2_SPEC, 4, O>;
         impl W {
             ///Bits 0:3 - RW1,PENDSET
             #[inline(always)]
@@ -27578,30 +25280,30 @@ pub mod pfic {
         ///
         ///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_ipsr2](index.html) module
-        pub struct PFIC_IPSR2_SPEC;
-        impl crate::RegisterSpec for PFIC_IPSR2_SPEC {
+        ///For information about available fields see [ipsr2](index.html) module
+        pub struct IPSR2_SPEC;
+        impl crate::RegisterSpec for IPSR2_SPEC {
             type Ux = u32;
         }
-        ///`write(|w| ..)` method takes [pfic_ipsr2::W](W) writer structure
-        impl crate::Writable for PFIC_IPSR2_SPEC {
+        ///`write(|w| ..)` method takes [ipsr2::W](W) writer structure
+        impl crate::Writable for IPSR2_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPSR2 to value 0
-        impl crate::Resettable for PFIC_IPSR2_SPEC {
+        ///`reset()` method sets IPSR2 to value 0
+        impl crate::Resettable for IPSR2_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRR1 (w) register accessor: an alias for `Reg<PFIC_IPRR1_SPEC>`
-    pub type PFIC_IPRR1 = crate::Reg<pfic_iprr1::PFIC_IPRR1_SPEC>;
+    ///IPRR1 (w) register accessor: an alias for `Reg<IPRR1_SPEC>`
+    pub type IPRR1 = crate::Reg<iprr1::IPRR1_SPEC>;
     ///Interrupt Pending Clear Register
-    pub mod pfic_iprr1 {
-        ///Register `PFIC_IPRR1` writer
-        pub struct W(crate::W<PFIC_IPRR1_SPEC>);
+    pub mod iprr1 {
+        ///Register `IPRR1` writer
+        pub struct W(crate::W<IPRR1_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRR1_SPEC>;
+            type Target = crate::W<IPRR1_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -27613,14 +25315,14 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRR1_SPEC>> for W {
+        impl From<crate::W<IPRR1_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRR1_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRR1_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `PENDRESET` writer - RW1,PENDRESET
-        pub type PENDRESET_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IPRR1_SPEC, 20, O, u32>;
+        pub type PENDRESET_W<'a, const O: u8> = crate::FieldWriter<'a, IPRR1_SPEC, 20, O, u32>;
         impl W {
             ///Bits 12:31 - RW1,PENDRESET
             #[inline(always)]
@@ -27639,30 +25341,30 @@ pub mod pfic {
         ///
         ///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprr1](index.html) module
-        pub struct PFIC_IPRR1_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRR1_SPEC {
+        ///For information about available fields see [iprr1](index.html) module
+        pub struct IPRR1_SPEC;
+        impl crate::RegisterSpec for IPRR1_SPEC {
             type Ux = u32;
         }
-        ///`write(|w| ..)` method takes [pfic_iprr1::W](W) writer structure
-        impl crate::Writable for PFIC_IPRR1_SPEC {
+        ///`write(|w| ..)` method takes [iprr1::W](W) writer structure
+        impl crate::Writable for IPRR1_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRR1 to value 0
-        impl crate::Resettable for PFIC_IPRR1_SPEC {
+        ///`reset()` method sets IPRR1 to value 0
+        impl crate::Resettable for IPRR1_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRR2 (w) register accessor: an alias for `Reg<PFIC_IPRR2_SPEC>`
-    pub type PFIC_IPRR2 = crate::Reg<pfic_iprr2::PFIC_IPRR2_SPEC>;
+    ///IPRR2 (w) register accessor: an alias for `Reg<IPRR2_SPEC>`
+    pub type IPRR2 = crate::Reg<iprr2::IPRR2_SPEC>;
     ///Interrupt Pending Clear Register
-    pub mod pfic_iprr2 {
-        ///Register `PFIC_IPRR2` writer
-        pub struct W(crate::W<PFIC_IPRR2_SPEC>);
+    pub mod iprr2 {
+        ///Register `IPRR2` writer
+        pub struct W(crate::W<IPRR2_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRR2_SPEC>;
+            type Target = crate::W<IPRR2_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -27674,14 +25376,14 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRR2_SPEC>> for W {
+        impl From<crate::W<IPRR2_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRR2_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRR2_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `PENDRESET` writer - RW1,PENDRESET
-        pub type PENDRESET_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IPRR2_SPEC, 4, O>;
+        pub type PENDRESET_W<'a, const O: u8> = crate::FieldWriter<'a, IPRR2_SPEC, 4, O>;
         impl W {
             ///Bits 0:3 - RW1,PENDRESET
             #[inline(always)]
@@ -27700,45 +25402,45 @@ pub mod pfic {
         ///
         ///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprr2](index.html) module
-        pub struct PFIC_IPRR2_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRR2_SPEC {
+        ///For information about available fields see [iprr2](index.html) module
+        pub struct IPRR2_SPEC;
+        impl crate::RegisterSpec for IPRR2_SPEC {
             type Ux = u32;
         }
-        ///`write(|w| ..)` method takes [pfic_iprr2::W](W) writer structure
-        impl crate::Writable for PFIC_IPRR2_SPEC {
+        ///`write(|w| ..)` method takes [iprr2::W](W) writer structure
+        impl crate::Writable for IPRR2_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRR2 to value 0
-        impl crate::Resettable for PFIC_IPRR2_SPEC {
+        ///`reset()` method sets IPRR2 to value 0
+        impl crate::Resettable for IPRR2_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IACTR1 (rw) register accessor: an alias for `Reg<PFIC_IACTR1_SPEC>`
-    pub type PFIC_IACTR1 = crate::Reg<pfic_iactr1::PFIC_IACTR1_SPEC>;
+    ///IACTR1 (rw) register accessor: an alias for `Reg<IACTR1_SPEC>`
+    pub type IACTR1 = crate::Reg<iactr1::IACTR1_SPEC>;
     ///Interrupt ACTIVE Register
-    pub mod pfic_iactr1 {
-        ///Register `PFIC_IACTR1` reader
-        pub struct R(crate::R<PFIC_IACTR1_SPEC>);
+    pub mod iactr1 {
+        ///Register `IACTR1` reader
+        pub struct R(crate::R<IACTR1_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IACTR1_SPEC>;
+            type Target = crate::R<IACTR1_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IACTR1_SPEC>> for R {
+        impl From<crate::R<IACTR1_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IACTR1_SPEC>) -> Self {
+            fn from(reader: crate::R<IACTR1_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IACTR1` writer
-        pub struct W(crate::W<PFIC_IACTR1_SPEC>);
+        ///Register `IACTR1` writer
+        pub struct W(crate::W<IACTR1_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IACTR1_SPEC>;
+            type Target = crate::W<IACTR1_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -27750,16 +25452,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IACTR1_SPEC>> for W {
+        impl From<crate::W<IACTR1_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IACTR1_SPEC>) -> Self {
+            fn from(writer: crate::W<IACTR1_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IACTS` reader - RW1,IACTS
         pub type IACTS_R = crate::FieldReader<u32>;
         ///Field `IACTS` writer - RW1,IACTS
-        pub type IACTS_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IACTR1_SPEC, 20, O, u32>;
+        pub type IACTS_W<'a, const O: u8> = crate::FieldWriter<'a, IACTR1_SPEC, 20, O, u32>;
         impl R {
             ///Bits 12:31 - RW1,IACTS
             #[inline(always)]
@@ -27785,49 +25487,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iactr1](index.html) module
-        pub struct PFIC_IACTR1_SPEC;
-        impl crate::RegisterSpec for PFIC_IACTR1_SPEC {
+        ///For information about available fields see [iactr1](index.html) module
+        pub struct IACTR1_SPEC;
+        impl crate::RegisterSpec for IACTR1_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iactr1::R](R) reader structure
-        impl crate::Readable for PFIC_IACTR1_SPEC {
+        ///`read()` method returns [iactr1::R](R) reader structure
+        impl crate::Readable for IACTR1_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iactr1::W](W) writer structure
-        impl crate::Writable for PFIC_IACTR1_SPEC {
+        ///`write(|w| ..)` method takes [iactr1::W](W) writer structure
+        impl crate::Writable for IACTR1_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IACTR1 to value 0
-        impl crate::Resettable for PFIC_IACTR1_SPEC {
+        ///`reset()` method sets IACTR1 to value 0
+        impl crate::Resettable for IACTR1_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IACTR2 (rw) register accessor: an alias for `Reg<PFIC_IACTR2_SPEC>`
-    pub type PFIC_IACTR2 = crate::Reg<pfic_iactr2::PFIC_IACTR2_SPEC>;
+    ///IACTR2 (rw) register accessor: an alias for `Reg<IACTR2_SPEC>`
+    pub type IACTR2 = crate::Reg<iactr2::IACTR2_SPEC>;
     ///Interrupt ACTIVE Register
-    pub mod pfic_iactr2 {
-        ///Register `PFIC_IACTR2` reader
-        pub struct R(crate::R<PFIC_IACTR2_SPEC>);
+    pub mod iactr2 {
+        ///Register `IACTR2` reader
+        pub struct R(crate::R<IACTR2_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IACTR2_SPEC>;
+            type Target = crate::R<IACTR2_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IACTR2_SPEC>> for R {
+        impl From<crate::R<IACTR2_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IACTR2_SPEC>) -> Self {
+            fn from(reader: crate::R<IACTR2_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IACTR2` writer
-        pub struct W(crate::W<PFIC_IACTR2_SPEC>);
+        ///Register `IACTR2` writer
+        pub struct W(crate::W<IACTR2_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IACTR2_SPEC>;
+            type Target = crate::W<IACTR2_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -27839,16 +25541,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IACTR2_SPEC>> for W {
+        impl From<crate::W<IACTR2_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IACTR2_SPEC>) -> Self {
+            fn from(writer: crate::W<IACTR2_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IACTS` reader - RW1,IACTS
         pub type IACTS_R = crate::FieldReader;
         ///Field `IACTS` writer - RW1,IACTS
-        pub type IACTS_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IACTR2_SPEC, 4, O>;
+        pub type IACTS_W<'a, const O: u8> = crate::FieldWriter<'a, IACTR2_SPEC, 4, O>;
         impl R {
             ///Bits 0:3 - RW1,IACTS
             #[inline(always)]
@@ -27874,49 +25576,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iactr2](index.html) module
-        pub struct PFIC_IACTR2_SPEC;
-        impl crate::RegisterSpec for PFIC_IACTR2_SPEC {
+        ///For information about available fields see [iactr2](index.html) module
+        pub struct IACTR2_SPEC;
+        impl crate::RegisterSpec for IACTR2_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iactr2::R](R) reader structure
-        impl crate::Readable for PFIC_IACTR2_SPEC {
+        ///`read()` method returns [iactr2::R](R) reader structure
+        impl crate::Readable for IACTR2_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iactr2::W](W) writer structure
-        impl crate::Writable for PFIC_IACTR2_SPEC {
+        ///`write(|w| ..)` method takes [iactr2::W](W) writer structure
+        impl crate::Writable for IACTR2_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IACTR2 to value 0
-        impl crate::Resettable for PFIC_IACTR2_SPEC {
+        ///`reset()` method sets IACTR2 to value 0
+        impl crate::Resettable for IACTR2_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR0 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR0_SPEC>`
-    pub type PFIC_IPRIOR0 = crate::Reg<pfic_iprior0::PFIC_IPRIOR0_SPEC>;
+    ///IPRIOR0 (rw) register accessor: an alias for `Reg<IPRIOR0_SPEC>`
+    pub type IPRIOR0 = crate::Reg<iprior0::IPRIOR0_SPEC>;
     ///Interrupt Priority configuration Register 0
-    pub mod pfic_iprior0 {
-        ///Register `PFIC_IPRIOR0` reader
-        pub struct R(crate::R<PFIC_IPRIOR0_SPEC>);
+    pub mod iprior0 {
+        ///Register `IPRIOR0` reader
+        pub struct R(crate::R<IPRIOR0_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR0_SPEC>;
+            type Target = crate::R<IPRIOR0_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR0_SPEC>> for R {
+        impl From<crate::R<IPRIOR0_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR0_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR0_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR0` writer
-        pub struct W(crate::W<PFIC_IPRIOR0_SPEC>);
+        ///Register `IPRIOR0` writer
+        pub struct W(crate::W<IPRIOR0_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR0_SPEC>;
+            type Target = crate::W<IPRIOR0_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -27928,16 +25630,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR0_SPEC>> for W {
+        impl From<crate::W<IPRIOR0_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR0_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR0_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR0` reader - RW,Interrupt priority for number 0-3
         pub type IPRIOR0_R = crate::FieldReader<u32>;
         ///Field `IPRIOR0` writer - RW,Interrupt priority for number 0-3
-        pub type IPRIOR0_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IPRIOR0_SPEC, 32, O, u32>;
+        pub type IPRIOR0_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR0_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 0-3
             #[inline(always)]
@@ -27963,49 +25665,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior0](index.html) module
-        pub struct PFIC_IPRIOR0_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR0_SPEC {
+        ///For information about available fields see [iprior0](index.html) module
+        pub struct IPRIOR0_SPEC;
+        impl crate::RegisterSpec for IPRIOR0_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior0::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR0_SPEC {
+        ///`read()` method returns [iprior0::R](R) reader structure
+        impl crate::Readable for IPRIOR0_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior0::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR0_SPEC {
+        ///`write(|w| ..)` method takes [iprior0::W](W) writer structure
+        impl crate::Writable for IPRIOR0_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR0 to value 0
-        impl crate::Resettable for PFIC_IPRIOR0_SPEC {
+        ///`reset()` method sets IPRIOR0 to value 0
+        impl crate::Resettable for IPRIOR0_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR1 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR1_SPEC>`
-    pub type PFIC_IPRIOR1 = crate::Reg<pfic_iprior1::PFIC_IPRIOR1_SPEC>;
+    ///IPRIOR1 (rw) register accessor: an alias for `Reg<IPRIOR1_SPEC>`
+    pub type IPRIOR1 = crate::Reg<iprior1::IPRIOR1_SPEC>;
     ///Interrupt Priority configuration Register 1
-    pub mod pfic_iprior1 {
-        ///Register `PFIC_IPRIOR1` reader
-        pub struct R(crate::R<PFIC_IPRIOR1_SPEC>);
+    pub mod iprior1 {
+        ///Register `IPRIOR1` reader
+        pub struct R(crate::R<IPRIOR1_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR1_SPEC>;
+            type Target = crate::R<IPRIOR1_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR1_SPEC>> for R {
+        impl From<crate::R<IPRIOR1_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR1_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR1_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR1` writer
-        pub struct W(crate::W<PFIC_IPRIOR1_SPEC>);
+        ///Register `IPRIOR1` writer
+        pub struct W(crate::W<IPRIOR1_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR1_SPEC>;
+            type Target = crate::W<IPRIOR1_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -28017,16 +25719,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR1_SPEC>> for W {
+        impl From<crate::W<IPRIOR1_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR1_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR1_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR1` reader - >RW,Interrupt priority for number 4-7
         pub type IPRIOR1_R = crate::FieldReader<u32>;
         ///Field `IPRIOR1` writer - >RW,Interrupt priority for number 4-7
-        pub type IPRIOR1_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IPRIOR1_SPEC, 32, O, u32>;
+        pub type IPRIOR1_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR1_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - >RW,Interrupt priority for number 4-7
             #[inline(always)]
@@ -28052,49 +25754,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior1](index.html) module
-        pub struct PFIC_IPRIOR1_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR1_SPEC {
+        ///For information about available fields see [iprior1](index.html) module
+        pub struct IPRIOR1_SPEC;
+        impl crate::RegisterSpec for IPRIOR1_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior1::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR1_SPEC {
+        ///`read()` method returns [iprior1::R](R) reader structure
+        impl crate::Readable for IPRIOR1_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior1::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR1_SPEC {
+        ///`write(|w| ..)` method takes [iprior1::W](W) writer structure
+        impl crate::Writable for IPRIOR1_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR1 to value 0
-        impl crate::Resettable for PFIC_IPRIOR1_SPEC {
+        ///`reset()` method sets IPRIOR1 to value 0
+        impl crate::Resettable for IPRIOR1_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR2 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR2_SPEC>`
-    pub type PFIC_IPRIOR2 = crate::Reg<pfic_iprior2::PFIC_IPRIOR2_SPEC>;
+    ///IPRIOR2 (rw) register accessor: an alias for `Reg<IPRIOR2_SPEC>`
+    pub type IPRIOR2 = crate::Reg<iprior2::IPRIOR2_SPEC>;
     ///Interrupt Priority configuration Register 2
-    pub mod pfic_iprior2 {
-        ///Register `PFIC_IPRIOR2` reader
-        pub struct R(crate::R<PFIC_IPRIOR2_SPEC>);
+    pub mod iprior2 {
+        ///Register `IPRIOR2` reader
+        pub struct R(crate::R<IPRIOR2_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR2_SPEC>;
+            type Target = crate::R<IPRIOR2_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR2_SPEC>> for R {
+        impl From<crate::R<IPRIOR2_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR2_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR2_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR2` writer
-        pub struct W(crate::W<PFIC_IPRIOR2_SPEC>);
+        ///Register `IPRIOR2` writer
+        pub struct W(crate::W<IPRIOR2_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR2_SPEC>;
+            type Target = crate::W<IPRIOR2_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -28106,16 +25808,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR2_SPEC>> for W {
+        impl From<crate::W<IPRIOR2_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR2_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR2_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR2` reader - >RW,Interrupt priority for number 8-11
         pub type IPRIOR2_R = crate::FieldReader<u32>;
         ///Field `IPRIOR2` writer - >RW,Interrupt priority for number 8-11
-        pub type IPRIOR2_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IPRIOR2_SPEC, 32, O, u32>;
+        pub type IPRIOR2_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR2_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - >RW,Interrupt priority for number 8-11
             #[inline(always)]
@@ -28141,49 +25843,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior2](index.html) module
-        pub struct PFIC_IPRIOR2_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR2_SPEC {
+        ///For information about available fields see [iprior2](index.html) module
+        pub struct IPRIOR2_SPEC;
+        impl crate::RegisterSpec for IPRIOR2_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior2::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR2_SPEC {
+        ///`read()` method returns [iprior2::R](R) reader structure
+        impl crate::Readable for IPRIOR2_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior2::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR2_SPEC {
+        ///`write(|w| ..)` method takes [iprior2::W](W) writer structure
+        impl crate::Writable for IPRIOR2_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR2 to value 0
-        impl crate::Resettable for PFIC_IPRIOR2_SPEC {
+        ///`reset()` method sets IPRIOR2 to value 0
+        impl crate::Resettable for IPRIOR2_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR3 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR3_SPEC>`
-    pub type PFIC_IPRIOR3 = crate::Reg<pfic_iprior3::PFIC_IPRIOR3_SPEC>;
+    ///IPRIOR3 (rw) register accessor: an alias for `Reg<IPRIOR3_SPEC>`
+    pub type IPRIOR3 = crate::Reg<iprior3::IPRIOR3_SPEC>;
     ///Interrupt Priority configuration Register 3
-    pub mod pfic_iprior3 {
-        ///Register `PFIC_IPRIOR3` reader
-        pub struct R(crate::R<PFIC_IPRIOR3_SPEC>);
+    pub mod iprior3 {
+        ///Register `IPRIOR3` reader
+        pub struct R(crate::R<IPRIOR3_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR3_SPEC>;
+            type Target = crate::R<IPRIOR3_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR3_SPEC>> for R {
+        impl From<crate::R<IPRIOR3_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR3_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR3_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR3` writer
-        pub struct W(crate::W<PFIC_IPRIOR3_SPEC>);
+        ///Register `IPRIOR3` writer
+        pub struct W(crate::W<IPRIOR3_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR3_SPEC>;
+            type Target = crate::W<IPRIOR3_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -28195,16 +25897,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR3_SPEC>> for W {
+        impl From<crate::W<IPRIOR3_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR3_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR3_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR3` reader - >RW,Interrupt priority for number 12-15
         pub type IPRIOR3_R = crate::FieldReader<u32>;
         ///Field `IPRIOR3` writer - >RW,Interrupt priority for number 12-15
-        pub type IPRIOR3_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IPRIOR3_SPEC, 32, O, u32>;
+        pub type IPRIOR3_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR3_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - >RW,Interrupt priority for number 12-15
             #[inline(always)]
@@ -28230,49 +25932,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior3](index.html) module
-        pub struct PFIC_IPRIOR3_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR3_SPEC {
+        ///For information about available fields see [iprior3](index.html) module
+        pub struct IPRIOR3_SPEC;
+        impl crate::RegisterSpec for IPRIOR3_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior3::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR3_SPEC {
+        ///`read()` method returns [iprior3::R](R) reader structure
+        impl crate::Readable for IPRIOR3_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior3::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR3_SPEC {
+        ///`write(|w| ..)` method takes [iprior3::W](W) writer structure
+        impl crate::Writable for IPRIOR3_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR3 to value 0
-        impl crate::Resettable for PFIC_IPRIOR3_SPEC {
+        ///`reset()` method sets IPRIOR3 to value 0
+        impl crate::Resettable for IPRIOR3_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR4 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR4_SPEC>`
-    pub type PFIC_IPRIOR4 = crate::Reg<pfic_iprior4::PFIC_IPRIOR4_SPEC>;
+    ///IPRIOR4 (rw) register accessor: an alias for `Reg<IPRIOR4_SPEC>`
+    pub type IPRIOR4 = crate::Reg<iprior4::IPRIOR4_SPEC>;
     ///Interrupt Priority configuration Register 4
-    pub mod pfic_iprior4 {
-        ///Register `PFIC_IPRIOR4` reader
-        pub struct R(crate::R<PFIC_IPRIOR4_SPEC>);
+    pub mod iprior4 {
+        ///Register `IPRIOR4` reader
+        pub struct R(crate::R<IPRIOR4_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR4_SPEC>;
+            type Target = crate::R<IPRIOR4_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR4_SPEC>> for R {
+        impl From<crate::R<IPRIOR4_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR4_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR4_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR4` writer
-        pub struct W(crate::W<PFIC_IPRIOR4_SPEC>);
+        ///Register `IPRIOR4` writer
+        pub struct W(crate::W<IPRIOR4_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR4_SPEC>;
+            type Target = crate::W<IPRIOR4_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -28284,16 +25986,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR4_SPEC>> for W {
+        impl From<crate::W<IPRIOR4_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR4_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR4_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR4` reader - >RW,Interrupt priority for number 16-19
         pub type IPRIOR4_R = crate::FieldReader<u32>;
         ///Field `IPRIOR4` writer - >RW,Interrupt priority for number 16-19
-        pub type IPRIOR4_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IPRIOR4_SPEC, 32, O, u32>;
+        pub type IPRIOR4_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR4_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - >RW,Interrupt priority for number 16-19
             #[inline(always)]
@@ -28319,49 +26021,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior4](index.html) module
-        pub struct PFIC_IPRIOR4_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR4_SPEC {
+        ///For information about available fields see [iprior4](index.html) module
+        pub struct IPRIOR4_SPEC;
+        impl crate::RegisterSpec for IPRIOR4_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior4::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR4_SPEC {
+        ///`read()` method returns [iprior4::R](R) reader structure
+        impl crate::Readable for IPRIOR4_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior4::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR4_SPEC {
+        ///`write(|w| ..)` method takes [iprior4::W](W) writer structure
+        impl crate::Writable for IPRIOR4_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR4 to value 0
-        impl crate::Resettable for PFIC_IPRIOR4_SPEC {
+        ///`reset()` method sets IPRIOR4 to value 0
+        impl crate::Resettable for IPRIOR4_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR5 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR5_SPEC>`
-    pub type PFIC_IPRIOR5 = crate::Reg<pfic_iprior5::PFIC_IPRIOR5_SPEC>;
+    ///IPRIOR5 (rw) register accessor: an alias for `Reg<IPRIOR5_SPEC>`
+    pub type IPRIOR5 = crate::Reg<iprior5::IPRIOR5_SPEC>;
     ///Interrupt Priority configuration Register 5
-    pub mod pfic_iprior5 {
-        ///Register `PFIC_IPRIOR5` reader
-        pub struct R(crate::R<PFIC_IPRIOR5_SPEC>);
+    pub mod iprior5 {
+        ///Register `IPRIOR5` reader
+        pub struct R(crate::R<IPRIOR5_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR5_SPEC>;
+            type Target = crate::R<IPRIOR5_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR5_SPEC>> for R {
+        impl From<crate::R<IPRIOR5_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR5_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR5_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR5` writer
-        pub struct W(crate::W<PFIC_IPRIOR5_SPEC>);
+        ///Register `IPRIOR5` writer
+        pub struct W(crate::W<IPRIOR5_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR5_SPEC>;
+            type Target = crate::W<IPRIOR5_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -28373,16 +26075,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR5_SPEC>> for W {
+        impl From<crate::W<IPRIOR5_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR5_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR5_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR5` reader - >RW,Interrupt priority for number 20-23
         pub type IPRIOR5_R = crate::FieldReader<u32>;
         ///Field `IPRIOR5` writer - >RW,Interrupt priority for number 20-23
-        pub type IPRIOR5_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IPRIOR5_SPEC, 32, O, u32>;
+        pub type IPRIOR5_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR5_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - >RW,Interrupt priority for number 20-23
             #[inline(always)]
@@ -28408,49 +26110,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior5](index.html) module
-        pub struct PFIC_IPRIOR5_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR5_SPEC {
+        ///For information about available fields see [iprior5](index.html) module
+        pub struct IPRIOR5_SPEC;
+        impl crate::RegisterSpec for IPRIOR5_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior5::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR5_SPEC {
+        ///`read()` method returns [iprior5::R](R) reader structure
+        impl crate::Readable for IPRIOR5_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior5::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR5_SPEC {
+        ///`write(|w| ..)` method takes [iprior5::W](W) writer structure
+        impl crate::Writable for IPRIOR5_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR5 to value 0
-        impl crate::Resettable for PFIC_IPRIOR5_SPEC {
+        ///`reset()` method sets IPRIOR5 to value 0
+        impl crate::Resettable for IPRIOR5_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR6 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR6_SPEC>`
-    pub type PFIC_IPRIOR6 = crate::Reg<pfic_iprior6::PFIC_IPRIOR6_SPEC>;
+    ///IPRIOR6 (rw) register accessor: an alias for `Reg<IPRIOR6_SPEC>`
+    pub type IPRIOR6 = crate::Reg<iprior6::IPRIOR6_SPEC>;
     ///Interrupt Priority configuration Register 6
-    pub mod pfic_iprior6 {
-        ///Register `PFIC_IPRIOR6` reader
-        pub struct R(crate::R<PFIC_IPRIOR6_SPEC>);
+    pub mod iprior6 {
+        ///Register `IPRIOR6` reader
+        pub struct R(crate::R<IPRIOR6_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR6_SPEC>;
+            type Target = crate::R<IPRIOR6_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR6_SPEC>> for R {
+        impl From<crate::R<IPRIOR6_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR6_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR6_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR6` writer
-        pub struct W(crate::W<PFIC_IPRIOR6_SPEC>);
+        ///Register `IPRIOR6` writer
+        pub struct W(crate::W<IPRIOR6_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR6_SPEC>;
+            type Target = crate::W<IPRIOR6_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -28462,16 +26164,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR6_SPEC>> for W {
+        impl From<crate::W<IPRIOR6_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR6_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR6_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR6` reader - >RW,Interrupt priority for number 24-27
         pub type IPRIOR6_R = crate::FieldReader<u32>;
         ///Field `IPRIOR6` writer - >RW,Interrupt priority for number 24-27
-        pub type IPRIOR6_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IPRIOR6_SPEC, 32, O, u32>;
+        pub type IPRIOR6_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR6_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - >RW,Interrupt priority for number 24-27
             #[inline(always)]
@@ -28497,49 +26199,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior6](index.html) module
-        pub struct PFIC_IPRIOR6_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR6_SPEC {
+        ///For information about available fields see [iprior6](index.html) module
+        pub struct IPRIOR6_SPEC;
+        impl crate::RegisterSpec for IPRIOR6_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior6::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR6_SPEC {
+        ///`read()` method returns [iprior6::R](R) reader structure
+        impl crate::Readable for IPRIOR6_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior6::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR6_SPEC {
+        ///`write(|w| ..)` method takes [iprior6::W](W) writer structure
+        impl crate::Writable for IPRIOR6_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR6 to value 0
-        impl crate::Resettable for PFIC_IPRIOR6_SPEC {
+        ///`reset()` method sets IPRIOR6 to value 0
+        impl crate::Resettable for IPRIOR6_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR7 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR7_SPEC>`
-    pub type PFIC_IPRIOR7 = crate::Reg<pfic_iprior7::PFIC_IPRIOR7_SPEC>;
+    ///IPRIOR7 (rw) register accessor: an alias for `Reg<IPRIOR7_SPEC>`
+    pub type IPRIOR7 = crate::Reg<iprior7::IPRIOR7_SPEC>;
     ///Interrupt Priority configuration Register 7
-    pub mod pfic_iprior7 {
-        ///Register `PFIC_IPRIOR7` reader
-        pub struct R(crate::R<PFIC_IPRIOR7_SPEC>);
+    pub mod iprior7 {
+        ///Register `IPRIOR7` reader
+        pub struct R(crate::R<IPRIOR7_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR7_SPEC>;
+            type Target = crate::R<IPRIOR7_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR7_SPEC>> for R {
+        impl From<crate::R<IPRIOR7_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR7_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR7_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR7` writer
-        pub struct W(crate::W<PFIC_IPRIOR7_SPEC>);
+        ///Register `IPRIOR7` writer
+        pub struct W(crate::W<IPRIOR7_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR7_SPEC>;
+            type Target = crate::W<IPRIOR7_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -28551,16 +26253,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR7_SPEC>> for W {
+        impl From<crate::W<IPRIOR7_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR7_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR7_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR7` reader - >RW,Interrupt priority for number 28-31
         pub type IPRIOR7_R = crate::FieldReader<u32>;
         ///Field `IPRIOR7` writer - >RW,Interrupt priority for number 28-31
-        pub type IPRIOR7_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IPRIOR7_SPEC, 32, O, u32>;
+        pub type IPRIOR7_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR7_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - >RW,Interrupt priority for number 28-31
             #[inline(always)]
@@ -28586,49 +26288,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior7](index.html) module
-        pub struct PFIC_IPRIOR7_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR7_SPEC {
+        ///For information about available fields see [iprior7](index.html) module
+        pub struct IPRIOR7_SPEC;
+        impl crate::RegisterSpec for IPRIOR7_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior7::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR7_SPEC {
+        ///`read()` method returns [iprior7::R](R) reader structure
+        impl crate::Readable for IPRIOR7_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior7::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR7_SPEC {
+        ///`write(|w| ..)` method takes [iprior7::W](W) writer structure
+        impl crate::Writable for IPRIOR7_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR7 to value 0
-        impl crate::Resettable for PFIC_IPRIOR7_SPEC {
+        ///`reset()` method sets IPRIOR7 to value 0
+        impl crate::Resettable for IPRIOR7_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR8 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR8_SPEC>`
-    pub type PFIC_IPRIOR8 = crate::Reg<pfic_iprior8::PFIC_IPRIOR8_SPEC>;
+    ///IPRIOR8 (rw) register accessor: an alias for `Reg<IPRIOR8_SPEC>`
+    pub type IPRIOR8 = crate::Reg<iprior8::IPRIOR8_SPEC>;
     ///Interrupt Priority configuration Register 8
-    pub mod pfic_iprior8 {
-        ///Register `PFIC_IPRIOR8` reader
-        pub struct R(crate::R<PFIC_IPRIOR8_SPEC>);
+    pub mod iprior8 {
+        ///Register `IPRIOR8` reader
+        pub struct R(crate::R<IPRIOR8_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR8_SPEC>;
+            type Target = crate::R<IPRIOR8_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR8_SPEC>> for R {
+        impl From<crate::R<IPRIOR8_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR8_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR8_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR8` writer
-        pub struct W(crate::W<PFIC_IPRIOR8_SPEC>);
+        ///Register `IPRIOR8` writer
+        pub struct W(crate::W<IPRIOR8_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR8_SPEC>;
+            type Target = crate::W<IPRIOR8_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -28640,16 +26342,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR8_SPEC>> for W {
+        impl From<crate::W<IPRIOR8_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR8_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR8_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR8` reader - RW,Interrupt priority for number 32-35
         pub type IPRIOR8_R = crate::FieldReader<u32>;
         ///Field `IPRIOR8` writer - RW,Interrupt priority for number 32-35
-        pub type IPRIOR8_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IPRIOR8_SPEC, 32, O, u32>;
+        pub type IPRIOR8_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR8_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 32-35
             #[inline(always)]
@@ -28675,49 +26377,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior8](index.html) module
-        pub struct PFIC_IPRIOR8_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR8_SPEC {
+        ///For information about available fields see [iprior8](index.html) module
+        pub struct IPRIOR8_SPEC;
+        impl crate::RegisterSpec for IPRIOR8_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior8::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR8_SPEC {
+        ///`read()` method returns [iprior8::R](R) reader structure
+        impl crate::Readable for IPRIOR8_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior8::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR8_SPEC {
+        ///`write(|w| ..)` method takes [iprior8::W](W) writer structure
+        impl crate::Writable for IPRIOR8_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR8 to value 0
-        impl crate::Resettable for PFIC_IPRIOR8_SPEC {
+        ///`reset()` method sets IPRIOR8 to value 0
+        impl crate::Resettable for IPRIOR8_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR9 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR9_SPEC>`
-    pub type PFIC_IPRIOR9 = crate::Reg<pfic_iprior9::PFIC_IPRIOR9_SPEC>;
+    ///IPRIOR9 (rw) register accessor: an alias for `Reg<IPRIOR9_SPEC>`
+    pub type IPRIOR9 = crate::Reg<iprior9::IPRIOR9_SPEC>;
     ///Interrupt Priority configuration Register 9
-    pub mod pfic_iprior9 {
-        ///Register `PFIC_IPRIOR9` reader
-        pub struct R(crate::R<PFIC_IPRIOR9_SPEC>);
+    pub mod iprior9 {
+        ///Register `IPRIOR9` reader
+        pub struct R(crate::R<IPRIOR9_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR9_SPEC>;
+            type Target = crate::R<IPRIOR9_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR9_SPEC>> for R {
+        impl From<crate::R<IPRIOR9_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR9_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR9_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR9` writer
-        pub struct W(crate::W<PFIC_IPRIOR9_SPEC>);
+        ///Register `IPRIOR9` writer
+        pub struct W(crate::W<IPRIOR9_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR9_SPEC>;
+            type Target = crate::W<IPRIOR9_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -28729,16 +26431,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR9_SPEC>> for W {
+        impl From<crate::W<IPRIOR9_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR9_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR9_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR9` reader - >RW,Interrupt priority for number 36-39
         pub type IPRIOR9_R = crate::FieldReader<u32>;
         ///Field `IPRIOR9` writer - >RW,Interrupt priority for number 36-39
-        pub type IPRIOR9_W<'a, const O: u8> = crate::FieldWriter<'a, PFIC_IPRIOR9_SPEC, 32, O, u32>;
+        pub type IPRIOR9_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR9_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - >RW,Interrupt priority for number 36-39
             #[inline(always)]
@@ -28764,49 +26466,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior9](index.html) module
-        pub struct PFIC_IPRIOR9_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR9_SPEC {
+        ///For information about available fields see [iprior9](index.html) module
+        pub struct IPRIOR9_SPEC;
+        impl crate::RegisterSpec for IPRIOR9_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior9::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR9_SPEC {
+        ///`read()` method returns [iprior9::R](R) reader structure
+        impl crate::Readable for IPRIOR9_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior9::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR9_SPEC {
+        ///`write(|w| ..)` method takes [iprior9::W](W) writer structure
+        impl crate::Writable for IPRIOR9_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR9 to value 0
-        impl crate::Resettable for PFIC_IPRIOR9_SPEC {
+        ///`reset()` method sets IPRIOR9 to value 0
+        impl crate::Resettable for IPRIOR9_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR10 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR10_SPEC>`
-    pub type PFIC_IPRIOR10 = crate::Reg<pfic_iprior10::PFIC_IPRIOR10_SPEC>;
+    ///IPRIOR10 (rw) register accessor: an alias for `Reg<IPRIOR10_SPEC>`
+    pub type IPRIOR10 = crate::Reg<iprior10::IPRIOR10_SPEC>;
     ///Interrupt Priority configuration Register 10
-    pub mod pfic_iprior10 {
-        ///Register `PFIC_IPRIOR10` reader
-        pub struct R(crate::R<PFIC_IPRIOR10_SPEC>);
+    pub mod iprior10 {
+        ///Register `IPRIOR10` reader
+        pub struct R(crate::R<IPRIOR10_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR10_SPEC>;
+            type Target = crate::R<IPRIOR10_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR10_SPEC>> for R {
+        impl From<crate::R<IPRIOR10_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR10_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR10_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR10` writer
-        pub struct W(crate::W<PFIC_IPRIOR10_SPEC>);
+        ///Register `IPRIOR10` writer
+        pub struct W(crate::W<IPRIOR10_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR10_SPEC>;
+            type Target = crate::W<IPRIOR10_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -28818,17 +26520,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR10_SPEC>> for W {
+        impl From<crate::W<IPRIOR10_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR10_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR10_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR10` reader - >RW,Interrupt priority for number 40-43
         pub type IPRIOR10_R = crate::FieldReader<u32>;
         ///Field `IPRIOR10` writer - >RW,Interrupt priority for number 40-43
-        pub type IPRIOR10_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR10_SPEC, 32, O, u32>;
+        pub type IPRIOR10_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR10_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - >RW,Interrupt priority for number 40-43
             #[inline(always)]
@@ -28854,49 +26555,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior10](index.html) module
-        pub struct PFIC_IPRIOR10_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR10_SPEC {
+        ///For information about available fields see [iprior10](index.html) module
+        pub struct IPRIOR10_SPEC;
+        impl crate::RegisterSpec for IPRIOR10_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior10::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR10_SPEC {
+        ///`read()` method returns [iprior10::R](R) reader structure
+        impl crate::Readable for IPRIOR10_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior10::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR10_SPEC {
+        ///`write(|w| ..)` method takes [iprior10::W](W) writer structure
+        impl crate::Writable for IPRIOR10_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR10 to value 0
-        impl crate::Resettable for PFIC_IPRIOR10_SPEC {
+        ///`reset()` method sets IPRIOR10 to value 0
+        impl crate::Resettable for IPRIOR10_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR11 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR11_SPEC>`
-    pub type PFIC_IPRIOR11 = crate::Reg<pfic_iprior11::PFIC_IPRIOR11_SPEC>;
+    ///IPRIOR11 (rw) register accessor: an alias for `Reg<IPRIOR11_SPEC>`
+    pub type IPRIOR11 = crate::Reg<iprior11::IPRIOR11_SPEC>;
     ///Interrupt Priority configuration Register 11
-    pub mod pfic_iprior11 {
-        ///Register `PFIC_IPRIOR11` reader
-        pub struct R(crate::R<PFIC_IPRIOR11_SPEC>);
+    pub mod iprior11 {
+        ///Register `IPRIOR11` reader
+        pub struct R(crate::R<IPRIOR11_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR11_SPEC>;
+            type Target = crate::R<IPRIOR11_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR11_SPEC>> for R {
+        impl From<crate::R<IPRIOR11_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR11_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR11_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR11` writer
-        pub struct W(crate::W<PFIC_IPRIOR11_SPEC>);
+        ///Register `IPRIOR11` writer
+        pub struct W(crate::W<IPRIOR11_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR11_SPEC>;
+            type Target = crate::W<IPRIOR11_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -28908,17 +26609,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR11_SPEC>> for W {
+        impl From<crate::W<IPRIOR11_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR11_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR11_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR11` reader - RW,Interrupt priority for number 44-47
         pub type IPRIOR11_R = crate::FieldReader<u32>;
         ///Field `IPRIOR11` writer - RW,Interrupt priority for number 44-47
-        pub type IPRIOR11_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR11_SPEC, 32, O, u32>;
+        pub type IPRIOR11_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR11_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 44-47
             #[inline(always)]
@@ -28944,49 +26644,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior11](index.html) module
-        pub struct PFIC_IPRIOR11_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR11_SPEC {
+        ///For information about available fields see [iprior11](index.html) module
+        pub struct IPRIOR11_SPEC;
+        impl crate::RegisterSpec for IPRIOR11_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior11::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR11_SPEC {
+        ///`read()` method returns [iprior11::R](R) reader structure
+        impl crate::Readable for IPRIOR11_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior11::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR11_SPEC {
+        ///`write(|w| ..)` method takes [iprior11::W](W) writer structure
+        impl crate::Writable for IPRIOR11_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR11 to value 0
-        impl crate::Resettable for PFIC_IPRIOR11_SPEC {
+        ///`reset()` method sets IPRIOR11 to value 0
+        impl crate::Resettable for IPRIOR11_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR12 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR12_SPEC>`
-    pub type PFIC_IPRIOR12 = crate::Reg<pfic_iprior12::PFIC_IPRIOR12_SPEC>;
+    ///IPRIOR12 (rw) register accessor: an alias for `Reg<IPRIOR12_SPEC>`
+    pub type IPRIOR12 = crate::Reg<iprior12::IPRIOR12_SPEC>;
     ///Interrupt Priority configuration Register 12
-    pub mod pfic_iprior12 {
-        ///Register `PFIC_IPRIOR12` reader
-        pub struct R(crate::R<PFIC_IPRIOR12_SPEC>);
+    pub mod iprior12 {
+        ///Register `IPRIOR12` reader
+        pub struct R(crate::R<IPRIOR12_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR12_SPEC>;
+            type Target = crate::R<IPRIOR12_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR12_SPEC>> for R {
+        impl From<crate::R<IPRIOR12_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR12_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR12_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR12` writer
-        pub struct W(crate::W<PFIC_IPRIOR12_SPEC>);
+        ///Register `IPRIOR12` writer
+        pub struct W(crate::W<IPRIOR12_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR12_SPEC>;
+            type Target = crate::W<IPRIOR12_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -28998,17 +26698,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR12_SPEC>> for W {
+        impl From<crate::W<IPRIOR12_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR12_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR12_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR12` reader - RW,Interrupt priority for number 48-51
         pub type IPRIOR12_R = crate::FieldReader<u32>;
         ///Field `IPRIOR12` writer - RW,Interrupt priority for number 48-51
-        pub type IPRIOR12_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR12_SPEC, 32, O, u32>;
+        pub type IPRIOR12_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR12_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 48-51
             #[inline(always)]
@@ -29034,49 +26733,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior12](index.html) module
-        pub struct PFIC_IPRIOR12_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR12_SPEC {
+        ///For information about available fields see [iprior12](index.html) module
+        pub struct IPRIOR12_SPEC;
+        impl crate::RegisterSpec for IPRIOR12_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior12::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR12_SPEC {
+        ///`read()` method returns [iprior12::R](R) reader structure
+        impl crate::Readable for IPRIOR12_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior12::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR12_SPEC {
+        ///`write(|w| ..)` method takes [iprior12::W](W) writer structure
+        impl crate::Writable for IPRIOR12_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR12 to value 0
-        impl crate::Resettable for PFIC_IPRIOR12_SPEC {
+        ///`reset()` method sets IPRIOR12 to value 0
+        impl crate::Resettable for IPRIOR12_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR13 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR13_SPEC>`
-    pub type PFIC_IPRIOR13 = crate::Reg<pfic_iprior13::PFIC_IPRIOR13_SPEC>;
+    ///IPRIOR13 (rw) register accessor: an alias for `Reg<IPRIOR13_SPEC>`
+    pub type IPRIOR13 = crate::Reg<iprior13::IPRIOR13_SPEC>;
     ///Interrupt Priority configuration Register 13
-    pub mod pfic_iprior13 {
-        ///Register `PFIC_IPRIOR13` reader
-        pub struct R(crate::R<PFIC_IPRIOR13_SPEC>);
+    pub mod iprior13 {
+        ///Register `IPRIOR13` reader
+        pub struct R(crate::R<IPRIOR13_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR13_SPEC>;
+            type Target = crate::R<IPRIOR13_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR13_SPEC>> for R {
+        impl From<crate::R<IPRIOR13_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR13_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR13_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR13` writer
-        pub struct W(crate::W<PFIC_IPRIOR13_SPEC>);
+        ///Register `IPRIOR13` writer
+        pub struct W(crate::W<IPRIOR13_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR13_SPEC>;
+            type Target = crate::W<IPRIOR13_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -29088,17 +26787,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR13_SPEC>> for W {
+        impl From<crate::W<IPRIOR13_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR13_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR13_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR13` reader - RW,Interrupt priority for number 52-55
         pub type IPRIOR13_R = crate::FieldReader<u32>;
         ///Field `IPRIOR13` writer - RW,Interrupt priority for number 52-55
-        pub type IPRIOR13_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR13_SPEC, 32, O, u32>;
+        pub type IPRIOR13_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR13_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 52-55
             #[inline(always)]
@@ -29124,49 +26822,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior13](index.html) module
-        pub struct PFIC_IPRIOR13_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR13_SPEC {
+        ///For information about available fields see [iprior13](index.html) module
+        pub struct IPRIOR13_SPEC;
+        impl crate::RegisterSpec for IPRIOR13_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior13::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR13_SPEC {
+        ///`read()` method returns [iprior13::R](R) reader structure
+        impl crate::Readable for IPRIOR13_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior13::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR13_SPEC {
+        ///`write(|w| ..)` method takes [iprior13::W](W) writer structure
+        impl crate::Writable for IPRIOR13_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR13 to value 0
-        impl crate::Resettable for PFIC_IPRIOR13_SPEC {
+        ///`reset()` method sets IPRIOR13 to value 0
+        impl crate::Resettable for IPRIOR13_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR14 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR14_SPEC>`
-    pub type PFIC_IPRIOR14 = crate::Reg<pfic_iprior14::PFIC_IPRIOR14_SPEC>;
+    ///IPRIOR14 (rw) register accessor: an alias for `Reg<IPRIOR14_SPEC>`
+    pub type IPRIOR14 = crate::Reg<iprior14::IPRIOR14_SPEC>;
     ///Interrupt Priority configuration Register 14
-    pub mod pfic_iprior14 {
-        ///Register `PFIC_IPRIOR14` reader
-        pub struct R(crate::R<PFIC_IPRIOR14_SPEC>);
+    pub mod iprior14 {
+        ///Register `IPRIOR14` reader
+        pub struct R(crate::R<IPRIOR14_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR14_SPEC>;
+            type Target = crate::R<IPRIOR14_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR14_SPEC>> for R {
+        impl From<crate::R<IPRIOR14_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR14_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR14_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR14` writer
-        pub struct W(crate::W<PFIC_IPRIOR14_SPEC>);
+        ///Register `IPRIOR14` writer
+        pub struct W(crate::W<IPRIOR14_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR14_SPEC>;
+            type Target = crate::W<IPRIOR14_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -29178,17 +26876,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR14_SPEC>> for W {
+        impl From<crate::W<IPRIOR14_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR14_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR14_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR14` reader - RW,Interrupt priority for number 56-59
         pub type IPRIOR14_R = crate::FieldReader<u32>;
         ///Field `IPRIOR14` writer - RW,Interrupt priority for number 56-59
-        pub type IPRIOR14_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR14_SPEC, 32, O, u32>;
+        pub type IPRIOR14_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR14_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 56-59
             #[inline(always)]
@@ -29214,49 +26911,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior14](index.html) module
-        pub struct PFIC_IPRIOR14_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR14_SPEC {
+        ///For information about available fields see [iprior14](index.html) module
+        pub struct IPRIOR14_SPEC;
+        impl crate::RegisterSpec for IPRIOR14_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior14::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR14_SPEC {
+        ///`read()` method returns [iprior14::R](R) reader structure
+        impl crate::Readable for IPRIOR14_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior14::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR14_SPEC {
+        ///`write(|w| ..)` method takes [iprior14::W](W) writer structure
+        impl crate::Writable for IPRIOR14_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR14 to value 0
-        impl crate::Resettable for PFIC_IPRIOR14_SPEC {
+        ///`reset()` method sets IPRIOR14 to value 0
+        impl crate::Resettable for IPRIOR14_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR15 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR15_SPEC>`
-    pub type PFIC_IPRIOR15 = crate::Reg<pfic_iprior15::PFIC_IPRIOR15_SPEC>;
+    ///IPRIOR15 (rw) register accessor: an alias for `Reg<IPRIOR15_SPEC>`
+    pub type IPRIOR15 = crate::Reg<iprior15::IPRIOR15_SPEC>;
     ///Interrupt Priority configuration Register 15
-    pub mod pfic_iprior15 {
-        ///Register `PFIC_IPRIOR15` reader
-        pub struct R(crate::R<PFIC_IPRIOR15_SPEC>);
+    pub mod iprior15 {
+        ///Register `IPRIOR15` reader
+        pub struct R(crate::R<IPRIOR15_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR15_SPEC>;
+            type Target = crate::R<IPRIOR15_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR15_SPEC>> for R {
+        impl From<crate::R<IPRIOR15_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR15_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR15_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR15` writer
-        pub struct W(crate::W<PFIC_IPRIOR15_SPEC>);
+        ///Register `IPRIOR15` writer
+        pub struct W(crate::W<IPRIOR15_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR15_SPEC>;
+            type Target = crate::W<IPRIOR15_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -29268,17 +26965,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR15_SPEC>> for W {
+        impl From<crate::W<IPRIOR15_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR15_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR15_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR15` reader - RW,Interrupt priority for number 60-63
         pub type IPRIOR15_R = crate::FieldReader<u32>;
         ///Field `IPRIOR15` writer - RW,Interrupt priority for number 60-63
-        pub type IPRIOR15_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR15_SPEC, 32, O, u32>;
+        pub type IPRIOR15_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR15_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 60-63
             #[inline(always)]
@@ -29304,49 +27000,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior15](index.html) module
-        pub struct PFIC_IPRIOR15_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR15_SPEC {
+        ///For information about available fields see [iprior15](index.html) module
+        pub struct IPRIOR15_SPEC;
+        impl crate::RegisterSpec for IPRIOR15_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior15::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR15_SPEC {
+        ///`read()` method returns [iprior15::R](R) reader structure
+        impl crate::Readable for IPRIOR15_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior15::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR15_SPEC {
+        ///`write(|w| ..)` method takes [iprior15::W](W) writer structure
+        impl crate::Writable for IPRIOR15_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR15 to value 0
-        impl crate::Resettable for PFIC_IPRIOR15_SPEC {
+        ///`reset()` method sets IPRIOR15 to value 0
+        impl crate::Resettable for IPRIOR15_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR16 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR16_SPEC>`
-    pub type PFIC_IPRIOR16 = crate::Reg<pfic_iprior16::PFIC_IPRIOR16_SPEC>;
+    ///IPRIOR16 (rw) register accessor: an alias for `Reg<IPRIOR16_SPEC>`
+    pub type IPRIOR16 = crate::Reg<iprior16::IPRIOR16_SPEC>;
     ///Interrupt Priority configuration Register 16
-    pub mod pfic_iprior16 {
-        ///Register `PFIC_IPRIOR16` reader
-        pub struct R(crate::R<PFIC_IPRIOR16_SPEC>);
+    pub mod iprior16 {
+        ///Register `IPRIOR16` reader
+        pub struct R(crate::R<IPRIOR16_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR16_SPEC>;
+            type Target = crate::R<IPRIOR16_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR16_SPEC>> for R {
+        impl From<crate::R<IPRIOR16_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR16_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR16_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR16` writer
-        pub struct W(crate::W<PFIC_IPRIOR16_SPEC>);
+        ///Register `IPRIOR16` writer
+        pub struct W(crate::W<IPRIOR16_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR16_SPEC>;
+            type Target = crate::W<IPRIOR16_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -29358,17 +27054,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR16_SPEC>> for W {
+        impl From<crate::W<IPRIOR16_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR16_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR16_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR16` reader - RW,Interrupt priority for number 64-67
         pub type IPRIOR16_R = crate::FieldReader<u32>;
         ///Field `IPRIOR16` writer - RW,Interrupt priority for number 64-67
-        pub type IPRIOR16_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR16_SPEC, 32, O, u32>;
+        pub type IPRIOR16_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR16_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 64-67
             #[inline(always)]
@@ -29394,49 +27089,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior16](index.html) module
-        pub struct PFIC_IPRIOR16_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR16_SPEC {
+        ///For information about available fields see [iprior16](index.html) module
+        pub struct IPRIOR16_SPEC;
+        impl crate::RegisterSpec for IPRIOR16_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior16::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR16_SPEC {
+        ///`read()` method returns [iprior16::R](R) reader structure
+        impl crate::Readable for IPRIOR16_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior16::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR16_SPEC {
+        ///`write(|w| ..)` method takes [iprior16::W](W) writer structure
+        impl crate::Writable for IPRIOR16_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR16 to value 0
-        impl crate::Resettable for PFIC_IPRIOR16_SPEC {
+        ///`reset()` method sets IPRIOR16 to value 0
+        impl crate::Resettable for IPRIOR16_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR17 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR17_SPEC>`
-    pub type PFIC_IPRIOR17 = crate::Reg<pfic_iprior17::PFIC_IPRIOR17_SPEC>;
+    ///IPRIOR17 (rw) register accessor: an alias for `Reg<IPRIOR17_SPEC>`
+    pub type IPRIOR17 = crate::Reg<iprior17::IPRIOR17_SPEC>;
     ///Interrupt Priority configuration Register 17
-    pub mod pfic_iprior17 {
-        ///Register `PFIC_IPRIOR17` reader
-        pub struct R(crate::R<PFIC_IPRIOR17_SPEC>);
+    pub mod iprior17 {
+        ///Register `IPRIOR17` reader
+        pub struct R(crate::R<IPRIOR17_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR17_SPEC>;
+            type Target = crate::R<IPRIOR17_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR17_SPEC>> for R {
+        impl From<crate::R<IPRIOR17_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR17_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR17_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR17` writer
-        pub struct W(crate::W<PFIC_IPRIOR17_SPEC>);
+        ///Register `IPRIOR17` writer
+        pub struct W(crate::W<IPRIOR17_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR17_SPEC>;
+            type Target = crate::W<IPRIOR17_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -29448,17 +27143,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR17_SPEC>> for W {
+        impl From<crate::W<IPRIOR17_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR17_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR17_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR17` reader - RW,Interrupt priority for number 68-71
         pub type IPRIOR17_R = crate::FieldReader<u32>;
         ///Field `IPRIOR17` writer - RW,Interrupt priority for number 68-71
-        pub type IPRIOR17_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR17_SPEC, 32, O, u32>;
+        pub type IPRIOR17_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR17_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 68-71
             #[inline(always)]
@@ -29484,49 +27178,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior17](index.html) module
-        pub struct PFIC_IPRIOR17_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR17_SPEC {
+        ///For information about available fields see [iprior17](index.html) module
+        pub struct IPRIOR17_SPEC;
+        impl crate::RegisterSpec for IPRIOR17_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior17::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR17_SPEC {
+        ///`read()` method returns [iprior17::R](R) reader structure
+        impl crate::Readable for IPRIOR17_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior17::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR17_SPEC {
+        ///`write(|w| ..)` method takes [iprior17::W](W) writer structure
+        impl crate::Writable for IPRIOR17_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR17 to value 0
-        impl crate::Resettable for PFIC_IPRIOR17_SPEC {
+        ///`reset()` method sets IPRIOR17 to value 0
+        impl crate::Resettable for IPRIOR17_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR18 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR18_SPEC>`
-    pub type PFIC_IPRIOR18 = crate::Reg<pfic_iprior18::PFIC_IPRIOR18_SPEC>;
+    ///IPRIOR18 (rw) register accessor: an alias for `Reg<IPRIOR18_SPEC>`
+    pub type IPRIOR18 = crate::Reg<iprior18::IPRIOR18_SPEC>;
     ///Interrupt Priority configuration Register 18
-    pub mod pfic_iprior18 {
-        ///Register `PFIC_IPRIOR18` reader
-        pub struct R(crate::R<PFIC_IPRIOR18_SPEC>);
+    pub mod iprior18 {
+        ///Register `IPRIOR18` reader
+        pub struct R(crate::R<IPRIOR18_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR18_SPEC>;
+            type Target = crate::R<IPRIOR18_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR18_SPEC>> for R {
+        impl From<crate::R<IPRIOR18_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR18_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR18_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR18` writer
-        pub struct W(crate::W<PFIC_IPRIOR18_SPEC>);
+        ///Register `IPRIOR18` writer
+        pub struct W(crate::W<IPRIOR18_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR18_SPEC>;
+            type Target = crate::W<IPRIOR18_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -29538,17 +27232,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR18_SPEC>> for W {
+        impl From<crate::W<IPRIOR18_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR18_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR18_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR18` reader - RW,Interrupt priority for number 72-75
         pub type IPRIOR18_R = crate::FieldReader<u32>;
         ///Field `IPRIOR18` writer - RW,Interrupt priority for number 72-75
-        pub type IPRIOR18_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR18_SPEC, 32, O, u32>;
+        pub type IPRIOR18_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR18_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 72-75
             #[inline(always)]
@@ -29574,49 +27267,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior18](index.html) module
-        pub struct PFIC_IPRIOR18_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR18_SPEC {
+        ///For information about available fields see [iprior18](index.html) module
+        pub struct IPRIOR18_SPEC;
+        impl crate::RegisterSpec for IPRIOR18_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior18::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR18_SPEC {
+        ///`read()` method returns [iprior18::R](R) reader structure
+        impl crate::Readable for IPRIOR18_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior18::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR18_SPEC {
+        ///`write(|w| ..)` method takes [iprior18::W](W) writer structure
+        impl crate::Writable for IPRIOR18_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR18 to value 0
-        impl crate::Resettable for PFIC_IPRIOR18_SPEC {
+        ///`reset()` method sets IPRIOR18 to value 0
+        impl crate::Resettable for IPRIOR18_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR19 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR19_SPEC>`
-    pub type PFIC_IPRIOR19 = crate::Reg<pfic_iprior19::PFIC_IPRIOR19_SPEC>;
+    ///IPRIOR19 (rw) register accessor: an alias for `Reg<IPRIOR19_SPEC>`
+    pub type IPRIOR19 = crate::Reg<iprior19::IPRIOR19_SPEC>;
     ///Interrupt Priority configuration Register 19
-    pub mod pfic_iprior19 {
-        ///Register `PFIC_IPRIOR19` reader
-        pub struct R(crate::R<PFIC_IPRIOR19_SPEC>);
+    pub mod iprior19 {
+        ///Register `IPRIOR19` reader
+        pub struct R(crate::R<IPRIOR19_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR19_SPEC>;
+            type Target = crate::R<IPRIOR19_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR19_SPEC>> for R {
+        impl From<crate::R<IPRIOR19_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR19_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR19_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR19` writer
-        pub struct W(crate::W<PFIC_IPRIOR19_SPEC>);
+        ///Register `IPRIOR19` writer
+        pub struct W(crate::W<IPRIOR19_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR19_SPEC>;
+            type Target = crate::W<IPRIOR19_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -29628,17 +27321,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR19_SPEC>> for W {
+        impl From<crate::W<IPRIOR19_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR19_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR19_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR19` reader - RW,Interrupt priority for number 76-79
         pub type IPRIOR19_R = crate::FieldReader<u32>;
         ///Field `IPRIOR19` writer - RW,Interrupt priority for number 76-79
-        pub type IPRIOR19_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR19_SPEC, 32, O, u32>;
+        pub type IPRIOR19_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR19_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 76-79
             #[inline(always)]
@@ -29664,49 +27356,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior19](index.html) module
-        pub struct PFIC_IPRIOR19_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR19_SPEC {
+        ///For information about available fields see [iprior19](index.html) module
+        pub struct IPRIOR19_SPEC;
+        impl crate::RegisterSpec for IPRIOR19_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior19::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR19_SPEC {
+        ///`read()` method returns [iprior19::R](R) reader structure
+        impl crate::Readable for IPRIOR19_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior19::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR19_SPEC {
+        ///`write(|w| ..)` method takes [iprior19::W](W) writer structure
+        impl crate::Writable for IPRIOR19_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR19 to value 0
-        impl crate::Resettable for PFIC_IPRIOR19_SPEC {
+        ///`reset()` method sets IPRIOR19 to value 0
+        impl crate::Resettable for IPRIOR19_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR20 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR20_SPEC>`
-    pub type PFIC_IPRIOR20 = crate::Reg<pfic_iprior20::PFIC_IPRIOR20_SPEC>;
+    ///IPRIOR20 (rw) register accessor: an alias for `Reg<IPRIOR20_SPEC>`
+    pub type IPRIOR20 = crate::Reg<iprior20::IPRIOR20_SPEC>;
     ///Interrupt Priority configuration Register 20
-    pub mod pfic_iprior20 {
-        ///Register `PFIC_IPRIOR20` reader
-        pub struct R(crate::R<PFIC_IPRIOR20_SPEC>);
+    pub mod iprior20 {
+        ///Register `IPRIOR20` reader
+        pub struct R(crate::R<IPRIOR20_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR20_SPEC>;
+            type Target = crate::R<IPRIOR20_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR20_SPEC>> for R {
+        impl From<crate::R<IPRIOR20_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR20_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR20_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR20` writer
-        pub struct W(crate::W<PFIC_IPRIOR20_SPEC>);
+        ///Register `IPRIOR20` writer
+        pub struct W(crate::W<IPRIOR20_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR20_SPEC>;
+            type Target = crate::W<IPRIOR20_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -29718,17 +27410,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR20_SPEC>> for W {
+        impl From<crate::W<IPRIOR20_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR20_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR20_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR20` reader - RW,RW,Interrupt priority for number 80-83
         pub type IPRIOR20_R = crate::FieldReader<u32>;
         ///Field `IPRIOR20` writer - RW,RW,Interrupt priority for number 80-83
-        pub type IPRIOR20_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR20_SPEC, 32, O, u32>;
+        pub type IPRIOR20_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR20_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,RW,Interrupt priority for number 80-83
             #[inline(always)]
@@ -29754,49 +27445,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior20](index.html) module
-        pub struct PFIC_IPRIOR20_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR20_SPEC {
+        ///For information about available fields see [iprior20](index.html) module
+        pub struct IPRIOR20_SPEC;
+        impl crate::RegisterSpec for IPRIOR20_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior20::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR20_SPEC {
+        ///`read()` method returns [iprior20::R](R) reader structure
+        impl crate::Readable for IPRIOR20_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior20::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR20_SPEC {
+        ///`write(|w| ..)` method takes [iprior20::W](W) writer structure
+        impl crate::Writable for IPRIOR20_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR20 to value 0
-        impl crate::Resettable for PFIC_IPRIOR20_SPEC {
+        ///`reset()` method sets IPRIOR20 to value 0
+        impl crate::Resettable for IPRIOR20_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR21 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR21_SPEC>`
-    pub type PFIC_IPRIOR21 = crate::Reg<pfic_iprior21::PFIC_IPRIOR21_SPEC>;
+    ///IPRIOR21 (rw) register accessor: an alias for `Reg<IPRIOR21_SPEC>`
+    pub type IPRIOR21 = crate::Reg<iprior21::IPRIOR21_SPEC>;
     ///Interrupt Priority configuration Register 21
-    pub mod pfic_iprior21 {
-        ///Register `PFIC_IPRIOR21` reader
-        pub struct R(crate::R<PFIC_IPRIOR21_SPEC>);
+    pub mod iprior21 {
+        ///Register `IPRIOR21` reader
+        pub struct R(crate::R<IPRIOR21_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR21_SPEC>;
+            type Target = crate::R<IPRIOR21_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR21_SPEC>> for R {
+        impl From<crate::R<IPRIOR21_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR21_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR21_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR21` writer
-        pub struct W(crate::W<PFIC_IPRIOR21_SPEC>);
+        ///Register `IPRIOR21` writer
+        pub struct W(crate::W<IPRIOR21_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR21_SPEC>;
+            type Target = crate::W<IPRIOR21_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -29808,17 +27499,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR21_SPEC>> for W {
+        impl From<crate::W<IPRIOR21_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR21_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR21_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR21` reader - RW,Interrupt priority for number 84-87
         pub type IPRIOR21_R = crate::FieldReader<u32>;
         ///Field `IPRIOR21` writer - RW,Interrupt priority for number 84-87
-        pub type IPRIOR21_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR21_SPEC, 32, O, u32>;
+        pub type IPRIOR21_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR21_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 84-87
             #[inline(always)]
@@ -29844,49 +27534,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior21](index.html) module
-        pub struct PFIC_IPRIOR21_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR21_SPEC {
+        ///For information about available fields see [iprior21](index.html) module
+        pub struct IPRIOR21_SPEC;
+        impl crate::RegisterSpec for IPRIOR21_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior21::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR21_SPEC {
+        ///`read()` method returns [iprior21::R](R) reader structure
+        impl crate::Readable for IPRIOR21_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior21::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR21_SPEC {
+        ///`write(|w| ..)` method takes [iprior21::W](W) writer structure
+        impl crate::Writable for IPRIOR21_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR21 to value 0
-        impl crate::Resettable for PFIC_IPRIOR21_SPEC {
+        ///`reset()` method sets IPRIOR21 to value 0
+        impl crate::Resettable for IPRIOR21_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR22 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR22_SPEC>`
-    pub type PFIC_IPRIOR22 = crate::Reg<pfic_iprior22::PFIC_IPRIOR22_SPEC>;
+    ///IPRIOR22 (rw) register accessor: an alias for `Reg<IPRIOR22_SPEC>`
+    pub type IPRIOR22 = crate::Reg<iprior22::IPRIOR22_SPEC>;
     ///Interrupt Priority configuration Register 22
-    pub mod pfic_iprior22 {
-        ///Register `PFIC_IPRIOR22` reader
-        pub struct R(crate::R<PFIC_IPRIOR22_SPEC>);
+    pub mod iprior22 {
+        ///Register `IPRIOR22` reader
+        pub struct R(crate::R<IPRIOR22_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR22_SPEC>;
+            type Target = crate::R<IPRIOR22_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR22_SPEC>> for R {
+        impl From<crate::R<IPRIOR22_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR22_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR22_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR22` writer
-        pub struct W(crate::W<PFIC_IPRIOR22_SPEC>);
+        ///Register `IPRIOR22` writer
+        pub struct W(crate::W<IPRIOR22_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR22_SPEC>;
+            type Target = crate::W<IPRIOR22_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -29898,17 +27588,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR22_SPEC>> for W {
+        impl From<crate::W<IPRIOR22_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR22_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR22_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR22` reader - RW,Interrupt priority for number 88-91
         pub type IPRIOR22_R = crate::FieldReader<u32>;
         ///Field `IPRIOR22` writer - RW,Interrupt priority for number 88-91
-        pub type IPRIOR22_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR22_SPEC, 32, O, u32>;
+        pub type IPRIOR22_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR22_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 88-91
             #[inline(always)]
@@ -29934,49 +27623,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior22](index.html) module
-        pub struct PFIC_IPRIOR22_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR22_SPEC {
+        ///For information about available fields see [iprior22](index.html) module
+        pub struct IPRIOR22_SPEC;
+        impl crate::RegisterSpec for IPRIOR22_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior22::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR22_SPEC {
+        ///`read()` method returns [iprior22::R](R) reader structure
+        impl crate::Readable for IPRIOR22_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior22::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR22_SPEC {
+        ///`write(|w| ..)` method takes [iprior22::W](W) writer structure
+        impl crate::Writable for IPRIOR22_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR22 to value 0
-        impl crate::Resettable for PFIC_IPRIOR22_SPEC {
+        ///`reset()` method sets IPRIOR22 to value 0
+        impl crate::Resettable for IPRIOR22_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR23 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR23_SPEC>`
-    pub type PFIC_IPRIOR23 = crate::Reg<pfic_iprior23::PFIC_IPRIOR23_SPEC>;
+    ///IPRIOR23 (rw) register accessor: an alias for `Reg<IPRIOR23_SPEC>`
+    pub type IPRIOR23 = crate::Reg<iprior23::IPRIOR23_SPEC>;
     ///Interrupt Priority configuration Register 23
-    pub mod pfic_iprior23 {
-        ///Register `PFIC_IPRIOR23` reader
-        pub struct R(crate::R<PFIC_IPRIOR23_SPEC>);
+    pub mod iprior23 {
+        ///Register `IPRIOR23` reader
+        pub struct R(crate::R<IPRIOR23_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR23_SPEC>;
+            type Target = crate::R<IPRIOR23_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR23_SPEC>> for R {
+        impl From<crate::R<IPRIOR23_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR23_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR23_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR23` writer
-        pub struct W(crate::W<PFIC_IPRIOR23_SPEC>);
+        ///Register `IPRIOR23` writer
+        pub struct W(crate::W<IPRIOR23_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR23_SPEC>;
+            type Target = crate::W<IPRIOR23_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -29988,17 +27677,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR23_SPEC>> for W {
+        impl From<crate::W<IPRIOR23_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR23_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR23_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR23` reader - RW,Interrupt priority for number 92-95
         pub type IPRIOR23_R = crate::FieldReader<u32>;
         ///Field `IPRIOR23` writer - RW,Interrupt priority for number 92-95
-        pub type IPRIOR23_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR23_SPEC, 32, O, u32>;
+        pub type IPRIOR23_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR23_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 92-95
             #[inline(always)]
@@ -30024,49 +27712,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior23](index.html) module
-        pub struct PFIC_IPRIOR23_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR23_SPEC {
+        ///For information about available fields see [iprior23](index.html) module
+        pub struct IPRIOR23_SPEC;
+        impl crate::RegisterSpec for IPRIOR23_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior23::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR23_SPEC {
+        ///`read()` method returns [iprior23::R](R) reader structure
+        impl crate::Readable for IPRIOR23_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior23::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR23_SPEC {
+        ///`write(|w| ..)` method takes [iprior23::W](W) writer structure
+        impl crate::Writable for IPRIOR23_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR23 to value 0
-        impl crate::Resettable for PFIC_IPRIOR23_SPEC {
+        ///`reset()` method sets IPRIOR23 to value 0
+        impl crate::Resettable for IPRIOR23_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR24 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR24_SPEC>`
-    pub type PFIC_IPRIOR24 = crate::Reg<pfic_iprior24::PFIC_IPRIOR24_SPEC>;
+    ///IPRIOR24 (rw) register accessor: an alias for `Reg<IPRIOR24_SPEC>`
+    pub type IPRIOR24 = crate::Reg<iprior24::IPRIOR24_SPEC>;
     ///Interrupt Priority configuration Register 24
-    pub mod pfic_iprior24 {
-        ///Register `PFIC_IPRIOR24` reader
-        pub struct R(crate::R<PFIC_IPRIOR24_SPEC>);
+    pub mod iprior24 {
+        ///Register `IPRIOR24` reader
+        pub struct R(crate::R<IPRIOR24_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR24_SPEC>;
+            type Target = crate::R<IPRIOR24_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR24_SPEC>> for R {
+        impl From<crate::R<IPRIOR24_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR24_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR24_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR24` writer
-        pub struct W(crate::W<PFIC_IPRIOR24_SPEC>);
+        ///Register `IPRIOR24` writer
+        pub struct W(crate::W<IPRIOR24_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR24_SPEC>;
+            type Target = crate::W<IPRIOR24_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -30078,17 +27766,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR24_SPEC>> for W {
+        impl From<crate::W<IPRIOR24_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR24_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR24_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR24` reader - RW,Interrupt priority for number 96-99
         pub type IPRIOR24_R = crate::FieldReader<u32>;
         ///Field `IPRIOR24` writer - RW,Interrupt priority for number 96-99
-        pub type IPRIOR24_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR24_SPEC, 32, O, u32>;
+        pub type IPRIOR24_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR24_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 96-99
             #[inline(always)]
@@ -30114,49 +27801,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior24](index.html) module
-        pub struct PFIC_IPRIOR24_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR24_SPEC {
+        ///For information about available fields see [iprior24](index.html) module
+        pub struct IPRIOR24_SPEC;
+        impl crate::RegisterSpec for IPRIOR24_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior24::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR24_SPEC {
+        ///`read()` method returns [iprior24::R](R) reader structure
+        impl crate::Readable for IPRIOR24_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior24::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR24_SPEC {
+        ///`write(|w| ..)` method takes [iprior24::W](W) writer structure
+        impl crate::Writable for IPRIOR24_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR24 to value 0
-        impl crate::Resettable for PFIC_IPRIOR24_SPEC {
+        ///`reset()` method sets IPRIOR24 to value 0
+        impl crate::Resettable for IPRIOR24_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR25 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR25_SPEC>`
-    pub type PFIC_IPRIOR25 = crate::Reg<pfic_iprior25::PFIC_IPRIOR25_SPEC>;
+    ///IPRIOR25 (rw) register accessor: an alias for `Reg<IPRIOR25_SPEC>`
+    pub type IPRIOR25 = crate::Reg<iprior25::IPRIOR25_SPEC>;
     ///Interrupt Priority configuration Register 25
-    pub mod pfic_iprior25 {
-        ///Register `PFIC_IPRIOR25` reader
-        pub struct R(crate::R<PFIC_IPRIOR25_SPEC>);
+    pub mod iprior25 {
+        ///Register `IPRIOR25` reader
+        pub struct R(crate::R<IPRIOR25_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR25_SPEC>;
+            type Target = crate::R<IPRIOR25_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR25_SPEC>> for R {
+        impl From<crate::R<IPRIOR25_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR25_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR25_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR25` writer
-        pub struct W(crate::W<PFIC_IPRIOR25_SPEC>);
+        ///Register `IPRIOR25` writer
+        pub struct W(crate::W<IPRIOR25_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR25_SPEC>;
+            type Target = crate::W<IPRIOR25_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -30168,17 +27855,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR25_SPEC>> for W {
+        impl From<crate::W<IPRIOR25_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR25_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR25_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR25` reader - RW,Interrupt priority for number 100-103
         pub type IPRIOR25_R = crate::FieldReader<u32>;
         ///Field `IPRIOR25` writer - RW,Interrupt priority for number 100-103
-        pub type IPRIOR25_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR25_SPEC, 32, O, u32>;
+        pub type IPRIOR25_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR25_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 100-103
             #[inline(always)]
@@ -30204,49 +27890,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior25](index.html) module
-        pub struct PFIC_IPRIOR25_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR25_SPEC {
+        ///For information about available fields see [iprior25](index.html) module
+        pub struct IPRIOR25_SPEC;
+        impl crate::RegisterSpec for IPRIOR25_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior25::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR25_SPEC {
+        ///`read()` method returns [iprior25::R](R) reader structure
+        impl crate::Readable for IPRIOR25_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior25::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR25_SPEC {
+        ///`write(|w| ..)` method takes [iprior25::W](W) writer structure
+        impl crate::Writable for IPRIOR25_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR25 to value 0
-        impl crate::Resettable for PFIC_IPRIOR25_SPEC {
+        ///`reset()` method sets IPRIOR25 to value 0
+        impl crate::Resettable for IPRIOR25_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR26 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR26_SPEC>`
-    pub type PFIC_IPRIOR26 = crate::Reg<pfic_iprior26::PFIC_IPRIOR26_SPEC>;
+    ///IPRIOR26 (rw) register accessor: an alias for `Reg<IPRIOR26_SPEC>`
+    pub type IPRIOR26 = crate::Reg<iprior26::IPRIOR26_SPEC>;
     ///Interrupt Priority configuration Register 26
-    pub mod pfic_iprior26 {
-        ///Register `PFIC_IPRIOR26` reader
-        pub struct R(crate::R<PFIC_IPRIOR26_SPEC>);
+    pub mod iprior26 {
+        ///Register `IPRIOR26` reader
+        pub struct R(crate::R<IPRIOR26_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR26_SPEC>;
+            type Target = crate::R<IPRIOR26_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR26_SPEC>> for R {
+        impl From<crate::R<IPRIOR26_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR26_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR26_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR26` writer
-        pub struct W(crate::W<PFIC_IPRIOR26_SPEC>);
+        ///Register `IPRIOR26` writer
+        pub struct W(crate::W<IPRIOR26_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR26_SPEC>;
+            type Target = crate::W<IPRIOR26_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -30258,17 +27944,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR26_SPEC>> for W {
+        impl From<crate::W<IPRIOR26_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR26_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR26_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR26` reader - RW,Interrupt priority for number 104-107
         pub type IPRIOR26_R = crate::FieldReader<u32>;
         ///Field `IPRIOR26` writer - RW,Interrupt priority for number 104-107
-        pub type IPRIOR26_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR26_SPEC, 32, O, u32>;
+        pub type IPRIOR26_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR26_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 104-107
             #[inline(always)]
@@ -30294,49 +27979,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior26](index.html) module
-        pub struct PFIC_IPRIOR26_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR26_SPEC {
+        ///For information about available fields see [iprior26](index.html) module
+        pub struct IPRIOR26_SPEC;
+        impl crate::RegisterSpec for IPRIOR26_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior26::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR26_SPEC {
+        ///`read()` method returns [iprior26::R](R) reader structure
+        impl crate::Readable for IPRIOR26_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior26::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR26_SPEC {
+        ///`write(|w| ..)` method takes [iprior26::W](W) writer structure
+        impl crate::Writable for IPRIOR26_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR26 to value 0
-        impl crate::Resettable for PFIC_IPRIOR26_SPEC {
+        ///`reset()` method sets IPRIOR26 to value 0
+        impl crate::Resettable for IPRIOR26_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR27 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR27_SPEC>`
-    pub type PFIC_IPRIOR27 = crate::Reg<pfic_iprior27::PFIC_IPRIOR27_SPEC>;
+    ///IPRIOR27 (rw) register accessor: an alias for `Reg<IPRIOR27_SPEC>`
+    pub type IPRIOR27 = crate::Reg<iprior27::IPRIOR27_SPEC>;
     ///Interrupt Priority configuration Register 27
-    pub mod pfic_iprior27 {
-        ///Register `PFIC_IPRIOR27` reader
-        pub struct R(crate::R<PFIC_IPRIOR27_SPEC>);
+    pub mod iprior27 {
+        ///Register `IPRIOR27` reader
+        pub struct R(crate::R<IPRIOR27_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR27_SPEC>;
+            type Target = crate::R<IPRIOR27_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR27_SPEC>> for R {
+        impl From<crate::R<IPRIOR27_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR27_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR27_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR27` writer
-        pub struct W(crate::W<PFIC_IPRIOR27_SPEC>);
+        ///Register `IPRIOR27` writer
+        pub struct W(crate::W<IPRIOR27_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR27_SPEC>;
+            type Target = crate::W<IPRIOR27_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -30348,17 +28033,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR27_SPEC>> for W {
+        impl From<crate::W<IPRIOR27_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR27_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR27_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR27` reader - RW,Interrupt priority for number 108-111
         pub type IPRIOR27_R = crate::FieldReader<u32>;
         ///Field `IPRIOR27` writer - RW,Interrupt priority for number 108-111
-        pub type IPRIOR27_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR27_SPEC, 32, O, u32>;
+        pub type IPRIOR27_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR27_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 108-111
             #[inline(always)]
@@ -30384,49 +28068,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior27](index.html) module
-        pub struct PFIC_IPRIOR27_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR27_SPEC {
+        ///For information about available fields see [iprior27](index.html) module
+        pub struct IPRIOR27_SPEC;
+        impl crate::RegisterSpec for IPRIOR27_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior27::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR27_SPEC {
+        ///`read()` method returns [iprior27::R](R) reader structure
+        impl crate::Readable for IPRIOR27_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior27::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR27_SPEC {
+        ///`write(|w| ..)` method takes [iprior27::W](W) writer structure
+        impl crate::Writable for IPRIOR27_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR27 to value 0
-        impl crate::Resettable for PFIC_IPRIOR27_SPEC {
+        ///`reset()` method sets IPRIOR27 to value 0
+        impl crate::Resettable for IPRIOR27_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR28 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR28_SPEC>`
-    pub type PFIC_IPRIOR28 = crate::Reg<pfic_iprior28::PFIC_IPRIOR28_SPEC>;
+    ///IPRIOR28 (rw) register accessor: an alias for `Reg<IPRIOR28_SPEC>`
+    pub type IPRIOR28 = crate::Reg<iprior28::IPRIOR28_SPEC>;
     ///Interrupt Priority configuration Register 28
-    pub mod pfic_iprior28 {
-        ///Register `PFIC_IPRIOR28` reader
-        pub struct R(crate::R<PFIC_IPRIOR28_SPEC>);
+    pub mod iprior28 {
+        ///Register `IPRIOR28` reader
+        pub struct R(crate::R<IPRIOR28_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR28_SPEC>;
+            type Target = crate::R<IPRIOR28_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR28_SPEC>> for R {
+        impl From<crate::R<IPRIOR28_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR28_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR28_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR28` writer
-        pub struct W(crate::W<PFIC_IPRIOR28_SPEC>);
+        ///Register `IPRIOR28` writer
+        pub struct W(crate::W<IPRIOR28_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR28_SPEC>;
+            type Target = crate::W<IPRIOR28_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -30438,17 +28122,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR28_SPEC>> for W {
+        impl From<crate::W<IPRIOR28_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR28_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR28_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR28` reader - RW,Interrupt priority for number 112-115
         pub type IPRIOR28_R = crate::FieldReader<u32>;
         ///Field `IPRIOR28` writer - RW,Interrupt priority for number 112-115
-        pub type IPRIOR28_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR28_SPEC, 32, O, u32>;
+        pub type IPRIOR28_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR28_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 112-115
             #[inline(always)]
@@ -30474,49 +28157,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior28](index.html) module
-        pub struct PFIC_IPRIOR28_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR28_SPEC {
+        ///For information about available fields see [iprior28](index.html) module
+        pub struct IPRIOR28_SPEC;
+        impl crate::RegisterSpec for IPRIOR28_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior28::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR28_SPEC {
+        ///`read()` method returns [iprior28::R](R) reader structure
+        impl crate::Readable for IPRIOR28_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior28::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR28_SPEC {
+        ///`write(|w| ..)` method takes [iprior28::W](W) writer structure
+        impl crate::Writable for IPRIOR28_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR28 to value 0
-        impl crate::Resettable for PFIC_IPRIOR28_SPEC {
+        ///`reset()` method sets IPRIOR28 to value 0
+        impl crate::Resettable for IPRIOR28_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR29 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR29_SPEC>`
-    pub type PFIC_IPRIOR29 = crate::Reg<pfic_iprior29::PFIC_IPRIOR29_SPEC>;
+    ///IPRIOR29 (rw) register accessor: an alias for `Reg<IPRIOR29_SPEC>`
+    pub type IPRIOR29 = crate::Reg<iprior29::IPRIOR29_SPEC>;
     ///Interrupt Priority configuration Register 29
-    pub mod pfic_iprior29 {
-        ///Register `PFIC_IPRIOR29` reader
-        pub struct R(crate::R<PFIC_IPRIOR29_SPEC>);
+    pub mod iprior29 {
+        ///Register `IPRIOR29` reader
+        pub struct R(crate::R<IPRIOR29_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR29_SPEC>;
+            type Target = crate::R<IPRIOR29_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR29_SPEC>> for R {
+        impl From<crate::R<IPRIOR29_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR29_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR29_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR29` writer
-        pub struct W(crate::W<PFIC_IPRIOR29_SPEC>);
+        ///Register `IPRIOR29` writer
+        pub struct W(crate::W<IPRIOR29_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR29_SPEC>;
+            type Target = crate::W<IPRIOR29_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -30528,17 +28211,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR29_SPEC>> for W {
+        impl From<crate::W<IPRIOR29_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR29_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR29_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR29` reader - RW,Interrupt priority for number 116-119
         pub type IPRIOR29_R = crate::FieldReader<u32>;
         ///Field `IPRIOR29` writer - RW,Interrupt priority for number 116-119
-        pub type IPRIOR29_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR29_SPEC, 32, O, u32>;
+        pub type IPRIOR29_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR29_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 116-119
             #[inline(always)]
@@ -30564,49 +28246,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior29](index.html) module
-        pub struct PFIC_IPRIOR29_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR29_SPEC {
+        ///For information about available fields see [iprior29](index.html) module
+        pub struct IPRIOR29_SPEC;
+        impl crate::RegisterSpec for IPRIOR29_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior29::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR29_SPEC {
+        ///`read()` method returns [iprior29::R](R) reader structure
+        impl crate::Readable for IPRIOR29_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior29::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR29_SPEC {
+        ///`write(|w| ..)` method takes [iprior29::W](W) writer structure
+        impl crate::Writable for IPRIOR29_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR29 to value 0
-        impl crate::Resettable for PFIC_IPRIOR29_SPEC {
+        ///`reset()` method sets IPRIOR29 to value 0
+        impl crate::Resettable for IPRIOR29_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR30 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR30_SPEC>`
-    pub type PFIC_IPRIOR30 = crate::Reg<pfic_iprior30::PFIC_IPRIOR30_SPEC>;
+    ///IPRIOR30 (rw) register accessor: an alias for `Reg<IPRIOR30_SPEC>`
+    pub type IPRIOR30 = crate::Reg<iprior30::IPRIOR30_SPEC>;
     ///Interrupt Priority configuration Register 30
-    pub mod pfic_iprior30 {
-        ///Register `PFIC_IPRIOR30` reader
-        pub struct R(crate::R<PFIC_IPRIOR30_SPEC>);
+    pub mod iprior30 {
+        ///Register `IPRIOR30` reader
+        pub struct R(crate::R<IPRIOR30_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR30_SPEC>;
+            type Target = crate::R<IPRIOR30_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR30_SPEC>> for R {
+        impl From<crate::R<IPRIOR30_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR30_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR30_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR30` writer
-        pub struct W(crate::W<PFIC_IPRIOR30_SPEC>);
+        ///Register `IPRIOR30` writer
+        pub struct W(crate::W<IPRIOR30_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR30_SPEC>;
+            type Target = crate::W<IPRIOR30_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -30618,17 +28300,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR30_SPEC>> for W {
+        impl From<crate::W<IPRIOR30_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR30_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR30_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR30` reader - RW,Interrupt priority for number 120-123
         pub type IPRIOR30_R = crate::FieldReader<u32>;
         ///Field `IPRIOR30` writer - RW,Interrupt priority for number 120-123
-        pub type IPRIOR30_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR30_SPEC, 32, O, u32>;
+        pub type IPRIOR30_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR30_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 120-123
             #[inline(always)]
@@ -30654,49 +28335,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior30](index.html) module
-        pub struct PFIC_IPRIOR30_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR30_SPEC {
+        ///For information about available fields see [iprior30](index.html) module
+        pub struct IPRIOR30_SPEC;
+        impl crate::RegisterSpec for IPRIOR30_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior30::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR30_SPEC {
+        ///`read()` method returns [iprior30::R](R) reader structure
+        impl crate::Readable for IPRIOR30_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior30::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR30_SPEC {
+        ///`write(|w| ..)` method takes [iprior30::W](W) writer structure
+        impl crate::Writable for IPRIOR30_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR30 to value 0
-        impl crate::Resettable for PFIC_IPRIOR30_SPEC {
+        ///`reset()` method sets IPRIOR30 to value 0
+        impl crate::Resettable for IPRIOR30_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR31 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR31_SPEC>`
-    pub type PFIC_IPRIOR31 = crate::Reg<pfic_iprior31::PFIC_IPRIOR31_SPEC>;
+    ///IPRIOR31 (rw) register accessor: an alias for `Reg<IPRIOR31_SPEC>`
+    pub type IPRIOR31 = crate::Reg<iprior31::IPRIOR31_SPEC>;
     ///Interrupt Priority configuration Register 31
-    pub mod pfic_iprior31 {
-        ///Register `PFIC_IPRIOR31` reader
-        pub struct R(crate::R<PFIC_IPRIOR31_SPEC>);
+    pub mod iprior31 {
+        ///Register `IPRIOR31` reader
+        pub struct R(crate::R<IPRIOR31_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR31_SPEC>;
+            type Target = crate::R<IPRIOR31_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR31_SPEC>> for R {
+        impl From<crate::R<IPRIOR31_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR31_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR31_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR31` writer
-        pub struct W(crate::W<PFIC_IPRIOR31_SPEC>);
+        ///Register `IPRIOR31` writer
+        pub struct W(crate::W<IPRIOR31_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR31_SPEC>;
+            type Target = crate::W<IPRIOR31_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -30708,17 +28389,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR31_SPEC>> for W {
+        impl From<crate::W<IPRIOR31_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR31_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR31_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR31` reader - RW,Interrupt priority for number 124-127
         pub type IPRIOR31_R = crate::FieldReader<u32>;
         ///Field `IPRIOR31` writer - RW,Interrupt priority for number 124-127
-        pub type IPRIOR31_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR31_SPEC, 32, O, u32>;
+        pub type IPRIOR31_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR31_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 124-127
             #[inline(always)]
@@ -30744,49 +28424,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior31](index.html) module
-        pub struct PFIC_IPRIOR31_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR31_SPEC {
+        ///For information about available fields see [iprior31](index.html) module
+        pub struct IPRIOR31_SPEC;
+        impl crate::RegisterSpec for IPRIOR31_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior31::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR31_SPEC {
+        ///`read()` method returns [iprior31::R](R) reader structure
+        impl crate::Readable for IPRIOR31_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior31::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR31_SPEC {
+        ///`write(|w| ..)` method takes [iprior31::W](W) writer structure
+        impl crate::Writable for IPRIOR31_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR31 to value 0
-        impl crate::Resettable for PFIC_IPRIOR31_SPEC {
+        ///`reset()` method sets IPRIOR31 to value 0
+        impl crate::Resettable for IPRIOR31_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR32 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR32_SPEC>`
-    pub type PFIC_IPRIOR32 = crate::Reg<pfic_iprior32::PFIC_IPRIOR32_SPEC>;
+    ///IPRIOR32 (rw) register accessor: an alias for `Reg<IPRIOR32_SPEC>`
+    pub type IPRIOR32 = crate::Reg<iprior32::IPRIOR32_SPEC>;
     ///Interrupt Priority configuration Register 32
-    pub mod pfic_iprior32 {
-        ///Register `PFIC_IPRIOR32` reader
-        pub struct R(crate::R<PFIC_IPRIOR32_SPEC>);
+    pub mod iprior32 {
+        ///Register `IPRIOR32` reader
+        pub struct R(crate::R<IPRIOR32_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR32_SPEC>;
+            type Target = crate::R<IPRIOR32_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR32_SPEC>> for R {
+        impl From<crate::R<IPRIOR32_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR32_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR32_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR32` writer
-        pub struct W(crate::W<PFIC_IPRIOR32_SPEC>);
+        ///Register `IPRIOR32` writer
+        pub struct W(crate::W<IPRIOR32_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR32_SPEC>;
+            type Target = crate::W<IPRIOR32_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -30798,17 +28478,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR32_SPEC>> for W {
+        impl From<crate::W<IPRIOR32_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR32_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR32_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR32` reader - RW,Interrupt priority for number 128-131
         pub type IPRIOR32_R = crate::FieldReader<u32>;
         ///Field `IPRIOR32` writer - RW,Interrupt priority for number 128-131
-        pub type IPRIOR32_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR32_SPEC, 32, O, u32>;
+        pub type IPRIOR32_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR32_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 128-131
             #[inline(always)]
@@ -30834,49 +28513,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior32](index.html) module
-        pub struct PFIC_IPRIOR32_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR32_SPEC {
+        ///For information about available fields see [iprior32](index.html) module
+        pub struct IPRIOR32_SPEC;
+        impl crate::RegisterSpec for IPRIOR32_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior32::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR32_SPEC {
+        ///`read()` method returns [iprior32::R](R) reader structure
+        impl crate::Readable for IPRIOR32_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior32::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR32_SPEC {
+        ///`write(|w| ..)` method takes [iprior32::W](W) writer structure
+        impl crate::Writable for IPRIOR32_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR32 to value 0
-        impl crate::Resettable for PFIC_IPRIOR32_SPEC {
+        ///`reset()` method sets IPRIOR32 to value 0
+        impl crate::Resettable for IPRIOR32_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR33 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR33_SPEC>`
-    pub type PFIC_IPRIOR33 = crate::Reg<pfic_iprior33::PFIC_IPRIOR33_SPEC>;
+    ///IPRIOR33 (rw) register accessor: an alias for `Reg<IPRIOR33_SPEC>`
+    pub type IPRIOR33 = crate::Reg<iprior33::IPRIOR33_SPEC>;
     ///Interrupt Priority configuration Register 33
-    pub mod pfic_iprior33 {
-        ///Register `PFIC_IPRIOR33` reader
-        pub struct R(crate::R<PFIC_IPRIOR33_SPEC>);
+    pub mod iprior33 {
+        ///Register `IPRIOR33` reader
+        pub struct R(crate::R<IPRIOR33_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR33_SPEC>;
+            type Target = crate::R<IPRIOR33_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR33_SPEC>> for R {
+        impl From<crate::R<IPRIOR33_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR33_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR33_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR33` writer
-        pub struct W(crate::W<PFIC_IPRIOR33_SPEC>);
+        ///Register `IPRIOR33` writer
+        pub struct W(crate::W<IPRIOR33_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR33_SPEC>;
+            type Target = crate::W<IPRIOR33_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -30888,17 +28567,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR33_SPEC>> for W {
+        impl From<crate::W<IPRIOR33_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR33_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR33_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR33` reader - RW,Interrupt priority for number 132-135
         pub type IPRIOR33_R = crate::FieldReader<u32>;
         ///Field `IPRIOR33` writer - RW,Interrupt priority for number 132-135
-        pub type IPRIOR33_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR33_SPEC, 32, O, u32>;
+        pub type IPRIOR33_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR33_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 132-135
             #[inline(always)]
@@ -30924,49 +28602,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior33](index.html) module
-        pub struct PFIC_IPRIOR33_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR33_SPEC {
+        ///For information about available fields see [iprior33](index.html) module
+        pub struct IPRIOR33_SPEC;
+        impl crate::RegisterSpec for IPRIOR33_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior33::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR33_SPEC {
+        ///`read()` method returns [iprior33::R](R) reader structure
+        impl crate::Readable for IPRIOR33_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior33::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR33_SPEC {
+        ///`write(|w| ..)` method takes [iprior33::W](W) writer structure
+        impl crate::Writable for IPRIOR33_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR33 to value 0
-        impl crate::Resettable for PFIC_IPRIOR33_SPEC {
+        ///`reset()` method sets IPRIOR33 to value 0
+        impl crate::Resettable for IPRIOR33_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR34 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR34_SPEC>`
-    pub type PFIC_IPRIOR34 = crate::Reg<pfic_iprior34::PFIC_IPRIOR34_SPEC>;
+    ///IPRIOR34 (rw) register accessor: an alias for `Reg<IPRIOR34_SPEC>`
+    pub type IPRIOR34 = crate::Reg<iprior34::IPRIOR34_SPEC>;
     ///Interrupt Priority configuration Register 34
-    pub mod pfic_iprior34 {
-        ///Register `PFIC_IPRIOR34` reader
-        pub struct R(crate::R<PFIC_IPRIOR34_SPEC>);
+    pub mod iprior34 {
+        ///Register `IPRIOR34` reader
+        pub struct R(crate::R<IPRIOR34_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR34_SPEC>;
+            type Target = crate::R<IPRIOR34_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR34_SPEC>> for R {
+        impl From<crate::R<IPRIOR34_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR34_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR34_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR34` writer
-        pub struct W(crate::W<PFIC_IPRIOR34_SPEC>);
+        ///Register `IPRIOR34` writer
+        pub struct W(crate::W<IPRIOR34_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR34_SPEC>;
+            type Target = crate::W<IPRIOR34_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -30978,17 +28656,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR34_SPEC>> for W {
+        impl From<crate::W<IPRIOR34_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR34_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR34_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR34` reader - RW,Interrupt priority for number 136-139
         pub type IPRIOR34_R = crate::FieldReader<u32>;
         ///Field `IPRIOR34` writer - RW,Interrupt priority for number 136-139
-        pub type IPRIOR34_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR34_SPEC, 32, O, u32>;
+        pub type IPRIOR34_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR34_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 136-139
             #[inline(always)]
@@ -31014,49 +28691,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior34](index.html) module
-        pub struct PFIC_IPRIOR34_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR34_SPEC {
+        ///For information about available fields see [iprior34](index.html) module
+        pub struct IPRIOR34_SPEC;
+        impl crate::RegisterSpec for IPRIOR34_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior34::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR34_SPEC {
+        ///`read()` method returns [iprior34::R](R) reader structure
+        impl crate::Readable for IPRIOR34_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior34::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR34_SPEC {
+        ///`write(|w| ..)` method takes [iprior34::W](W) writer structure
+        impl crate::Writable for IPRIOR34_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR34 to value 0
-        impl crate::Resettable for PFIC_IPRIOR34_SPEC {
+        ///`reset()` method sets IPRIOR34 to value 0
+        impl crate::Resettable for IPRIOR34_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR35 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR35_SPEC>`
-    pub type PFIC_IPRIOR35 = crate::Reg<pfic_iprior35::PFIC_IPRIOR35_SPEC>;
+    ///IPRIOR35 (rw) register accessor: an alias for `Reg<IPRIOR35_SPEC>`
+    pub type IPRIOR35 = crate::Reg<iprior35::IPRIOR35_SPEC>;
     ///Interrupt Priority configuration Register 35
-    pub mod pfic_iprior35 {
-        ///Register `PFIC_IPRIOR35` reader
-        pub struct R(crate::R<PFIC_IPRIOR35_SPEC>);
+    pub mod iprior35 {
+        ///Register `IPRIOR35` reader
+        pub struct R(crate::R<IPRIOR35_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR35_SPEC>;
+            type Target = crate::R<IPRIOR35_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR35_SPEC>> for R {
+        impl From<crate::R<IPRIOR35_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR35_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR35_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR35` writer
-        pub struct W(crate::W<PFIC_IPRIOR35_SPEC>);
+        ///Register `IPRIOR35` writer
+        pub struct W(crate::W<IPRIOR35_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR35_SPEC>;
+            type Target = crate::W<IPRIOR35_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -31068,17 +28745,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR35_SPEC>> for W {
+        impl From<crate::W<IPRIOR35_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR35_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR35_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR35` reader - RW,Interrupt priority for number 140-143
         pub type IPRIOR35_R = crate::FieldReader<u32>;
         ///Field `IPRIOR35` writer - RW,Interrupt priority for number 140-143
-        pub type IPRIOR35_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR35_SPEC, 32, O, u32>;
+        pub type IPRIOR35_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR35_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 140-143
             #[inline(always)]
@@ -31104,49 +28780,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior35](index.html) module
-        pub struct PFIC_IPRIOR35_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR35_SPEC {
+        ///For information about available fields see [iprior35](index.html) module
+        pub struct IPRIOR35_SPEC;
+        impl crate::RegisterSpec for IPRIOR35_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior35::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR35_SPEC {
+        ///`read()` method returns [iprior35::R](R) reader structure
+        impl crate::Readable for IPRIOR35_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior35::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR35_SPEC {
+        ///`write(|w| ..)` method takes [iprior35::W](W) writer structure
+        impl crate::Writable for IPRIOR35_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR35 to value 0
-        impl crate::Resettable for PFIC_IPRIOR35_SPEC {
+        ///`reset()` method sets IPRIOR35 to value 0
+        impl crate::Resettable for IPRIOR35_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR36 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR36_SPEC>`
-    pub type PFIC_IPRIOR36 = crate::Reg<pfic_iprior36::PFIC_IPRIOR36_SPEC>;
+    ///IPRIOR36 (rw) register accessor: an alias for `Reg<IPRIOR36_SPEC>`
+    pub type IPRIOR36 = crate::Reg<iprior36::IPRIOR36_SPEC>;
     ///Interrupt Priority configuration Register 36
-    pub mod pfic_iprior36 {
-        ///Register `PFIC_IPRIOR36` reader
-        pub struct R(crate::R<PFIC_IPRIOR36_SPEC>);
+    pub mod iprior36 {
+        ///Register `IPRIOR36` reader
+        pub struct R(crate::R<IPRIOR36_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR36_SPEC>;
+            type Target = crate::R<IPRIOR36_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR36_SPEC>> for R {
+        impl From<crate::R<IPRIOR36_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR36_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR36_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR36` writer
-        pub struct W(crate::W<PFIC_IPRIOR36_SPEC>);
+        ///Register `IPRIOR36` writer
+        pub struct W(crate::W<IPRIOR36_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR36_SPEC>;
+            type Target = crate::W<IPRIOR36_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -31158,17 +28834,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR36_SPEC>> for W {
+        impl From<crate::W<IPRIOR36_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR36_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR36_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR36` reader - RW,Interrupt priority for number 144-147
         pub type IPRIOR36_R = crate::FieldReader<u32>;
         ///Field `IPRIOR36` writer - RW,Interrupt priority for number 144-147
-        pub type IPRIOR36_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR36_SPEC, 32, O, u32>;
+        pub type IPRIOR36_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR36_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 144-147
             #[inline(always)]
@@ -31194,49 +28869,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior36](index.html) module
-        pub struct PFIC_IPRIOR36_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR36_SPEC {
+        ///For information about available fields see [iprior36](index.html) module
+        pub struct IPRIOR36_SPEC;
+        impl crate::RegisterSpec for IPRIOR36_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior36::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR36_SPEC {
+        ///`read()` method returns [iprior36::R](R) reader structure
+        impl crate::Readable for IPRIOR36_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior36::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR36_SPEC {
+        ///`write(|w| ..)` method takes [iprior36::W](W) writer structure
+        impl crate::Writable for IPRIOR36_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR36 to value 0
-        impl crate::Resettable for PFIC_IPRIOR36_SPEC {
+        ///`reset()` method sets IPRIOR36 to value 0
+        impl crate::Resettable for IPRIOR36_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR37 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR37_SPEC>`
-    pub type PFIC_IPRIOR37 = crate::Reg<pfic_iprior37::PFIC_IPRIOR37_SPEC>;
+    ///IPRIOR37 (rw) register accessor: an alias for `Reg<IPRIOR37_SPEC>`
+    pub type IPRIOR37 = crate::Reg<iprior37::IPRIOR37_SPEC>;
     ///Interrupt Priority configuration Register 37
-    pub mod pfic_iprior37 {
-        ///Register `PFIC_IPRIOR37` reader
-        pub struct R(crate::R<PFIC_IPRIOR37_SPEC>);
+    pub mod iprior37 {
+        ///Register `IPRIOR37` reader
+        pub struct R(crate::R<IPRIOR37_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR37_SPEC>;
+            type Target = crate::R<IPRIOR37_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR37_SPEC>> for R {
+        impl From<crate::R<IPRIOR37_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR37_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR37_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR37` writer
-        pub struct W(crate::W<PFIC_IPRIOR37_SPEC>);
+        ///Register `IPRIOR37` writer
+        pub struct W(crate::W<IPRIOR37_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR37_SPEC>;
+            type Target = crate::W<IPRIOR37_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -31248,17 +28923,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR37_SPEC>> for W {
+        impl From<crate::W<IPRIOR37_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR37_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR37_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR37` reader - RW,Interrupt priority for number 148-151
         pub type IPRIOR37_R = crate::FieldReader<u32>;
         ///Field `IPRIOR37` writer - RW,Interrupt priority for number 148-151
-        pub type IPRIOR37_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR37_SPEC, 32, O, u32>;
+        pub type IPRIOR37_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR37_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 148-151
             #[inline(always)]
@@ -31284,49 +28958,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior37](index.html) module
-        pub struct PFIC_IPRIOR37_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR37_SPEC {
+        ///For information about available fields see [iprior37](index.html) module
+        pub struct IPRIOR37_SPEC;
+        impl crate::RegisterSpec for IPRIOR37_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior37::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR37_SPEC {
+        ///`read()` method returns [iprior37::R](R) reader structure
+        impl crate::Readable for IPRIOR37_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior37::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR37_SPEC {
+        ///`write(|w| ..)` method takes [iprior37::W](W) writer structure
+        impl crate::Writable for IPRIOR37_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR37 to value 0
-        impl crate::Resettable for PFIC_IPRIOR37_SPEC {
+        ///`reset()` method sets IPRIOR37 to value 0
+        impl crate::Resettable for IPRIOR37_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR38 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR38_SPEC>`
-    pub type PFIC_IPRIOR38 = crate::Reg<pfic_iprior38::PFIC_IPRIOR38_SPEC>;
+    ///IPRIOR38 (rw) register accessor: an alias for `Reg<IPRIOR38_SPEC>`
+    pub type IPRIOR38 = crate::Reg<iprior38::IPRIOR38_SPEC>;
     ///Interrupt Priority configuration Register 38
-    pub mod pfic_iprior38 {
-        ///Register `PFIC_IPRIOR38` reader
-        pub struct R(crate::R<PFIC_IPRIOR38_SPEC>);
+    pub mod iprior38 {
+        ///Register `IPRIOR38` reader
+        pub struct R(crate::R<IPRIOR38_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR38_SPEC>;
+            type Target = crate::R<IPRIOR38_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR38_SPEC>> for R {
+        impl From<crate::R<IPRIOR38_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR38_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR38_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR38` writer
-        pub struct W(crate::W<PFIC_IPRIOR38_SPEC>);
+        ///Register `IPRIOR38` writer
+        pub struct W(crate::W<IPRIOR38_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR38_SPEC>;
+            type Target = crate::W<IPRIOR38_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -31338,17 +29012,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR38_SPEC>> for W {
+        impl From<crate::W<IPRIOR38_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR38_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR38_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR38` reader - RW,Interrupt priority for number 152-155
         pub type IPRIOR38_R = crate::FieldReader<u32>;
         ///Field `IPRIOR38` writer - RW,Interrupt priority for number 152-155
-        pub type IPRIOR38_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR38_SPEC, 32, O, u32>;
+        pub type IPRIOR38_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR38_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 152-155
             #[inline(always)]
@@ -31374,49 +29047,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior38](index.html) module
-        pub struct PFIC_IPRIOR38_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR38_SPEC {
+        ///For information about available fields see [iprior38](index.html) module
+        pub struct IPRIOR38_SPEC;
+        impl crate::RegisterSpec for IPRIOR38_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior38::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR38_SPEC {
+        ///`read()` method returns [iprior38::R](R) reader structure
+        impl crate::Readable for IPRIOR38_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior38::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR38_SPEC {
+        ///`write(|w| ..)` method takes [iprior38::W](W) writer structure
+        impl crate::Writable for IPRIOR38_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR38 to value 0
-        impl crate::Resettable for PFIC_IPRIOR38_SPEC {
+        ///`reset()` method sets IPRIOR38 to value 0
+        impl crate::Resettable for IPRIOR38_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR39 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR39_SPEC>`
-    pub type PFIC_IPRIOR39 = crate::Reg<pfic_iprior39::PFIC_IPRIOR39_SPEC>;
+    ///IPRIOR39 (rw) register accessor: an alias for `Reg<IPRIOR39_SPEC>`
+    pub type IPRIOR39 = crate::Reg<iprior39::IPRIOR39_SPEC>;
     ///Interrupt Priority configuration Register 39
-    pub mod pfic_iprior39 {
-        ///Register `PFIC_IPRIOR39` reader
-        pub struct R(crate::R<PFIC_IPRIOR39_SPEC>);
+    pub mod iprior39 {
+        ///Register `IPRIOR39` reader
+        pub struct R(crate::R<IPRIOR39_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR39_SPEC>;
+            type Target = crate::R<IPRIOR39_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR39_SPEC>> for R {
+        impl From<crate::R<IPRIOR39_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR39_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR39_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR39` writer
-        pub struct W(crate::W<PFIC_IPRIOR39_SPEC>);
+        ///Register `IPRIOR39` writer
+        pub struct W(crate::W<IPRIOR39_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR39_SPEC>;
+            type Target = crate::W<IPRIOR39_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -31428,17 +29101,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR39_SPEC>> for W {
+        impl From<crate::W<IPRIOR39_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR39_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR39_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR39` reader - RW,Interrupt priority for number 156-159
         pub type IPRIOR39_R = crate::FieldReader<u32>;
         ///Field `IPRIOR39` writer - RW,Interrupt priority for number 156-159
-        pub type IPRIOR39_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR39_SPEC, 32, O, u32>;
+        pub type IPRIOR39_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR39_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 156-159
             #[inline(always)]
@@ -31464,49 +29136,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior39](index.html) module
-        pub struct PFIC_IPRIOR39_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR39_SPEC {
+        ///For information about available fields see [iprior39](index.html) module
+        pub struct IPRIOR39_SPEC;
+        impl crate::RegisterSpec for IPRIOR39_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior39::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR39_SPEC {
+        ///`read()` method returns [iprior39::R](R) reader structure
+        impl crate::Readable for IPRIOR39_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior39::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR39_SPEC {
+        ///`write(|w| ..)` method takes [iprior39::W](W) writer structure
+        impl crate::Writable for IPRIOR39_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR39 to value 0
-        impl crate::Resettable for PFIC_IPRIOR39_SPEC {
+        ///`reset()` method sets IPRIOR39 to value 0
+        impl crate::Resettable for IPRIOR39_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR40 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR40_SPEC>`
-    pub type PFIC_IPRIOR40 = crate::Reg<pfic_iprior40::PFIC_IPRIOR40_SPEC>;
+    ///IPRIOR40 (rw) register accessor: an alias for `Reg<IPRIOR40_SPEC>`
+    pub type IPRIOR40 = crate::Reg<iprior40::IPRIOR40_SPEC>;
     ///Interrupt Priority configuration Register 40
-    pub mod pfic_iprior40 {
-        ///Register `PFIC_IPRIOR40` reader
-        pub struct R(crate::R<PFIC_IPRIOR40_SPEC>);
+    pub mod iprior40 {
+        ///Register `IPRIOR40` reader
+        pub struct R(crate::R<IPRIOR40_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR40_SPEC>;
+            type Target = crate::R<IPRIOR40_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR40_SPEC>> for R {
+        impl From<crate::R<IPRIOR40_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR40_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR40_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR40` writer
-        pub struct W(crate::W<PFIC_IPRIOR40_SPEC>);
+        ///Register `IPRIOR40` writer
+        pub struct W(crate::W<IPRIOR40_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR40_SPEC>;
+            type Target = crate::W<IPRIOR40_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -31518,17 +29190,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR40_SPEC>> for W {
+        impl From<crate::W<IPRIOR40_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR40_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR40_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR40` reader - RW,Interrupt priority for number 160-163
         pub type IPRIOR40_R = crate::FieldReader<u32>;
         ///Field `IPRIOR40` writer - RW,Interrupt priority for number 160-163
-        pub type IPRIOR40_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR40_SPEC, 32, O, u32>;
+        pub type IPRIOR40_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR40_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 160-163
             #[inline(always)]
@@ -31554,49 +29225,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior40](index.html) module
-        pub struct PFIC_IPRIOR40_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR40_SPEC {
+        ///For information about available fields see [iprior40](index.html) module
+        pub struct IPRIOR40_SPEC;
+        impl crate::RegisterSpec for IPRIOR40_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior40::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR40_SPEC {
+        ///`read()` method returns [iprior40::R](R) reader structure
+        impl crate::Readable for IPRIOR40_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior40::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR40_SPEC {
+        ///`write(|w| ..)` method takes [iprior40::W](W) writer structure
+        impl crate::Writable for IPRIOR40_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR40 to value 0
-        impl crate::Resettable for PFIC_IPRIOR40_SPEC {
+        ///`reset()` method sets IPRIOR40 to value 0
+        impl crate::Resettable for IPRIOR40_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR41 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR41_SPEC>`
-    pub type PFIC_IPRIOR41 = crate::Reg<pfic_iprior41::PFIC_IPRIOR41_SPEC>;
+    ///IPRIOR41 (rw) register accessor: an alias for `Reg<IPRIOR41_SPEC>`
+    pub type IPRIOR41 = crate::Reg<iprior41::IPRIOR41_SPEC>;
     ///Interrupt Priority configuration Register 41
-    pub mod pfic_iprior41 {
-        ///Register `PFIC_IPRIOR41` reader
-        pub struct R(crate::R<PFIC_IPRIOR41_SPEC>);
+    pub mod iprior41 {
+        ///Register `IPRIOR41` reader
+        pub struct R(crate::R<IPRIOR41_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR41_SPEC>;
+            type Target = crate::R<IPRIOR41_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR41_SPEC>> for R {
+        impl From<crate::R<IPRIOR41_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR41_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR41_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR41` writer
-        pub struct W(crate::W<PFIC_IPRIOR41_SPEC>);
+        ///Register `IPRIOR41` writer
+        pub struct W(crate::W<IPRIOR41_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR41_SPEC>;
+            type Target = crate::W<IPRIOR41_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -31608,17 +29279,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR41_SPEC>> for W {
+        impl From<crate::W<IPRIOR41_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR41_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR41_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR41` reader - RW,Interrupt priority for number 164-167
         pub type IPRIOR41_R = crate::FieldReader<u32>;
         ///Field `IPRIOR41` writer - RW,Interrupt priority for number 164-167
-        pub type IPRIOR41_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR41_SPEC, 32, O, u32>;
+        pub type IPRIOR41_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR41_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 164-167
             #[inline(always)]
@@ -31644,49 +29314,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior41](index.html) module
-        pub struct PFIC_IPRIOR41_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR41_SPEC {
+        ///For information about available fields see [iprior41](index.html) module
+        pub struct IPRIOR41_SPEC;
+        impl crate::RegisterSpec for IPRIOR41_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior41::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR41_SPEC {
+        ///`read()` method returns [iprior41::R](R) reader structure
+        impl crate::Readable for IPRIOR41_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior41::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR41_SPEC {
+        ///`write(|w| ..)` method takes [iprior41::W](W) writer structure
+        impl crate::Writable for IPRIOR41_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR41 to value 0
-        impl crate::Resettable for PFIC_IPRIOR41_SPEC {
+        ///`reset()` method sets IPRIOR41 to value 0
+        impl crate::Resettable for IPRIOR41_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR42 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR42_SPEC>`
-    pub type PFIC_IPRIOR42 = crate::Reg<pfic_iprior42::PFIC_IPRIOR42_SPEC>;
+    ///IPRIOR42 (rw) register accessor: an alias for `Reg<IPRIOR42_SPEC>`
+    pub type IPRIOR42 = crate::Reg<iprior42::IPRIOR42_SPEC>;
     ///Interrupt Priority configuration Register 42
-    pub mod pfic_iprior42 {
-        ///Register `PFIC_IPRIOR42` reader
-        pub struct R(crate::R<PFIC_IPRIOR42_SPEC>);
+    pub mod iprior42 {
+        ///Register `IPRIOR42` reader
+        pub struct R(crate::R<IPRIOR42_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR42_SPEC>;
+            type Target = crate::R<IPRIOR42_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR42_SPEC>> for R {
+        impl From<crate::R<IPRIOR42_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR42_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR42_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR42` writer
-        pub struct W(crate::W<PFIC_IPRIOR42_SPEC>);
+        ///Register `IPRIOR42` writer
+        pub struct W(crate::W<IPRIOR42_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR42_SPEC>;
+            type Target = crate::W<IPRIOR42_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -31698,17 +29368,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR42_SPEC>> for W {
+        impl From<crate::W<IPRIOR42_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR42_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR42_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR42` reader - RW,Interrupt priority for number 168-171
         pub type IPRIOR42_R = crate::FieldReader<u32>;
         ///Field `IPRIOR42` writer - RW,Interrupt priority for number 168-171
-        pub type IPRIOR42_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR42_SPEC, 32, O, u32>;
+        pub type IPRIOR42_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR42_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 168-171
             #[inline(always)]
@@ -31734,49 +29403,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior42](index.html) module
-        pub struct PFIC_IPRIOR42_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR42_SPEC {
+        ///For information about available fields see [iprior42](index.html) module
+        pub struct IPRIOR42_SPEC;
+        impl crate::RegisterSpec for IPRIOR42_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior42::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR42_SPEC {
+        ///`read()` method returns [iprior42::R](R) reader structure
+        impl crate::Readable for IPRIOR42_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior42::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR42_SPEC {
+        ///`write(|w| ..)` method takes [iprior42::W](W) writer structure
+        impl crate::Writable for IPRIOR42_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR42 to value 0
-        impl crate::Resettable for PFIC_IPRIOR42_SPEC {
+        ///`reset()` method sets IPRIOR42 to value 0
+        impl crate::Resettable for IPRIOR42_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR43 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR43_SPEC>`
-    pub type PFIC_IPRIOR43 = crate::Reg<pfic_iprior43::PFIC_IPRIOR43_SPEC>;
+    ///IPRIOR43 (rw) register accessor: an alias for `Reg<IPRIOR43_SPEC>`
+    pub type IPRIOR43 = crate::Reg<iprior43::IPRIOR43_SPEC>;
     ///Interrupt Priority configuration Register 43
-    pub mod pfic_iprior43 {
-        ///Register `PFIC_IPRIOR43` reader
-        pub struct R(crate::R<PFIC_IPRIOR43_SPEC>);
+    pub mod iprior43 {
+        ///Register `IPRIOR43` reader
+        pub struct R(crate::R<IPRIOR43_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR43_SPEC>;
+            type Target = crate::R<IPRIOR43_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR43_SPEC>> for R {
+        impl From<crate::R<IPRIOR43_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR43_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR43_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR43` writer
-        pub struct W(crate::W<PFIC_IPRIOR43_SPEC>);
+        ///Register `IPRIOR43` writer
+        pub struct W(crate::W<IPRIOR43_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR43_SPEC>;
+            type Target = crate::W<IPRIOR43_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -31788,17 +29457,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR43_SPEC>> for W {
+        impl From<crate::W<IPRIOR43_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR43_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR43_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR43` reader - RW,Interrupt priority for number 172-175
         pub type IPRIOR43_R = crate::FieldReader<u32>;
         ///Field `IPRIOR43` writer - RW,Interrupt priority for number 172-175
-        pub type IPRIOR43_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR43_SPEC, 32, O, u32>;
+        pub type IPRIOR43_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR43_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 172-175
             #[inline(always)]
@@ -31824,49 +29492,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior43](index.html) module
-        pub struct PFIC_IPRIOR43_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR43_SPEC {
+        ///For information about available fields see [iprior43](index.html) module
+        pub struct IPRIOR43_SPEC;
+        impl crate::RegisterSpec for IPRIOR43_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior43::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR43_SPEC {
+        ///`read()` method returns [iprior43::R](R) reader structure
+        impl crate::Readable for IPRIOR43_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior43::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR43_SPEC {
+        ///`write(|w| ..)` method takes [iprior43::W](W) writer structure
+        impl crate::Writable for IPRIOR43_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR43 to value 0
-        impl crate::Resettable for PFIC_IPRIOR43_SPEC {
+        ///`reset()` method sets IPRIOR43 to value 0
+        impl crate::Resettable for IPRIOR43_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR44 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR44_SPEC>`
-    pub type PFIC_IPRIOR44 = crate::Reg<pfic_iprior44::PFIC_IPRIOR44_SPEC>;
+    ///IPRIOR44 (rw) register accessor: an alias for `Reg<IPRIOR44_SPEC>`
+    pub type IPRIOR44 = crate::Reg<iprior44::IPRIOR44_SPEC>;
     ///Interrupt Priority configuration Register 44
-    pub mod pfic_iprior44 {
-        ///Register `PFIC_IPRIOR44` reader
-        pub struct R(crate::R<PFIC_IPRIOR44_SPEC>);
+    pub mod iprior44 {
+        ///Register `IPRIOR44` reader
+        pub struct R(crate::R<IPRIOR44_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR44_SPEC>;
+            type Target = crate::R<IPRIOR44_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR44_SPEC>> for R {
+        impl From<crate::R<IPRIOR44_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR44_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR44_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR44` writer
-        pub struct W(crate::W<PFIC_IPRIOR44_SPEC>);
+        ///Register `IPRIOR44` writer
+        pub struct W(crate::W<IPRIOR44_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR44_SPEC>;
+            type Target = crate::W<IPRIOR44_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -31878,17 +29546,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR44_SPEC>> for W {
+        impl From<crate::W<IPRIOR44_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR44_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR44_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR44` reader - RW,Interrupt priority for number 176-179
         pub type IPRIOR44_R = crate::FieldReader<u32>;
         ///Field `IPRIOR44` writer - RW,Interrupt priority for number 176-179
-        pub type IPRIOR44_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR44_SPEC, 32, O, u32>;
+        pub type IPRIOR44_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR44_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 176-179
             #[inline(always)]
@@ -31914,49 +29581,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior44](index.html) module
-        pub struct PFIC_IPRIOR44_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR44_SPEC {
+        ///For information about available fields see [iprior44](index.html) module
+        pub struct IPRIOR44_SPEC;
+        impl crate::RegisterSpec for IPRIOR44_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior44::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR44_SPEC {
+        ///`read()` method returns [iprior44::R](R) reader structure
+        impl crate::Readable for IPRIOR44_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior44::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR44_SPEC {
+        ///`write(|w| ..)` method takes [iprior44::W](W) writer structure
+        impl crate::Writable for IPRIOR44_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR44 to value 0
-        impl crate::Resettable for PFIC_IPRIOR44_SPEC {
+        ///`reset()` method sets IPRIOR44 to value 0
+        impl crate::Resettable for IPRIOR44_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR45 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR45_SPEC>`
-    pub type PFIC_IPRIOR45 = crate::Reg<pfic_iprior45::PFIC_IPRIOR45_SPEC>;
+    ///IPRIOR45 (rw) register accessor: an alias for `Reg<IPRIOR45_SPEC>`
+    pub type IPRIOR45 = crate::Reg<iprior45::IPRIOR45_SPEC>;
     ///Interrupt Priority configuration Register 45
-    pub mod pfic_iprior45 {
-        ///Register `PFIC_IPRIOR45` reader
-        pub struct R(crate::R<PFIC_IPRIOR45_SPEC>);
+    pub mod iprior45 {
+        ///Register `IPRIOR45` reader
+        pub struct R(crate::R<IPRIOR45_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR45_SPEC>;
+            type Target = crate::R<IPRIOR45_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR45_SPEC>> for R {
+        impl From<crate::R<IPRIOR45_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR45_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR45_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR45` writer
-        pub struct W(crate::W<PFIC_IPRIOR45_SPEC>);
+        ///Register `IPRIOR45` writer
+        pub struct W(crate::W<IPRIOR45_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR45_SPEC>;
+            type Target = crate::W<IPRIOR45_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -31968,17 +29635,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR45_SPEC>> for W {
+        impl From<crate::W<IPRIOR45_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR45_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR45_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR45` reader - RW,Interrupt priority for number 180-183
         pub type IPRIOR45_R = crate::FieldReader<u32>;
         ///Field `IPRIOR45` writer - RW,Interrupt priority for number 180-183
-        pub type IPRIOR45_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR45_SPEC, 32, O, u32>;
+        pub type IPRIOR45_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR45_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 180-183
             #[inline(always)]
@@ -32004,49 +29670,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior45](index.html) module
-        pub struct PFIC_IPRIOR45_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR45_SPEC {
+        ///For information about available fields see [iprior45](index.html) module
+        pub struct IPRIOR45_SPEC;
+        impl crate::RegisterSpec for IPRIOR45_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior45::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR45_SPEC {
+        ///`read()` method returns [iprior45::R](R) reader structure
+        impl crate::Readable for IPRIOR45_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior45::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR45_SPEC {
+        ///`write(|w| ..)` method takes [iprior45::W](W) writer structure
+        impl crate::Writable for IPRIOR45_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR45 to value 0
-        impl crate::Resettable for PFIC_IPRIOR45_SPEC {
+        ///`reset()` method sets IPRIOR45 to value 0
+        impl crate::Resettable for IPRIOR45_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR46 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR46_SPEC>`
-    pub type PFIC_IPRIOR46 = crate::Reg<pfic_iprior46::PFIC_IPRIOR46_SPEC>;
+    ///IPRIOR46 (rw) register accessor: an alias for `Reg<IPRIOR46_SPEC>`
+    pub type IPRIOR46 = crate::Reg<iprior46::IPRIOR46_SPEC>;
     ///Interrupt Priority configuration Register 46
-    pub mod pfic_iprior46 {
-        ///Register `PFIC_IPRIOR46` reader
-        pub struct R(crate::R<PFIC_IPRIOR46_SPEC>);
+    pub mod iprior46 {
+        ///Register `IPRIOR46` reader
+        pub struct R(crate::R<IPRIOR46_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR46_SPEC>;
+            type Target = crate::R<IPRIOR46_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR46_SPEC>> for R {
+        impl From<crate::R<IPRIOR46_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR46_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR46_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR46` writer
-        pub struct W(crate::W<PFIC_IPRIOR46_SPEC>);
+        ///Register `IPRIOR46` writer
+        pub struct W(crate::W<IPRIOR46_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR46_SPEC>;
+            type Target = crate::W<IPRIOR46_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -32058,17 +29724,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR46_SPEC>> for W {
+        impl From<crate::W<IPRIOR46_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR46_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR46_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR46` reader - RW,Interrupt priority for number 184-187
         pub type IPRIOR46_R = crate::FieldReader<u32>;
         ///Field `IPRIOR46` writer - RW,Interrupt priority for number 184-187
-        pub type IPRIOR46_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR46_SPEC, 32, O, u32>;
+        pub type IPRIOR46_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR46_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 184-187
             #[inline(always)]
@@ -32094,49 +29759,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior46](index.html) module
-        pub struct PFIC_IPRIOR46_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR46_SPEC {
+        ///For information about available fields see [iprior46](index.html) module
+        pub struct IPRIOR46_SPEC;
+        impl crate::RegisterSpec for IPRIOR46_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior46::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR46_SPEC {
+        ///`read()` method returns [iprior46::R](R) reader structure
+        impl crate::Readable for IPRIOR46_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior46::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR46_SPEC {
+        ///`write(|w| ..)` method takes [iprior46::W](W) writer structure
+        impl crate::Writable for IPRIOR46_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR46 to value 0
-        impl crate::Resettable for PFIC_IPRIOR46_SPEC {
+        ///`reset()` method sets IPRIOR46 to value 0
+        impl crate::Resettable for IPRIOR46_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR47 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR47_SPEC>`
-    pub type PFIC_IPRIOR47 = crate::Reg<pfic_iprior47::PFIC_IPRIOR47_SPEC>;
+    ///IPRIOR47 (rw) register accessor: an alias for `Reg<IPRIOR47_SPEC>`
+    pub type IPRIOR47 = crate::Reg<iprior47::IPRIOR47_SPEC>;
     ///Interrupt Priority configuration Register 47
-    pub mod pfic_iprior47 {
-        ///Register `PFIC_IPRIOR47` reader
-        pub struct R(crate::R<PFIC_IPRIOR47_SPEC>);
+    pub mod iprior47 {
+        ///Register `IPRIOR47` reader
+        pub struct R(crate::R<IPRIOR47_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR47_SPEC>;
+            type Target = crate::R<IPRIOR47_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR47_SPEC>> for R {
+        impl From<crate::R<IPRIOR47_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR47_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR47_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR47` writer
-        pub struct W(crate::W<PFIC_IPRIOR47_SPEC>);
+        ///Register `IPRIOR47` writer
+        pub struct W(crate::W<IPRIOR47_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR47_SPEC>;
+            type Target = crate::W<IPRIOR47_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -32148,17 +29813,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR47_SPEC>> for W {
+        impl From<crate::W<IPRIOR47_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR47_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR47_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR47` reader - RW,Interrupt priority for number 188-191
         pub type IPRIOR47_R = crate::FieldReader<u32>;
         ///Field `IPRIOR47` writer - RW,Interrupt priority for number 188-191
-        pub type IPRIOR47_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR47_SPEC, 32, O, u32>;
+        pub type IPRIOR47_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR47_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 188-191
             #[inline(always)]
@@ -32184,49 +29848,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior47](index.html) module
-        pub struct PFIC_IPRIOR47_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR47_SPEC {
+        ///For information about available fields see [iprior47](index.html) module
+        pub struct IPRIOR47_SPEC;
+        impl crate::RegisterSpec for IPRIOR47_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior47::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR47_SPEC {
+        ///`read()` method returns [iprior47::R](R) reader structure
+        impl crate::Readable for IPRIOR47_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior47::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR47_SPEC {
+        ///`write(|w| ..)` method takes [iprior47::W](W) writer structure
+        impl crate::Writable for IPRIOR47_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR47 to value 0
-        impl crate::Resettable for PFIC_IPRIOR47_SPEC {
+        ///`reset()` method sets IPRIOR47 to value 0
+        impl crate::Resettable for IPRIOR47_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR48 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR48_SPEC>`
-    pub type PFIC_IPRIOR48 = crate::Reg<pfic_iprior48::PFIC_IPRIOR48_SPEC>;
+    ///IPRIOR48 (rw) register accessor: an alias for `Reg<IPRIOR48_SPEC>`
+    pub type IPRIOR48 = crate::Reg<iprior48::IPRIOR48_SPEC>;
     ///Interrupt Priority configuration Register 48
-    pub mod pfic_iprior48 {
-        ///Register `PFIC_IPRIOR48` reader
-        pub struct R(crate::R<PFIC_IPRIOR48_SPEC>);
+    pub mod iprior48 {
+        ///Register `IPRIOR48` reader
+        pub struct R(crate::R<IPRIOR48_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR48_SPEC>;
+            type Target = crate::R<IPRIOR48_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR48_SPEC>> for R {
+        impl From<crate::R<IPRIOR48_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR48_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR48_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR48` writer
-        pub struct W(crate::W<PFIC_IPRIOR48_SPEC>);
+        ///Register `IPRIOR48` writer
+        pub struct W(crate::W<IPRIOR48_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR48_SPEC>;
+            type Target = crate::W<IPRIOR48_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -32238,17 +29902,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR48_SPEC>> for W {
+        impl From<crate::W<IPRIOR48_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR48_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR48_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR48` reader - RW,Interrupt priority for number 192-195
         pub type IPRIOR48_R = crate::FieldReader<u32>;
         ///Field `IPRIOR48` writer - RW,Interrupt priority for number 192-195
-        pub type IPRIOR48_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR48_SPEC, 32, O, u32>;
+        pub type IPRIOR48_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR48_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 192-195
             #[inline(always)]
@@ -32274,49 +29937,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior48](index.html) module
-        pub struct PFIC_IPRIOR48_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR48_SPEC {
+        ///For information about available fields see [iprior48](index.html) module
+        pub struct IPRIOR48_SPEC;
+        impl crate::RegisterSpec for IPRIOR48_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior48::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR48_SPEC {
+        ///`read()` method returns [iprior48::R](R) reader structure
+        impl crate::Readable for IPRIOR48_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior48::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR48_SPEC {
+        ///`write(|w| ..)` method takes [iprior48::W](W) writer structure
+        impl crate::Writable for IPRIOR48_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR48 to value 0
-        impl crate::Resettable for PFIC_IPRIOR48_SPEC {
+        ///`reset()` method sets IPRIOR48 to value 0
+        impl crate::Resettable for IPRIOR48_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR49 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR49_SPEC>`
-    pub type PFIC_IPRIOR49 = crate::Reg<pfic_iprior49::PFIC_IPRIOR49_SPEC>;
+    ///IPRIOR49 (rw) register accessor: an alias for `Reg<IPRIOR49_SPEC>`
+    pub type IPRIOR49 = crate::Reg<iprior49::IPRIOR49_SPEC>;
     ///Interrupt Priority configuration Register 49
-    pub mod pfic_iprior49 {
-        ///Register `PFIC_IPRIOR49` reader
-        pub struct R(crate::R<PFIC_IPRIOR49_SPEC>);
+    pub mod iprior49 {
+        ///Register `IPRIOR49` reader
+        pub struct R(crate::R<IPRIOR49_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR49_SPEC>;
+            type Target = crate::R<IPRIOR49_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR49_SPEC>> for R {
+        impl From<crate::R<IPRIOR49_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR49_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR49_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR49` writer
-        pub struct W(crate::W<PFIC_IPRIOR49_SPEC>);
+        ///Register `IPRIOR49` writer
+        pub struct W(crate::W<IPRIOR49_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR49_SPEC>;
+            type Target = crate::W<IPRIOR49_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -32328,17 +29991,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR49_SPEC>> for W {
+        impl From<crate::W<IPRIOR49_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR49_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR49_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR49` reader - RW,Interrupt priority for number 196-199
         pub type IPRIOR49_R = crate::FieldReader<u32>;
         ///Field `IPRIOR49` writer - RW,Interrupt priority for number 196-199
-        pub type IPRIOR49_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR49_SPEC, 32, O, u32>;
+        pub type IPRIOR49_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR49_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 196-199
             #[inline(always)]
@@ -32364,49 +30026,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior49](index.html) module
-        pub struct PFIC_IPRIOR49_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR49_SPEC {
+        ///For information about available fields see [iprior49](index.html) module
+        pub struct IPRIOR49_SPEC;
+        impl crate::RegisterSpec for IPRIOR49_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior49::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR49_SPEC {
+        ///`read()` method returns [iprior49::R](R) reader structure
+        impl crate::Readable for IPRIOR49_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior49::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR49_SPEC {
+        ///`write(|w| ..)` method takes [iprior49::W](W) writer structure
+        impl crate::Writable for IPRIOR49_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR49 to value 0
-        impl crate::Resettable for PFIC_IPRIOR49_SPEC {
+        ///`reset()` method sets IPRIOR49 to value 0
+        impl crate::Resettable for IPRIOR49_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR50 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR50_SPEC>`
-    pub type PFIC_IPRIOR50 = crate::Reg<pfic_iprior50::PFIC_IPRIOR50_SPEC>;
+    ///IPRIOR50 (rw) register accessor: an alias for `Reg<IPRIOR50_SPEC>`
+    pub type IPRIOR50 = crate::Reg<iprior50::IPRIOR50_SPEC>;
     ///Interrupt Priority configuration Register 50
-    pub mod pfic_iprior50 {
-        ///Register `PFIC_IPRIOR50` reader
-        pub struct R(crate::R<PFIC_IPRIOR50_SPEC>);
+    pub mod iprior50 {
+        ///Register `IPRIOR50` reader
+        pub struct R(crate::R<IPRIOR50_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR50_SPEC>;
+            type Target = crate::R<IPRIOR50_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR50_SPEC>> for R {
+        impl From<crate::R<IPRIOR50_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR50_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR50_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR50` writer
-        pub struct W(crate::W<PFIC_IPRIOR50_SPEC>);
+        ///Register `IPRIOR50` writer
+        pub struct W(crate::W<IPRIOR50_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR50_SPEC>;
+            type Target = crate::W<IPRIOR50_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -32418,17 +30080,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR50_SPEC>> for W {
+        impl From<crate::W<IPRIOR50_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR50_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR50_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR50` reader - RW,Interrupt priority for number 200-203
         pub type IPRIOR50_R = crate::FieldReader<u32>;
         ///Field `IPRIOR50` writer - RW,Interrupt priority for number 200-203
-        pub type IPRIOR50_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR50_SPEC, 32, O, u32>;
+        pub type IPRIOR50_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR50_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 200-203
             #[inline(always)]
@@ -32454,49 +30115,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior50](index.html) module
-        pub struct PFIC_IPRIOR50_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR50_SPEC {
+        ///For information about available fields see [iprior50](index.html) module
+        pub struct IPRIOR50_SPEC;
+        impl crate::RegisterSpec for IPRIOR50_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior50::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR50_SPEC {
+        ///`read()` method returns [iprior50::R](R) reader structure
+        impl crate::Readable for IPRIOR50_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior50::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR50_SPEC {
+        ///`write(|w| ..)` method takes [iprior50::W](W) writer structure
+        impl crate::Writable for IPRIOR50_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR50 to value 0
-        impl crate::Resettable for PFIC_IPRIOR50_SPEC {
+        ///`reset()` method sets IPRIOR50 to value 0
+        impl crate::Resettable for IPRIOR50_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR51 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR51_SPEC>`
-    pub type PFIC_IPRIOR51 = crate::Reg<pfic_iprior51::PFIC_IPRIOR51_SPEC>;
+    ///IPRIOR51 (rw) register accessor: an alias for `Reg<IPRIOR51_SPEC>`
+    pub type IPRIOR51 = crate::Reg<iprior51::IPRIOR51_SPEC>;
     ///Interrupt Priority configuration Register 51
-    pub mod pfic_iprior51 {
-        ///Register `PFIC_IPRIOR51` reader
-        pub struct R(crate::R<PFIC_IPRIOR51_SPEC>);
+    pub mod iprior51 {
+        ///Register `IPRIOR51` reader
+        pub struct R(crate::R<IPRIOR51_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR51_SPEC>;
+            type Target = crate::R<IPRIOR51_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR51_SPEC>> for R {
+        impl From<crate::R<IPRIOR51_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR51_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR51_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR51` writer
-        pub struct W(crate::W<PFIC_IPRIOR51_SPEC>);
+        ///Register `IPRIOR51` writer
+        pub struct W(crate::W<IPRIOR51_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR51_SPEC>;
+            type Target = crate::W<IPRIOR51_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -32508,17 +30169,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR51_SPEC>> for W {
+        impl From<crate::W<IPRIOR51_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR51_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR51_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR51` reader - RW,Interrupt priority for number 204-207
         pub type IPRIOR51_R = crate::FieldReader<u32>;
         ///Field `IPRIOR51` writer - RW,Interrupt priority for number 204-207
-        pub type IPRIOR51_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR51_SPEC, 32, O, u32>;
+        pub type IPRIOR51_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR51_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 204-207
             #[inline(always)]
@@ -32544,49 +30204,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior51](index.html) module
-        pub struct PFIC_IPRIOR51_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR51_SPEC {
+        ///For information about available fields see [iprior51](index.html) module
+        pub struct IPRIOR51_SPEC;
+        impl crate::RegisterSpec for IPRIOR51_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior51::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR51_SPEC {
+        ///`read()` method returns [iprior51::R](R) reader structure
+        impl crate::Readable for IPRIOR51_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior51::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR51_SPEC {
+        ///`write(|w| ..)` method takes [iprior51::W](W) writer structure
+        impl crate::Writable for IPRIOR51_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR51 to value 0
-        impl crate::Resettable for PFIC_IPRIOR51_SPEC {
+        ///`reset()` method sets IPRIOR51 to value 0
+        impl crate::Resettable for IPRIOR51_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR52 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR52_SPEC>`
-    pub type PFIC_IPRIOR52 = crate::Reg<pfic_iprior52::PFIC_IPRIOR52_SPEC>;
+    ///IPRIOR52 (rw) register accessor: an alias for `Reg<IPRIOR52_SPEC>`
+    pub type IPRIOR52 = crate::Reg<iprior52::IPRIOR52_SPEC>;
     ///Interrupt Priority configuration Register 52
-    pub mod pfic_iprior52 {
-        ///Register `PFIC_IPRIOR52` reader
-        pub struct R(crate::R<PFIC_IPRIOR52_SPEC>);
+    pub mod iprior52 {
+        ///Register `IPRIOR52` reader
+        pub struct R(crate::R<IPRIOR52_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR52_SPEC>;
+            type Target = crate::R<IPRIOR52_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR52_SPEC>> for R {
+        impl From<crate::R<IPRIOR52_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR52_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR52_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR52` writer
-        pub struct W(crate::W<PFIC_IPRIOR52_SPEC>);
+        ///Register `IPRIOR52` writer
+        pub struct W(crate::W<IPRIOR52_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR52_SPEC>;
+            type Target = crate::W<IPRIOR52_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -32598,17 +30258,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR52_SPEC>> for W {
+        impl From<crate::W<IPRIOR52_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR52_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR52_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR52` reader - RW,Interrupt priority for number 208-211
         pub type IPRIOR52_R = crate::FieldReader<u32>;
         ///Field `IPRIOR52` writer - RW,Interrupt priority for number 208-211
-        pub type IPRIOR52_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR52_SPEC, 32, O, u32>;
+        pub type IPRIOR52_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR52_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 208-211
             #[inline(always)]
@@ -32634,49 +30293,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior52](index.html) module
-        pub struct PFIC_IPRIOR52_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR52_SPEC {
+        ///For information about available fields see [iprior52](index.html) module
+        pub struct IPRIOR52_SPEC;
+        impl crate::RegisterSpec for IPRIOR52_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior52::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR52_SPEC {
+        ///`read()` method returns [iprior52::R](R) reader structure
+        impl crate::Readable for IPRIOR52_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior52::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR52_SPEC {
+        ///`write(|w| ..)` method takes [iprior52::W](W) writer structure
+        impl crate::Writable for IPRIOR52_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR52 to value 0
-        impl crate::Resettable for PFIC_IPRIOR52_SPEC {
+        ///`reset()` method sets IPRIOR52 to value 0
+        impl crate::Resettable for IPRIOR52_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR53 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR53_SPEC>`
-    pub type PFIC_IPRIOR53 = crate::Reg<pfic_iprior53::PFIC_IPRIOR53_SPEC>;
+    ///IPRIOR53 (rw) register accessor: an alias for `Reg<IPRIOR53_SPEC>`
+    pub type IPRIOR53 = crate::Reg<iprior53::IPRIOR53_SPEC>;
     ///Interrupt Priority configuration Register 53
-    pub mod pfic_iprior53 {
-        ///Register `PFIC_IPRIOR53` reader
-        pub struct R(crate::R<PFIC_IPRIOR53_SPEC>);
+    pub mod iprior53 {
+        ///Register `IPRIOR53` reader
+        pub struct R(crate::R<IPRIOR53_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR53_SPEC>;
+            type Target = crate::R<IPRIOR53_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR53_SPEC>> for R {
+        impl From<crate::R<IPRIOR53_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR53_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR53_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR53` writer
-        pub struct W(crate::W<PFIC_IPRIOR53_SPEC>);
+        ///Register `IPRIOR53` writer
+        pub struct W(crate::W<IPRIOR53_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR53_SPEC>;
+            type Target = crate::W<IPRIOR53_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -32688,17 +30347,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR53_SPEC>> for W {
+        impl From<crate::W<IPRIOR53_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR53_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR53_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR53` reader - RW,Interrupt priority for number 212-215
         pub type IPRIOR53_R = crate::FieldReader<u32>;
         ///Field `IPRIOR53` writer - RW,Interrupt priority for number 212-215
-        pub type IPRIOR53_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR53_SPEC, 32, O, u32>;
+        pub type IPRIOR53_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR53_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 212-215
             #[inline(always)]
@@ -32724,49 +30382,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior53](index.html) module
-        pub struct PFIC_IPRIOR53_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR53_SPEC {
+        ///For information about available fields see [iprior53](index.html) module
+        pub struct IPRIOR53_SPEC;
+        impl crate::RegisterSpec for IPRIOR53_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior53::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR53_SPEC {
+        ///`read()` method returns [iprior53::R](R) reader structure
+        impl crate::Readable for IPRIOR53_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior53::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR53_SPEC {
+        ///`write(|w| ..)` method takes [iprior53::W](W) writer structure
+        impl crate::Writable for IPRIOR53_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR53 to value 0
-        impl crate::Resettable for PFIC_IPRIOR53_SPEC {
+        ///`reset()` method sets IPRIOR53 to value 0
+        impl crate::Resettable for IPRIOR53_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR54 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR54_SPEC>`
-    pub type PFIC_IPRIOR54 = crate::Reg<pfic_iprior54::PFIC_IPRIOR54_SPEC>;
+    ///IPRIOR54 (rw) register accessor: an alias for `Reg<IPRIOR54_SPEC>`
+    pub type IPRIOR54 = crate::Reg<iprior54::IPRIOR54_SPEC>;
     ///Interrupt Priority configuration Register 54
-    pub mod pfic_iprior54 {
-        ///Register `PFIC_IPRIOR54` reader
-        pub struct R(crate::R<PFIC_IPRIOR54_SPEC>);
+    pub mod iprior54 {
+        ///Register `IPRIOR54` reader
+        pub struct R(crate::R<IPRIOR54_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR54_SPEC>;
+            type Target = crate::R<IPRIOR54_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR54_SPEC>> for R {
+        impl From<crate::R<IPRIOR54_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR54_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR54_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR54` writer
-        pub struct W(crate::W<PFIC_IPRIOR54_SPEC>);
+        ///Register `IPRIOR54` writer
+        pub struct W(crate::W<IPRIOR54_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR54_SPEC>;
+            type Target = crate::W<IPRIOR54_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -32778,17 +30436,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR54_SPEC>> for W {
+        impl From<crate::W<IPRIOR54_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR54_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR54_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR54` reader - RW,Interrupt priority for number 216-219
         pub type IPRIOR54_R = crate::FieldReader<u32>;
         ///Field `IPRIOR54` writer - RW,Interrupt priority for number 216-219
-        pub type IPRIOR54_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR54_SPEC, 32, O, u32>;
+        pub type IPRIOR54_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR54_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 216-219
             #[inline(always)]
@@ -32814,49 +30471,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior54](index.html) module
-        pub struct PFIC_IPRIOR54_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR54_SPEC {
+        ///For information about available fields see [iprior54](index.html) module
+        pub struct IPRIOR54_SPEC;
+        impl crate::RegisterSpec for IPRIOR54_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior54::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR54_SPEC {
+        ///`read()` method returns [iprior54::R](R) reader structure
+        impl crate::Readable for IPRIOR54_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior54::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR54_SPEC {
+        ///`write(|w| ..)` method takes [iprior54::W](W) writer structure
+        impl crate::Writable for IPRIOR54_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR54 to value 0
-        impl crate::Resettable for PFIC_IPRIOR54_SPEC {
+        ///`reset()` method sets IPRIOR54 to value 0
+        impl crate::Resettable for IPRIOR54_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR55 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR55_SPEC>`
-    pub type PFIC_IPRIOR55 = crate::Reg<pfic_iprior55::PFIC_IPRIOR55_SPEC>;
+    ///IPRIOR55 (rw) register accessor: an alias for `Reg<IPRIOR55_SPEC>`
+    pub type IPRIOR55 = crate::Reg<iprior55::IPRIOR55_SPEC>;
     ///Interrupt Priority configuration Register 55
-    pub mod pfic_iprior55 {
-        ///Register `PFIC_IPRIOR55` reader
-        pub struct R(crate::R<PFIC_IPRIOR55_SPEC>);
+    pub mod iprior55 {
+        ///Register `IPRIOR55` reader
+        pub struct R(crate::R<IPRIOR55_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR55_SPEC>;
+            type Target = crate::R<IPRIOR55_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR55_SPEC>> for R {
+        impl From<crate::R<IPRIOR55_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR55_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR55_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR55` writer
-        pub struct W(crate::W<PFIC_IPRIOR55_SPEC>);
+        ///Register `IPRIOR55` writer
+        pub struct W(crate::W<IPRIOR55_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR55_SPEC>;
+            type Target = crate::W<IPRIOR55_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -32868,17 +30525,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR55_SPEC>> for W {
+        impl From<crate::W<IPRIOR55_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR55_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR55_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR55` reader - RW,Interrupt priority for number 220-223
         pub type IPRIOR55_R = crate::FieldReader<u32>;
         ///Field `IPRIOR55` writer - RW,Interrupt priority for number 220-223
-        pub type IPRIOR55_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR55_SPEC, 32, O, u32>;
+        pub type IPRIOR55_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR55_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 220-223
             #[inline(always)]
@@ -32904,49 +30560,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior55](index.html) module
-        pub struct PFIC_IPRIOR55_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR55_SPEC {
+        ///For information about available fields see [iprior55](index.html) module
+        pub struct IPRIOR55_SPEC;
+        impl crate::RegisterSpec for IPRIOR55_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior55::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR55_SPEC {
+        ///`read()` method returns [iprior55::R](R) reader structure
+        impl crate::Readable for IPRIOR55_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior55::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR55_SPEC {
+        ///`write(|w| ..)` method takes [iprior55::W](W) writer structure
+        impl crate::Writable for IPRIOR55_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR55 to value 0
-        impl crate::Resettable for PFIC_IPRIOR55_SPEC {
+        ///`reset()` method sets IPRIOR55 to value 0
+        impl crate::Resettable for IPRIOR55_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR56 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR56_SPEC>`
-    pub type PFIC_IPRIOR56 = crate::Reg<pfic_iprior56::PFIC_IPRIOR56_SPEC>;
+    ///IPRIOR56 (rw) register accessor: an alias for `Reg<IPRIOR56_SPEC>`
+    pub type IPRIOR56 = crate::Reg<iprior56::IPRIOR56_SPEC>;
     ///Interrupt Priority configuration Register 56
-    pub mod pfic_iprior56 {
-        ///Register `PFIC_IPRIOR56` reader
-        pub struct R(crate::R<PFIC_IPRIOR56_SPEC>);
+    pub mod iprior56 {
+        ///Register `IPRIOR56` reader
+        pub struct R(crate::R<IPRIOR56_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR56_SPEC>;
+            type Target = crate::R<IPRIOR56_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR56_SPEC>> for R {
+        impl From<crate::R<IPRIOR56_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR56_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR56_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR56` writer
-        pub struct W(crate::W<PFIC_IPRIOR56_SPEC>);
+        ///Register `IPRIOR56` writer
+        pub struct W(crate::W<IPRIOR56_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR56_SPEC>;
+            type Target = crate::W<IPRIOR56_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -32958,17 +30614,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR56_SPEC>> for W {
+        impl From<crate::W<IPRIOR56_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR56_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR56_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR56` reader - RW,Interrupt priority for number 224-227
         pub type IPRIOR56_R = crate::FieldReader<u32>;
         ///Field `IPRIOR56` writer - RW,Interrupt priority for number 224-227
-        pub type IPRIOR56_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR56_SPEC, 32, O, u32>;
+        pub type IPRIOR56_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR56_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 224-227
             #[inline(always)]
@@ -32994,49 +30649,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior56](index.html) module
-        pub struct PFIC_IPRIOR56_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR56_SPEC {
+        ///For information about available fields see [iprior56](index.html) module
+        pub struct IPRIOR56_SPEC;
+        impl crate::RegisterSpec for IPRIOR56_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior56::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR56_SPEC {
+        ///`read()` method returns [iprior56::R](R) reader structure
+        impl crate::Readable for IPRIOR56_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior56::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR56_SPEC {
+        ///`write(|w| ..)` method takes [iprior56::W](W) writer structure
+        impl crate::Writable for IPRIOR56_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR56 to value 0
-        impl crate::Resettable for PFIC_IPRIOR56_SPEC {
+        ///`reset()` method sets IPRIOR56 to value 0
+        impl crate::Resettable for IPRIOR56_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR57 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR57_SPEC>`
-    pub type PFIC_IPRIOR57 = crate::Reg<pfic_iprior57::PFIC_IPRIOR57_SPEC>;
+    ///IPRIOR57 (rw) register accessor: an alias for `Reg<IPRIOR57_SPEC>`
+    pub type IPRIOR57 = crate::Reg<iprior57::IPRIOR57_SPEC>;
     ///Interrupt Priority configuration Register 57
-    pub mod pfic_iprior57 {
-        ///Register `PFIC_IPRIOR57` reader
-        pub struct R(crate::R<PFIC_IPRIOR57_SPEC>);
+    pub mod iprior57 {
+        ///Register `IPRIOR57` reader
+        pub struct R(crate::R<IPRIOR57_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR57_SPEC>;
+            type Target = crate::R<IPRIOR57_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR57_SPEC>> for R {
+        impl From<crate::R<IPRIOR57_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR57_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR57_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR57` writer
-        pub struct W(crate::W<PFIC_IPRIOR57_SPEC>);
+        ///Register `IPRIOR57` writer
+        pub struct W(crate::W<IPRIOR57_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR57_SPEC>;
+            type Target = crate::W<IPRIOR57_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -33048,17 +30703,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR57_SPEC>> for W {
+        impl From<crate::W<IPRIOR57_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR57_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR57_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR57` reader - RW,Interrupt priority for number 228-231
         pub type IPRIOR57_R = crate::FieldReader<u32>;
         ///Field `IPRIOR57` writer - RW,Interrupt priority for number 228-231
-        pub type IPRIOR57_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR57_SPEC, 32, O, u32>;
+        pub type IPRIOR57_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR57_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 228-231
             #[inline(always)]
@@ -33084,49 +30738,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior57](index.html) module
-        pub struct PFIC_IPRIOR57_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR57_SPEC {
+        ///For information about available fields see [iprior57](index.html) module
+        pub struct IPRIOR57_SPEC;
+        impl crate::RegisterSpec for IPRIOR57_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior57::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR57_SPEC {
+        ///`read()` method returns [iprior57::R](R) reader structure
+        impl crate::Readable for IPRIOR57_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior57::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR57_SPEC {
+        ///`write(|w| ..)` method takes [iprior57::W](W) writer structure
+        impl crate::Writable for IPRIOR57_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR57 to value 0
-        impl crate::Resettable for PFIC_IPRIOR57_SPEC {
+        ///`reset()` method sets IPRIOR57 to value 0
+        impl crate::Resettable for IPRIOR57_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR58 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR58_SPEC>`
-    pub type PFIC_IPRIOR58 = crate::Reg<pfic_iprior58::PFIC_IPRIOR58_SPEC>;
+    ///IPRIOR58 (rw) register accessor: an alias for `Reg<IPRIOR58_SPEC>`
+    pub type IPRIOR58 = crate::Reg<iprior58::IPRIOR58_SPEC>;
     ///Interrupt Priority configuration Register 58
-    pub mod pfic_iprior58 {
-        ///Register `PFIC_IPRIOR58` reader
-        pub struct R(crate::R<PFIC_IPRIOR58_SPEC>);
+    pub mod iprior58 {
+        ///Register `IPRIOR58` reader
+        pub struct R(crate::R<IPRIOR58_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR58_SPEC>;
+            type Target = crate::R<IPRIOR58_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR58_SPEC>> for R {
+        impl From<crate::R<IPRIOR58_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR58_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR58_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR58` writer
-        pub struct W(crate::W<PFIC_IPRIOR58_SPEC>);
+        ///Register `IPRIOR58` writer
+        pub struct W(crate::W<IPRIOR58_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR58_SPEC>;
+            type Target = crate::W<IPRIOR58_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -33138,17 +30792,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR58_SPEC>> for W {
+        impl From<crate::W<IPRIOR58_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR58_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR58_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR58` reader - RW,Interrupt priority for number 232-235
         pub type IPRIOR58_R = crate::FieldReader<u32>;
         ///Field `IPRIOR58` writer - RW,Interrupt priority for number 232-235
-        pub type IPRIOR58_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR58_SPEC, 32, O, u32>;
+        pub type IPRIOR58_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR58_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 232-235
             #[inline(always)]
@@ -33174,49 +30827,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior58](index.html) module
-        pub struct PFIC_IPRIOR58_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR58_SPEC {
+        ///For information about available fields see [iprior58](index.html) module
+        pub struct IPRIOR58_SPEC;
+        impl crate::RegisterSpec for IPRIOR58_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior58::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR58_SPEC {
+        ///`read()` method returns [iprior58::R](R) reader structure
+        impl crate::Readable for IPRIOR58_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior58::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR58_SPEC {
+        ///`write(|w| ..)` method takes [iprior58::W](W) writer structure
+        impl crate::Writable for IPRIOR58_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR58 to value 0
-        impl crate::Resettable for PFIC_IPRIOR58_SPEC {
+        ///`reset()` method sets IPRIOR58 to value 0
+        impl crate::Resettable for IPRIOR58_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR59 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR59_SPEC>`
-    pub type PFIC_IPRIOR59 = crate::Reg<pfic_iprior59::PFIC_IPRIOR59_SPEC>;
+    ///IPRIOR59 (rw) register accessor: an alias for `Reg<IPRIOR59_SPEC>`
+    pub type IPRIOR59 = crate::Reg<iprior59::IPRIOR59_SPEC>;
     ///Interrupt Priority configuration Register 59
-    pub mod pfic_iprior59 {
-        ///Register `PFIC_IPRIOR59` reader
-        pub struct R(crate::R<PFIC_IPRIOR59_SPEC>);
+    pub mod iprior59 {
+        ///Register `IPRIOR59` reader
+        pub struct R(crate::R<IPRIOR59_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR59_SPEC>;
+            type Target = crate::R<IPRIOR59_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR59_SPEC>> for R {
+        impl From<crate::R<IPRIOR59_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR59_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR59_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR59` writer
-        pub struct W(crate::W<PFIC_IPRIOR59_SPEC>);
+        ///Register `IPRIOR59` writer
+        pub struct W(crate::W<IPRIOR59_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR59_SPEC>;
+            type Target = crate::W<IPRIOR59_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -33228,17 +30881,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR59_SPEC>> for W {
+        impl From<crate::W<IPRIOR59_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR59_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR59_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR59` reader - RW,Interrupt priority for number 236-239
         pub type IPRIOR59_R = crate::FieldReader<u32>;
         ///Field `IPRIOR59` writer - RW,Interrupt priority for number 236-239
-        pub type IPRIOR59_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR59_SPEC, 32, O, u32>;
+        pub type IPRIOR59_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR59_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 236-239
             #[inline(always)]
@@ -33264,49 +30916,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior59](index.html) module
-        pub struct PFIC_IPRIOR59_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR59_SPEC {
+        ///For information about available fields see [iprior59](index.html) module
+        pub struct IPRIOR59_SPEC;
+        impl crate::RegisterSpec for IPRIOR59_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior59::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR59_SPEC {
+        ///`read()` method returns [iprior59::R](R) reader structure
+        impl crate::Readable for IPRIOR59_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior59::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR59_SPEC {
+        ///`write(|w| ..)` method takes [iprior59::W](W) writer structure
+        impl crate::Writable for IPRIOR59_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR59 to value 0
-        impl crate::Resettable for PFIC_IPRIOR59_SPEC {
+        ///`reset()` method sets IPRIOR59 to value 0
+        impl crate::Resettable for IPRIOR59_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR60 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR60_SPEC>`
-    pub type PFIC_IPRIOR60 = crate::Reg<pfic_iprior60::PFIC_IPRIOR60_SPEC>;
+    ///IPRIOR60 (rw) register accessor: an alias for `Reg<IPRIOR60_SPEC>`
+    pub type IPRIOR60 = crate::Reg<iprior60::IPRIOR60_SPEC>;
     ///Interrupt Priority configuration Register 60
-    pub mod pfic_iprior60 {
-        ///Register `PFIC_IPRIOR60` reader
-        pub struct R(crate::R<PFIC_IPRIOR60_SPEC>);
+    pub mod iprior60 {
+        ///Register `IPRIOR60` reader
+        pub struct R(crate::R<IPRIOR60_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR60_SPEC>;
+            type Target = crate::R<IPRIOR60_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR60_SPEC>> for R {
+        impl From<crate::R<IPRIOR60_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR60_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR60_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR60` writer
-        pub struct W(crate::W<PFIC_IPRIOR60_SPEC>);
+        ///Register `IPRIOR60` writer
+        pub struct W(crate::W<IPRIOR60_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR60_SPEC>;
+            type Target = crate::W<IPRIOR60_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -33318,17 +30970,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR60_SPEC>> for W {
+        impl From<crate::W<IPRIOR60_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR60_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR60_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR60` reader - RW,Interrupt priority for number 240-243
         pub type IPRIOR60_R = crate::FieldReader<u32>;
         ///Field `IPRIOR60` writer - RW,Interrupt priority for number 240-243
-        pub type IPRIOR60_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR60_SPEC, 32, O, u32>;
+        pub type IPRIOR60_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR60_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 240-243
             #[inline(always)]
@@ -33354,49 +31005,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior60](index.html) module
-        pub struct PFIC_IPRIOR60_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR60_SPEC {
+        ///For information about available fields see [iprior60](index.html) module
+        pub struct IPRIOR60_SPEC;
+        impl crate::RegisterSpec for IPRIOR60_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior60::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR60_SPEC {
+        ///`read()` method returns [iprior60::R](R) reader structure
+        impl crate::Readable for IPRIOR60_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior60::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR60_SPEC {
+        ///`write(|w| ..)` method takes [iprior60::W](W) writer structure
+        impl crate::Writable for IPRIOR60_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR60 to value 0
-        impl crate::Resettable for PFIC_IPRIOR60_SPEC {
+        ///`reset()` method sets IPRIOR60 to value 0
+        impl crate::Resettable for IPRIOR60_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR61 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR61_SPEC>`
-    pub type PFIC_IPRIOR61 = crate::Reg<pfic_iprior61::PFIC_IPRIOR61_SPEC>;
+    ///IPRIOR61 (rw) register accessor: an alias for `Reg<IPRIOR61_SPEC>`
+    pub type IPRIOR61 = crate::Reg<iprior61::IPRIOR61_SPEC>;
     ///Interrupt Priority configuration Register 61
-    pub mod pfic_iprior61 {
-        ///Register `PFIC_IPRIOR61` reader
-        pub struct R(crate::R<PFIC_IPRIOR61_SPEC>);
+    pub mod iprior61 {
+        ///Register `IPRIOR61` reader
+        pub struct R(crate::R<IPRIOR61_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR61_SPEC>;
+            type Target = crate::R<IPRIOR61_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR61_SPEC>> for R {
+        impl From<crate::R<IPRIOR61_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR61_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR61_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR61` writer
-        pub struct W(crate::W<PFIC_IPRIOR61_SPEC>);
+        ///Register `IPRIOR61` writer
+        pub struct W(crate::W<IPRIOR61_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR61_SPEC>;
+            type Target = crate::W<IPRIOR61_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -33408,17 +31059,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR61_SPEC>> for W {
+        impl From<crate::W<IPRIOR61_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR61_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR61_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR61` reader - RW,Interrupt priority for number 244-247
         pub type IPRIOR61_R = crate::FieldReader<u32>;
         ///Field `IPRIOR61` writer - RW,Interrupt priority for number 244-247
-        pub type IPRIOR61_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR61_SPEC, 32, O, u32>;
+        pub type IPRIOR61_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR61_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 244-247
             #[inline(always)]
@@ -33444,49 +31094,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior61](index.html) module
-        pub struct PFIC_IPRIOR61_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR61_SPEC {
+        ///For information about available fields see [iprior61](index.html) module
+        pub struct IPRIOR61_SPEC;
+        impl crate::RegisterSpec for IPRIOR61_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior61::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR61_SPEC {
+        ///`read()` method returns [iprior61::R](R) reader structure
+        impl crate::Readable for IPRIOR61_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior61::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR61_SPEC {
+        ///`write(|w| ..)` method takes [iprior61::W](W) writer structure
+        impl crate::Writable for IPRIOR61_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR61 to value 0
-        impl crate::Resettable for PFIC_IPRIOR61_SPEC {
+        ///`reset()` method sets IPRIOR61 to value 0
+        impl crate::Resettable for IPRIOR61_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR62 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR62_SPEC>`
-    pub type PFIC_IPRIOR62 = crate::Reg<pfic_iprior62::PFIC_IPRIOR62_SPEC>;
+    ///IPRIOR62 (rw) register accessor: an alias for `Reg<IPRIOR62_SPEC>`
+    pub type IPRIOR62 = crate::Reg<iprior62::IPRIOR62_SPEC>;
     ///Interrupt Priority configuration Register 62
-    pub mod pfic_iprior62 {
-        ///Register `PFIC_IPRIOR62` reader
-        pub struct R(crate::R<PFIC_IPRIOR62_SPEC>);
+    pub mod iprior62 {
+        ///Register `IPRIOR62` reader
+        pub struct R(crate::R<IPRIOR62_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR62_SPEC>;
+            type Target = crate::R<IPRIOR62_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR62_SPEC>> for R {
+        impl From<crate::R<IPRIOR62_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR62_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR62_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR62` writer
-        pub struct W(crate::W<PFIC_IPRIOR62_SPEC>);
+        ///Register `IPRIOR62` writer
+        pub struct W(crate::W<IPRIOR62_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR62_SPEC>;
+            type Target = crate::W<IPRIOR62_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -33498,17 +31148,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR62_SPEC>> for W {
+        impl From<crate::W<IPRIOR62_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR62_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR62_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR62` reader - RW,Interrupt priority for number 248-251
         pub type IPRIOR62_R = crate::FieldReader<u32>;
         ///Field `IPRIOR62` writer - RW,Interrupt priority for number 248-251
-        pub type IPRIOR62_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR62_SPEC, 32, O, u32>;
+        pub type IPRIOR62_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR62_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 248-251
             #[inline(always)]
@@ -33534,49 +31183,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior62](index.html) module
-        pub struct PFIC_IPRIOR62_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR62_SPEC {
+        ///For information about available fields see [iprior62](index.html) module
+        pub struct IPRIOR62_SPEC;
+        impl crate::RegisterSpec for IPRIOR62_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior62::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR62_SPEC {
+        ///`read()` method returns [iprior62::R](R) reader structure
+        impl crate::Readable for IPRIOR62_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior62::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR62_SPEC {
+        ///`write(|w| ..)` method takes [iprior62::W](W) writer structure
+        impl crate::Writable for IPRIOR62_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR62 to value 0
-        impl crate::Resettable for PFIC_IPRIOR62_SPEC {
+        ///`reset()` method sets IPRIOR62 to value 0
+        impl crate::Resettable for IPRIOR62_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_IPRIOR63 (rw) register accessor: an alias for `Reg<PFIC_IPRIOR63_SPEC>`
-    pub type PFIC_IPRIOR63 = crate::Reg<pfic_iprior63::PFIC_IPRIOR63_SPEC>;
+    ///IPRIOR63 (rw) register accessor: an alias for `Reg<IPRIOR63_SPEC>`
+    pub type IPRIOR63 = crate::Reg<iprior63::IPRIOR63_SPEC>;
     ///Interrupt Priority configuration Register 63
-    pub mod pfic_iprior63 {
-        ///Register `PFIC_IPRIOR63` reader
-        pub struct R(crate::R<PFIC_IPRIOR63_SPEC>);
+    pub mod iprior63 {
+        ///Register `IPRIOR63` reader
+        pub struct R(crate::R<IPRIOR63_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_IPRIOR63_SPEC>;
+            type Target = crate::R<IPRIOR63_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_IPRIOR63_SPEC>> for R {
+        impl From<crate::R<IPRIOR63_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_IPRIOR63_SPEC>) -> Self {
+            fn from(reader: crate::R<IPRIOR63_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_IPRIOR63` writer
-        pub struct W(crate::W<PFIC_IPRIOR63_SPEC>);
+        ///Register `IPRIOR63` writer
+        pub struct W(crate::W<IPRIOR63_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_IPRIOR63_SPEC>;
+            type Target = crate::W<IPRIOR63_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -33588,17 +31237,16 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_IPRIOR63_SPEC>> for W {
+        impl From<crate::W<IPRIOR63_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_IPRIOR63_SPEC>) -> Self {
+            fn from(writer: crate::W<IPRIOR63_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `IPRIOR63` reader - RW,Interrupt priority for number 252-255
         pub type IPRIOR63_R = crate::FieldReader<u32>;
         ///Field `IPRIOR63` writer - RW,Interrupt priority for number 252-255
-        pub type IPRIOR63_W<'a, const O: u8> =
-            crate::FieldWriter<'a, PFIC_IPRIOR63_SPEC, 32, O, u32>;
+        pub type IPRIOR63_W<'a, const O: u8> = crate::FieldWriter<'a, IPRIOR63_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW,Interrupt priority for number 252-255
             #[inline(always)]
@@ -33624,49 +31272,49 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_iprior63](index.html) module
-        pub struct PFIC_IPRIOR63_SPEC;
-        impl crate::RegisterSpec for PFIC_IPRIOR63_SPEC {
+        ///For information about available fields see [iprior63](index.html) module
+        pub struct IPRIOR63_SPEC;
+        impl crate::RegisterSpec for IPRIOR63_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_iprior63::R](R) reader structure
-        impl crate::Readable for PFIC_IPRIOR63_SPEC {
+        ///`read()` method returns [iprior63::R](R) reader structure
+        impl crate::Readable for IPRIOR63_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_iprior63::W](W) writer structure
-        impl crate::Writable for PFIC_IPRIOR63_SPEC {
+        ///`write(|w| ..)` method takes [iprior63::W](W) writer structure
+        impl crate::Writable for IPRIOR63_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_IPRIOR63 to value 0
-        impl crate::Resettable for PFIC_IPRIOR63_SPEC {
+        ///`reset()` method sets IPRIOR63 to value 0
+        impl crate::Resettable for IPRIOR63_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PFIC_SCTLR (rw) register accessor: an alias for `Reg<PFIC_SCTLR_SPEC>`
-    pub type PFIC_SCTLR = crate::Reg<pfic_sctlr::PFIC_SCTLR_SPEC>;
+    ///SCTLR (rw) register accessor: an alias for `Reg<SCTLR_SPEC>`
+    pub type SCTLR = crate::Reg<sctlr::SCTLR_SPEC>;
     ///System Control Register
-    pub mod pfic_sctlr {
-        ///Register `PFIC_SCTLR` reader
-        pub struct R(crate::R<PFIC_SCTLR_SPEC>);
+    pub mod sctlr {
+        ///Register `SCTLR` reader
+        pub struct R(crate::R<SCTLR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<PFIC_SCTLR_SPEC>;
+            type Target = crate::R<SCTLR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<PFIC_SCTLR_SPEC>> for R {
+        impl From<crate::R<SCTLR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<PFIC_SCTLR_SPEC>) -> Self {
+            fn from(reader: crate::R<SCTLR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `PFIC_SCTLR` writer
-        pub struct W(crate::W<PFIC_SCTLR_SPEC>);
+        ///Register `SCTLR` writer
+        pub struct W(crate::W<SCTLR_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<PFIC_SCTLR_SPEC>;
+            type Target = crate::W<SCTLR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -33678,32 +31326,32 @@ pub mod pfic {
                 &mut self.0
             }
         }
-        impl From<crate::W<PFIC_SCTLR_SPEC>> for W {
+        impl From<crate::W<SCTLR_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<PFIC_SCTLR_SPEC>) -> Self {
+            fn from(writer: crate::W<SCTLR_SPEC>) -> Self {
                 W(writer)
             }
         }
         ///Field `SLEEPONEXIT` reader - RW,SLEEPONEXIT
         pub type SLEEPONEXIT_R = crate::BitReader;
         ///Field `SLEEPONEXIT` writer - RW,SLEEPONEXIT
-        pub type SLEEPONEXIT_W<'a, const O: u8> = crate::BitWriter<'a, PFIC_SCTLR_SPEC, O>;
+        pub type SLEEPONEXIT_W<'a, const O: u8> = crate::BitWriter<'a, SCTLR_SPEC, O>;
         ///Field `SLEEPDEEP` reader - RW,SLEEPDEEP
         pub type SLEEPDEEP_R = crate::BitReader;
         ///Field `SLEEPDEEP` writer - RW,SLEEPDEEP
-        pub type SLEEPDEEP_W<'a, const O: u8> = crate::BitWriter<'a, PFIC_SCTLR_SPEC, O>;
+        pub type SLEEPDEEP_W<'a, const O: u8> = crate::BitWriter<'a, SCTLR_SPEC, O>;
         ///Field `WFITOWFE` reader - RW,WFITOWFE
         pub type WFITOWFE_R = crate::BitReader;
         ///Field `WFITOWFE` writer - RW,WFITOWFE
-        pub type WFITOWFE_W<'a, const O: u8> = crate::BitWriter<'a, PFIC_SCTLR_SPEC, O>;
+        pub type WFITOWFE_W<'a, const O: u8> = crate::BitWriter<'a, SCTLR_SPEC, O>;
         ///Field `SEVONPEND` reader - RW,SEVONPEND
         pub type SEVONPEND_R = crate::BitReader;
         ///Field `SEVONPEND` writer - RW,SEVONPEND
-        pub type SEVONPEND_W<'a, const O: u8> = crate::BitWriter<'a, PFIC_SCTLR_SPEC, O>;
+        pub type SEVONPEND_W<'a, const O: u8> = crate::BitWriter<'a, SCTLR_SPEC, O>;
         ///Field `SETEVENT` reader - WO,SETEVENT
         pub type SETEVENT_R = crate::BitReader;
         ///Field `SETEVENT` writer - WO,SETEVENT
-        pub type SETEVENT_W<'a, const O: u8> = crate::BitWriter<'a, PFIC_SCTLR_SPEC, O>;
+        pub type SETEVENT_W<'a, const O: u8> = crate::BitWriter<'a, SCTLR_SPEC, O>;
         impl R {
             ///Bit 1 - RW,SLEEPONEXIT
             #[inline(always)]
@@ -33773,28 +31421,28 @@ pub mod pfic {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [pfic_sctlr](index.html) module
-        pub struct PFIC_SCTLR_SPEC;
-        impl crate::RegisterSpec for PFIC_SCTLR_SPEC {
+        ///For information about available fields see [sctlr](index.html) module
+        pub struct SCTLR_SPEC;
+        impl crate::RegisterSpec for SCTLR_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [pfic_sctlr::R](R) reader structure
-        impl crate::Readable for PFIC_SCTLR_SPEC {
+        ///`read()` method returns [sctlr::R](R) reader structure
+        impl crate::Readable for SCTLR_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [pfic_sctlr::W](W) writer structure
-        impl crate::Writable for PFIC_SCTLR_SPEC {
+        ///`write(|w| ..)` method takes [sctlr::W](W) writer structure
+        impl crate::Writable for SCTLR_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets PFIC_SCTLR to value 0
-        impl crate::Resettable for PFIC_SCTLR_SPEC {
+        ///`reset()` method sets SCTLR to value 0
+        impl crate::Resettable for SCTLR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
 }
-///Systick register
+///Systick registers, 64-bit downcounter for QingKeV4
 pub struct SYSTICK {
     _marker: PhantomData<*const ()>,
 }
@@ -33820,47 +31468,43 @@ impl core::fmt::Debug for SYSTICK {
         f.debug_struct("SYSTICK").finish()
     }
 }
-///Systick register
+///Systick registers, 64-bit downcounter for QingKeV4
 pub mod systick {
     ///Register block
     #[repr(C)]
     pub struct RegisterBlock {
-        ///0x00 - Systick counter control register
-        pub stk_ctlr: STK_CTLR,
-        ///0x04 - Systick count status register
-        pub stk_sr: STK_SR,
-        ///0x08 - Systick counter low register
-        pub stk_cntl: STK_CNTL,
-        ///0x0c - Systick counter high register
-        pub stk_cnth: STK_CNTH,
-        ///0x10 - Systick compare low register
-        pub stk_cmplr: STK_CMPLR,
-        ///0x14 - Systick compare high register
-        pub stk_cmphr: STK_CMPHR,
+        ///0x00 - System count control register
+        pub ctlr: CTLR,
+        ///0x04 - System count status register
+        pub sr: SR,
+        ///0x08..0x10 - System counter register
+        pub cnt: CNT,
+        ///0x10..0x18 - System count compare register
+        pub cmp: CMP,
     }
-    ///STK_CTLR (rw) register accessor: an alias for `Reg<STK_CTLR_SPEC>`
-    pub type STK_CTLR = crate::Reg<stk_ctlr::STK_CTLR_SPEC>;
-    ///Systick counter control register
-    pub mod stk_ctlr {
-        ///Register `STK_CTLR` reader
-        pub struct R(crate::R<STK_CTLR_SPEC>);
+    ///CTLR (rw) register accessor: an alias for `Reg<CTLR_SPEC>`
+    pub type CTLR = crate::Reg<ctlr::CTLR_SPEC>;
+    ///System count control register
+    pub mod ctlr {
+        ///Register `CTLR` reader
+        pub struct R(crate::R<CTLR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<STK_CTLR_SPEC>;
+            type Target = crate::R<CTLR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<STK_CTLR_SPEC>> for R {
+        impl From<crate::R<CTLR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<STK_CTLR_SPEC>) -> Self {
+            fn from(reader: crate::R<CTLR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `STK_CTLR` writer
-        pub struct W(crate::W<STK_CTLR_SPEC>);
+        ///Register `CTLR` writer
+        pub struct W(crate::W<CTLR_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<STK_CTLR_SPEC>;
+            type Target = crate::W<CTLR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -33872,115 +31516,211 @@ pub mod systick {
                 &mut self.0
             }
         }
-        impl From<crate::W<STK_CTLR_SPEC>> for W {
+        impl From<crate::W<CTLR_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<STK_CTLR_SPEC>) -> Self {
+            fn from(writer: crate::W<CTLR_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `STE` reader - Systick counter enable
+        ///Field `STE` reader - Counter enable control bit
         pub type STE_R = crate::BitReader;
-        ///Field `STE` writer - Systick counter enable
-        pub type STE_W<'a, const O: u8> = crate::BitWriter<'a, STK_CTLR_SPEC, O>;
-        ///Field `STIE` reader - Systick counter interrupt enable
+        ///Field `STE` writer - Counter enable control bit
+        pub type STE_W<'a, const O: u8> = crate::BitWriter<'a, CTLR_SPEC, O>;
+        ///Field `STIE` reader - Counter interrupt enable control bit
         pub type STIE_R = crate::BitReader;
-        ///Field `STIE` writer - Systick counter interrupt enable
-        pub type STIE_W<'a, const O: u8> = crate::BitWriter<'a, STK_CTLR_SPEC, O>;
-        ///Field `STCLK` reader - System counter clock Source selection
-        pub type STCLK_R = crate::BitReader;
-        ///Field `STCLK` writer - System counter clock Source selection
-        pub type STCLK_W<'a, const O: u8> = crate::BitWriter<'a, STK_CTLR_SPEC, O>;
-        ///Field `STRE` reader - System counter reload control
+        ///Field `STIE` writer - Counter interrupt enable control bit
+        pub type STIE_W<'a, const O: u8> = crate::BitWriter<'a, CTLR_SPEC, O>;
+        ///Field `STCLK` reader - Counter system clock sourse selection bit
+        pub type STCLK_R = crate::BitReader<STCLK_A>;
+        ///Counter system clock sourse selection bit
+        ///
+        ///Value on reset: 0
+        #[derive(Clone, Copy, Debug, PartialEq, Eq)]
+        pub enum STCLK_A {
+            ///0: HCLK/8
+            HclkDiv8 = 0,
+            ///1: HCLK
+            Hclk = 1,
+        }
+        impl From<STCLK_A> for bool {
+            #[inline(always)]
+            fn from(variant: STCLK_A) -> Self {
+                variant as u8 != 0
+            }
+        }
+        impl STCLK_R {
+            ///Get enumerated values variant
+            #[inline(always)]
+            pub fn variant(&self) -> STCLK_A {
+                match self.bits {
+                    false => STCLK_A::HclkDiv8,
+                    true => STCLK_A::Hclk,
+                }
+            }
+            ///Checks if the value of the field is `HclkDiv8`
+            #[inline(always)]
+            pub fn is_hclk_div8(&self) -> bool {
+                *self == STCLK_A::HclkDiv8
+            }
+            ///Checks if the value of the field is `Hclk`
+            #[inline(always)]
+            pub fn is_hclk(&self) -> bool {
+                *self == STCLK_A::Hclk
+            }
+        }
+        ///Field `STCLK` writer - Counter system clock sourse selection bit
+        pub type STCLK_W<'a, const O: u8> = crate::BitWriter<'a, CTLR_SPEC, O, STCLK_A>;
+        impl<'a, const O: u8> STCLK_W<'a, O> {
+            ///HCLK/8
+            #[inline(always)]
+            pub fn hclk_div8(self) -> &'a mut W {
+                self.variant(STCLK_A::HclkDiv8)
+            }
+            ///HCLK
+            #[inline(always)]
+            pub fn hclk(self) -> &'a mut W {
+                self.variant(STCLK_A::Hclk)
+            }
+        }
+        ///Field `STRE` reader - Auto reload count enable bit
         pub type STRE_R = crate::BitReader;
-        ///Field `STRE` writer - System counter reload control
-        pub type STRE_W<'a, const O: u8> = crate::BitWriter<'a, STK_CTLR_SPEC, O>;
-        ///Field `MODE` reader - counter mode
-        pub type MODE_R = crate::BitReader;
-        ///Field `MODE` writer - counter mode
-        pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, STK_CTLR_SPEC, O>;
-        ///Field `INIT` reader - Initial counter value updated
+        ///Field `STRE` writer - Auto reload count enable bit
+        pub type STRE_W<'a, const O: u8> = crate::BitWriter<'a, CTLR_SPEC, O>;
+        ///Field `MODE` reader - Counter mode
+        pub type MODE_R = crate::BitReader<MODE_A>;
+        ///Counter mode
+        ///
+        ///Value on reset: 0
+        #[derive(Clone, Copy, Debug, PartialEq, Eq)]
+        pub enum MODE_A {
+            ///0: Upcount
+            Upcount = 0,
+            ///1: Downcount
+            Downcount = 1,
+        }
+        impl From<MODE_A> for bool {
+            #[inline(always)]
+            fn from(variant: MODE_A) -> Self {
+                variant as u8 != 0
+            }
+        }
+        impl MODE_R {
+            ///Get enumerated values variant
+            #[inline(always)]
+            pub fn variant(&self) -> MODE_A {
+                match self.bits {
+                    false => MODE_A::Upcount,
+                    true => MODE_A::Downcount,
+                }
+            }
+            ///Checks if the value of the field is `Upcount`
+            #[inline(always)]
+            pub fn is_upcount(&self) -> bool {
+                *self == MODE_A::Upcount
+            }
+            ///Checks if the value of the field is `Downcount`
+            #[inline(always)]
+            pub fn is_downcount(&self) -> bool {
+                *self == MODE_A::Downcount
+            }
+        }
+        ///Field `MODE` writer - Counter mode
+        pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, CTLR_SPEC, O, MODE_A>;
+        impl<'a, const O: u8> MODE_W<'a, O> {
+            ///Upcount
+            #[inline(always)]
+            pub fn upcount(self) -> &'a mut W {
+                self.variant(MODE_A::Upcount)
+            }
+            ///Downcount
+            #[inline(always)]
+            pub fn downcount(self) -> &'a mut W {
+                self.variant(MODE_A::Downcount)
+            }
+        }
+        ///Field `INIT` reader - Counter initial value update
         pub type INIT_R = crate::BitReader;
-        ///Field `INIT` writer - Initial counter value updated
-        pub type INIT_W<'a, const O: u8> = crate::BitWriter<'a, STK_CTLR_SPEC, O>;
-        ///Field `SWIE` reader - RW0,System soft interrupt enable
+        ///Field `INIT` writer - Counter initial value update
+        pub type INIT_W<'a, const O: u8> = crate::BitWriter<'a, CTLR_SPEC, O>;
+        ///Field `SWIE` reader - Software interrupt enable
         pub type SWIE_R = crate::BitReader;
-        ///Field `SWIE` writer - RW0,System soft interrupt enable
-        pub type SWIE_W<'a, const O: u8> = crate::BitWriter<'a, STK_CTLR_SPEC, O>;
+        ///Field `SWIE` writer - Software interrupt enable
+        pub type SWIE_W<'a, const O: u8> = crate::BitWriter<'a, CTLR_SPEC, O>;
         impl R {
-            ///Bit 0 - Systick counter enable
+            ///Bit 0 - Counter enable control bit
             #[inline(always)]
             pub fn ste(&self) -> STE_R {
                 STE_R::new((self.bits & 1) != 0)
             }
-            ///Bit 1 - Systick counter interrupt enable
+            ///Bit 1 - Counter interrupt enable control bit
             #[inline(always)]
             pub fn stie(&self) -> STIE_R {
                 STIE_R::new(((self.bits >> 1) & 1) != 0)
             }
-            ///Bit 2 - System counter clock Source selection
+            ///Bit 2 - Counter system clock sourse selection bit
             #[inline(always)]
             pub fn stclk(&self) -> STCLK_R {
                 STCLK_R::new(((self.bits >> 2) & 1) != 0)
             }
-            ///Bit 3 - System counter reload control
+            ///Bit 3 - Auto reload count enable bit
             #[inline(always)]
             pub fn stre(&self) -> STRE_R {
                 STRE_R::new(((self.bits >> 3) & 1) != 0)
             }
-            ///Bit 4 - counter mode
+            ///Bit 4 - Counter mode
             #[inline(always)]
             pub fn mode(&self) -> MODE_R {
                 MODE_R::new(((self.bits >> 4) & 1) != 0)
             }
-            ///Bit 5 - Initial counter value updated
+            ///Bit 5 - Counter initial value update
             #[inline(always)]
             pub fn init(&self) -> INIT_R {
                 INIT_R::new(((self.bits >> 5) & 1) != 0)
             }
-            ///Bit 31 - RW0,System soft interrupt enable
+            ///Bit 31 - Software interrupt enable
             #[inline(always)]
             pub fn swie(&self) -> SWIE_R {
                 SWIE_R::new(((self.bits >> 31) & 1) != 0)
             }
         }
         impl W {
-            ///Bit 0 - Systick counter enable
+            ///Bit 0 - Counter enable control bit
             #[inline(always)]
             #[must_use]
             pub fn ste(&mut self) -> STE_W<0> {
                 STE_W::new(self)
             }
-            ///Bit 1 - Systick counter interrupt enable
+            ///Bit 1 - Counter interrupt enable control bit
             #[inline(always)]
             #[must_use]
             pub fn stie(&mut self) -> STIE_W<1> {
                 STIE_W::new(self)
             }
-            ///Bit 2 - System counter clock Source selection
+            ///Bit 2 - Counter system clock sourse selection bit
             #[inline(always)]
             #[must_use]
             pub fn stclk(&mut self) -> STCLK_W<2> {
                 STCLK_W::new(self)
             }
-            ///Bit 3 - System counter reload control
+            ///Bit 3 - Auto reload count enable bit
             #[inline(always)]
             #[must_use]
             pub fn stre(&mut self) -> STRE_W<3> {
                 STRE_W::new(self)
             }
-            ///Bit 4 - counter mode
+            ///Bit 4 - Counter mode
             #[inline(always)]
             #[must_use]
             pub fn mode(&mut self) -> MODE_W<4> {
                 MODE_W::new(self)
             }
-            ///Bit 5 - Initial counter value updated
+            ///Bit 5 - Counter initial value update
             #[inline(always)]
             #[must_use]
             pub fn init(&mut self) -> INIT_W<5> {
                 INIT_W::new(self)
             }
-            ///Bit 31 - RW0,System soft interrupt enable
+            ///Bit 31 - Software interrupt enable
             #[inline(always)]
             #[must_use]
             pub fn swie(&mut self) -> SWIE_W<31> {
@@ -33993,53 +31733,53 @@ pub mod systick {
                 self
             }
         }
-        ///Systick counter control register
+        ///System count control register
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [stk_ctlr](index.html) module
-        pub struct STK_CTLR_SPEC;
-        impl crate::RegisterSpec for STK_CTLR_SPEC {
+        ///For information about available fields see [ctlr](index.html) module
+        pub struct CTLR_SPEC;
+        impl crate::RegisterSpec for CTLR_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [stk_ctlr::R](R) reader structure
-        impl crate::Readable for STK_CTLR_SPEC {
+        ///`read()` method returns [ctlr::R](R) reader structure
+        impl crate::Readable for CTLR_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [stk_ctlr::W](W) writer structure
-        impl crate::Writable for STK_CTLR_SPEC {
+        ///`write(|w| ..)` method takes [ctlr::W](W) writer structure
+        impl crate::Writable for CTLR_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets STK_CTLR to value 0
-        impl crate::Resettable for STK_CTLR_SPEC {
+        ///`reset()` method sets CTLR to value 0
+        impl crate::Resettable for CTLR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///STK_SR (rw) register accessor: an alias for `Reg<STK_SR_SPEC>`
-    pub type STK_SR = crate::Reg<stk_sr::STK_SR_SPEC>;
-    ///Systick count status register
-    pub mod stk_sr {
-        ///Register `STK_SR` reader
-        pub struct R(crate::R<STK_SR_SPEC>);
+    ///SR (rw) register accessor: an alias for `Reg<SR_SPEC>`
+    pub type SR = crate::Reg<sr::SR_SPEC>;
+    ///System count status register
+    pub mod sr {
+        ///Register `SR` reader
+        pub struct R(crate::R<SR_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<STK_SR_SPEC>;
+            type Target = crate::R<SR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<STK_SR_SPEC>> for R {
+        impl From<crate::R<SR_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<STK_SR_SPEC>) -> Self {
+            fn from(reader: crate::R<SR_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `STK_SR` writer
-        pub struct W(crate::W<STK_SR_SPEC>);
+        ///Register `SR` writer
+        pub struct W(crate::W<SR_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<STK_SR_SPEC>;
+            type Target = crate::W<SR_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -34051,25 +31791,25 @@ pub mod systick {
                 &mut self.0
             }
         }
-        impl From<crate::W<STK_SR_SPEC>> for W {
+        impl From<crate::W<SR_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<STK_SR_SPEC>) -> Self {
+            fn from(writer: crate::W<SR_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `CNTIF` reader - RW,CNTIF
+        ///Field `CNTIF` reader - Count value compare flag
         pub type CNTIF_R = crate::BitReader;
-        ///Field `CNTIF` writer - RW,CNTIF
-        pub type CNTIF_W<'a, const O: u8> = crate::BitWriter<'a, STK_SR_SPEC, O>;
+        ///Field `CNTIF` writer - Count value compare flag
+        pub type CNTIF_W<'a, const O: u8> = crate::BitWriter<'a, SR_SPEC, O>;
         impl R {
-            ///Bit 0 - RW,CNTIF
+            ///Bit 0 - Count value compare flag
             #[inline(always)]
             pub fn cntif(&self) -> CNTIF_R {
                 CNTIF_R::new((self.bits & 1) != 0)
             }
         }
         impl W {
-            ///Bit 0 - RW,CNTIF
+            ///Bit 0 - Count value compare flag
             #[inline(always)]
             #[must_use]
             pub fn cntif(&mut self) -> CNTIF_W<0> {
@@ -34082,53 +31822,53 @@ pub mod systick {
                 self
             }
         }
-        ///Systick count status register
+        ///System count status register
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [stk_sr](index.html) module
-        pub struct STK_SR_SPEC;
-        impl crate::RegisterSpec for STK_SR_SPEC {
+        ///For information about available fields see [sr](index.html) module
+        pub struct SR_SPEC;
+        impl crate::RegisterSpec for SR_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [stk_sr::R](R) reader structure
-        impl crate::Readable for STK_SR_SPEC {
+        ///`read()` method returns [sr::R](R) reader structure
+        impl crate::Readable for SR_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [stk_sr::W](W) writer structure
-        impl crate::Writable for STK_SR_SPEC {
+        ///`write(|w| ..)` method takes [sr::W](W) writer structure
+        impl crate::Writable for SR_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets STK_SR to value 0
-        impl crate::Resettable for STK_SR_SPEC {
+        ///`reset()` method sets SR to value 0
+        impl crate::Resettable for SR_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///STK_CNTL (rw) register accessor: an alias for `Reg<STK_CNTL_SPEC>`
-    pub type STK_CNTL = crate::Reg<stk_cntl::STK_CNTL_SPEC>;
-    ///Systick counter low register
-    pub mod stk_cntl {
-        ///Register `STK_CNTL` reader
-        pub struct R(crate::R<STK_CNTL_SPEC>);
+    ///CNT (rw) register accessor: an alias for `Reg<CNT_SPEC>`
+    pub type CNT = crate::Reg<cnt::CNT_SPEC>;
+    ///System counter register
+    pub mod cnt {
+        ///Register `CNT` reader
+        pub struct R(crate::R<CNT_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<STK_CNTL_SPEC>;
+            type Target = crate::R<CNT_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<STK_CNTL_SPEC>> for R {
+        impl From<crate::R<CNT_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<STK_CNTL_SPEC>) -> Self {
+            fn from(reader: crate::R<CNT_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `STK_CNTL` writer
-        pub struct W(crate::W<STK_CNTL_SPEC>);
+        ///Register `CNT` writer
+        pub struct W(crate::W<CNT_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<STK_CNTL_SPEC>;
+            type Target = crate::W<CNT_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -34140,84 +31880,77 @@ pub mod systick {
                 &mut self.0
             }
         }
-        impl From<crate::W<STK_CNTL_SPEC>> for W {
+        impl From<crate::W<CNT_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<STK_CNTL_SPEC>) -> Self {
+            fn from(writer: crate::W<CNT_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `CNTL` reader - RW,CNTL
-        pub type CNTL_R = crate::FieldReader<u32>;
-        ///Field `CNTL` writer - RW,CNTL
-        pub type CNTL_W<'a, const O: u8> = crate::FieldWriter<'a, STK_CNTL_SPEC, 32, O, u32>;
-        impl R {
-            ///Bits 0:31 - RW,CNTL
-            #[inline(always)]
-            pub fn cntl(&self) -> CNTL_R {
-                CNTL_R::new(self.bits)
+        impl core::fmt::Debug for R {
+            fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+                write!(f, "{}", self.bits())
+            }
+        }
+        impl core::fmt::Debug for crate::generic::Reg<CNT_SPEC> {
+            fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+                self.read().fmt(f)
             }
         }
         impl W {
-            ///Bits 0:31 - RW,CNTL
-            #[inline(always)]
-            #[must_use]
-            pub fn cntl(&mut self) -> CNTL_W<0> {
-                CNTL_W::new(self)
-            }
             ///Writes raw bits to the register.
             #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+            pub unsafe fn bits(&mut self, bits: u64) -> &mut Self {
                 self.0.bits(bits);
                 self
             }
         }
-        ///Systick counter low register
+        ///System counter register
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [stk_cntl](index.html) module
-        pub struct STK_CNTL_SPEC;
-        impl crate::RegisterSpec for STK_CNTL_SPEC {
-            type Ux = u32;
+        ///For information about available fields see [cnt](index.html) module
+        pub struct CNT_SPEC;
+        impl crate::RegisterSpec for CNT_SPEC {
+            type Ux = u64;
         }
-        ///`read()` method returns [stk_cntl::R](R) reader structure
-        impl crate::Readable for STK_CNTL_SPEC {
+        ///`read()` method returns [cnt::R](R) reader structure
+        impl crate::Readable for CNT_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [stk_cntl::W](W) writer structure
-        impl crate::Writable for STK_CNTL_SPEC {
+        ///`write(|w| ..)` method takes [cnt::W](W) writer structure
+        impl crate::Writable for CNT_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets STK_CNTL to value 0
-        impl crate::Resettable for STK_CNTL_SPEC {
+        ///`reset()` method sets CNT to value 0
+        impl crate::Resettable for CNT_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///STK_CNTH (rw) register accessor: an alias for `Reg<STK_CNTH_SPEC>`
-    pub type STK_CNTH = crate::Reg<stk_cnth::STK_CNTH_SPEC>;
-    ///Systick counter high register
-    pub mod stk_cnth {
-        ///Register `STK_CNTH` reader
-        pub struct R(crate::R<STK_CNTH_SPEC>);
+    ///CMP (rw) register accessor: an alias for `Reg<CMP_SPEC>`
+    pub type CMP = crate::Reg<cmp::CMP_SPEC>;
+    ///System count compare register
+    pub mod cmp {
+        ///Register `CMP` reader
+        pub struct R(crate::R<CMP_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<STK_CNTH_SPEC>;
+            type Target = crate::R<CMP_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<STK_CNTH_SPEC>> for R {
+        impl From<crate::R<CMP_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<STK_CNTH_SPEC>) -> Self {
+            fn from(reader: crate::R<CMP_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `STK_CNTH` writer
-        pub struct W(crate::W<STK_CNTH_SPEC>);
+        ///Register `CMP` writer
+        pub struct W(crate::W<CMP_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<STK_CNTH_SPEC>;
+            type Target = crate::W<CMP_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -34229,236 +31962,51 @@ pub mod systick {
                 &mut self.0
             }
         }
-        impl From<crate::W<STK_CNTH_SPEC>> for W {
+        impl From<crate::W<CMP_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<STK_CNTH_SPEC>) -> Self {
+            fn from(writer: crate::W<CMP_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `CNTH` reader - RW,CNTH
-        pub type CNTH_R = crate::FieldReader<u32>;
-        ///Field `CNTH` writer - RW,CNTH
-        pub type CNTH_W<'a, const O: u8> = crate::FieldWriter<'a, STK_CNTH_SPEC, 32, O, u32>;
-        impl R {
-            ///Bits 0:31 - RW,CNTH
-            #[inline(always)]
-            pub fn cnth(&self) -> CNTH_R {
-                CNTH_R::new(self.bits)
+        impl core::fmt::Debug for R {
+            fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+                write!(f, "{}", self.bits())
+            }
+        }
+        impl core::fmt::Debug for crate::generic::Reg<CMP_SPEC> {
+            fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+                self.read().fmt(f)
             }
         }
         impl W {
-            ///Bits 0:31 - RW,CNTH
-            #[inline(always)]
-            #[must_use]
-            pub fn cnth(&mut self) -> CNTH_W<0> {
-                CNTH_W::new(self)
-            }
             ///Writes raw bits to the register.
             #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+            pub unsafe fn bits(&mut self, bits: u64) -> &mut Self {
                 self.0.bits(bits);
                 self
             }
         }
-        ///Systick counter high register
+        ///System count compare register
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [stk_cnth](index.html) module
-        pub struct STK_CNTH_SPEC;
-        impl crate::RegisterSpec for STK_CNTH_SPEC {
-            type Ux = u32;
+        ///For information about available fields see [cmp](index.html) module
+        pub struct CMP_SPEC;
+        impl crate::RegisterSpec for CMP_SPEC {
+            type Ux = u64;
         }
-        ///`read()` method returns [stk_cnth::R](R) reader structure
-        impl crate::Readable for STK_CNTH_SPEC {
+        ///`read()` method returns [cmp::R](R) reader structure
+        impl crate::Readable for CMP_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [stk_cnth::W](W) writer structure
-        impl crate::Writable for STK_CNTH_SPEC {
+        ///`write(|w| ..)` method takes [cmp::W](W) writer structure
+        impl crate::Writable for CMP_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets STK_CNTH to value 0
-        impl crate::Resettable for STK_CNTH_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///STK_CMPLR (rw) register accessor: an alias for `Reg<STK_CMPLR_SPEC>`
-    pub type STK_CMPLR = crate::Reg<stk_cmplr::STK_CMPLR_SPEC>;
-    ///Systick compare low register
-    pub mod stk_cmplr {
-        ///Register `STK_CMPLR` reader
-        pub struct R(crate::R<STK_CMPLR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<STK_CMPLR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<STK_CMPLR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<STK_CMPLR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `STK_CMPLR` writer
-        pub struct W(crate::W<STK_CMPLR_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<STK_CMPLR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<STK_CMPLR_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<STK_CMPLR_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `CMPL` reader - RW,CMPL
-        pub type CMPL_R = crate::FieldReader<u32>;
-        ///Field `CMPL` writer - RW,CMPL
-        pub type CMPL_W<'a, const O: u8> = crate::FieldWriter<'a, STK_CMPLR_SPEC, 32, O, u32>;
-        impl R {
-            ///Bits 0:31 - RW,CMPL
-            #[inline(always)]
-            pub fn cmpl(&self) -> CMPL_R {
-                CMPL_R::new(self.bits)
-            }
-        }
-        impl W {
-            ///Bits 0:31 - RW,CMPL
-            #[inline(always)]
-            #[must_use]
-            pub fn cmpl(&mut self) -> CMPL_W<0> {
-                CMPL_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///Systick compare low register
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [stk_cmplr](index.html) module
-        pub struct STK_CMPLR_SPEC;
-        impl crate::RegisterSpec for STK_CMPLR_SPEC {
-            type Ux = u32;
-        }
-        ///`read()` method returns [stk_cmplr::R](R) reader structure
-        impl crate::Readable for STK_CMPLR_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [stk_cmplr::W](W) writer structure
-        impl crate::Writable for STK_CMPLR_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets STK_CMPLR to value 0
-        impl crate::Resettable for STK_CMPLR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///STK_CMPHR (rw) register accessor: an alias for `Reg<STK_CMPHR_SPEC>`
-    pub type STK_CMPHR = crate::Reg<stk_cmphr::STK_CMPHR_SPEC>;
-    ///Systick compare high register
-    pub mod stk_cmphr {
-        ///Register `STK_CMPHR` reader
-        pub struct R(crate::R<STK_CMPHR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<STK_CMPHR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<STK_CMPHR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<STK_CMPHR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `STK_CMPHR` writer
-        pub struct W(crate::W<STK_CMPHR_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<STK_CMPHR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<STK_CMPHR_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<STK_CMPHR_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `CMPH` reader - RW,CMPH
-        pub type CMPH_R = crate::FieldReader<u32>;
-        ///Field `CMPH` writer - RW,CMPH
-        pub type CMPH_W<'a, const O: u8> = crate::FieldWriter<'a, STK_CMPHR_SPEC, 32, O, u32>;
-        impl R {
-            ///Bits 0:31 - RW,CMPH
-            #[inline(always)]
-            pub fn cmph(&self) -> CMPH_R {
-                CMPH_R::new(self.bits)
-            }
-        }
-        impl W {
-            ///Bits 0:31 - RW,CMPH
-            #[inline(always)]
-            #[must_use]
-            pub fn cmph(&mut self) -> CMPH_W<0> {
-                CMPH_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///Systick compare high register
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [stk_cmphr](index.html) module
-        pub struct STK_CMPHR_SPEC;
-        impl crate::RegisterSpec for STK_CMPHR_SPEC {
-            type Ux = u32;
-        }
-        ///`read()` method returns [stk_cmphr::R](R) reader structure
-        impl crate::Readable for STK_CMPHR_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [stk_cmphr::W](W) writer structure
-        impl crate::Writable for STK_CMPHR_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets STK_CMPHR to value 0
-        impl crate::Resettable for STK_CMPHR_SPEC {
+        ///`reset()` method sets CMP to value 0
+        impl crate::Resettable for CMP_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
@@ -34472,8 +32020,8 @@ pub struct Peripherals {
     pub SYS: SYS,
     ///RTC
     pub RTC: RTC,
-    ///SYSTEM_CONTROL
-    pub SYSTEM_CONTROL: SYSTEM_CONTROL,
+    ///SYSCTL
+    pub SYSCTL: SYSCTL,
     ///TOUCH_KEY
     pub TOUCH_KEY: TOUCH_KEY,
     ///ADC
@@ -34538,7 +32086,7 @@ impl Peripherals {
             RTC: RTC {
                 _marker: PhantomData,
             },
-            SYSTEM_CONTROL: SYSTEM_CONTROL {
+            SYSCTL: SYSCTL {
                 _marker: PhantomData,
             },
             TOUCH_KEY: TOUCH_KEY {
