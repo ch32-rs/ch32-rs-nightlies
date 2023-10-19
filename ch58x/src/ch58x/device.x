@@ -1,6 +1,6 @@
 PROVIDE(TMR0 = DefaultHandler);
-PROVIDE(GPIO_A = DefaultHandler);
-PROVIDE(GPIO_B = DefaultHandler);
+PROVIDE(GPIOA = DefaultHandler);
+PROVIDE(GPIOB = DefaultHandler);
 PROVIDE(SPI0 = DefaultHandler);
 PROVIDE(BLEB = DefaultHandler);
 PROVIDE(BLEL = DefaultHandler);

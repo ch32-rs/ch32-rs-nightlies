@@ -1222,54 +1222,60 @@ pub mod sys {
                 W(writer)
             }
         }
-        ///Field `PIN_TMR0` reader - RW, TMR0 alternate pin enable
-        pub type PIN_TMR0_R = crate::BitReader;
-        ///Field `PIN_TMR0` writer - RW, TMR0 alternate pin enable
-        pub type PIN_TMR0_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
-        ///Field `PIN_TMR1` reader - RW, TMR1 alternate pin enable
-        pub type PIN_TMR1_R = crate::BitReader;
-        ///Field `PIN_TMR1` writer - RW, TMR1 alternate pin enable
-        pub type PIN_TMR1_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
-        ///Field `PIN_TMR2` reader - RW, TMR2 alternate pin enable
-        pub type PIN_TMR2_R = crate::BitReader;
-        ///Field `PIN_TMR2` writer - RW, TMR2 alternate pin enable
-        pub type PIN_TMR2_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
-        ///Field `PIN_TMR3` reader - RW, TMR3 alternate pin enable
-        pub type PIN_TMR3_R = crate::BitReader;
-        ///Field `PIN_TMR3` writer - RW, TMR3 alternate pin enable
-        pub type PIN_TMR3_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
-        ///Field `PIN_UART0` reader - RW, RXD0/TXD0 alternate pin enable
-        pub type PIN_UART0_R = crate::BitReader;
-        ///Field `PIN_UART0` writer - RW, RXD0/TXD0 alternate pin enable
-        pub type PIN_UART0_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
-        ///Field `PIN_UART1` reader - RW, RXD1/TXD1 alternate pin enable
-        pub type PIN_UART1_R = crate::BitReader;
-        ///Field `PIN_UART1` writer - RW, RXD1/TXD1 alternate pin enable
-        pub type PIN_UART1_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
-        ///Field `PIN_UART2` reader - RW, RXD2/TXD2 alternate pin enable
-        pub type PIN_UART2_R = crate::BitReader;
-        ///Field `PIN_UART2` writer - RW, RXD2/TXD2 alternate pin enable
-        pub type PIN_UART2_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
-        ///Field `PIN_UART3` reader - RW, RXD3/TXD3 alternate pin enable
-        pub type PIN_UART3_R = crate::BitReader;
-        ///Field `PIN_UART3` writer - RW, RXD3/TXD3 alternate pin enable
-        pub type PIN_UART3_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
-        ///Field `PIN_SPI0` reader - RW, SCS/SCK0/MOSI/MISO alternate pin enable
-        pub type PIN_SPI0_R = crate::BitReader;
-        ///Field `PIN_SPI0` writer - RW, SCS/SCK0/MOSI/MISO alternate pin enable
-        pub type PIN_SPI0_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
-        ///Field `PIN_PWMX` reader - RW, PWM4/PWM5/PWM7/PWM8/PWM9 alternate pin enable
-        pub type PIN_PWMX_R = crate::BitReader;
-        ///Field `PIN_PWMX` writer - RW, PWM4/PWM5/PWM7/PWM8/PWM9 alternate pin enable
-        pub type PIN_PWMX_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
-        ///Field `PIN_I2C` reader - RW, SCL/SDA alternate pin enable
-        pub type PIN_I2C_R = crate::BitReader;
-        ///Field `PIN_I2C` writer - RW, SCL/SDA alternate pin enable
-        pub type PIN_I2C_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
-        ///Field `PIN_MODEM` reader - RW, DSR/DTR alternate pin enable
-        pub type PIN_MODEM_R = crate::BitReader;
-        ///Field `PIN_MODEM` writer - RW, DSR/DTR alternate pin enable
-        pub type PIN_MODEM_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
+        ///Field `TMR0` reader - RW, TMR0 alternate pin enable
+        pub type TMR0_R = crate::BitReader;
+        ///Field `TMR0` writer - RW, TMR0 alternate pin enable
+        pub type TMR0_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
+        ///Field `TMR1` reader - RW, TMR1 alternate pin enable
+        pub type TMR1_R = crate::BitReader;
+        ///Field `TMR1` writer - RW, TMR1 alternate pin enable
+        pub type TMR1_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
+        ///Field `TMR2` reader - RW, TMR2 alternate pin enable
+        pub type TMR2_R = crate::BitReader;
+        ///Field `TMR2` writer - RW, TMR2 alternate pin enable
+        pub type TMR2_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
+        ///Field `TMR3` reader - RW, TMR3 alternate pin enable
+        pub type TMR3_R = crate::BitReader;
+        ///Field `TMR3` writer - RW, TMR3 alternate pin enable
+        pub type TMR3_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
+        ///Field `UART0` reader - RW, RXD0/TXD0 alternate pin enable
+        pub type UART0_R = crate::BitReader;
+        ///Field `UART0` writer - RW, RXD0/TXD0 alternate pin enable
+        pub type UART0_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
+        ///Field `UART1` reader - RW, RXD1/TXD1 alternate pin enable
+        pub type UART1_R = crate::BitReader;
+        ///Field `UART1` writer - RW, RXD1/TXD1 alternate pin enable
+        pub type UART1_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
+        ///Field `UART2` reader - RW, RXD2/TXD2 alternate pin enable
+        pub type UART2_R = crate::BitReader;
+        ///Field `UART2` writer - RW, RXD2/TXD2 alternate pin enable
+        pub type UART2_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
+        ///Field `UART3` reader - RW, RXD3/TXD3 alternate pin enable
+        pub type UART3_R = crate::BitReader;
+        ///Field `UART3` writer - RW, RXD3/TXD3 alternate pin enable
+        pub type UART3_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
+        ///Field `SPI0` reader - RW, SCS/SCK0/MOSI/MISO alternate pin enable
+        pub type SPI0_R = crate::BitReader;
+        ///Field `SPI0` writer - RW, SCS/SCK0/MOSI/MISO alternate pin enable
+        pub type SPI0_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
+        ///Field `PWMX` reader - RW, PWM4/PWM5/PWM7/PWM8/PWM9 alternate pin enable
+        pub type PWMX_R = crate::BitReader;
+        ///Field `PWMX` writer - RW, PWM4/PWM5/PWM7/PWM8/PWM9 alternate pin enable
+        pub type PWMX_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
+        ///Field `I2C` reader - RW, SCL/SDA alternate pin enable
+        pub type I2C_R = crate::BitReader;
+        ///Field `I2C` writer - RW, SCL/SDA alternate pin enable
+        pub type I2C_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
+        ///Field `MODEM` reader - RW, DSR/DTR alternate pin enable
+        pub type MODEM_R = crate::BitReader;
+        ///Field `MODEM` writer - RW, DSR/DTR alternate pin enable
+        pub type MODEM_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
+        ///Field `INTX` reader - Remap INT from PB\[8\]/PB\[9\]
+        ///to PB\[22\]/PB\[23\]
+        pub type INTX_R = crate::BitReader;
+        ///Field `INTX` writer - Remap INT from PB\[8\]/PB\[9\]
+        ///to PB\[22\]/PB\[23\]
+        pub type INTX_W<'a, const O: u8> = crate::BitWriter<'a, PIN_ALTERNATE_SPEC, O>;
         ///Field `RF_ANT_SW_EN` reader - RW, RF antenna switch control output enable
         pub type RF_ANT_SW_EN_R = crate::BitReader;
         ///Field `RF_ANT_SW_EN` writer - RW, RF antenna switch control output enable
@@ -1277,63 +1283,69 @@ pub mod sys {
         impl R {
             ///Bit 0 - RW, TMR0 alternate pin enable
             #[inline(always)]
-            pub fn pin_tmr0(&self) -> PIN_TMR0_R {
-                PIN_TMR0_R::new((self.bits & 1) != 0)
+            pub fn tmr0(&self) -> TMR0_R {
+                TMR0_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW, TMR1 alternate pin enable
             #[inline(always)]
-            pub fn pin_tmr1(&self) -> PIN_TMR1_R {
-                PIN_TMR1_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn tmr1(&self) -> TMR1_R {
+                TMR1_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW, TMR2 alternate pin enable
             #[inline(always)]
-            pub fn pin_tmr2(&self) -> PIN_TMR2_R {
-                PIN_TMR2_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn tmr2(&self) -> TMR2_R {
+                TMR2_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW, TMR3 alternate pin enable
             #[inline(always)]
-            pub fn pin_tmr3(&self) -> PIN_TMR3_R {
-                PIN_TMR3_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn tmr3(&self) -> TMR3_R {
+                TMR3_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RW, RXD0/TXD0 alternate pin enable
             #[inline(always)]
-            pub fn pin_uart0(&self) -> PIN_UART0_R {
-                PIN_UART0_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn uart0(&self) -> UART0_R {
+                UART0_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 5 - RW, RXD1/TXD1 alternate pin enable
             #[inline(always)]
-            pub fn pin_uart1(&self) -> PIN_UART1_R {
-                PIN_UART1_R::new(((self.bits >> 5) & 1) != 0)
+            pub fn uart1(&self) -> UART1_R {
+                UART1_R::new(((self.bits >> 5) & 1) != 0)
             }
             ///Bit 6 - RW, RXD2/TXD2 alternate pin enable
             #[inline(always)]
-            pub fn pin_uart2(&self) -> PIN_UART2_R {
-                PIN_UART2_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn uart2(&self) -> UART2_R {
+                UART2_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - RW, RXD3/TXD3 alternate pin enable
             #[inline(always)]
-            pub fn pin_uart3(&self) -> PIN_UART3_R {
-                PIN_UART3_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn uart3(&self) -> UART3_R {
+                UART3_R::new(((self.bits >> 7) & 1) != 0)
             }
             ///Bit 8 - RW, SCS/SCK0/MOSI/MISO alternate pin enable
             #[inline(always)]
-            pub fn pin_spi0(&self) -> PIN_SPI0_R {
-                PIN_SPI0_R::new(((self.bits >> 8) & 1) != 0)
+            pub fn spi0(&self) -> SPI0_R {
+                SPI0_R::new(((self.bits >> 8) & 1) != 0)
             }
             ///Bit 10 - RW, PWM4/PWM5/PWM7/PWM8/PWM9 alternate pin enable
             #[inline(always)]
-            pub fn pin_pwmx(&self) -> PIN_PWMX_R {
-                PIN_PWMX_R::new(((self.bits >> 10) & 1) != 0)
+            pub fn pwmx(&self) -> PWMX_R {
+                PWMX_R::new(((self.bits >> 10) & 1) != 0)
             }
             ///Bit 11 - RW, SCL/SDA alternate pin enable
             #[inline(always)]
-            pub fn pin_i2c(&self) -> PIN_I2C_R {
-                PIN_I2C_R::new(((self.bits >> 11) & 1) != 0)
+            pub fn i2c(&self) -> I2C_R {
+                I2C_R::new(((self.bits >> 11) & 1) != 0)
             }
             ///Bit 12 - RW, DSR/DTR alternate pin enable
             #[inline(always)]
-            pub fn pin_modem(&self) -> PIN_MODEM_R {
-                PIN_MODEM_R::new(((self.bits >> 12) & 1) != 0)
+            pub fn modem(&self) -> MODEM_R {
+                MODEM_R::new(((self.bits >> 12) & 1) != 0)
+            }
+            ///Bit 13 - Remap INT from PB\[8\]/PB\[9\]
+            ///to PB\[22\]/PB\[23\]
+            #[inline(always)]
+            pub fn intx(&self) -> INTX_R {
+                INTX_R::new(((self.bits >> 13) & 1) != 0)
             }
             ///Bit 15 - RW, RF antenna switch control output enable
             #[inline(always)]
@@ -1345,74 +1357,81 @@ pub mod sys {
             ///Bit 0 - RW, TMR0 alternate pin enable
             #[inline(always)]
             #[must_use]
-            pub fn pin_tmr0(&mut self) -> PIN_TMR0_W<0> {
-                PIN_TMR0_W::new(self)
+            pub fn tmr0(&mut self) -> TMR0_W<0> {
+                TMR0_W::new(self)
             }
             ///Bit 1 - RW, TMR1 alternate pin enable
             #[inline(always)]
             #[must_use]
-            pub fn pin_tmr1(&mut self) -> PIN_TMR1_W<1> {
-                PIN_TMR1_W::new(self)
+            pub fn tmr1(&mut self) -> TMR1_W<1> {
+                TMR1_W::new(self)
             }
             ///Bit 2 - RW, TMR2 alternate pin enable
             #[inline(always)]
             #[must_use]
-            pub fn pin_tmr2(&mut self) -> PIN_TMR2_W<2> {
-                PIN_TMR2_W::new(self)
+            pub fn tmr2(&mut self) -> TMR2_W<2> {
+                TMR2_W::new(self)
             }
             ///Bit 3 - RW, TMR3 alternate pin enable
             #[inline(always)]
             #[must_use]
-            pub fn pin_tmr3(&mut self) -> PIN_TMR3_W<3> {
-                PIN_TMR3_W::new(self)
+            pub fn tmr3(&mut self) -> TMR3_W<3> {
+                TMR3_W::new(self)
             }
             ///Bit 4 - RW, RXD0/TXD0 alternate pin enable
             #[inline(always)]
             #[must_use]
-            pub fn pin_uart0(&mut self) -> PIN_UART0_W<4> {
-                PIN_UART0_W::new(self)
+            pub fn uart0(&mut self) -> UART0_W<4> {
+                UART0_W::new(self)
             }
             ///Bit 5 - RW, RXD1/TXD1 alternate pin enable
             #[inline(always)]
             #[must_use]
-            pub fn pin_uart1(&mut self) -> PIN_UART1_W<5> {
-                PIN_UART1_W::new(self)
+            pub fn uart1(&mut self) -> UART1_W<5> {
+                UART1_W::new(self)
             }
             ///Bit 6 - RW, RXD2/TXD2 alternate pin enable
             #[inline(always)]
             #[must_use]
-            pub fn pin_uart2(&mut self) -> PIN_UART2_W<6> {
-                PIN_UART2_W::new(self)
+            pub fn uart2(&mut self) -> UART2_W<6> {
+                UART2_W::new(self)
             }
             ///Bit 7 - RW, RXD3/TXD3 alternate pin enable
             #[inline(always)]
             #[must_use]
-            pub fn pin_uart3(&mut self) -> PIN_UART3_W<7> {
-                PIN_UART3_W::new(self)
+            pub fn uart3(&mut self) -> UART3_W<7> {
+                UART3_W::new(self)
             }
             ///Bit 8 - RW, SCS/SCK0/MOSI/MISO alternate pin enable
             #[inline(always)]
             #[must_use]
-            pub fn pin_spi0(&mut self) -> PIN_SPI0_W<8> {
-                PIN_SPI0_W::new(self)
+            pub fn spi0(&mut self) -> SPI0_W<8> {
+                SPI0_W::new(self)
             }
             ///Bit 10 - RW, PWM4/PWM5/PWM7/PWM8/PWM9 alternate pin enable
             #[inline(always)]
             #[must_use]
-            pub fn pin_pwmx(&mut self) -> PIN_PWMX_W<10> {
-                PIN_PWMX_W::new(self)
+            pub fn pwmx(&mut self) -> PWMX_W<10> {
+                PWMX_W::new(self)
             }
             ///Bit 11 - RW, SCL/SDA alternate pin enable
             #[inline(always)]
             #[must_use]
-            pub fn pin_i2c(&mut self) -> PIN_I2C_W<11> {
-                PIN_I2C_W::new(self)
+            pub fn i2c(&mut self) -> I2C_W<11> {
+                I2C_W::new(self)
             }
             ///Bit 12 - RW, DSR/DTR alternate pin enable
             #[inline(always)]
             #[must_use]
-            pub fn pin_modem(&mut self) -> PIN_MODEM_W<12> {
-                PIN_MODEM_W::new(self)
+            pub fn modem(&mut self) -> MODEM_W<12> {
+                MODEM_W::new(self)
+            }
+            ///Bit 13 - Remap INT from PB\[8\]/PB\[9\]
+            ///to PB\[22\]/PB\[23\]
+            #[inline(always)]
+            #[must_use]
+            pub fn intx(&mut self) -> INTX_W<13> {
+                INTX_W::new(self)
             }
             ///Bit 15 - RW, RF antenna switch control output enable
             #[inline(always)]
@@ -5038,56 +5057,56 @@ pub mod adc {
     pub struct RegisterBlock {
         _reserved0: [u8; 0x58],
         ///0x58 - RW, ADC input channel selection
-        pub adc_channel: ADC_CHANNEL,
+        pub channel: CHANNEL,
         ///0x59 - RW, ADC configure
-        pub adc_cfg: ADC_CFG,
+        pub cfg: CFG,
         ///0x5a - RW, ADC convert control
-        pub adc_convert: ADC_CONVERT,
+        pub convert: CONVERT,
         ///0x5b - RW, temperature sensor control
         pub tem_sensor: TEM_SENSOR,
         ///0x5c - RO, ADC data
-        pub adc_data: ADC_DATA,
+        pub data: DATA,
         ///0x5e - RO, ADC interrupt flag register
-        pub adc_int_flag: ADC_INT_FLAG,
+        pub int_flag: INT_FLAG,
         _reserved6: [u8; 0x02],
         ///0x61 - RW, ADC DMA control
-        pub adc_ctrl_dma: ADC_CTRL_DMA,
+        pub ctrl_dma: CTRL_DMA,
         ///0x62 - RW1, ADC and DMA interrupt flag registers
-        pub adc_dma_if: ADC_DMA_IF,
+        pub dma_if: DMA_IF,
         ///0x63 - RO, ADC interrupt flag
-        pub adc_auto_cycle: ADC_AUTO_CYCLE,
+        pub auto_cycle: AUTO_CYCLE,
         ///0x64 - RO, ADC DMA current address
-        pub adc_dma_now: ADC_DMA_NOW,
+        pub dma_now: DMA_NOW,
         _reserved10: [u8; 0x02],
         ///0x68 - RW, ADC DMA begin address
-        pub adc_dma_beg: ADC_DMA_BEG,
+        pub dma_beg: DMA_BEG,
         _reserved11: [u8; 0x02],
         ///0x6c - RW, ADC DMA end address
-        pub adc_dma_end: ADC_DMA_END,
+        pub dma_end: DMA_END,
     }
-    ///ADC_CHANNEL (rw) register accessor: an alias for `Reg<ADC_CHANNEL_SPEC>`
-    pub type ADC_CHANNEL = crate::Reg<adc_channel::ADC_CHANNEL_SPEC>;
+    ///CHANNEL (rw) register accessor: an alias for `Reg<CHANNEL_SPEC>`
+    pub type CHANNEL = crate::Reg<channel::CHANNEL_SPEC>;
     ///RW, ADC input channel selection
-    pub mod adc_channel {
-        ///Register `ADC_CHANNEL` reader
-        pub struct R(crate::R<ADC_CHANNEL_SPEC>);
+    pub mod channel {
+        ///Register `CHANNEL` reader
+        pub struct R(crate::R<CHANNEL_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<ADC_CHANNEL_SPEC>;
+            type Target = crate::R<CHANNEL_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<ADC_CHANNEL_SPEC>> for R {
+        impl From<crate::R<CHANNEL_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<ADC_CHANNEL_SPEC>) -> Self {
+            fn from(reader: crate::R<CHANNEL_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `ADC_CHANNEL` writer
-        pub struct W(crate::W<ADC_CHANNEL_SPEC>);
+        ///Register `CHANNEL` writer
+        pub struct W(crate::W<CHANNEL_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<ADC_CHANNEL_SPEC>;
+            type Target = crate::W<CHANNEL_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -5099,29 +5118,29 @@ pub mod adc {
                 &mut self.0
             }
         }
-        impl From<crate::W<ADC_CHANNEL_SPEC>> for W {
+        impl From<crate::W<CHANNEL_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<ADC_CHANNEL_SPEC>) -> Self {
+            fn from(writer: crate::W<CHANNEL_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `ADC_CH_INX` reader - RW, ADC input channel index
-        pub type ADC_CH_INX_R = crate::FieldReader;
-        ///Field `ADC_CH_INX` writer - RW, ADC input channel index
-        pub type ADC_CH_INX_W<'a, const O: u8> = crate::FieldWriter<'a, ADC_CHANNEL_SPEC, 4, O>;
+        ///Field `CH_INX` reader - RW, ADC input channel index
+        pub type CH_INX_R = crate::FieldReader;
+        ///Field `CH_INX` writer - RW, ADC input channel index
+        pub type CH_INX_W<'a, const O: u8> = crate::FieldWriter<'a, CHANNEL_SPEC, 4, O>;
         impl R {
             ///Bits 0:3 - RW, ADC input channel index
             #[inline(always)]
-            pub fn adc_ch_inx(&self) -> ADC_CH_INX_R {
-                ADC_CH_INX_R::new(self.bits & 0x0f)
+            pub fn ch_inx(&self) -> CH_INX_R {
+                CH_INX_R::new(self.bits & 0x0f)
             }
         }
         impl W {
             ///Bits 0:3 - RW, ADC input channel index
             #[inline(always)]
             #[must_use]
-            pub fn adc_ch_inx(&mut self) -> ADC_CH_INX_W<0> {
-                ADC_CH_INX_W::new(self)
+            pub fn ch_inx(&mut self) -> CH_INX_W<0> {
+                CH_INX_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -5134,49 +5153,49 @@ pub mod adc {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [adc_channel](index.html) module
-        pub struct ADC_CHANNEL_SPEC;
-        impl crate::RegisterSpec for ADC_CHANNEL_SPEC {
+        ///For information about available fields see [channel](index.html) module
+        pub struct CHANNEL_SPEC;
+        impl crate::RegisterSpec for CHANNEL_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [adc_channel::R](R) reader structure
-        impl crate::Readable for ADC_CHANNEL_SPEC {
+        ///`read()` method returns [channel::R](R) reader structure
+        impl crate::Readable for CHANNEL_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [adc_channel::W](W) writer structure
-        impl crate::Writable for ADC_CHANNEL_SPEC {
+        ///`write(|w| ..)` method takes [channel::W](W) writer structure
+        impl crate::Writable for CHANNEL_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets ADC_CHANNEL to value 0x0f
-        impl crate::Resettable for ADC_CHANNEL_SPEC {
+        ///`reset()` method sets CHANNEL to value 0x0f
+        impl crate::Resettable for CHANNEL_SPEC {
             const RESET_VALUE: Self::Ux = 0x0f;
         }
     }
-    ///ADC_CFG (rw) register accessor: an alias for `Reg<ADC_CFG_SPEC>`
-    pub type ADC_CFG = crate::Reg<adc_cfg::ADC_CFG_SPEC>;
+    ///CFG (rw) register accessor: an alias for `Reg<CFG_SPEC>`
+    pub type CFG = crate::Reg<cfg::CFG_SPEC>;
     ///RW, ADC configure
-    pub mod adc_cfg {
-        ///Register `ADC_CFG` reader
-        pub struct R(crate::R<ADC_CFG_SPEC>);
+    pub mod cfg {
+        ///Register `CFG` reader
+        pub struct R(crate::R<CFG_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<ADC_CFG_SPEC>;
+            type Target = crate::R<CFG_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<ADC_CFG_SPEC>> for R {
+        impl From<crate::R<CFG_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<ADC_CFG_SPEC>) -> Self {
+            fn from(reader: crate::R<CFG_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `ADC_CFG` writer
-        pub struct W(crate::W<ADC_CFG_SPEC>);
+        ///Register `CFG` writer
+        pub struct W(crate::W<CFG_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<ADC_CFG_SPEC>;
+            type Target = crate::W<CFG_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -5188,104 +5207,104 @@ pub mod adc {
                 &mut self.0
             }
         }
-        impl From<crate::W<ADC_CFG_SPEC>> for W {
+        impl From<crate::W<CFG_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<ADC_CFG_SPEC>) -> Self {
+            fn from(writer: crate::W<CFG_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `ADC_POWER_ON` reader - RW, ADC power control: 0=power down, 1=power on
-        pub type ADC_POWER_ON_R = crate::BitReader;
-        ///Field `ADC_POWER_ON` writer - RW, ADC power control: 0=power down, 1=power on
-        pub type ADC_POWER_ON_W<'a, const O: u8> = crate::BitWriter<'a, ADC_CFG_SPEC, O>;
-        ///Field `ADC_BUF_EN` reader - RW, ADC input buffer enable
-        pub type ADC_BUF_EN_R = crate::BitReader;
-        ///Field `ADC_BUF_EN` writer - RW, ADC input buffer enable
-        pub type ADC_BUF_EN_W<'a, const O: u8> = crate::BitWriter<'a, ADC_CFG_SPEC, O>;
-        ///Field `ADC_DIFF_EN` reader - RW, ADC input channel mode: 0=single-end, 1=differnetial
-        pub type ADC_DIFF_EN_R = crate::BitReader;
-        ///Field `ADC_DIFF_EN` writer - RW, ADC input channel mode: 0=single-end, 1=differnetial
-        pub type ADC_DIFF_EN_W<'a, const O: u8> = crate::BitWriter<'a, ADC_CFG_SPEC, O>;
-        ///Field `ADC_OFS_TEST` reader - RW, enable ADC offset test mode: 0=normal mode, 1=short to test offset
-        pub type ADC_OFS_TEST_R = crate::BitReader;
-        ///Field `ADC_OFS_TEST` writer - RW, enable ADC offset test mode: 0=normal mode, 1=short to test offset
-        pub type ADC_OFS_TEST_W<'a, const O: u8> = crate::BitWriter<'a, ADC_CFG_SPEC, O>;
-        ///Field `ADC_PGA_GAIN_10` reader - RW, set ADC input PGA gain: 00=-12dB, 01=-6dB, 10=0dB, 11=6dB
-        pub type ADC_PGA_GAIN_10_R = crate::FieldReader;
-        ///Field `ADC_PGA_GAIN_10` writer - RW, set ADC input PGA gain: 00=-12dB, 01=-6dB, 10=0dB, 11=6dB
-        pub type ADC_PGA_GAIN_10_W<'a, const O: u8> = crate::FieldWriter<'a, ADC_CFG_SPEC, 2, O>;
-        ///Field `ADC_CLK_DIV` reader - RW, select ADC clock frequency: 00=3.2MHz, 01=2.67MHz, 10=5.33MHz, 11=4MHz
-        pub type ADC_CLK_DIV_R = crate::FieldReader;
-        ///Field `ADC_CLK_DIV` writer - RW, select ADC clock frequency: 00=3.2MHz, 01=2.67MHz, 10=5.33MHz, 11=4MHz
-        pub type ADC_CLK_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, ADC_CFG_SPEC, 2, O>;
+        ///Field `POWER_ON` reader - RW, ADC power control: 0=power down, 1=power on
+        pub type POWER_ON_R = crate::BitReader;
+        ///Field `POWER_ON` writer - RW, ADC power control: 0=power down, 1=power on
+        pub type POWER_ON_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O>;
+        ///Field `BUF_EN` reader - RW, ADC input buffer enable
+        pub type BUF_EN_R = crate::BitReader;
+        ///Field `BUF_EN` writer - RW, ADC input buffer enable
+        pub type BUF_EN_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O>;
+        ///Field `DIFF_EN` reader - RW, ADC input channel mode: 0=single-end, 1=differnetial
+        pub type DIFF_EN_R = crate::BitReader;
+        ///Field `DIFF_EN` writer - RW, ADC input channel mode: 0=single-end, 1=differnetial
+        pub type DIFF_EN_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O>;
+        ///Field `OFS_TEST` reader - RW, enable ADC offset test mode: 0=normal mode, 1=short to test offset
+        pub type OFS_TEST_R = crate::BitReader;
+        ///Field `OFS_TEST` writer - RW, enable ADC offset test mode: 0=normal mode, 1=short to test offset
+        pub type OFS_TEST_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O>;
+        ///Field `PGA_GAIN` reader - RW, set ADC input PGA gain: 00=-12dB, 01=-6dB, 10=0dB, 11=6dB
+        pub type PGA_GAIN_R = crate::FieldReader;
+        ///Field `PGA_GAIN` writer - RW, set ADC input PGA gain: 00=-12dB, 01=-6dB, 10=0dB, 11=6dB
+        pub type PGA_GAIN_W<'a, const O: u8> = crate::FieldWriter<'a, CFG_SPEC, 2, O>;
+        ///Field `CLK_DIV` reader - RW, select ADC clock frequency: 00=3.2MHz, 01=2.67MHz, 10=5.33MHz, 11=4MHz
+        pub type CLK_DIV_R = crate::FieldReader;
+        ///Field `CLK_DIV` writer - RW, select ADC clock frequency: 00=3.2MHz, 01=2.67MHz, 10=5.33MHz, 11=4MHz
+        pub type CLK_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, CFG_SPEC, 2, O>;
         impl R {
             ///Bit 0 - RW, ADC power control: 0=power down, 1=power on
             #[inline(always)]
-            pub fn adc_power_on(&self) -> ADC_POWER_ON_R {
-                ADC_POWER_ON_R::new((self.bits & 1) != 0)
+            pub fn power_on(&self) -> POWER_ON_R {
+                POWER_ON_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW, ADC input buffer enable
             #[inline(always)]
-            pub fn adc_buf_en(&self) -> ADC_BUF_EN_R {
-                ADC_BUF_EN_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn buf_en(&self) -> BUF_EN_R {
+                BUF_EN_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW, ADC input channel mode: 0=single-end, 1=differnetial
             #[inline(always)]
-            pub fn adc_diff_en(&self) -> ADC_DIFF_EN_R {
-                ADC_DIFF_EN_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn diff_en(&self) -> DIFF_EN_R {
+                DIFF_EN_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW, enable ADC offset test mode: 0=normal mode, 1=short to test offset
             #[inline(always)]
-            pub fn adc_ofs_test(&self) -> ADC_OFS_TEST_R {
-                ADC_OFS_TEST_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn ofs_test(&self) -> OFS_TEST_R {
+                OFS_TEST_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bits 4:5 - RW, set ADC input PGA gain: 00=-12dB, 01=-6dB, 10=0dB, 11=6dB
             #[inline(always)]
-            pub fn adc_pga_gain_10(&self) -> ADC_PGA_GAIN_10_R {
-                ADC_PGA_GAIN_10_R::new((self.bits >> 4) & 3)
+            pub fn pga_gain(&self) -> PGA_GAIN_R {
+                PGA_GAIN_R::new((self.bits >> 4) & 3)
             }
             ///Bits 6:7 - RW, select ADC clock frequency: 00=3.2MHz, 01=2.67MHz, 10=5.33MHz, 11=4MHz
             #[inline(always)]
-            pub fn adc_clk_div(&self) -> ADC_CLK_DIV_R {
-                ADC_CLK_DIV_R::new((self.bits >> 6) & 3)
+            pub fn clk_div(&self) -> CLK_DIV_R {
+                CLK_DIV_R::new((self.bits >> 6) & 3)
             }
         }
         impl W {
             ///Bit 0 - RW, ADC power control: 0=power down, 1=power on
             #[inline(always)]
             #[must_use]
-            pub fn adc_power_on(&mut self) -> ADC_POWER_ON_W<0> {
-                ADC_POWER_ON_W::new(self)
+            pub fn power_on(&mut self) -> POWER_ON_W<0> {
+                POWER_ON_W::new(self)
             }
             ///Bit 1 - RW, ADC input buffer enable
             #[inline(always)]
             #[must_use]
-            pub fn adc_buf_en(&mut self) -> ADC_BUF_EN_W<1> {
-                ADC_BUF_EN_W::new(self)
+            pub fn buf_en(&mut self) -> BUF_EN_W<1> {
+                BUF_EN_W::new(self)
             }
             ///Bit 2 - RW, ADC input channel mode: 0=single-end, 1=differnetial
             #[inline(always)]
             #[must_use]
-            pub fn adc_diff_en(&mut self) -> ADC_DIFF_EN_W<2> {
-                ADC_DIFF_EN_W::new(self)
+            pub fn diff_en(&mut self) -> DIFF_EN_W<2> {
+                DIFF_EN_W::new(self)
             }
             ///Bit 3 - RW, enable ADC offset test mode: 0=normal mode, 1=short to test offset
             #[inline(always)]
             #[must_use]
-            pub fn adc_ofs_test(&mut self) -> ADC_OFS_TEST_W<3> {
-                ADC_OFS_TEST_W::new(self)
+            pub fn ofs_test(&mut self) -> OFS_TEST_W<3> {
+                OFS_TEST_W::new(self)
             }
             ///Bits 4:5 - RW, set ADC input PGA gain: 00=-12dB, 01=-6dB, 10=0dB, 11=6dB
             #[inline(always)]
             #[must_use]
-            pub fn adc_pga_gain_10(&mut self) -> ADC_PGA_GAIN_10_W<4> {
-                ADC_PGA_GAIN_10_W::new(self)
+            pub fn pga_gain(&mut self) -> PGA_GAIN_W<4> {
+                PGA_GAIN_W::new(self)
             }
             ///Bits 6:7 - RW, select ADC clock frequency: 00=3.2MHz, 01=2.67MHz, 10=5.33MHz, 11=4MHz
             #[inline(always)]
             #[must_use]
-            pub fn adc_clk_div(&mut self) -> ADC_CLK_DIV_W<6> {
-                ADC_CLK_DIV_W::new(self)
+            pub fn clk_div(&mut self) -> CLK_DIV_W<6> {
+                CLK_DIV_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -5297,50 +5316,48 @@ pub mod adc {
         ///RW, ADC configure
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [adc_cfg](index.html) module
-        pub struct ADC_CFG_SPEC;
-        impl crate::RegisterSpec for ADC_CFG_SPEC {
+        pub struct CFG_SPEC;
+        impl crate::RegisterSpec for CFG_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [adc_cfg::R](R) reader structure
-        impl crate::Readable for ADC_CFG_SPEC {
+        ///`read()` method returns [cfg::R](R) reader structure
+        impl crate::Readable for CFG_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [adc_cfg::W](W) writer structure
-        impl crate::Writable for ADC_CFG_SPEC {
+        ///`write(|w| ..)` method takes [cfg::W](W) writer structure
+        impl crate::Writable for CFG_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets ADC_CFG to value 0xa0
-        impl crate::Resettable for ADC_CFG_SPEC {
+        ///`reset()` method sets CFG to value 0xa0
+        impl crate::Resettable for CFG_SPEC {
             const RESET_VALUE: Self::Ux = 0xa0;
         }
     }
-    ///ADC_CONVERT (rw) register accessor: an alias for `Reg<ADC_CONVERT_SPEC>`
-    pub type ADC_CONVERT = crate::Reg<adc_convert::ADC_CONVERT_SPEC>;
+    ///CONVERT (rw) register accessor: an alias for `Reg<CONVERT_SPEC>`
+    pub type CONVERT = crate::Reg<convert::CONVERT_SPEC>;
     ///RW, ADC convert control
-    pub mod adc_convert {
-        ///Register `ADC_CONVERT` reader
-        pub struct R(crate::R<ADC_CONVERT_SPEC>);
+    pub mod convert {
+        ///Register `CONVERT` reader
+        pub struct R(crate::R<CONVERT_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<ADC_CONVERT_SPEC>;
+            type Target = crate::R<CONVERT_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<ADC_CONVERT_SPEC>> for R {
+        impl From<crate::R<CONVERT_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<ADC_CONVERT_SPEC>) -> Self {
+            fn from(reader: crate::R<CONVERT_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `ADC_CONVERT` writer
-        pub struct W(crate::W<ADC_CONVERT_SPEC>);
+        ///Register `CONVERT` writer
+        pub struct W(crate::W<CONVERT_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<ADC_CONVERT_SPEC>;
+            type Target = crate::W<CONVERT_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -5352,55 +5369,55 @@ pub mod adc {
                 &mut self.0
             }
         }
-        impl From<crate::W<ADC_CONVERT_SPEC>> for W {
+        impl From<crate::W<CONVERT_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<ADC_CONVERT_SPEC>) -> Self {
+            fn from(writer: crate::W<CONVERT_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `ADC_START` reader - RW, ADC convert start control: 0=stop ADC convert, 1=start an ADC convert, auto clear
-        pub type ADC_START_R = crate::BitReader;
-        ///Field `ADC_START` writer - RW, ADC convert start control: 0=stop ADC convert, 1=start an ADC convert, auto clear
-        pub type ADC_START_W<'a, const O: u8> = crate::BitWriter<'a, ADC_CONVERT_SPEC, O>;
-        ///Field `ADC_PGA_GAIN_2` reader - RW, ADC input PGA gain direction selection, combined with RB_ ADC_ PGA_ GAIN \[1:0\]
+        ///Field `START` reader - RW, ADC convert start control: 0=stop ADC convert, 1=start an ADC convert, auto clear
+        pub type START_R = crate::BitReader;
+        ///Field `START` writer - RW, ADC convert start control: 0=stop ADC convert, 1=start an ADC convert, auto clear
+        pub type START_W<'a, const O: u8> = crate::BitWriter<'a, CONVERT_SPEC, O>;
+        ///Field `PGA_GAIN_2` reader - RW, ADC input PGA gain direction selection, combined with RB_ ADC_ PGA_ GAIN \[1:0\]
         ///usage
-        pub type ADC_PGA_GAIN_2_R = crate::BitReader;
-        ///Field `ADC_PGA_GAIN_2` writer - RW, ADC input PGA gain direction selection, combined with RB_ ADC_ PGA_ GAIN \[1:0\]
+        pub type PGA_GAIN_2_R = crate::BitReader;
+        ///Field `PGA_GAIN_2` writer - RW, ADC input PGA gain direction selection, combined with RB_ ADC_ PGA_ GAIN \[1:0\]
         ///usage
-        pub type ADC_PGA_GAIN_2_W<'a, const O: u8> = crate::BitWriter<'a, ADC_CONVERT_SPEC, O>;
-        ///Field `ADC_EOC_X` reader - RO, end of ADC conversion flag
-        pub type ADC_EOC_X_R = crate::BitReader;
+        pub type PGA_GAIN_2_W<'a, const O: u8> = crate::BitWriter<'a, CONVERT_SPEC, O>;
+        ///Field `EOC_X` reader - RO, end of ADC conversion flag
+        pub type EOC_X_R = crate::BitReader;
         impl R {
             ///Bit 0 - RW, ADC convert start control: 0=stop ADC convert, 1=start an ADC convert, auto clear
             #[inline(always)]
-            pub fn adc_start(&self) -> ADC_START_R {
-                ADC_START_R::new((self.bits & 1) != 0)
+            pub fn start(&self) -> START_R {
+                START_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW, ADC input PGA gain direction selection, combined with RB_ ADC_ PGA_ GAIN \[1:0\]
             ///usage
             #[inline(always)]
-            pub fn adc_pga_gain_2(&self) -> ADC_PGA_GAIN_2_R {
-                ADC_PGA_GAIN_2_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn pga_gain_2(&self) -> PGA_GAIN_2_R {
+                PGA_GAIN_2_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 7 - RO, end of ADC conversion flag
             #[inline(always)]
-            pub fn adc_eoc_x(&self) -> ADC_EOC_X_R {
-                ADC_EOC_X_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn eoc_x(&self) -> EOC_X_R {
+                EOC_X_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW, ADC convert start control: 0=stop ADC convert, 1=start an ADC convert, auto clear
             #[inline(always)]
             #[must_use]
-            pub fn adc_start(&mut self) -> ADC_START_W<0> {
-                ADC_START_W::new(self)
+            pub fn start(&mut self) -> START_W<0> {
+                START_W::new(self)
             }
             ///Bit 1 - RW, ADC input PGA gain direction selection, combined with RB_ ADC_ PGA_ GAIN \[1:0\]
             ///usage
             #[inline(always)]
             #[must_use]
-            pub fn adc_pga_gain_2(&mut self) -> ADC_PGA_GAIN_2_W<1> {
-                ADC_PGA_GAIN_2_W::new(self)
+            pub fn pga_gain_2(&mut self) -> PGA_GAIN_2_W<1> {
+                PGA_GAIN_2_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -5413,23 +5430,23 @@ pub mod adc {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [adc_convert](index.html) module
-        pub struct ADC_CONVERT_SPEC;
-        impl crate::RegisterSpec for ADC_CONVERT_SPEC {
+        ///For information about available fields see [convert](index.html) module
+        pub struct CONVERT_SPEC;
+        impl crate::RegisterSpec for CONVERT_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [adc_convert::R](R) reader structure
-        impl crate::Readable for ADC_CONVERT_SPEC {
+        ///`read()` method returns [convert::R](R) reader structure
+        impl crate::Readable for CONVERT_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [adc_convert::W](W) writer structure
-        impl crate::Writable for ADC_CONVERT_SPEC {
+        ///`write(|w| ..)` method takes [convert::W](W) writer structure
+        impl crate::Writable for CONVERT_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets ADC_CONVERT to value 0
-        impl crate::Resettable for ADC_CONVERT_SPEC {
+        ///`reset()` method sets CONVERT to value 0
+        impl crate::Resettable for CONVERT_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
@@ -5522,121 +5539,121 @@ pub mod adc {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///ADC_DATA (r) register accessor: an alias for `Reg<ADC_DATA_SPEC>`
-    pub type ADC_DATA = crate::Reg<adc_data::ADC_DATA_SPEC>;
+    ///DATA (r) register accessor: an alias for `Reg<DATA_SPEC>`
+    pub type DATA = crate::Reg<data::DATA_SPEC>;
     ///RO, ADC data
-    pub mod adc_data {
-        ///Register `ADC_DATA` reader
-        pub struct R(crate::R<ADC_DATA_SPEC>);
+    pub mod data {
+        ///Register `DATA` reader
+        pub struct R(crate::R<DATA_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<ADC_DATA_SPEC>;
+            type Target = crate::R<DATA_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<ADC_DATA_SPEC>> for R {
+        impl From<crate::R<DATA_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<ADC_DATA_SPEC>) -> Self {
+            fn from(reader: crate::R<DATA_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `ADC_DATA` reader - RO, ADC conversion data
-        pub type ADC_DATA_R = crate::FieldReader<u16>;
+        ///Field `DATA` reader - RO, ADC conversion data
+        pub type DATA_R = crate::FieldReader<u16>;
         impl R {
             ///Bits 0:11 - RO, ADC conversion data
             #[inline(always)]
-            pub fn adc_data(&self) -> ADC_DATA_R {
-                ADC_DATA_R::new(self.bits & 0x0fff)
+            pub fn data(&self) -> DATA_R {
+                DATA_R::new(self.bits & 0x0fff)
             }
         }
         ///RO, ADC data
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [adc_data](index.html) module
-        pub struct ADC_DATA_SPEC;
-        impl crate::RegisterSpec for ADC_DATA_SPEC {
+        ///For information about available fields see [data](index.html) module
+        pub struct DATA_SPEC;
+        impl crate::RegisterSpec for DATA_SPEC {
             type Ux = u16;
         }
-        ///`read()` method returns [adc_data::R](R) reader structure
-        impl crate::Readable for ADC_DATA_SPEC {
+        ///`read()` method returns [data::R](R) reader structure
+        impl crate::Readable for DATA_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets ADC_DATA to value 0
-        impl crate::Resettable for ADC_DATA_SPEC {
+        ///`reset()` method sets DATA to value 0
+        impl crate::Resettable for DATA_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///ADC_INT_FLAG (r) register accessor: an alias for `Reg<ADC_INT_FLAG_SPEC>`
-    pub type ADC_INT_FLAG = crate::Reg<adc_int_flag::ADC_INT_FLAG_SPEC>;
+    ///INT_FLAG (r) register accessor: an alias for `Reg<INT_FLAG_SPEC>`
+    pub type INT_FLAG = crate::Reg<int_flag::INT_FLAG_SPEC>;
     ///RO, ADC interrupt flag register
-    pub mod adc_int_flag {
-        ///Register `ADC_INT_FLAG` reader
-        pub struct R(crate::R<ADC_INT_FLAG_SPEC>);
+    pub mod int_flag {
+        ///Register `INT_FLAG` reader
+        pub struct R(crate::R<INT_FLAG_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<ADC_INT_FLAG_SPEC>;
+            type Target = crate::R<INT_FLAG_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<ADC_INT_FLAG_SPEC>> for R {
+        impl From<crate::R<INT_FLAG_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<ADC_INT_FLAG_SPEC>) -> Self {
+            fn from(reader: crate::R<INT_FLAG_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `ADC_IF_EOC` reader - RO, ADC conversion interrupt flag
-        pub type ADC_IF_EOC_R = crate::BitReader;
+        ///Field `IF_EOC` reader - RO, ADC conversion interrupt flag
+        pub type IF_EOC_R = crate::BitReader;
         impl R {
             ///Bit 7 - RO, ADC conversion interrupt flag
             #[inline(always)]
-            pub fn adc_if_eoc(&self) -> ADC_IF_EOC_R {
-                ADC_IF_EOC_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn if_eoc(&self) -> IF_EOC_R {
+                IF_EOC_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         ///RO, ADC interrupt flag register
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [adc_int_flag](index.html) module
-        pub struct ADC_INT_FLAG_SPEC;
-        impl crate::RegisterSpec for ADC_INT_FLAG_SPEC {
+        ///For information about available fields see [int_flag](index.html) module
+        pub struct INT_FLAG_SPEC;
+        impl crate::RegisterSpec for INT_FLAG_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [adc_int_flag::R](R) reader structure
-        impl crate::Readable for ADC_INT_FLAG_SPEC {
+        ///`read()` method returns [int_flag::R](R) reader structure
+        impl crate::Readable for INT_FLAG_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets ADC_INT_FLAG to value 0
-        impl crate::Resettable for ADC_INT_FLAG_SPEC {
+        ///`reset()` method sets INT_FLAG to value 0
+        impl crate::Resettable for INT_FLAG_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///ADC_CTRL_DMA (rw) register accessor: an alias for `Reg<ADC_CTRL_DMA_SPEC>`
-    pub type ADC_CTRL_DMA = crate::Reg<adc_ctrl_dma::ADC_CTRL_DMA_SPEC>;
+    ///CTRL_DMA (rw) register accessor: an alias for `Reg<CTRL_DMA_SPEC>`
+    pub type CTRL_DMA = crate::Reg<ctrl_dma::CTRL_DMA_SPEC>;
     ///RW, ADC DMA control
-    pub mod adc_ctrl_dma {
-        ///Register `ADC_CTRL_DMA` reader
-        pub struct R(crate::R<ADC_CTRL_DMA_SPEC>);
+    pub mod ctrl_dma {
+        ///Register `CTRL_DMA` reader
+        pub struct R(crate::R<CTRL_DMA_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<ADC_CTRL_DMA_SPEC>;
+            type Target = crate::R<CTRL_DMA_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<ADC_CTRL_DMA_SPEC>> for R {
+        impl From<crate::R<CTRL_DMA_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<ADC_CTRL_DMA_SPEC>) -> Self {
+            fn from(reader: crate::R<CTRL_DMA_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `ADC_CTRL_DMA` writer
-        pub struct W(crate::W<ADC_CTRL_DMA_SPEC>);
+        ///Register `CTRL_DMA` writer
+        pub struct W(crate::W<CTRL_DMA_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<ADC_CTRL_DMA_SPEC>;
+            type Target = crate::W<CTRL_DMA_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -5648,104 +5665,104 @@ pub mod adc {
                 &mut self.0
             }
         }
-        impl From<crate::W<ADC_CTRL_DMA_SPEC>> for W {
+        impl From<crate::W<CTRL_DMA_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<ADC_CTRL_DMA_SPEC>) -> Self {
+            fn from(writer: crate::W<CTRL_DMA_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `ADC_DMA_ENABLE` reader - RW, ADC DMA enable
-        pub type ADC_DMA_ENABLE_R = crate::BitReader;
-        ///Field `ADC_DMA_ENABLE` writer - RW, ADC DMA enable
-        pub type ADC_DMA_ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, ADC_CTRL_DMA_SPEC, O>;
-        ///Field `ADC_DMA_LOOP` reader - RW, ADC DMA address loop enable
-        pub type ADC_DMA_LOOP_R = crate::BitReader;
-        ///Field `ADC_DMA_LOOP` writer - RW, ADC DMA address loop enable
-        pub type ADC_DMA_LOOP_W<'a, const O: u8> = crate::BitWriter<'a, ADC_CTRL_DMA_SPEC, O>;
-        ///Field `ADC_IE_DMA_END` reader - RW, enable interrupt for ADC DMA completion
-        pub type ADC_IE_DMA_END_R = crate::BitReader;
-        ///Field `ADC_IE_DMA_END` writer - RW, enable interrupt for ADC DMA completion
-        pub type ADC_IE_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, ADC_CTRL_DMA_SPEC, O>;
-        ///Field `ADC_IE_EOC` reader - RW, enable interrupt for end of ADC conversion
-        pub type ADC_IE_EOC_R = crate::BitReader;
-        ///Field `ADC_IE_EOC` writer - RW, enable interrupt for end of ADC conversion
-        pub type ADC_IE_EOC_W<'a, const O: u8> = crate::BitWriter<'a, ADC_CTRL_DMA_SPEC, O>;
-        ///Field `ADC_CONT_EN` reader - RW, enable contineous conversion ADC
-        pub type ADC_CONT_EN_R = crate::BitReader;
-        ///Field `ADC_CONT_EN` writer - RW, enable contineous conversion ADC
-        pub type ADC_CONT_EN_W<'a, const O: u8> = crate::BitWriter<'a, ADC_CTRL_DMA_SPEC, O>;
-        ///Field `ADC_AUTO_EN` reader - RW, enable auto continuing ADC for DMA
-        pub type ADC_AUTO_EN_R = crate::BitReader;
-        ///Field `ADC_AUTO_EN` writer - RW, enable auto continuing ADC for DMA
-        pub type ADC_AUTO_EN_W<'a, const O: u8> = crate::BitWriter<'a, ADC_CTRL_DMA_SPEC, O>;
+        ///Field `DMA_ENABLE` reader - RW, ADC DMA enable
+        pub type DMA_ENABLE_R = crate::BitReader;
+        ///Field `DMA_ENABLE` writer - RW, ADC DMA enable
+        pub type DMA_ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_DMA_SPEC, O>;
+        ///Field `DMA_LOOP` reader - RW, ADC DMA address loop enable
+        pub type DMA_LOOP_R = crate::BitReader;
+        ///Field `DMA_LOOP` writer - RW, ADC DMA address loop enable
+        pub type DMA_LOOP_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_DMA_SPEC, O>;
+        ///Field `IE_DMA_END` reader - RW, enable interrupt for ADC DMA completion
+        pub type IE_DMA_END_R = crate::BitReader;
+        ///Field `IE_DMA_END` writer - RW, enable interrupt for ADC DMA completion
+        pub type IE_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_DMA_SPEC, O>;
+        ///Field `IE_EOC` reader - RW, enable interrupt for end of ADC conversion
+        pub type IE_EOC_R = crate::BitReader;
+        ///Field `IE_EOC` writer - RW, enable interrupt for end of ADC conversion
+        pub type IE_EOC_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_DMA_SPEC, O>;
+        ///Field `CONT_EN` reader - RW, enable contineous conversion ADC
+        pub type CONT_EN_R = crate::BitReader;
+        ///Field `CONT_EN` writer - RW, enable contineous conversion ADC
+        pub type CONT_EN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_DMA_SPEC, O>;
+        ///Field `AUTO_EN` reader - RW, enable auto continuing ADC for DMA
+        pub type AUTO_EN_R = crate::BitReader;
+        ///Field `AUTO_EN` writer - RW, enable auto continuing ADC for DMA
+        pub type AUTO_EN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_DMA_SPEC, O>;
         impl R {
             ///Bit 0 - RW, ADC DMA enable
             #[inline(always)]
-            pub fn adc_dma_enable(&self) -> ADC_DMA_ENABLE_R {
-                ADC_DMA_ENABLE_R::new((self.bits & 1) != 0)
+            pub fn dma_enable(&self) -> DMA_ENABLE_R {
+                DMA_ENABLE_R::new((self.bits & 1) != 0)
             }
             ///Bit 2 - RW, ADC DMA address loop enable
             #[inline(always)]
-            pub fn adc_dma_loop(&self) -> ADC_DMA_LOOP_R {
-                ADC_DMA_LOOP_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn dma_loop(&self) -> DMA_LOOP_R {
+                DMA_LOOP_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW, enable interrupt for ADC DMA completion
             #[inline(always)]
-            pub fn adc_ie_dma_end(&self) -> ADC_IE_DMA_END_R {
-                ADC_IE_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn ie_dma_end(&self) -> IE_DMA_END_R {
+                IE_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RW, enable interrupt for end of ADC conversion
             #[inline(always)]
-            pub fn adc_ie_eoc(&self) -> ADC_IE_EOC_R {
-                ADC_IE_EOC_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn ie_eoc(&self) -> IE_EOC_R {
+                IE_EOC_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 6 - RW, enable contineous conversion ADC
             #[inline(always)]
-            pub fn adc_cont_en(&self) -> ADC_CONT_EN_R {
-                ADC_CONT_EN_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn cont_en(&self) -> CONT_EN_R {
+                CONT_EN_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - RW, enable auto continuing ADC for DMA
             #[inline(always)]
-            pub fn adc_auto_en(&self) -> ADC_AUTO_EN_R {
-                ADC_AUTO_EN_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn auto_en(&self) -> AUTO_EN_R {
+                AUTO_EN_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW, ADC DMA enable
             #[inline(always)]
             #[must_use]
-            pub fn adc_dma_enable(&mut self) -> ADC_DMA_ENABLE_W<0> {
-                ADC_DMA_ENABLE_W::new(self)
+            pub fn dma_enable(&mut self) -> DMA_ENABLE_W<0> {
+                DMA_ENABLE_W::new(self)
             }
             ///Bit 2 - RW, ADC DMA address loop enable
             #[inline(always)]
             #[must_use]
-            pub fn adc_dma_loop(&mut self) -> ADC_DMA_LOOP_W<2> {
-                ADC_DMA_LOOP_W::new(self)
+            pub fn dma_loop(&mut self) -> DMA_LOOP_W<2> {
+                DMA_LOOP_W::new(self)
             }
             ///Bit 3 - RW, enable interrupt for ADC DMA completion
             #[inline(always)]
             #[must_use]
-            pub fn adc_ie_dma_end(&mut self) -> ADC_IE_DMA_END_W<3> {
-                ADC_IE_DMA_END_W::new(self)
+            pub fn ie_dma_end(&mut self) -> IE_DMA_END_W<3> {
+                IE_DMA_END_W::new(self)
             }
             ///Bit 4 - RW, enable interrupt for end of ADC conversion
             #[inline(always)]
             #[must_use]
-            pub fn adc_ie_eoc(&mut self) -> ADC_IE_EOC_W<4> {
-                ADC_IE_EOC_W::new(self)
+            pub fn ie_eoc(&mut self) -> IE_EOC_W<4> {
+                IE_EOC_W::new(self)
             }
             ///Bit 6 - RW, enable contineous conversion ADC
             #[inline(always)]
             #[must_use]
-            pub fn adc_cont_en(&mut self) -> ADC_CONT_EN_W<6> {
-                ADC_CONT_EN_W::new(self)
+            pub fn cont_en(&mut self) -> CONT_EN_W<6> {
+                CONT_EN_W::new(self)
             }
             ///Bit 7 - RW, enable auto continuing ADC for DMA
             #[inline(always)]
             #[must_use]
-            pub fn adc_auto_en(&mut self) -> ADC_AUTO_EN_W<7> {
-                ADC_AUTO_EN_W::new(self)
+            pub fn auto_en(&mut self) -> AUTO_EN_W<7> {
+                AUTO_EN_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -5758,49 +5775,49 @@ pub mod adc {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [adc_ctrl_dma](index.html) module
-        pub struct ADC_CTRL_DMA_SPEC;
-        impl crate::RegisterSpec for ADC_CTRL_DMA_SPEC {
+        ///For information about available fields see [ctrl_dma](index.html) module
+        pub struct CTRL_DMA_SPEC;
+        impl crate::RegisterSpec for CTRL_DMA_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [adc_ctrl_dma::R](R) reader structure
-        impl crate::Readable for ADC_CTRL_DMA_SPEC {
+        ///`read()` method returns [ctrl_dma::R](R) reader structure
+        impl crate::Readable for CTRL_DMA_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [adc_ctrl_dma::W](W) writer structure
-        impl crate::Writable for ADC_CTRL_DMA_SPEC {
+        ///`write(|w| ..)` method takes [ctrl_dma::W](W) writer structure
+        impl crate::Writable for CTRL_DMA_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets ADC_CTRL_DMA to value 0
-        impl crate::Resettable for ADC_CTRL_DMA_SPEC {
+        ///`reset()` method sets CTRL_DMA to value 0
+        impl crate::Resettable for CTRL_DMA_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///ADC_DMA_IF (rw) register accessor: an alias for `Reg<ADC_DMA_IF_SPEC>`
-    pub type ADC_DMA_IF = crate::Reg<adc_dma_if::ADC_DMA_IF_SPEC>;
+    ///DMA_IF (rw) register accessor: an alias for `Reg<DMA_IF_SPEC>`
+    pub type DMA_IF = crate::Reg<dma_if::DMA_IF_SPEC>;
     ///RW1, ADC and DMA interrupt flag registers
-    pub mod adc_dma_if {
-        ///Register `ADC_DMA_IF` reader
-        pub struct R(crate::R<ADC_DMA_IF_SPEC>);
+    pub mod dma_if {
+        ///Register `DMA_IF` reader
+        pub struct R(crate::R<DMA_IF_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<ADC_DMA_IF_SPEC>;
+            type Target = crate::R<DMA_IF_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<ADC_DMA_IF_SPEC>> for R {
+        impl From<crate::R<DMA_IF_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<ADC_DMA_IF_SPEC>) -> Self {
+            fn from(reader: crate::R<DMA_IF_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `ADC_DMA_IF` writer
-        pub struct W(crate::W<ADC_DMA_IF_SPEC>);
+        ///Register `DMA_IF` writer
+        pub struct W(crate::W<DMA_IF_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<ADC_DMA_IF_SPEC>;
+            type Target = crate::W<DMA_IF_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -5812,44 +5829,44 @@ pub mod adc {
                 &mut self.0
             }
         }
-        impl From<crate::W<ADC_DMA_IF_SPEC>> for W {
+        impl From<crate::W<DMA_IF_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<ADC_DMA_IF_SPEC>) -> Self {
+            fn from(writer: crate::W<DMA_IF_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `ADC_IF_DMA_END` reader - interrupt flag for ADC DMA completion
-        pub type ADC_IF_DMA_END_R = crate::BitReader;
-        ///Field `ADC_IF_DMA_END` writer - interrupt flag for ADC DMA completion
-        pub type ADC_IF_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, ADC_DMA_IF_SPEC, O>;
-        ///Field `ADC_IF_END_ADC` reader - interrupt flag for end of ADC conversion
-        pub type ADC_IF_END_ADC_R = crate::BitReader;
-        ///Field `ADC_IF_END_ADC` writer - interrupt flag for end of ADC conversion
-        pub type ADC_IF_END_ADC_W<'a, const O: u8> = crate::BitWriter<'a, ADC_DMA_IF_SPEC, O>;
+        ///Field `IF_DMA_END` reader - interrupt flag for ADC DMA completion
+        pub type IF_DMA_END_R = crate::BitReader;
+        ///Field `IF_DMA_END` writer - interrupt flag for ADC DMA completion
+        pub type IF_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, DMA_IF_SPEC, O>;
+        ///Field `IF_END_ADC` reader - interrupt flag for end of ADC conversion
+        pub type IF_END_ADC_R = crate::BitReader;
+        ///Field `IF_END_ADC` writer - interrupt flag for end of ADC conversion
+        pub type IF_END_ADC_W<'a, const O: u8> = crate::BitWriter<'a, DMA_IF_SPEC, O>;
         impl R {
             ///Bit 3 - interrupt flag for ADC DMA completion
             #[inline(always)]
-            pub fn adc_if_dma_end(&self) -> ADC_IF_DMA_END_R {
-                ADC_IF_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn if_dma_end(&self) -> IF_DMA_END_R {
+                IF_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - interrupt flag for end of ADC conversion
             #[inline(always)]
-            pub fn adc_if_end_adc(&self) -> ADC_IF_END_ADC_R {
-                ADC_IF_END_ADC_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn if_end_adc(&self) -> IF_END_ADC_R {
+                IF_END_ADC_R::new(((self.bits >> 4) & 1) != 0)
             }
         }
         impl W {
             ///Bit 3 - interrupt flag for ADC DMA completion
             #[inline(always)]
             #[must_use]
-            pub fn adc_if_dma_end(&mut self) -> ADC_IF_DMA_END_W<3> {
-                ADC_IF_DMA_END_W::new(self)
+            pub fn if_dma_end(&mut self) -> IF_DMA_END_W<3> {
+                IF_DMA_END_W::new(self)
             }
             ///Bit 4 - interrupt flag for end of ADC conversion
             #[inline(always)]
             #[must_use]
-            pub fn adc_if_end_adc(&mut self) -> ADC_IF_END_ADC_W<4> {
-                ADC_IF_END_ADC_W::new(self)
+            pub fn if_end_adc(&mut self) -> IF_END_ADC_W<4> {
+                IF_END_ADC_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -5862,49 +5879,49 @@ pub mod adc {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [adc_dma_if](index.html) module
-        pub struct ADC_DMA_IF_SPEC;
-        impl crate::RegisterSpec for ADC_DMA_IF_SPEC {
+        ///For information about available fields see [dma_if](index.html) module
+        pub struct DMA_IF_SPEC;
+        impl crate::RegisterSpec for DMA_IF_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [adc_dma_if::R](R) reader structure
-        impl crate::Readable for ADC_DMA_IF_SPEC {
+        ///`read()` method returns [dma_if::R](R) reader structure
+        impl crate::Readable for DMA_IF_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [adc_dma_if::W](W) writer structure
-        impl crate::Writable for ADC_DMA_IF_SPEC {
+        ///`write(|w| ..)` method takes [dma_if::W](W) writer structure
+        impl crate::Writable for DMA_IF_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets ADC_DMA_IF to value 0
-        impl crate::Resettable for ADC_DMA_IF_SPEC {
+        ///`reset()` method sets DMA_IF to value 0
+        impl crate::Resettable for DMA_IF_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///ADC_AUTO_CYCLE (rw) register accessor: an alias for `Reg<ADC_AUTO_CYCLE_SPEC>`
-    pub type ADC_AUTO_CYCLE = crate::Reg<adc_auto_cycle::ADC_AUTO_CYCLE_SPEC>;
+    ///AUTO_CYCLE (rw) register accessor: an alias for `Reg<AUTO_CYCLE_SPEC>`
+    pub type AUTO_CYCLE = crate::Reg<auto_cycle::AUTO_CYCLE_SPEC>;
     ///RO, ADC interrupt flag
-    pub mod adc_auto_cycle {
-        ///Register `ADC_AUTO_CYCLE` reader
-        pub struct R(crate::R<ADC_AUTO_CYCLE_SPEC>);
+    pub mod auto_cycle {
+        ///Register `AUTO_CYCLE` reader
+        pub struct R(crate::R<AUTO_CYCLE_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<ADC_AUTO_CYCLE_SPEC>;
+            type Target = crate::R<AUTO_CYCLE_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<ADC_AUTO_CYCLE_SPEC>> for R {
+        impl From<crate::R<AUTO_CYCLE_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<ADC_AUTO_CYCLE_SPEC>) -> Self {
+            fn from(reader: crate::R<AUTO_CYCLE_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `ADC_AUTO_CYCLE` writer
-        pub struct W(crate::W<ADC_AUTO_CYCLE_SPEC>);
+        ///Register `AUTO_CYCLE` writer
+        pub struct W(crate::W<AUTO_CYCLE_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<ADC_AUTO_CYCLE_SPEC>;
+            type Target = crate::W<AUTO_CYCLE_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -5916,30 +5933,29 @@ pub mod adc {
                 &mut self.0
             }
         }
-        impl From<crate::W<ADC_AUTO_CYCLE_SPEC>> for W {
+        impl From<crate::W<AUTO_CYCLE_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<ADC_AUTO_CYCLE_SPEC>) -> Self {
+            fn from(writer: crate::W<AUTO_CYCLE_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `ADC_AUTO_CYCLE` reader - auto ADC cycle value, unit is 16 Fsys
-        pub type ADC_AUTO_CYCLE_R = crate::FieldReader;
-        ///Field `ADC_AUTO_CYCLE` writer - auto ADC cycle value, unit is 16 Fsys
-        pub type ADC_AUTO_CYCLE_W<'a, const O: u8> =
-            crate::FieldWriter<'a, ADC_AUTO_CYCLE_SPEC, 8, O>;
+        ///Field `AUTO_CYCLE` reader - auto ADC cycle value, unit is 16 Fsys
+        pub type AUTO_CYCLE_R = crate::FieldReader;
+        ///Field `AUTO_CYCLE` writer - auto ADC cycle value, unit is 16 Fsys
+        pub type AUTO_CYCLE_W<'a, const O: u8> = crate::FieldWriter<'a, AUTO_CYCLE_SPEC, 8, O>;
         impl R {
             ///Bits 0:7 - auto ADC cycle value, unit is 16 Fsys
             #[inline(always)]
-            pub fn adc_auto_cycle(&self) -> ADC_AUTO_CYCLE_R {
-                ADC_AUTO_CYCLE_R::new(self.bits)
+            pub fn auto_cycle(&self) -> AUTO_CYCLE_R {
+                AUTO_CYCLE_R::new(self.bits)
             }
         }
         impl W {
             ///Bits 0:7 - auto ADC cycle value, unit is 16 Fsys
             #[inline(always)]
             #[must_use]
-            pub fn adc_auto_cycle(&mut self) -> ADC_AUTO_CYCLE_W<0> {
-                ADC_AUTO_CYCLE_W::new(self)
+            pub fn auto_cycle(&mut self) -> AUTO_CYCLE_W<0> {
+                AUTO_CYCLE_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -5952,95 +5968,95 @@ pub mod adc {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [adc_auto_cycle](index.html) module
-        pub struct ADC_AUTO_CYCLE_SPEC;
-        impl crate::RegisterSpec for ADC_AUTO_CYCLE_SPEC {
+        ///For information about available fields see [auto_cycle](index.html) module
+        pub struct AUTO_CYCLE_SPEC;
+        impl crate::RegisterSpec for AUTO_CYCLE_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [adc_auto_cycle::R](R) reader structure
-        impl crate::Readable for ADC_AUTO_CYCLE_SPEC {
+        ///`read()` method returns [auto_cycle::R](R) reader structure
+        impl crate::Readable for AUTO_CYCLE_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [adc_auto_cycle::W](W) writer structure
-        impl crate::Writable for ADC_AUTO_CYCLE_SPEC {
+        ///`write(|w| ..)` method takes [auto_cycle::W](W) writer structure
+        impl crate::Writable for AUTO_CYCLE_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets ADC_AUTO_CYCLE to value 0
-        impl crate::Resettable for ADC_AUTO_CYCLE_SPEC {
+        ///`reset()` method sets AUTO_CYCLE to value 0
+        impl crate::Resettable for AUTO_CYCLE_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///ADC_DMA_NOW (r) register accessor: an alias for `Reg<ADC_DMA_NOW_SPEC>`
-    pub type ADC_DMA_NOW = crate::Reg<adc_dma_now::ADC_DMA_NOW_SPEC>;
+    ///DMA_NOW (r) register accessor: an alias for `Reg<DMA_NOW_SPEC>`
+    pub type DMA_NOW = crate::Reg<dma_now::DMA_NOW_SPEC>;
     ///RO, ADC DMA current address
-    pub mod adc_dma_now {
-        ///Register `ADC_DMA_NOW` reader
-        pub struct R(crate::R<ADC_DMA_NOW_SPEC>);
+    pub mod dma_now {
+        ///Register `DMA_NOW` reader
+        pub struct R(crate::R<DMA_NOW_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<ADC_DMA_NOW_SPEC>;
+            type Target = crate::R<DMA_NOW_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<ADC_DMA_NOW_SPEC>> for R {
+        impl From<crate::R<DMA_NOW_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<ADC_DMA_NOW_SPEC>) -> Self {
+            fn from(reader: crate::R<DMA_NOW_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `ADC_DMA_NOW` reader - ADC DMA current address
-        pub type ADC_DMA_NOW_R = crate::FieldReader<u16>;
+        ///Field `DMA_NOW` reader - ADC DMA current address
+        pub type DMA_NOW_R = crate::FieldReader<u16>;
         impl R {
             ///Bits 1:14 - ADC DMA current address
             #[inline(always)]
-            pub fn adc_dma_now(&self) -> ADC_DMA_NOW_R {
-                ADC_DMA_NOW_R::new((self.bits >> 1) & 0x3fff)
+            pub fn dma_now(&self) -> DMA_NOW_R {
+                DMA_NOW_R::new((self.bits >> 1) & 0x3fff)
             }
         }
         ///RO, ADC DMA current address
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [adc_dma_now](index.html) module
-        pub struct ADC_DMA_NOW_SPEC;
-        impl crate::RegisterSpec for ADC_DMA_NOW_SPEC {
+        ///For information about available fields see [dma_now](index.html) module
+        pub struct DMA_NOW_SPEC;
+        impl crate::RegisterSpec for DMA_NOW_SPEC {
             type Ux = u16;
         }
-        ///`read()` method returns [adc_dma_now::R](R) reader structure
-        impl crate::Readable for ADC_DMA_NOW_SPEC {
+        ///`read()` method returns [dma_now::R](R) reader structure
+        impl crate::Readable for DMA_NOW_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets ADC_DMA_NOW to value 0
-        impl crate::Resettable for ADC_DMA_NOW_SPEC {
+        ///`reset()` method sets DMA_NOW to value 0
+        impl crate::Resettable for DMA_NOW_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///ADC_DMA_BEG (rw) register accessor: an alias for `Reg<ADC_DMA_BEG_SPEC>`
-    pub type ADC_DMA_BEG = crate::Reg<adc_dma_beg::ADC_DMA_BEG_SPEC>;
+    ///DMA_BEG (rw) register accessor: an alias for `Reg<DMA_BEG_SPEC>`
+    pub type DMA_BEG = crate::Reg<dma_beg::DMA_BEG_SPEC>;
     ///RW, ADC DMA begin address
-    pub mod adc_dma_beg {
-        ///Register `ADC_DMA_BEG` reader
-        pub struct R(crate::R<ADC_DMA_BEG_SPEC>);
+    pub mod dma_beg {
+        ///Register `DMA_BEG` reader
+        pub struct R(crate::R<DMA_BEG_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<ADC_DMA_BEG_SPEC>;
+            type Target = crate::R<DMA_BEG_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<ADC_DMA_BEG_SPEC>> for R {
+        impl From<crate::R<DMA_BEG_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<ADC_DMA_BEG_SPEC>) -> Self {
+            fn from(reader: crate::R<DMA_BEG_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `ADC_DMA_BEG` writer
-        pub struct W(crate::W<ADC_DMA_BEG_SPEC>);
+        ///Register `DMA_BEG` writer
+        pub struct W(crate::W<DMA_BEG_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<ADC_DMA_BEG_SPEC>;
+            type Target = crate::W<DMA_BEG_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -6052,30 +6068,29 @@ pub mod adc {
                 &mut self.0
             }
         }
-        impl From<crate::W<ADC_DMA_BEG_SPEC>> for W {
+        impl From<crate::W<DMA_BEG_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<ADC_DMA_BEG_SPEC>) -> Self {
+            fn from(writer: crate::W<DMA_BEG_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `ADC_DMA_BEG` reader - ADC DMA begin address
-        pub type ADC_DMA_BEG_R = crate::FieldReader<u16>;
-        ///Field `ADC_DMA_BEG` writer - ADC DMA begin address
-        pub type ADC_DMA_BEG_W<'a, const O: u8> =
-            crate::FieldWriter<'a, ADC_DMA_BEG_SPEC, 14, O, u16>;
+        ///Field `DMA_BEG` reader - ADC DMA begin address
+        pub type DMA_BEG_R = crate::FieldReader<u16>;
+        ///Field `DMA_BEG` writer - ADC DMA begin address
+        pub type DMA_BEG_W<'a, const O: u8> = crate::FieldWriter<'a, DMA_BEG_SPEC, 14, O, u16>;
         impl R {
             ///Bits 1:14 - ADC DMA begin address
             #[inline(always)]
-            pub fn adc_dma_beg(&self) -> ADC_DMA_BEG_R {
-                ADC_DMA_BEG_R::new((self.bits >> 1) & 0x3fff)
+            pub fn dma_beg(&self) -> DMA_BEG_R {
+                DMA_BEG_R::new((self.bits >> 1) & 0x3fff)
             }
         }
         impl W {
             ///Bits 1:14 - ADC DMA begin address
             #[inline(always)]
             #[must_use]
-            pub fn adc_dma_beg(&mut self) -> ADC_DMA_BEG_W<1> {
-                ADC_DMA_BEG_W::new(self)
+            pub fn dma_beg(&mut self) -> DMA_BEG_W<1> {
+                DMA_BEG_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -6088,49 +6103,49 @@ pub mod adc {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [adc_dma_beg](index.html) module
-        pub struct ADC_DMA_BEG_SPEC;
-        impl crate::RegisterSpec for ADC_DMA_BEG_SPEC {
+        ///For information about available fields see [dma_beg](index.html) module
+        pub struct DMA_BEG_SPEC;
+        impl crate::RegisterSpec for DMA_BEG_SPEC {
             type Ux = u16;
         }
-        ///`read()` method returns [adc_dma_beg::R](R) reader structure
-        impl crate::Readable for ADC_DMA_BEG_SPEC {
+        ///`read()` method returns [dma_beg::R](R) reader structure
+        impl crate::Readable for DMA_BEG_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [adc_dma_beg::W](W) writer structure
-        impl crate::Writable for ADC_DMA_BEG_SPEC {
+        ///`write(|w| ..)` method takes [dma_beg::W](W) writer structure
+        impl crate::Writable for DMA_BEG_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets ADC_DMA_BEG to value 0
-        impl crate::Resettable for ADC_DMA_BEG_SPEC {
+        ///`reset()` method sets DMA_BEG to value 0
+        impl crate::Resettable for DMA_BEG_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///ADC_DMA_END (rw) register accessor: an alias for `Reg<ADC_DMA_END_SPEC>`
-    pub type ADC_DMA_END = crate::Reg<adc_dma_end::ADC_DMA_END_SPEC>;
+    ///DMA_END (rw) register accessor: an alias for `Reg<DMA_END_SPEC>`
+    pub type DMA_END = crate::Reg<dma_end::DMA_END_SPEC>;
     ///RW, ADC DMA end address
-    pub mod adc_dma_end {
-        ///Register `ADC_DMA_END` reader
-        pub struct R(crate::R<ADC_DMA_END_SPEC>);
+    pub mod dma_end {
+        ///Register `DMA_END` reader
+        pub struct R(crate::R<DMA_END_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<ADC_DMA_END_SPEC>;
+            type Target = crate::R<DMA_END_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<ADC_DMA_END_SPEC>> for R {
+        impl From<crate::R<DMA_END_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<ADC_DMA_END_SPEC>) -> Self {
+            fn from(reader: crate::R<DMA_END_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `ADC_DMA_END` writer
-        pub struct W(crate::W<ADC_DMA_END_SPEC>);
+        ///Register `DMA_END` writer
+        pub struct W(crate::W<DMA_END_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<ADC_DMA_END_SPEC>;
+            type Target = crate::W<DMA_END_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -6142,30 +6157,29 @@ pub mod adc {
                 &mut self.0
             }
         }
-        impl From<crate::W<ADC_DMA_END_SPEC>> for W {
+        impl From<crate::W<DMA_END_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<ADC_DMA_END_SPEC>) -> Self {
+            fn from(writer: crate::W<DMA_END_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `ADC_DMA_END` reader - ADC DMA end address
-        pub type ADC_DMA_END_R = crate::FieldReader<u16>;
-        ///Field `ADC_DMA_END` writer - ADC DMA end address
-        pub type ADC_DMA_END_W<'a, const O: u8> =
-            crate::FieldWriter<'a, ADC_DMA_END_SPEC, 14, O, u16>;
+        ///Field `DMA_END` reader - ADC DMA end address
+        pub type DMA_END_R = crate::FieldReader<u16>;
+        ///Field `DMA_END` writer - ADC DMA end address
+        pub type DMA_END_W<'a, const O: u8> = crate::FieldWriter<'a, DMA_END_SPEC, 14, O, u16>;
         impl R {
             ///Bits 1:14 - ADC DMA end address
             #[inline(always)]
-            pub fn adc_dma_end(&self) -> ADC_DMA_END_R {
-                ADC_DMA_END_R::new((self.bits >> 1) & 0x3fff)
+            pub fn dma_end(&self) -> DMA_END_R {
+                DMA_END_R::new((self.bits >> 1) & 0x3fff)
             }
         }
         impl W {
             ///Bits 1:14 - ADC DMA end address
             #[inline(always)]
             #[must_use]
-            pub fn adc_dma_end(&mut self) -> ADC_DMA_END_W<1> {
-                ADC_DMA_END_W::new(self)
+            pub fn dma_end(&mut self) -> DMA_END_W<1> {
+                DMA_END_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -6178,23 +6192,23 @@ pub mod adc {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [adc_dma_end](index.html) module
-        pub struct ADC_DMA_END_SPEC;
-        impl crate::RegisterSpec for ADC_DMA_END_SPEC {
+        ///For information about available fields see [dma_end](index.html) module
+        pub struct DMA_END_SPEC;
+        impl crate::RegisterSpec for DMA_END_SPEC {
             type Ux = u16;
         }
-        ///`read()` method returns [adc_dma_end::R](R) reader structure
-        impl crate::Readable for ADC_DMA_END_SPEC {
+        ///`read()` method returns [dma_end::R](R) reader structure
+        impl crate::Readable for DMA_END_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [adc_dma_end::W](W) writer structure
-        impl crate::Writable for ADC_DMA_END_SPEC {
+        ///`write(|w| ..)` method takes [dma_end::W](W) writer structure
+        impl crate::Writable for DMA_END_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets ADC_DMA_END to value 0
-        impl crate::Resettable for ADC_DMA_END_SPEC {
+        ///`reset()` method sets DMA_END to value 0
+        impl crate::Resettable for DMA_END_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
@@ -7030,10 +7044,25 @@ pub mod gpio {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///PA_CLR (w) register accessor: an alias for `Reg<PA_CLR_SPEC>`
+    ///PA_CLR (rw) register accessor: an alias for `Reg<PA_CLR_SPEC>`
     pub type PA_CLR = crate::Reg<pa_clr::PA_CLR_SPEC>;
     ///WZ, GPIO PA clear output: 0=keep, 1=clear
     pub mod pa_clr {
+        ///Register `PA_CLR` reader
+        pub struct R(crate::R<PA_CLR_SPEC>);
+        impl core::ops::Deref for R {
+            type Target = crate::R<PA_CLR_SPEC>;
+            #[inline(always)]
+            fn deref(&self) -> &Self::Target {
+                &self.0
+            }
+        }
+        impl From<crate::R<PA_CLR_SPEC>> for R {
+            #[inline(always)]
+            fn from(reader: crate::R<PA_CLR_SPEC>) -> Self {
+                R(reader)
+            }
+        }
         ///Register `PA_CLR` writer
         pub struct W(crate::W<PA_CLR_SPEC>);
         impl core::ops::Deref for W {
@@ -7055,8 +7084,17 @@ pub mod gpio {
                 W(writer)
             }
         }
+        ///Field `PA_CLR` reader - GPIO PA output clear
+        pub type PA_CLR_R = crate::FieldReader<u16>;
         ///Field `PA_CLR` writer - GPIO PA output clear
         pub type PA_CLR_W<'a, const O: u8> = crate::FieldWriter<'a, PA_CLR_SPEC, 16, O, u16>;
+        impl R {
+            ///Bits 0:15 - GPIO PA output clear
+            #[inline(always)]
+            pub fn pa_clr(&self) -> PA_CLR_R {
+                PA_CLR_R::new((self.bits & 0xffff) as u16)
+            }
+        }
         impl W {
             ///Bits 0:15 - GPIO PA output clear
             #[inline(always)]
@@ -7073,12 +7111,16 @@ pub mod gpio {
         }
         ///WZ, GPIO PA clear output: 0=keep, 1=clear
         ///
-        ///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
+        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
         ///For information about available fields see [pa_clr](index.html) module
         pub struct PA_CLR_SPEC;
         impl crate::RegisterSpec for PA_CLR_SPEC {
             type Ux = u32;
+        }
+        ///`read()` method returns [pa_clr::R](R) reader structure
+        impl crate::Readable for PA_CLR_SPEC {
+            type Reader = R;
         }
         ///`write(|w| ..)` method takes [pa_clr::W](W) writer structure
         impl crate::Writable for PA_CLR_SPEC {
@@ -7807,45 +7849,45 @@ pub mod tmr0 {
     #[repr(C)]
     pub struct RegisterBlock {
         ///0x00 - RW, TMR0 mode control
-        pub tmr0_ctrl_mod: TMR0_CTRL_MOD,
+        pub ctrl_mod: CTRL_MOD,
         _reserved1: [u8; 0x01],
         ///0x02 - RW, TMR0 interrupt enable
-        pub tmr0_inter_en: TMR0_INTER_EN,
+        pub inter_en: INTER_EN,
         _reserved2: [u8; 0x03],
         ///0x06 - RW1, TMR0 interrupt flag
-        pub tmr0_int_flag: TMR0_INT_FLAG,
+        pub int_flag: INT_FLAG,
         ///0x07 - RO, TMR0 FIFO count status
-        pub tmr0_fifo_count: TMR0_FIFO_COUNT,
+        pub fifo_count: FIFO_COUNT,
         ///0x08 - RO, TMR0 current count
-        pub tmr0_count: TMR0_COUNT,
+        pub count: COUNT,
         ///0x0c - RW, TMR0 end count value, only low 26 bit
-        pub tmr0_cnt_end: TMR0_CNT_END,
+        pub cnt_end: CNT_END,
         ///0x10 - RO/WO, TMR0 FIFO register, only low 26 bit
-        pub tmr0_fifo: TMR0_FIFO,
+        pub fifo: FIFO,
     }
-    ///TMR0_CTRL_MOD (rw) register accessor: an alias for `Reg<TMR0_CTRL_MOD_SPEC>`
-    pub type TMR0_CTRL_MOD = crate::Reg<tmr0_ctrl_mod::TMR0_CTRL_MOD_SPEC>;
+    ///CTRL_MOD (rw) register accessor: an alias for `Reg<CTRL_MOD_SPEC>`
+    pub type CTRL_MOD = crate::Reg<ctrl_mod::CTRL_MOD_SPEC>;
     ///RW, TMR0 mode control
-    pub mod tmr0_ctrl_mod {
-        ///Register `TMR0_CTRL_MOD` reader
-        pub struct R(crate::R<TMR0_CTRL_MOD_SPEC>);
+    pub mod ctrl_mod {
+        ///Register `CTRL_MOD` reader
+        pub struct R(crate::R<CTRL_MOD_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR0_CTRL_MOD_SPEC>;
+            type Target = crate::R<CTRL_MOD_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR0_CTRL_MOD_SPEC>> for R {
+        impl From<crate::R<CTRL_MOD_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR0_CTRL_MOD_SPEC>) -> Self {
+            fn from(reader: crate::R<CTRL_MOD_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `TMR0_CTRL_MOD` writer
-        pub struct W(crate::W<TMR0_CTRL_MOD_SPEC>);
+        ///Register `CTRL_MOD` writer
+        pub struct W(crate::W<CTRL_MOD_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<TMR0_CTRL_MOD_SPEC>;
+            type Target = crate::W<CTRL_MOD_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -7857,110 +7899,106 @@ pub mod tmr0 {
                 &mut self.0
             }
         }
-        impl From<crate::W<TMR0_CTRL_MOD_SPEC>> for W {
+        impl From<crate::W<CTRL_MOD_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<TMR0_CTRL_MOD_SPEC>) -> Self {
+            fn from(writer: crate::W<CTRL_MOD_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `TMR_MODE_IN` reader - RW, timer in mode: 0=timer/PWM, 1=capture/count
-        pub type TMR_MODE_IN_R = crate::BitReader;
-        ///Field `TMR_MODE_IN` writer - RW, timer in mode: 0=timer/PWM, 1=capture/count
-        pub type TMR_MODE_IN_W<'a, const O: u8> = crate::BitWriter<'a, TMR0_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_ALL_CLEAR` reader - RW, force clear timer FIFO and count
-        pub type TMR_ALL_CLEAR_R = crate::BitReader;
-        ///Field `TMR_ALL_CLEAR` writer - RW, force clear timer FIFO and count
-        pub type TMR_ALL_CLEAR_W<'a, const O: u8> = crate::BitWriter<'a, TMR0_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_COUNT_EN` reader - RW, timer count enable
-        pub type TMR_COUNT_EN_R = crate::BitReader;
-        ///Field `TMR_COUNT_EN` writer - RW, timer count enable
-        pub type TMR_COUNT_EN_W<'a, const O: u8> = crate::BitWriter<'a, TMR0_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_OUT_EN` reader - RW, timer output enable
-        pub type TMR_OUT_EN_R = crate::BitReader;
-        ///Field `TMR_OUT_EN` writer - RW, timer output enable
-        pub type TMR_OUT_EN_W<'a, const O: u8> = crate::BitWriter<'a, TMR0_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_OUT_POLAR_RB_TMR_CAP_COUNT` reader - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
-        pub type TMR_OUT_POLAR_RB_TMR_CAP_COUNT_R = crate::BitReader;
-        ///Field `TMR_OUT_POLAR_RB_TMR_CAP_COUNT` writer - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
-        pub type TMR_OUT_POLAR_RB_TMR_CAP_COUNT_W<'a, const O: u8> =
-            crate::BitWriter<'a, TMR0_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_PWM_REPEAT_RB_TMR_CAP_EDGE` reader - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
-        pub type TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_R = crate::FieldReader;
-        ///Field `TMR_PWM_REPEAT_RB_TMR_CAP_EDGE` writer - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
-        pub type TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_W<'a, const O: u8> =
-            crate::FieldWriter<'a, TMR0_CTRL_MOD_SPEC, 2, O>;
+        ///Field `MODE_IN` reader - RW, timer in mode: 0=timer/PWM, 1=capture/count
+        pub type MODE_IN_R = crate::BitReader;
+        ///Field `MODE_IN` writer - RW, timer in mode: 0=timer/PWM, 1=capture/count
+        pub type MODE_IN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `ALL_CLEAR` reader - RW, force clear timer FIFO and count
+        pub type ALL_CLEAR_R = crate::BitReader;
+        ///Field `ALL_CLEAR` writer - RW, force clear timer FIFO and count
+        pub type ALL_CLEAR_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `COUNT_EN` reader - RW, timer count enable
+        pub type COUNT_EN_R = crate::BitReader;
+        ///Field `COUNT_EN` writer - RW, timer count enable
+        pub type COUNT_EN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `OUT_EN` reader - RW, timer output enable
+        pub type OUT_EN_R = crate::BitReader;
+        ///Field `OUT_EN` writer - RW, timer output enable
+        pub type OUT_EN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `OUT_POLAR_RB_TMR_CAP_COUNT` reader - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
+        pub type OUT_POLAR_RB_TMR_CAP_COUNT_R = crate::BitReader;
+        ///Field `OUT_POLAR_RB_TMR_CAP_COUNT` writer - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
+        pub type OUT_POLAR_RB_TMR_CAP_COUNT_W<'a, const O: u8> =
+            crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `PWM_REPEAT_RB_TMR_CAP_EDGE` reader - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
+        pub type PWM_REPEAT_RB_TMR_CAP_EDGE_R = crate::FieldReader;
+        ///Field `PWM_REPEAT_RB_TMR_CAP_EDGE` writer - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
+        pub type PWM_REPEAT_RB_TMR_CAP_EDGE_W<'a, const O: u8> =
+            crate::FieldWriter<'a, CTRL_MOD_SPEC, 2, O>;
         impl R {
             ///Bit 0 - RW, timer in mode: 0=timer/PWM, 1=capture/count
             #[inline(always)]
-            pub fn tmr_mode_in(&self) -> TMR_MODE_IN_R {
-                TMR_MODE_IN_R::new((self.bits & 1) != 0)
+            pub fn mode_in(&self) -> MODE_IN_R {
+                MODE_IN_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW, force clear timer FIFO and count
             #[inline(always)]
-            pub fn tmr_all_clear(&self) -> TMR_ALL_CLEAR_R {
-                TMR_ALL_CLEAR_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn all_clear(&self) -> ALL_CLEAR_R {
+                ALL_CLEAR_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW, timer count enable
             #[inline(always)]
-            pub fn tmr_count_en(&self) -> TMR_COUNT_EN_R {
-                TMR_COUNT_EN_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn count_en(&self) -> COUNT_EN_R {
+                COUNT_EN_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW, timer output enable
             #[inline(always)]
-            pub fn tmr_out_en(&self) -> TMR_OUT_EN_R {
-                TMR_OUT_EN_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn out_en(&self) -> OUT_EN_R {
+                OUT_EN_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
             #[inline(always)]
-            pub fn tmr_out_polar_rb_tmr_cap_count(&self) -> TMR_OUT_POLAR_RB_TMR_CAP_COUNT_R {
-                TMR_OUT_POLAR_RB_TMR_CAP_COUNT_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn out_polar_rb_tmr_cap_count(&self) -> OUT_POLAR_RB_TMR_CAP_COUNT_R {
+                OUT_POLAR_RB_TMR_CAP_COUNT_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bits 6:7 - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
             #[inline(always)]
-            pub fn tmr_pwm_repeat_rb_tmr_cap_edge(&self) -> TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_R {
-                TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_R::new((self.bits >> 6) & 3)
+            pub fn pwm_repeat_rb_tmr_cap_edge(&self) -> PWM_REPEAT_RB_TMR_CAP_EDGE_R {
+                PWM_REPEAT_RB_TMR_CAP_EDGE_R::new((self.bits >> 6) & 3)
             }
         }
         impl W {
             ///Bit 0 - RW, timer in mode: 0=timer/PWM, 1=capture/count
             #[inline(always)]
             #[must_use]
-            pub fn tmr_mode_in(&mut self) -> TMR_MODE_IN_W<0> {
-                TMR_MODE_IN_W::new(self)
+            pub fn mode_in(&mut self) -> MODE_IN_W<0> {
+                MODE_IN_W::new(self)
             }
             ///Bit 1 - RW, force clear timer FIFO and count
             #[inline(always)]
             #[must_use]
-            pub fn tmr_all_clear(&mut self) -> TMR_ALL_CLEAR_W<1> {
-                TMR_ALL_CLEAR_W::new(self)
+            pub fn all_clear(&mut self) -> ALL_CLEAR_W<1> {
+                ALL_CLEAR_W::new(self)
             }
             ///Bit 2 - RW, timer count enable
             #[inline(always)]
             #[must_use]
-            pub fn tmr_count_en(&mut self) -> TMR_COUNT_EN_W<2> {
-                TMR_COUNT_EN_W::new(self)
+            pub fn count_en(&mut self) -> COUNT_EN_W<2> {
+                COUNT_EN_W::new(self)
             }
             ///Bit 3 - RW, timer output enable
             #[inline(always)]
             #[must_use]
-            pub fn tmr_out_en(&mut self) -> TMR_OUT_EN_W<3> {
-                TMR_OUT_EN_W::new(self)
+            pub fn out_en(&mut self) -> OUT_EN_W<3> {
+                OUT_EN_W::new(self)
             }
             ///Bit 4 - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
             #[inline(always)]
             #[must_use]
-            pub fn tmr_out_polar_rb_tmr_cap_count(
-                &mut self,
-            ) -> TMR_OUT_POLAR_RB_TMR_CAP_COUNT_W<4> {
-                TMR_OUT_POLAR_RB_TMR_CAP_COUNT_W::new(self)
+            pub fn out_polar_rb_tmr_cap_count(&mut self) -> OUT_POLAR_RB_TMR_CAP_COUNT_W<4> {
+                OUT_POLAR_RB_TMR_CAP_COUNT_W::new(self)
             }
             ///Bits 6:7 - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
             #[inline(always)]
             #[must_use]
-            pub fn tmr_pwm_repeat_rb_tmr_cap_edge(
-                &mut self,
-            ) -> TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_W<6> {
-                TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_W::new(self)
+            pub fn pwm_repeat_rb_tmr_cap_edge(&mut self) -> PWM_REPEAT_RB_TMR_CAP_EDGE_W<6> {
+                PWM_REPEAT_RB_TMR_CAP_EDGE_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -7973,49 +8011,49 @@ pub mod tmr0 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr0_ctrl_mod](index.html) module
-        pub struct TMR0_CTRL_MOD_SPEC;
-        impl crate::RegisterSpec for TMR0_CTRL_MOD_SPEC {
+        ///For information about available fields see [ctrl_mod](index.html) module
+        pub struct CTRL_MOD_SPEC;
+        impl crate::RegisterSpec for CTRL_MOD_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [tmr0_ctrl_mod::R](R) reader structure
-        impl crate::Readable for TMR0_CTRL_MOD_SPEC {
+        ///`read()` method returns [ctrl_mod::R](R) reader structure
+        impl crate::Readable for CTRL_MOD_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [tmr0_ctrl_mod::W](W) writer structure
-        impl crate::Writable for TMR0_CTRL_MOD_SPEC {
+        ///`write(|w| ..)` method takes [ctrl_mod::W](W) writer structure
+        impl crate::Writable for CTRL_MOD_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets TMR0_CTRL_MOD to value 0x02
-        impl crate::Resettable for TMR0_CTRL_MOD_SPEC {
+        ///`reset()` method sets CTRL_MOD to value 0x02
+        impl crate::Resettable for CTRL_MOD_SPEC {
             const RESET_VALUE: Self::Ux = 0x02;
         }
     }
-    ///TMR0_INTER_EN (rw) register accessor: an alias for `Reg<TMR0_INTER_EN_SPEC>`
-    pub type TMR0_INTER_EN = crate::Reg<tmr0_inter_en::TMR0_INTER_EN_SPEC>;
+    ///INTER_EN (rw) register accessor: an alias for `Reg<INTER_EN_SPEC>`
+    pub type INTER_EN = crate::Reg<inter_en::INTER_EN_SPEC>;
     ///RW, TMR0 interrupt enable
-    pub mod tmr0_inter_en {
-        ///Register `TMR0_INTER_EN` reader
-        pub struct R(crate::R<TMR0_INTER_EN_SPEC>);
+    pub mod inter_en {
+        ///Register `INTER_EN` reader
+        pub struct R(crate::R<INTER_EN_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR0_INTER_EN_SPEC>;
+            type Target = crate::R<INTER_EN_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR0_INTER_EN_SPEC>> for R {
+        impl From<crate::R<INTER_EN_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR0_INTER_EN_SPEC>) -> Self {
+            fn from(reader: crate::R<INTER_EN_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `TMR0_INTER_EN` writer
-        pub struct W(crate::W<TMR0_INTER_EN_SPEC>);
+        ///Register `INTER_EN` writer
+        pub struct W(crate::W<INTER_EN_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<TMR0_INTER_EN_SPEC>;
+            type Target = crate::W<INTER_EN_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -8027,89 +8065,89 @@ pub mod tmr0 {
                 &mut self.0
             }
         }
-        impl From<crate::W<TMR0_INTER_EN_SPEC>> for W {
+        impl From<crate::W<INTER_EN_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<TMR0_INTER_EN_SPEC>) -> Self {
+            fn from(writer: crate::W<INTER_EN_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `TMR_IE_CYC_END` reader - RW, enable interrupt for timer capture count timeout or PWM cycle end
-        pub type TMR_IE_CYC_END_R = crate::BitReader;
-        ///Field `TMR_IE_CYC_END` writer - RW, enable interrupt for timer capture count timeout or PWM cycle end
-        pub type TMR_IE_CYC_END_W<'a, const O: u8> = crate::BitWriter<'a, TMR0_INTER_EN_SPEC, O>;
-        ///Field `TMR_IE_DATA_ACT` reader - RW, enable interrupt for timer capture input action or PWM trigger
-        pub type TMR_IE_DATA_ACT_R = crate::BitReader;
-        ///Field `TMR_IE_DATA_ACT` writer - RW, enable interrupt for timer capture input action or PWM trigger
-        pub type TMR_IE_DATA_ACT_W<'a, const O: u8> = crate::BitWriter<'a, TMR0_INTER_EN_SPEC, O>;
-        ///Field `TMR_IE_FIFO_HF` reader - RW, enable interrupt for timer FIFO half (capture fifo >=4 or PWM fifo less than 3)
-        pub type TMR_IE_FIFO_HF_R = crate::BitReader;
-        ///Field `TMR_IE_FIFO_HF` writer - RW, enable interrupt for timer FIFO half (capture fifo >=4 or PWM fifo less than 3)
-        pub type TMR_IE_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, TMR0_INTER_EN_SPEC, O>;
-        ///Field `TMR_IE_DMA_END` reader - RW, enable interrupt for timer1/2 DMA completion
-        pub type TMR_IE_DMA_END_R = crate::BitReader;
-        ///Field `TMR_IE_DMA_END` writer - RW, enable interrupt for timer1/2 DMA completion
-        pub type TMR_IE_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, TMR0_INTER_EN_SPEC, O>;
-        ///Field `TMR_IE_FIFO_OV` reader - RW, enable interrupt for timer FIFO overflow
-        pub type TMR_IE_FIFO_OV_R = crate::BitReader;
-        ///Field `TMR_IE_FIFO_OV` writer - RW, enable interrupt for timer FIFO overflow
-        pub type TMR_IE_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, TMR0_INTER_EN_SPEC, O>;
+        ///Field `IE_CYC_END` reader - RW, enable interrupt for timer capture count timeout or PWM cycle end
+        pub type IE_CYC_END_R = crate::BitReader;
+        ///Field `IE_CYC_END` writer - RW, enable interrupt for timer capture count timeout or PWM cycle end
+        pub type IE_CYC_END_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_DATA_ACT` reader - RW, enable interrupt for timer capture input action or PWM trigger
+        pub type IE_DATA_ACT_R = crate::BitReader;
+        ///Field `IE_DATA_ACT` writer - RW, enable interrupt for timer capture input action or PWM trigger
+        pub type IE_DATA_ACT_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_FIFO_HF` reader - RW, enable interrupt for timer FIFO half (capture fifo >=4 or PWM fifo less than 3)
+        pub type IE_FIFO_HF_R = crate::BitReader;
+        ///Field `IE_FIFO_HF` writer - RW, enable interrupt for timer FIFO half (capture fifo >=4 or PWM fifo less than 3)
+        pub type IE_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_DMA_END` reader - RW, enable interrupt for timer1/2 DMA completion
+        pub type IE_DMA_END_R = crate::BitReader;
+        ///Field `IE_DMA_END` writer - RW, enable interrupt for timer1/2 DMA completion
+        pub type IE_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_FIFO_OV` reader - RW, enable interrupt for timer FIFO overflow
+        pub type IE_FIFO_OV_R = crate::BitReader;
+        ///Field `IE_FIFO_OV` writer - RW, enable interrupt for timer FIFO overflow
+        pub type IE_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
         impl R {
             ///Bit 0 - RW, enable interrupt for timer capture count timeout or PWM cycle end
             #[inline(always)]
-            pub fn tmr_ie_cyc_end(&self) -> TMR_IE_CYC_END_R {
-                TMR_IE_CYC_END_R::new((self.bits & 1) != 0)
+            pub fn ie_cyc_end(&self) -> IE_CYC_END_R {
+                IE_CYC_END_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW, enable interrupt for timer capture input action or PWM trigger
             #[inline(always)]
-            pub fn tmr_ie_data_act(&self) -> TMR_IE_DATA_ACT_R {
-                TMR_IE_DATA_ACT_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn ie_data_act(&self) -> IE_DATA_ACT_R {
+                IE_DATA_ACT_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW, enable interrupt for timer FIFO half (capture fifo >=4 or PWM fifo less than 3)
             #[inline(always)]
-            pub fn tmr_ie_fifo_hf(&self) -> TMR_IE_FIFO_HF_R {
-                TMR_IE_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn ie_fifo_hf(&self) -> IE_FIFO_HF_R {
+                IE_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW, enable interrupt for timer1/2 DMA completion
             #[inline(always)]
-            pub fn tmr_ie_dma_end(&self) -> TMR_IE_DMA_END_R {
-                TMR_IE_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn ie_dma_end(&self) -> IE_DMA_END_R {
+                IE_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RW, enable interrupt for timer FIFO overflow
             #[inline(always)]
-            pub fn tmr_ie_fifo_ov(&self) -> TMR_IE_FIFO_OV_R {
-                TMR_IE_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn ie_fifo_ov(&self) -> IE_FIFO_OV_R {
+                IE_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW, enable interrupt for timer capture count timeout or PWM cycle end
             #[inline(always)]
             #[must_use]
-            pub fn tmr_ie_cyc_end(&mut self) -> TMR_IE_CYC_END_W<0> {
-                TMR_IE_CYC_END_W::new(self)
+            pub fn ie_cyc_end(&mut self) -> IE_CYC_END_W<0> {
+                IE_CYC_END_W::new(self)
             }
             ///Bit 1 - RW, enable interrupt for timer capture input action or PWM trigger
             #[inline(always)]
             #[must_use]
-            pub fn tmr_ie_data_act(&mut self) -> TMR_IE_DATA_ACT_W<1> {
-                TMR_IE_DATA_ACT_W::new(self)
+            pub fn ie_data_act(&mut self) -> IE_DATA_ACT_W<1> {
+                IE_DATA_ACT_W::new(self)
             }
             ///Bit 2 - RW, enable interrupt for timer FIFO half (capture fifo >=4 or PWM fifo less than 3)
             #[inline(always)]
             #[must_use]
-            pub fn tmr_ie_fifo_hf(&mut self) -> TMR_IE_FIFO_HF_W<2> {
-                TMR_IE_FIFO_HF_W::new(self)
+            pub fn ie_fifo_hf(&mut self) -> IE_FIFO_HF_W<2> {
+                IE_FIFO_HF_W::new(self)
             }
             ///Bit 3 - RW, enable interrupt for timer1/2 DMA completion
             #[inline(always)]
             #[must_use]
-            pub fn tmr_ie_dma_end(&mut self) -> TMR_IE_DMA_END_W<3> {
-                TMR_IE_DMA_END_W::new(self)
+            pub fn ie_dma_end(&mut self) -> IE_DMA_END_W<3> {
+                IE_DMA_END_W::new(self)
             }
             ///Bit 4 - RW, enable interrupt for timer FIFO overflow
             #[inline(always)]
             #[must_use]
-            pub fn tmr_ie_fifo_ov(&mut self) -> TMR_IE_FIFO_OV_W<4> {
-                TMR_IE_FIFO_OV_W::new(self)
+            pub fn ie_fifo_ov(&mut self) -> IE_FIFO_OV_W<4> {
+                IE_FIFO_OV_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -8122,49 +8160,49 @@ pub mod tmr0 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr0_inter_en](index.html) module
-        pub struct TMR0_INTER_EN_SPEC;
-        impl crate::RegisterSpec for TMR0_INTER_EN_SPEC {
+        ///For information about available fields see [inter_en](index.html) module
+        pub struct INTER_EN_SPEC;
+        impl crate::RegisterSpec for INTER_EN_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [tmr0_inter_en::R](R) reader structure
-        impl crate::Readable for TMR0_INTER_EN_SPEC {
+        ///`read()` method returns [inter_en::R](R) reader structure
+        impl crate::Readable for INTER_EN_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [tmr0_inter_en::W](W) writer structure
-        impl crate::Writable for TMR0_INTER_EN_SPEC {
+        ///`write(|w| ..)` method takes [inter_en::W](W) writer structure
+        impl crate::Writable for INTER_EN_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets TMR0_INTER_EN to value 0
-        impl crate::Resettable for TMR0_INTER_EN_SPEC {
+        ///`reset()` method sets INTER_EN to value 0
+        impl crate::Resettable for INTER_EN_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///TMR0_INT_FLAG (rw) register accessor: an alias for `Reg<TMR0_INT_FLAG_SPEC>`
-    pub type TMR0_INT_FLAG = crate::Reg<tmr0_int_flag::TMR0_INT_FLAG_SPEC>;
+    ///INT_FLAG (rw) register accessor: an alias for `Reg<INT_FLAG_SPEC>`
+    pub type INT_FLAG = crate::Reg<int_flag::INT_FLAG_SPEC>;
     ///RW1, TMR0 interrupt flag
-    pub mod tmr0_int_flag {
-        ///Register `TMR0_INT_FLAG` reader
-        pub struct R(crate::R<TMR0_INT_FLAG_SPEC>);
+    pub mod int_flag {
+        ///Register `INT_FLAG` reader
+        pub struct R(crate::R<INT_FLAG_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR0_INT_FLAG_SPEC>;
+            type Target = crate::R<INT_FLAG_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR0_INT_FLAG_SPEC>> for R {
+        impl From<crate::R<INT_FLAG_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR0_INT_FLAG_SPEC>) -> Self {
+            fn from(reader: crate::R<INT_FLAG_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `TMR0_INT_FLAG` writer
-        pub struct W(crate::W<TMR0_INT_FLAG_SPEC>);
+        ///Register `INT_FLAG` writer
+        pub struct W(crate::W<INT_FLAG_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<TMR0_INT_FLAG_SPEC>;
+            type Target = crate::W<INT_FLAG_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -8176,89 +8214,89 @@ pub mod tmr0 {
                 &mut self.0
             }
         }
-        impl From<crate::W<TMR0_INT_FLAG_SPEC>> for W {
+        impl From<crate::W<INT_FLAG_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<TMR0_INT_FLAG_SPEC>) -> Self {
+            fn from(writer: crate::W<INT_FLAG_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `TMR_IF_CYC_END` reader - RW1, interrupt flag for timer capture count timeout or PWM cycle end
-        pub type TMR_IF_CYC_END_R = crate::BitReader;
-        ///Field `TMR_IF_CYC_END` writer - RW1, interrupt flag for timer capture count timeout or PWM cycle end
-        pub type TMR_IF_CYC_END_W<'a, const O: u8> = crate::BitWriter<'a, TMR0_INT_FLAG_SPEC, O>;
-        ///Field `TMR_IF_DATA_ACT` reader - RW1, interrupt flag for timer capture input action or PWM trigger
-        pub type TMR_IF_DATA_ACT_R = crate::BitReader;
-        ///Field `TMR_IF_DATA_ACT` writer - RW1, interrupt flag for timer capture input action or PWM trigger
-        pub type TMR_IF_DATA_ACT_W<'a, const O: u8> = crate::BitWriter<'a, TMR0_INT_FLAG_SPEC, O>;
-        ///Field `TMR_IF_FIFO_HF` reader - RW1, interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo less than 3
-        pub type TMR_IF_FIFO_HF_R = crate::BitReader;
-        ///Field `TMR_IF_FIFO_HF` writer - RW1, interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo less than 3
-        pub type TMR_IF_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, TMR0_INT_FLAG_SPEC, O>;
-        ///Field `TMR_IF_DMA_END` reader - RW1, interrupt flag for timer1/2 DMA completion
-        pub type TMR_IF_DMA_END_R = crate::BitReader;
-        ///Field `TMR_IF_DMA_END` writer - RW1, interrupt flag for timer1/2 DMA completion
-        pub type TMR_IF_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, TMR0_INT_FLAG_SPEC, O>;
-        ///Field `TMR_IF_FIFO_OV` reader - RW1, interrupt flag for timer FIFO overflow
-        pub type TMR_IF_FIFO_OV_R = crate::BitReader;
-        ///Field `TMR_IF_FIFO_OV` writer - RW1, interrupt flag for timer FIFO overflow
-        pub type TMR_IF_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, TMR0_INT_FLAG_SPEC, O>;
+        ///Field `IF_CYC_END` reader - RW1, interrupt flag for timer capture count timeout or PWM cycle end
+        pub type IF_CYC_END_R = crate::BitReader;
+        ///Field `IF_CYC_END` writer - RW1, interrupt flag for timer capture count timeout or PWM cycle end
+        pub type IF_CYC_END_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_DATA_ACT` reader - RW1, interrupt flag for timer capture input action or PWM trigger
+        pub type IF_DATA_ACT_R = crate::BitReader;
+        ///Field `IF_DATA_ACT` writer - RW1, interrupt flag for timer capture input action or PWM trigger
+        pub type IF_DATA_ACT_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_FIFO_HF` reader - RW1, interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo less than 3
+        pub type IF_FIFO_HF_R = crate::BitReader;
+        ///Field `IF_FIFO_HF` writer - RW1, interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo less than 3
+        pub type IF_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_DMA_END` reader - RW1, interrupt flag for timer1/2 DMA completion
+        pub type IF_DMA_END_R = crate::BitReader;
+        ///Field `IF_DMA_END` writer - RW1, interrupt flag for timer1/2 DMA completion
+        pub type IF_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_FIFO_OV` reader - RW1, interrupt flag for timer FIFO overflow
+        pub type IF_FIFO_OV_R = crate::BitReader;
+        ///Field `IF_FIFO_OV` writer - RW1, interrupt flag for timer FIFO overflow
+        pub type IF_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
         impl R {
             ///Bit 0 - RW1, interrupt flag for timer capture count timeout or PWM cycle end
             #[inline(always)]
-            pub fn tmr_if_cyc_end(&self) -> TMR_IF_CYC_END_R {
-                TMR_IF_CYC_END_R::new((self.bits & 1) != 0)
+            pub fn if_cyc_end(&self) -> IF_CYC_END_R {
+                IF_CYC_END_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW1, interrupt flag for timer capture input action or PWM trigger
             #[inline(always)]
-            pub fn tmr_if_data_act(&self) -> TMR_IF_DATA_ACT_R {
-                TMR_IF_DATA_ACT_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn if_data_act(&self) -> IF_DATA_ACT_R {
+                IF_DATA_ACT_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW1, interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo less than 3
             #[inline(always)]
-            pub fn tmr_if_fifo_hf(&self) -> TMR_IF_FIFO_HF_R {
-                TMR_IF_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn if_fifo_hf(&self) -> IF_FIFO_HF_R {
+                IF_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW1, interrupt flag for timer1/2 DMA completion
             #[inline(always)]
-            pub fn tmr_if_dma_end(&self) -> TMR_IF_DMA_END_R {
-                TMR_IF_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn if_dma_end(&self) -> IF_DMA_END_R {
+                IF_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RW1, interrupt flag for timer FIFO overflow
             #[inline(always)]
-            pub fn tmr_if_fifo_ov(&self) -> TMR_IF_FIFO_OV_R {
-                TMR_IF_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn if_fifo_ov(&self) -> IF_FIFO_OV_R {
+                IF_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW1, interrupt flag for timer capture count timeout or PWM cycle end
             #[inline(always)]
             #[must_use]
-            pub fn tmr_if_cyc_end(&mut self) -> TMR_IF_CYC_END_W<0> {
-                TMR_IF_CYC_END_W::new(self)
+            pub fn if_cyc_end(&mut self) -> IF_CYC_END_W<0> {
+                IF_CYC_END_W::new(self)
             }
             ///Bit 1 - RW1, interrupt flag for timer capture input action or PWM trigger
             #[inline(always)]
             #[must_use]
-            pub fn tmr_if_data_act(&mut self) -> TMR_IF_DATA_ACT_W<1> {
-                TMR_IF_DATA_ACT_W::new(self)
+            pub fn if_data_act(&mut self) -> IF_DATA_ACT_W<1> {
+                IF_DATA_ACT_W::new(self)
             }
             ///Bit 2 - RW1, interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo less than 3
             #[inline(always)]
             #[must_use]
-            pub fn tmr_if_fifo_hf(&mut self) -> TMR_IF_FIFO_HF_W<2> {
-                TMR_IF_FIFO_HF_W::new(self)
+            pub fn if_fifo_hf(&mut self) -> IF_FIFO_HF_W<2> {
+                IF_FIFO_HF_W::new(self)
             }
             ///Bit 3 - RW1, interrupt flag for timer1/2 DMA completion
             #[inline(always)]
             #[must_use]
-            pub fn tmr_if_dma_end(&mut self) -> TMR_IF_DMA_END_W<3> {
-                TMR_IF_DMA_END_W::new(self)
+            pub fn if_dma_end(&mut self) -> IF_DMA_END_W<3> {
+                IF_DMA_END_W::new(self)
             }
             ///Bit 4 - RW1, interrupt flag for timer FIFO overflow
             #[inline(always)]
             #[must_use]
-            pub fn tmr_if_fifo_ov(&mut self) -> TMR_IF_FIFO_OV_W<4> {
-                TMR_IF_FIFO_OV_W::new(self)
+            pub fn if_fifo_ov(&mut self) -> IF_FIFO_OV_W<4> {
+                IF_FIFO_OV_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -8271,141 +8309,141 @@ pub mod tmr0 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr0_int_flag](index.html) module
-        pub struct TMR0_INT_FLAG_SPEC;
-        impl crate::RegisterSpec for TMR0_INT_FLAG_SPEC {
+        ///For information about available fields see [int_flag](index.html) module
+        pub struct INT_FLAG_SPEC;
+        impl crate::RegisterSpec for INT_FLAG_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [tmr0_int_flag::R](R) reader structure
-        impl crate::Readable for TMR0_INT_FLAG_SPEC {
+        ///`read()` method returns [int_flag::R](R) reader structure
+        impl crate::Readable for INT_FLAG_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [tmr0_int_flag::W](W) writer structure
-        impl crate::Writable for TMR0_INT_FLAG_SPEC {
+        ///`write(|w| ..)` method takes [int_flag::W](W) writer structure
+        impl crate::Writable for INT_FLAG_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets TMR0_INT_FLAG to value 0
-        impl crate::Resettable for TMR0_INT_FLAG_SPEC {
+        ///`reset()` method sets INT_FLAG to value 0
+        impl crate::Resettable for INT_FLAG_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///TMR0_FIFO_COUNT (r) register accessor: an alias for `Reg<TMR0_FIFO_COUNT_SPEC>`
-    pub type TMR0_FIFO_COUNT = crate::Reg<tmr0_fifo_count::TMR0_FIFO_COUNT_SPEC>;
+    ///FIFO_COUNT (r) register accessor: an alias for `Reg<FIFO_COUNT_SPEC>`
+    pub type FIFO_COUNT = crate::Reg<fifo_count::FIFO_COUNT_SPEC>;
     ///RO, TMR0 FIFO count status
-    pub mod tmr0_fifo_count {
-        ///Register `TMR0_FIFO_COUNT` reader
-        pub struct R(crate::R<TMR0_FIFO_COUNT_SPEC>);
+    pub mod fifo_count {
+        ///Register `FIFO_COUNT` reader
+        pub struct R(crate::R<FIFO_COUNT_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR0_FIFO_COUNT_SPEC>;
+            type Target = crate::R<FIFO_COUNT_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR0_FIFO_COUNT_SPEC>> for R {
+        impl From<crate::R<FIFO_COUNT_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR0_FIFO_COUNT_SPEC>) -> Self {
+            fn from(reader: crate::R<FIFO_COUNT_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `TMR0_FIFO_COUNT` reader - R0,TMR0 FIFO count status
-        pub type TMR0_FIFO_COUNT_R = crate::FieldReader;
+        ///Field `FIFO_COUNT` reader - R0,TMR0 FIFO count status
+        pub type FIFO_COUNT_R = crate::FieldReader;
         impl R {
             ///Bits 0:3 - R0,TMR0 FIFO count status
             #[inline(always)]
-            pub fn tmr0_fifo_count(&self) -> TMR0_FIFO_COUNT_R {
-                TMR0_FIFO_COUNT_R::new(self.bits & 0x0f)
+            pub fn fifo_count(&self) -> FIFO_COUNT_R {
+                FIFO_COUNT_R::new(self.bits & 0x0f)
             }
         }
         ///RO, TMR0 FIFO count status
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr0_fifo_count](index.html) module
-        pub struct TMR0_FIFO_COUNT_SPEC;
-        impl crate::RegisterSpec for TMR0_FIFO_COUNT_SPEC {
+        ///For information about available fields see [fifo_count](index.html) module
+        pub struct FIFO_COUNT_SPEC;
+        impl crate::RegisterSpec for FIFO_COUNT_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [tmr0_fifo_count::R](R) reader structure
-        impl crate::Readable for TMR0_FIFO_COUNT_SPEC {
+        ///`read()` method returns [fifo_count::R](R) reader structure
+        impl crate::Readable for FIFO_COUNT_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets TMR0_FIFO_COUNT to value 0
-        impl crate::Resettable for TMR0_FIFO_COUNT_SPEC {
+        ///`reset()` method sets FIFO_COUNT to value 0
+        impl crate::Resettable for FIFO_COUNT_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///TMR0_COUNT (r) register accessor: an alias for `Reg<TMR0_COUNT_SPEC>`
-    pub type TMR0_COUNT = crate::Reg<tmr0_count::TMR0_COUNT_SPEC>;
+    ///COUNT (r) register accessor: an alias for `Reg<COUNT_SPEC>`
+    pub type COUNT = crate::Reg<count::COUNT_SPEC>;
     ///RO, TMR0 current count
-    pub mod tmr0_count {
-        ///Register `TMR0_COUNT` reader
-        pub struct R(crate::R<TMR0_COUNT_SPEC>);
+    pub mod count {
+        ///Register `COUNT` reader
+        pub struct R(crate::R<COUNT_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR0_COUNT_SPEC>;
+            type Target = crate::R<COUNT_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR0_COUNT_SPEC>> for R {
+        impl From<crate::R<COUNT_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR0_COUNT_SPEC>) -> Self {
+            fn from(reader: crate::R<COUNT_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `TMR0_COUNT` reader - RW1,TMR0 current count
-        pub type TMR0_COUNT_R = crate::FieldReader<u32>;
+        ///Field `COUNT` reader - RW1,TMR0 current count
+        pub type COUNT_R = crate::FieldReader<u32>;
         impl R {
             ///Bits 0:25 - RW1,TMR0 current count
             #[inline(always)]
-            pub fn tmr0_count(&self) -> TMR0_COUNT_R {
-                TMR0_COUNT_R::new(self.bits & 0x03ff_ffff)
+            pub fn count(&self) -> COUNT_R {
+                COUNT_R::new(self.bits & 0x03ff_ffff)
             }
         }
         ///RO, TMR0 current count
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr0_count](index.html) module
-        pub struct TMR0_COUNT_SPEC;
-        impl crate::RegisterSpec for TMR0_COUNT_SPEC {
+        ///For information about available fields see [count](index.html) module
+        pub struct COUNT_SPEC;
+        impl crate::RegisterSpec for COUNT_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [tmr0_count::R](R) reader structure
-        impl crate::Readable for TMR0_COUNT_SPEC {
+        ///`read()` method returns [count::R](R) reader structure
+        impl crate::Readable for COUNT_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets TMR0_COUNT to value 0
-        impl crate::Resettable for TMR0_COUNT_SPEC {
+        ///`reset()` method sets COUNT to value 0
+        impl crate::Resettable for COUNT_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///TMR0_CNT_END (rw) register accessor: an alias for `Reg<TMR0_CNT_END_SPEC>`
-    pub type TMR0_CNT_END = crate::Reg<tmr0_cnt_end::TMR0_CNT_END_SPEC>;
+    ///CNT_END (rw) register accessor: an alias for `Reg<CNT_END_SPEC>`
+    pub type CNT_END = crate::Reg<cnt_end::CNT_END_SPEC>;
     ///RW, TMR0 end count value, only low 26 bit
-    pub mod tmr0_cnt_end {
-        ///Register `TMR0_CNT_END` reader
-        pub struct R(crate::R<TMR0_CNT_END_SPEC>);
+    pub mod cnt_end {
+        ///Register `CNT_END` reader
+        pub struct R(crate::R<CNT_END_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR0_CNT_END_SPEC>;
+            type Target = crate::R<CNT_END_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR0_CNT_END_SPEC>> for R {
+        impl From<crate::R<CNT_END_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR0_CNT_END_SPEC>) -> Self {
+            fn from(reader: crate::R<CNT_END_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `TMR0_CNT_END` writer
-        pub struct W(crate::W<TMR0_CNT_END_SPEC>);
+        ///Register `CNT_END` writer
+        pub struct W(crate::W<CNT_END_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<TMR0_CNT_END_SPEC>;
+            type Target = crate::W<CNT_END_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -8417,30 +8455,29 @@ pub mod tmr0 {
                 &mut self.0
             }
         }
-        impl From<crate::W<TMR0_CNT_END_SPEC>> for W {
+        impl From<crate::W<CNT_END_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<TMR0_CNT_END_SPEC>) -> Self {
+            fn from(writer: crate::W<CNT_END_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `TMR0_CNT_END` reader - RW1,TMR0 end count value
-        pub type TMR0_CNT_END_R = crate::FieldReader<u32>;
-        ///Field `TMR0_CNT_END` writer - RW1,TMR0 end count value
-        pub type TMR0_CNT_END_W<'a, const O: u8> =
-            crate::FieldWriter<'a, TMR0_CNT_END_SPEC, 32, O, u32>;
+        ///Field `CNT_END` reader - RW1,TMR0 end count value
+        pub type CNT_END_R = crate::FieldReader<u32>;
+        ///Field `CNT_END` writer - RW1,TMR0 end count value
+        pub type CNT_END_W<'a, const O: u8> = crate::FieldWriter<'a, CNT_END_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW1,TMR0 end count value
             #[inline(always)]
-            pub fn tmr0_cnt_end(&self) -> TMR0_CNT_END_R {
-                TMR0_CNT_END_R::new(self.bits)
+            pub fn cnt_end(&self) -> CNT_END_R {
+                CNT_END_R::new(self.bits)
             }
         }
         impl W {
             ///Bits 0:31 - RW1,TMR0 end count value
             #[inline(always)]
             #[must_use]
-            pub fn tmr0_cnt_end(&mut self) -> TMR0_CNT_END_W<0> {
-                TMR0_CNT_END_W::new(self)
+            pub fn cnt_end(&mut self) -> CNT_END_W<0> {
+                CNT_END_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -8453,69 +8490,69 @@ pub mod tmr0 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr0_cnt_end](index.html) module
-        pub struct TMR0_CNT_END_SPEC;
-        impl crate::RegisterSpec for TMR0_CNT_END_SPEC {
+        ///For information about available fields see [cnt_end](index.html) module
+        pub struct CNT_END_SPEC;
+        impl crate::RegisterSpec for CNT_END_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [tmr0_cnt_end::R](R) reader structure
-        impl crate::Readable for TMR0_CNT_END_SPEC {
+        ///`read()` method returns [cnt_end::R](R) reader structure
+        impl crate::Readable for CNT_END_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [tmr0_cnt_end::W](W) writer structure
-        impl crate::Writable for TMR0_CNT_END_SPEC {
+        ///`write(|w| ..)` method takes [cnt_end::W](W) writer structure
+        impl crate::Writable for CNT_END_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets TMR0_CNT_END to value 0
-        impl crate::Resettable for TMR0_CNT_END_SPEC {
+        ///`reset()` method sets CNT_END to value 0
+        impl crate::Resettable for CNT_END_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///TMR0_FIFO (r) register accessor: an alias for `Reg<TMR0_FIFO_SPEC>`
-    pub type TMR0_FIFO = crate::Reg<tmr0_fifo::TMR0_FIFO_SPEC>;
+    ///FIFO (r) register accessor: an alias for `Reg<FIFO_SPEC>`
+    pub type FIFO = crate::Reg<fifo::FIFO_SPEC>;
     ///RO/WO, TMR0 FIFO register, only low 26 bit
-    pub mod tmr0_fifo {
-        ///Register `TMR0_FIFO` reader
-        pub struct R(crate::R<TMR0_FIFO_SPEC>);
+    pub mod fifo {
+        ///Register `FIFO` reader
+        pub struct R(crate::R<FIFO_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR0_FIFO_SPEC>;
+            type Target = crate::R<FIFO_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR0_FIFO_SPEC>> for R {
+        impl From<crate::R<FIFO_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR0_FIFO_SPEC>) -> Self {
+            fn from(reader: crate::R<FIFO_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `TMR0_FIFO` reader - RW1,TMR0 FIFO register
-        pub type TMR0_FIFO_R = crate::FieldReader<u32>;
+        ///Field `FIFO` reader - RW1,TMR0 FIFO register
+        pub type FIFO_R = crate::FieldReader<u32>;
         impl R {
             ///Bits 0:31 - RW1,TMR0 FIFO register
             #[inline(always)]
-            pub fn tmr0_fifo(&self) -> TMR0_FIFO_R {
-                TMR0_FIFO_R::new(self.bits)
+            pub fn fifo(&self) -> FIFO_R {
+                FIFO_R::new(self.bits)
             }
         }
         ///RO/WO, TMR0 FIFO register, only low 26 bit
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr0_fifo](index.html) module
-        pub struct TMR0_FIFO_SPEC;
-        impl crate::RegisterSpec for TMR0_FIFO_SPEC {
+        ///For information about available fields see [fifo](index.html) module
+        pub struct FIFO_SPEC;
+        impl crate::RegisterSpec for FIFO_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [tmr0_fifo::R](R) reader structure
-        impl crate::Readable for TMR0_FIFO_SPEC {
+        ///`read()` method returns [fifo::R](R) reader structure
+        impl crate::Readable for FIFO_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets TMR0_FIFO to value 0
-        impl crate::Resettable for TMR0_FIFO_SPEC {
+        ///`reset()` method sets FIFO to value 0
+        impl crate::Resettable for FIFO_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
@@ -8552,54 +8589,54 @@ pub mod tmr1 {
     #[repr(C)]
     pub struct RegisterBlock {
         ///0x00 - RW, TMR1 mode control
-        pub tmr1_ctrl_mod: TMR1_CTRL_MOD,
+        pub ctrl_mod: CTRL_MOD,
         ///0x01 - RW, TMR1 DMA control
-        pub tmr1_ctrl_dma: TMR1_CTRL_DMA,
+        pub ctrl_dma: CTRL_DMA,
         ///0x02 - RW, TMR1 interrupt enable
-        pub tmr1_inter_en: TMR1_INTER_EN,
+        pub inter_en: INTER_EN,
         _reserved3: [u8; 0x03],
         ///0x06 - RW1, TMR1 interrupt flag
-        pub tmr1_int_flag: TMR1_INT_FLAG,
+        pub int_flag: INT_FLAG,
         ///0x07 - RO, TMR1 FIFO count status
-        pub tmr1_fifo_count: TMR1_FIFO_COUNT,
+        pub fifo_count: FIFO_COUNT,
         ///0x08 - RO, TMR1 current count
-        pub tmr1_count: TMR1_COUNT,
+        pub count: COUNT,
         ///0x0c - RW, TMR1 end count value, only low 26 bit
-        pub tmr1_cnt_end: TMR1_CNT_END,
+        pub cnt_end: CNT_END,
         ///0x10 - RO, TMR1 FIFO register, only low 26 bit
-        pub tmr1_fifo: TMR1_FIFO,
+        pub fifo: FIFO,
         ///0x14 - RO, TMR1 DMA current address
-        pub tmr1_dma_now: TMR1_DMA_NOW,
+        pub dma_now: DMA_NOW,
         _reserved9: [u8; 0x02],
         ///0x18 - RW, TMR1 DMA begin address
-        pub tmr1_dma_beg: TMR1_DMA_BEG,
+        pub dma_beg: DMA_BEG,
         _reserved10: [u8; 0x02],
         ///0x1c - RW, TMR1 DMA end address
-        pub tmr1_dma_end: TMR1_DMA_END,
+        pub dma_end: DMA_END,
     }
-    ///TMR1_CTRL_MOD (rw) register accessor: an alias for `Reg<TMR1_CTRL_MOD_SPEC>`
-    pub type TMR1_CTRL_MOD = crate::Reg<tmr1_ctrl_mod::TMR1_CTRL_MOD_SPEC>;
+    ///CTRL_MOD (rw) register accessor: an alias for `Reg<CTRL_MOD_SPEC>`
+    pub type CTRL_MOD = crate::Reg<ctrl_mod::CTRL_MOD_SPEC>;
     ///RW, TMR1 mode control
-    pub mod tmr1_ctrl_mod {
-        ///Register `TMR1_CTRL_MOD` reader
-        pub struct R(crate::R<TMR1_CTRL_MOD_SPEC>);
+    pub mod ctrl_mod {
+        ///Register `CTRL_MOD` reader
+        pub struct R(crate::R<CTRL_MOD_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR1_CTRL_MOD_SPEC>;
+            type Target = crate::R<CTRL_MOD_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR1_CTRL_MOD_SPEC>> for R {
+        impl From<crate::R<CTRL_MOD_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR1_CTRL_MOD_SPEC>) -> Self {
+            fn from(reader: crate::R<CTRL_MOD_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `TMR1_CTRL_MOD` writer
-        pub struct W(crate::W<TMR1_CTRL_MOD_SPEC>);
+        ///Register `CTRL_MOD` writer
+        pub struct W(crate::W<CTRL_MOD_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<TMR1_CTRL_MOD_SPEC>;
+            type Target = crate::W<CTRL_MOD_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -8611,110 +8648,106 @@ pub mod tmr1 {
                 &mut self.0
             }
         }
-        impl From<crate::W<TMR1_CTRL_MOD_SPEC>> for W {
+        impl From<crate::W<CTRL_MOD_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<TMR1_CTRL_MOD_SPEC>) -> Self {
+            fn from(writer: crate::W<CTRL_MOD_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `TMR_MODE_IN` reader - RW, timer in mode: 0=timer/PWM, 1=capture/count
-        pub type TMR_MODE_IN_R = crate::BitReader;
-        ///Field `TMR_MODE_IN` writer - RW, timer in mode: 0=timer/PWM, 1=capture/count
-        pub type TMR_MODE_IN_W<'a, const O: u8> = crate::BitWriter<'a, TMR1_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_ALL_CLEAR` reader - RW, force clear timer FIFO and count
-        pub type TMR_ALL_CLEAR_R = crate::BitReader;
-        ///Field `TMR_ALL_CLEAR` writer - RW, force clear timer FIFO and count
-        pub type TMR_ALL_CLEAR_W<'a, const O: u8> = crate::BitWriter<'a, TMR1_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_COUNT_EN` reader - RW, timer count enable
-        pub type TMR_COUNT_EN_R = crate::BitReader;
-        ///Field `TMR_COUNT_EN` writer - RW, timer count enable
-        pub type TMR_COUNT_EN_W<'a, const O: u8> = crate::BitWriter<'a, TMR1_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_OUT_EN` reader - RW, timer output enable
-        pub type TMR_OUT_EN_R = crate::BitReader;
-        ///Field `TMR_OUT_EN` writer - RW, timer output enable
-        pub type TMR_OUT_EN_W<'a, const O: u8> = crate::BitWriter<'a, TMR1_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_OUT_POLAR_RB_TMR_CAP_COUNT` reader - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
-        pub type TMR_OUT_POLAR_RB_TMR_CAP_COUNT_R = crate::BitReader;
-        ///Field `TMR_OUT_POLAR_RB_TMR_CAP_COUNT` writer - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
-        pub type TMR_OUT_POLAR_RB_TMR_CAP_COUNT_W<'a, const O: u8> =
-            crate::BitWriter<'a, TMR1_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_PWM_REPEAT_RB_TMR_CAP_EDGE` reader - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
-        pub type TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_R = crate::FieldReader;
-        ///Field `TMR_PWM_REPEAT_RB_TMR_CAP_EDGE` writer - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
-        pub type TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_W<'a, const O: u8> =
-            crate::FieldWriter<'a, TMR1_CTRL_MOD_SPEC, 2, O>;
+        ///Field `MODE_IN` reader - RW, timer in mode: 0=timer/PWM, 1=capture/count
+        pub type MODE_IN_R = crate::BitReader;
+        ///Field `MODE_IN` writer - RW, timer in mode: 0=timer/PWM, 1=capture/count
+        pub type MODE_IN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `ALL_CLEAR` reader - RW, force clear timer FIFO and count
+        pub type ALL_CLEAR_R = crate::BitReader;
+        ///Field `ALL_CLEAR` writer - RW, force clear timer FIFO and count
+        pub type ALL_CLEAR_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `COUNT_EN` reader - RW, timer count enable
+        pub type COUNT_EN_R = crate::BitReader;
+        ///Field `COUNT_EN` writer - RW, timer count enable
+        pub type COUNT_EN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `OUT_EN` reader - RW, timer output enable
+        pub type OUT_EN_R = crate::BitReader;
+        ///Field `OUT_EN` writer - RW, timer output enable
+        pub type OUT_EN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `OUT_POLAR_RB_TMR_CAP_COUNT` reader - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
+        pub type OUT_POLAR_RB_TMR_CAP_COUNT_R = crate::BitReader;
+        ///Field `OUT_POLAR_RB_TMR_CAP_COUNT` writer - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
+        pub type OUT_POLAR_RB_TMR_CAP_COUNT_W<'a, const O: u8> =
+            crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `PWM_REPEAT_RB_TMR_CAP_EDGE` reader - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
+        pub type PWM_REPEAT_RB_TMR_CAP_EDGE_R = crate::FieldReader;
+        ///Field `PWM_REPEAT_RB_TMR_CAP_EDGE` writer - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
+        pub type PWM_REPEAT_RB_TMR_CAP_EDGE_W<'a, const O: u8> =
+            crate::FieldWriter<'a, CTRL_MOD_SPEC, 2, O>;
         impl R {
             ///Bit 0 - RW, timer in mode: 0=timer/PWM, 1=capture/count
             #[inline(always)]
-            pub fn tmr_mode_in(&self) -> TMR_MODE_IN_R {
-                TMR_MODE_IN_R::new((self.bits & 1) != 0)
+            pub fn mode_in(&self) -> MODE_IN_R {
+                MODE_IN_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW, force clear timer FIFO and count
             #[inline(always)]
-            pub fn tmr_all_clear(&self) -> TMR_ALL_CLEAR_R {
-                TMR_ALL_CLEAR_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn all_clear(&self) -> ALL_CLEAR_R {
+                ALL_CLEAR_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW, timer count enable
             #[inline(always)]
-            pub fn tmr_count_en(&self) -> TMR_COUNT_EN_R {
-                TMR_COUNT_EN_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn count_en(&self) -> COUNT_EN_R {
+                COUNT_EN_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW, timer output enable
             #[inline(always)]
-            pub fn tmr_out_en(&self) -> TMR_OUT_EN_R {
-                TMR_OUT_EN_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn out_en(&self) -> OUT_EN_R {
+                OUT_EN_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
             #[inline(always)]
-            pub fn tmr_out_polar_rb_tmr_cap_count(&self) -> TMR_OUT_POLAR_RB_TMR_CAP_COUNT_R {
-                TMR_OUT_POLAR_RB_TMR_CAP_COUNT_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn out_polar_rb_tmr_cap_count(&self) -> OUT_POLAR_RB_TMR_CAP_COUNT_R {
+                OUT_POLAR_RB_TMR_CAP_COUNT_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bits 6:7 - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
             #[inline(always)]
-            pub fn tmr_pwm_repeat_rb_tmr_cap_edge(&self) -> TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_R {
-                TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_R::new((self.bits >> 6) & 3)
+            pub fn pwm_repeat_rb_tmr_cap_edge(&self) -> PWM_REPEAT_RB_TMR_CAP_EDGE_R {
+                PWM_REPEAT_RB_TMR_CAP_EDGE_R::new((self.bits >> 6) & 3)
             }
         }
         impl W {
             ///Bit 0 - RW, timer in mode: 0=timer/PWM, 1=capture/count
             #[inline(always)]
             #[must_use]
-            pub fn tmr_mode_in(&mut self) -> TMR_MODE_IN_W<0> {
-                TMR_MODE_IN_W::new(self)
+            pub fn mode_in(&mut self) -> MODE_IN_W<0> {
+                MODE_IN_W::new(self)
             }
             ///Bit 1 - RW, force clear timer FIFO and count
             #[inline(always)]
             #[must_use]
-            pub fn tmr_all_clear(&mut self) -> TMR_ALL_CLEAR_W<1> {
-                TMR_ALL_CLEAR_W::new(self)
+            pub fn all_clear(&mut self) -> ALL_CLEAR_W<1> {
+                ALL_CLEAR_W::new(self)
             }
             ///Bit 2 - RW, timer count enable
             #[inline(always)]
             #[must_use]
-            pub fn tmr_count_en(&mut self) -> TMR_COUNT_EN_W<2> {
-                TMR_COUNT_EN_W::new(self)
+            pub fn count_en(&mut self) -> COUNT_EN_W<2> {
+                COUNT_EN_W::new(self)
             }
             ///Bit 3 - RW, timer output enable
             #[inline(always)]
             #[must_use]
-            pub fn tmr_out_en(&mut self) -> TMR_OUT_EN_W<3> {
-                TMR_OUT_EN_W::new(self)
+            pub fn out_en(&mut self) -> OUT_EN_W<3> {
+                OUT_EN_W::new(self)
             }
             ///Bit 4 - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
             #[inline(always)]
             #[must_use]
-            pub fn tmr_out_polar_rb_tmr_cap_count(
-                &mut self,
-            ) -> TMR_OUT_POLAR_RB_TMR_CAP_COUNT_W<4> {
-                TMR_OUT_POLAR_RB_TMR_CAP_COUNT_W::new(self)
+            pub fn out_polar_rb_tmr_cap_count(&mut self) -> OUT_POLAR_RB_TMR_CAP_COUNT_W<4> {
+                OUT_POLAR_RB_TMR_CAP_COUNT_W::new(self)
             }
             ///Bits 6:7 - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
             #[inline(always)]
             #[must_use]
-            pub fn tmr_pwm_repeat_rb_tmr_cap_edge(
-                &mut self,
-            ) -> TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_W<6> {
-                TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_W::new(self)
+            pub fn pwm_repeat_rb_tmr_cap_edge(&mut self) -> PWM_REPEAT_RB_TMR_CAP_EDGE_W<6> {
+                PWM_REPEAT_RB_TMR_CAP_EDGE_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -8727,49 +8760,49 @@ pub mod tmr1 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr1_ctrl_mod](index.html) module
-        pub struct TMR1_CTRL_MOD_SPEC;
-        impl crate::RegisterSpec for TMR1_CTRL_MOD_SPEC {
+        ///For information about available fields see [ctrl_mod](index.html) module
+        pub struct CTRL_MOD_SPEC;
+        impl crate::RegisterSpec for CTRL_MOD_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [tmr1_ctrl_mod::R](R) reader structure
-        impl crate::Readable for TMR1_CTRL_MOD_SPEC {
+        ///`read()` method returns [ctrl_mod::R](R) reader structure
+        impl crate::Readable for CTRL_MOD_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [tmr1_ctrl_mod::W](W) writer structure
-        impl crate::Writable for TMR1_CTRL_MOD_SPEC {
+        ///`write(|w| ..)` method takes [ctrl_mod::W](W) writer structure
+        impl crate::Writable for CTRL_MOD_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets TMR1_CTRL_MOD to value 0x02
-        impl crate::Resettable for TMR1_CTRL_MOD_SPEC {
+        ///`reset()` method sets CTRL_MOD to value 0x02
+        impl crate::Resettable for CTRL_MOD_SPEC {
             const RESET_VALUE: Self::Ux = 0x02;
         }
     }
-    ///TMR1_CTRL_DMA (rw) register accessor: an alias for `Reg<TMR1_CTRL_DMA_SPEC>`
-    pub type TMR1_CTRL_DMA = crate::Reg<tmr1_ctrl_dma::TMR1_CTRL_DMA_SPEC>;
+    ///CTRL_DMA (rw) register accessor: an alias for `Reg<CTRL_DMA_SPEC>`
+    pub type CTRL_DMA = crate::Reg<ctrl_dma::CTRL_DMA_SPEC>;
     ///RW, TMR1 DMA control
-    pub mod tmr1_ctrl_dma {
-        ///Register `TMR1_CTRL_DMA` reader
-        pub struct R(crate::R<TMR1_CTRL_DMA_SPEC>);
+    pub mod ctrl_dma {
+        ///Register `CTRL_DMA` reader
+        pub struct R(crate::R<CTRL_DMA_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR1_CTRL_DMA_SPEC>;
+            type Target = crate::R<CTRL_DMA_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR1_CTRL_DMA_SPEC>> for R {
+        impl From<crate::R<CTRL_DMA_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR1_CTRL_DMA_SPEC>) -> Self {
+            fn from(reader: crate::R<CTRL_DMA_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `TMR1_CTRL_DMA` writer
-        pub struct W(crate::W<TMR1_CTRL_DMA_SPEC>);
+        ///Register `CTRL_DMA` writer
+        pub struct W(crate::W<CTRL_DMA_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<TMR1_CTRL_DMA_SPEC>;
+            type Target = crate::W<CTRL_DMA_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -8781,44 +8814,44 @@ pub mod tmr1 {
                 &mut self.0
             }
         }
-        impl From<crate::W<TMR1_CTRL_DMA_SPEC>> for W {
+        impl From<crate::W<CTRL_DMA_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<TMR1_CTRL_DMA_SPEC>) -> Self {
+            fn from(writer: crate::W<CTRL_DMA_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `TMR_DMA_ENABLE` reader - RW, timer1/2 DMA enable
-        pub type TMR_DMA_ENABLE_R = crate::BitReader;
-        ///Field `TMR_DMA_ENABLE` writer - RW, timer1/2 DMA enable
-        pub type TMR_DMA_ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, TMR1_CTRL_DMA_SPEC, O>;
-        ///Field `TMR_DMA_LOOP` reader - RW, timer1/2 DMA address loop enable
-        pub type TMR_DMA_LOOP_R = crate::BitReader;
-        ///Field `TMR_DMA_LOOP` writer - RW, timer1/2 DMA address loop enable
-        pub type TMR_DMA_LOOP_W<'a, const O: u8> = crate::BitWriter<'a, TMR1_CTRL_DMA_SPEC, O>;
+        ///Field `DMA_ENABLE` reader - RW, timer1/2 DMA enable
+        pub type DMA_ENABLE_R = crate::BitReader;
+        ///Field `DMA_ENABLE` writer - RW, timer1/2 DMA enable
+        pub type DMA_ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_DMA_SPEC, O>;
+        ///Field `DMA_LOOP` reader - RW, timer1/2 DMA address loop enable
+        pub type DMA_LOOP_R = crate::BitReader;
+        ///Field `DMA_LOOP` writer - RW, timer1/2 DMA address loop enable
+        pub type DMA_LOOP_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_DMA_SPEC, O>;
         impl R {
             ///Bit 0 - RW, timer1/2 DMA enable
             #[inline(always)]
-            pub fn tmr_dma_enable(&self) -> TMR_DMA_ENABLE_R {
-                TMR_DMA_ENABLE_R::new((self.bits & 1) != 0)
+            pub fn dma_enable(&self) -> DMA_ENABLE_R {
+                DMA_ENABLE_R::new((self.bits & 1) != 0)
             }
             ///Bit 2 - RW, timer1/2 DMA address loop enable
             #[inline(always)]
-            pub fn tmr_dma_loop(&self) -> TMR_DMA_LOOP_R {
-                TMR_DMA_LOOP_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn dma_loop(&self) -> DMA_LOOP_R {
+                DMA_LOOP_R::new(((self.bits >> 2) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW, timer1/2 DMA enable
             #[inline(always)]
             #[must_use]
-            pub fn tmr_dma_enable(&mut self) -> TMR_DMA_ENABLE_W<0> {
-                TMR_DMA_ENABLE_W::new(self)
+            pub fn dma_enable(&mut self) -> DMA_ENABLE_W<0> {
+                DMA_ENABLE_W::new(self)
             }
             ///Bit 2 - RW, timer1/2 DMA address loop enable
             #[inline(always)]
             #[must_use]
-            pub fn tmr_dma_loop(&mut self) -> TMR_DMA_LOOP_W<2> {
-                TMR_DMA_LOOP_W::new(self)
+            pub fn dma_loop(&mut self) -> DMA_LOOP_W<2> {
+                DMA_LOOP_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -8831,49 +8864,49 @@ pub mod tmr1 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr1_ctrl_dma](index.html) module
-        pub struct TMR1_CTRL_DMA_SPEC;
-        impl crate::RegisterSpec for TMR1_CTRL_DMA_SPEC {
+        ///For information about available fields see [ctrl_dma](index.html) module
+        pub struct CTRL_DMA_SPEC;
+        impl crate::RegisterSpec for CTRL_DMA_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [tmr1_ctrl_dma::R](R) reader structure
-        impl crate::Readable for TMR1_CTRL_DMA_SPEC {
+        ///`read()` method returns [ctrl_dma::R](R) reader structure
+        impl crate::Readable for CTRL_DMA_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [tmr1_ctrl_dma::W](W) writer structure
-        impl crate::Writable for TMR1_CTRL_DMA_SPEC {
+        ///`write(|w| ..)` method takes [ctrl_dma::W](W) writer structure
+        impl crate::Writable for CTRL_DMA_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets TMR1_CTRL_DMA to value 0
-        impl crate::Resettable for TMR1_CTRL_DMA_SPEC {
+        ///`reset()` method sets CTRL_DMA to value 0
+        impl crate::Resettable for CTRL_DMA_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///TMR1_INTER_EN (rw) register accessor: an alias for `Reg<TMR1_INTER_EN_SPEC>`
-    pub type TMR1_INTER_EN = crate::Reg<tmr1_inter_en::TMR1_INTER_EN_SPEC>;
+    ///INTER_EN (rw) register accessor: an alias for `Reg<INTER_EN_SPEC>`
+    pub type INTER_EN = crate::Reg<inter_en::INTER_EN_SPEC>;
     ///RW, TMR1 interrupt enable
-    pub mod tmr1_inter_en {
-        ///Register `TMR1_INTER_EN` reader
-        pub struct R(crate::R<TMR1_INTER_EN_SPEC>);
+    pub mod inter_en {
+        ///Register `INTER_EN` reader
+        pub struct R(crate::R<INTER_EN_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR1_INTER_EN_SPEC>;
+            type Target = crate::R<INTER_EN_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR1_INTER_EN_SPEC>> for R {
+        impl From<crate::R<INTER_EN_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR1_INTER_EN_SPEC>) -> Self {
+            fn from(reader: crate::R<INTER_EN_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `TMR1_INTER_EN` writer
-        pub struct W(crate::W<TMR1_INTER_EN_SPEC>);
+        ///Register `INTER_EN` writer
+        pub struct W(crate::W<INTER_EN_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<TMR1_INTER_EN_SPEC>;
+            type Target = crate::W<INTER_EN_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -8885,89 +8918,89 @@ pub mod tmr1 {
                 &mut self.0
             }
         }
-        impl From<crate::W<TMR1_INTER_EN_SPEC>> for W {
+        impl From<crate::W<INTER_EN_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<TMR1_INTER_EN_SPEC>) -> Self {
+            fn from(writer: crate::W<INTER_EN_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `TMR_IE_CYC_END` reader - RW, enable interrupt for timer capture count timeout or PWM cycle end
-        pub type TMR_IE_CYC_END_R = crate::BitReader;
-        ///Field `TMR_IE_CYC_END` writer - RW, enable interrupt for timer capture count timeout or PWM cycle end
-        pub type TMR_IE_CYC_END_W<'a, const O: u8> = crate::BitWriter<'a, TMR1_INTER_EN_SPEC, O>;
-        ///Field `TMR_IE_DATA_ACT` reader - RW, enable interrupt for timer capture input action or PWM trigger
-        pub type TMR_IE_DATA_ACT_R = crate::BitReader;
-        ///Field `TMR_IE_DATA_ACT` writer - RW, enable interrupt for timer capture input action or PWM trigger
-        pub type TMR_IE_DATA_ACT_W<'a, const O: u8> = crate::BitWriter<'a, TMR1_INTER_EN_SPEC, O>;
-        ///Field `TMR_IE_FIFO_HF` reader - RW, enable interrupt for timer FIFO half (capture fifo >=4 or PWM fifo less than 3)
-        pub type TMR_IE_FIFO_HF_R = crate::BitReader;
-        ///Field `TMR_IE_FIFO_HF` writer - RW, enable interrupt for timer FIFO half (capture fifo >=4 or PWM fifo less than 3)
-        pub type TMR_IE_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, TMR1_INTER_EN_SPEC, O>;
-        ///Field `TMR_IE_DMA_END` reader - RW, enable interrupt for timer1/2 DMA completion
-        pub type TMR_IE_DMA_END_R = crate::BitReader;
-        ///Field `TMR_IE_DMA_END` writer - RW, enable interrupt for timer1/2 DMA completion
-        pub type TMR_IE_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, TMR1_INTER_EN_SPEC, O>;
-        ///Field `TMR_IE_FIFO_OV` reader - RW, enable interrupt for timer FIFO overflow
-        pub type TMR_IE_FIFO_OV_R = crate::BitReader;
-        ///Field `TMR_IE_FIFO_OV` writer - RW, enable interrupt for timer FIFO overflow
-        pub type TMR_IE_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, TMR1_INTER_EN_SPEC, O>;
+        ///Field `IE_CYC_END` reader - RW, enable interrupt for timer capture count timeout or PWM cycle end
+        pub type IE_CYC_END_R = crate::BitReader;
+        ///Field `IE_CYC_END` writer - RW, enable interrupt for timer capture count timeout or PWM cycle end
+        pub type IE_CYC_END_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_DATA_ACT` reader - RW, enable interrupt for timer capture input action or PWM trigger
+        pub type IE_DATA_ACT_R = crate::BitReader;
+        ///Field `IE_DATA_ACT` writer - RW, enable interrupt for timer capture input action or PWM trigger
+        pub type IE_DATA_ACT_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_FIFO_HF` reader - RW, enable interrupt for timer FIFO half (capture fifo >=4 or PWM fifo less than 3)
+        pub type IE_FIFO_HF_R = crate::BitReader;
+        ///Field `IE_FIFO_HF` writer - RW, enable interrupt for timer FIFO half (capture fifo >=4 or PWM fifo less than 3)
+        pub type IE_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_DMA_END` reader - RW, enable interrupt for timer1/2 DMA completion
+        pub type IE_DMA_END_R = crate::BitReader;
+        ///Field `IE_DMA_END` writer - RW, enable interrupt for timer1/2 DMA completion
+        pub type IE_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_FIFO_OV` reader - RW, enable interrupt for timer FIFO overflow
+        pub type IE_FIFO_OV_R = crate::BitReader;
+        ///Field `IE_FIFO_OV` writer - RW, enable interrupt for timer FIFO overflow
+        pub type IE_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
         impl R {
             ///Bit 0 - RW, enable interrupt for timer capture count timeout or PWM cycle end
             #[inline(always)]
-            pub fn tmr_ie_cyc_end(&self) -> TMR_IE_CYC_END_R {
-                TMR_IE_CYC_END_R::new((self.bits & 1) != 0)
+            pub fn ie_cyc_end(&self) -> IE_CYC_END_R {
+                IE_CYC_END_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW, enable interrupt for timer capture input action or PWM trigger
             #[inline(always)]
-            pub fn tmr_ie_data_act(&self) -> TMR_IE_DATA_ACT_R {
-                TMR_IE_DATA_ACT_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn ie_data_act(&self) -> IE_DATA_ACT_R {
+                IE_DATA_ACT_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW, enable interrupt for timer FIFO half (capture fifo >=4 or PWM fifo less than 3)
             #[inline(always)]
-            pub fn tmr_ie_fifo_hf(&self) -> TMR_IE_FIFO_HF_R {
-                TMR_IE_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn ie_fifo_hf(&self) -> IE_FIFO_HF_R {
+                IE_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW, enable interrupt for timer1/2 DMA completion
             #[inline(always)]
-            pub fn tmr_ie_dma_end(&self) -> TMR_IE_DMA_END_R {
-                TMR_IE_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn ie_dma_end(&self) -> IE_DMA_END_R {
+                IE_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RW, enable interrupt for timer FIFO overflow
             #[inline(always)]
-            pub fn tmr_ie_fifo_ov(&self) -> TMR_IE_FIFO_OV_R {
-                TMR_IE_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn ie_fifo_ov(&self) -> IE_FIFO_OV_R {
+                IE_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW, enable interrupt for timer capture count timeout or PWM cycle end
             #[inline(always)]
             #[must_use]
-            pub fn tmr_ie_cyc_end(&mut self) -> TMR_IE_CYC_END_W<0> {
-                TMR_IE_CYC_END_W::new(self)
+            pub fn ie_cyc_end(&mut self) -> IE_CYC_END_W<0> {
+                IE_CYC_END_W::new(self)
             }
             ///Bit 1 - RW, enable interrupt for timer capture input action or PWM trigger
             #[inline(always)]
             #[must_use]
-            pub fn tmr_ie_data_act(&mut self) -> TMR_IE_DATA_ACT_W<1> {
-                TMR_IE_DATA_ACT_W::new(self)
+            pub fn ie_data_act(&mut self) -> IE_DATA_ACT_W<1> {
+                IE_DATA_ACT_W::new(self)
             }
             ///Bit 2 - RW, enable interrupt for timer FIFO half (capture fifo >=4 or PWM fifo less than 3)
             #[inline(always)]
             #[must_use]
-            pub fn tmr_ie_fifo_hf(&mut self) -> TMR_IE_FIFO_HF_W<2> {
-                TMR_IE_FIFO_HF_W::new(self)
+            pub fn ie_fifo_hf(&mut self) -> IE_FIFO_HF_W<2> {
+                IE_FIFO_HF_W::new(self)
             }
             ///Bit 3 - RW, enable interrupt for timer1/2 DMA completion
             #[inline(always)]
             #[must_use]
-            pub fn tmr_ie_dma_end(&mut self) -> TMR_IE_DMA_END_W<3> {
-                TMR_IE_DMA_END_W::new(self)
+            pub fn ie_dma_end(&mut self) -> IE_DMA_END_W<3> {
+                IE_DMA_END_W::new(self)
             }
             ///Bit 4 - RW, enable interrupt for timer FIFO overflow
             #[inline(always)]
             #[must_use]
-            pub fn tmr_ie_fifo_ov(&mut self) -> TMR_IE_FIFO_OV_W<4> {
-                TMR_IE_FIFO_OV_W::new(self)
+            pub fn ie_fifo_ov(&mut self) -> IE_FIFO_OV_W<4> {
+                IE_FIFO_OV_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -8980,49 +9013,49 @@ pub mod tmr1 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr1_inter_en](index.html) module
-        pub struct TMR1_INTER_EN_SPEC;
-        impl crate::RegisterSpec for TMR1_INTER_EN_SPEC {
+        ///For information about available fields see [inter_en](index.html) module
+        pub struct INTER_EN_SPEC;
+        impl crate::RegisterSpec for INTER_EN_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [tmr1_inter_en::R](R) reader structure
-        impl crate::Readable for TMR1_INTER_EN_SPEC {
+        ///`read()` method returns [inter_en::R](R) reader structure
+        impl crate::Readable for INTER_EN_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [tmr1_inter_en::W](W) writer structure
-        impl crate::Writable for TMR1_INTER_EN_SPEC {
+        ///`write(|w| ..)` method takes [inter_en::W](W) writer structure
+        impl crate::Writable for INTER_EN_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets TMR1_INTER_EN to value 0
-        impl crate::Resettable for TMR1_INTER_EN_SPEC {
+        ///`reset()` method sets INTER_EN to value 0
+        impl crate::Resettable for INTER_EN_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///TMR1_INT_FLAG (rw) register accessor: an alias for `Reg<TMR1_INT_FLAG_SPEC>`
-    pub type TMR1_INT_FLAG = crate::Reg<tmr1_int_flag::TMR1_INT_FLAG_SPEC>;
+    ///INT_FLAG (rw) register accessor: an alias for `Reg<INT_FLAG_SPEC>`
+    pub type INT_FLAG = crate::Reg<int_flag::INT_FLAG_SPEC>;
     ///RW1, TMR1 interrupt flag
-    pub mod tmr1_int_flag {
-        ///Register `TMR1_INT_FLAG` reader
-        pub struct R(crate::R<TMR1_INT_FLAG_SPEC>);
+    pub mod int_flag {
+        ///Register `INT_FLAG` reader
+        pub struct R(crate::R<INT_FLAG_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR1_INT_FLAG_SPEC>;
+            type Target = crate::R<INT_FLAG_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR1_INT_FLAG_SPEC>> for R {
+        impl From<crate::R<INT_FLAG_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR1_INT_FLAG_SPEC>) -> Self {
+            fn from(reader: crate::R<INT_FLAG_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `TMR1_INT_FLAG` writer
-        pub struct W(crate::W<TMR1_INT_FLAG_SPEC>);
+        ///Register `INT_FLAG` writer
+        pub struct W(crate::W<INT_FLAG_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<TMR1_INT_FLAG_SPEC>;
+            type Target = crate::W<INT_FLAG_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -9034,89 +9067,89 @@ pub mod tmr1 {
                 &mut self.0
             }
         }
-        impl From<crate::W<TMR1_INT_FLAG_SPEC>> for W {
+        impl From<crate::W<INT_FLAG_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<TMR1_INT_FLAG_SPEC>) -> Self {
+            fn from(writer: crate::W<INT_FLAG_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `TMR_IF_CYC_END` reader - RW1, interrupt flag for timer capture count timeout or PWM cycle end
-        pub type TMR_IF_CYC_END_R = crate::BitReader;
-        ///Field `TMR_IF_CYC_END` writer - RW1, interrupt flag for timer capture count timeout or PWM cycle end
-        pub type TMR_IF_CYC_END_W<'a, const O: u8> = crate::BitWriter<'a, TMR1_INT_FLAG_SPEC, O>;
-        ///Field `TMR_IF_DATA_ACT` reader - RW1, interrupt flag for timer capture input action or PWM trigger
-        pub type TMR_IF_DATA_ACT_R = crate::BitReader;
-        ///Field `TMR_IF_DATA_ACT` writer - RW1, interrupt flag for timer capture input action or PWM trigger
-        pub type TMR_IF_DATA_ACT_W<'a, const O: u8> = crate::BitWriter<'a, TMR1_INT_FLAG_SPEC, O>;
-        ///Field `TMR_IF_FIFO_HF` reader - RW1, interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo less than 3
-        pub type TMR_IF_FIFO_HF_R = crate::BitReader;
-        ///Field `TMR_IF_FIFO_HF` writer - RW1, interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo less than 3
-        pub type TMR_IF_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, TMR1_INT_FLAG_SPEC, O>;
-        ///Field `TMR_IF_DMA_END` reader - RW1, interrupt flag for timer1/2 DMA completion
-        pub type TMR_IF_DMA_END_R = crate::BitReader;
-        ///Field `TMR_IF_DMA_END` writer - RW1, interrupt flag for timer1/2 DMA completion
-        pub type TMR_IF_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, TMR1_INT_FLAG_SPEC, O>;
-        ///Field `TMR_IF_FIFO_OV` reader - RW1, interrupt flag for timer FIFO overflow
-        pub type TMR_IF_FIFO_OV_R = crate::BitReader;
-        ///Field `TMR_IF_FIFO_OV` writer - RW1, interrupt flag for timer FIFO overflow
-        pub type TMR_IF_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, TMR1_INT_FLAG_SPEC, O>;
+        ///Field `IF_CYC_END` reader - RW1, interrupt flag for timer capture count timeout or PWM cycle end
+        pub type IF_CYC_END_R = crate::BitReader;
+        ///Field `IF_CYC_END` writer - RW1, interrupt flag for timer capture count timeout or PWM cycle end
+        pub type IF_CYC_END_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_DATA_ACT` reader - RW1, interrupt flag for timer capture input action or PWM trigger
+        pub type IF_DATA_ACT_R = crate::BitReader;
+        ///Field `IF_DATA_ACT` writer - RW1, interrupt flag for timer capture input action or PWM trigger
+        pub type IF_DATA_ACT_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_FIFO_HF` reader - RW1, interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo less than 3
+        pub type IF_FIFO_HF_R = crate::BitReader;
+        ///Field `IF_FIFO_HF` writer - RW1, interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo less than 3
+        pub type IF_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_DMA_END` reader - RW1, interrupt flag for timer1/2 DMA completion
+        pub type IF_DMA_END_R = crate::BitReader;
+        ///Field `IF_DMA_END` writer - RW1, interrupt flag for timer1/2 DMA completion
+        pub type IF_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_FIFO_OV` reader - RW1, interrupt flag for timer FIFO overflow
+        pub type IF_FIFO_OV_R = crate::BitReader;
+        ///Field `IF_FIFO_OV` writer - RW1, interrupt flag for timer FIFO overflow
+        pub type IF_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
         impl R {
             ///Bit 0 - RW1, interrupt flag for timer capture count timeout or PWM cycle end
             #[inline(always)]
-            pub fn tmr_if_cyc_end(&self) -> TMR_IF_CYC_END_R {
-                TMR_IF_CYC_END_R::new((self.bits & 1) != 0)
+            pub fn if_cyc_end(&self) -> IF_CYC_END_R {
+                IF_CYC_END_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW1, interrupt flag for timer capture input action or PWM trigger
             #[inline(always)]
-            pub fn tmr_if_data_act(&self) -> TMR_IF_DATA_ACT_R {
-                TMR_IF_DATA_ACT_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn if_data_act(&self) -> IF_DATA_ACT_R {
+                IF_DATA_ACT_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW1, interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo less than 3
             #[inline(always)]
-            pub fn tmr_if_fifo_hf(&self) -> TMR_IF_FIFO_HF_R {
-                TMR_IF_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn if_fifo_hf(&self) -> IF_FIFO_HF_R {
+                IF_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW1, interrupt flag for timer1/2 DMA completion
             #[inline(always)]
-            pub fn tmr_if_dma_end(&self) -> TMR_IF_DMA_END_R {
-                TMR_IF_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn if_dma_end(&self) -> IF_DMA_END_R {
+                IF_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RW1, interrupt flag for timer FIFO overflow
             #[inline(always)]
-            pub fn tmr_if_fifo_ov(&self) -> TMR_IF_FIFO_OV_R {
-                TMR_IF_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn if_fifo_ov(&self) -> IF_FIFO_OV_R {
+                IF_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW1, interrupt flag for timer capture count timeout or PWM cycle end
             #[inline(always)]
             #[must_use]
-            pub fn tmr_if_cyc_end(&mut self) -> TMR_IF_CYC_END_W<0> {
-                TMR_IF_CYC_END_W::new(self)
+            pub fn if_cyc_end(&mut self) -> IF_CYC_END_W<0> {
+                IF_CYC_END_W::new(self)
             }
             ///Bit 1 - RW1, interrupt flag for timer capture input action or PWM trigger
             #[inline(always)]
             #[must_use]
-            pub fn tmr_if_data_act(&mut self) -> TMR_IF_DATA_ACT_W<1> {
-                TMR_IF_DATA_ACT_W::new(self)
+            pub fn if_data_act(&mut self) -> IF_DATA_ACT_W<1> {
+                IF_DATA_ACT_W::new(self)
             }
             ///Bit 2 - RW1, interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo less than 3
             #[inline(always)]
             #[must_use]
-            pub fn tmr_if_fifo_hf(&mut self) -> TMR_IF_FIFO_HF_W<2> {
-                TMR_IF_FIFO_HF_W::new(self)
+            pub fn if_fifo_hf(&mut self) -> IF_FIFO_HF_W<2> {
+                IF_FIFO_HF_W::new(self)
             }
             ///Bit 3 - RW1, interrupt flag for timer1/2 DMA completion
             #[inline(always)]
             #[must_use]
-            pub fn tmr_if_dma_end(&mut self) -> TMR_IF_DMA_END_W<3> {
-                TMR_IF_DMA_END_W::new(self)
+            pub fn if_dma_end(&mut self) -> IF_DMA_END_W<3> {
+                IF_DMA_END_W::new(self)
             }
             ///Bit 4 - RW1, interrupt flag for timer FIFO overflow
             #[inline(always)]
             #[must_use]
-            pub fn tmr_if_fifo_ov(&mut self) -> TMR_IF_FIFO_OV_W<4> {
-                TMR_IF_FIFO_OV_W::new(self)
+            pub fn if_fifo_ov(&mut self) -> IF_FIFO_OV_W<4> {
+                IF_FIFO_OV_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -9129,141 +9162,141 @@ pub mod tmr1 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr1_int_flag](index.html) module
-        pub struct TMR1_INT_FLAG_SPEC;
-        impl crate::RegisterSpec for TMR1_INT_FLAG_SPEC {
+        ///For information about available fields see [int_flag](index.html) module
+        pub struct INT_FLAG_SPEC;
+        impl crate::RegisterSpec for INT_FLAG_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [tmr1_int_flag::R](R) reader structure
-        impl crate::Readable for TMR1_INT_FLAG_SPEC {
+        ///`read()` method returns [int_flag::R](R) reader structure
+        impl crate::Readable for INT_FLAG_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [tmr1_int_flag::W](W) writer structure
-        impl crate::Writable for TMR1_INT_FLAG_SPEC {
+        ///`write(|w| ..)` method takes [int_flag::W](W) writer structure
+        impl crate::Writable for INT_FLAG_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets TMR1_INT_FLAG to value 0
-        impl crate::Resettable for TMR1_INT_FLAG_SPEC {
+        ///`reset()` method sets INT_FLAG to value 0
+        impl crate::Resettable for INT_FLAG_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///TMR1_FIFO_COUNT (r) register accessor: an alias for `Reg<TMR1_FIFO_COUNT_SPEC>`
-    pub type TMR1_FIFO_COUNT = crate::Reg<tmr1_fifo_count::TMR1_FIFO_COUNT_SPEC>;
+    ///FIFO_COUNT (r) register accessor: an alias for `Reg<FIFO_COUNT_SPEC>`
+    pub type FIFO_COUNT = crate::Reg<fifo_count::FIFO_COUNT_SPEC>;
     ///RO, TMR1 FIFO count status
-    pub mod tmr1_fifo_count {
-        ///Register `TMR1_FIFO_COUNT` reader
-        pub struct R(crate::R<TMR1_FIFO_COUNT_SPEC>);
+    pub mod fifo_count {
+        ///Register `FIFO_COUNT` reader
+        pub struct R(crate::R<FIFO_COUNT_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR1_FIFO_COUNT_SPEC>;
+            type Target = crate::R<FIFO_COUNT_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR1_FIFO_COUNT_SPEC>> for R {
+        impl From<crate::R<FIFO_COUNT_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR1_FIFO_COUNT_SPEC>) -> Self {
+            fn from(reader: crate::R<FIFO_COUNT_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `TMR1_FIFO_COUNT` reader - RW1, TMR1 FIFO count status
-        pub type TMR1_FIFO_COUNT_R = crate::FieldReader;
+        ///Field `FIFO_COUNT` reader - RW1, TMR1 FIFO count status
+        pub type FIFO_COUNT_R = crate::FieldReader;
         impl R {
             ///Bits 0:3 - RW1, TMR1 FIFO count status
             #[inline(always)]
-            pub fn tmr1_fifo_count(&self) -> TMR1_FIFO_COUNT_R {
-                TMR1_FIFO_COUNT_R::new(self.bits & 0x0f)
+            pub fn fifo_count(&self) -> FIFO_COUNT_R {
+                FIFO_COUNT_R::new(self.bits & 0x0f)
             }
         }
         ///RO, TMR1 FIFO count status
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr1_fifo_count](index.html) module
-        pub struct TMR1_FIFO_COUNT_SPEC;
-        impl crate::RegisterSpec for TMR1_FIFO_COUNT_SPEC {
+        ///For information about available fields see [fifo_count](index.html) module
+        pub struct FIFO_COUNT_SPEC;
+        impl crate::RegisterSpec for FIFO_COUNT_SPEC {
             type Ux = u8;
         }
-        ///`read()` method returns [tmr1_fifo_count::R](R) reader structure
-        impl crate::Readable for TMR1_FIFO_COUNT_SPEC {
+        ///`read()` method returns [fifo_count::R](R) reader structure
+        impl crate::Readable for FIFO_COUNT_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets TMR1_FIFO_COUNT to value 0
-        impl crate::Resettable for TMR1_FIFO_COUNT_SPEC {
+        ///`reset()` method sets FIFO_COUNT to value 0
+        impl crate::Resettable for FIFO_COUNT_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///TMR1_COUNT (r) register accessor: an alias for `Reg<TMR1_COUNT_SPEC>`
-    pub type TMR1_COUNT = crate::Reg<tmr1_count::TMR1_COUNT_SPEC>;
+    ///COUNT (r) register accessor: an alias for `Reg<COUNT_SPEC>`
+    pub type COUNT = crate::Reg<count::COUNT_SPEC>;
     ///RO, TMR1 current count
-    pub mod tmr1_count {
-        ///Register `TMR1_COUNT` reader
-        pub struct R(crate::R<TMR1_COUNT_SPEC>);
+    pub mod count {
+        ///Register `COUNT` reader
+        pub struct R(crate::R<COUNT_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR1_COUNT_SPEC>;
+            type Target = crate::R<COUNT_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR1_COUNT_SPEC>> for R {
+        impl From<crate::R<COUNT_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR1_COUNT_SPEC>) -> Self {
+            fn from(reader: crate::R<COUNT_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `TMR1_COUNT` reader - RW1,TMR1 current count
-        pub type TMR1_COUNT_R = crate::FieldReader<u32>;
+        ///Field `COUNT` reader - RW1,TMR1 current count
+        pub type COUNT_R = crate::FieldReader<u32>;
         impl R {
             ///Bits 0:25 - RW1,TMR1 current count
             #[inline(always)]
-            pub fn tmr1_count(&self) -> TMR1_COUNT_R {
-                TMR1_COUNT_R::new(self.bits & 0x03ff_ffff)
+            pub fn count(&self) -> COUNT_R {
+                COUNT_R::new(self.bits & 0x03ff_ffff)
             }
         }
         ///RO, TMR1 current count
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr1_count](index.html) module
-        pub struct TMR1_COUNT_SPEC;
-        impl crate::RegisterSpec for TMR1_COUNT_SPEC {
+        ///For information about available fields see [count](index.html) module
+        pub struct COUNT_SPEC;
+        impl crate::RegisterSpec for COUNT_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [tmr1_count::R](R) reader structure
-        impl crate::Readable for TMR1_COUNT_SPEC {
+        ///`read()` method returns [count::R](R) reader structure
+        impl crate::Readable for COUNT_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets TMR1_COUNT to value 0
-        impl crate::Resettable for TMR1_COUNT_SPEC {
+        ///`reset()` method sets COUNT to value 0
+        impl crate::Resettable for COUNT_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///TMR1_CNT_END (rw) register accessor: an alias for `Reg<TMR1_CNT_END_SPEC>`
-    pub type TMR1_CNT_END = crate::Reg<tmr1_cnt_end::TMR1_CNT_END_SPEC>;
+    ///CNT_END (rw) register accessor: an alias for `Reg<CNT_END_SPEC>`
+    pub type CNT_END = crate::Reg<cnt_end::CNT_END_SPEC>;
     ///RW, TMR1 end count value, only low 26 bit
-    pub mod tmr1_cnt_end {
-        ///Register `TMR1_CNT_END` reader
-        pub struct R(crate::R<TMR1_CNT_END_SPEC>);
+    pub mod cnt_end {
+        ///Register `CNT_END` reader
+        pub struct R(crate::R<CNT_END_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR1_CNT_END_SPEC>;
+            type Target = crate::R<CNT_END_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR1_CNT_END_SPEC>> for R {
+        impl From<crate::R<CNT_END_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR1_CNT_END_SPEC>) -> Self {
+            fn from(reader: crate::R<CNT_END_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `TMR1_CNT_END` writer
-        pub struct W(crate::W<TMR1_CNT_END_SPEC>);
+        ///Register `CNT_END` writer
+        pub struct W(crate::W<CNT_END_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<TMR1_CNT_END_SPEC>;
+            type Target = crate::W<CNT_END_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -9275,30 +9308,29 @@ pub mod tmr1 {
                 &mut self.0
             }
         }
-        impl From<crate::W<TMR1_CNT_END_SPEC>> for W {
+        impl From<crate::W<CNT_END_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<TMR1_CNT_END_SPEC>) -> Self {
+            fn from(writer: crate::W<CNT_END_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `TMR1_CNT_END` reader - RW1,TMR1 end count value,
-        pub type TMR1_CNT_END_R = crate::FieldReader<u32>;
-        ///Field `TMR1_CNT_END` writer - RW1,TMR1 end count value,
-        pub type TMR1_CNT_END_W<'a, const O: u8> =
-            crate::FieldWriter<'a, TMR1_CNT_END_SPEC, 32, O, u32>;
+        ///Field `CNT_END` reader - RW1,TMR1 end count value,
+        pub type CNT_END_R = crate::FieldReader<u32>;
+        ///Field `CNT_END` writer - RW1,TMR1 end count value,
+        pub type CNT_END_W<'a, const O: u8> = crate::FieldWriter<'a, CNT_END_SPEC, 32, O, u32>;
         impl R {
             ///Bits 0:31 - RW1,TMR1 end count value,
             #[inline(always)]
-            pub fn tmr1_cnt_end(&self) -> TMR1_CNT_END_R {
-                TMR1_CNT_END_R::new(self.bits)
+            pub fn cnt_end(&self) -> CNT_END_R {
+                CNT_END_R::new(self.bits)
             }
         }
         impl W {
             ///Bits 0:31 - RW1,TMR1 end count value,
             #[inline(always)]
             #[must_use]
-            pub fn tmr1_cnt_end(&mut self) -> TMR1_CNT_END_W<0> {
-                TMR1_CNT_END_W::new(self)
+            pub fn cnt_end(&mut self) -> CNT_END_W<0> {
+                CNT_END_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -9311,141 +9343,141 @@ pub mod tmr1 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr1_cnt_end](index.html) module
-        pub struct TMR1_CNT_END_SPEC;
-        impl crate::RegisterSpec for TMR1_CNT_END_SPEC {
+        ///For information about available fields see [cnt_end](index.html) module
+        pub struct CNT_END_SPEC;
+        impl crate::RegisterSpec for CNT_END_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [tmr1_cnt_end::R](R) reader structure
-        impl crate::Readable for TMR1_CNT_END_SPEC {
+        ///`read()` method returns [cnt_end::R](R) reader structure
+        impl crate::Readable for CNT_END_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [tmr1_cnt_end::W](W) writer structure
-        impl crate::Writable for TMR1_CNT_END_SPEC {
+        ///`write(|w| ..)` method takes [cnt_end::W](W) writer structure
+        impl crate::Writable for CNT_END_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets TMR1_CNT_END to value 0
-        impl crate::Resettable for TMR1_CNT_END_SPEC {
+        ///`reset()` method sets CNT_END to value 0
+        impl crate::Resettable for CNT_END_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///TMR1_FIFO (r) register accessor: an alias for `Reg<TMR1_FIFO_SPEC>`
-    pub type TMR1_FIFO = crate::Reg<tmr1_fifo::TMR1_FIFO_SPEC>;
+    ///FIFO (r) register accessor: an alias for `Reg<FIFO_SPEC>`
+    pub type FIFO = crate::Reg<fifo::FIFO_SPEC>;
     ///RO, TMR1 FIFO register, only low 26 bit
-    pub mod tmr1_fifo {
-        ///Register `TMR1_FIFO` reader
-        pub struct R(crate::R<TMR1_FIFO_SPEC>);
+    pub mod fifo {
+        ///Register `FIFO` reader
+        pub struct R(crate::R<FIFO_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR1_FIFO_SPEC>;
+            type Target = crate::R<FIFO_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR1_FIFO_SPEC>> for R {
+        impl From<crate::R<FIFO_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR1_FIFO_SPEC>) -> Self {
+            fn from(reader: crate::R<FIFO_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `TMR1_FIFO` reader - RW1,TMR1 FIFO register
-        pub type TMR1_FIFO_R = crate::FieldReader<u32>;
+        ///Field `FIFO` reader - RW1,TMR1 FIFO register
+        pub type FIFO_R = crate::FieldReader<u32>;
         impl R {
             ///Bits 0:31 - RW1,TMR1 FIFO register
             #[inline(always)]
-            pub fn tmr1_fifo(&self) -> TMR1_FIFO_R {
-                TMR1_FIFO_R::new(self.bits)
+            pub fn fifo(&self) -> FIFO_R {
+                FIFO_R::new(self.bits)
             }
         }
         ///RO, TMR1 FIFO register, only low 26 bit
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr1_fifo](index.html) module
-        pub struct TMR1_FIFO_SPEC;
-        impl crate::RegisterSpec for TMR1_FIFO_SPEC {
+        ///For information about available fields see [fifo](index.html) module
+        pub struct FIFO_SPEC;
+        impl crate::RegisterSpec for FIFO_SPEC {
             type Ux = u32;
         }
-        ///`read()` method returns [tmr1_fifo::R](R) reader structure
-        impl crate::Readable for TMR1_FIFO_SPEC {
+        ///`read()` method returns [fifo::R](R) reader structure
+        impl crate::Readable for FIFO_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets TMR1_FIFO to value 0
-        impl crate::Resettable for TMR1_FIFO_SPEC {
+        ///`reset()` method sets FIFO to value 0
+        impl crate::Resettable for FIFO_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///TMR1_DMA_NOW (r) register accessor: an alias for `Reg<TMR1_DMA_NOW_SPEC>`
-    pub type TMR1_DMA_NOW = crate::Reg<tmr1_dma_now::TMR1_DMA_NOW_SPEC>;
+    ///DMA_NOW (r) register accessor: an alias for `Reg<DMA_NOW_SPEC>`
+    pub type DMA_NOW = crate::Reg<dma_now::DMA_NOW_SPEC>;
     ///RO, TMR1 DMA current address
-    pub mod tmr1_dma_now {
-        ///Register `TMR1_DMA_NOW` reader
-        pub struct R(crate::R<TMR1_DMA_NOW_SPEC>);
+    pub mod dma_now {
+        ///Register `DMA_NOW` reader
+        pub struct R(crate::R<DMA_NOW_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR1_DMA_NOW_SPEC>;
+            type Target = crate::R<DMA_NOW_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR1_DMA_NOW_SPEC>> for R {
+        impl From<crate::R<DMA_NOW_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR1_DMA_NOW_SPEC>) -> Self {
+            fn from(reader: crate::R<DMA_NOW_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Field `TMR1_DMA_NOW` reader - RO,DMA data buffer current address
-        pub type TMR1_DMA_NOW_R = crate::FieldReader<u16>;
+        ///Field `DMA_NOW` reader - RO,DMA data buffer current address
+        pub type DMA_NOW_R = crate::FieldReader<u16>;
         impl R {
             ///Bits 2:14 - RO,DMA data buffer current address
             #[inline(always)]
-            pub fn tmr1_dma_now(&self) -> TMR1_DMA_NOW_R {
-                TMR1_DMA_NOW_R::new((self.bits >> 2) & 0x1fff)
+            pub fn dma_now(&self) -> DMA_NOW_R {
+                DMA_NOW_R::new((self.bits >> 2) & 0x1fff)
             }
         }
         ///RO, TMR1 DMA current address
         ///
         ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr1_dma_now](index.html) module
-        pub struct TMR1_DMA_NOW_SPEC;
-        impl crate::RegisterSpec for TMR1_DMA_NOW_SPEC {
+        ///For information about available fields see [dma_now](index.html) module
+        pub struct DMA_NOW_SPEC;
+        impl crate::RegisterSpec for DMA_NOW_SPEC {
             type Ux = u16;
         }
-        ///`read()` method returns [tmr1_dma_now::R](R) reader structure
-        impl crate::Readable for TMR1_DMA_NOW_SPEC {
+        ///`read()` method returns [dma_now::R](R) reader structure
+        impl crate::Readable for DMA_NOW_SPEC {
             type Reader = R;
         }
-        ///`reset()` method sets TMR1_DMA_NOW to value 0
-        impl crate::Resettable for TMR1_DMA_NOW_SPEC {
+        ///`reset()` method sets DMA_NOW to value 0
+        impl crate::Resettable for DMA_NOW_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///TMR1_DMA_BEG (rw) register accessor: an alias for `Reg<TMR1_DMA_BEG_SPEC>`
-    pub type TMR1_DMA_BEG = crate::Reg<tmr1_dma_beg::TMR1_DMA_BEG_SPEC>;
+    ///DMA_BEG (rw) register accessor: an alias for `Reg<DMA_BEG_SPEC>`
+    pub type DMA_BEG = crate::Reg<dma_beg::DMA_BEG_SPEC>;
     ///RW, TMR1 DMA begin address
-    pub mod tmr1_dma_beg {
-        ///Register `TMR1_DMA_BEG` reader
-        pub struct R(crate::R<TMR1_DMA_BEG_SPEC>);
+    pub mod dma_beg {
+        ///Register `DMA_BEG` reader
+        pub struct R(crate::R<DMA_BEG_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR1_DMA_BEG_SPEC>;
+            type Target = crate::R<DMA_BEG_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR1_DMA_BEG_SPEC>> for R {
+        impl From<crate::R<DMA_BEG_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR1_DMA_BEG_SPEC>) -> Self {
+            fn from(reader: crate::R<DMA_BEG_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `TMR1_DMA_BEG` writer
-        pub struct W(crate::W<TMR1_DMA_BEG_SPEC>);
+        ///Register `DMA_BEG` writer
+        pub struct W(crate::W<DMA_BEG_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<TMR1_DMA_BEG_SPEC>;
+            type Target = crate::W<DMA_BEG_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -9457,30 +9489,29 @@ pub mod tmr1 {
                 &mut self.0
             }
         }
-        impl From<crate::W<TMR1_DMA_BEG_SPEC>> for W {
+        impl From<crate::W<DMA_BEG_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<TMR1_DMA_BEG_SPEC>) -> Self {
+            fn from(writer: crate::W<DMA_BEG_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `TMR1_DMA_BEG` reader - RW,TMR1 DMA data buffer start address
-        pub type TMR1_DMA_BEG_R = crate::FieldReader<u16>;
-        ///Field `TMR1_DMA_BEG` writer - RW,TMR1 DMA data buffer start address
-        pub type TMR1_DMA_BEG_W<'a, const O: u8> =
-            crate::FieldWriter<'a, TMR1_DMA_BEG_SPEC, 13, O, u16>;
+        ///Field `DMA_BEG` reader - RW,TMR1 DMA data buffer start address
+        pub type DMA_BEG_R = crate::FieldReader<u16>;
+        ///Field `DMA_BEG` writer - RW,TMR1 DMA data buffer start address
+        pub type DMA_BEG_W<'a, const O: u8> = crate::FieldWriter<'a, DMA_BEG_SPEC, 13, O, u16>;
         impl R {
             ///Bits 2:14 - RW,TMR1 DMA data buffer start address
             #[inline(always)]
-            pub fn tmr1_dma_beg(&self) -> TMR1_DMA_BEG_R {
-                TMR1_DMA_BEG_R::new((self.bits >> 2) & 0x1fff)
+            pub fn dma_beg(&self) -> DMA_BEG_R {
+                DMA_BEG_R::new((self.bits >> 2) & 0x1fff)
             }
         }
         impl W {
             ///Bits 2:14 - RW,TMR1 DMA data buffer start address
             #[inline(always)]
             #[must_use]
-            pub fn tmr1_dma_beg(&mut self) -> TMR1_DMA_BEG_W<2> {
-                TMR1_DMA_BEG_W::new(self)
+            pub fn dma_beg(&mut self) -> DMA_BEG_W<2> {
+                DMA_BEG_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -9493,49 +9524,49 @@ pub mod tmr1 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr1_dma_beg](index.html) module
-        pub struct TMR1_DMA_BEG_SPEC;
-        impl crate::RegisterSpec for TMR1_DMA_BEG_SPEC {
+        ///For information about available fields see [dma_beg](index.html) module
+        pub struct DMA_BEG_SPEC;
+        impl crate::RegisterSpec for DMA_BEG_SPEC {
             type Ux = u16;
         }
-        ///`read()` method returns [tmr1_dma_beg::R](R) reader structure
-        impl crate::Readable for TMR1_DMA_BEG_SPEC {
+        ///`read()` method returns [dma_beg::R](R) reader structure
+        impl crate::Readable for DMA_BEG_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [tmr1_dma_beg::W](W) writer structure
-        impl crate::Writable for TMR1_DMA_BEG_SPEC {
+        ///`write(|w| ..)` method takes [dma_beg::W](W) writer structure
+        impl crate::Writable for DMA_BEG_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets TMR1_DMA_BEG to value 0
-        impl crate::Resettable for TMR1_DMA_BEG_SPEC {
+        ///`reset()` method sets DMA_BEG to value 0
+        impl crate::Resettable for DMA_BEG_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///TMR1_DMA_END (rw) register accessor: an alias for `Reg<TMR1_DMA_END_SPEC>`
-    pub type TMR1_DMA_END = crate::Reg<tmr1_dma_end::TMR1_DMA_END_SPEC>;
+    ///DMA_END (rw) register accessor: an alias for `Reg<DMA_END_SPEC>`
+    pub type DMA_END = crate::Reg<dma_end::DMA_END_SPEC>;
     ///RW, TMR1 DMA end address
-    pub mod tmr1_dma_end {
-        ///Register `TMR1_DMA_END` reader
-        pub struct R(crate::R<TMR1_DMA_END_SPEC>);
+    pub mod dma_end {
+        ///Register `DMA_END` reader
+        pub struct R(crate::R<DMA_END_SPEC>);
         impl core::ops::Deref for R {
-            type Target = crate::R<TMR1_DMA_END_SPEC>;
+            type Target = crate::R<DMA_END_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
             }
         }
-        impl From<crate::R<TMR1_DMA_END_SPEC>> for R {
+        impl From<crate::R<DMA_END_SPEC>> for R {
             #[inline(always)]
-            fn from(reader: crate::R<TMR1_DMA_END_SPEC>) -> Self {
+            fn from(reader: crate::R<DMA_END_SPEC>) -> Self {
                 R(reader)
             }
         }
-        ///Register `TMR1_DMA_END` writer
-        pub struct W(crate::W<TMR1_DMA_END_SPEC>);
+        ///Register `DMA_END` writer
+        pub struct W(crate::W<DMA_END_SPEC>);
         impl core::ops::Deref for W {
-            type Target = crate::W<TMR1_DMA_END_SPEC>;
+            type Target = crate::W<DMA_END_SPEC>;
             #[inline(always)]
             fn deref(&self) -> &Self::Target {
                 &self.0
@@ -9547,30 +9578,29 @@ pub mod tmr1 {
                 &mut self.0
             }
         }
-        impl From<crate::W<TMR1_DMA_END_SPEC>> for W {
+        impl From<crate::W<DMA_END_SPEC>> for W {
             #[inline(always)]
-            fn from(writer: crate::W<TMR1_DMA_END_SPEC>) -> Self {
+            fn from(writer: crate::W<DMA_END_SPEC>) -> Self {
                 W(writer)
             }
         }
-        ///Field `TMR1_DMA_END` reader - RW,DMA data buffer end address
-        pub type TMR1_DMA_END_R = crate::FieldReader<u16>;
-        ///Field `TMR1_DMA_END` writer - RW,DMA data buffer end address
-        pub type TMR1_DMA_END_W<'a, const O: u8> =
-            crate::FieldWriter<'a, TMR1_DMA_END_SPEC, 13, O, u16>;
+        ///Field `DMA_END` reader - RW,DMA data buffer end address
+        pub type DMA_END_R = crate::FieldReader<u16>;
+        ///Field `DMA_END` writer - RW,DMA data buffer end address
+        pub type DMA_END_W<'a, const O: u8> = crate::FieldWriter<'a, DMA_END_SPEC, 13, O, u16>;
         impl R {
             ///Bits 2:14 - RW,DMA data buffer end address
             #[inline(always)]
-            pub fn tmr1_dma_end(&self) -> TMR1_DMA_END_R {
-                TMR1_DMA_END_R::new((self.bits >> 2) & 0x1fff)
+            pub fn dma_end(&self) -> DMA_END_R {
+                DMA_END_R::new((self.bits >> 2) & 0x1fff)
             }
         }
         impl W {
             ///Bits 2:14 - RW,DMA data buffer end address
             #[inline(always)]
             #[must_use]
-            pub fn tmr1_dma_end(&mut self) -> TMR1_DMA_END_W<2> {
-                TMR1_DMA_END_W::new(self)
+            pub fn dma_end(&mut self) -> DMA_END_W<2> {
+                DMA_END_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -9583,23 +9613,23 @@ pub mod tmr1 {
         ///
         ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
-        ///For information about available fields see [tmr1_dma_end](index.html) module
-        pub struct TMR1_DMA_END_SPEC;
-        impl crate::RegisterSpec for TMR1_DMA_END_SPEC {
+        ///For information about available fields see [dma_end](index.html) module
+        pub struct DMA_END_SPEC;
+        impl crate::RegisterSpec for DMA_END_SPEC {
             type Ux = u16;
         }
-        ///`read()` method returns [tmr1_dma_end::R](R) reader structure
-        impl crate::Readable for TMR1_DMA_END_SPEC {
+        ///`read()` method returns [dma_end::R](R) reader structure
+        impl crate::Readable for DMA_END_SPEC {
             type Reader = R;
         }
-        ///`write(|w| ..)` method takes [tmr1_dma_end::W](W) writer structure
-        impl crate::Writable for TMR1_DMA_END_SPEC {
+        ///`write(|w| ..)` method takes [dma_end::W](W) writer structure
+        impl crate::Writable for DMA_END_SPEC {
             type Writer = W;
             const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
             const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
-        ///`reset()` method sets TMR1_DMA_END to value 0
-        impl crate::Resettable for TMR1_DMA_END_SPEC {
+        ///`reset()` method sets DMA_END to value 0
+        impl crate::Resettable for DMA_END_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
@@ -9611,15 +9641,15 @@ pub struct TMR2 {
 unsafe impl Send for TMR2 {}
 impl TMR2 {
     ///Pointer to the register block
-    pub const PTR: *const tmr2::RegisterBlock = 0x4000_2800 as *const _;
+    pub const PTR: *const tmr1::RegisterBlock = 0x4000_2800 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const tmr2::RegisterBlock {
+    pub const fn ptr() -> *const tmr1::RegisterBlock {
         Self::PTR
     }
 }
 impl Deref for TMR2 {
-    type Target = tmr2::RegisterBlock;
+    type Target = tmr1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -9631,1106 +9661,7 @@ impl core::fmt::Debug for TMR2 {
     }
 }
 ///Timer2 register
-pub mod tmr2 {
-    ///Register block
-    #[repr(C)]
-    pub struct RegisterBlock {
-        ///0x00 - RW, TMR2 mode control
-        pub tmr2_ctrl_mod: TMR2_CTRL_MOD,
-        ///0x01 - RW, TMR2 DMA control
-        pub tmr2_ctrl_dma: TMR2_CTRL_DMA,
-        ///0x02 - RW, TMR2 interrupt enable
-        pub tmr2_inter_en: TMR2_INTER_EN,
-        _reserved3: [u8; 0x03],
-        ///0x06 - RW1, TMR2 interrupt flag
-        pub tmr2_int_flag: TMR2_INT_FLAG,
-        ///0x07 - RO, TMR2 FIFO count status
-        pub tmr2_fifo_count: TMR2_FIFO_COUNT,
-        ///0x08 - RO, TMR2 current count
-        pub tmr2_count: TMR2_COUNT,
-        ///0x0c - RW, TMR2 end count value, only low 26 bit
-        pub tmr2_cnt_end: TMR2_CNT_END,
-        ///0x10 - RO, TMR2 FIFO register, only low 26 bit
-        pub tmr2_fifo: TMR2_FIFO,
-        ///0x14 - RO, TMR2 DMA current address
-        pub tmr2_dma_now: TMR2_DMA_NOW,
-        _reserved9: [u8; 0x02],
-        ///0x18 - RW, TMR2 DMA begin address
-        pub tmr2_dma_beg: TMR2_DMA_BEG,
-        _reserved10: [u8; 0x02],
-        ///0x1c - RW, TMR2 DMA end address
-        pub tmr2_dma_end: TMR2_DMA_END,
-    }
-    ///TMR2_CTRL_MOD (rw) register accessor: an alias for `Reg<TMR2_CTRL_MOD_SPEC>`
-    pub type TMR2_CTRL_MOD = crate::Reg<tmr2_ctrl_mod::TMR2_CTRL_MOD_SPEC>;
-    ///RW, TMR2 mode control
-    pub mod tmr2_ctrl_mod {
-        ///Register `TMR2_CTRL_MOD` reader
-        pub struct R(crate::R<TMR2_CTRL_MOD_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR2_CTRL_MOD_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR2_CTRL_MOD_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR2_CTRL_MOD_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `TMR2_CTRL_MOD` writer
-        pub struct W(crate::W<TMR2_CTRL_MOD_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<TMR2_CTRL_MOD_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<TMR2_CTRL_MOD_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<TMR2_CTRL_MOD_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `TMR_MODE_IN` reader - RW, timer in mode: 0=timer_PWM, 1=capture_count
-        pub type TMR_MODE_IN_R = crate::BitReader;
-        ///Field `TMR_MODE_IN` writer - RW, timer in mode: 0=timer_PWM, 1=capture_count
-        pub type TMR_MODE_IN_W<'a, const O: u8> = crate::BitWriter<'a, TMR2_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_ALL_CLEAR` reader - RW, force clear timer FIFO and count
-        pub type TMR_ALL_CLEAR_R = crate::BitReader;
-        ///Field `TMR_ALL_CLEAR` writer - RW, force clear timer FIFO and count
-        pub type TMR_ALL_CLEAR_W<'a, const O: u8> = crate::BitWriter<'a, TMR2_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_COUNT_EN` reader - RW, timer count enable
-        pub type TMR_COUNT_EN_R = crate::BitReader;
-        ///Field `TMR_COUNT_EN` writer - RW, timer count enable
-        pub type TMR_COUNT_EN_W<'a, const O: u8> = crate::BitWriter<'a, TMR2_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_OUT_EN` reader - RW, timer output enable
-        pub type TMR_OUT_EN_R = crate::BitReader;
-        ///Field `TMR_OUT_EN` writer - RW, timer output enable
-        pub type TMR_OUT_EN_W<'a, const O: u8> = crate::BitWriter<'a, TMR2_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_OUT_POLAR_RB_TMR_CAP_COUNT` reader - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
-        pub type TMR_OUT_POLAR_RB_TMR_CAP_COUNT_R = crate::BitReader;
-        ///Field `TMR_OUT_POLAR_RB_TMR_CAP_COUNT` writer - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
-        pub type TMR_OUT_POLAR_RB_TMR_CAP_COUNT_W<'a, const O: u8> =
-            crate::BitWriter<'a, TMR2_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_PWM_REPEAT_RB_TMR_CAP_EDGE` reader - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
-        pub type TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_R = crate::FieldReader;
-        ///Field `TMR_PWM_REPEAT_RB_TMR_CAP_EDGE` writer - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
-        pub type TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_W<'a, const O: u8> =
-            crate::FieldWriter<'a, TMR2_CTRL_MOD_SPEC, 2, O>;
-        impl R {
-            ///Bit 0 - RW, timer in mode: 0=timer_PWM, 1=capture_count
-            #[inline(always)]
-            pub fn tmr_mode_in(&self) -> TMR_MODE_IN_R {
-                TMR_MODE_IN_R::new((self.bits & 1) != 0)
-            }
-            ///Bit 1 - RW, force clear timer FIFO and count
-            #[inline(always)]
-            pub fn tmr_all_clear(&self) -> TMR_ALL_CLEAR_R {
-                TMR_ALL_CLEAR_R::new(((self.bits >> 1) & 1) != 0)
-            }
-            ///Bit 2 - RW, timer count enable
-            #[inline(always)]
-            pub fn tmr_count_en(&self) -> TMR_COUNT_EN_R {
-                TMR_COUNT_EN_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bit 3 - RW, timer output enable
-            #[inline(always)]
-            pub fn tmr_out_en(&self) -> TMR_OUT_EN_R {
-                TMR_OUT_EN_R::new(((self.bits >> 3) & 1) != 0)
-            }
-            ///Bit 4 - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
-            #[inline(always)]
-            pub fn tmr_out_polar_rb_tmr_cap_count(&self) -> TMR_OUT_POLAR_RB_TMR_CAP_COUNT_R {
-                TMR_OUT_POLAR_RB_TMR_CAP_COUNT_R::new(((self.bits >> 4) & 1) != 0)
-            }
-            ///Bits 6:7 - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
-            #[inline(always)]
-            pub fn tmr_pwm_repeat_rb_tmr_cap_edge(&self) -> TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_R {
-                TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_R::new((self.bits >> 6) & 3)
-            }
-        }
-        impl W {
-            ///Bit 0 - RW, timer in mode: 0=timer_PWM, 1=capture_count
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_mode_in(&mut self) -> TMR_MODE_IN_W<0> {
-                TMR_MODE_IN_W::new(self)
-            }
-            ///Bit 1 - RW, force clear timer FIFO and count
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_all_clear(&mut self) -> TMR_ALL_CLEAR_W<1> {
-                TMR_ALL_CLEAR_W::new(self)
-            }
-            ///Bit 2 - RW, timer count enable
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_count_en(&mut self) -> TMR_COUNT_EN_W<2> {
-                TMR_COUNT_EN_W::new(self)
-            }
-            ///Bit 3 - RW, timer output enable
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_out_en(&mut self) -> TMR_OUT_EN_W<3> {
-                TMR_OUT_EN_W::new(self)
-            }
-            ///Bit 4 - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_out_polar_rb_tmr_cap_count(
-                &mut self,
-            ) -> TMR_OUT_POLAR_RB_TMR_CAP_COUNT_W<4> {
-                TMR_OUT_POLAR_RB_TMR_CAP_COUNT_W::new(self)
-            }
-            ///Bits 6:7 - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_pwm_repeat_rb_tmr_cap_edge(
-                &mut self,
-            ) -> TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_W<6> {
-                TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, TMR2 mode control
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr2_ctrl_mod](index.html) module
-        pub struct TMR2_CTRL_MOD_SPEC;
-        impl crate::RegisterSpec for TMR2_CTRL_MOD_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [tmr2_ctrl_mod::R](R) reader structure
-        impl crate::Readable for TMR2_CTRL_MOD_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [tmr2_ctrl_mod::W](W) writer structure
-        impl crate::Writable for TMR2_CTRL_MOD_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets TMR2_CTRL_MOD to value 0x02
-        impl crate::Resettable for TMR2_CTRL_MOD_SPEC {
-            const RESET_VALUE: Self::Ux = 0x02;
-        }
-    }
-    ///TMR2_CTRL_DMA (rw) register accessor: an alias for `Reg<TMR2_CTRL_DMA_SPEC>`
-    pub type TMR2_CTRL_DMA = crate::Reg<tmr2_ctrl_dma::TMR2_CTRL_DMA_SPEC>;
-    ///RW, TMR2 DMA control
-    pub mod tmr2_ctrl_dma {
-        ///Register `TMR2_CTRL_DMA` reader
-        pub struct R(crate::R<TMR2_CTRL_DMA_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR2_CTRL_DMA_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR2_CTRL_DMA_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR2_CTRL_DMA_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `TMR2_CTRL_DMA` writer
-        pub struct W(crate::W<TMR2_CTRL_DMA_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<TMR2_CTRL_DMA_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<TMR2_CTRL_DMA_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<TMR2_CTRL_DMA_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `TMR_DMA_ENABLE` reader - RW, timer1_2 DMA enable
-        pub type TMR_DMA_ENABLE_R = crate::BitReader;
-        ///Field `TMR_DMA_ENABLE` writer - RW, timer1_2 DMA enable
-        pub type TMR_DMA_ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, TMR2_CTRL_DMA_SPEC, O>;
-        ///Field `TMR_DMA_LOOP` reader - RW, timer1_2 DMA address loop enable
-        pub type TMR_DMA_LOOP_R = crate::BitReader;
-        ///Field `TMR_DMA_LOOP` writer - RW, timer1_2 DMA address loop enable
-        pub type TMR_DMA_LOOP_W<'a, const O: u8> = crate::BitWriter<'a, TMR2_CTRL_DMA_SPEC, O>;
-        impl R {
-            ///Bit 0 - RW, timer1_2 DMA enable
-            #[inline(always)]
-            pub fn tmr_dma_enable(&self) -> TMR_DMA_ENABLE_R {
-                TMR_DMA_ENABLE_R::new((self.bits & 1) != 0)
-            }
-            ///Bit 2 - RW, timer1_2 DMA address loop enable
-            #[inline(always)]
-            pub fn tmr_dma_loop(&self) -> TMR_DMA_LOOP_R {
-                TMR_DMA_LOOP_R::new(((self.bits >> 2) & 1) != 0)
-            }
-        }
-        impl W {
-            ///Bit 0 - RW, timer1_2 DMA enable
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_dma_enable(&mut self) -> TMR_DMA_ENABLE_W<0> {
-                TMR_DMA_ENABLE_W::new(self)
-            }
-            ///Bit 2 - RW, timer1_2 DMA address loop enable
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_dma_loop(&mut self) -> TMR_DMA_LOOP_W<2> {
-                TMR_DMA_LOOP_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, TMR2 DMA control
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr2_ctrl_dma](index.html) module
-        pub struct TMR2_CTRL_DMA_SPEC;
-        impl crate::RegisterSpec for TMR2_CTRL_DMA_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [tmr2_ctrl_dma::R](R) reader structure
-        impl crate::Readable for TMR2_CTRL_DMA_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [tmr2_ctrl_dma::W](W) writer structure
-        impl crate::Writable for TMR2_CTRL_DMA_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets TMR2_CTRL_DMA to value 0
-        impl crate::Resettable for TMR2_CTRL_DMA_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///TMR2_INTER_EN (rw) register accessor: an alias for `Reg<TMR2_INTER_EN_SPEC>`
-    pub type TMR2_INTER_EN = crate::Reg<tmr2_inter_en::TMR2_INTER_EN_SPEC>;
-    ///RW, TMR2 interrupt enable
-    pub mod tmr2_inter_en {
-        ///Register `TMR2_INTER_EN` reader
-        pub struct R(crate::R<TMR2_INTER_EN_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR2_INTER_EN_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR2_INTER_EN_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR2_INTER_EN_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `TMR2_INTER_EN` writer
-        pub struct W(crate::W<TMR2_INTER_EN_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<TMR2_INTER_EN_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<TMR2_INTER_EN_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<TMR2_INTER_EN_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `TMR_IE_CYC_END` reader - RW, enable interrupt for timer capture count timeout or PWM cycle end
-        pub type TMR_IE_CYC_END_R = crate::BitReader;
-        ///Field `TMR_IE_CYC_END` writer - RW, enable interrupt for timer capture count timeout or PWM cycle end
-        pub type TMR_IE_CYC_END_W<'a, const O: u8> = crate::BitWriter<'a, TMR2_INTER_EN_SPEC, O>;
-        ///Field `TMR_IE_DATA_ACT` reader - RW, enable interrupt for timer capture input action or PWM trigger
-        pub type TMR_IE_DATA_ACT_R = crate::BitReader;
-        ///Field `TMR_IE_DATA_ACT` writer - RW, enable interrupt for timer capture input action or PWM trigger
-        pub type TMR_IE_DATA_ACT_W<'a, const O: u8> = crate::BitWriter<'a, TMR2_INTER_EN_SPEC, O>;
-        ///Field `TMR_IE_FIFO_HF` reader - RW, enable interrupt for timer FIFO half (capture fifo >=4 or PWM fifo less than 3)
-        pub type TMR_IE_FIFO_HF_R = crate::BitReader;
-        ///Field `TMR_IE_FIFO_HF` writer - RW, enable interrupt for timer FIFO half (capture fifo >=4 or PWM fifo less than 3)
-        pub type TMR_IE_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, TMR2_INTER_EN_SPEC, O>;
-        ///Field `TMR_IE_DMA_END` reader - RW, enable interrupt for timer1/2 DMA completion
-        pub type TMR_IE_DMA_END_R = crate::BitReader;
-        ///Field `TMR_IE_DMA_END` writer - RW, enable interrupt for timer1/2 DMA completion
-        pub type TMR_IE_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, TMR2_INTER_EN_SPEC, O>;
-        ///Field `TMR_IE_FIFO_OV` reader - RW, enable interrupt for timer FIFO overflow
-        pub type TMR_IE_FIFO_OV_R = crate::BitReader;
-        ///Field `TMR_IE_FIFO_OV` writer - RW, enable interrupt for timer FIFO overflow
-        pub type TMR_IE_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, TMR2_INTER_EN_SPEC, O>;
-        impl R {
-            ///Bit 0 - RW, enable interrupt for timer capture count timeout or PWM cycle end
-            #[inline(always)]
-            pub fn tmr_ie_cyc_end(&self) -> TMR_IE_CYC_END_R {
-                TMR_IE_CYC_END_R::new((self.bits & 1) != 0)
-            }
-            ///Bit 1 - RW, enable interrupt for timer capture input action or PWM trigger
-            #[inline(always)]
-            pub fn tmr_ie_data_act(&self) -> TMR_IE_DATA_ACT_R {
-                TMR_IE_DATA_ACT_R::new(((self.bits >> 1) & 1) != 0)
-            }
-            ///Bit 2 - RW, enable interrupt for timer FIFO half (capture fifo >=4 or PWM fifo less than 3)
-            #[inline(always)]
-            pub fn tmr_ie_fifo_hf(&self) -> TMR_IE_FIFO_HF_R {
-                TMR_IE_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bit 3 - RW, enable interrupt for timer1/2 DMA completion
-            #[inline(always)]
-            pub fn tmr_ie_dma_end(&self) -> TMR_IE_DMA_END_R {
-                TMR_IE_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
-            }
-            ///Bit 4 - RW, enable interrupt for timer FIFO overflow
-            #[inline(always)]
-            pub fn tmr_ie_fifo_ov(&self) -> TMR_IE_FIFO_OV_R {
-                TMR_IE_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
-            }
-        }
-        impl W {
-            ///Bit 0 - RW, enable interrupt for timer capture count timeout or PWM cycle end
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_ie_cyc_end(&mut self) -> TMR_IE_CYC_END_W<0> {
-                TMR_IE_CYC_END_W::new(self)
-            }
-            ///Bit 1 - RW, enable interrupt for timer capture input action or PWM trigger
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_ie_data_act(&mut self) -> TMR_IE_DATA_ACT_W<1> {
-                TMR_IE_DATA_ACT_W::new(self)
-            }
-            ///Bit 2 - RW, enable interrupt for timer FIFO half (capture fifo >=4 or PWM fifo less than 3)
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_ie_fifo_hf(&mut self) -> TMR_IE_FIFO_HF_W<2> {
-                TMR_IE_FIFO_HF_W::new(self)
-            }
-            ///Bit 3 - RW, enable interrupt for timer1/2 DMA completion
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_ie_dma_end(&mut self) -> TMR_IE_DMA_END_W<3> {
-                TMR_IE_DMA_END_W::new(self)
-            }
-            ///Bit 4 - RW, enable interrupt for timer FIFO overflow
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_ie_fifo_ov(&mut self) -> TMR_IE_FIFO_OV_W<4> {
-                TMR_IE_FIFO_OV_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, TMR2 interrupt enable
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr2_inter_en](index.html) module
-        pub struct TMR2_INTER_EN_SPEC;
-        impl crate::RegisterSpec for TMR2_INTER_EN_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [tmr2_inter_en::R](R) reader structure
-        impl crate::Readable for TMR2_INTER_EN_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [tmr2_inter_en::W](W) writer structure
-        impl crate::Writable for TMR2_INTER_EN_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets TMR2_INTER_EN to value 0
-        impl crate::Resettable for TMR2_INTER_EN_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///TMR2_INT_FLAG (rw) register accessor: an alias for `Reg<TMR2_INT_FLAG_SPEC>`
-    pub type TMR2_INT_FLAG = crate::Reg<tmr2_int_flag::TMR2_INT_FLAG_SPEC>;
-    ///RW1, TMR2 interrupt flag
-    pub mod tmr2_int_flag {
-        ///Register `TMR2_INT_FLAG` reader
-        pub struct R(crate::R<TMR2_INT_FLAG_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR2_INT_FLAG_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR2_INT_FLAG_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR2_INT_FLAG_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `TMR2_INT_FLAG` writer
-        pub struct W(crate::W<TMR2_INT_FLAG_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<TMR2_INT_FLAG_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<TMR2_INT_FLAG_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<TMR2_INT_FLAG_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `TMR_IF_CYC_END` reader - RW1, interrupt flag for timer capture count timeout or PWM cycle end
-        pub type TMR_IF_CYC_END_R = crate::BitReader;
-        ///Field `TMR_IF_CYC_END` writer - RW1, interrupt flag for timer capture count timeout or PWM cycle end
-        pub type TMR_IF_CYC_END_W<'a, const O: u8> = crate::BitWriter<'a, TMR2_INT_FLAG_SPEC, O>;
-        ///Field `TMR_IF_DATA_ACT` reader - RW1, interrupt flag for timer capture input action or PWM trigger
-        pub type TMR_IF_DATA_ACT_R = crate::BitReader;
-        ///Field `TMR_IF_DATA_ACT` writer - RW1, interrupt flag for timer capture input action or PWM trigger
-        pub type TMR_IF_DATA_ACT_W<'a, const O: u8> = crate::BitWriter<'a, TMR2_INT_FLAG_SPEC, O>;
-        ///Field `TMR_IF_FIFO_HF` reader - RW1, interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo less than 3
-        pub type TMR_IF_FIFO_HF_R = crate::BitReader;
-        ///Field `TMR_IF_FIFO_HF` writer - RW1, interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo less than 3
-        pub type TMR_IF_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, TMR2_INT_FLAG_SPEC, O>;
-        ///Field `TMR_IF_DMA_END` reader - RW1, interrupt flag for timer1/2 DMA completion
-        pub type TMR_IF_DMA_END_R = crate::BitReader;
-        ///Field `TMR_IF_DMA_END` writer - RW1, interrupt flag for timer1/2 DMA completion
-        pub type TMR_IF_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, TMR2_INT_FLAG_SPEC, O>;
-        ///Field `TMR_IF_FIFO_OV` reader - RW1, interrupt flag for timer FIFO overflow
-        pub type TMR_IF_FIFO_OV_R = crate::BitReader;
-        ///Field `TMR_IF_FIFO_OV` writer - RW1, interrupt flag for timer FIFO overflow
-        pub type TMR_IF_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, TMR2_INT_FLAG_SPEC, O>;
-        impl R {
-            ///Bit 0 - RW1, interrupt flag for timer capture count timeout or PWM cycle end
-            #[inline(always)]
-            pub fn tmr_if_cyc_end(&self) -> TMR_IF_CYC_END_R {
-                TMR_IF_CYC_END_R::new((self.bits & 1) != 0)
-            }
-            ///Bit 1 - RW1, interrupt flag for timer capture input action or PWM trigger
-            #[inline(always)]
-            pub fn tmr_if_data_act(&self) -> TMR_IF_DATA_ACT_R {
-                TMR_IF_DATA_ACT_R::new(((self.bits >> 1) & 1) != 0)
-            }
-            ///Bit 2 - RW1, interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo less than 3
-            #[inline(always)]
-            pub fn tmr_if_fifo_hf(&self) -> TMR_IF_FIFO_HF_R {
-                TMR_IF_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bit 3 - RW1, interrupt flag for timer1/2 DMA completion
-            #[inline(always)]
-            pub fn tmr_if_dma_end(&self) -> TMR_IF_DMA_END_R {
-                TMR_IF_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
-            }
-            ///Bit 4 - RW1, interrupt flag for timer FIFO overflow
-            #[inline(always)]
-            pub fn tmr_if_fifo_ov(&self) -> TMR_IF_FIFO_OV_R {
-                TMR_IF_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
-            }
-        }
-        impl W {
-            ///Bit 0 - RW1, interrupt flag for timer capture count timeout or PWM cycle end
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_if_cyc_end(&mut self) -> TMR_IF_CYC_END_W<0> {
-                TMR_IF_CYC_END_W::new(self)
-            }
-            ///Bit 1 - RW1, interrupt flag for timer capture input action or PWM trigger
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_if_data_act(&mut self) -> TMR_IF_DATA_ACT_W<1> {
-                TMR_IF_DATA_ACT_W::new(self)
-            }
-            ///Bit 2 - RW1, interrupt flag for timer FIFO half (capture fifo >=4 or PWM fifo less than 3
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_if_fifo_hf(&mut self) -> TMR_IF_FIFO_HF_W<2> {
-                TMR_IF_FIFO_HF_W::new(self)
-            }
-            ///Bit 3 - RW1, interrupt flag for timer1/2 DMA completion
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_if_dma_end(&mut self) -> TMR_IF_DMA_END_W<3> {
-                TMR_IF_DMA_END_W::new(self)
-            }
-            ///Bit 4 - RW1, interrupt flag for timer FIFO overflow
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_if_fifo_ov(&mut self) -> TMR_IF_FIFO_OV_W<4> {
-                TMR_IF_FIFO_OV_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW1, TMR2 interrupt flag
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr2_int_flag](index.html) module
-        pub struct TMR2_INT_FLAG_SPEC;
-        impl crate::RegisterSpec for TMR2_INT_FLAG_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [tmr2_int_flag::R](R) reader structure
-        impl crate::Readable for TMR2_INT_FLAG_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [tmr2_int_flag::W](W) writer structure
-        impl crate::Writable for TMR2_INT_FLAG_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets TMR2_INT_FLAG to value 0
-        impl crate::Resettable for TMR2_INT_FLAG_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///TMR2_FIFO_COUNT (r) register accessor: an alias for `Reg<TMR2_FIFO_COUNT_SPEC>`
-    pub type TMR2_FIFO_COUNT = crate::Reg<tmr2_fifo_count::TMR2_FIFO_COUNT_SPEC>;
-    ///RO, TMR2 FIFO count status
-    pub mod tmr2_fifo_count {
-        ///Register `TMR2_FIFO_COUNT` reader
-        pub struct R(crate::R<TMR2_FIFO_COUNT_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR2_FIFO_COUNT_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR2_FIFO_COUNT_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR2_FIFO_COUNT_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `TMR2_FIFO_COUNT` reader - RW, TMR2 FIFO count status
-        pub type TMR2_FIFO_COUNT_R = crate::FieldReader;
-        impl R {
-            ///Bits 0:3 - RW, TMR2 FIFO count status
-            #[inline(always)]
-            pub fn tmr2_fifo_count(&self) -> TMR2_FIFO_COUNT_R {
-                TMR2_FIFO_COUNT_R::new(self.bits & 0x0f)
-            }
-        }
-        ///RO, TMR2 FIFO count status
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr2_fifo_count](index.html) module
-        pub struct TMR2_FIFO_COUNT_SPEC;
-        impl crate::RegisterSpec for TMR2_FIFO_COUNT_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [tmr2_fifo_count::R](R) reader structure
-        impl crate::Readable for TMR2_FIFO_COUNT_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets TMR2_FIFO_COUNT to value 0
-        impl crate::Resettable for TMR2_FIFO_COUNT_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///TMR2_COUNT (r) register accessor: an alias for `Reg<TMR2_COUNT_SPEC>`
-    pub type TMR2_COUNT = crate::Reg<tmr2_count::TMR2_COUNT_SPEC>;
-    ///RO, TMR2 current count
-    pub mod tmr2_count {
-        ///Register `TMR2_COUNT` reader
-        pub struct R(crate::R<TMR2_COUNT_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR2_COUNT_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR2_COUNT_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR2_COUNT_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `TMR2_COUNT` reader - RW, TMR2 current count
-        pub type TMR2_COUNT_R = crate::FieldReader<u32>;
-        impl R {
-            ///Bits 0:25 - RW, TMR2 current count
-            #[inline(always)]
-            pub fn tmr2_count(&self) -> TMR2_COUNT_R {
-                TMR2_COUNT_R::new(self.bits & 0x03ff_ffff)
-            }
-        }
-        ///RO, TMR2 current count
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr2_count](index.html) module
-        pub struct TMR2_COUNT_SPEC;
-        impl crate::RegisterSpec for TMR2_COUNT_SPEC {
-            type Ux = u32;
-        }
-        ///`read()` method returns [tmr2_count::R](R) reader structure
-        impl crate::Readable for TMR2_COUNT_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets TMR2_COUNT to value 0
-        impl crate::Resettable for TMR2_COUNT_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///TMR2_CNT_END (rw) register accessor: an alias for `Reg<TMR2_CNT_END_SPEC>`
-    pub type TMR2_CNT_END = crate::Reg<tmr2_cnt_end::TMR2_CNT_END_SPEC>;
-    ///RW, TMR2 end count value, only low 26 bit
-    pub mod tmr2_cnt_end {
-        ///Register `TMR2_CNT_END` reader
-        pub struct R(crate::R<TMR2_CNT_END_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR2_CNT_END_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR2_CNT_END_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR2_CNT_END_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `TMR2_CNT_END` writer
-        pub struct W(crate::W<TMR2_CNT_END_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<TMR2_CNT_END_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<TMR2_CNT_END_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<TMR2_CNT_END_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `TMR2_COUNT` reader - RW, TMR2 current count
-        pub type TMR2_COUNT_R = crate::FieldReader<u32>;
-        ///Field `TMR2_COUNT` writer - RW, TMR2 current count
-        pub type TMR2_COUNT_W<'a, const O: u8> =
-            crate::FieldWriter<'a, TMR2_CNT_END_SPEC, 32, O, u32>;
-        impl R {
-            ///Bits 0:31 - RW, TMR2 current count
-            #[inline(always)]
-            pub fn tmr2_count(&self) -> TMR2_COUNT_R {
-                TMR2_COUNT_R::new(self.bits)
-            }
-        }
-        impl W {
-            ///Bits 0:31 - RW, TMR2 current count
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr2_count(&mut self) -> TMR2_COUNT_W<0> {
-                TMR2_COUNT_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, TMR2 end count value, only low 26 bit
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr2_cnt_end](index.html) module
-        pub struct TMR2_CNT_END_SPEC;
-        impl crate::RegisterSpec for TMR2_CNT_END_SPEC {
-            type Ux = u32;
-        }
-        ///`read()` method returns [tmr2_cnt_end::R](R) reader structure
-        impl crate::Readable for TMR2_CNT_END_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [tmr2_cnt_end::W](W) writer structure
-        impl crate::Writable for TMR2_CNT_END_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets TMR2_CNT_END to value 0
-        impl crate::Resettable for TMR2_CNT_END_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///TMR2_FIFO (rw) register accessor: an alias for `Reg<TMR2_FIFO_SPEC>`
-    pub type TMR2_FIFO = crate::Reg<tmr2_fifo::TMR2_FIFO_SPEC>;
-    ///RO, TMR2 FIFO register, only low 26 bit
-    pub mod tmr2_fifo {
-        ///Register `TMR2_FIFO` reader
-        pub struct R(crate::R<TMR2_FIFO_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR2_FIFO_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR2_FIFO_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR2_FIFO_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `TMR2_FIFO` writer
-        pub struct W(crate::W<TMR2_FIFO_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<TMR2_FIFO_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<TMR2_FIFO_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<TMR2_FIFO_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `TMR2_FIFO` reader - RW, TMR2 current count
-        pub type TMR2_FIFO_R = crate::FieldReader<u32>;
-        ///Field `TMR2_FIFO` writer - RW, TMR2 current count
-        pub type TMR2_FIFO_W<'a, const O: u8> = crate::FieldWriter<'a, TMR2_FIFO_SPEC, 32, O, u32>;
-        impl R {
-            ///Bits 0:31 - RW, TMR2 current count
-            #[inline(always)]
-            pub fn tmr2_fifo(&self) -> TMR2_FIFO_R {
-                TMR2_FIFO_R::new(self.bits)
-            }
-        }
-        impl W {
-            ///Bits 0:31 - RW, TMR2 current count
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr2_fifo(&mut self) -> TMR2_FIFO_W<0> {
-                TMR2_FIFO_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RO, TMR2 FIFO register, only low 26 bit
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr2_fifo](index.html) module
-        pub struct TMR2_FIFO_SPEC;
-        impl crate::RegisterSpec for TMR2_FIFO_SPEC {
-            type Ux = u32;
-        }
-        ///`read()` method returns [tmr2_fifo::R](R) reader structure
-        impl crate::Readable for TMR2_FIFO_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [tmr2_fifo::W](W) writer structure
-        impl crate::Writable for TMR2_FIFO_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets TMR2_FIFO to value 0
-        impl crate::Resettable for TMR2_FIFO_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///TMR2_DMA_NOW (r) register accessor: an alias for `Reg<TMR2_DMA_NOW_SPEC>`
-    pub type TMR2_DMA_NOW = crate::Reg<tmr2_dma_now::TMR2_DMA_NOW_SPEC>;
-    ///RO, TMR2 DMA current address
-    pub mod tmr2_dma_now {
-        ///Register `TMR2_DMA_NOW` reader
-        pub struct R(crate::R<TMR2_DMA_NOW_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR2_DMA_NOW_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR2_DMA_NOW_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR2_DMA_NOW_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `TMR2_DMA_NOW` reader - RO, DMA data buffer current address
-        pub type TMR2_DMA_NOW_R = crate::FieldReader<u16>;
-        impl R {
-            ///Bits 2:14 - RO, DMA data buffer current address
-            #[inline(always)]
-            pub fn tmr2_dma_now(&self) -> TMR2_DMA_NOW_R {
-                TMR2_DMA_NOW_R::new((self.bits >> 2) & 0x1fff)
-            }
-        }
-        ///RO, TMR2 DMA current address
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr2_dma_now](index.html) module
-        pub struct TMR2_DMA_NOW_SPEC;
-        impl crate::RegisterSpec for TMR2_DMA_NOW_SPEC {
-            type Ux = u16;
-        }
-        ///`read()` method returns [tmr2_dma_now::R](R) reader structure
-        impl crate::Readable for TMR2_DMA_NOW_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets TMR2_DMA_NOW to value 0
-        impl crate::Resettable for TMR2_DMA_NOW_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///TMR2_DMA_BEG (rw) register accessor: an alias for `Reg<TMR2_DMA_BEG_SPEC>`
-    pub type TMR2_DMA_BEG = crate::Reg<tmr2_dma_beg::TMR2_DMA_BEG_SPEC>;
-    ///RW, TMR2 DMA begin address
-    pub mod tmr2_dma_beg {
-        ///Register `TMR2_DMA_BEG` reader
-        pub struct R(crate::R<TMR2_DMA_BEG_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR2_DMA_BEG_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR2_DMA_BEG_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR2_DMA_BEG_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `TMR2_DMA_BEG` writer
-        pub struct W(crate::W<TMR2_DMA_BEG_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<TMR2_DMA_BEG_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<TMR2_DMA_BEG_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<TMR2_DMA_BEG_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `TMR2_DMA_BEG` reader - RW, TMR2 DMA data buffer start address
-        pub type TMR2_DMA_BEG_R = crate::FieldReader<u16>;
-        ///Field `TMR2_DMA_BEG` writer - RW, TMR2 DMA data buffer start address
-        pub type TMR2_DMA_BEG_W<'a, const O: u8> =
-            crate::FieldWriter<'a, TMR2_DMA_BEG_SPEC, 13, O, u16>;
-        impl R {
-            ///Bits 2:14 - RW, TMR2 DMA data buffer start address
-            #[inline(always)]
-            pub fn tmr2_dma_beg(&self) -> TMR2_DMA_BEG_R {
-                TMR2_DMA_BEG_R::new((self.bits >> 2) & 0x1fff)
-            }
-        }
-        impl W {
-            ///Bits 2:14 - RW, TMR2 DMA data buffer start address
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr2_dma_beg(&mut self) -> TMR2_DMA_BEG_W<2> {
-                TMR2_DMA_BEG_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, TMR2 DMA begin address
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr2_dma_beg](index.html) module
-        pub struct TMR2_DMA_BEG_SPEC;
-        impl crate::RegisterSpec for TMR2_DMA_BEG_SPEC {
-            type Ux = u16;
-        }
-        ///`read()` method returns [tmr2_dma_beg::R](R) reader structure
-        impl crate::Readable for TMR2_DMA_BEG_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [tmr2_dma_beg::W](W) writer structure
-        impl crate::Writable for TMR2_DMA_BEG_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets TMR2_DMA_BEG to value 0
-        impl crate::Resettable for TMR2_DMA_BEG_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///TMR2_DMA_END (rw) register accessor: an alias for `Reg<TMR2_DMA_END_SPEC>`
-    pub type TMR2_DMA_END = crate::Reg<tmr2_dma_end::TMR2_DMA_END_SPEC>;
-    ///RW, TMR2 DMA end address
-    pub mod tmr2_dma_end {
-        ///Register `TMR2_DMA_END` reader
-        pub struct R(crate::R<TMR2_DMA_END_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR2_DMA_END_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR2_DMA_END_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR2_DMA_END_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `TMR2_DMA_END` writer
-        pub struct W(crate::W<TMR2_DMA_END_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<TMR2_DMA_END_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<TMR2_DMA_END_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<TMR2_DMA_END_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `TMR2_DMA_END` reader - RW, TMR2 DMA end address
-        pub type TMR2_DMA_END_R = crate::FieldReader<u16>;
-        ///Field `TMR2_DMA_END` writer - RW, TMR2 DMA end address
-        pub type TMR2_DMA_END_W<'a, const O: u8> =
-            crate::FieldWriter<'a, TMR2_DMA_END_SPEC, 13, O, u16>;
-        impl R {
-            ///Bits 2:14 - RW, TMR2 DMA end address
-            #[inline(always)]
-            pub fn tmr2_dma_end(&self) -> TMR2_DMA_END_R {
-                TMR2_DMA_END_R::new((self.bits >> 2) & 0x1fff)
-            }
-        }
-        impl W {
-            ///Bits 2:14 - RW, TMR2 DMA end address
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr2_dma_end(&mut self) -> TMR2_DMA_END_W<2> {
-                TMR2_DMA_END_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, TMR2 DMA end address
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr2_dma_end](index.html) module
-        pub struct TMR2_DMA_END_SPEC;
-        impl crate::RegisterSpec for TMR2_DMA_END_SPEC {
-            type Ux = u16;
-        }
-        ///`read()` method returns [tmr2_dma_end::R](R) reader structure
-        impl crate::Readable for TMR2_DMA_END_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [tmr2_dma_end::W](W) writer structure
-        impl crate::Writable for TMR2_DMA_END_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets TMR2_DMA_END to value 0
-        impl crate::Resettable for TMR2_DMA_END_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-}
+pub use self::tmr1 as tmr2;
 ///Timer3 register
 pub struct TMR3 {
     _marker: PhantomData<*const ()>,
@@ -10738,15 +9669,15 @@ pub struct TMR3 {
 unsafe impl Send for TMR3 {}
 impl TMR3 {
     ///Pointer to the register block
-    pub const PTR: *const tmr3::RegisterBlock = 0x4000_2c00 as *const _;
+    pub const PTR: *const tmr0::RegisterBlock = 0x4000_2c00 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const tmr3::RegisterBlock {
+    pub const fn ptr() -> *const tmr0::RegisterBlock {
         Self::PTR
     }
 }
 impl Deref for TMR3 {
-    type Target = tmr3::RegisterBlock;
+    type Target = tmr0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -10758,767 +9689,7 @@ impl core::fmt::Debug for TMR3 {
     }
 }
 ///Timer3 register
-pub mod tmr3 {
-    ///Register block
-    #[repr(C)]
-    pub struct RegisterBlock {
-        ///0x00 - RW, TMR3 mode control
-        pub tmr3_ctrl_mod: TMR3_CTRL_MOD,
-        _reserved1: [u8; 0x01],
-        ///0x02 - RW, TMR3 interrupt enable
-        pub tmr3_inter_en: TMR3_INTER_EN,
-        _reserved2: [u8; 0x03],
-        ///0x06 - RW1, TMR3 interrupt flag
-        pub tmr3_int_flag: TMR3_INT_FLAG,
-        ///0x07 - RO, TMR3 FIFO count status
-        pub tmr3_fifo_count: TMR3_FIFO_COUNT,
-        ///0x08 - RO, TMR3 current count
-        pub tmr3_count: TMR3_COUNT,
-        ///0x0c - RW, TMR3 end count value, only low 26 bit
-        pub tmr3_cnt_end: TMR3_CNT_END,
-        ///0x10 - RO/WO, TMR3 FIFO register, only low 26 bit
-        pub tmr3_fifo: TMR3_FIFO,
-    }
-    ///TMR3_CTRL_MOD (rw) register accessor: an alias for `Reg<TMR3_CTRL_MOD_SPEC>`
-    pub type TMR3_CTRL_MOD = crate::Reg<tmr3_ctrl_mod::TMR3_CTRL_MOD_SPEC>;
-    ///RW, TMR3 mode control
-    pub mod tmr3_ctrl_mod {
-        ///Register `TMR3_CTRL_MOD` reader
-        pub struct R(crate::R<TMR3_CTRL_MOD_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR3_CTRL_MOD_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR3_CTRL_MOD_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR3_CTRL_MOD_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `TMR3_CTRL_MOD` writer
-        pub struct W(crate::W<TMR3_CTRL_MOD_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<TMR3_CTRL_MOD_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<TMR3_CTRL_MOD_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<TMR3_CTRL_MOD_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `TMR_MODE_IN` reader - RW, timer in mode: 0=timer/PWM, 1=capture/count
-        pub type TMR_MODE_IN_R = crate::BitReader;
-        ///Field `TMR_MODE_IN` writer - RW, timer in mode: 0=timer/PWM, 1=capture/count
-        pub type TMR_MODE_IN_W<'a, const O: u8> = crate::BitWriter<'a, TMR3_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_ALL_CLEAR` reader - RW, force clear timer FIFO and count
-        pub type TMR_ALL_CLEAR_R = crate::BitReader;
-        ///Field `TMR_ALL_CLEAR` writer - RW, force clear timer FIFO and count
-        pub type TMR_ALL_CLEAR_W<'a, const O: u8> = crate::BitWriter<'a, TMR3_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_COUNT_EN` reader - RW, timer count enable
-        pub type TMR_COUNT_EN_R = crate::BitReader;
-        ///Field `TMR_COUNT_EN` writer - RW, timer count enable
-        pub type TMR_COUNT_EN_W<'a, const O: u8> = crate::BitWriter<'a, TMR3_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_OUT_EN` reader - RW, timer output enable
-        pub type TMR_OUT_EN_R = crate::BitReader;
-        ///Field `TMR_OUT_EN` writer - RW, timer output enable
-        pub type TMR_OUT_EN_W<'a, const O: u8> = crate::BitWriter<'a, TMR3_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_OUT_POLAR_RB_TMR_CAP_COUNT` reader - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
-        pub type TMR_OUT_POLAR_RB_TMR_CAP_COUNT_R = crate::BitReader;
-        ///Field `TMR_OUT_POLAR_RB_TMR_CAP_COUNT` writer - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
-        pub type TMR_OUT_POLAR_RB_TMR_CAP_COUNT_W<'a, const O: u8> =
-            crate::BitWriter<'a, TMR3_CTRL_MOD_SPEC, O>;
-        ///Field `TMR_PWM_REPEAT_RB_TMR_CAP_EDGE` reader - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
-        pub type TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_R = crate::FieldReader;
-        ///Field `TMR_PWM_REPEAT_RB_TMR_CAP_EDGE` writer - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
-        pub type TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_W<'a, const O: u8> =
-            crate::FieldWriter<'a, TMR3_CTRL_MOD_SPEC, 2, O>;
-        impl R {
-            ///Bit 0 - RW, timer in mode: 0=timer/PWM, 1=capture/count
-            #[inline(always)]
-            pub fn tmr_mode_in(&self) -> TMR_MODE_IN_R {
-                TMR_MODE_IN_R::new((self.bits & 1) != 0)
-            }
-            ///Bit 1 - RW, force clear timer FIFO and count
-            #[inline(always)]
-            pub fn tmr_all_clear(&self) -> TMR_ALL_CLEAR_R {
-                TMR_ALL_CLEAR_R::new(((self.bits >> 1) & 1) != 0)
-            }
-            ///Bit 2 - RW, timer count enable
-            #[inline(always)]
-            pub fn tmr_count_en(&self) -> TMR_COUNT_EN_R {
-                TMR_COUNT_EN_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bit 3 - RW, timer output enable
-            #[inline(always)]
-            pub fn tmr_out_en(&self) -> TMR_OUT_EN_R {
-                TMR_OUT_EN_R::new(((self.bits >> 3) & 1) != 0)
-            }
-            ///Bit 4 - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
-            #[inline(always)]
-            pub fn tmr_out_polar_rb_tmr_cap_count(&self) -> TMR_OUT_POLAR_RB_TMR_CAP_COUNT_R {
-                TMR_OUT_POLAR_RB_TMR_CAP_COUNT_R::new(((self.bits >> 4) & 1) != 0)
-            }
-            ///Bits 6:7 - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
-            #[inline(always)]
-            pub fn tmr_pwm_repeat_rb_tmr_cap_edge(&self) -> TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_R {
-                TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_R::new((self.bits >> 6) & 3)
-            }
-        }
-        impl W {
-            ///Bit 0 - RW, timer in mode: 0=timer/PWM, 1=capture/count
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_mode_in(&mut self) -> TMR_MODE_IN_W<0> {
-                TMR_MODE_IN_W::new(self)
-            }
-            ///Bit 1 - RW, force clear timer FIFO and count
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_all_clear(&mut self) -> TMR_ALL_CLEAR_W<1> {
-                TMR_ALL_CLEAR_W::new(self)
-            }
-            ///Bit 2 - RW, timer count enable
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_count_en(&mut self) -> TMR_COUNT_EN_W<2> {
-                TMR_COUNT_EN_W::new(self)
-            }
-            ///Bit 3 - RW, timer output enable
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_out_en(&mut self) -> TMR_OUT_EN_W<3> {
-                TMR_OUT_EN_W::new(self)
-            }
-            ///Bit 4 - RW, timer PWM output polarity: 0=default low and high action, 1=default high and low action;RW, count sub-mode if RB_TMR_MODE_IN=1: 0=capture, 1=count
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_out_polar_rb_tmr_cap_count(
-                &mut self,
-            ) -> TMR_OUT_POLAR_RB_TMR_CAP_COUNT_W<4> {
-                TMR_OUT_POLAR_RB_TMR_CAP_COUNT_W::new(self)
-            }
-            ///Bits 6:7 - RW, timer PWM repeat mode: 00=1, 01=4, 10=8, 11-16;RW, timer capture edge mode: 00=disable, 01=edge change, 10=fall to fall, 11-rise to rise
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_pwm_repeat_rb_tmr_cap_edge(
-                &mut self,
-            ) -> TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_W<6> {
-                TMR_PWM_REPEAT_RB_TMR_CAP_EDGE_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, TMR3 mode control
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr3_ctrl_mod](index.html) module
-        pub struct TMR3_CTRL_MOD_SPEC;
-        impl crate::RegisterSpec for TMR3_CTRL_MOD_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [tmr3_ctrl_mod::R](R) reader structure
-        impl crate::Readable for TMR3_CTRL_MOD_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [tmr3_ctrl_mod::W](W) writer structure
-        impl crate::Writable for TMR3_CTRL_MOD_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets TMR3_CTRL_MOD to value 0x02
-        impl crate::Resettable for TMR3_CTRL_MOD_SPEC {
-            const RESET_VALUE: Self::Ux = 0x02;
-        }
-    }
-    ///TMR3_INTER_EN (rw) register accessor: an alias for `Reg<TMR3_INTER_EN_SPEC>`
-    pub type TMR3_INTER_EN = crate::Reg<tmr3_inter_en::TMR3_INTER_EN_SPEC>;
-    ///RW, TMR3 interrupt enable
-    pub mod tmr3_inter_en {
-        ///Register `TMR3_INTER_EN` reader
-        pub struct R(crate::R<TMR3_INTER_EN_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR3_INTER_EN_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR3_INTER_EN_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR3_INTER_EN_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `TMR3_INTER_EN` writer
-        pub struct W(crate::W<TMR3_INTER_EN_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<TMR3_INTER_EN_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<TMR3_INTER_EN_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<TMR3_INTER_EN_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `TMR_IE_CYC_END` reader - RW, enable interrupt for timer capture count timeout or PWM cycle end
-        pub type TMR_IE_CYC_END_R = crate::BitReader;
-        ///Field `TMR_IE_CYC_END` writer - RW, enable interrupt for timer capture count timeout or PWM cycle end
-        pub type TMR_IE_CYC_END_W<'a, const O: u8> = crate::BitWriter<'a, TMR3_INTER_EN_SPEC, O>;
-        ///Field `TMR_IE_DATA_ACT` reader - RW, enable interrupt for timer capture input action or PWM trigger
-        pub type TMR_IE_DATA_ACT_R = crate::BitReader;
-        ///Field `TMR_IE_DATA_ACT` writer - RW, enable interrupt for timer capture input action or PWM trigger
-        pub type TMR_IE_DATA_ACT_W<'a, const O: u8> = crate::BitWriter<'a, TMR3_INTER_EN_SPEC, O>;
-        ///Field `TMR_IE_FIFO_HF` reader - RW, enable interrupt for timer FIFO half (capture fifo more than 4 or PWM fifo less than 3)
-        pub type TMR_IE_FIFO_HF_R = crate::BitReader;
-        ///Field `TMR_IE_FIFO_HF` writer - RW, enable interrupt for timer FIFO half (capture fifo more than 4 or PWM fifo less than 3)
-        pub type TMR_IE_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, TMR3_INTER_EN_SPEC, O>;
-        ///Field `TMR_IE_DMA_END` reader - RW, enable interrupt for timer1/2 DMA completion
-        pub type TMR_IE_DMA_END_R = crate::BitReader;
-        ///Field `TMR_IE_DMA_END` writer - RW, enable interrupt for timer1/2 DMA completion
-        pub type TMR_IE_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, TMR3_INTER_EN_SPEC, O>;
-        ///Field `TMR_IE_FIFO_OV` reader - RW, enable interrupt for timer FIFO overflow
-        pub type TMR_IE_FIFO_OV_R = crate::BitReader;
-        ///Field `TMR_IE_FIFO_OV` writer - RW, enable interrupt for timer FIFO overflow
-        pub type TMR_IE_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, TMR3_INTER_EN_SPEC, O>;
-        impl R {
-            ///Bit 0 - RW, enable interrupt for timer capture count timeout or PWM cycle end
-            #[inline(always)]
-            pub fn tmr_ie_cyc_end(&self) -> TMR_IE_CYC_END_R {
-                TMR_IE_CYC_END_R::new((self.bits & 1) != 0)
-            }
-            ///Bit 1 - RW, enable interrupt for timer capture input action or PWM trigger
-            #[inline(always)]
-            pub fn tmr_ie_data_act(&self) -> TMR_IE_DATA_ACT_R {
-                TMR_IE_DATA_ACT_R::new(((self.bits >> 1) & 1) != 0)
-            }
-            ///Bit 2 - RW, enable interrupt for timer FIFO half (capture fifo more than 4 or PWM fifo less than 3)
-            #[inline(always)]
-            pub fn tmr_ie_fifo_hf(&self) -> TMR_IE_FIFO_HF_R {
-                TMR_IE_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bit 3 - RW, enable interrupt for timer1/2 DMA completion
-            #[inline(always)]
-            pub fn tmr_ie_dma_end(&self) -> TMR_IE_DMA_END_R {
-                TMR_IE_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
-            }
-            ///Bit 4 - RW, enable interrupt for timer FIFO overflow
-            #[inline(always)]
-            pub fn tmr_ie_fifo_ov(&self) -> TMR_IE_FIFO_OV_R {
-                TMR_IE_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
-            }
-        }
-        impl W {
-            ///Bit 0 - RW, enable interrupt for timer capture count timeout or PWM cycle end
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_ie_cyc_end(&mut self) -> TMR_IE_CYC_END_W<0> {
-                TMR_IE_CYC_END_W::new(self)
-            }
-            ///Bit 1 - RW, enable interrupt for timer capture input action or PWM trigger
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_ie_data_act(&mut self) -> TMR_IE_DATA_ACT_W<1> {
-                TMR_IE_DATA_ACT_W::new(self)
-            }
-            ///Bit 2 - RW, enable interrupt for timer FIFO half (capture fifo more than 4 or PWM fifo less than 3)
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_ie_fifo_hf(&mut self) -> TMR_IE_FIFO_HF_W<2> {
-                TMR_IE_FIFO_HF_W::new(self)
-            }
-            ///Bit 3 - RW, enable interrupt for timer1/2 DMA completion
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_ie_dma_end(&mut self) -> TMR_IE_DMA_END_W<3> {
-                TMR_IE_DMA_END_W::new(self)
-            }
-            ///Bit 4 - RW, enable interrupt for timer FIFO overflow
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_ie_fifo_ov(&mut self) -> TMR_IE_FIFO_OV_W<4> {
-                TMR_IE_FIFO_OV_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, TMR3 interrupt enable
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr3_inter_en](index.html) module
-        pub struct TMR3_INTER_EN_SPEC;
-        impl crate::RegisterSpec for TMR3_INTER_EN_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [tmr3_inter_en::R](R) reader structure
-        impl crate::Readable for TMR3_INTER_EN_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [tmr3_inter_en::W](W) writer structure
-        impl crate::Writable for TMR3_INTER_EN_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets TMR3_INTER_EN to value 0
-        impl crate::Resettable for TMR3_INTER_EN_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///TMR3_INT_FLAG (rw) register accessor: an alias for `Reg<TMR3_INT_FLAG_SPEC>`
-    pub type TMR3_INT_FLAG = crate::Reg<tmr3_int_flag::TMR3_INT_FLAG_SPEC>;
-    ///RW1, TMR3 interrupt flag
-    pub mod tmr3_int_flag {
-        ///Register `TMR3_INT_FLAG` reader
-        pub struct R(crate::R<TMR3_INT_FLAG_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR3_INT_FLAG_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR3_INT_FLAG_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR3_INT_FLAG_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `TMR3_INT_FLAG` writer
-        pub struct W(crate::W<TMR3_INT_FLAG_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<TMR3_INT_FLAG_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<TMR3_INT_FLAG_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<TMR3_INT_FLAG_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `TMR_IF_CYC_END` reader - RW1, interrupt flag for timer capture count timeout or PWM cycle end
-        pub type TMR_IF_CYC_END_R = crate::BitReader;
-        ///Field `TMR_IF_CYC_END` writer - RW1, interrupt flag for timer capture count timeout or PWM cycle end
-        pub type TMR_IF_CYC_END_W<'a, const O: u8> = crate::BitWriter<'a, TMR3_INT_FLAG_SPEC, O>;
-        ///Field `TMR_IF_DATA_ACT` reader - RW1, interrupt flag for timer capture input action or PWM trigger
-        pub type TMR_IF_DATA_ACT_R = crate::BitReader;
-        ///Field `TMR_IF_DATA_ACT` writer - RW1, interrupt flag for timer capture input action or PWM trigger
-        pub type TMR_IF_DATA_ACT_W<'a, const O: u8> = crate::BitWriter<'a, TMR3_INT_FLAG_SPEC, O>;
-        ///Field `TMR_IF_FIFO_HF` reader - RW1, interrupt flag for timer FIFO half (capture fifo more than 4 or PWM fifo less than 3)
-        pub type TMR_IF_FIFO_HF_R = crate::BitReader;
-        ///Field `TMR_IF_FIFO_HF` writer - RW1, interrupt flag for timer FIFO half (capture fifo more than 4 or PWM fifo less than 3)
-        pub type TMR_IF_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, TMR3_INT_FLAG_SPEC, O>;
-        ///Field `TMR_IF_DMA_END` reader - RW1, interrupt flag for timer1/2 DMA completion
-        pub type TMR_IF_DMA_END_R = crate::BitReader;
-        ///Field `TMR_IF_DMA_END` writer - RW1, interrupt flag for timer1/2 DMA completion
-        pub type TMR_IF_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, TMR3_INT_FLAG_SPEC, O>;
-        ///Field `TMR_IF_FIFO_OV` reader - RW1, interrupt flag for timer FIFO overflow
-        pub type TMR_IF_FIFO_OV_R = crate::BitReader;
-        ///Field `TMR_IF_FIFO_OV` writer - RW1, interrupt flag for timer FIFO overflow
-        pub type TMR_IF_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, TMR3_INT_FLAG_SPEC, O>;
-        impl R {
-            ///Bit 0 - RW1, interrupt flag for timer capture count timeout or PWM cycle end
-            #[inline(always)]
-            pub fn tmr_if_cyc_end(&self) -> TMR_IF_CYC_END_R {
-                TMR_IF_CYC_END_R::new((self.bits & 1) != 0)
-            }
-            ///Bit 1 - RW1, interrupt flag for timer capture input action or PWM trigger
-            #[inline(always)]
-            pub fn tmr_if_data_act(&self) -> TMR_IF_DATA_ACT_R {
-                TMR_IF_DATA_ACT_R::new(((self.bits >> 1) & 1) != 0)
-            }
-            ///Bit 2 - RW1, interrupt flag for timer FIFO half (capture fifo more than 4 or PWM fifo less than 3)
-            #[inline(always)]
-            pub fn tmr_if_fifo_hf(&self) -> TMR_IF_FIFO_HF_R {
-                TMR_IF_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bit 3 - RW1, interrupt flag for timer1/2 DMA completion
-            #[inline(always)]
-            pub fn tmr_if_dma_end(&self) -> TMR_IF_DMA_END_R {
-                TMR_IF_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
-            }
-            ///Bit 4 - RW1, interrupt flag for timer FIFO overflow
-            #[inline(always)]
-            pub fn tmr_if_fifo_ov(&self) -> TMR_IF_FIFO_OV_R {
-                TMR_IF_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
-            }
-        }
-        impl W {
-            ///Bit 0 - RW1, interrupt flag for timer capture count timeout or PWM cycle end
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_if_cyc_end(&mut self) -> TMR_IF_CYC_END_W<0> {
-                TMR_IF_CYC_END_W::new(self)
-            }
-            ///Bit 1 - RW1, interrupt flag for timer capture input action or PWM trigger
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_if_data_act(&mut self) -> TMR_IF_DATA_ACT_W<1> {
-                TMR_IF_DATA_ACT_W::new(self)
-            }
-            ///Bit 2 - RW1, interrupt flag for timer FIFO half (capture fifo more than 4 or PWM fifo less than 3)
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_if_fifo_hf(&mut self) -> TMR_IF_FIFO_HF_W<2> {
-                TMR_IF_FIFO_HF_W::new(self)
-            }
-            ///Bit 3 - RW1, interrupt flag for timer1/2 DMA completion
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_if_dma_end(&mut self) -> TMR_IF_DMA_END_W<3> {
-                TMR_IF_DMA_END_W::new(self)
-            }
-            ///Bit 4 - RW1, interrupt flag for timer FIFO overflow
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr_if_fifo_ov(&mut self) -> TMR_IF_FIFO_OV_W<4> {
-                TMR_IF_FIFO_OV_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW1, TMR3 interrupt flag
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr3_int_flag](index.html) module
-        pub struct TMR3_INT_FLAG_SPEC;
-        impl crate::RegisterSpec for TMR3_INT_FLAG_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [tmr3_int_flag::R](R) reader structure
-        impl crate::Readable for TMR3_INT_FLAG_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [tmr3_int_flag::W](W) writer structure
-        impl crate::Writable for TMR3_INT_FLAG_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets TMR3_INT_FLAG to value 0
-        impl crate::Resettable for TMR3_INT_FLAG_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///TMR3_FIFO_COUNT (r) register accessor: an alias for `Reg<TMR3_FIFO_COUNT_SPEC>`
-    pub type TMR3_FIFO_COUNT = crate::Reg<tmr3_fifo_count::TMR3_FIFO_COUNT_SPEC>;
-    ///RO, TMR3 FIFO count status
-    pub mod tmr3_fifo_count {
-        ///Register `TMR3_FIFO_COUNT` reader
-        pub struct R(crate::R<TMR3_FIFO_COUNT_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR3_FIFO_COUNT_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR3_FIFO_COUNT_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR3_FIFO_COUNT_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `TMR3_FIFO_COUNT` reader - RO, TMR3 FIFO count status
-        pub type TMR3_FIFO_COUNT_R = crate::FieldReader;
-        impl R {
-            ///Bits 0:3 - RO, TMR3 FIFO count status
-            #[inline(always)]
-            pub fn tmr3_fifo_count(&self) -> TMR3_FIFO_COUNT_R {
-                TMR3_FIFO_COUNT_R::new(self.bits & 0x0f)
-            }
-        }
-        ///RO, TMR3 FIFO count status
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr3_fifo_count](index.html) module
-        pub struct TMR3_FIFO_COUNT_SPEC;
-        impl crate::RegisterSpec for TMR3_FIFO_COUNT_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [tmr3_fifo_count::R](R) reader structure
-        impl crate::Readable for TMR3_FIFO_COUNT_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets TMR3_FIFO_COUNT to value 0
-        impl crate::Resettable for TMR3_FIFO_COUNT_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///TMR3_COUNT (r) register accessor: an alias for `Reg<TMR3_COUNT_SPEC>`
-    pub type TMR3_COUNT = crate::Reg<tmr3_count::TMR3_COUNT_SPEC>;
-    ///RO, TMR3 current count
-    pub mod tmr3_count {
-        ///Register `TMR3_COUNT` reader
-        pub struct R(crate::R<TMR3_COUNT_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR3_COUNT_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR3_COUNT_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR3_COUNT_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `TMR3_COUNT` reader - RO, TMR3 current count
-        pub type TMR3_COUNT_R = crate::FieldReader<u32>;
-        impl R {
-            ///Bits 0:25 - RO, TMR3 current count
-            #[inline(always)]
-            pub fn tmr3_count(&self) -> TMR3_COUNT_R {
-                TMR3_COUNT_R::new(self.bits & 0x03ff_ffff)
-            }
-        }
-        ///RO, TMR3 current count
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr3_count](index.html) module
-        pub struct TMR3_COUNT_SPEC;
-        impl crate::RegisterSpec for TMR3_COUNT_SPEC {
-            type Ux = u32;
-        }
-        ///`read()` method returns [tmr3_count::R](R) reader structure
-        impl crate::Readable for TMR3_COUNT_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets TMR3_COUNT to value 0
-        impl crate::Resettable for TMR3_COUNT_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///TMR3_CNT_END (rw) register accessor: an alias for `Reg<TMR3_CNT_END_SPEC>`
-    pub type TMR3_CNT_END = crate::Reg<tmr3_cnt_end::TMR3_CNT_END_SPEC>;
-    ///RW, TMR3 end count value, only low 26 bit
-    pub mod tmr3_cnt_end {
-        ///Register `TMR3_CNT_END` reader
-        pub struct R(crate::R<TMR3_CNT_END_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR3_CNT_END_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR3_CNT_END_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR3_CNT_END_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `TMR3_CNT_END` writer
-        pub struct W(crate::W<TMR3_CNT_END_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<TMR3_CNT_END_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<TMR3_CNT_END_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<TMR3_CNT_END_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `TMR3_CNT_END` reader - RW, TMR3 end count value, only low 26 bit
-        pub type TMR3_CNT_END_R = crate::FieldReader<u32>;
-        ///Field `TMR3_CNT_END` writer - RW, TMR3 end count value, only low 26 bit
-        pub type TMR3_CNT_END_W<'a, const O: u8> =
-            crate::FieldWriter<'a, TMR3_CNT_END_SPEC, 32, O, u32>;
-        impl R {
-            ///Bits 0:31 - RW, TMR3 end count value, only low 26 bit
-            #[inline(always)]
-            pub fn tmr3_cnt_end(&self) -> TMR3_CNT_END_R {
-                TMR3_CNT_END_R::new(self.bits)
-            }
-        }
-        impl W {
-            ///Bits 0:31 - RW, TMR3 end count value, only low 26 bit
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr3_cnt_end(&mut self) -> TMR3_CNT_END_W<0> {
-                TMR3_CNT_END_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, TMR3 end count value, only low 26 bit
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr3_cnt_end](index.html) module
-        pub struct TMR3_CNT_END_SPEC;
-        impl crate::RegisterSpec for TMR3_CNT_END_SPEC {
-            type Ux = u32;
-        }
-        ///`read()` method returns [tmr3_cnt_end::R](R) reader structure
-        impl crate::Readable for TMR3_CNT_END_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [tmr3_cnt_end::W](W) writer structure
-        impl crate::Writable for TMR3_CNT_END_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets TMR3_CNT_END to value 0
-        impl crate::Resettable for TMR3_CNT_END_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///TMR3_FIFO (rw) register accessor: an alias for `Reg<TMR3_FIFO_SPEC>`
-    pub type TMR3_FIFO = crate::Reg<tmr3_fifo::TMR3_FIFO_SPEC>;
-    ///RO/WO, TMR3 FIFO register, only low 26 bit
-    pub mod tmr3_fifo {
-        ///Register `TMR3_FIFO` reader
-        pub struct R(crate::R<TMR3_FIFO_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TMR3_FIFO_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TMR3_FIFO_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TMR3_FIFO_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `TMR3_FIFO` writer
-        pub struct W(crate::W<TMR3_FIFO_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<TMR3_FIFO_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<TMR3_FIFO_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<TMR3_FIFO_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `TMR3_FIFO` reader - RO/WO, TMR3 FIFO register, only low 26 bit
-        pub type TMR3_FIFO_R = crate::FieldReader<u32>;
-        ///Field `TMR3_FIFO` writer - RO/WO, TMR3 FIFO register, only low 26 bit
-        pub type TMR3_FIFO_W<'a, const O: u8> = crate::FieldWriter<'a, TMR3_FIFO_SPEC, 32, O, u32>;
-        impl R {
-            ///Bits 0:31 - RO/WO, TMR3 FIFO register, only low 26 bit
-            #[inline(always)]
-            pub fn tmr3_fifo(&self) -> TMR3_FIFO_R {
-                TMR3_FIFO_R::new(self.bits)
-            }
-        }
-        impl W {
-            ///Bits 0:31 - RO/WO, TMR3 FIFO register, only low 26 bit
-            #[inline(always)]
-            #[must_use]
-            pub fn tmr3_fifo(&mut self) -> TMR3_FIFO_W<0> {
-                TMR3_FIFO_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RO/WO, TMR3 FIFO register, only low 26 bit
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tmr3_fifo](index.html) module
-        pub struct TMR3_FIFO_SPEC;
-        impl crate::RegisterSpec for TMR3_FIFO_SPEC {
-            type Ux = u32;
-        }
-        ///`read()` method returns [tmr3_fifo::R](R) reader structure
-        impl crate::Readable for TMR3_FIFO_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [tmr3_fifo::W](W) writer structure
-        impl crate::Writable for TMR3_FIFO_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets TMR3_FIFO to value 0
-        impl crate::Resettable for TMR3_FIFO_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-}
+pub use self::tmr0 as tmr3;
 ///UART0 register
 pub struct UART0 {
     _marker: PhantomData<*const ()>,
@@ -13000,15 +11171,15 @@ pub struct UART1 {
 unsafe impl Send for UART1 {}
 impl UART1 {
     ///Pointer to the register block
-    pub const PTR: *const uart1::RegisterBlock = 0x4000_3400 as *const _;
+    pub const PTR: *const uart0::RegisterBlock = 0x4000_3400 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const uart1::RegisterBlock {
+    pub const fn ptr() -> *const uart0::RegisterBlock {
         Self::PTR
     }
 }
 impl Deref for UART1 {
-    type Target = uart1::RegisterBlock;
+    type Target = uart0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -13020,1115 +11191,7 @@ impl core::fmt::Debug for UART1 {
     }
 }
 ///UART1 register
-pub mod uart1 {
-    ///Register block
-    #[repr(C)]
-    pub struct RegisterBlock {
-        ///0x00 - RW, UART1 modem control
-        pub mcr: MCR,
-        ///0x01 - RW, UART1 interrupt enable
-        pub ier: IER,
-        ///0x02 - RW, UART1 FIFO control
-        pub fcr: FCR,
-        ///0x03 - RW, UART1 line control
-        pub lcr: LCR,
-        ///0x04 - RO, UART1 interrupt identification
-        pub iir: IIR,
-        ///0x05 - RO, UART1 line status
-        pub lsr: LSR,
-        _reserved6: [u8; 0x02],
-        _reserved_6_rbr: [u8; 0x01],
-        _reserved7: [u8; 0x01],
-        ///0x0a - RO, UART1 receiver FIFO count
-        pub rfc: RFC,
-        ///0x0b - RO, UART1 transmitter FIFO count
-        pub tfc: TFC,
-        ///0x0c - RW, UART1 divisor latch
-        pub dl: DL,
-        ///0x0e - RW, UART1 pre-divisor latch byte, only low 7 bit, from 1 to 128
-        pub div: DIV,
-    }
-    impl RegisterBlock {
-        ///0x08 - WO, UART1 transmitter holding, transmittal byte
-        #[inline(always)]
-        pub const fn thr(&self) -> &THR {
-            unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
-        }
-        ///0x08 - RO, UART1 receiver buffer, receiving byte
-        #[inline(always)]
-        pub const fn rbr(&self) -> &RBR {
-            unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
-        }
-    }
-    ///MCR (rw) register accessor: an alias for `Reg<MCR_SPEC>`
-    pub type MCR = crate::Reg<mcr::MCR_SPEC>;
-    ///RW, UART1 modem control
-    pub mod mcr {
-        ///Register `MCR` reader
-        pub struct R(crate::R<MCR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<MCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<MCR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<MCR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `MCR` writer
-        pub struct W(crate::W<MCR_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<MCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<MCR_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<MCR_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `OUT2_RB_MCR_INT_OE` reader - RW, UART control OUT2/UART interrupt output enable
-        pub type OUT2_RB_MCR_INT_OE_R = crate::BitReader;
-        ///Field `OUT2_RB_MCR_INT_OE` writer - RW, UART control OUT2/UART interrupt output enable
-        pub type OUT2_RB_MCR_INT_OE_W<'a, const O: u8> = crate::BitWriter<'a, MCR_SPEC, O>;
-        impl R {
-            ///Bit 3 - RW, UART control OUT2/UART interrupt output enable
-            #[inline(always)]
-            pub fn out2_rb_mcr_int_oe(&self) -> OUT2_RB_MCR_INT_OE_R {
-                OUT2_RB_MCR_INT_OE_R::new(((self.bits >> 3) & 1) != 0)
-            }
-        }
-        impl W {
-            ///Bit 3 - RW, UART control OUT2/UART interrupt output enable
-            #[inline(always)]
-            #[must_use]
-            pub fn out2_rb_mcr_int_oe(&mut self) -> OUT2_RB_MCR_INT_OE_W<3> {
-                OUT2_RB_MCR_INT_OE_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART1 modem control
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [mcr](index.html) module
-        pub struct MCR_SPEC;
-        impl crate::RegisterSpec for MCR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [mcr::R](R) reader structure
-        impl crate::Readable for MCR_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [mcr::W](W) writer structure
-        impl crate::Writable for MCR_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets MCR to value 0
-        impl crate::Resettable for MCR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///IER (rw) register accessor: an alias for `Reg<IER_SPEC>`
-    pub type IER = crate::Reg<ier::IER_SPEC>;
-    ///RW, UART1 interrupt enable
-    pub mod ier {
-        ///Register `IER` reader
-        pub struct R(crate::R<IER_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<IER_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<IER_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<IER_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `IER` writer
-        pub struct W(crate::W<IER_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<IER_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<IER_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<IER_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `RECV_RDY` reader - RW, UART interrupt enable for receiver data ready
-        pub type RECV_RDY_R = crate::BitReader;
-        ///Field `RECV_RDY` writer - RW, UART interrupt enable for receiver data ready
-        pub type RECV_RDY_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
-        ///Field `THR_EMPTY` reader - RW, UART interrupt enable for THR empty
-        pub type THR_EMPTY_R = crate::BitReader;
-        ///Field `THR_EMPTY` writer - RW, UART interrupt enable for THR empty
-        pub type THR_EMPTY_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
-        ///Field `LINE_STAT` reader - RW, UART interrupt enable for receiver line status
-        pub type LINE_STAT_R = crate::BitReader;
-        ///Field `LINE_STAT` writer - RW, UART interrupt enable for receiver line status
-        pub type LINE_STAT_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
-        ///Field `TXD_EN` reader - RW, UART TXD pin enable
-        pub type TXD_EN_R = crate::BitReader;
-        ///Field `TXD_EN` writer - RW, UART TXD pin enable
-        pub type TXD_EN_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
-        ///Field `RESET` reader - WZ, UART software reset control, high action, auto clear
-        pub type RESET_R = crate::BitReader;
-        ///Field `RESET` writer - WZ, UART software reset control, high action, auto clear
-        pub type RESET_W<'a, const O: u8> = crate::BitWriter<'a, IER_SPEC, O>;
-        impl R {
-            ///Bit 0 - RW, UART interrupt enable for receiver data ready
-            #[inline(always)]
-            pub fn recv_rdy(&self) -> RECV_RDY_R {
-                RECV_RDY_R::new((self.bits & 1) != 0)
-            }
-            ///Bit 1 - RW, UART interrupt enable for THR empty
-            #[inline(always)]
-            pub fn thr_empty(&self) -> THR_EMPTY_R {
-                THR_EMPTY_R::new(((self.bits >> 1) & 1) != 0)
-            }
-            ///Bit 2 - RW, UART interrupt enable for receiver line status
-            #[inline(always)]
-            pub fn line_stat(&self) -> LINE_STAT_R {
-                LINE_STAT_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bit 6 - RW, UART TXD pin enable
-            #[inline(always)]
-            pub fn txd_en(&self) -> TXD_EN_R {
-                TXD_EN_R::new(((self.bits >> 6) & 1) != 0)
-            }
-            ///Bit 7 - WZ, UART software reset control, high action, auto clear
-            #[inline(always)]
-            pub fn reset(&self) -> RESET_R {
-                RESET_R::new(((self.bits >> 7) & 1) != 0)
-            }
-        }
-        impl W {
-            ///Bit 0 - RW, UART interrupt enable for receiver data ready
-            #[inline(always)]
-            #[must_use]
-            pub fn recv_rdy(&mut self) -> RECV_RDY_W<0> {
-                RECV_RDY_W::new(self)
-            }
-            ///Bit 1 - RW, UART interrupt enable for THR empty
-            #[inline(always)]
-            #[must_use]
-            pub fn thr_empty(&mut self) -> THR_EMPTY_W<1> {
-                THR_EMPTY_W::new(self)
-            }
-            ///Bit 2 - RW, UART interrupt enable for receiver line status
-            #[inline(always)]
-            #[must_use]
-            pub fn line_stat(&mut self) -> LINE_STAT_W<2> {
-                LINE_STAT_W::new(self)
-            }
-            ///Bit 6 - RW, UART TXD pin enable
-            #[inline(always)]
-            #[must_use]
-            pub fn txd_en(&mut self) -> TXD_EN_W<6> {
-                TXD_EN_W::new(self)
-            }
-            ///Bit 7 - WZ, UART software reset control, high action, auto clear
-            #[inline(always)]
-            #[must_use]
-            pub fn reset(&mut self) -> RESET_W<7> {
-                RESET_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART1 interrupt enable
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [ier](index.html) module
-        pub struct IER_SPEC;
-        impl crate::RegisterSpec for IER_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [ier::R](R) reader structure
-        impl crate::Readable for IER_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [ier::W](W) writer structure
-        impl crate::Writable for IER_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets IER to value 0
-        impl crate::Resettable for IER_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///FCR (rw) register accessor: an alias for `Reg<FCR_SPEC>`
-    pub type FCR = crate::Reg<fcr::FCR_SPEC>;
-    ///RW, UART1 FIFO control
-    pub mod fcr {
-        ///Register `FCR` reader
-        pub struct R(crate::R<FCR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<FCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<FCR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<FCR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `FCR` writer
-        pub struct W(crate::W<FCR_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<FCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<FCR_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<FCR_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `FIFO_EN` reader - RW, UART FIFO enable
-        pub type FIFO_EN_R = crate::BitReader;
-        ///Field `FIFO_EN` writer - RW, UART FIFO enable
-        pub type FIFO_EN_W<'a, const O: u8> = crate::BitWriter<'a, FCR_SPEC, O>;
-        ///Field `RX_FIFO_CLR` reader - WZ, clear UART receiver FIFO, high action, auto clear
-        pub type RX_FIFO_CLR_R = crate::BitReader;
-        ///Field `RX_FIFO_CLR` writer - WZ, clear UART receiver FIFO, high action, auto clear
-        pub type RX_FIFO_CLR_W<'a, const O: u8> = crate::BitWriter<'a, FCR_SPEC, O>;
-        ///Field `TX_FIFO_CLR` reader - WZ, clear UART transmitter FIFO, high action, auto clear
-        pub type TX_FIFO_CLR_R = crate::BitReader;
-        ///Field `TX_FIFO_CLR` writer - WZ, clear UART transmitter FIFO, high action, auto clear
-        pub type TX_FIFO_CLR_W<'a, const O: u8> = crate::BitWriter<'a, FCR_SPEC, O>;
-        ///Field `FIFO_TRIG` reader - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
-        pub type FIFO_TRIG_R = crate::FieldReader;
-        ///Field `FIFO_TRIG` writer - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
-        pub type FIFO_TRIG_W<'a, const O: u8> = crate::FieldWriter<'a, FCR_SPEC, 2, O>;
-        impl R {
-            ///Bit 0 - RW, UART FIFO enable
-            #[inline(always)]
-            pub fn fifo_en(&self) -> FIFO_EN_R {
-                FIFO_EN_R::new((self.bits & 1) != 0)
-            }
-            ///Bit 1 - WZ, clear UART receiver FIFO, high action, auto clear
-            #[inline(always)]
-            pub fn rx_fifo_clr(&self) -> RX_FIFO_CLR_R {
-                RX_FIFO_CLR_R::new(((self.bits >> 1) & 1) != 0)
-            }
-            ///Bit 2 - WZ, clear UART transmitter FIFO, high action, auto clear
-            #[inline(always)]
-            pub fn tx_fifo_clr(&self) -> TX_FIFO_CLR_R {
-                TX_FIFO_CLR_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bits 6:7 - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
-            #[inline(always)]
-            pub fn fifo_trig(&self) -> FIFO_TRIG_R {
-                FIFO_TRIG_R::new((self.bits >> 6) & 3)
-            }
-        }
-        impl W {
-            ///Bit 0 - RW, UART FIFO enable
-            #[inline(always)]
-            #[must_use]
-            pub fn fifo_en(&mut self) -> FIFO_EN_W<0> {
-                FIFO_EN_W::new(self)
-            }
-            ///Bit 1 - WZ, clear UART receiver FIFO, high action, auto clear
-            #[inline(always)]
-            #[must_use]
-            pub fn rx_fifo_clr(&mut self) -> RX_FIFO_CLR_W<1> {
-                RX_FIFO_CLR_W::new(self)
-            }
-            ///Bit 2 - WZ, clear UART transmitter FIFO, high action, auto clear
-            #[inline(always)]
-            #[must_use]
-            pub fn tx_fifo_clr(&mut self) -> TX_FIFO_CLR_W<2> {
-                TX_FIFO_CLR_W::new(self)
-            }
-            ///Bits 6:7 - RW, UART receiver FIFO trigger level: 00-1byte, 01-2bytes, 10-4bytes, 11-7bytes
-            #[inline(always)]
-            #[must_use]
-            pub fn fifo_trig(&mut self) -> FIFO_TRIG_W<6> {
-                FIFO_TRIG_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART1 FIFO control
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [fcr](index.html) module
-        pub struct FCR_SPEC;
-        impl crate::RegisterSpec for FCR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [fcr::R](R) reader structure
-        impl crate::Readable for FCR_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [fcr::W](W) writer structure
-        impl crate::Writable for FCR_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets FCR to value 0
-        impl crate::Resettable for FCR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///LCR (rw) register accessor: an alias for `Reg<LCR_SPEC>`
-    pub type LCR = crate::Reg<lcr::LCR_SPEC>;
-    ///RW, UART1 line control
-    pub mod lcr {
-        ///Register `LCR` reader
-        pub struct R(crate::R<LCR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<LCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<LCR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<LCR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `LCR` writer
-        pub struct W(crate::W<LCR_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<LCR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<LCR_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<LCR_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `WORD_SZ` reader - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
-        pub type WORD_SZ_R = crate::FieldReader;
-        ///Field `WORD_SZ` writer - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
-        pub type WORD_SZ_W<'a, const O: u8> = crate::FieldWriter<'a, LCR_SPEC, 2, O>;
-        ///Field `STOP_BIT` reader - RW, UART stop bit length: 0-1bit, 1-2bit
-        pub type STOP_BIT_R = crate::BitReader;
-        ///Field `STOP_BIT` writer - RW, UART stop bit length: 0-1bit, 1-2bit
-        pub type STOP_BIT_W<'a, const O: u8> = crate::BitWriter<'a, LCR_SPEC, O>;
-        ///Field `PAR_EN` reader - RW, UART parity enable
-        pub type PAR_EN_R = crate::BitReader;
-        ///Field `PAR_EN` writer - RW, UART parity enable
-        pub type PAR_EN_W<'a, const O: u8> = crate::BitWriter<'a, LCR_SPEC, O>;
-        ///Field `PAR_MOD` reader - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
-        pub type PAR_MOD_R = crate::FieldReader;
-        ///Field `PAR_MOD` writer - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
-        pub type PAR_MOD_W<'a, const O: u8> = crate::FieldWriter<'a, LCR_SPEC, 2, O>;
-        ///Field `BREAK_EN` reader - RW, UART break control enable
-        pub type BREAK_EN_R = crate::BitReader;
-        ///Field `BREAK_EN` writer - RW, UART break control enable
-        pub type BREAK_EN_W<'a, const O: u8> = crate::BitWriter<'a, LCR_SPEC, O>;
-        ///Field `GP_BIT_RB_LCR_DLAB` reader - RW, UART general purpose bit;RW, UART reserved bit
-        pub type GP_BIT_RB_LCR_DLAB_R = crate::BitReader;
-        ///Field `GP_BIT_RB_LCR_DLAB` writer - RW, UART general purpose bit;RW, UART reserved bit
-        pub type GP_BIT_RB_LCR_DLAB_W<'a, const O: u8> = crate::BitWriter<'a, LCR_SPEC, O>;
-        impl R {
-            ///Bits 0:1 - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
-            #[inline(always)]
-            pub fn word_sz(&self) -> WORD_SZ_R {
-                WORD_SZ_R::new(self.bits & 3)
-            }
-            ///Bit 2 - RW, UART stop bit length: 0-1bit, 1-2bit
-            #[inline(always)]
-            pub fn stop_bit(&self) -> STOP_BIT_R {
-                STOP_BIT_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bit 3 - RW, UART parity enable
-            #[inline(always)]
-            pub fn par_en(&self) -> PAR_EN_R {
-                PAR_EN_R::new(((self.bits >> 3) & 1) != 0)
-            }
-            ///Bits 4:5 - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
-            #[inline(always)]
-            pub fn par_mod(&self) -> PAR_MOD_R {
-                PAR_MOD_R::new((self.bits >> 4) & 3)
-            }
-            ///Bit 6 - RW, UART break control enable
-            #[inline(always)]
-            pub fn break_en(&self) -> BREAK_EN_R {
-                BREAK_EN_R::new(((self.bits >> 6) & 1) != 0)
-            }
-            ///Bit 7 - RW, UART general purpose bit;RW, UART reserved bit
-            #[inline(always)]
-            pub fn gp_bit_rb_lcr_dlab(&self) -> GP_BIT_RB_LCR_DLAB_R {
-                GP_BIT_RB_LCR_DLAB_R::new(((self.bits >> 7) & 1) != 0)
-            }
-        }
-        impl W {
-            ///Bits 0:1 - RW, UART word bit length: 00-5bit, 01-6bit, 10-7bit, 11-8bit
-            #[inline(always)]
-            #[must_use]
-            pub fn word_sz(&mut self) -> WORD_SZ_W<0> {
-                WORD_SZ_W::new(self)
-            }
-            ///Bit 2 - RW, UART stop bit length: 0-1bit, 1-2bit
-            #[inline(always)]
-            #[must_use]
-            pub fn stop_bit(&mut self) -> STOP_BIT_W<2> {
-                STOP_BIT_W::new(self)
-            }
-            ///Bit 3 - RW, UART parity enable
-            #[inline(always)]
-            #[must_use]
-            pub fn par_en(&mut self) -> PAR_EN_W<3> {
-                PAR_EN_W::new(self)
-            }
-            ///Bits 4:5 - RW, UART parity mode: 00-odd, 01-even, 10-mark, 11-space
-            #[inline(always)]
-            #[must_use]
-            pub fn par_mod(&mut self) -> PAR_MOD_W<4> {
-                PAR_MOD_W::new(self)
-            }
-            ///Bit 6 - RW, UART break control enable
-            #[inline(always)]
-            #[must_use]
-            pub fn break_en(&mut self) -> BREAK_EN_W<6> {
-                BREAK_EN_W::new(self)
-            }
-            ///Bit 7 - RW, UART general purpose bit;RW, UART reserved bit
-            #[inline(always)]
-            #[must_use]
-            pub fn gp_bit_rb_lcr_dlab(&mut self) -> GP_BIT_RB_LCR_DLAB_W<7> {
-                GP_BIT_RB_LCR_DLAB_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART1 line control
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [lcr](index.html) module
-        pub struct LCR_SPEC;
-        impl crate::RegisterSpec for LCR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [lcr::R](R) reader structure
-        impl crate::Readable for LCR_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [lcr::W](W) writer structure
-        impl crate::Writable for LCR_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets LCR to value 0
-        impl crate::Resettable for LCR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///IIR (r) register accessor: an alias for `Reg<IIR_SPEC>`
-    pub type IIR = crate::Reg<iir::IIR_SPEC>;
-    ///RO, UART1 interrupt identification
-    pub mod iir {
-        ///Register `IIR` reader
-        pub struct R(crate::R<IIR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<IIR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<IIR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<IIR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `NO_INT` reader - RO, UART no interrupt flag: 0=interrupt action, 1=no interrupt
-        pub type NO_INT_R = crate::BitReader;
-        ///Field `INT_MASK` reader - RO, UART interrupt flag bit mask
-        pub type INT_MASK_R = crate::FieldReader;
-        ///Field `FIFO_ID` reader - RO, UART FIFO enabled flag
-        pub type FIFO_ID_R = crate::FieldReader;
-        impl R {
-            ///Bit 0 - RO, UART no interrupt flag: 0=interrupt action, 1=no interrupt
-            #[inline(always)]
-            pub fn no_int(&self) -> NO_INT_R {
-                NO_INT_R::new((self.bits & 1) != 0)
-            }
-            ///Bits 1:3 - RO, UART interrupt flag bit mask
-            #[inline(always)]
-            pub fn int_mask(&self) -> INT_MASK_R {
-                INT_MASK_R::new((self.bits >> 1) & 7)
-            }
-            ///Bits 6:7 - RO, UART FIFO enabled flag
-            #[inline(always)]
-            pub fn fifo_id(&self) -> FIFO_ID_R {
-                FIFO_ID_R::new((self.bits >> 6) & 3)
-            }
-        }
-        ///RO, UART1 interrupt identification
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [iir](index.html) module
-        pub struct IIR_SPEC;
-        impl crate::RegisterSpec for IIR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [iir::R](R) reader structure
-        impl crate::Readable for IIR_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets IIR to value 0x01
-        impl crate::Resettable for IIR_SPEC {
-            const RESET_VALUE: Self::Ux = 0x01;
-        }
-    }
-    ///LSR (r) register accessor: an alias for `Reg<LSR_SPEC>`
-    pub type LSR = crate::Reg<lsr::LSR_SPEC>;
-    ///RO, UART1 line status
-    pub mod lsr {
-        ///Register `LSR` reader
-        pub struct R(crate::R<LSR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<LSR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<LSR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<LSR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `DATA_RDY` reader - RO, UART receiver fifo data ready status
-        pub type DATA_RDY_R = crate::BitReader;
-        ///Field `OVER_ERR` reader - RZ, UART receiver overrun error
-        pub type OVER_ERR_R = crate::BitReader;
-        ///Field `PAR_ERR` reader - RZ, UART receiver parity error
-        pub type PAR_ERR_R = crate::BitReader;
-        ///Field `FRAME_ERR` reader - RZ, UART receiver frame error
-        pub type FRAME_ERR_R = crate::BitReader;
-        ///Field `BREAK_ERR` reader - RZ, UART receiver break error
-        pub type BREAK_ERR_R = crate::BitReader;
-        ///Field `TX_FIFO_EMP` reader - RO, UART transmitter fifo empty status
-        pub type TX_FIFO_EMP_R = crate::BitReader;
-        ///Field `TX_ALL_EMP` reader - RO, UART transmitter all empty status
-        pub type TX_ALL_EMP_R = crate::BitReader;
-        ///Field `ERR_RX_FIFO` reader - RO, indicate error in UART receiver fifo
-        pub type ERR_RX_FIFO_R = crate::BitReader;
-        impl R {
-            ///Bit 0 - RO, UART receiver fifo data ready status
-            #[inline(always)]
-            pub fn data_rdy(&self) -> DATA_RDY_R {
-                DATA_RDY_R::new((self.bits & 1) != 0)
-            }
-            ///Bit 1 - RZ, UART receiver overrun error
-            #[inline(always)]
-            pub fn over_err(&self) -> OVER_ERR_R {
-                OVER_ERR_R::new(((self.bits >> 1) & 1) != 0)
-            }
-            ///Bit 2 - RZ, UART receiver parity error
-            #[inline(always)]
-            pub fn par_err(&self) -> PAR_ERR_R {
-                PAR_ERR_R::new(((self.bits >> 2) & 1) != 0)
-            }
-            ///Bit 3 - RZ, UART receiver frame error
-            #[inline(always)]
-            pub fn frame_err(&self) -> FRAME_ERR_R {
-                FRAME_ERR_R::new(((self.bits >> 3) & 1) != 0)
-            }
-            ///Bit 4 - RZ, UART receiver break error
-            #[inline(always)]
-            pub fn break_err(&self) -> BREAK_ERR_R {
-                BREAK_ERR_R::new(((self.bits >> 4) & 1) != 0)
-            }
-            ///Bit 5 - RO, UART transmitter fifo empty status
-            #[inline(always)]
-            pub fn tx_fifo_emp(&self) -> TX_FIFO_EMP_R {
-                TX_FIFO_EMP_R::new(((self.bits >> 5) & 1) != 0)
-            }
-            ///Bit 6 - RO, UART transmitter all empty status
-            #[inline(always)]
-            pub fn tx_all_emp(&self) -> TX_ALL_EMP_R {
-                TX_ALL_EMP_R::new(((self.bits >> 6) & 1) != 0)
-            }
-            ///Bit 7 - RO, indicate error in UART receiver fifo
-            #[inline(always)]
-            pub fn err_rx_fifo(&self) -> ERR_RX_FIFO_R {
-                ERR_RX_FIFO_R::new(((self.bits >> 7) & 1) != 0)
-            }
-        }
-        ///RO, UART1 line status
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [lsr](index.html) module
-        pub struct LSR_SPEC;
-        impl crate::RegisterSpec for LSR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [lsr::R](R) reader structure
-        impl crate::Readable for LSR_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets LSR to value 0x60
-        impl crate::Resettable for LSR_SPEC {
-            const RESET_VALUE: Self::Ux = 0x60;
-        }
-    }
-    ///RBR (r) register accessor: an alias for `Reg<RBR_SPEC>`
-    pub type RBR = crate::Reg<rbr::RBR_SPEC>;
-    ///RO, UART1 receiver buffer, receiving byte
-    pub mod rbr {
-        ///Register `RBR` reader
-        pub struct R(crate::R<RBR_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<RBR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<RBR_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<RBR_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `RBR` reader - RO, UART1 receiver buffer, receiving byte
-        pub type RBR_R = crate::FieldReader;
-        impl R {
-            ///Bits 0:7 - RO, UART1 receiver buffer, receiving byte
-            #[inline(always)]
-            pub fn rbr(&self) -> RBR_R {
-                RBR_R::new(self.bits)
-            }
-        }
-        ///RO, UART1 receiver buffer, receiving byte
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [rbr](index.html) module
-        pub struct RBR_SPEC;
-        impl crate::RegisterSpec for RBR_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [rbr::R](R) reader structure
-        impl crate::Readable for RBR_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets RBR to value 0
-        impl crate::Resettable for RBR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///THR (w) register accessor: an alias for `Reg<THR_SPEC>`
-    pub type THR = crate::Reg<thr::THR_SPEC>;
-    ///WO, UART1 transmitter holding, transmittal byte
-    pub mod thr {
-        ///Register `THR` writer
-        pub struct W(crate::W<THR_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<THR_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<THR_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<THR_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `RBR` writer - WO, UART1 transmitter holding, transmittal byte
-        pub type RBR_W<'a, const O: u8> = crate::FieldWriter<'a, THR_SPEC, 8, O>;
-        impl W {
-            ///Bits 0:7 - WO, UART1 transmitter holding, transmittal byte
-            #[inline(always)]
-            #[must_use]
-            pub fn rbr(&mut self) -> RBR_W<0> {
-                RBR_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///WO, UART1 transmitter holding, transmittal byte
-        ///
-        ///This register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [thr](index.html) module
-        pub struct THR_SPEC;
-        impl crate::RegisterSpec for THR_SPEC {
-            type Ux = u8;
-        }
-        ///`write(|w| ..)` method takes [thr::W](W) writer structure
-        impl crate::Writable for THR_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets THR to value 0
-        impl crate::Resettable for THR_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///RFC (r) register accessor: an alias for `Reg<RFC_SPEC>`
-    pub type RFC = crate::Reg<rfc::RFC_SPEC>;
-    ///RO, UART1 receiver FIFO count
-    pub mod rfc {
-        ///Register `RFC` reader
-        pub struct R(crate::R<RFC_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<RFC_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<RFC_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<RFC_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `RFC` reader - RO, UART1 receiver FIFO count
-        pub type RFC_R = crate::FieldReader;
-        impl R {
-            ///Bits 0:7 - RO, UART1 receiver FIFO count
-            #[inline(always)]
-            pub fn rfc(&self) -> RFC_R {
-                RFC_R::new(self.bits)
-            }
-        }
-        ///RO, UART1 receiver FIFO count
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [rfc](index.html) module
-        pub struct RFC_SPEC;
-        impl crate::RegisterSpec for RFC_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [rfc::R](R) reader structure
-        impl crate::Readable for RFC_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets RFC to value 0
-        impl crate::Resettable for RFC_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///TFC (r) register accessor: an alias for `Reg<TFC_SPEC>`
-    pub type TFC = crate::Reg<tfc::TFC_SPEC>;
-    ///RO, UART1 transmitter FIFO count
-    pub mod tfc {
-        ///Register `TFC` reader
-        pub struct R(crate::R<TFC_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<TFC_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<TFC_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<TFC_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `TFC` reader - RO, UART1 receiver FIFO count
-        pub type TFC_R = crate::FieldReader;
-        impl R {
-            ///Bits 0:7 - RO, UART1 receiver FIFO count
-            #[inline(always)]
-            pub fn tfc(&self) -> TFC_R {
-                TFC_R::new(self.bits)
-            }
-        }
-        ///RO, UART1 transmitter FIFO count
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [tfc](index.html) module
-        pub struct TFC_SPEC;
-        impl crate::RegisterSpec for TFC_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [tfc::R](R) reader structure
-        impl crate::Readable for TFC_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets TFC to value 0
-        impl crate::Resettable for TFC_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///DL (rw) register accessor: an alias for `Reg<DL_SPEC>`
-    pub type DL = crate::Reg<dl::DL_SPEC>;
-    ///RW, UART1 divisor latch
-    pub mod dl {
-        ///Register `DL` reader
-        pub struct R(crate::R<DL_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<DL_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<DL_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<DL_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `DL` writer
-        pub struct W(crate::W<DL_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<DL_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<DL_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<DL_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `DL` reader - RW, UART1 divisor latch
-        pub type DL_R = crate::FieldReader<u16>;
-        ///Field `DL` writer - RW, UART1 divisor latch
-        pub type DL_W<'a, const O: u8> = crate::FieldWriter<'a, DL_SPEC, 16, O, u16>;
-        impl R {
-            ///Bits 0:15 - RW, UART1 divisor latch
-            #[inline(always)]
-            pub fn dl(&self) -> DL_R {
-                DL_R::new(self.bits)
-            }
-        }
-        impl W {
-            ///Bits 0:15 - RW, UART1 divisor latch
-            #[inline(always)]
-            #[must_use]
-            pub fn dl(&mut self) -> DL_W<0> {
-                DL_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART1 divisor latch
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [dl](index.html) module
-        pub struct DL_SPEC;
-        impl crate::RegisterSpec for DL_SPEC {
-            type Ux = u16;
-        }
-        ///`read()` method returns [dl::R](R) reader structure
-        impl crate::Readable for DL_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [dl::W](W) writer structure
-        impl crate::Writable for DL_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets DL to value 0
-        impl crate::Resettable for DL_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///DIV (rw) register accessor: an alias for `Reg<DIV_SPEC>`
-    pub type DIV = crate::Reg<div::DIV_SPEC>;
-    ///RW, UART1 pre-divisor latch byte, only low 7 bit, from 1 to 128
-    pub mod div {
-        ///Register `DIV` reader
-        pub struct R(crate::R<DIV_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<DIV_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<DIV_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<DIV_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Register `DIV` writer
-        pub struct W(crate::W<DIV_SPEC>);
-        impl core::ops::Deref for W {
-            type Target = crate::W<DIV_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl core::ops::DerefMut for W {
-            #[inline(always)]
-            fn deref_mut(&mut self) -> &mut Self::Target {
-                &mut self.0
-            }
-        }
-        impl From<crate::W<DIV_SPEC>> for W {
-            #[inline(always)]
-            fn from(writer: crate::W<DIV_SPEC>) -> Self {
-                W(writer)
-            }
-        }
-        ///Field `DIV` reader - RW, UART1 pre-divisor latch byte, only low 7 bit, from 1 to 128
-        pub type DIV_R = crate::FieldReader;
-        ///Field `DIV` writer - RW, UART1 pre-divisor latch byte, only low 7 bit, from 1 to 128
-        pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, DIV_SPEC, 8, O>;
-        impl R {
-            ///Bits 0:7 - RW, UART1 pre-divisor latch byte, only low 7 bit, from 1 to 128
-            #[inline(always)]
-            pub fn div(&self) -> DIV_R {
-                DIV_R::new(self.bits)
-            }
-        }
-        impl W {
-            ///Bits 0:7 - RW, UART1 pre-divisor latch byte, only low 7 bit, from 1 to 128
-            #[inline(always)]
-            #[must_use]
-            pub fn div(&mut self) -> DIV_W<0> {
-                DIV_W::new(self)
-            }
-            ///Writes raw bits to the register.
-            #[inline(always)]
-            pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-                self.0.bits(bits);
-                self
-            }
-        }
-        ///RW, UART1 pre-divisor latch byte, only low 7 bit, from 1 to 128
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [div](index.html) module
-        pub struct DIV_SPEC;
-        impl crate::RegisterSpec for DIV_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [div::R](R) reader structure
-        impl crate::Readable for DIV_SPEC {
-            type Reader = R;
-        }
-        ///`write(|w| ..)` method takes [div::W](W) writer structure
-        impl crate::Writable for DIV_SPEC {
-            type Writer = W;
-            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-        }
-        ///`reset()` method sets DIV to value 0
-        impl crate::Resettable for DIV_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-}
+pub use self::uart0 as uart1;
 ///UART2 register
 pub struct UART2 {
     _marker: PhantomData<*const ()>,
@@ -14136,15 +11199,15 @@ pub struct UART2 {
 unsafe impl Send for UART2 {}
 impl UART2 {
     ///Pointer to the register block
-    pub const PTR: *const uart1::RegisterBlock = 0x4000_3800 as *const _;
+    pub const PTR: *const uart0::RegisterBlock = 0x4000_3800 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const uart1::RegisterBlock {
+    pub const fn ptr() -> *const uart0::RegisterBlock {
         Self::PTR
     }
 }
 impl Deref for UART2 {
-    type Target = uart1::RegisterBlock;
+    type Target = uart0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -14156,7 +11219,7 @@ impl core::fmt::Debug for UART2 {
     }
 }
 ///UART2 register
-pub use self::uart1 as uart2;
+pub use self::uart0 as uart2;
 ///UART3 register
 pub struct UART3 {
     _marker: PhantomData<*const ()>,
@@ -14164,15 +11227,15 @@ pub struct UART3 {
 unsafe impl Send for UART3 {}
 impl UART3 {
     ///Pointer to the register block
-    pub const PTR: *const uart1::RegisterBlock = 0x4000_3c00 as *const _;
+    pub const PTR: *const uart0::RegisterBlock = 0x4000_3c00 as *const _;
     ///Return the pointer to the register block
     #[inline(always)]
-    pub const fn ptr() -> *const uart1::RegisterBlock {
+    pub const fn ptr() -> *const uart0::RegisterBlock {
         Self::PTR
     }
 }
 impl Deref for UART3 {
-    type Target = uart1::RegisterBlock;
+    type Target = uart0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
@@ -14184,7 +11247,7 @@ impl core::fmt::Debug for UART3 {
     }
 }
 ///UART3 register
-pub use self::uart1 as uart3;
+pub use self::uart0 as uart3;
 ///SPI0 register
 pub struct SPI0 {
     _marker: PhantomData<*const ()>,

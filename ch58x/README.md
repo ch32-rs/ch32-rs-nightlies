@@ -15,7 +15,7 @@ compile the device(s) you want. To use, in your Cargo.toml:
 
 ```toml
 [dependencies.ch58x]
-version = "0.1.7"
+version = "0.2.0"
 features = ["ch58x", "critical-section"]
 
 [dependencies.riscv]
