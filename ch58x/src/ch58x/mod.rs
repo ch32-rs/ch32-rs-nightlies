@@ -11412,133 +11412,143 @@ pub mod spi0 {
                 W(writer)
             }
         }
-        ///Field `SPI_MODE_SLAVE` reader - RW, SPI0 slave mode: 0=master or host, 1=slave or device
-        pub type SPI_MODE_SLAVE_R = crate::BitReader;
-        ///Field `SPI_MODE_SLAVE` writer - RW, SPI0 slave mode: 0=master or host, 1=slave or device
-        pub type SPI_MODE_SLAVE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
-        ///Field `SPI_ALL_CLEAR` reader - RW, force clear SPI FIFO and count
-        pub type SPI_ALL_CLEAR_R = crate::BitReader;
-        ///Field `SPI_ALL_CLEAR` writer - RW, force clear SPI FIFO and count
-        pub type SPI_ALL_CLEAR_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
-        ///Field `SPI_2WIRE_MOD` reader - RW, SPI0 enable 2 wire mode for slave: 0=3wire(SCK0,MOSI,MISO), 1=2wire(SCK0,MISO=MXSX)
-        pub type SPI_2WIRE_MOD_R = crate::BitReader;
-        ///Field `SPI_2WIRE_MOD` writer - RW, SPI0 enable 2 wire mode for slave: 0=3wire(SCK0,MOSI,MISO), 1=2wire(SCK0,MISO=MXSX)
-        pub type SPI_2WIRE_MOD_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
-        ///Field `SPI_MST_SCK_MOD__RB_SPI_SLV_CMD_MOD` reader - RW, SPI master clock mode: 0=mode 0, 1=mode 3;RW, SPI0 slave command mode: 0=byte stream, 1=first byte command
-        pub type SPI_MST_SCK_MOD__RB_SPI_SLV_CMD_MOD_R = crate::BitReader;
-        ///Field `SPI_MST_SCK_MOD__RB_SPI_SLV_CMD_MOD` writer - RW, SPI master clock mode: 0=mode 0, 1=mode 3;RW, SPI0 slave command mode: 0=byte stream, 1=first byte command
-        pub type SPI_MST_SCK_MOD__RB_SPI_SLV_CMD_MOD_W<'a, const O: u8> =
-            crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
-        ///Field `SPI_FIFO_DIR` reader - RW, SPI FIFO direction: 0=out(write @master mode), 1=in(read @master mode)
-        pub type SPI_FIFO_DIR_R = crate::BitReader;
-        ///Field `SPI_FIFO_DIR` writer - RW, SPI FIFO direction: 0=out(write @master mode), 1=in(read @master mode)
-        pub type SPI_FIFO_DIR_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
-        ///Field `SPI_SCK_OE` reader - RW, SPI SCK output enable
-        pub type SPI_SCK_OE_R = crate::BitReader;
-        ///Field `SPI_SCK_OE` writer - RW, SPI SCK output enable
-        pub type SPI_SCK_OE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
-        ///Field `SPI_MOSI_OE` reader - RW, SPI MOSI output enable
-        pub type SPI_MOSI_OE_R = crate::BitReader;
-        ///Field `SPI_MOSI_OE` writer - RW, SPI MOSI output enable
-        pub type SPI_MOSI_OE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
-        ///Field `SPI_MISO_OE` reader - RW, SPI MISO output enable
-        pub type SPI_MISO_OE_R = crate::BitReader;
-        ///Field `SPI_MISO_OE` writer - RW, SPI MISO output enable
-        pub type SPI_MISO_OE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `MODE_SLAVE` reader - RW, SPI0 slave mode: 0=master or host, 1=slave or device
+        pub type MODE_SLAVE_R = crate::BitReader;
+        ///Field `MODE_SLAVE` writer - RW, SPI0 slave mode: 0=master or host, 1=slave or device
+        pub type MODE_SLAVE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `ALL_CLEAR` reader - RW, force clear SPI FIFO and count
+        pub type ALL_CLEAR_R = crate::BitReader;
+        ///Field `ALL_CLEAR` writer - RW, force clear SPI FIFO and count
+        pub type ALL_CLEAR_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `TWO_WIRE_MODE` reader - RW, SPI0 enable 2 wire mode for slave: 0=3wire(SCK0,MOSI,MISO), 1=2wire(SCK0,MISO=MXSX)
+        pub type TWO_WIRE_MODE_R = crate::BitReader;
+        ///Field `TWO_WIRE_MODE` writer - RW, SPI0 enable 2 wire mode for slave: 0=3wire(SCK0,MOSI,MISO), 1=2wire(SCK0,MISO=MXSX)
+        pub type TWO_WIRE_MODE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `MST_SCK_MOD` reader - RW, SPI master clock mode: 0=mode 0, 1=mode 3;RW, SPI0 slave command mode: 0=byte stream, 1=first byte command
+        pub type MST_SCK_MOD_R = crate::BitReader;
+        ///Field `MST_SCK_MOD` writer - RW, SPI master clock mode: 0=mode 0, 1=mode 3;RW, SPI0 slave command mode: 0=byte stream, 1=first byte command
+        pub type MST_SCK_MOD_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `SLV_CMD_MOD` reader - SPI slave command mode
+        pub type SLV_CMD_MOD_R = crate::BitReader;
+        ///Field `SLV_CMD_MOD` writer - SPI slave command mode
+        pub type SLV_CMD_MOD_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `FIFO_DIR` reader - RW, SPI FIFO direction: 0=out(write @master mode), 1=in(read @master mode)
+        pub type FIFO_DIR_R = crate::BitReader;
+        ///Field `FIFO_DIR` writer - RW, SPI FIFO direction: 0=out(write @master mode), 1=in(read @master mode)
+        pub type FIFO_DIR_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `SCK_OE` reader - RW, SPI SCK output enable
+        pub type SCK_OE_R = crate::BitReader;
+        ///Field `SCK_OE` writer - RW, SPI SCK output enable
+        pub type SCK_OE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `MOSI_OE` reader - RW, SPI MOSI output enable
+        pub type MOSI_OE_R = crate::BitReader;
+        ///Field `MOSI_OE` writer - RW, SPI MOSI output enable
+        pub type MOSI_OE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `MISO_OE` reader - RW, SPI MISO output enable
+        pub type MISO_OE_R = crate::BitReader;
+        ///Field `MISO_OE` writer - RW, SPI MISO output enable
+        pub type MISO_OE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
         impl R {
             ///Bit 0 - RW, SPI0 slave mode: 0=master or host, 1=slave or device
             #[inline(always)]
-            pub fn spi_mode_slave(&self) -> SPI_MODE_SLAVE_R {
-                SPI_MODE_SLAVE_R::new((self.bits & 1) != 0)
+            pub fn mode_slave(&self) -> MODE_SLAVE_R {
+                MODE_SLAVE_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW, force clear SPI FIFO and count
             #[inline(always)]
-            pub fn spi_all_clear(&self) -> SPI_ALL_CLEAR_R {
-                SPI_ALL_CLEAR_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn all_clear(&self) -> ALL_CLEAR_R {
+                ALL_CLEAR_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW, SPI0 enable 2 wire mode for slave: 0=3wire(SCK0,MOSI,MISO), 1=2wire(SCK0,MISO=MXSX)
             #[inline(always)]
-            pub fn spi_2wire_mod(&self) -> SPI_2WIRE_MOD_R {
-                SPI_2WIRE_MOD_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn two_wire_mode(&self) -> TWO_WIRE_MODE_R {
+                TWO_WIRE_MODE_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW, SPI master clock mode: 0=mode 0, 1=mode 3;RW, SPI0 slave command mode: 0=byte stream, 1=first byte command
             #[inline(always)]
-            pub fn spi_mst_sck_mod__rb_spi_slv_cmd_mod(
-                &self,
-            ) -> SPI_MST_SCK_MOD__RB_SPI_SLV_CMD_MOD_R {
-                SPI_MST_SCK_MOD__RB_SPI_SLV_CMD_MOD_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn mst_sck_mod(&self) -> MST_SCK_MOD_R {
+                MST_SCK_MOD_R::new(((self.bits >> 3) & 1) != 0)
+            }
+            ///Bit 3 - SPI slave command mode
+            #[inline(always)]
+            pub fn slv_cmd_mod(&self) -> SLV_CMD_MOD_R {
+                SLV_CMD_MOD_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RW, SPI FIFO direction: 0=out(write @master mode), 1=in(read @master mode)
             #[inline(always)]
-            pub fn spi_fifo_dir(&self) -> SPI_FIFO_DIR_R {
-                SPI_FIFO_DIR_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn fifo_dir(&self) -> FIFO_DIR_R {
+                FIFO_DIR_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 5 - RW, SPI SCK output enable
             #[inline(always)]
-            pub fn spi_sck_oe(&self) -> SPI_SCK_OE_R {
-                SPI_SCK_OE_R::new(((self.bits >> 5) & 1) != 0)
+            pub fn sck_oe(&self) -> SCK_OE_R {
+                SCK_OE_R::new(((self.bits >> 5) & 1) != 0)
             }
             ///Bit 6 - RW, SPI MOSI output enable
             #[inline(always)]
-            pub fn spi_mosi_oe(&self) -> SPI_MOSI_OE_R {
-                SPI_MOSI_OE_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn mosi_oe(&self) -> MOSI_OE_R {
+                MOSI_OE_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - RW, SPI MISO output enable
             #[inline(always)]
-            pub fn spi_miso_oe(&self) -> SPI_MISO_OE_R {
-                SPI_MISO_OE_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn miso_oe(&self) -> MISO_OE_R {
+                MISO_OE_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW, SPI0 slave mode: 0=master or host, 1=slave or device
             #[inline(always)]
             #[must_use]
-            pub fn spi_mode_slave(&mut self) -> SPI_MODE_SLAVE_W<0> {
-                SPI_MODE_SLAVE_W::new(self)
+            pub fn mode_slave(&mut self) -> MODE_SLAVE_W<0> {
+                MODE_SLAVE_W::new(self)
             }
             ///Bit 1 - RW, force clear SPI FIFO and count
             #[inline(always)]
             #[must_use]
-            pub fn spi_all_clear(&mut self) -> SPI_ALL_CLEAR_W<1> {
-                SPI_ALL_CLEAR_W::new(self)
+            pub fn all_clear(&mut self) -> ALL_CLEAR_W<1> {
+                ALL_CLEAR_W::new(self)
             }
             ///Bit 2 - RW, SPI0 enable 2 wire mode for slave: 0=3wire(SCK0,MOSI,MISO), 1=2wire(SCK0,MISO=MXSX)
             #[inline(always)]
             #[must_use]
-            pub fn spi_2wire_mod(&mut self) -> SPI_2WIRE_MOD_W<2> {
-                SPI_2WIRE_MOD_W::new(self)
+            pub fn two_wire_mode(&mut self) -> TWO_WIRE_MODE_W<2> {
+                TWO_WIRE_MODE_W::new(self)
             }
             ///Bit 3 - RW, SPI master clock mode: 0=mode 0, 1=mode 3;RW, SPI0 slave command mode: 0=byte stream, 1=first byte command
             #[inline(always)]
             #[must_use]
-            pub fn spi_mst_sck_mod__rb_spi_slv_cmd_mod(
-                &mut self,
-            ) -> SPI_MST_SCK_MOD__RB_SPI_SLV_CMD_MOD_W<3> {
-                SPI_MST_SCK_MOD__RB_SPI_SLV_CMD_MOD_W::new(self)
+            pub fn mst_sck_mod(&mut self) -> MST_SCK_MOD_W<3> {
+                MST_SCK_MOD_W::new(self)
+            }
+            ///Bit 3 - SPI slave command mode
+            #[inline(always)]
+            #[must_use]
+            pub fn slv_cmd_mod(&mut self) -> SLV_CMD_MOD_W<3> {
+                SLV_CMD_MOD_W::new(self)
             }
             ///Bit 4 - RW, SPI FIFO direction: 0=out(write @master mode), 1=in(read @master mode)
             #[inline(always)]
             #[must_use]
-            pub fn spi_fifo_dir(&mut self) -> SPI_FIFO_DIR_W<4> {
-                SPI_FIFO_DIR_W::new(self)
+            pub fn fifo_dir(&mut self) -> FIFO_DIR_W<4> {
+                FIFO_DIR_W::new(self)
             }
             ///Bit 5 - RW, SPI SCK output enable
             #[inline(always)]
             #[must_use]
-            pub fn spi_sck_oe(&mut self) -> SPI_SCK_OE_W<5> {
-                SPI_SCK_OE_W::new(self)
+            pub fn sck_oe(&mut self) -> SCK_OE_W<5> {
+                SCK_OE_W::new(self)
             }
             ///Bit 6 - RW, SPI MOSI output enable
             #[inline(always)]
             #[must_use]
-            pub fn spi_mosi_oe(&mut self) -> SPI_MOSI_OE_W<6> {
-                SPI_MOSI_OE_W::new(self)
+            pub fn mosi_oe(&mut self) -> MOSI_OE_W<6> {
+                MOSI_OE_W::new(self)
             }
             ///Bit 7 - RW, SPI MISO output enable
             #[inline(always)]
             #[must_use]
-            pub fn spi_miso_oe(&mut self) -> SPI_MISO_OE_W<7> {
-                SPI_MISO_OE_W::new(self)
+            pub fn miso_oe(&mut self) -> MISO_OE_W<7> {
+                MISO_OE_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -11611,83 +11621,83 @@ pub mod spi0 {
                 W(writer)
             }
         }
-        ///Field `SPI_DMA_ENABLE` reader - RW, SPI0 DMA enable
-        pub type SPI_DMA_ENABLE_R = crate::BitReader;
-        ///Field `SPI_DMA_ENABLE` writer - RW, SPI0 DMA enable
-        pub type SPI_DMA_ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
-        ///Field `SPI_DMA_LOOP` reader - RW, SPI0 DMA address loop enable
-        pub type SPI_DMA_LOOP_R = crate::BitReader;
-        ///Field `SPI_DMA_LOOP` writer - RW, SPI0 DMA address loop enable
-        pub type SPI_DMA_LOOP_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
-        ///Field `SPI_AUTO_IF` reader - RW, enable buffer/FIFO accessing to auto clear RB_SPI_IF_BYTE_END interrupt flag
-        pub type SPI_AUTO_IF_R = crate::BitReader;
-        ///Field `SPI_AUTO_IF` writer - RW, enable buffer/FIFO accessing to auto clear RB_SPI_IF_BYTE_END interrupt flag
-        pub type SPI_AUTO_IF_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
-        ///Field `SPI_BIT_ORDER` reader - RW, SPI bit data order: 0=MSB first, 1=LSB first
-        pub type SPI_BIT_ORDER_R = crate::BitReader;
-        ///Field `SPI_BIT_ORDER` writer - RW, SPI bit data order: 0=MSB first, 1=LSB first
-        pub type SPI_BIT_ORDER_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
-        ///Field `SPI_MST_DLY_EN` reader - RW, SPI master input delay enable
-        pub type SPI_MST_DLY_EN_R = crate::BitReader;
-        ///Field `SPI_MST_DLY_EN` writer - RW, SPI master input delay enable
-        pub type SPI_MST_DLY_EN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
+        ///Field `DMA_ENABLE` reader - RW, SPI0 DMA enable
+        pub type DMA_ENABLE_R = crate::BitReader;
+        ///Field `DMA_ENABLE` writer - RW, SPI0 DMA enable
+        pub type DMA_ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
+        ///Field `DMA_LOOP` reader - RW, SPI0 DMA address loop enable
+        pub type DMA_LOOP_R = crate::BitReader;
+        ///Field `DMA_LOOP` writer - RW, SPI0 DMA address loop enable
+        pub type DMA_LOOP_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
+        ///Field `AUTO_IF` reader - RW, enable buffer/FIFO accessing to auto clear RB_SPI_IF_BYTE_END interrupt flag
+        pub type AUTO_IF_R = crate::BitReader;
+        ///Field `AUTO_IF` writer - RW, enable buffer/FIFO accessing to auto clear RB_SPI_IF_BYTE_END interrupt flag
+        pub type AUTO_IF_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
+        ///Field `BIT_ORDER` reader - RW, SPI bit data order: 0=MSB first, 1=LSB first
+        pub type BIT_ORDER_R = crate::BitReader;
+        ///Field `BIT_ORDER` writer - RW, SPI bit data order: 0=MSB first, 1=LSB first
+        pub type BIT_ORDER_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
+        ///Field `MST_DLY_EN` reader - RW, SPI master input delay enable
+        pub type MST_DLY_EN_R = crate::BitReader;
+        ///Field `MST_DLY_EN` writer - RW, SPI master input delay enable
+        pub type MST_DLY_EN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
         impl R {
             ///Bit 0 - RW, SPI0 DMA enable
             #[inline(always)]
-            pub fn spi_dma_enable(&self) -> SPI_DMA_ENABLE_R {
-                SPI_DMA_ENABLE_R::new((self.bits & 1) != 0)
+            pub fn dma_enable(&self) -> DMA_ENABLE_R {
+                DMA_ENABLE_R::new((self.bits & 1) != 0)
             }
             ///Bit 2 - RW, SPI0 DMA address loop enable
             #[inline(always)]
-            pub fn spi_dma_loop(&self) -> SPI_DMA_LOOP_R {
-                SPI_DMA_LOOP_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn dma_loop(&self) -> DMA_LOOP_R {
+                DMA_LOOP_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 4 - RW, enable buffer/FIFO accessing to auto clear RB_SPI_IF_BYTE_END interrupt flag
             #[inline(always)]
-            pub fn spi_auto_if(&self) -> SPI_AUTO_IF_R {
-                SPI_AUTO_IF_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn auto_if(&self) -> AUTO_IF_R {
+                AUTO_IF_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 5 - RW, SPI bit data order: 0=MSB first, 1=LSB first
             #[inline(always)]
-            pub fn spi_bit_order(&self) -> SPI_BIT_ORDER_R {
-                SPI_BIT_ORDER_R::new(((self.bits >> 5) & 1) != 0)
+            pub fn bit_order(&self) -> BIT_ORDER_R {
+                BIT_ORDER_R::new(((self.bits >> 5) & 1) != 0)
             }
             ///Bit 6 - RW, SPI master input delay enable
             #[inline(always)]
-            pub fn spi_mst_dly_en(&self) -> SPI_MST_DLY_EN_R {
-                SPI_MST_DLY_EN_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn mst_dly_en(&self) -> MST_DLY_EN_R {
+                MST_DLY_EN_R::new(((self.bits >> 6) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW, SPI0 DMA enable
             #[inline(always)]
             #[must_use]
-            pub fn spi_dma_enable(&mut self) -> SPI_DMA_ENABLE_W<0> {
-                SPI_DMA_ENABLE_W::new(self)
+            pub fn dma_enable(&mut self) -> DMA_ENABLE_W<0> {
+                DMA_ENABLE_W::new(self)
             }
             ///Bit 2 - RW, SPI0 DMA address loop enable
             #[inline(always)]
             #[must_use]
-            pub fn spi_dma_loop(&mut self) -> SPI_DMA_LOOP_W<2> {
-                SPI_DMA_LOOP_W::new(self)
+            pub fn dma_loop(&mut self) -> DMA_LOOP_W<2> {
+                DMA_LOOP_W::new(self)
             }
             ///Bit 4 - RW, enable buffer/FIFO accessing to auto clear RB_SPI_IF_BYTE_END interrupt flag
             #[inline(always)]
             #[must_use]
-            pub fn spi_auto_if(&mut self) -> SPI_AUTO_IF_W<4> {
-                SPI_AUTO_IF_W::new(self)
+            pub fn auto_if(&mut self) -> AUTO_IF_W<4> {
+                AUTO_IF_W::new(self)
             }
             ///Bit 5 - RW, SPI bit data order: 0=MSB first, 1=LSB first
             #[inline(always)]
             #[must_use]
-            pub fn spi_bit_order(&mut self) -> SPI_BIT_ORDER_W<5> {
-                SPI_BIT_ORDER_W::new(self)
+            pub fn bit_order(&mut self) -> BIT_ORDER_W<5> {
+                BIT_ORDER_W::new(self)
             }
             ///Bit 6 - RW, SPI master input delay enable
             #[inline(always)]
             #[must_use]
-            pub fn spi_mst_dly_en(&mut self) -> SPI_MST_DLY_EN_W<6> {
-                SPI_MST_DLY_EN_W::new(self)
+            pub fn mst_dly_en(&mut self) -> MST_DLY_EN_W<6> {
+                MST_DLY_EN_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -11760,98 +11770,98 @@ pub mod spi0 {
                 W(writer)
             }
         }
-        ///Field `SPI_IE_CNT_END` reader - RW, enable interrupt for SPI total byte count end
-        pub type SPI_IE_CNT_END_R = crate::BitReader;
-        ///Field `SPI_IE_CNT_END` writer - RW, enable interrupt for SPI total byte count end
-        pub type SPI_IE_CNT_END_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
-        ///Field `SPI_IE_BYTE_END` reader - RW, enable interrupt for SPI byte exchanged
-        pub type SPI_IE_BYTE_END_R = crate::BitReader;
-        ///Field `SPI_IE_BYTE_END` writer - RW, enable interrupt for SPI byte exchanged
-        pub type SPI_IE_BYTE_END_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
-        ///Field `SPI_IE_FIFO_HF` reader - RW, enable interrupt for SPI FIFO half
-        pub type SPI_IE_FIFO_HF_R = crate::BitReader;
-        ///Field `SPI_IE_FIFO_HF` writer - RW, enable interrupt for SPI FIFO half
-        pub type SPI_IE_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
-        ///Field `SPI_IE_DMA_END` reader - RW, enable interrupt for SPI0 DMA completion
-        pub type SPI_IE_DMA_END_R = crate::BitReader;
-        ///Field `SPI_IE_DMA_END` writer - RW, enable interrupt for SPI0 DMA completion
-        pub type SPI_IE_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
-        ///Field `SPI_IE_FIFO_OV` reader - RW, enable interrupt for SPI0 FIFO overflow
-        pub type SPI_IE_FIFO_OV_R = crate::BitReader;
-        ///Field `SPI_IE_FIFO_OV` writer - RW, enable interrupt for SPI0 FIFO overflow
-        pub type SPI_IE_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
-        ///Field `SPI_IE_FST_BYTE` reader - RW, enable interrupt for SPI0 slave mode first byte received
-        pub type SPI_IE_FST_BYTE_R = crate::BitReader;
-        ///Field `SPI_IE_FST_BYTE` writer - RW, enable interrupt for SPI0 slave mode first byte received
-        pub type SPI_IE_FST_BYTE_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_CNT_END` reader - RW, enable interrupt for SPI total byte count end
+        pub type IE_CNT_END_R = crate::BitReader;
+        ///Field `IE_CNT_END` writer - RW, enable interrupt for SPI total byte count end
+        pub type IE_CNT_END_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_BYTE_END` reader - RW, enable interrupt for SPI byte exchanged
+        pub type IE_BYTE_END_R = crate::BitReader;
+        ///Field `IE_BYTE_END` writer - RW, enable interrupt for SPI byte exchanged
+        pub type IE_BYTE_END_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_FIFO_HF` reader - RW, enable interrupt for SPI FIFO half
+        pub type IE_FIFO_HF_R = crate::BitReader;
+        ///Field `IE_FIFO_HF` writer - RW, enable interrupt for SPI FIFO half
+        pub type IE_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_DMA_END` reader - RW, enable interrupt for SPI0 DMA completion
+        pub type IE_DMA_END_R = crate::BitReader;
+        ///Field `IE_DMA_END` writer - RW, enable interrupt for SPI0 DMA completion
+        pub type IE_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_FIFO_OV` reader - RW, enable interrupt for SPI0 FIFO overflow
+        pub type IE_FIFO_OV_R = crate::BitReader;
+        ///Field `IE_FIFO_OV` writer - RW, enable interrupt for SPI0 FIFO overflow
+        pub type IE_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_FST_BYTE` reader - RW, enable interrupt for SPI0 slave mode first byte received
+        pub type IE_FST_BYTE_R = crate::BitReader;
+        ///Field `IE_FST_BYTE` writer - RW, enable interrupt for SPI0 slave mode first byte received
+        pub type IE_FST_BYTE_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
         impl R {
             ///Bit 0 - RW, enable interrupt for SPI total byte count end
             #[inline(always)]
-            pub fn spi_ie_cnt_end(&self) -> SPI_IE_CNT_END_R {
-                SPI_IE_CNT_END_R::new((self.bits & 1) != 0)
+            pub fn ie_cnt_end(&self) -> IE_CNT_END_R {
+                IE_CNT_END_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW, enable interrupt for SPI byte exchanged
             #[inline(always)]
-            pub fn spi_ie_byte_end(&self) -> SPI_IE_BYTE_END_R {
-                SPI_IE_BYTE_END_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn ie_byte_end(&self) -> IE_BYTE_END_R {
+                IE_BYTE_END_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW, enable interrupt for SPI FIFO half
             #[inline(always)]
-            pub fn spi_ie_fifo_hf(&self) -> SPI_IE_FIFO_HF_R {
-                SPI_IE_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn ie_fifo_hf(&self) -> IE_FIFO_HF_R {
+                IE_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW, enable interrupt for SPI0 DMA completion
             #[inline(always)]
-            pub fn spi_ie_dma_end(&self) -> SPI_IE_DMA_END_R {
-                SPI_IE_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn ie_dma_end(&self) -> IE_DMA_END_R {
+                IE_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RW, enable interrupt for SPI0 FIFO overflow
             #[inline(always)]
-            pub fn spi_ie_fifo_ov(&self) -> SPI_IE_FIFO_OV_R {
-                SPI_IE_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn ie_fifo_ov(&self) -> IE_FIFO_OV_R {
+                IE_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 7 - RW, enable interrupt for SPI0 slave mode first byte received
             #[inline(always)]
-            pub fn spi_ie_fst_byte(&self) -> SPI_IE_FST_BYTE_R {
-                SPI_IE_FST_BYTE_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn ie_fst_byte(&self) -> IE_FST_BYTE_R {
+                IE_FST_BYTE_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW, enable interrupt for SPI total byte count end
             #[inline(always)]
             #[must_use]
-            pub fn spi_ie_cnt_end(&mut self) -> SPI_IE_CNT_END_W<0> {
-                SPI_IE_CNT_END_W::new(self)
+            pub fn ie_cnt_end(&mut self) -> IE_CNT_END_W<0> {
+                IE_CNT_END_W::new(self)
             }
             ///Bit 1 - RW, enable interrupt for SPI byte exchanged
             #[inline(always)]
             #[must_use]
-            pub fn spi_ie_byte_end(&mut self) -> SPI_IE_BYTE_END_W<1> {
-                SPI_IE_BYTE_END_W::new(self)
+            pub fn ie_byte_end(&mut self) -> IE_BYTE_END_W<1> {
+                IE_BYTE_END_W::new(self)
             }
             ///Bit 2 - RW, enable interrupt for SPI FIFO half
             #[inline(always)]
             #[must_use]
-            pub fn spi_ie_fifo_hf(&mut self) -> SPI_IE_FIFO_HF_W<2> {
-                SPI_IE_FIFO_HF_W::new(self)
+            pub fn ie_fifo_hf(&mut self) -> IE_FIFO_HF_W<2> {
+                IE_FIFO_HF_W::new(self)
             }
             ///Bit 3 - RW, enable interrupt for SPI0 DMA completion
             #[inline(always)]
             #[must_use]
-            pub fn spi_ie_dma_end(&mut self) -> SPI_IE_DMA_END_W<3> {
-                SPI_IE_DMA_END_W::new(self)
+            pub fn ie_dma_end(&mut self) -> IE_DMA_END_W<3> {
+                IE_DMA_END_W::new(self)
             }
             ///Bit 4 - RW, enable interrupt for SPI0 FIFO overflow
             #[inline(always)]
             #[must_use]
-            pub fn spi_ie_fifo_ov(&mut self) -> SPI_IE_FIFO_OV_W<4> {
-                SPI_IE_FIFO_OV_W::new(self)
+            pub fn ie_fifo_ov(&mut self) -> IE_FIFO_OV_W<4> {
+                IE_FIFO_OV_W::new(self)
             }
             ///Bit 7 - RW, enable interrupt for SPI0 slave mode first byte received
             #[inline(always)]
             #[must_use]
-            pub fn spi_ie_fst_byte(&mut self) -> SPI_IE_FST_BYTE_W<7> {
-                SPI_IE_FST_BYTE_W::new(self)
+            pub fn ie_fst_byte(&mut self) -> IE_FST_BYTE_W<7> {
+                IE_FST_BYTE_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -11992,34 +12002,34 @@ pub mod spi0 {
                 R(reader)
             }
         }
-        ///Field `SPI_SLV_CMD_ACT` reader - RO, SPI0 slave first byte or command flag
-        pub type SPI_SLV_CMD_ACT_R = crate::BitReader;
-        ///Field `SPI_FIFO_READY` reader - RO, SPI FIFO ready status
-        pub type SPI_FIFO_READY_R = crate::BitReader;
-        ///Field `SPI_SLV_CS_LOAD` reader - RO, SPI0 slave chip-select loading status
-        pub type SPI_SLV_CS_LOAD_R = crate::BitReader;
-        ///Field `SPI_SLV_SELECT` reader - RO, SPI0 slave selection status
-        pub type SPI_SLV_SELECT_R = crate::BitReader;
+        ///Field `SLV_CMD_ACT` reader - RO, SPI0 slave first byte or command flag
+        pub type SLV_CMD_ACT_R = crate::BitReader;
+        ///Field `FIFO_READY` reader - RO, SPI FIFO ready status
+        pub type FIFO_READY_R = crate::BitReader;
+        ///Field `SLV_CS_LOAD` reader - RO, SPI0 slave chip-select loading status
+        pub type SLV_CS_LOAD_R = crate::BitReader;
+        ///Field `SLV_SELECT` reader - RO, SPI0 slave selection status
+        pub type SLV_SELECT_R = crate::BitReader;
         impl R {
             ///Bit 4 - RO, SPI0 slave first byte or command flag
             #[inline(always)]
-            pub fn spi_slv_cmd_act(&self) -> SPI_SLV_CMD_ACT_R {
-                SPI_SLV_CMD_ACT_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn slv_cmd_act(&self) -> SLV_CMD_ACT_R {
+                SLV_CMD_ACT_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 5 - RO, SPI FIFO ready status
             #[inline(always)]
-            pub fn spi_fifo_ready(&self) -> SPI_FIFO_READY_R {
-                SPI_FIFO_READY_R::new(((self.bits >> 5) & 1) != 0)
+            pub fn fifo_ready(&self) -> FIFO_READY_R {
+                FIFO_READY_R::new(((self.bits >> 5) & 1) != 0)
             }
             ///Bit 6 - RO, SPI0 slave chip-select loading status
             #[inline(always)]
-            pub fn spi_slv_cs_load(&self) -> SPI_SLV_CS_LOAD_R {
-                SPI_SLV_CS_LOAD_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn slv_cs_load(&self) -> SLV_CS_LOAD_R {
+                SLV_CS_LOAD_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - RO, SPI0 slave selection status
             #[inline(always)]
-            pub fn spi_slv_select(&self) -> SPI_SLV_SELECT_R {
-                SPI_SLV_SELECT_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn slv_select(&self) -> SLV_SELECT_R {
+                SLV_SELECT_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         ///RO, SPI0 work flag
@@ -12080,113 +12090,113 @@ pub mod spi0 {
                 W(writer)
             }
         }
-        ///Field `SPI_IF_CNT_END` reader - RW1, interrupt flag for SPI total byte count end
-        pub type SPI_IF_CNT_END_R = crate::BitReader;
-        ///Field `SPI_IF_CNT_END` writer - RW1, interrupt flag for SPI total byte count end
-        pub type SPI_IF_CNT_END_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
-        ///Field `SPI_IF_BYTE_END` reader - RW1, interrupt flag for SPI byte exchanged
-        pub type SPI_IF_BYTE_END_R = crate::BitReader;
-        ///Field `SPI_IF_BYTE_END` writer - RW1, interrupt flag for SPI byte exchanged
-        pub type SPI_IF_BYTE_END_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
-        ///Field `SPI_IF_FIFO_HF` reader - RW1, interrupt flag for SPI FIFO half
-        pub type SPI_IF_FIFO_HF_R = crate::BitReader;
-        ///Field `SPI_IF_FIFO_HF` writer - RW1, interrupt flag for SPI FIFO half
-        pub type SPI_IF_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
-        ///Field `SPI_IF_DMA_END` reader - RW1, interrupt flag for SPI0 DMA completion
-        pub type SPI_IF_DMA_END_R = crate::BitReader;
-        ///Field `SPI_IF_DMA_END` writer - RW1, interrupt flag for SPI0 DMA completion
-        pub type SPI_IF_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
-        ///Field `SPI_IF_FIFO_OV` reader - RW1, interrupt flag for SPI0 FIFO overflow
-        pub type SPI_IF_FIFO_OV_R = crate::BitReader;
-        ///Field `SPI_IF_FIFO_OV` writer - RW1, interrupt flag for SPI0 FIFO overflow
-        pub type SPI_IF_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
-        ///Field `SPI_FREE` reader - RO, current SPI free status
-        pub type SPI_FREE_R = crate::BitReader;
-        ///Field `SPI_FREE` writer - RO, current SPI free status
-        pub type SPI_FREE_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
-        ///Field `SPI_IF_FST_BYTE` reader - RW1, interrupt flag for SPI0 slave mode first byte received
-        pub type SPI_IF_FST_BYTE_R = crate::BitReader;
-        ///Field `SPI_IF_FST_BYTE` writer - RW1, interrupt flag for SPI0 slave mode first byte received
-        pub type SPI_IF_FST_BYTE_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_CNT_END` reader - RW1, interrupt flag for SPI total byte count end
+        pub type IF_CNT_END_R = crate::BitReader;
+        ///Field `IF_CNT_END` writer - RW1, interrupt flag for SPI total byte count end
+        pub type IF_CNT_END_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_BYTE_END` reader - RW1, interrupt flag for SPI byte exchanged
+        pub type IF_BYTE_END_R = crate::BitReader;
+        ///Field `IF_BYTE_END` writer - RW1, interrupt flag for SPI byte exchanged
+        pub type IF_BYTE_END_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_FIFO_HF` reader - RW1, interrupt flag for SPI FIFO half
+        pub type IF_FIFO_HF_R = crate::BitReader;
+        ///Field `IF_FIFO_HF` writer - RW1, interrupt flag for SPI FIFO half
+        pub type IF_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_DMA_END` reader - RW1, interrupt flag for SPI0 DMA completion
+        pub type IF_DMA_END_R = crate::BitReader;
+        ///Field `IF_DMA_END` writer - RW1, interrupt flag for SPI0 DMA completion
+        pub type IF_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_FIFO_OV` reader - RW1, interrupt flag for SPI0 FIFO overflow
+        pub type IF_FIFO_OV_R = crate::BitReader;
+        ///Field `IF_FIFO_OV` writer - RW1, interrupt flag for SPI0 FIFO overflow
+        pub type IF_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `FREE` reader - RO, current SPI free status
+        pub type FREE_R = crate::BitReader;
+        ///Field `FREE` writer - RO, current SPI free status
+        pub type FREE_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_FST_BYTE` reader - RW1, interrupt flag for SPI0 slave mode first byte received
+        pub type IF_FST_BYTE_R = crate::BitReader;
+        ///Field `IF_FST_BYTE` writer - RW1, interrupt flag for SPI0 slave mode first byte received
+        pub type IF_FST_BYTE_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
         impl R {
             ///Bit 0 - RW1, interrupt flag for SPI total byte count end
             #[inline(always)]
-            pub fn spi_if_cnt_end(&self) -> SPI_IF_CNT_END_R {
-                SPI_IF_CNT_END_R::new((self.bits & 1) != 0)
+            pub fn if_cnt_end(&self) -> IF_CNT_END_R {
+                IF_CNT_END_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW1, interrupt flag for SPI byte exchanged
             #[inline(always)]
-            pub fn spi_if_byte_end(&self) -> SPI_IF_BYTE_END_R {
-                SPI_IF_BYTE_END_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn if_byte_end(&self) -> IF_BYTE_END_R {
+                IF_BYTE_END_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW1, interrupt flag for SPI FIFO half
             #[inline(always)]
-            pub fn spi_if_fifo_hf(&self) -> SPI_IF_FIFO_HF_R {
-                SPI_IF_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn if_fifo_hf(&self) -> IF_FIFO_HF_R {
+                IF_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW1, interrupt flag for SPI0 DMA completion
             #[inline(always)]
-            pub fn spi_if_dma_end(&self) -> SPI_IF_DMA_END_R {
-                SPI_IF_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn if_dma_end(&self) -> IF_DMA_END_R {
+                IF_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RW1, interrupt flag for SPI0 FIFO overflow
             #[inline(always)]
-            pub fn spi_if_fifo_ov(&self) -> SPI_IF_FIFO_OV_R {
-                SPI_IF_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn if_fifo_ov(&self) -> IF_FIFO_OV_R {
+                IF_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 6 - RO, current SPI free status
             #[inline(always)]
-            pub fn spi_free(&self) -> SPI_FREE_R {
-                SPI_FREE_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn free(&self) -> FREE_R {
+                FREE_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - RW1, interrupt flag for SPI0 slave mode first byte received
             #[inline(always)]
-            pub fn spi_if_fst_byte(&self) -> SPI_IF_FST_BYTE_R {
-                SPI_IF_FST_BYTE_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn if_fst_byte(&self) -> IF_FST_BYTE_R {
+                IF_FST_BYTE_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW1, interrupt flag for SPI total byte count end
             #[inline(always)]
             #[must_use]
-            pub fn spi_if_cnt_end(&mut self) -> SPI_IF_CNT_END_W<0> {
-                SPI_IF_CNT_END_W::new(self)
+            pub fn if_cnt_end(&mut self) -> IF_CNT_END_W<0> {
+                IF_CNT_END_W::new(self)
             }
             ///Bit 1 - RW1, interrupt flag for SPI byte exchanged
             #[inline(always)]
             #[must_use]
-            pub fn spi_if_byte_end(&mut self) -> SPI_IF_BYTE_END_W<1> {
-                SPI_IF_BYTE_END_W::new(self)
+            pub fn if_byte_end(&mut self) -> IF_BYTE_END_W<1> {
+                IF_BYTE_END_W::new(self)
             }
             ///Bit 2 - RW1, interrupt flag for SPI FIFO half
             #[inline(always)]
             #[must_use]
-            pub fn spi_if_fifo_hf(&mut self) -> SPI_IF_FIFO_HF_W<2> {
-                SPI_IF_FIFO_HF_W::new(self)
+            pub fn if_fifo_hf(&mut self) -> IF_FIFO_HF_W<2> {
+                IF_FIFO_HF_W::new(self)
             }
             ///Bit 3 - RW1, interrupt flag for SPI0 DMA completion
             #[inline(always)]
             #[must_use]
-            pub fn spi_if_dma_end(&mut self) -> SPI_IF_DMA_END_W<3> {
-                SPI_IF_DMA_END_W::new(self)
+            pub fn if_dma_end(&mut self) -> IF_DMA_END_W<3> {
+                IF_DMA_END_W::new(self)
             }
             ///Bit 4 - RW1, interrupt flag for SPI0 FIFO overflow
             #[inline(always)]
             #[must_use]
-            pub fn spi_if_fifo_ov(&mut self) -> SPI_IF_FIFO_OV_W<4> {
-                SPI_IF_FIFO_OV_W::new(self)
+            pub fn if_fifo_ov(&mut self) -> IF_FIFO_OV_W<4> {
+                IF_FIFO_OV_W::new(self)
             }
             ///Bit 6 - RO, current SPI free status
             #[inline(always)]
             #[must_use]
-            pub fn spi_free(&mut self) -> SPI_FREE_W<6> {
-                SPI_FREE_W::new(self)
+            pub fn free(&mut self) -> FREE_W<6> {
+                FREE_W::new(self)
             }
             ///Bit 7 - RW1, interrupt flag for SPI0 slave mode first byte received
             #[inline(always)]
             #[must_use]
-            pub fn spi_if_fst_byte(&mut self) -> SPI_IF_FST_BYTE_W<7> {
-                SPI_IF_FST_BYTE_W::new(self)
+            pub fn if_fst_byte(&mut self) -> IF_FST_BYTE_W<7> {
+                IF_FST_BYTE_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -13032,133 +13042,143 @@ pub mod spi1 {
                 W(writer)
             }
         }
-        ///Field `SPI_MODE_SLAVE` reader - RW, SPI0 slave mode: 0=master or host, 1=slave or device
-        pub type SPI_MODE_SLAVE_R = crate::BitReader;
-        ///Field `SPI_MODE_SLAVE` writer - RW, SPI0 slave mode: 0=master or host, 1=slave or device
-        pub type SPI_MODE_SLAVE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
-        ///Field `SPI_ALL_CLEAR` reader - RW, force clear SPI FIFO and count
-        pub type SPI_ALL_CLEAR_R = crate::BitReader;
-        ///Field `SPI_ALL_CLEAR` writer - RW, force clear SPI FIFO and count
-        pub type SPI_ALL_CLEAR_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
-        ///Field `SPI_2WIRE_MOD` reader - RW, SPI0 enable 2 wire mode for slave: 0=3wire(SCK0,MOSI,MISO), 1=2wire(SCK0,MISO=MXSX)
-        pub type SPI_2WIRE_MOD_R = crate::BitReader;
-        ///Field `SPI_2WIRE_MOD` writer - RW, SPI0 enable 2 wire mode for slave: 0=3wire(SCK0,MOSI,MISO), 1=2wire(SCK0,MISO=MXSX)
-        pub type SPI_2WIRE_MOD_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
-        ///Field `SPI_MST_SCK_MOD__RB_SPI_SLV_CMD_MOD` reader - RW, SPI master clock mode: 0=mode 0, 1=mode 3;RW, SPI0 slave command mode: 0=byte stream, 1=first byte command
-        pub type SPI_MST_SCK_MOD__RB_SPI_SLV_CMD_MOD_R = crate::BitReader;
-        ///Field `SPI_MST_SCK_MOD__RB_SPI_SLV_CMD_MOD` writer - RW, SPI master clock mode: 0=mode 0, 1=mode 3;RW, SPI0 slave command mode: 0=byte stream, 1=first byte command
-        pub type SPI_MST_SCK_MOD__RB_SPI_SLV_CMD_MOD_W<'a, const O: u8> =
-            crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
-        ///Field `SPI_FIFO_DIR` reader - RW, SPI FIFO direction: 0=out(write @master mode), 1=in(read @master mode)
-        pub type SPI_FIFO_DIR_R = crate::BitReader;
-        ///Field `SPI_FIFO_DIR` writer - RW, SPI FIFO direction: 0=out(write @master mode), 1=in(read @master mode)
-        pub type SPI_FIFO_DIR_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
-        ///Field `SPI_SCK_OE` reader - RW, SPI SCK output enable
-        pub type SPI_SCK_OE_R = crate::BitReader;
-        ///Field `SPI_SCK_OE` writer - RW, SPI SCK output enable
-        pub type SPI_SCK_OE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
-        ///Field `SPI_MOSI_OE` reader - RW, SPI MOSI output enable
-        pub type SPI_MOSI_OE_R = crate::BitReader;
-        ///Field `SPI_MOSI_OE` writer - RW, SPI MOSI output enable
-        pub type SPI_MOSI_OE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
-        ///Field `SPI_MISO_OE` reader - RW, SPI MISO output enable
-        pub type SPI_MISO_OE_R = crate::BitReader;
-        ///Field `SPI_MISO_OE` writer - RW, SPI MISO output enable
-        pub type SPI_MISO_OE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `MODE_SLAVE` reader - RW, SPI0 slave mode: 0=master or host, 1=slave or device
+        pub type MODE_SLAVE_R = crate::BitReader;
+        ///Field `MODE_SLAVE` writer - RW, SPI0 slave mode: 0=master or host, 1=slave or device
+        pub type MODE_SLAVE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `ALL_CLEAR` reader - RW, force clear SPI FIFO and count
+        pub type ALL_CLEAR_R = crate::BitReader;
+        ///Field `ALL_CLEAR` writer - RW, force clear SPI FIFO and count
+        pub type ALL_CLEAR_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `TWO_WIRE_MODE` reader - RW, SPI0 enable 2 wire mode for slave: 0=3wire(SCK0,MOSI,MISO), 1=2wire(SCK0,MISO=MXSX)
+        pub type TWO_WIRE_MODE_R = crate::BitReader;
+        ///Field `TWO_WIRE_MODE` writer - RW, SPI0 enable 2 wire mode for slave: 0=3wire(SCK0,MOSI,MISO), 1=2wire(SCK0,MISO=MXSX)
+        pub type TWO_WIRE_MODE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `MST_SCK_MOD` reader - RW, SPI master clock mode: 0=mode 0, 1=mode 3;RW, SPI0 slave command mode: 0=byte stream, 1=first byte command
+        pub type MST_SCK_MOD_R = crate::BitReader;
+        ///Field `MST_SCK_MOD` writer - RW, SPI master clock mode: 0=mode 0, 1=mode 3;RW, SPI0 slave command mode: 0=byte stream, 1=first byte command
+        pub type MST_SCK_MOD_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `SLV_CMD_MOD` reader - SPI slave command mode
+        pub type SLV_CMD_MOD_R = crate::BitReader;
+        ///Field `SLV_CMD_MOD` writer - SPI slave command mode
+        pub type SLV_CMD_MOD_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `FIFO_DIR` reader - RW, SPI FIFO direction: 0=out(write @master mode), 1=in(read @master mode)
+        pub type FIFO_DIR_R = crate::BitReader;
+        ///Field `FIFO_DIR` writer - RW, SPI FIFO direction: 0=out(write @master mode), 1=in(read @master mode)
+        pub type FIFO_DIR_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `SCK_OE` reader - RW, SPI SCK output enable
+        pub type SCK_OE_R = crate::BitReader;
+        ///Field `SCK_OE` writer - RW, SPI SCK output enable
+        pub type SCK_OE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `MOSI_OE` reader - RW, SPI MOSI output enable
+        pub type MOSI_OE_R = crate::BitReader;
+        ///Field `MOSI_OE` writer - RW, SPI MOSI output enable
+        pub type MOSI_OE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
+        ///Field `MISO_OE` reader - RW, SPI MISO output enable
+        pub type MISO_OE_R = crate::BitReader;
+        ///Field `MISO_OE` writer - RW, SPI MISO output enable
+        pub type MISO_OE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_MOD_SPEC, O>;
         impl R {
             ///Bit 0 - RW, SPI0 slave mode: 0=master or host, 1=slave or device
             #[inline(always)]
-            pub fn spi_mode_slave(&self) -> SPI_MODE_SLAVE_R {
-                SPI_MODE_SLAVE_R::new((self.bits & 1) != 0)
+            pub fn mode_slave(&self) -> MODE_SLAVE_R {
+                MODE_SLAVE_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW, force clear SPI FIFO and count
             #[inline(always)]
-            pub fn spi_all_clear(&self) -> SPI_ALL_CLEAR_R {
-                SPI_ALL_CLEAR_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn all_clear(&self) -> ALL_CLEAR_R {
+                ALL_CLEAR_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW, SPI0 enable 2 wire mode for slave: 0=3wire(SCK0,MOSI,MISO), 1=2wire(SCK0,MISO=MXSX)
             #[inline(always)]
-            pub fn spi_2wire_mod(&self) -> SPI_2WIRE_MOD_R {
-                SPI_2WIRE_MOD_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn two_wire_mode(&self) -> TWO_WIRE_MODE_R {
+                TWO_WIRE_MODE_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW, SPI master clock mode: 0=mode 0, 1=mode 3;RW, SPI0 slave command mode: 0=byte stream, 1=first byte command
             #[inline(always)]
-            pub fn spi_mst_sck_mod__rb_spi_slv_cmd_mod(
-                &self,
-            ) -> SPI_MST_SCK_MOD__RB_SPI_SLV_CMD_MOD_R {
-                SPI_MST_SCK_MOD__RB_SPI_SLV_CMD_MOD_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn mst_sck_mod(&self) -> MST_SCK_MOD_R {
+                MST_SCK_MOD_R::new(((self.bits >> 3) & 1) != 0)
+            }
+            ///Bit 3 - SPI slave command mode
+            #[inline(always)]
+            pub fn slv_cmd_mod(&self) -> SLV_CMD_MOD_R {
+                SLV_CMD_MOD_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RW, SPI FIFO direction: 0=out(write @master mode), 1=in(read @master mode)
             #[inline(always)]
-            pub fn spi_fifo_dir(&self) -> SPI_FIFO_DIR_R {
-                SPI_FIFO_DIR_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn fifo_dir(&self) -> FIFO_DIR_R {
+                FIFO_DIR_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 5 - RW, SPI SCK output enable
             #[inline(always)]
-            pub fn spi_sck_oe(&self) -> SPI_SCK_OE_R {
-                SPI_SCK_OE_R::new(((self.bits >> 5) & 1) != 0)
+            pub fn sck_oe(&self) -> SCK_OE_R {
+                SCK_OE_R::new(((self.bits >> 5) & 1) != 0)
             }
             ///Bit 6 - RW, SPI MOSI output enable
             #[inline(always)]
-            pub fn spi_mosi_oe(&self) -> SPI_MOSI_OE_R {
-                SPI_MOSI_OE_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn mosi_oe(&self) -> MOSI_OE_R {
+                MOSI_OE_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - RW, SPI MISO output enable
             #[inline(always)]
-            pub fn spi_miso_oe(&self) -> SPI_MISO_OE_R {
-                SPI_MISO_OE_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn miso_oe(&self) -> MISO_OE_R {
+                MISO_OE_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW, SPI0 slave mode: 0=master or host, 1=slave or device
             #[inline(always)]
             #[must_use]
-            pub fn spi_mode_slave(&mut self) -> SPI_MODE_SLAVE_W<0> {
-                SPI_MODE_SLAVE_W::new(self)
+            pub fn mode_slave(&mut self) -> MODE_SLAVE_W<0> {
+                MODE_SLAVE_W::new(self)
             }
             ///Bit 1 - RW, force clear SPI FIFO and count
             #[inline(always)]
             #[must_use]
-            pub fn spi_all_clear(&mut self) -> SPI_ALL_CLEAR_W<1> {
-                SPI_ALL_CLEAR_W::new(self)
+            pub fn all_clear(&mut self) -> ALL_CLEAR_W<1> {
+                ALL_CLEAR_W::new(self)
             }
             ///Bit 2 - RW, SPI0 enable 2 wire mode for slave: 0=3wire(SCK0,MOSI,MISO), 1=2wire(SCK0,MISO=MXSX)
             #[inline(always)]
             #[must_use]
-            pub fn spi_2wire_mod(&mut self) -> SPI_2WIRE_MOD_W<2> {
-                SPI_2WIRE_MOD_W::new(self)
+            pub fn two_wire_mode(&mut self) -> TWO_WIRE_MODE_W<2> {
+                TWO_WIRE_MODE_W::new(self)
             }
             ///Bit 3 - RW, SPI master clock mode: 0=mode 0, 1=mode 3;RW, SPI0 slave command mode: 0=byte stream, 1=first byte command
             #[inline(always)]
             #[must_use]
-            pub fn spi_mst_sck_mod__rb_spi_slv_cmd_mod(
-                &mut self,
-            ) -> SPI_MST_SCK_MOD__RB_SPI_SLV_CMD_MOD_W<3> {
-                SPI_MST_SCK_MOD__RB_SPI_SLV_CMD_MOD_W::new(self)
+            pub fn mst_sck_mod(&mut self) -> MST_SCK_MOD_W<3> {
+                MST_SCK_MOD_W::new(self)
+            }
+            ///Bit 3 - SPI slave command mode
+            #[inline(always)]
+            #[must_use]
+            pub fn slv_cmd_mod(&mut self) -> SLV_CMD_MOD_W<3> {
+                SLV_CMD_MOD_W::new(self)
             }
             ///Bit 4 - RW, SPI FIFO direction: 0=out(write @master mode), 1=in(read @master mode)
             #[inline(always)]
             #[must_use]
-            pub fn spi_fifo_dir(&mut self) -> SPI_FIFO_DIR_W<4> {
-                SPI_FIFO_DIR_W::new(self)
+            pub fn fifo_dir(&mut self) -> FIFO_DIR_W<4> {
+                FIFO_DIR_W::new(self)
             }
             ///Bit 5 - RW, SPI SCK output enable
             #[inline(always)]
             #[must_use]
-            pub fn spi_sck_oe(&mut self) -> SPI_SCK_OE_W<5> {
-                SPI_SCK_OE_W::new(self)
+            pub fn sck_oe(&mut self) -> SCK_OE_W<5> {
+                SCK_OE_W::new(self)
             }
             ///Bit 6 - RW, SPI MOSI output enable
             #[inline(always)]
             #[must_use]
-            pub fn spi_mosi_oe(&mut self) -> SPI_MOSI_OE_W<6> {
-                SPI_MOSI_OE_W::new(self)
+            pub fn mosi_oe(&mut self) -> MOSI_OE_W<6> {
+                MOSI_OE_W::new(self)
             }
             ///Bit 7 - RW, SPI MISO output enable
             #[inline(always)]
             #[must_use]
-            pub fn spi_miso_oe(&mut self) -> SPI_MISO_OE_W<7> {
-                SPI_MISO_OE_W::new(self)
+            pub fn miso_oe(&mut self) -> MISO_OE_W<7> {
+                MISO_OE_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -13231,83 +13251,83 @@ pub mod spi1 {
                 W(writer)
             }
         }
-        ///Field `SPI_DMA_ENABLE` reader - RW, SPI0 DMA enable
-        pub type SPI_DMA_ENABLE_R = crate::BitReader;
-        ///Field `SPI_DMA_ENABLE` writer - RW, SPI0 DMA enable
-        pub type SPI_DMA_ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
-        ///Field `SPI_DMA_LOOP` reader - RW, SPI0 DMA address loop enable
-        pub type SPI_DMA_LOOP_R = crate::BitReader;
-        ///Field `SPI_DMA_LOOP` writer - RW, SPI0 DMA address loop enable
-        pub type SPI_DMA_LOOP_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
-        ///Field `SPI_AUTO_IF` reader - RW, enable buffer/FIFO accessing to auto clear RB_SPI_IF_BYTE_END interrupt flag
-        pub type SPI_AUTO_IF_R = crate::BitReader;
-        ///Field `SPI_AUTO_IF` writer - RW, enable buffer/FIFO accessing to auto clear RB_SPI_IF_BYTE_END interrupt flag
-        pub type SPI_AUTO_IF_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
-        ///Field `SPI_BIT_ORDER` reader - RW, SPI bit data order: 0=MSB first, 1=LSB first
-        pub type SPI_BIT_ORDER_R = crate::BitReader;
-        ///Field `SPI_BIT_ORDER` writer - RW, SPI bit data order: 0=MSB first, 1=LSB first
-        pub type SPI_BIT_ORDER_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
-        ///Field `SPI_MST_DLY_EN` reader - RW, SPI master input delay enable
-        pub type SPI_MST_DLY_EN_R = crate::BitReader;
-        ///Field `SPI_MST_DLY_EN` writer - RW, SPI master input delay enable
-        pub type SPI_MST_DLY_EN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
+        ///Field `DMA_ENABLE` reader - RW, SPI0 DMA enable
+        pub type DMA_ENABLE_R = crate::BitReader;
+        ///Field `DMA_ENABLE` writer - RW, SPI0 DMA enable
+        pub type DMA_ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
+        ///Field `DMA_LOOP` reader - RW, SPI0 DMA address loop enable
+        pub type DMA_LOOP_R = crate::BitReader;
+        ///Field `DMA_LOOP` writer - RW, SPI0 DMA address loop enable
+        pub type DMA_LOOP_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
+        ///Field `AUTO_IF` reader - RW, enable buffer/FIFO accessing to auto clear RB_SPI_IF_BYTE_END interrupt flag
+        pub type AUTO_IF_R = crate::BitReader;
+        ///Field `AUTO_IF` writer - RW, enable buffer/FIFO accessing to auto clear RB_SPI_IF_BYTE_END interrupt flag
+        pub type AUTO_IF_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
+        ///Field `BIT_ORDER` reader - RW, SPI bit data order: 0=MSB first, 1=LSB first
+        pub type BIT_ORDER_R = crate::BitReader;
+        ///Field `BIT_ORDER` writer - RW, SPI bit data order: 0=MSB first, 1=LSB first
+        pub type BIT_ORDER_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
+        ///Field `MST_DLY_EN` reader - RW, SPI master input delay enable
+        pub type MST_DLY_EN_R = crate::BitReader;
+        ///Field `MST_DLY_EN` writer - RW, SPI master input delay enable
+        pub type MST_DLY_EN_W<'a, const O: u8> = crate::BitWriter<'a, CTRL_CFG_SPEC, O>;
         impl R {
             ///Bit 0 - RW, SPI0 DMA enable
             #[inline(always)]
-            pub fn spi_dma_enable(&self) -> SPI_DMA_ENABLE_R {
-                SPI_DMA_ENABLE_R::new((self.bits & 1) != 0)
+            pub fn dma_enable(&self) -> DMA_ENABLE_R {
+                DMA_ENABLE_R::new((self.bits & 1) != 0)
             }
             ///Bit 2 - RW, SPI0 DMA address loop enable
             #[inline(always)]
-            pub fn spi_dma_loop(&self) -> SPI_DMA_LOOP_R {
-                SPI_DMA_LOOP_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn dma_loop(&self) -> DMA_LOOP_R {
+                DMA_LOOP_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 4 - RW, enable buffer/FIFO accessing to auto clear RB_SPI_IF_BYTE_END interrupt flag
             #[inline(always)]
-            pub fn spi_auto_if(&self) -> SPI_AUTO_IF_R {
-                SPI_AUTO_IF_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn auto_if(&self) -> AUTO_IF_R {
+                AUTO_IF_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 5 - RW, SPI bit data order: 0=MSB first, 1=LSB first
             #[inline(always)]
-            pub fn spi_bit_order(&self) -> SPI_BIT_ORDER_R {
-                SPI_BIT_ORDER_R::new(((self.bits >> 5) & 1) != 0)
+            pub fn bit_order(&self) -> BIT_ORDER_R {
+                BIT_ORDER_R::new(((self.bits >> 5) & 1) != 0)
             }
             ///Bit 6 - RW, SPI master input delay enable
             #[inline(always)]
-            pub fn spi_mst_dly_en(&self) -> SPI_MST_DLY_EN_R {
-                SPI_MST_DLY_EN_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn mst_dly_en(&self) -> MST_DLY_EN_R {
+                MST_DLY_EN_R::new(((self.bits >> 6) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW, SPI0 DMA enable
             #[inline(always)]
             #[must_use]
-            pub fn spi_dma_enable(&mut self) -> SPI_DMA_ENABLE_W<0> {
-                SPI_DMA_ENABLE_W::new(self)
+            pub fn dma_enable(&mut self) -> DMA_ENABLE_W<0> {
+                DMA_ENABLE_W::new(self)
             }
             ///Bit 2 - RW, SPI0 DMA address loop enable
             #[inline(always)]
             #[must_use]
-            pub fn spi_dma_loop(&mut self) -> SPI_DMA_LOOP_W<2> {
-                SPI_DMA_LOOP_W::new(self)
+            pub fn dma_loop(&mut self) -> DMA_LOOP_W<2> {
+                DMA_LOOP_W::new(self)
             }
             ///Bit 4 - RW, enable buffer/FIFO accessing to auto clear RB_SPI_IF_BYTE_END interrupt flag
             #[inline(always)]
             #[must_use]
-            pub fn spi_auto_if(&mut self) -> SPI_AUTO_IF_W<4> {
-                SPI_AUTO_IF_W::new(self)
+            pub fn auto_if(&mut self) -> AUTO_IF_W<4> {
+                AUTO_IF_W::new(self)
             }
             ///Bit 5 - RW, SPI bit data order: 0=MSB first, 1=LSB first
             #[inline(always)]
             #[must_use]
-            pub fn spi_bit_order(&mut self) -> SPI_BIT_ORDER_W<5> {
-                SPI_BIT_ORDER_W::new(self)
+            pub fn bit_order(&mut self) -> BIT_ORDER_W<5> {
+                BIT_ORDER_W::new(self)
             }
             ///Bit 6 - RW, SPI master input delay enable
             #[inline(always)]
             #[must_use]
-            pub fn spi_mst_dly_en(&mut self) -> SPI_MST_DLY_EN_W<6> {
-                SPI_MST_DLY_EN_W::new(self)
+            pub fn mst_dly_en(&mut self) -> MST_DLY_EN_W<6> {
+                MST_DLY_EN_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -13380,98 +13400,98 @@ pub mod spi1 {
                 W(writer)
             }
         }
-        ///Field `SPI_IE_CNT_END` reader - RW, enable interrupt for SPI total byte count end
-        pub type SPI_IE_CNT_END_R = crate::BitReader;
-        ///Field `SPI_IE_CNT_END` writer - RW, enable interrupt for SPI total byte count end
-        pub type SPI_IE_CNT_END_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
-        ///Field `SPI_IE_BYTE_END` reader - RW, enable interrupt for SPI byte exchanged
-        pub type SPI_IE_BYTE_END_R = crate::BitReader;
-        ///Field `SPI_IE_BYTE_END` writer - RW, enable interrupt for SPI byte exchanged
-        pub type SPI_IE_BYTE_END_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
-        ///Field `SPI_IE_FIFO_HF` reader - RW, enable interrupt for SPI FIFO half
-        pub type SPI_IE_FIFO_HF_R = crate::BitReader;
-        ///Field `SPI_IE_FIFO_HF` writer - RW, enable interrupt for SPI FIFO half
-        pub type SPI_IE_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
-        ///Field `SPI_IE_DMA_END` reader - RW, enable interrupt for SPI0 DMA completion
-        pub type SPI_IE_DMA_END_R = crate::BitReader;
-        ///Field `SPI_IE_DMA_END` writer - RW, enable interrupt for SPI0 DMA completion
-        pub type SPI_IE_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
-        ///Field `SPI_IE_FIFO_OV` reader - RW, enable interrupt for SPI0 FIFO overflow
-        pub type SPI_IE_FIFO_OV_R = crate::BitReader;
-        ///Field `SPI_IE_FIFO_OV` writer - RW, enable interrupt for SPI0 FIFO overflow
-        pub type SPI_IE_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
-        ///Field `SPI_IE_FST_BYTE` reader - RW, enable interrupt for SPI0 slave mode first byte received
-        pub type SPI_IE_FST_BYTE_R = crate::BitReader;
-        ///Field `SPI_IE_FST_BYTE` writer - RW, enable interrupt for SPI0 slave mode first byte received
-        pub type SPI_IE_FST_BYTE_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_CNT_END` reader - RW, enable interrupt for SPI total byte count end
+        pub type IE_CNT_END_R = crate::BitReader;
+        ///Field `IE_CNT_END` writer - RW, enable interrupt for SPI total byte count end
+        pub type IE_CNT_END_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_BYTE_END` reader - RW, enable interrupt for SPI byte exchanged
+        pub type IE_BYTE_END_R = crate::BitReader;
+        ///Field `IE_BYTE_END` writer - RW, enable interrupt for SPI byte exchanged
+        pub type IE_BYTE_END_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_FIFO_HF` reader - RW, enable interrupt for SPI FIFO half
+        pub type IE_FIFO_HF_R = crate::BitReader;
+        ///Field `IE_FIFO_HF` writer - RW, enable interrupt for SPI FIFO half
+        pub type IE_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_DMA_END` reader - RW, enable interrupt for SPI0 DMA completion
+        pub type IE_DMA_END_R = crate::BitReader;
+        ///Field `IE_DMA_END` writer - RW, enable interrupt for SPI0 DMA completion
+        pub type IE_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_FIFO_OV` reader - RW, enable interrupt for SPI0 FIFO overflow
+        pub type IE_FIFO_OV_R = crate::BitReader;
+        ///Field `IE_FIFO_OV` writer - RW, enable interrupt for SPI0 FIFO overflow
+        pub type IE_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
+        ///Field `IE_FST_BYTE` reader - RW, enable interrupt for SPI0 slave mode first byte received
+        pub type IE_FST_BYTE_R = crate::BitReader;
+        ///Field `IE_FST_BYTE` writer - RW, enable interrupt for SPI0 slave mode first byte received
+        pub type IE_FST_BYTE_W<'a, const O: u8> = crate::BitWriter<'a, INTER_EN_SPEC, O>;
         impl R {
             ///Bit 0 - RW, enable interrupt for SPI total byte count end
             #[inline(always)]
-            pub fn spi_ie_cnt_end(&self) -> SPI_IE_CNT_END_R {
-                SPI_IE_CNT_END_R::new((self.bits & 1) != 0)
+            pub fn ie_cnt_end(&self) -> IE_CNT_END_R {
+                IE_CNT_END_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW, enable interrupt for SPI byte exchanged
             #[inline(always)]
-            pub fn spi_ie_byte_end(&self) -> SPI_IE_BYTE_END_R {
-                SPI_IE_BYTE_END_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn ie_byte_end(&self) -> IE_BYTE_END_R {
+                IE_BYTE_END_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW, enable interrupt for SPI FIFO half
             #[inline(always)]
-            pub fn spi_ie_fifo_hf(&self) -> SPI_IE_FIFO_HF_R {
-                SPI_IE_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn ie_fifo_hf(&self) -> IE_FIFO_HF_R {
+                IE_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW, enable interrupt for SPI0 DMA completion
             #[inline(always)]
-            pub fn spi_ie_dma_end(&self) -> SPI_IE_DMA_END_R {
-                SPI_IE_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn ie_dma_end(&self) -> IE_DMA_END_R {
+                IE_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RW, enable interrupt for SPI0 FIFO overflow
             #[inline(always)]
-            pub fn spi_ie_fifo_ov(&self) -> SPI_IE_FIFO_OV_R {
-                SPI_IE_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn ie_fifo_ov(&self) -> IE_FIFO_OV_R {
+                IE_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 7 - RW, enable interrupt for SPI0 slave mode first byte received
             #[inline(always)]
-            pub fn spi_ie_fst_byte(&self) -> SPI_IE_FST_BYTE_R {
-                SPI_IE_FST_BYTE_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn ie_fst_byte(&self) -> IE_FST_BYTE_R {
+                IE_FST_BYTE_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW, enable interrupt for SPI total byte count end
             #[inline(always)]
             #[must_use]
-            pub fn spi_ie_cnt_end(&mut self) -> SPI_IE_CNT_END_W<0> {
-                SPI_IE_CNT_END_W::new(self)
+            pub fn ie_cnt_end(&mut self) -> IE_CNT_END_W<0> {
+                IE_CNT_END_W::new(self)
             }
             ///Bit 1 - RW, enable interrupt for SPI byte exchanged
             #[inline(always)]
             #[must_use]
-            pub fn spi_ie_byte_end(&mut self) -> SPI_IE_BYTE_END_W<1> {
-                SPI_IE_BYTE_END_W::new(self)
+            pub fn ie_byte_end(&mut self) -> IE_BYTE_END_W<1> {
+                IE_BYTE_END_W::new(self)
             }
             ///Bit 2 - RW, enable interrupt for SPI FIFO half
             #[inline(always)]
             #[must_use]
-            pub fn spi_ie_fifo_hf(&mut self) -> SPI_IE_FIFO_HF_W<2> {
-                SPI_IE_FIFO_HF_W::new(self)
+            pub fn ie_fifo_hf(&mut self) -> IE_FIFO_HF_W<2> {
+                IE_FIFO_HF_W::new(self)
             }
             ///Bit 3 - RW, enable interrupt for SPI0 DMA completion
             #[inline(always)]
             #[must_use]
-            pub fn spi_ie_dma_end(&mut self) -> SPI_IE_DMA_END_W<3> {
-                SPI_IE_DMA_END_W::new(self)
+            pub fn ie_dma_end(&mut self) -> IE_DMA_END_W<3> {
+                IE_DMA_END_W::new(self)
             }
             ///Bit 4 - RW, enable interrupt for SPI0 FIFO overflow
             #[inline(always)]
             #[must_use]
-            pub fn spi_ie_fifo_ov(&mut self) -> SPI_IE_FIFO_OV_W<4> {
-                SPI_IE_FIFO_OV_W::new(self)
+            pub fn ie_fifo_ov(&mut self) -> IE_FIFO_OV_W<4> {
+                IE_FIFO_OV_W::new(self)
             }
             ///Bit 7 - RW, enable interrupt for SPI0 slave mode first byte received
             #[inline(always)]
             #[must_use]
-            pub fn spi_ie_fst_byte(&mut self) -> SPI_IE_FST_BYTE_W<7> {
-                SPI_IE_FST_BYTE_W::new(self)
+            pub fn ie_fst_byte(&mut self) -> IE_FST_BYTE_W<7> {
+                IE_FST_BYTE_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -13702,34 +13722,34 @@ pub mod spi1 {
                 R(reader)
             }
         }
-        ///Field `SPI_SLV_CMD_ACT` reader - RO, SPI0 slave first byte or command flag
-        pub type SPI_SLV_CMD_ACT_R = crate::BitReader;
-        ///Field `SPI_FIFO_READY` reader - RO, SPI FIFO ready status
-        pub type SPI_FIFO_READY_R = crate::BitReader;
-        ///Field `SPI_SLV_CS_LOAD` reader - RO, SPI0 slave chip-select loading status
-        pub type SPI_SLV_CS_LOAD_R = crate::BitReader;
-        ///Field `SPI_SLV_SELECT` reader - RO, SPI0 slave selection status
-        pub type SPI_SLV_SELECT_R = crate::BitReader;
+        ///Field `SLV_CMD_ACT` reader - RO, SPI0 slave first byte or command flag
+        pub type SLV_CMD_ACT_R = crate::BitReader;
+        ///Field `FIFO_READY` reader - RO, SPI FIFO ready status
+        pub type FIFO_READY_R = crate::BitReader;
+        ///Field `SLV_CS_LOAD` reader - RO, SPI0 slave chip-select loading status
+        pub type SLV_CS_LOAD_R = crate::BitReader;
+        ///Field `SLV_SELECT` reader - RO, SPI0 slave selection status
+        pub type SLV_SELECT_R = crate::BitReader;
         impl R {
             ///Bit 4 - RO, SPI0 slave first byte or command flag
             #[inline(always)]
-            pub fn spi_slv_cmd_act(&self) -> SPI_SLV_CMD_ACT_R {
-                SPI_SLV_CMD_ACT_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn slv_cmd_act(&self) -> SLV_CMD_ACT_R {
+                SLV_CMD_ACT_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 5 - RO, SPI FIFO ready status
             #[inline(always)]
-            pub fn spi_fifo_ready(&self) -> SPI_FIFO_READY_R {
-                SPI_FIFO_READY_R::new(((self.bits >> 5) & 1) != 0)
+            pub fn fifo_ready(&self) -> FIFO_READY_R {
+                FIFO_READY_R::new(((self.bits >> 5) & 1) != 0)
             }
             ///Bit 6 - RO, SPI0 slave chip-select loading status
             #[inline(always)]
-            pub fn spi_slv_cs_load(&self) -> SPI_SLV_CS_LOAD_R {
-                SPI_SLV_CS_LOAD_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn slv_cs_load(&self) -> SLV_CS_LOAD_R {
+                SLV_CS_LOAD_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - RO, SPI0 slave selection status
             #[inline(always)]
-            pub fn spi_slv_select(&self) -> SPI_SLV_SELECT_R {
-                SPI_SLV_SELECT_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn slv_select(&self) -> SLV_SELECT_R {
+                SLV_SELECT_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         ///RO, SPI1 work flag
@@ -13790,113 +13810,113 @@ pub mod spi1 {
                 W(writer)
             }
         }
-        ///Field `SPI_IF_CNT_END` reader - RW1, interrupt flag for SPI total byte count end
-        pub type SPI_IF_CNT_END_R = crate::BitReader;
-        ///Field `SPI_IF_CNT_END` writer - RW1, interrupt flag for SPI total byte count end
-        pub type SPI_IF_CNT_END_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
-        ///Field `SPI_IF_BYTE_END` reader - RW1, interrupt flag for SPI byte exchanged
-        pub type SPI_IF_BYTE_END_R = crate::BitReader;
-        ///Field `SPI_IF_BYTE_END` writer - RW1, interrupt flag for SPI byte exchanged
-        pub type SPI_IF_BYTE_END_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
-        ///Field `SPI_IF_FIFO_HF` reader - RW1, interrupt flag for SPI FIFO half
-        pub type SPI_IF_FIFO_HF_R = crate::BitReader;
-        ///Field `SPI_IF_FIFO_HF` writer - RW1, interrupt flag for SPI FIFO half
-        pub type SPI_IF_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
-        ///Field `SPI_IF_DMA_END` reader - RW1, interrupt flag for SPI0 DMA completion
-        pub type SPI_IF_DMA_END_R = crate::BitReader;
-        ///Field `SPI_IF_DMA_END` writer - RW1, interrupt flag for SPI0 DMA completion
-        pub type SPI_IF_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
-        ///Field `SPI_IF_FIFO_OV` reader - RW1, interrupt flag for SPI0 FIFO overflow
-        pub type SPI_IF_FIFO_OV_R = crate::BitReader;
-        ///Field `SPI_IF_FIFO_OV` writer - RW1, interrupt flag for SPI0 FIFO overflow
-        pub type SPI_IF_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
-        ///Field `SPI_FREE` reader - RO, current SPI free status
-        pub type SPI_FREE_R = crate::BitReader;
-        ///Field `SPI_FREE` writer - RO, current SPI free status
-        pub type SPI_FREE_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
-        ///Field `SPI_IF_FST_BYTE` reader - RW1, interrupt flag for SPI0 slave mode first byte received
-        pub type SPI_IF_FST_BYTE_R = crate::BitReader;
-        ///Field `SPI_IF_FST_BYTE` writer - RW1, interrupt flag for SPI0 slave mode first byte received
-        pub type SPI_IF_FST_BYTE_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_CNT_END` reader - RW1, interrupt flag for SPI total byte count end
+        pub type IF_CNT_END_R = crate::BitReader;
+        ///Field `IF_CNT_END` writer - RW1, interrupt flag for SPI total byte count end
+        pub type IF_CNT_END_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_BYTE_END` reader - RW1, interrupt flag for SPI byte exchanged
+        pub type IF_BYTE_END_R = crate::BitReader;
+        ///Field `IF_BYTE_END` writer - RW1, interrupt flag for SPI byte exchanged
+        pub type IF_BYTE_END_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_FIFO_HF` reader - RW1, interrupt flag for SPI FIFO half
+        pub type IF_FIFO_HF_R = crate::BitReader;
+        ///Field `IF_FIFO_HF` writer - RW1, interrupt flag for SPI FIFO half
+        pub type IF_FIFO_HF_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_DMA_END` reader - RW1, interrupt flag for SPI0 DMA completion
+        pub type IF_DMA_END_R = crate::BitReader;
+        ///Field `IF_DMA_END` writer - RW1, interrupt flag for SPI0 DMA completion
+        pub type IF_DMA_END_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_FIFO_OV` reader - RW1, interrupt flag for SPI0 FIFO overflow
+        pub type IF_FIFO_OV_R = crate::BitReader;
+        ///Field `IF_FIFO_OV` writer - RW1, interrupt flag for SPI0 FIFO overflow
+        pub type IF_FIFO_OV_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `FREE` reader - RO, current SPI free status
+        pub type FREE_R = crate::BitReader;
+        ///Field `FREE` writer - RO, current SPI free status
+        pub type FREE_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
+        ///Field `IF_FST_BYTE` reader - RW1, interrupt flag for SPI0 slave mode first byte received
+        pub type IF_FST_BYTE_R = crate::BitReader;
+        ///Field `IF_FST_BYTE` writer - RW1, interrupt flag for SPI0 slave mode first byte received
+        pub type IF_FST_BYTE_W<'a, const O: u8> = crate::BitWriter<'a, INT_FLAG_SPEC, O>;
         impl R {
             ///Bit 0 - RW1, interrupt flag for SPI total byte count end
             #[inline(always)]
-            pub fn spi_if_cnt_end(&self) -> SPI_IF_CNT_END_R {
-                SPI_IF_CNT_END_R::new((self.bits & 1) != 0)
+            pub fn if_cnt_end(&self) -> IF_CNT_END_R {
+                IF_CNT_END_R::new((self.bits & 1) != 0)
             }
             ///Bit 1 - RW1, interrupt flag for SPI byte exchanged
             #[inline(always)]
-            pub fn spi_if_byte_end(&self) -> SPI_IF_BYTE_END_R {
-                SPI_IF_BYTE_END_R::new(((self.bits >> 1) & 1) != 0)
+            pub fn if_byte_end(&self) -> IF_BYTE_END_R {
+                IF_BYTE_END_R::new(((self.bits >> 1) & 1) != 0)
             }
             ///Bit 2 - RW1, interrupt flag for SPI FIFO half
             #[inline(always)]
-            pub fn spi_if_fifo_hf(&self) -> SPI_IF_FIFO_HF_R {
-                SPI_IF_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
+            pub fn if_fifo_hf(&self) -> IF_FIFO_HF_R {
+                IF_FIFO_HF_R::new(((self.bits >> 2) & 1) != 0)
             }
             ///Bit 3 - RW1, interrupt flag for SPI0 DMA completion
             #[inline(always)]
-            pub fn spi_if_dma_end(&self) -> SPI_IF_DMA_END_R {
-                SPI_IF_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
+            pub fn if_dma_end(&self) -> IF_DMA_END_R {
+                IF_DMA_END_R::new(((self.bits >> 3) & 1) != 0)
             }
             ///Bit 4 - RW1, interrupt flag for SPI0 FIFO overflow
             #[inline(always)]
-            pub fn spi_if_fifo_ov(&self) -> SPI_IF_FIFO_OV_R {
-                SPI_IF_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
+            pub fn if_fifo_ov(&self) -> IF_FIFO_OV_R {
+                IF_FIFO_OV_R::new(((self.bits >> 4) & 1) != 0)
             }
             ///Bit 6 - RO, current SPI free status
             #[inline(always)]
-            pub fn spi_free(&self) -> SPI_FREE_R {
-                SPI_FREE_R::new(((self.bits >> 6) & 1) != 0)
+            pub fn free(&self) -> FREE_R {
+                FREE_R::new(((self.bits >> 6) & 1) != 0)
             }
             ///Bit 7 - RW1, interrupt flag for SPI0 slave mode first byte received
             #[inline(always)]
-            pub fn spi_if_fst_byte(&self) -> SPI_IF_FST_BYTE_R {
-                SPI_IF_FST_BYTE_R::new(((self.bits >> 7) & 1) != 0)
+            pub fn if_fst_byte(&self) -> IF_FST_BYTE_R {
+                IF_FST_BYTE_R::new(((self.bits >> 7) & 1) != 0)
             }
         }
         impl W {
             ///Bit 0 - RW1, interrupt flag for SPI total byte count end
             #[inline(always)]
             #[must_use]
-            pub fn spi_if_cnt_end(&mut self) -> SPI_IF_CNT_END_W<0> {
-                SPI_IF_CNT_END_W::new(self)
+            pub fn if_cnt_end(&mut self) -> IF_CNT_END_W<0> {
+                IF_CNT_END_W::new(self)
             }
             ///Bit 1 - RW1, interrupt flag for SPI byte exchanged
             #[inline(always)]
             #[must_use]
-            pub fn spi_if_byte_end(&mut self) -> SPI_IF_BYTE_END_W<1> {
-                SPI_IF_BYTE_END_W::new(self)
+            pub fn if_byte_end(&mut self) -> IF_BYTE_END_W<1> {
+                IF_BYTE_END_W::new(self)
             }
             ///Bit 2 - RW1, interrupt flag for SPI FIFO half
             #[inline(always)]
             #[must_use]
-            pub fn spi_if_fifo_hf(&mut self) -> SPI_IF_FIFO_HF_W<2> {
-                SPI_IF_FIFO_HF_W::new(self)
+            pub fn if_fifo_hf(&mut self) -> IF_FIFO_HF_W<2> {
+                IF_FIFO_HF_W::new(self)
             }
             ///Bit 3 - RW1, interrupt flag for SPI0 DMA completion
             #[inline(always)]
             #[must_use]
-            pub fn spi_if_dma_end(&mut self) -> SPI_IF_DMA_END_W<3> {
-                SPI_IF_DMA_END_W::new(self)
+            pub fn if_dma_end(&mut self) -> IF_DMA_END_W<3> {
+                IF_DMA_END_W::new(self)
             }
             ///Bit 4 - RW1, interrupt flag for SPI0 FIFO overflow
             #[inline(always)]
             #[must_use]
-            pub fn spi_if_fifo_ov(&mut self) -> SPI_IF_FIFO_OV_W<4> {
-                SPI_IF_FIFO_OV_W::new(self)
+            pub fn if_fifo_ov(&mut self) -> IF_FIFO_OV_W<4> {
+                IF_FIFO_OV_W::new(self)
             }
             ///Bit 6 - RO, current SPI free status
             #[inline(always)]
             #[must_use]
-            pub fn spi_free(&mut self) -> SPI_FREE_W<6> {
-                SPI_FREE_W::new(self)
+            pub fn free(&mut self) -> FREE_W<6> {
+                FREE_W::new(self)
             }
             ///Bit 7 - RW1, interrupt flag for SPI0 slave mode first byte received
             #[inline(always)]
             #[must_use]
-            pub fn spi_if_fst_byte(&mut self) -> SPI_IF_FST_BYTE_W<7> {
-                SPI_IF_FST_BYTE_W::new(self)
+            pub fn if_fst_byte(&mut self) -> IF_FST_BYTE_W<7> {
+                IF_FST_BYTE_W::new(self)
             }
             ///Writes raw bits to the register.
             #[inline(always)]
@@ -14249,25 +14269,14 @@ pub mod i2c {
         ///0x14 - R0, I2C stauts register 1
         pub star1: STAR1,
         _reserved6: [u8; 0x02],
-        _reserved_6_pec: [u8; 0x02],
+        ///0x18 - R0, I2C status register 2
+        pub star2: STAR2,
         _reserved7: [u8; 0x02],
         ///0x1c - RW, I2C clock control register
         pub ckcfgr: CKCFGR,
         _reserved8: [u8; 0x02],
         ///0x20 - RW, I2C trise register
         pub rtr: RTR,
-    }
-    impl RegisterBlock {
-        ///0x18 - R0, I2C status register 2
-        #[inline(always)]
-        pub const fn star2(&self) -> &STAR2 {
-            unsafe { &*(self as *const Self).cast::<u8>().add(24usize).cast() }
-        }
-        ///0x19 - R0, I2C Packet error checking register
-        #[inline(always)]
-        pub const fn pec(&self) -> &PEC {
-            unsafe { &*(self as *const Self).cast::<u8>().add(25usize).cast() }
-        }
     }
     ///CTRL1 (rw) register accessor: an alias for `Reg<CTRL1_SPEC>`
     pub type CTRL1 = crate::Reg<ctrl1::CTRL1_SPEC>;
@@ -15041,7 +15050,7 @@ pub mod i2c {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
-    ///STAR1 (r) register accessor: an alias for `Reg<STAR1_SPEC>`
+    ///STAR1 (rw) register accessor: an alias for `Reg<STAR1_SPEC>`
     pub type STAR1 = crate::Reg<star1::STAR1_SPEC>;
     ///R0, I2C stauts register 1
     pub mod star1 {
@@ -15060,34 +15069,83 @@ pub mod i2c {
                 R(reader)
             }
         }
+        ///Register `STAR1` writer
+        pub struct W(crate::W<STAR1_SPEC>);
+        impl core::ops::Deref for W {
+            type Target = crate::W<STAR1_SPEC>;
+            #[inline(always)]
+            fn deref(&self) -> &Self::Target {
+                &self.0
+            }
+        }
+        impl core::ops::DerefMut for W {
+            #[inline(always)]
+            fn deref_mut(&mut self) -> &mut Self::Target {
+                &mut self.0
+            }
+        }
+        impl From<crate::W<STAR1_SPEC>> for W {
+            #[inline(always)]
+            fn from(writer: crate::W<STAR1_SPEC>) -> Self {
+                W(writer)
+            }
+        }
         ///Field `SB` reader - RW0, Start bit flag (Master mode)
         pub type SB_R = crate::BitReader;
+        ///Field `SB` writer - RW0, Start bit flag (Master mode)
+        pub type SB_W<'a, const O: u8> = crate::BitWriter<'a, STAR1_SPEC, O>;
         ///Field `ADDR` reader - RW0, Address sent (master mode)/matched (slave mode) flag
         pub type ADDR_R = crate::BitReader;
+        ///Field `ADDR` writer - RW0, Address sent (master mode)/matched (slave mode) flag
+        pub type ADDR_W<'a, const O: u8> = crate::BitWriter<'a, STAR1_SPEC, O>;
         ///Field `BTF` reader - RO, Byte transfer finished flag
         pub type BTF_R = crate::BitReader;
+        ///Field `BTF` writer - RO, Byte transfer finished flag
+        pub type BTF_W<'a, const O: u8> = crate::BitWriter<'a, STAR1_SPEC, O>;
         ///Field `ADD10` reader - RO, 10-bit header sent flag (Master mode)
         pub type ADD10_R = crate::BitReader;
+        ///Field `ADD10` writer - RO, 10-bit header sent flag (Master mode)
+        pub type ADD10_W<'a, const O: u8> = crate::BitWriter<'a, STAR1_SPEC, O>;
         ///Field `STOPF` reader - RO, Stop detection flag (slave mode)
         pub type STOPF_R = crate::BitReader;
+        ///Field `STOPF` writer - RO, Stop detection flag (slave mode)
+        pub type STOPF_W<'a, const O: u8> = crate::BitWriter<'a, STAR1_SPEC, O>;
         ///Field `RxNE` reader - RO, Data register not empty flag (receivers)
         pub type RX_NE_R = crate::BitReader;
+        ///Field `RxNE` writer - RO, Data register not empty flag (receivers)
+        pub type RX_NE_W<'a, const O: u8> = crate::BitWriter<'a, STAR1_SPEC, O>;
         ///Field `TxE` reader - RO, Data register empty flag (transmitters)
         pub type TX_E_R = crate::BitReader;
+        ///Field `TxE` writer - RO, Data register empty flag (transmitters)
+        pub type TX_E_W<'a, const O: u8> = crate::BitWriter<'a, STAR1_SPEC, O>;
         ///Field `BERR` reader - RW0, Bus error flag
         pub type BERR_R = crate::BitReader;
+        ///Field `BERR` writer - RW0, Bus error flag
+        pub type BERR_W<'a, const O: u8> = crate::BitWriter<'a, STAR1_SPEC, O>;
         ///Field `ARLO` reader - RW0, Arbitration lost flag (master mode)
         pub type ARLO_R = crate::BitReader;
+        ///Field `ARLO` writer - RW0, Arbitration lost flag (master mode)
+        pub type ARLO_W<'a, const O: u8> = crate::BitWriter<'a, STAR1_SPEC, O>;
         ///Field `AF` reader - RW0, Acknowledge failure flag
         pub type AF_R = crate::BitReader;
+        ///Field `AF` writer - RW0, Acknowledge failure flag
+        pub type AF_W<'a, const O: u8> = crate::BitWriter<'a, STAR1_SPEC, O>;
         ///Field `OVR` reader - RW0, Overrun/Underrun flag
         pub type OVR_R = crate::BitReader;
+        ///Field `OVR` writer - RW0, Overrun/Underrun flag
+        pub type OVR_W<'a, const O: u8> = crate::BitWriter<'a, STAR1_SPEC, O>;
         ///Field `PECERR` reader - RW0, PEC Error flag in reception
         pub type PECERR_R = crate::BitReader;
+        ///Field `PECERR` writer - RW0, PEC Error flag in reception
+        pub type PECERR_W<'a, const O: u8> = crate::BitWriter<'a, STAR1_SPEC, O>;
         ///Field `TIMEOUT` reader - RW0, Timeout or Tlow error flag
         pub type TIMEOUT_R = crate::BitReader;
+        ///Field `TIMEOUT` writer - RW0, Timeout or Tlow error flag
+        pub type TIMEOUT_W<'a, const O: u8> = crate::BitWriter<'a, STAR1_SPEC, O>;
         ///Field `SMBALERT` reader - RW0, SMBus alert flag
         pub type SMBALERT_R = crate::BitReader;
+        ///Field `SMBALERT` writer - RW0, SMBus alert flag
+        pub type SMBALERT_W<'a, const O: u8> = crate::BitWriter<'a, STAR1_SPEC, O>;
         impl R {
             ///Bit 0 - RW0, Start bit flag (Master mode)
             #[inline(always)]
@@ -15160,9 +15218,101 @@ pub mod i2c {
                 SMBALERT_R::new(((self.bits >> 15) & 1) != 0)
             }
         }
+        impl W {
+            ///Bit 0 - RW0, Start bit flag (Master mode)
+            #[inline(always)]
+            #[must_use]
+            pub fn sb(&mut self) -> SB_W<0> {
+                SB_W::new(self)
+            }
+            ///Bit 1 - RW0, Address sent (master mode)/matched (slave mode) flag
+            #[inline(always)]
+            #[must_use]
+            pub fn addr(&mut self) -> ADDR_W<1> {
+                ADDR_W::new(self)
+            }
+            ///Bit 2 - RO, Byte transfer finished flag
+            #[inline(always)]
+            #[must_use]
+            pub fn btf(&mut self) -> BTF_W<2> {
+                BTF_W::new(self)
+            }
+            ///Bit 3 - RO, 10-bit header sent flag (Master mode)
+            #[inline(always)]
+            #[must_use]
+            pub fn add10(&mut self) -> ADD10_W<3> {
+                ADD10_W::new(self)
+            }
+            ///Bit 4 - RO, Stop detection flag (slave mode)
+            #[inline(always)]
+            #[must_use]
+            pub fn stopf(&mut self) -> STOPF_W<4> {
+                STOPF_W::new(self)
+            }
+            ///Bit 6 - RO, Data register not empty flag (receivers)
+            #[inline(always)]
+            #[must_use]
+            pub fn rx_ne(&mut self) -> RX_NE_W<6> {
+                RX_NE_W::new(self)
+            }
+            ///Bit 7 - RO, Data register empty flag (transmitters)
+            #[inline(always)]
+            #[must_use]
+            pub fn tx_e(&mut self) -> TX_E_W<7> {
+                TX_E_W::new(self)
+            }
+            ///Bit 8 - RW0, Bus error flag
+            #[inline(always)]
+            #[must_use]
+            pub fn berr(&mut self) -> BERR_W<8> {
+                BERR_W::new(self)
+            }
+            ///Bit 9 - RW0, Arbitration lost flag (master mode)
+            #[inline(always)]
+            #[must_use]
+            pub fn arlo(&mut self) -> ARLO_W<9> {
+                ARLO_W::new(self)
+            }
+            ///Bit 10 - RW0, Acknowledge failure flag
+            #[inline(always)]
+            #[must_use]
+            pub fn af(&mut self) -> AF_W<10> {
+                AF_W::new(self)
+            }
+            ///Bit 11 - RW0, Overrun/Underrun flag
+            #[inline(always)]
+            #[must_use]
+            pub fn ovr(&mut self) -> OVR_W<11> {
+                OVR_W::new(self)
+            }
+            ///Bit 12 - RW0, PEC Error flag in reception
+            #[inline(always)]
+            #[must_use]
+            pub fn pecerr(&mut self) -> PECERR_W<12> {
+                PECERR_W::new(self)
+            }
+            ///Bit 13 - RW0, Timeout or Tlow error flag
+            #[inline(always)]
+            #[must_use]
+            pub fn timeout(&mut self) -> TIMEOUT_W<13> {
+                TIMEOUT_W::new(self)
+            }
+            ///Bit 15 - RW0, SMBus alert flag
+            #[inline(always)]
+            #[must_use]
+            pub fn smbalert(&mut self) -> SMBALERT_W<15> {
+                SMBALERT_W::new(self)
+            }
+            ///Writes raw bits to the register.
+            #[inline(always)]
+            pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+                self.0.bits(bits);
+                self
+            }
+        }
         ///R0, I2C stauts register 1
         ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
+        ///This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
         ///
         ///For information about available fields see [star1](index.html) module
         pub struct STAR1_SPEC;
@@ -15172,6 +15322,12 @@ pub mod i2c {
         ///`read()` method returns [star1::R](R) reader structure
         impl crate::Readable for STAR1_SPEC {
             type Reader = R;
+        }
+        ///`write(|w| ..)` method takes [star1::W](W) writer structure
+        impl crate::Writable for STAR1_SPEC {
+            type Writer = W;
+            const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+            const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
         }
         ///`reset()` method sets STAR1 to value 0
         impl crate::Resettable for STAR1_SPEC {
@@ -15270,52 +15426,6 @@ pub mod i2c {
         }
         ///`reset()` method sets STAR2 to value 0
         impl crate::Resettable for STAR2_SPEC {
-            const RESET_VALUE: Self::Ux = 0;
-        }
-    }
-    ///PEC (r) register accessor: an alias for `Reg<PEC_SPEC>`
-    pub type PEC = crate::Reg<pec::PEC_SPEC>;
-    ///R0, I2C Packet error checking register
-    pub mod pec {
-        ///Register `PEC` reader
-        pub struct R(crate::R<PEC_SPEC>);
-        impl core::ops::Deref for R {
-            type Target = crate::R<PEC_SPEC>;
-            #[inline(always)]
-            fn deref(&self) -> &Self::Target {
-                &self.0
-            }
-        }
-        impl From<crate::R<PEC_SPEC>> for R {
-            #[inline(always)]
-            fn from(reader: crate::R<PEC_SPEC>) -> Self {
-                R(reader)
-            }
-        }
-        ///Field `SPI0_FIFO_COUNT` reader - RO, SPI0 FIFO count status
-        pub type SPI0_FIFO_COUNT_R = crate::FieldReader;
-        impl R {
-            ///Bits 0:7 - RO, SPI0 FIFO count status
-            #[inline(always)]
-            pub fn spi0_fifo_count(&self) -> SPI0_FIFO_COUNT_R {
-                SPI0_FIFO_COUNT_R::new(self.bits)
-            }
-        }
-        ///R0, I2C Packet error checking register
-        ///
-        ///This register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).
-        ///
-        ///For information about available fields see [pec](index.html) module
-        pub struct PEC_SPEC;
-        impl crate::RegisterSpec for PEC_SPEC {
-            type Ux = u8;
-        }
-        ///`read()` method returns [pec::R](R) reader structure
-        impl crate::Readable for PEC_SPEC {
-            type Reader = R;
-        }
-        ///`reset()` method sets PEC to value 0
-        impl crate::Resettable for PEC_SPEC {
             const RESET_VALUE: Self::Ux = 0;
         }
     }
