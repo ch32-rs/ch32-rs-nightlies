@@ -13,3 +13,5 @@ members = [
     "ch641",
     "ch643",
 ]
+
+resolver = "2"
