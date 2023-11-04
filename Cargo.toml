@@ -10,5 +10,6 @@ members = [
     "ch58x",
     "ch57x",
     "ch56x",
+    "ch641",
     "ch643",
 ]
