@@ -1016,9 +1016,62 @@ pub mod rcc {
         ///Field `ADCPRE` writer - ADC prescaler
         pub type ADCPRE_W<'a, const O: u8> = crate::FieldWriter<'a, CFGR0_SPEC, 2, O>;
         ///Field `PLLSRC` reader - PLL entry clock source
-        pub type PLLSRC_R = crate::BitReader;
+        pub type PLLSRC_R = crate::FieldReader<PLLSRC_A>;
+        ///PLL entry clock source
+        ///
+        ///Value on reset: 0
+        #[derive(Clone, Copy, Debug, PartialEq, Eq)]
+        #[repr(u8)]
+        pub enum PLLSRC_A {
+            ///0: HSI clock divided by 2 selected as PLL input clock
+            HsiMul2 = 0,
+            ///3: HSE clock divided by 2 selected as PLL input clock
+            HseMul2 = 3,
+        }
+        impl From<PLLSRC_A> for u8 {
+            #[inline(always)]
+            fn from(variant: PLLSRC_A) -> Self {
+                variant as _
+            }
+        }
+        impl crate::FieldSpec for PLLSRC_A {
+            type Ux = u8;
+        }
+        impl PLLSRC_R {
+            ///Get enumerated values variant
+            #[inline(always)]
+            pub fn variant(&self) -> Option<PLLSRC_A> {
+                match self.bits {
+                    0 => Some(PLLSRC_A::HsiMul2),
+                    3 => Some(PLLSRC_A::HseMul2),
+                    _ => None,
+                }
+            }
+            ///Checks if the value of the field is `HsiMul2`
+            #[inline(always)]
+            pub fn is_hsi_mul2(&self) -> bool {
+                *self == PLLSRC_A::HsiMul2
+            }
+            ///Checks if the value of the field is `HseMul2`
+            #[inline(always)]
+            pub fn is_hse_mul2(&self) -> bool {
+                *self == PLLSRC_A::HseMul2
+            }
+        }
         ///Field `PLLSRC` writer - PLL entry clock source
-        pub type PLLSRC_W<'a, const O: u8> = crate::BitWriter<'a, CFGR0_SPEC, O>;
+        pub type PLLSRC_W<'a, const O: u8> = crate::FieldWriter<'a, CFGR0_SPEC, 2, O, PLLSRC_A>;
+        impl<'a, const O: u8> PLLSRC_W<'a, O> {
+            ///HSI clock divided by 2 selected as PLL input clock
+            #[inline(always)]
+            pub fn hsi_mul2(self) -> &'a mut W {
+                self.variant(PLLSRC_A::HsiMul2)
+            }
+            ///HSE clock divided by 2 selected as PLL input clock
+            #[inline(always)]
+            pub fn hse_mul2(self) -> &'a mut W {
+                self.variant(PLLSRC_A::HseMul2)
+            }
+        }
         ///Field `MCO` reader - Microcontroller clock output
         pub type MCO_R = crate::FieldReader;
         ///Field `MCO` writer - Microcontroller clock output
@@ -1054,10 +1107,10 @@ pub mod rcc {
             pub fn adcpre(&self) -> ADCPRE_R {
                 ADCPRE_R::new(((self.bits >> 14) & 3) as u8)
             }
-            ///Bit 16 - PLL entry clock source
+            ///Bits 16:17 - PLL entry clock source
             #[inline(always)]
             pub fn pllsrc(&self) -> PLLSRC_R {
-                PLLSRC_R::new(((self.bits >> 16) & 1) != 0)
+                PLLSRC_R::new(((self.bits >> 16) & 3) as u8)
             }
             ///Bits 24:26 - Microcontroller clock output
             #[inline(always)]
@@ -1096,7 +1149,7 @@ pub mod rcc {
             pub fn adcpre(&mut self) -> ADCPRE_W<14> {
                 ADCPRE_W::new(self)
             }
-            ///Bit 16 - PLL entry clock source
+            ///Bits 16:17 - PLL entry clock source
             #[inline(always)]
             #[must_use]
             pub fn pllsrc(&mut self) -> PLLSRC_W<16> {

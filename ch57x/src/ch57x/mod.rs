@@ -37,30 +37,31 @@ pub union Vector {
 #[cfg(feature = "rt")]
 #[doc(hidden)]
 #[no_mangle]
-pub static __EXTERNAL_INTERRUPTS: [Vector; 22] = [
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _handler: TMR0 },
-    Vector { _handler: GPIO_A },
-    Vector { _handler: GPIO_B },
-    Vector { _handler: SPI0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _handler: USB },
-    Vector { _handler: TMR2 },
-    Vector { _handler: UART0 },
-    Vector { _handler: UART1 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _handler: RTC },
-    Vector { _handler: ADC },
-    Vector { _handler: TMR3 },
-    Vector { _handler: UART2 },
-    Vector { _handler: UART3 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _handler: WDOG_BAT },
-];
+pub static __EXTERNAL_INTERRUPTS: [Vector; 22] =
+    [
+        Vector { _reserved: 0 },
+        Vector { _reserved: 0 },
+        Vector { _handler: TMR0 },
+        Vector { _handler: GPIO_A },
+        Vector { _handler: GPIO_B },
+        Vector { _handler: SPI0 },
+        Vector { _reserved: 0 },
+        Vector { _reserved: 0 },
+        Vector { _handler: USB },
+        Vector { _handler: TMR2 },
+        Vector { _handler: UART0 },
+        Vector { _handler: UART1 },
+        Vector { _reserved: 0 },
+        Vector { _reserved: 0 },
+        Vector { _handler: RTC },
+        Vector { _handler: ADC },
+        Vector { _handler: TMR3 },
+        Vector { _handler: UART2 },
+        Vector { _handler: UART3 },
+        Vector { _reserved: 0 },
+        Vector { _reserved: 0 },
+        Vector { _handler: WDOG_BAT },
+    ];
 #[doc(hidden)]
 pub mod interrupt {
     ///Enumeration of all the interrupts.
