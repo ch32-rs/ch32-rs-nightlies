@@ -1473,6 +1473,10 @@ pub mod rcc {
         pub type R = crate::R<APB1PRSTR_SPEC>;
         ///Register `APB1PRSTR` writer
         pub type W = crate::W<APB1PRSTR_SPEC>;
+        ///Field `TIM2RST` reader - TIM2 reset
+        pub type TIM2RST_R = crate::BitReader;
+        ///Field `TIM2RST` writer - TIM2 reset
+        pub type TIM2RST_W<'a, REG> = crate::BitWriter<'a, REG>;
         ///Field `WWDGRST` reader - Window watchdog reset
         pub type WWDGRST_R = crate::BitReader;
         ///Field `WWDGRST` writer - Window watchdog reset
@@ -1486,6 +1490,11 @@ pub mod rcc {
         ///Field `PWRRST` writer - Power interface reset
         pub type PWRRST_W<'a, REG> = crate::BitWriter<'a, REG>;
         impl R {
+            ///Bit 0 - TIM2 reset
+            #[inline(always)]
+            pub fn tim2rst(&self) -> TIM2RST_R {
+                TIM2RST_R::new((self.bits & 1) != 0)
+            }
             ///Bit 11 - Window watchdog reset
             #[inline(always)]
             pub fn wwdgrst(&self) -> WWDGRST_R {
@@ -1503,6 +1512,12 @@ pub mod rcc {
             }
         }
         impl W {
+            ///Bit 0 - TIM2 reset
+            #[inline(always)]
+            #[must_use]
+            pub fn tim2rst(&mut self) -> TIM2RST_W<APB1PRSTR_SPEC> {
+                TIM2RST_W::new(self, 0)
+            }
             ///Bit 11 - Window watchdog reset
             #[inline(always)]
             #[must_use]
