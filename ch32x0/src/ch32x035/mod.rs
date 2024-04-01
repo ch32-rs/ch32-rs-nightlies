@@ -37255,15 +37255,11 @@ pub mod usbpd {
         pub type R = crate::R<PORT_CC1_SPEC>;
         ///Register `PORT_CC1` writer
         pub type W = crate::W<PORT_CC1_SPEC>;
-        ///Field `PA_CC_AI` reader - PA_CC1_AI value
+        ///Field `PA_CC_AI` reader - CC port comparator analog input
         pub type PA_CC_AI_R = crate::BitReader;
-        ///Field `CC_PD` reader - CC port pull-down resistor enable
-        pub type CC_PD_R = crate::BitReader;
-        ///Field `CC_PD` writer - CC port pull-down resistor enable
-        pub type CC_PD_W<'a, REG> = crate::BitWriter<'a, REG>;
-        ///Field `CC_PU` reader - CC1_PU value
+        ///Field `CC_PU` reader - CC port pull-up current
         pub type CC_PU_R = crate::FieldReader<CC_PU_A>;
-        ///CC1_PU value
+        ///CC port pull-up current
         ///
         ///Value on reset: 0
         #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -37320,7 +37316,7 @@ pub mod usbpd {
                 *self == CC_PU_A::UA80
             }
         }
-        ///Field `CC_PU` writer - CC1_PU value
+        ///Field `CC_PU` writer - CC port pull-up current
         pub type CC_PU_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CC_PU_A>;
         impl<'a, REG> CC_PU_W<'a, REG>
         where
@@ -37348,13 +37344,13 @@ pub mod usbpd {
                 self.variant(CC_PU_A::UA80)
             }
         }
-        ///Field `CC_LVE` reader - CC1_LV0 value
+        ///Field `CC_LVE` reader - CC port level 0 voltage
         pub type CC_LVE_R = crate::BitReader;
-        ///Field `CC_LVE` writer - CC1_LV0 value
+        ///Field `CC_LVE` writer - CC port level 0 voltage
         pub type CC_LVE_W<'a, REG> = crate::BitWriter<'a, REG>;
-        ///Field `CC_CE` reader - CC1_CE value
+        ///Field `CC_CE` reader - CC port comparator enable
         pub type CC_CE_R = crate::FieldReader<CC_CE_A>;
-        ///CC1_CE value
+        ///CC port comparator enable
         ///
         ///Value on reset: 0
         #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -37435,7 +37431,7 @@ pub mod usbpd {
                 *self == CC_CE_A::V123
             }
         }
-        ///Field `CC_CE` writer - CC1_CE value
+        ///Field `CC_CE` writer - CC port comparator enable
         pub type CC_CE_W<'a, REG> = crate::FieldWriter<'a, REG, 3, CC_CE_A>;
         impl<'a, REG> CC_CE_W<'a, REG>
         where
@@ -37479,52 +37475,41 @@ pub mod usbpd {
             }
         }
         impl R {
-            ///Bit 0 - PA_CC1_AI value
+            ///Bit 0 - CC port comparator analog input
             #[inline(always)]
             pub fn pa_cc_ai(&self) -> PA_CC_AI_R {
                 PA_CC_AI_R::new((self.bits & 1) != 0)
             }
-            ///Bit 1 - CC port pull-down resistor enable
-            #[inline(always)]
-            pub fn cc_pd(&self) -> CC_PD_R {
-                CC_PD_R::new(((self.bits >> 1) & 1) != 0)
-            }
-            ///Bits 2:3 - CC1_PU value
+            ///Bits 2:3 - CC port pull-up current
             #[inline(always)]
             pub fn cc_pu(&self) -> CC_PU_R {
                 CC_PU_R::new(((self.bits >> 2) & 3) as u8)
             }
-            ///Bit 4 - CC1_LV0 value
+            ///Bit 4 - CC port level 0 voltage
             #[inline(always)]
             pub fn cc_lve(&self) -> CC_LVE_R {
                 CC_LVE_R::new(((self.bits >> 4) & 1) != 0)
             }
-            ///Bits 5:7 - CC1_CE value
+            ///Bits 5:7 - CC port comparator enable
             #[inline(always)]
             pub fn cc_ce(&self) -> CC_CE_R {
                 CC_CE_R::new(((self.bits >> 5) & 7) as u8)
             }
         }
         impl W {
-            ///Bit 1 - CC port pull-down resistor enable
-            #[inline(always)]
-            #[must_use]
-            pub fn cc_pd(&mut self) -> CC_PD_W<PORT_CC1_SPEC> {
-                CC_PD_W::new(self, 1)
-            }
-            ///Bits 2:3 - CC1_PU value
+            ///Bits 2:3 - CC port pull-up current
             #[inline(always)]
             #[must_use]
             pub fn cc_pu(&mut self) -> CC_PU_W<PORT_CC1_SPEC> {
                 CC_PU_W::new(self, 2)
             }
-            ///Bit 4 - CC1_LV0 value
+            ///Bit 4 - CC port level 0 voltage
             #[inline(always)]
             #[must_use]
             pub fn cc_lve(&mut self) -> CC_LVE_W<PORT_CC1_SPEC> {
                 CC_LVE_W::new(self, 4)
             }
-            ///Bits 5:7 - CC1_CE value
+            ///Bits 5:7 - CC port comparator enable
             #[inline(always)]
             #[must_use]
             pub fn cc_ce(&mut self) -> CC_CE_W<PORT_CC1_SPEC> {
@@ -37573,11 +37558,11 @@ pub mod usbpd {
         pub type R = crate::R<PORT_CC2_SPEC>;
         ///Register `PORT_CC2` writer
         pub type W = crate::W<PORT_CC2_SPEC>;
-        ///Field `PA_CC_AI` reader - PA_CC2_AI value
+        ///Field `PA_CC_AI` reader - CC port comparator analog input
         pub type PA_CC_AI_R = crate::BitReader;
-        ///Field `CC_PU` reader - CC2_PU value
+        ///Field `CC_PU` reader - CC port pull-up current
         pub type CC_PU_R = crate::FieldReader<CC_PU_A>;
-        ///CC2_PU value
+        ///CC port pull-up current
         ///
         ///Value on reset: 0
         #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -37634,7 +37619,7 @@ pub mod usbpd {
                 *self == CC_PU_A::UA80
             }
         }
-        ///Field `CC_PU` writer - CC2_PU value
+        ///Field `CC_PU` writer - CC port pull-up current
         pub type CC_PU_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CC_PU_A>;
         impl<'a, REG> CC_PU_W<'a, REG>
         where
@@ -37662,13 +37647,13 @@ pub mod usbpd {
                 self.variant(CC_PU_A::UA80)
             }
         }
-        ///Field `CC_LVE` reader - CC2_LV0 value
+        ///Field `CC_LVE` reader - CC port level 0 voltage
         pub type CC_LVE_R = crate::BitReader;
-        ///Field `CC_LVE` writer - CC2_LV0 value
+        ///Field `CC_LVE` writer - CC port level 0 voltage
         pub type CC_LVE_W<'a, REG> = crate::BitWriter<'a, REG>;
-        ///Field `CC_CE` reader - CC2_CE value
+        ///Field `CC_CE` reader - CC port comparator enable
         pub type CC_CE_R = crate::FieldReader<CC_CE_A>;
-        ///CC2_CE value
+        ///CC port comparator enable
         ///
         ///Value on reset: 0
         #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -37749,7 +37734,7 @@ pub mod usbpd {
                 *self == CC_CE_A::V123
             }
         }
-        ///Field `CC_CE` writer - CC2_CE value
+        ///Field `CC_CE` writer - CC port comparator enable
         pub type CC_CE_W<'a, REG> = crate::FieldWriter<'a, REG, 3, CC_CE_A>;
         impl<'a, REG> CC_CE_W<'a, REG>
         where
@@ -37793,41 +37778,41 @@ pub mod usbpd {
             }
         }
         impl R {
-            ///Bit 0 - PA_CC2_AI value
+            ///Bit 0 - CC port comparator analog input
             #[inline(always)]
             pub fn pa_cc_ai(&self) -> PA_CC_AI_R {
                 PA_CC_AI_R::new((self.bits & 1) != 0)
             }
-            ///Bits 2:3 - CC2_PU value
+            ///Bits 2:3 - CC port pull-up current
             #[inline(always)]
             pub fn cc_pu(&self) -> CC_PU_R {
                 CC_PU_R::new(((self.bits >> 2) & 3) as u8)
             }
-            ///Bit 4 - CC2_LV0 value
+            ///Bit 4 - CC port level 0 voltage
             #[inline(always)]
             pub fn cc_lve(&self) -> CC_LVE_R {
                 CC_LVE_R::new(((self.bits >> 4) & 1) != 0)
             }
-            ///Bits 5:7 - CC2_CE value
+            ///Bits 5:7 - CC port comparator enable
             #[inline(always)]
             pub fn cc_ce(&self) -> CC_CE_R {
                 CC_CE_R::new(((self.bits >> 5) & 7) as u8)
             }
         }
         impl W {
-            ///Bits 2:3 - CC2_PU value
+            ///Bits 2:3 - CC port pull-up current
             #[inline(always)]
             #[must_use]
             pub fn cc_pu(&mut self) -> CC_PU_W<PORT_CC2_SPEC> {
                 CC_PU_W::new(self, 2)
             }
-            ///Bit 4 - CC2_LV0 value
+            ///Bit 4 - CC port level 0 voltage
             #[inline(always)]
             #[must_use]
             pub fn cc_lve(&mut self) -> CC_LVE_W<PORT_CC2_SPEC> {
                 CC_LVE_W::new(self, 4)
             }
-            ///Bits 5:7 - CC2_CE value
+            ///Bits 5:7 - CC port comparator enable
             #[inline(always)]
             #[must_use]
             pub fn cc_ce(&mut self) -> CC_CE_W<PORT_CC2_SPEC> {
